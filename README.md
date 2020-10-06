@@ -1,0 +1,2 @@
+# MicroTrait
+C++ Microcontroller Library
