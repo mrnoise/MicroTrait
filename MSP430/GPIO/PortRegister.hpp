@@ -60,7 +60,7 @@ namespace MSP430 {
         namespace Internal {
 
             template<volatile auto *INREG, volatile auto *OUTREG, volatile auto *DIRREG, volatile auto *PRENREG, volatile auto *P0SEL, volatile auto *P1SEL, volatile auto *IESREG, volatile auto *IEREG, volatile auto *IFGREG>
-            class PortWithInt {
+            struct PortWithInt {
 
               private:
                 MT::Universal::Register<INREG>   m_in{};
@@ -218,7 +218,7 @@ namespace MSP430 {
             };
 
             template<volatile auto *INREG, volatile auto *OUTREG, volatile auto *DIRREG, volatile auto *PRENREG, volatile auto *P0SEL, volatile auto *P1SEL>
-            class Port {
+            struct Port {
 
               private:
                 MT::Universal::Register<INREG>   m_in{};
