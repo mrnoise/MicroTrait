@@ -33,7 +33,7 @@ namespace Universal {
         template<typename... Vector>
         struct Interrupt {
 
-            constexpr Interrupt(IntHandlers<Vector>... handler) noexcept
+            constexpr explicit Interrupt(IntHandlers<Vector>... handler) noexcept
               : m_indexes{ handler.first... }, m_vectors{ std::move(handler.second...) } {
             }
 
