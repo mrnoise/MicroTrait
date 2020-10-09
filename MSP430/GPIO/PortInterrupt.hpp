@@ -21,13 +21,15 @@ namespace MSP430 {
                 PORT2
             };
 
+#ifdef MT_MSP430_USE_GPIO_COMPILE_TIME_CALLBACKS
+
             template<typename T>
             using IntHandlers = std::pair<PORTS, T>;
 
             template<typename... Vector>
             struct Interrupt {
 
-                constexpr Interrupt(IntHandlers<Vector>... handler) noexcept
+                constexpr explicit Interrupt(IntHandlers<Vector>... handler) noexcept
                   : m_indexes{ handler.first... }, m_vectors{ std::move(handler.second...) } {
                 }
 
@@ -55,7 +57,6 @@ namespace MSP430 {
                 return IntHandlers<T>{ p, std::move(t) };
             }
 
-#ifdef USE_GPIO_COMPILE_TIME_CALLBACKS
 
 #else
 
