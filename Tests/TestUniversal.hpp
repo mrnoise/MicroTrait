@@ -17,7 +17,7 @@ namespace Tests {
     namespace Universal {
         namespace Internal {
 
-            void runU8() noexcept {
+            void runRegisterU8() noexcept {
 
                 static volatile uint8_t       val = 0;
                 MT::Universal::Register<&val> reg{};
@@ -108,7 +108,7 @@ namespace Tests {
                 assert(comp == false);
             }
 
-            void runU16() noexcept {
+            void runRegisterU16() noexcept {
 
                 static volatile uint16_t      val = 0;
                 MT::Universal::Register<&val> reg{};
@@ -199,7 +199,7 @@ namespace Tests {
                 assert(comp == false);
             }
 
-            void runU32() noexcept {
+            void runRegisterU32() noexcept {
 
                 static volatile uint32_t      val = 0;
                 MT::Universal::Register<&val> reg{};
@@ -290,13 +290,34 @@ namespace Tests {
                 assert(comp == false);
             }
 
+            bool toggle = true;
+            void runInterrupt() noexcept {
+
+                using namespace MT::Universal::Interrupt;
+
+                constexpr auto isr = makeInterrupt(
+                    makeHandler(
+                        VECTORS::VECTOR1,
+                        []() {
+                            toggle = false;
+                        }));
+
+                assert(toggle == true);
+
+                //fake call -> normally in interrupt vector
+                std::get<isr.get_index(VECTORS::VECTOR1)>(isr.m_vectors)();
+
+                assert(toggle == false);
+            }
+
         }// namespace Internal
 
 
         void run() noexcept {
-            Internal::runU8();
-            Internal::runU16();
-            Internal::runU32();
+            Internal::runRegisterU8();
+            Internal::runRegisterU16();
+            Internal::runRegisterU32();
+            Internal::runInterrupt();
         }
     }// namespace Universal
 }// namespace Tests
