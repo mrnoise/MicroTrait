@@ -1,14 +1,10 @@
-/*
- * PortInterrupt.hpp
- *
- *  Created on: 06.10.2020
- *      Author: steff
- */
 
 #ifndef MICROTRAIT_MSP430_GPIO_PORTINTERRUPT_HPP_
 #define MICROTRAIT_MSP430_GPIO_PORTINTERRUPT_HPP_
 
 #include "MicroTrait/Universal/Interrupt.hpp"
+#include "MicroTrait/MSP430/Settings.hpp"
+#include <msp430.h>
 #include <utility>
 
 namespace MT {
@@ -59,40 +55,12 @@ namespace MSP430 {
 
 
 #else
-
-            std::array<void (*)(), 2> PortVectors{};
+            extern std::array<void (*)(), 2> PortVectors;
 
             constexpr void registerCallback(const PORTS ports, void (*callback)()) noexcept {
                 PortVectors[ports] = callback;
             };
-
-// Port 1 interrupt service routine
-#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
-#pragma vector = PORT1_VECTOR
-            __interrupt void Port_1(void)
-#elif defined(__GNUC__)
-            void __attribute__((interrupt(PORT1_VECTOR))) Port_1(void)
-#else
-#error Compiler not supported!
 #endif
-            {
-                if (PortVectors[PORT1] != nullptr) PortVectors[PORT1]();
-            }
-
-// Port 2 interrupt service routine
-#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
-#pragma vector = PORT2_VECTOR
-            __interrupt void Port_2(void)
-#elif defined(__GNUC__)
-            void __attribute__((interrupt(PORT2_VECTOR))) Port_2(void)
-#else
-#error Compiler not supported!
-#endif
-            {
-                if (PortVectors[PORT2] != nullptr) PortVectors[PORT2]();
-            }
-#endif
-
         }// namespace Interrupt
     }    // namespace GPIO
 }// namespace MSP430
