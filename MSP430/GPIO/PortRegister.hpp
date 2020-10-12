@@ -1,9 +1,3 @@
-/*
- * Register.hpp
- *
- *  Created on: 01.10.2020
- *      Author: steff
- */
 
 #ifndef MICROTRAIT_MSP430_GPIO_PORTREGISTER_HPP_
 #define MICROTRAIT_MSP430_GPIO_PORTREGISTER_HPP_

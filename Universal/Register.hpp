@@ -1,9 +1,3 @@
-/*
- * Access.hpp
- *
- *  Created on: 01.10.2020
- *      Author: steff
- */
 
 #ifndef MICROTRAIT_UNIVERSAL_REGISTER_HPP_
 #define MICROTRAIT_UNIVERSAL_REGISTER_HPP_

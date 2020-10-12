@@ -1,14 +1,9 @@
-/*
- * TestUniversal.hpp
- *
- *  Created on: 02.10.2020
- *      Author: steff
- */
 
 #ifndef MICROTRAIT_TESTS_TESTUNIVERSAL_HPP_
 #define MICROTRAIT_TESTS_TESTUNIVERSAL_HPP_
 
 #include "MicroTrait/Universal/Register.hpp"
+#include "MicroTrait/Universal/Interrupt.hpp"
 #include <assert.h>
 
 

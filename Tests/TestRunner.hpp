@@ -1,9 +1,3 @@
-/*
- * TestRunner.hpp
- *
- *  Created on: 02.10.2020
- *      Author: steff
- */
 
 #ifndef MICROTRAIT_TESTS_TESTRUNNER_HPP_
 #define MICROTRAIT_TESTS_TESTRUNNER_HPP_

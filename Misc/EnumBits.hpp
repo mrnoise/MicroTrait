@@ -1,9 +1,3 @@
-/*
- * EnumBits.hpp
- *
- *  Created on: 01.10.2020
- *      Author: steff
- */
 
 #ifndef MICROTRAIT_MISC_ENUMBITS_HPP_
 #define MICROTRAIT_MISC_ENUMBITS_HPP_

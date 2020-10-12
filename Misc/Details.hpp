@@ -1,13 +1,6 @@
-/*
- * Details.cpp
- *
- *  Created on: 01.10.2020
- *      Author: steff
- */
 
 #ifndef MICROTRAIT_MISC_DETAILS_CPP_
 #define MICROTRAIT_MISC_DETAILS_CPP_
-
 
 namespace MT {
 

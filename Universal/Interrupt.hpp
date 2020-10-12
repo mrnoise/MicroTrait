@@ -1,9 +1,3 @@
-/*
- * Interrupt.hpp
- *
- *  Created on: 06.10.2020
- *      Author: steff
- */
 
 #ifndef MICROTRAIT_UNIVERSAL_INTERRUPT_HPP_
 #define MICROTRAIT_UNIVERSAL_INTERRUPT_HPP_
