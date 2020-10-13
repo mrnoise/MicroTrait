@@ -106,11 +106,11 @@ namespace Universal {
         }
 
         template<typename... Vals>
-        constexpr bool compare(const Vals &... vals) noexcept {
+        [[nodiscard]] constexpr bool compare(const Vals &... vals) noexcept {
             return (*reg & (vals | ...));
         }
 
-        constexpr auto get() noexcept {
+        [[nodiscard]] constexpr auto get() noexcept {
             return *reg;
         }
 
@@ -143,7 +143,7 @@ namespace Universal {
         }
 
         template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr bool compare(const BIT &bit, const BITS &... bits) noexcept {
+        [[nodiscard]] constexpr bool compare(const BIT &bit, const BITS &... bits) noexcept {
             typedef typename std::underlying_type<BIT>::type underlying;
             const BIT                                        sum = orSum(bit, bits...);
             return (*reg & static_cast<underlying>(sum));

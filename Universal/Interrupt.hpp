@@ -31,7 +31,7 @@ namespace Universal {
               : m_indexes{ handler.first... }, m_vectors{ std::move(handler.second...) } {
             }
 
-            constexpr std::size_t get_index(const VECTORS p) const noexcept {
+              [[nodiscard]] constexpr std::size_t get_index(const VECTORS p) const noexcept {
 
                 for (std::size_t idx = 0; idx < m_indexes.size(); ++idx) {
                     if (m_indexes[idx] == p) return idx;
@@ -46,12 +46,12 @@ namespace Universal {
 
 
         template<typename... T>
-        constexpr auto makeInterrupt(IntHandlers<T>... t) noexcept {
+        [[nodiscard]] constexpr auto makeInterrupt(IntHandlers<T>... t) noexcept {
             return Interrupt<T...>{ std::move(t)... };
         }
 
         template<typename T>
-        constexpr auto makeHandler(VECTORS p, T t) noexcept {
+        [[nodiscard]] constexpr auto makeHandler(VECTORS p, T t) noexcept {
             return IntHandlers<T>{ p, std::move(t) };
         }
 

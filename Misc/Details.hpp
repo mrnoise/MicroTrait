@@ -7,12 +7,12 @@ namespace MT {
 namespace Details {
 
     template<typename T>
-    constexpr T orSum(const T &arg) noexcept {
+    [[nodiscard]] constexpr T orSum(const T &arg) noexcept {
         return arg;
     }
 
     template<typename T, typename... ARGS>
-    constexpr T orSum(const T &arg, const ARGS &... args) noexcept {
+    [[nodiscard]] constexpr T orSum(const T &arg, const ARGS &... args) noexcept {
         return arg | orSum(args...);
     }
 

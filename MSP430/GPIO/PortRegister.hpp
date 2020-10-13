@@ -175,7 +175,7 @@ namespace MSP430 {
                 }
 
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-                constexpr PIN_STATE getInputPinValue(const BIT &bit, const BITS &... bits) noexcept {
+                [[nodiscard]] constexpr PIN_STATE getInputPinValue(const BIT &bit, const BITS &... bits) noexcept {
                     if (m_in.compare(bit, bits...)) return PIN_STATE::HIGH;
                     else
                         return PIN_STATE::LOW;
@@ -192,7 +192,7 @@ namespace MSP430 {
                 }
 
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-                constexpr INT_FLAG getInterruptStatus(const BIT &bit, const BITS &... bits) noexcept {
+                [[nodiscard]] constexpr INT_FLAG getInterruptStatus(const BIT &bit, const BITS &... bits) noexcept {
                     if (m_intFlg.compare(bit, bits...)) return INT_FLAG::TRUE;
                     else
                         return INT_FLAG::FALSE;
@@ -330,7 +330,7 @@ namespace MSP430 {
                 }
 
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-                constexpr PIN_STATE getInputPinValue(const BIT &bit, const BITS &... bits) noexcept {
+                [[nodiscard]] constexpr PIN_STATE getInputPinValue(const BIT &bit, const BITS &... bits) noexcept {
                     if (m_in.compare(bit, bits...)) return PIN_STATE::HIGH;
                     else
                         return PIN_STATE::LOW;
