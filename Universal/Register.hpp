@@ -87,26 +87,31 @@ namespace Universal {
 
         template<typename... Vals>
         constexpr void set(const Vals &... vals) noexcept {
+        	static_assert(std::is_integral<Vals...>::value, "Integral (e.g. uint8_t, uint16_t,..) value required.");
             *reg |= (vals | ...);
         }
 
         template<typename... Vals>
         constexpr void clear(const Vals &... vals) noexcept {
+        	static_assert(std::is_integral<Vals...>::value, "Integral (e.g. uint8_t, uint16_t,..) value required.");
             *reg &= ~(vals | ...);
         }
 
         template<typename... Vals>
         constexpr void toggle(const Vals &... vals) noexcept {
+        	static_assert(std::is_integral<Vals...>::value, "Integral (e.g. uint8_t, uint16_t,..) value required.");
             *reg ^= (vals | ...);
         }
 
         template<typename... Vals>
         constexpr void override(const Vals &... vals) noexcept {
+        	static_assert(std::is_integral<Vals...>::value, "Integral (e.g. uint8_t, uint16_t,..) value required.");
             *reg = (vals | ...);
         }
 
         template<typename... Vals>
         [[nodiscard]] constexpr bool compare(const Vals &... vals) noexcept {
+        	static_assert(std::is_integral<Vals...>::value, "Integral (e.g. uint8_t, uint16_t,..) value required.");
             return (*reg & (vals | ...));
         }
 
