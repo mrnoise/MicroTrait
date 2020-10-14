@@ -9,6 +9,8 @@
 #include "MicroTrait/MSP430/Settings.hpp"
 #include "MicroTrait/MSP430/GPIO/PortRegister.hpp"
 #include "MicroTrait/MSP430/GPIO/PortInterrupt.hpp"
+#include "MicroTrait/MSP430/WDT/WdtA.hpp"
+#include "MicroTrait/MSP430/WDT/WdtAInterrupt.hpp"
 
 #if defined(__GNUC__)
 #else
