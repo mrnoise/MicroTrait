@@ -68,6 +68,16 @@ namespace MSP430 {
             constexpr void initIntervalTimer(const CLOCKSOURCE src, const CLOCKDIVIDER div) noexcept {
                 m_ctl.override(WDTPW | WDTCNTCL | WDTHOLD | WDTTMSEL | (static_cast<uint16_t>(src)) | (static_cast<uint16_t>(div)));
             }
+
+#ifndef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
+            constexpr void startWatchdogTimer(const CLOCKSOURCE src, const CLOCKDIVIDER div) noexcept {
+                m_ctl.override(WDTPW | WDTCNTCL | WDTTMSEL | (static_cast<uint16_t>(src)) | (static_cast<uint16_t>(div)));
+            }
+
+            constexpr void startIntervalTimer(const CLOCKSOURCE src, const CLOCKDIVIDER div) noexcept {
+                m_ctl.override(WDTPW | WDTCNTCL | WDTTMSEL | (static_cast<uint16_t>(src)) | (static_cast<uint16_t>(div)));
+            }
+#endif
         };
 
 #endif
