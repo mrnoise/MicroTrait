@@ -11,6 +11,7 @@
 #include "MicroTrait/MSP430/GPIO/PortInterrupt.hpp"
 #include "MicroTrait/MSP430/WDT/WdtA.hpp"
 #include "MicroTrait/MSP430/WDT/WdtAInterrupt.hpp"
+#include "MicroTrait/MSP430/SFR/Sfr.hpp"
 
 #if defined(__GNUC__)
 #else
