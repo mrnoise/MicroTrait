@@ -1,5 +1,7 @@
-
 #include "MicroTrait/MSP430/GPIO/PortInterrupt.hpp"
+
+
+#ifndef MT_MSP430_USE_GPIO_COMPILE_TIME_CALLBACKS
 
 namespace MT {
 namespace MSP430 {
@@ -7,8 +9,6 @@ namespace MSP430 {
         namespace Interrupt {
 
             std::array<void (*)(), 2> PortVectors{};
-
-#ifndef MT_MSP430_USE_GPIO_COMPILE_TIME_CALLBACKS
 
 // Port 1 interrupt service routine
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
@@ -37,9 +37,9 @@ namespace MSP430 {
                 if (PortVectors[PORT2] != nullptr) PortVectors[PORT2]();
             }
 
-#endif
 
         }// namespace Interrupt
     }    // namespace GPIO
 }// namespace MSP430
 }// namespace MT
+#endif

@@ -2,10 +2,11 @@
 #ifndef MICROTRAIT_MSP430_GPIO_PORTINTERRUPT_HPP_
 #define MICROTRAIT_MSP430_GPIO_PORTINTERRUPT_HPP_
 
-#include "MicroTrait/Universal/Interrupt.hpp"
 #include "MicroTrait/MSP430/Settings.hpp"
 #include <msp430.h>
 #include <utility>
+#include <limits>
+#include <array>
 
 namespace MT {
 namespace MSP430 {
@@ -29,7 +30,7 @@ namespace MSP430 {
                   : m_indexes{ handler.first... }, m_vectors{ std::move(handler.second...) } {
                 }
 
-                  [[nodiscard]] constexpr std::size_t get_index(const PORTS p) const noexcept {
+                [[nodiscard]] constexpr std::size_t get_index(const PORTS p) const noexcept {
 
                     for (std::size_t idx = 0; idx < m_indexes.size(); ++idx) {
                         if (m_indexes[idx] == p) return idx;
