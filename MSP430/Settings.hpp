@@ -11,7 +11,7 @@
 
 
 #ifndef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-#warning MT_MSP430_USE_DRIVERLIB_COMPATIBILITY is off: certain mistakes one could make are not catched as a trade off for speed
+#warning MT_MSP430_USE_DRIVERLIB_COMPATIBILITY is off: certain mistakes one could make are not catched as a trade off for speed and size
 #endif
 
 #endif /* MICROTRAIT_MSP430_SETTINGS_HPP_ */
