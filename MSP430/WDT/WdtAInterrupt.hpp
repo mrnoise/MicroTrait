@@ -6,6 +6,7 @@
 
 #ifdef MT_USE_MSP430_LIB
 
+#include "MicroTrait/Universal/Interrupt.hpp"
 #include <msp430.h>
 #include <utility>
 #include <limits>
@@ -22,38 +23,22 @@ namespace MSP430 {
 
 #ifdef MT_MSP430_USE_WDT_COMPILE_TIME_CALLBACKS
 
-            template<typename T>
-            using IntHandlers = std::pair<WDT, T>;
+            template<typename ENUM, typename FUNC>
+            using IntHandlers = MT::Universal::Interrupt::IntHandlers<ENUM, FUNC>;
 
             template<typename... Vector>
-            struct Interrupt {
+            using Interrupt = MT::Universal::Interrupt::Interrupt<Vector...>;
 
-                constexpr explicit Interrupt(IntHandlers<Vector>... handler) noexcept
-                  : m_indexes{ handler.first... }, m_vectors{ std::move(handler.second...) } {
-                }
-
-                [[nodiscard]] constexpr std::size_t get_index(const WDT p) const noexcept {
-
-                    for (std::size_t idx = 0; idx < m_indexes.size(); ++idx) {
-                        if (m_indexes[idx] == p) return idx;
-                    }
-
-                    return std::numeric_limits<std::size_t>::max();
-                }
-
-                std::array<WDT, sizeof...(Vector)> m_indexes;
-                std::tuple<Vector...>              m_vectors;
-            };
-
-
-            template<typename... T>
-            [[nodiscard]] constexpr auto makeInterrupt(IntHandlers<T>... t) noexcept {
-                return Interrupt<T...>{ std::move(t)... };
+            template<typename ENUM, typename... FUNC>
+            [[nodiscard]] constexpr auto makeInterrupt(IntHandlers<ENUM, FUNC>... t) noexcept {
+                static_assert(std::is_same<ENUM, WDT>::value, "input must be WDT enum");
+                return Interrupt<ENUM, FUNC...>{ std::move(t)... };
             }
 
-            template<typename T>
-            [[nodiscard]] constexpr auto makeHandler(WDT p, T t) noexcept {
-                return IntHandlers<T>{ p, std::move(t) };
+            template<typename ENUM, typename FUNC>
+            [[nodiscard]] constexpr auto makeHandler(ENUM p, FUNC t) noexcept {
+                static_assert(std::is_same<ENUM, WDT>::value, "input must be WDT enum");
+                return IntHandlers<ENUM, FUNC>{ p, std::move(t) };
             }
 
 #else

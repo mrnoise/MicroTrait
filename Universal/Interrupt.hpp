@@ -21,17 +21,17 @@ namespace Universal {
             VECTOR8
         };
 
-        template<typename T>
-        using IntHandlers = std::pair<VECTORS, T>;
+        template<typename ENUM, typename FUNC>
+        using IntHandlers = std::pair<ENUM, FUNC>;
 
-        template<typename... Vector>
+        template<typename ENUM, typename... Vector>
         struct Interrupt {
 
-            constexpr explicit Interrupt(IntHandlers<Vector>... handler) noexcept
-              : m_indexes{ handler.first... }, m_vectors{ std::move(handler.second...) } {
+            constexpr explicit Interrupt(IntHandlers<ENUM, Vector>... handler) noexcept
+              : m_indexes{ handler.first... }, m_vectors{ std::move(handler.second)... } {
             }
 
-              [[nodiscard]] constexpr std::size_t get_index(const VECTORS p) const noexcept {
+            [[nodiscard]] constexpr std::size_t get_index(const ENUM p) const noexcept {
 
                 for (std::size_t idx = 0; idx < m_indexes.size(); ++idx) {
                     if (m_indexes[idx] == p) return idx;
@@ -40,19 +40,19 @@ namespace Universal {
                 return std::numeric_limits<std::size_t>::max();
             }
 
-            std::array<VECTORS, sizeof...(Vector)> m_indexes;
-            std::tuple<Vector...>                  m_vectors;
+            std::array<ENUM, sizeof...(Vector)> m_indexes;
+            std::tuple<Vector...>               m_vectors;
         };
 
 
-        template<typename... T>
-        [[nodiscard]] constexpr auto makeInterrupt(IntHandlers<T>... t) noexcept {
-            return Interrupt<T...>{ std::move(t)... };
+        template<typename ENUM, typename... FUNC>
+        [[nodiscard]] constexpr auto makeInterrupt(IntHandlers<ENUM, FUNC>... t) noexcept {
+            return Interrupt<ENUM, FUNC...>{ std::move(t)... };
         }
 
-        template<typename T>
-        [[nodiscard]] constexpr auto makeHandler(VECTORS p, T t) noexcept {
-            return IntHandlers<T>{ p, std::move(t) };
+        template<typename ENUM, typename FUNC>
+        [[nodiscard]] constexpr auto makeHandler(ENUM p, FUNC t) noexcept {
+            return IntHandlers<ENUM, FUNC>{ p, std::move(t) };
         }
 
     }// namespace Interrupt
