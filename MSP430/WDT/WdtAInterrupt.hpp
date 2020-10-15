@@ -3,11 +3,13 @@
 #define MICROTRAIT_MSP430_WDT_WDTAINTERRUPT_HPP_
 
 #include "MicroTrait/MSP430/Settings.hpp"
+
+#ifdef MT_USE_MSP430_LIB
+
 #include <msp430.h>
 #include <utility>
 #include <limits>
 #include <array>
-
 
 namespace MT {
 namespace MSP430 {
@@ -67,5 +69,6 @@ namespace MSP430 {
 }// namespace MSP430
 }// namespace MT
 
+#endif
 
 #endif /* MICROTRAIT_MSP430_WDT_WDTAINTERRUPT_HPP_ */

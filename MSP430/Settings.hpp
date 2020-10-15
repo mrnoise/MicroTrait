@@ -2,6 +2,7 @@
 #ifndef MICROTRAIT_MSP430_SETTINGS_HPP_
 #define MICROTRAIT_MSP430_SETTINGS_HPP_
 
+#include "MicroTrait/Settings.hpp"
 
 //#define MT_MSP430_USE_DRIVERLIB_COMPATIBILITY /* if commented in the lib will be work internally like the driverlib / if commented out the lib will remove needless code  */
 

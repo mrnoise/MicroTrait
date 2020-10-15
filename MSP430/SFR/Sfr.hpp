@@ -1,9 +1,11 @@
 #ifndef MICROTRAIT_MSP430_SFR_SFR_HPP_
 #define MICROTRAIT_MSP430_SFR_SFR_HPP_
 
-
 #include "MicroTrait/MSP430/Settings.hpp"
-#include <MicroTrait/Universal/Register.hpp>
+
+#ifdef MT_USE_MSP430_LIB
+
+#include "MicroTrait/Universal/Register.hpp"
 #include <msp430.h>
 #include <utility>
 #include <type_traits>
@@ -99,5 +101,7 @@ namespace MSP430 {
 
 }// namespace MSP430
 }// namespace MT
+
+#endif
 
 #endif /* MICROTRAIT_MSP430_SFR_SFR_HPP_ */

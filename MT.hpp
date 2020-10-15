@@ -2,6 +2,7 @@
 #define MICROTRAIT_MT_HPP_
 
 #include "MicroTrait/Version.hpp"
+#include "MicroTrait/Settings.hpp"
 
 #include "MicroTrait/Universal/Register.hpp"
 #include "MicroTrait/Universal/Interrupt.hpp"

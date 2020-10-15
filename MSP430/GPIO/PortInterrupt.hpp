@@ -3,6 +3,9 @@
 #define MICROTRAIT_MSP430_GPIO_PORTINTERRUPT_HPP_
 
 #include "MicroTrait/MSP430/Settings.hpp"
+
+#ifdef MT_USE_MSP430_LIB
+
 #include <msp430.h>
 #include <utility>
 #include <limits>
@@ -67,5 +70,6 @@ namespace MSP430 {
 }// namespace MSP430
 }// namespace MT
 
+#endif
 
 #endif /* MICROTRAIT_MSP430_GPIO_PORTINTERRUPT_HPP_ */

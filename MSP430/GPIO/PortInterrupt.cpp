@@ -1,5 +1,6 @@
 #include "MicroTrait/MSP430/GPIO/PortInterrupt.hpp"
 
+#ifdef MT_USE_MSP430_LIB
 
 #ifndef MT_MSP430_USE_GPIO_COMPILE_TIME_CALLBACKS
 
@@ -42,4 +43,5 @@ namespace MSP430 {
     }    // namespace GPIO
 }// namespace MSP430
 }// namespace MT
+#endif
 #endif

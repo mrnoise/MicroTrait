@@ -2,10 +2,13 @@
 #ifndef MICROTRAIT_MSP430_GPIO_PORTREGISTER_HPP_
 #define MICROTRAIT_MSP430_GPIO_PORTREGISTER_HPP_
 
-#include <MicroTrait/Misc/Details.hpp>
-#include <MicroTrait/Misc/EnumBits.hpp>
-#include <MicroTrait/Universal/Register.hpp>
-#include <MicroTrait/MSP430/Settings.hpp>
+#include "MicroTrait/MSP430/Settings.hpp"
+
+#ifdef MT_USE_MSP430_LIB
+
+#include "MicroTrait/Misc/Details.hpp"
+#include "MicroTrait/Misc/EnumBits.hpp"
+#include "MicroTrait/Universal/Register.hpp"
 #include <stdint.h>
 #include <type_traits>
 #include <cstddef>
@@ -401,5 +404,7 @@ namespace MSP430 {
     }// namespace GPIO
 }// namespace MSP430
 }// namespace MT
+
+#endif
 
 #endif /* MICROTRAIT_MSP430_GPIO_PORTREGISTER_HPP_ */
