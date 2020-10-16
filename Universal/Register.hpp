@@ -124,9 +124,9 @@ namespace Universal {
     	* <br> equivalent to C register access -> reg |= value1 | value2 | ...
     	* @details
     	* Usage: \code {.cpp}
-    	* <br> MT::Universal::Register<&HWRegister> reg1;
-    	* <br> reg1.set(0xFF)
-    	* <br> reg1.set((1UL << 0UL)) \endcode
+    	*  MT::Universal::Register<&HWRegister> reg1;
+    	*  reg1.set(0xFF)
+    	*  reg1.set((1UL << 0UL)) \endcode
     	*@tparam Vals bits or bitmask that should be ored into the defined register -> template specialization for integral types
     	****************************************************************
     	*/
@@ -143,9 +143,9 @@ namespace Universal {
 		* <br> equivalent to C register access -> reg &= ~value1 | ~value2 | ~...
 		* @details
 		* Usage: \code {.cpp}
-		* <br> MT::Universal::Register<&HWRegister> reg1;
-		* <br> reg1.clear(0xFF)
-		* <br> reg1.clear((1UL << 0UL)) \endcode
+		*  MT::Universal::Register<&HWRegister> reg1;
+		*  reg1.clear(0xFF)
+		*  reg1.clear((1UL << 0UL)) \endcode
 		*@tparam Vals bits or bitmask that should be inverted and put into the defined register via logical and -> template specialization for integral types
 		****************************************************************
 		*/
@@ -162,9 +162,9 @@ namespace Universal {
 		* <br> equivalent to C register access -> reg ^= value1 | value2 | ...
 		* @details
 		* Usage: \code {.cpp}
-		* <br> MT::Universal::Register<&HWRegister> reg1;
-		* <br> reg1.toggle(0xFF)
-		* <br> reg1.toggle((1UL << 0UL)) \endcode
+		*  MT::Universal::Register<&HWRegister> reg1;
+		*  reg1.toggle(0xFF)
+		*  reg1.toggle((1UL << 0UL)) \endcode
 		*@tparam Vals bits or bitmask that should be toggeled and put into the defined register -> template specialization for integral types
 		****************************************************************
 		*/
@@ -181,9 +181,9 @@ namespace Universal {
 		* <br> equivalent to C register access -> reg = value1 | value2 | ~...
 		* @details
 		* Usage: \code {.cpp}
-		* <br> MT::Universal::Register<&HWRegister> reg1;
-		* <br> reg1.override(0xFF)
-		* <br> reg1.override((1UL << 0UL)) \endcode
+		*  MT::Universal::Register<&HWRegister> reg1;
+		*  reg1.override(0xFF)
+		*  reg1.override((1UL << 0UL)) \endcode
 		*@tparam Vals bits or bitmask that should be set into the defined register -> template specialization for integral types
 		****************************************************************
 		*/
@@ -200,9 +200,9 @@ namespace Universal {
 		* <br> equivalent to C register access -> return (*reg & (value1 | ...));
 		* @details
 		* Usage: \code {.cpp}
-		* <br> MT::Universal::Register<&HWRegister> reg1;
-		* <br> if (reg1.compare(0xFF) == true) doSomething();
-		* <br> if (reg1.compare((1UL << 0UL)) == false) doSomeOtherThing(); \endcode
+		*  MT::Universal::Register<&HWRegister> reg1;
+		*  if (reg1.compare(0xFF) == true) doSomething();
+		*  if (reg1.compare((1UL << 0UL)) == false) doSomeOtherThing(); \endcode
 		*@tparam Vals bits or bitmask that should be set into the defined register -> template specialization for integral types
 		*@return true if the bitpatterns match false if not
 		****************************************************************
@@ -220,9 +220,9 @@ namespace Universal {
 		* <br> equivalent to C register access -> return *reg;
 		* @details
 		* Usage: \code {.cpp}
-		* <br> MT::Universal::Register<&HWRegister> reg1;
-		* <br> if (reg1.get() == 0xFF00) doSomething();
-		* <br> if (reg1.get() == 0x00FF) doSomeOtherThing(); \endcode
+		*  MT::Universal::Register<&HWRegister> reg1;
+		*  if (reg1.get() == 0xFF00) doSomething();
+		*  if (reg1.get() == 0x00FF) doSomeOtherThing(); \endcode
 		*@return the content
 		****************************************************************
 		*/
@@ -237,8 +237,8 @@ namespace Universal {
 		* <br> equivalent to C register access -> reg |= value1 | value2 | ...
 		* @details
 		* Usage: \code {.cpp}
-		* <br> MT::Universal::Register<&HWRegister> reg1;
-		* <br> reg1.set(BITS8::B0 | BITS8::B1); \endcode
+		*  MT::Universal::Register<&HWRegister> reg1;
+		*  reg1.set(BITS8::B0 | BITS8::B1); \endcode
 		*@tparam Vals bits or bitmask that should be ored into the defined register -> template specialization for Enum types (#BITS8,#BITS16,BITS32)
 		****************************************************************
 		*/
@@ -256,8 +256,8 @@ namespace Universal {
 		* <br> equivalent to C register access -> reg &= ~value1 | ~value2 | ~...
 		* @details
 		* Usage: \code {.cpp}
-		* <br> MT::Universal::Register<&HWRegister> reg1;
-		* <br> reg1.clear(BITS8::B0 | BITS8::B1) \endcode
+		*  MT::Universal::Register<&HWRegister> reg1;
+		*  reg1.clear(BITS8::B0 | BITS8::B1) \endcode
 		*@tparam Vals bits or bitmask that should be inverted and put into the defined register via logical and -> template specialization for Enum types (#BITS8,#BITS16,BITS32)
 		****************************************************************
 		*/
@@ -275,8 +275,8 @@ namespace Universal {
 		* <br> equivalent to C register access -> reg ^= value1 | value2 | ...
 		* @details
 		* Usage: \code {.cpp}
-		* <br> MT::Universal::Register<&HWRegister> reg1;
-		* <br> reg1.toggle(BITS8::B0 | BITS8::B1)\endcode
+		*  MT::Universal::Register<&HWRegister> reg1;
+		*  reg1.toggle(BITS8::B0 | BITS8::B1)\endcode
 		*@tparam Vals bits or bitmask that should be toggeled and put into the defined register -> template specialization for Enum types (#BITS8,#BITS16,BITS32)
 		****************************************************************
 		*/
@@ -294,8 +294,8 @@ namespace Universal {
 		* <br> equivalent to C register access -> reg = value1 | value2 | ~...
 		* @details
 		* Usage: \code {.cpp}
-		* <br> MT::Universal::Register<&HWRegister> reg1;
-		* <br> reg1.override(BITS8::B0 | BITS8::B1)\endcode
+		*  MT::Universal::Register<&HWRegister> reg1;
+		*  reg1.override(BITS8::B0 | BITS8::B1)\endcode
 		*@tparam Vals bits or bitmask that should be set into the defined register -> template specialization for Enum types (#BITS8,#BITS16,BITS32)
 		****************************************************************
 		*/
@@ -313,9 +313,9 @@ namespace Universal {
 		* <br> equivalent to C register access -> return (*reg & (value1 | ...));
 		* @details
 		* Usage: \code {.cpp}
-		* <br> MT::Universal::Register<&HWRegister> reg1;
-		* <br> if (reg1.compare(BITS8::B0 | BITS8::B1) == true) doSomething();
-		* <br> if (reg1.compare(BITS8::B6 | BITS8::B7) == false) doSomeOtherThing(); \endcode
+		*  MT::Universal::Register<&HWRegister> reg1;
+		*  if (reg1.compare(BITS8::B0 | BITS8::B1) == true) doSomething();
+		*  if (reg1.compare(BITS8::B6 | BITS8::B7) == false) doSomeOtherThing(); \endcode
 		*@tparam Vals bits or bitmask that should be set into the defined register --> template specialization for Enum types (#BITS8,#BITS16,BITS32)
 		*@return true if the bitpatterns match false if not
 		****************************************************************

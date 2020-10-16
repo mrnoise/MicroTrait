@@ -2,6 +2,28 @@ var NAVTREE =
 [
   [ "MicroTrait C++ Microcontroller Library", "index.html", [
     [ "MicroTrait", "md_README.html", null ],
+    [ "Modules", "modules.html", [
+      [ "Universal Register Access", "group__groupUniversalReg.html", [
+        [ "Functions", "group__groupFuncs.html", [
+          [ "clear", "group__groupFuncs.html#gafae65432e8984b3cfcc03ee2e758f5f2", null ],
+          [ "clear", "group__groupFuncs.html#ga1f428c01b6d733779634da722ec91db9", null ],
+          [ "compare", "group__groupFuncs.html#ga8fba4c59f983601c5770a4a633bc0f3f", null ],
+          [ "compare", "group__groupFuncs.html#gae6f6bfed0e473fa345d1403c88e93b2d", null ],
+          [ "get", "group__groupFuncs.html#gac0b2d175099449e40ff542a1d4e784c3", null ],
+          [ "override", "group__groupFuncs.html#ga24b4742136f0eb2c7592d68d2bf9b901", null ],
+          [ "override", "group__groupFuncs.html#ga97f08734dd527439f4741af51c6f7342", null ],
+          [ "set", "group__groupFuncs.html#gab869ad638e9f151cf6127174ee71ee35", null ],
+          [ "set", "group__groupFuncs.html#ga2f7b02a463758ea708dc6b0a6a4187cf", null ],
+          [ "toggle", "group__groupFuncs.html#ga21234920d6d580d8eec6f37c4c7bfd24", null ],
+          [ "toggle", "group__groupFuncs.html#gab42a758aa2548fb9abba996087661e99", null ]
+        ] ],
+        [ "Enums", "group__groupEnums.html", [
+          [ "BITS16", "group__groupEnums.html#gad3e11bdab2d931211b3c27d888d85016", null ],
+          [ "BITS32", "group__groupEnums.html#ga231ea6adfc458e24ac249680d75a0c1c", null ],
+          [ "BITS8", "group__groupEnums.html#ga401685f15ed6abc5922e69f031190dfc", null ]
+        ] ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", [
         [ "MT", null, [
@@ -73,23 +95,27 @@ var NAVTREE =
               ] ]
             ] ],
             [ "Register", "structMT_1_1Universal_1_1Register.html", [
-              [ "clear", "structMT_1_1Universal_1_1Register.html#afae65432e8984b3cfcc03ee2e758f5f2", null ],
-              [ "clear", "structMT_1_1Universal_1_1Register.html#a1f428c01b6d733779634da722ec91db9", null ],
-              [ "compare", "structMT_1_1Universal_1_1Register.html#a8fba4c59f983601c5770a4a633bc0f3f", null ],
-              [ "compare", "structMT_1_1Universal_1_1Register.html#ae6f6bfed0e473fa345d1403c88e93b2d", null ],
-              [ "get", "structMT_1_1Universal_1_1Register.html#ac0b2d175099449e40ff542a1d4e784c3", null ],
-              [ "override", "structMT_1_1Universal_1_1Register.html#a24b4742136f0eb2c7592d68d2bf9b901", null ],
-              [ "override", "structMT_1_1Universal_1_1Register.html#a97f08734dd527439f4741af51c6f7342", null ],
-              [ "set", "structMT_1_1Universal_1_1Register.html#ab869ad638e9f151cf6127174ee71ee35", null ],
-              [ "set", "structMT_1_1Universal_1_1Register.html#a2f7b02a463758ea708dc6b0a6a4187cf", null ],
-              [ "toggle", "structMT_1_1Universal_1_1Register.html#a21234920d6d580d8eec6f37c4c7bfd24", null ],
-              [ "toggle", "structMT_1_1Universal_1_1Register.html#ab42a758aa2548fb9abba996087661e99", null ]
+              [ "clear", "group__groupFuncs.html#gafae65432e8984b3cfcc03ee2e758f5f2", null ],
+              [ "clear", "group__groupFuncs.html#ga1f428c01b6d733779634da722ec91db9", null ],
+              [ "compare", "group__groupFuncs.html#ga8fba4c59f983601c5770a4a633bc0f3f", null ],
+              [ "compare", "group__groupFuncs.html#gae6f6bfed0e473fa345d1403c88e93b2d", null ],
+              [ "get", "group__groupFuncs.html#gac0b2d175099449e40ff542a1d4e784c3", null ],
+              [ "override", "group__groupFuncs.html#ga24b4742136f0eb2c7592d68d2bf9b901", null ],
+              [ "override", "group__groupFuncs.html#ga97f08734dd527439f4741af51c6f7342", null ],
+              [ "set", "group__groupFuncs.html#gab869ad638e9f151cf6127174ee71ee35", null ],
+              [ "set", "group__groupFuncs.html#ga2f7b02a463758ea708dc6b0a6a4187cf", null ],
+              [ "toggle", "group__groupFuncs.html#ga21234920d6d580d8eec6f37c4c7bfd24", null ],
+              [ "toggle", "group__groupFuncs.html#gab42a758aa2548fb9abba996087661e99", null ]
             ] ]
           ] ]
         ] ],
         [ "enable_Enum_bits", "structenable__Enum__bits.html", null ]
       ] ],
-      [ "Class Index", "classes.html", null ]
+      [ "Class Index", "classes.html", null ],
+      [ "Class Members", "functions_all.html", [
+        [ "All", "functions_all.html", null ],
+        [ "Functions", "functions_func.html", null ]
+      ] ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", [
