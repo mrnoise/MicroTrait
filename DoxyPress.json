@@ -325,7 +325,7 @@
         "html-footer": "",
         "html-header": "",
         "html-index-num-entries": 100,
-        "html-output": "Html",
+        "html-output": "docs/html",
         "html-search": false,
         "html-stylesheets": [
             ""
