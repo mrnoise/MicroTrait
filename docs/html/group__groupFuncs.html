@@ -64,7 +64,7 @@ $(document).ready(function(){initNavTree('group__groupFuncs.html','');});
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Functions<div class="ingroups"><a class="el" href="group__groupUniversalReg.html">Universal Register Access</a></div></div>  </div>
+<div class="title">Functions<div class="ingroups"><a class="el" href="group__groupMSP430.html">MSP430</a> &#124; <a class="el" href="group__groupUniversal.html">Universal</a> &raquo; <a class="el" href="group__groupInterrupt.html">Interrupt Access</a></div></div>  </div>
   <div class="clear-floats"></div>
 </div><!--header-->
 <div class="contents">
@@ -72,95 +72,123 @@ $(document).ready(function(){initNavTree('group__groupFuncs.html','');});
 Collaboration diagram for Functions:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="group__groupFuncs.png" border="0" alt="" usemap="#group____groupFuncs"/>
-<map name="group____groupFuncs" id="group____groupFuncs">
-<area shape="rect"  href="group__groupUniversalReg.html" title=" " alt="" coords="5,5,132,47"/>
-<area shape="rect"  title=" " alt="" coords="180,13,259,39"/>
-</map>
+<!-- MAP 0 -->
 </td></tr></table></center>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga2f7b02a463758ea708dc6b0a6a4187cf"><td class="memTemplParams" colspan="2">template&lt;typename... Vals&gt; </td></tr>
-<tr class="memitem:ga2f7b02a463758ea708dc6b0a6a4187cf"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncs.html#ga2f7b02a463758ea708dc6b0a6a4187cf">MT::Universal::Register&lt; reg &gt;::set</a> (const Vals &amp;...vals) noexcept</td></tr>
-<tr class="memdesc:ga2f7b02a463758ea708dc6b0a6a4187cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the given bits via a logial or into the register <br/>
- equivalent to C register access -&gt; reg |= value1 | value2 | ...  <a href="#ga2f7b02a463758ea708dc6b0a6a4187cf">More...</a><br /></td></tr>
-<tr class="separator:ga2f7b02a463758ea708dc6b0a6a4187cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1f428c01b6d733779634da722ec91db9"><td class="memTemplParams" colspan="2">template&lt;typename... Vals&gt; </td></tr>
-<tr class="memitem:ga1f428c01b6d733779634da722ec91db9"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncs.html#ga1f428c01b6d733779634da722ec91db9">MT::Universal::Register&lt; reg &gt;::clear</a> (const Vals &amp;...vals) noexcept</td></tr>
-<tr class="memdesc:ga1f428c01b6d733779634da722ec91db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">clears the given bits via a logial or into the register <br/>
- equivalent to C register access -&gt; reg &amp;= ~value1 | ~value2 | ~...  <a href="#ga1f428c01b6d733779634da722ec91db9">More...</a><br /></td></tr>
-<tr class="separator:ga1f428c01b6d733779634da722ec91db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab42a758aa2548fb9abba996087661e99"><td class="memTemplParams" colspan="2">template&lt;typename... Vals&gt; </td></tr>
-<tr class="memitem:gab42a758aa2548fb9abba996087661e99"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncs.html#gab42a758aa2548fb9abba996087661e99">MT::Universal::Register&lt; reg &gt;::toggle</a> (const Vals &amp;...vals) noexcept</td></tr>
-<tr class="memdesc:gab42a758aa2548fb9abba996087661e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">toggles the given bits via a logial xor in the register <br/>
- equivalent to C register access -&gt; reg ^= value1 | value2 | ...  <a href="#gab42a758aa2548fb9abba996087661e99">More...</a><br /></td></tr>
-<tr class="separator:gab42a758aa2548fb9abba996087661e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga97f08734dd527439f4741af51c6f7342"><td class="memTemplParams" colspan="2">template&lt;typename... Vals&gt; </td></tr>
-<tr class="memitem:ga97f08734dd527439f4741af51c6f7342"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncs.html#ga97f08734dd527439f4741af51c6f7342">MT::Universal::Register&lt; reg &gt;::override</a> (const Vals &amp;...vals) noexcept</td></tr>
-<tr class="memdesc:ga97f08734dd527439f4741af51c6f7342"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the given bits in the register and overrides the leftover bits with zeros <br/>
- equivalent to C register access -&gt; reg = value1 | value2 | ~...  <a href="#ga97f08734dd527439f4741af51c6f7342">More...</a><br /></td></tr>
-<tr class="separator:ga97f08734dd527439f4741af51c6f7342"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae6f6bfed0e473fa345d1403c88e93b2d"><td class="memTemplParams" colspan="2">template&lt;typename... Vals&gt; </td></tr>
-<tr class="memitem:gae6f6bfed0e473fa345d1403c88e93b2d"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncs.html#gae6f6bfed0e473fa345d1403c88e93b2d">MT::Universal::Register&lt; reg &gt;::compare</a> (const Vals &amp;...vals) noexcept</td></tr>
-<tr class="memdesc:gae6f6bfed0e473fa345d1403c88e93b2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">compares the given bits with the bits in the register and returns true if there is a match <br/>
- equivalent to C register access -&gt; return (*reg &amp; (value1 | ...));  <a href="#gae6f6bfed0e473fa345d1403c88e93b2d">More...</a><br /></td></tr>
-<tr class="separator:gae6f6bfed0e473fa345d1403c88e93b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac0b2d175099449e40ff542a1d4e784c3"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncs.html#gac0b2d175099449e40ff542a1d4e784c3">MT::Universal::Register&lt; reg &gt;::get</a> () noexcept</td></tr>
-<tr class="memdesc:gac0b2d175099449e40ff542a1d4e784c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the content of the underlyoing register <br/>
- equivalent to C register access -&gt; return *reg;  <a href="#gac0b2d175099449e40ff542a1d4e784c3">More...</a><br /></td></tr>
-<tr class="separator:gac0b2d175099449e40ff542a1d4e784c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab869ad638e9f151cf6127174ee71ee35"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </td></tr>
-<tr class="memitem:gab869ad638e9f151cf6127174ee71ee35"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncs.html#gab869ad638e9f151cf6127174ee71ee35">MT::Universal::Register&lt; reg &gt;::set</a> (const BIT &amp;bit, const BITS &amp;...bits) noexcept</td></tr>
-<tr class="memdesc:gab869ad638e9f151cf6127174ee71ee35"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the given bits via a logial or into the register <br/>
- equivalent to C register access -&gt; reg |= value1 | value2 | ...  <a href="#gab869ad638e9f151cf6127174ee71ee35">More...</a><br /></td></tr>
-<tr class="separator:gab869ad638e9f151cf6127174ee71ee35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafae65432e8984b3cfcc03ee2e758f5f2"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </td></tr>
-<tr class="memitem:gafae65432e8984b3cfcc03ee2e758f5f2"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncs.html#gafae65432e8984b3cfcc03ee2e758f5f2">MT::Universal::Register&lt; reg &gt;::clear</a> (const BIT &amp;bit, const BITS &amp;...bits) noexcept</td></tr>
-<tr class="memdesc:gafae65432e8984b3cfcc03ee2e758f5f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">clears the given bits via a logial or into the register <br/>
- equivalent to C register access -&gt; reg &amp;= ~value1 | ~value2 | ~...  <a href="#gafae65432e8984b3cfcc03ee2e758f5f2">More...</a><br /></td></tr>
-<tr class="separator:gafae65432e8984b3cfcc03ee2e758f5f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga21234920d6d580d8eec6f37c4c7bfd24"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </td></tr>
-<tr class="memitem:ga21234920d6d580d8eec6f37c4c7bfd24"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncs.html#ga21234920d6d580d8eec6f37c4c7bfd24">MT::Universal::Register&lt; reg &gt;::toggle</a> (const BIT &amp;bit, const BITS &amp;...bits) noexcept</td></tr>
-<tr class="memdesc:ga21234920d6d580d8eec6f37c4c7bfd24"><td class="mdescLeft">&#160;</td><td class="mdescRight">toggles the given bits via a logial xor in the register <br/>
- equivalent to C register access -&gt; reg ^= value1 | value2 | ...  <a href="#ga21234920d6d580d8eec6f37c4c7bfd24">More...</a><br /></td></tr>
-<tr class="separator:ga21234920d6d580d8eec6f37c4c7bfd24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga24b4742136f0eb2c7592d68d2bf9b901"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </td></tr>
-<tr class="memitem:ga24b4742136f0eb2c7592d68d2bf9b901"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncs.html#ga24b4742136f0eb2c7592d68d2bf9b901">MT::Universal::Register&lt; reg &gt;::override</a> (const BIT &amp;bit, const BITS &amp;...bits) noexcept</td></tr>
-<tr class="memdesc:ga24b4742136f0eb2c7592d68d2bf9b901"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the given bits in the register and overrides the leftover bits with zeros <br/>
- equivalent to C register access -&gt; reg = value1 | value2 | ~...  <a href="#ga24b4742136f0eb2c7592d68d2bf9b901">More...</a><br /></td></tr>
-<tr class="separator:ga24b4742136f0eb2c7592d68d2bf9b901"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8fba4c59f983601c5770a4a633bc0f3f"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </td></tr>
-<tr class="memitem:ga8fba4c59f983601c5770a4a633bc0f3f"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncs.html#ga8fba4c59f983601c5770a4a633bc0f3f">MT::Universal::Register&lt; reg &gt;::compare</a> (const BIT &amp;bit, const BITS &amp;...bits) noexcept</td></tr>
-<tr class="memdesc:ga8fba4c59f983601c5770a4a633bc0f3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">compares the given bits with the bits in the register and returns true if there is a match <br/>
- equivalent to C register access -&gt; return (*reg &amp; (value1 | ...));  <a href="#ga8fba4c59f983601c5770a4a633bc0f3f">More...</a><br /></td></tr>
-<tr class="separator:ga8fba4c59f983601c5770a4a633bc0f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga690cc8d9e4c3af160d3c12497a55f954"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncs.html#ga690cc8d9e4c3af160d3c12497a55f954">MT::Universal::Interrupt::Interrupt&lt; ENUM, VECTOR &gt;::Interrupt</a> (IntHandlers&lt; ENUM, VECTOR &gt;...handler) noexcept</td></tr>
+<tr class="memdesc:ga690cc8d9e4c3af160d3c12497a55f954"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor of the interrupt  <a href="#ga690cc8d9e4c3af160d3c12497a55f954">More...</a><br /></td></tr>
+<tr class="separator:ga690cc8d9e4c3af160d3c12497a55f954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaa3cd37e22080cb2092e2489051a587a"><td class="memItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncs.html#gaaa3cd37e22080cb2092e2489051a587a">MT::Universal::Interrupt::Interrupt&lt; ENUM, VECTOR &gt;::get_index</a> (const ENUM p) const noexcept</td></tr>
+<tr class="memdesc:gaaa3cd37e22080cb2092e2489051a587a"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the index to given enum  <a href="#gaaa3cd37e22080cb2092e2489051a587a">More...</a><br /></td></tr>
+<tr class="separator:gaaa3cd37e22080cb2092e2489051a587a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f85f4bf600d3b93429ab737d496a149"><td class="memTemplParams" colspan="2">template&lt;typename ENUM , typename... FUNC&gt; </td></tr>
+<tr class="memitem:ga5f85f4bf600d3b93429ab737d496a149"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncs.html#ga5f85f4bf600d3b93429ab737d496a149">MT::Universal::Interrupt::makeInterrupt</a> (IntHandlers&lt; ENUM, FUNC &gt;...t) noexcept</td></tr>
+<tr class="memdesc:ga5f85f4bf600d3b93429ab737d496a149"><td class="mdescLeft">&#160;</td><td class="mdescRight">maker function for a complete callback registration  <a href="group__groupFuncs.html#ga5f85f4bf600d3b93429ab737d496a149">More...</a><br /></td></tr>
+<tr class="separator:ga5f85f4bf600d3b93429ab737d496a149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3c1ca22bbd1f50e255b93b3da4c295de"><td class="memTemplParams" colspan="2">template&lt;typename ENUM , typename FUNC &gt; </td></tr>
+<tr class="memitem:ga3c1ca22bbd1f50e255b93b3da4c295de"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncs.html#ga3c1ca22bbd1f50e255b93b3da4c295de">MT::Universal::Interrupt::makeHandler</a> (ENUM p, FUNC t) noexcept</td></tr>
+<tr class="memdesc:ga3c1ca22bbd1f50e255b93b3da4c295de"><td class="mdescLeft">&#160;</td><td class="mdescRight">maker function for one callback entry  <a href="group__groupFuncs.html#ga3c1ca22bbd1f50e255b93b3da4c295de">More...</a><br /></td></tr>
+<tr class="separator:ga3c1ca22bbd1f50e255b93b3da4c295de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Functions in this module </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="gafae65432e8984b3cfcc03ee2e758f5f2"></a>
+<a class="anchor" id="gaaa3cd37e22080cb2092e2489051a587a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;volatile auto * reg&gt; </div>
-<div class="memtemplate">
-template&lt;typename BIT , typename  = typename std::enable_if&lt;enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </div>
+template&lt;typename ENUM , typename... VECTOR&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr void MT::Universal::Register&lt; reg &gt;::clear </td>
+          <td class="memname">constexpr std::size_t MT::Universal::Interrupt::Interrupt&lt; ENUM, VECTOR &gt;::get_index </td>
           <td>(</td>
-          <td class="paramtype">const BIT &amp;&#160;</td>
-          <td class="paramname"><em>bit</em>, </td>
+          <td class="paramtype">const ENUM&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;Universal/Interrupt.hpp&gt;</code></p>
+
+<p>returns the index to given enum </p>
+<p>Usage:</p><div class="fragment"><div class="line">std::get&lt;isr.get_index(VECTORS::VECTOR1)&gt;(isr.m_vectors)(); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>the enum for which the index should returned </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the index to the given enum </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga690cc8d9e4c3af160d3c12497a55f954"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ENUM , typename... VECTOR&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr MT::Universal::Interrupt::Interrupt&lt; ENUM, VECTOR &gt;::Interrupt </td>
+          <td>(</td>
+          <td class="paramtype">IntHandlers&lt; ENUM, VECTOR &gt;...&#160;</td>
+          <td class="paramname"><em>handler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;Universal/Interrupt.hpp&gt;</code></p>
+
+<p>constructor of the interrupt </p>
+<p>Usage: use maker functions -&gt; makeInterrupt (<a class="el" href="group__groupFuncs.html#ga3c1ca22bbd1f50e255b93b3da4c295de" title="maker function for one callback entry ">makeHandler()</a>); </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">handler</td><td>std::pair with the enum and the corresponding callback function (#IntHandlers) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3c1ca22bbd1f50e255b93b3da4c295de"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ENUM , typename FUNC &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto MT::Universal::Interrupt::makeHandler </td>
+          <td>(</td>
+          <td class="paramtype">ENUM&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const BITS &amp;...&#160;</td>
-          <td class="paramname"><em>bits</em>&#160;</td>
+          <td class="paramtype">FUNC&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -170,423 +198,59 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;enable_Enum_bi
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>clears the given bits via a logial or into the register <br/>
- equivalent to C register access -&gt; reg &amp;= ~value1 | ~value2 | ~... </p>
-<p>Usage:</p><div class="fragment"><div class="line"><a class="code" href="structMT_1_1Universal_1_1Register.html">MT::Universal::Register&lt;&amp;HWRegister&gt;</a> reg1;</div><div class="line">reg1.<a class="code" href="group__groupFuncs.html#ga1f428c01b6d733779634da722ec91db9">clear</a>(BITS8::B0 | BITS8::B1) </div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Vals</td><td>bits or bitmask that should be inverted and put into the defined register via logical and -&gt; template specialization for Enum types (<a class="el" href="group__groupEnums.html#ga401685f15ed6abc5922e69f031190dfc" title="Bitwise register access with a width of 8bits. ">BITS8</a>,<a class="el" href="group__groupEnums.html#gad3e11bdab2d931211b3c27d888d85016" title="Bitwise register access with a width of 16bits. ">BITS16</a>,<a class="el" href="group__groupEnums.html#ga231ea6adfc458e24ac249680d75a0c1c" title="Bitwise register access with a width of 32bits. ">BITS32</a>) </td></tr>
+<p><code>#include &lt;Universal/Interrupt.hpp&gt;</code></p>
+
+<p>maker function for one callback entry </p>
+<p>Usage: cascade with makeInterrupt like:</p><div class="fragment"><div class="line">constexpr <span class="keyword">auto</span> isr = <a class="code" href="group__groupFuncs.html#ga5f85f4bf600d3b93429ab737d496a149">makeInterrupt</a>(</div><div class="line">            <a class="code" href="group__groupFuncs.html#ga3c1ca22bbd1f50e255b93b3da4c295de">makeHandler</a>(</div><div class="line">                VECTORS::VECTOR1,</div><div class="line">                []() {</div><div class="line">                    toggle = <span class="keyword">false</span>;</div><div class="line">                })); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>the Enum </td></tr>
+    <tr><td class="paramname">t</td><td>the callback </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>one IntHandler (#IntHandlers) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga1f428c01b6d733779634da722ec91db9"></a>
+<a class="anchor" id="ga5f85f4bf600d3b93429ab737d496a149"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;volatile auto * reg&gt; </div>
-<div class="memtemplate">
-template&lt;typename... Vals&gt; </div>
+template&lt;typename ENUM , typename... FUNC&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr void MT::Universal::Register&lt; reg &gt;::clear </td>
+          <td class="memname">constexpr auto MT::Universal::Interrupt::makeInterrupt </td>
           <td>(</td>
-          <td class="paramtype">const Vals &amp;...&#160;</td>
-          <td class="paramname"><em>vals</em></td><td>)</td>
+          <td class="paramtype">IntHandlers&lt; ENUM, FUNC &gt;...&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>clears the given bits via a logial or into the register <br/>
- equivalent to C register access -&gt; reg &amp;= ~value1 | ~value2 | ~... </p>
-<p>Usage:</p><div class="fragment"><div class="line"><a class="code" href="structMT_1_1Universal_1_1Register.html">MT::Universal::Register&lt;&amp;HWRegister&gt;</a> reg1;</div><div class="line">reg1.<a class="code" href="group__groupFuncs.html#ga1f428c01b6d733779634da722ec91db9">clear</a>(0xFF)</div><div class="line">reg1.<a class="code" href="group__groupFuncs.html#ga1f428c01b6d733779634da722ec91db9">clear</a>((1UL &lt;&lt; 0UL)) </div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Vals</td><td>bits or bitmask that should be inverted and put into the defined register via logical and -&gt; template specialization for integral types </td></tr>
+<p><code>#include &lt;Universal/Interrupt.hpp&gt;</code></p>
+
+<p>maker function for a complete callback registration </p>
+<p>Usage:</p><div class="fragment"><div class="line">constexpr <span class="keyword">auto</span> isr = <a class="code" href="group__groupFuncs.html#ga5f85f4bf600d3b93429ab737d496a149">makeInterrupt</a>(</div><div class="line">         <a class="code" href="group__groupFuncs.html#ga3c1ca22bbd1f50e255b93b3da4c295de">makeHandler</a>(</div><div class="line">             VECTORS::VECTOR1,</div><div class="line">             []() {</div><div class="line">                 toggle = <span class="keyword">false</span>;</div><div class="line">             })); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">IntHandlers</td><td>-&gt; all entries to register (#IntHandlers) </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a class="anchor" id="ga8fba4c59f983601c5770a4a633bc0f3f"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;volatile auto * reg&gt; </div>
-<div class="memtemplate">
-template&lt;typename BIT , typename  = typename std::enable_if&lt;enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr bool MT::Universal::Register&lt; reg &gt;::compare </td>
-          <td>(</td>
-          <td class="paramtype">const BIT &amp;&#160;</td>
-          <td class="paramname"><em>bit</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const BITS &amp;...&#160;</td>
-          <td class="paramname"><em>bits</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>compares the given bits with the bits in the register and returns true if there is a match <br/>
- equivalent to C register access -&gt; return (*reg &amp; (value1 | ...)); </p>
-<p>Usage:</p><div class="fragment"><div class="line"><a class="code" href="structMT_1_1Universal_1_1Register.html">MT::Universal::Register&lt;&amp;HWRegister&gt;</a> reg1;</div><div class="line"><span class="keywordflow">if</span> (reg1.<a class="code" href="group__groupFuncs.html#gae6f6bfed0e473fa345d1403c88e93b2d">compare</a>(BITS8::B0 | BITS8::B1) == <span class="keyword">true</span>) doSomething();</div><div class="line"><span class="keywordflow">if</span> (reg1.<a class="code" href="group__groupFuncs.html#gae6f6bfed0e473fa345d1403c88e93b2d">compare</a>(BITS8::B6 | BITS8::B7) == <span class="keyword">false</span>) doSomeOtherThing(); </div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Vals</td><td>bits or bitmask that should be set into the defined register --&gt; template specialization for Enum types (<a class="el" href="group__groupEnums.html#ga401685f15ed6abc5922e69f031190dfc" title="Bitwise register access with a width of 8bits. ">BITS8</a>,<a class="el" href="group__groupEnums.html#gad3e11bdab2d931211b3c27d888d85016" title="Bitwise register access with a width of 16bits. ">BITS16</a>,<a class="el" href="group__groupEnums.html#ga231ea6adfc458e24ac249680d75a0c1c" title="Bitwise register access with a width of 32bits. ">BITS32</a>) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the bitpatterns match false if not </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gae6f6bfed0e473fa345d1403c88e93b2d"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;volatile auto * reg&gt; </div>
-<div class="memtemplate">
-template&lt;typename... Vals&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr bool MT::Universal::Register&lt; reg &gt;::compare </td>
-          <td>(</td>
-          <td class="paramtype">const Vals &amp;...&#160;</td>
-          <td class="paramname"><em>vals</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>compares the given bits with the bits in the register and returns true if there is a match <br/>
- equivalent to C register access -&gt; return (*reg &amp; (value1 | ...)); </p>
-<p>Usage:</p><div class="fragment"><div class="line"><a class="code" href="structMT_1_1Universal_1_1Register.html">MT::Universal::Register&lt;&amp;HWRegister&gt;</a> reg1;</div><div class="line"><span class="keywordflow">if</span> (reg1.<a class="code" href="group__groupFuncs.html#gae6f6bfed0e473fa345d1403c88e93b2d">compare</a>(0xFF) == <span class="keyword">true</span>) doSomething();</div><div class="line"><span class="keywordflow">if</span> (reg1.<a class="code" href="group__groupFuncs.html#gae6f6bfed0e473fa345d1403c88e93b2d">compare</a>((1UL &lt;&lt; 0UL)) == <span class="keyword">false</span>) doSomeOtherThing(); </div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Vals</td><td>bits or bitmask that should be set into the defined register -&gt; template specialization for integral types </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the bitpatterns match false if not </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gac0b2d175099449e40ff542a1d4e784c3"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;volatile auto * reg&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr auto MT::Universal::Register&lt; reg &gt;::get </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>returns the content of the underlyoing register <br/>
- equivalent to C register access -&gt; return *reg; </p>
-<p>Usage:</p><div class="fragment"><div class="line"><a class="code" href="structMT_1_1Universal_1_1Register.html">MT::Universal::Register&lt;&amp;HWRegister&gt;</a> reg1;</div><div class="line"><span class="keywordflow">if</span> (reg1.<a class="code" href="group__groupFuncs.html#gac0b2d175099449e40ff542a1d4e784c3">get</a>() == 0xFF00) doSomething();</div><div class="line"><span class="keywordflow">if</span> (reg1.<a class="code" href="group__groupFuncs.html#gac0b2d175099449e40ff542a1d4e784c3">get</a>() == 0x00FF) doSomeOtherThing(); </div></div><!-- fragment --> <dl class="section return"><dt>Returns</dt><dd>the content </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga24b4742136f0eb2c7592d68d2bf9b901"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;volatile auto * reg&gt; </div>
-<div class="memtemplate">
-template&lt;typename BIT , typename  = typename std::enable_if&lt;enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr void MT::Universal::Register&lt; reg &gt;::override </td>
-          <td>(</td>
-          <td class="paramtype">const BIT &amp;&#160;</td>
-          <td class="paramname"><em>bit</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const BITS &amp;...&#160;</td>
-          <td class="paramname"><em>bits</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>sets the given bits in the register and overrides the leftover bits with zeros <br/>
- equivalent to C register access -&gt; reg = value1 | value2 | ~... </p>
-<p>Usage:</p><div class="fragment"><div class="line"><a class="code" href="structMT_1_1Universal_1_1Register.html">MT::Universal::Register&lt;&amp;HWRegister&gt;</a> reg1;</div><div class="line">reg1.<a class="code" href="group__groupFuncs.html#ga97f08734dd527439f4741af51c6f7342">override</a>(BITS8::B0 | BITS8::B1)</div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Vals</td><td>bits or bitmask that should be set into the defined register -&gt; template specialization for Enum types (<a class="el" href="group__groupEnums.html#ga401685f15ed6abc5922e69f031190dfc" title="Bitwise register access with a width of 8bits. ">BITS8</a>,<a class="el" href="group__groupEnums.html#gad3e11bdab2d931211b3c27d888d85016" title="Bitwise register access with a width of 16bits. ">BITS16</a>,<a class="el" href="group__groupEnums.html#ga231ea6adfc458e24ac249680d75a0c1c" title="Bitwise register access with a width of 32bits. ">BITS32</a>) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga97f08734dd527439f4741af51c6f7342"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;volatile auto * reg&gt; </div>
-<div class="memtemplate">
-template&lt;typename... Vals&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr void MT::Universal::Register&lt; reg &gt;::override </td>
-          <td>(</td>
-          <td class="paramtype">const Vals &amp;...&#160;</td>
-          <td class="paramname"><em>vals</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>sets the given bits in the register and overrides the leftover bits with zeros <br/>
- equivalent to C register access -&gt; reg = value1 | value2 | ~... </p>
-<p>Usage:</p><div class="fragment"><div class="line"><a class="code" href="structMT_1_1Universal_1_1Register.html">MT::Universal::Register&lt;&amp;HWRegister&gt;</a> reg1;</div><div class="line">reg1.<a class="code" href="group__groupFuncs.html#ga97f08734dd527439f4741af51c6f7342">override</a>(0xFF)</div><div class="line">reg1.<a class="code" href="group__groupFuncs.html#ga97f08734dd527439f4741af51c6f7342">override</a>((1UL &lt;&lt; 0UL)) </div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Vals</td><td>bits or bitmask that should be set into the defined register -&gt; template specialization for integral types </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="gab869ad638e9f151cf6127174ee71ee35"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;volatile auto * reg&gt; </div>
-<div class="memtemplate">
-template&lt;typename BIT , typename  = typename std::enable_if&lt;enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr void MT::Universal::Register&lt; reg &gt;::set </td>
-          <td>(</td>
-          <td class="paramtype">const BIT &amp;&#160;</td>
-          <td class="paramname"><em>bit</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const BITS &amp;...&#160;</td>
-          <td class="paramname"><em>bits</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>sets the given bits via a logial or into the register <br/>
- equivalent to C register access -&gt; reg |= value1 | value2 | ... </p>
-<p>Usage:</p><div class="fragment"><div class="line"><a class="code" href="structMT_1_1Universal_1_1Register.html">MT::Universal::Register&lt;&amp;HWRegister&gt;</a> reg1;</div><div class="line">reg1.<a class="code" href="group__groupFuncs.html#ga2f7b02a463758ea708dc6b0a6a4187cf">set</a>(BITS8::B0 | BITS8::B1); </div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Vals</td><td>bits or bitmask that should be ored into the defined register -&gt; template specialization for Enum types (<a class="el" href="group__groupEnums.html#ga401685f15ed6abc5922e69f031190dfc" title="Bitwise register access with a width of 8bits. ">BITS8</a>,<a class="el" href="group__groupEnums.html#gad3e11bdab2d931211b3c27d888d85016" title="Bitwise register access with a width of 16bits. ">BITS16</a>,<a class="el" href="group__groupEnums.html#ga231ea6adfc458e24ac249680d75a0c1c" title="Bitwise register access with a width of 32bits. ">BITS32</a>) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga2f7b02a463758ea708dc6b0a6a4187cf"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;volatile auto * reg&gt; </div>
-<div class="memtemplate">
-template&lt;typename... Vals&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr void MT::Universal::Register&lt; reg &gt;::set </td>
-          <td>(</td>
-          <td class="paramtype">const Vals &amp;...&#160;</td>
-          <td class="paramname"><em>vals</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>sets the given bits via a logial or into the register <br/>
- equivalent to C register access -&gt; reg |= value1 | value2 | ... </p>
-<p>Usage:</p><div class="fragment"><div class="line"><a class="code" href="structMT_1_1Universal_1_1Register.html">MT::Universal::Register&lt;&amp;HWRegister&gt;</a> reg1;</div><div class="line">reg1.<a class="code" href="group__groupFuncs.html#ga2f7b02a463758ea708dc6b0a6a4187cf">set</a>(0xFF)</div><div class="line">reg1.<a class="code" href="group__groupFuncs.html#ga2f7b02a463758ea708dc6b0a6a4187cf">set</a>((1UL &lt;&lt; 0UL)) </div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Vals</td><td>bits or bitmask that should be ored into the defined register -&gt; template specialization for integral types </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga21234920d6d580d8eec6f37c4c7bfd24"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;volatile auto * reg&gt; </div>
-<div class="memtemplate">
-template&lt;typename BIT , typename  = typename std::enable_if&lt;enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr void MT::Universal::Register&lt; reg &gt;::toggle </td>
-          <td>(</td>
-          <td class="paramtype">const BIT &amp;&#160;</td>
-          <td class="paramname"><em>bit</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const BITS &amp;...&#160;</td>
-          <td class="paramname"><em>bits</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>toggles the given bits via a logial xor in the register <br/>
- equivalent to C register access -&gt; reg ^= value1 | value2 | ... </p>
-<p>Usage:</p><div class="fragment"><div class="line"><a class="code" href="structMT_1_1Universal_1_1Register.html">MT::Universal::Register&lt;&amp;HWRegister&gt;</a> reg1;</div><div class="line">reg1.<a class="code" href="group__groupFuncs.html#gab42a758aa2548fb9abba996087661e99">toggle</a>(BITS8::B0 | BITS8::B1)</div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Vals</td><td>bits or bitmask that should be toggeled and put into the defined register -&gt; template specialization for Enum types (<a class="el" href="group__groupEnums.html#ga401685f15ed6abc5922e69f031190dfc" title="Bitwise register access with a width of 8bits. ">BITS8</a>,<a class="el" href="group__groupEnums.html#gad3e11bdab2d931211b3c27d888d85016" title="Bitwise register access with a width of 16bits. ">BITS16</a>,<a class="el" href="group__groupEnums.html#ga231ea6adfc458e24ac249680d75a0c1c" title="Bitwise register access with a width of 32bits. ">BITS32</a>) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="gab42a758aa2548fb9abba996087661e99"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;volatile auto * reg&gt; </div>
-<div class="memtemplate">
-template&lt;typename... Vals&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr void MT::Universal::Register&lt; reg &gt;::toggle </td>
-          <td>(</td>
-          <td class="paramtype">const Vals &amp;...&#160;</td>
-          <td class="paramname"><em>vals</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>toggles the given bits via a logial xor in the register <br/>
- equivalent to C register access -&gt; reg ^= value1 | value2 | ... </p>
-<p>Usage:</p><div class="fragment"><div class="line"><a class="code" href="structMT_1_1Universal_1_1Register.html">MT::Universal::Register&lt;&amp;HWRegister&gt;</a> reg1;</div><div class="line">reg1.<a class="code" href="group__groupFuncs.html#gab42a758aa2548fb9abba996087661e99">toggle</a>(0xFF)</div><div class="line">reg1.<a class="code" href="group__groupFuncs.html#gab42a758aa2548fb9abba996087661e99">toggle</a>((1UL &lt;&lt; 0UL)) </div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Vals</td><td>bits or bitmask that should be toggeled and put into the defined register -&gt; template specialization for integral types </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>the copile time objects containing all registered callbacks </dd></dl>
 
 </div>
 </div>
@@ -595,7 +259,7 @@ template&lt;typename... Vals&gt; </div>
 <!-- Generated by DoxyPress 1.4.0 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fr Okt 16 2020 14:30:23 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Fr Okt 16 2020 16:23:56 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

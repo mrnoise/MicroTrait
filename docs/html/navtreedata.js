@@ -3,24 +3,35 @@ var NAVTREE =
   [ "MicroTrait C++ Microcontroller Library", "index.html", [
     [ "MicroTrait", "md_README.html", null ],
     [ "Modules", "modules.html", [
-      [ "Universal Register Access", "group__groupUniversalReg.html", [
-        [ "Functions", "group__groupFuncs.html", [
-          [ "clear", "group__groupFuncs.html#gafae65432e8984b3cfcc03ee2e758f5f2", null ],
-          [ "clear", "group__groupFuncs.html#ga1f428c01b6d733779634da722ec91db9", null ],
-          [ "compare", "group__groupFuncs.html#ga8fba4c59f983601c5770a4a633bc0f3f", null ],
-          [ "compare", "group__groupFuncs.html#gae6f6bfed0e473fa345d1403c88e93b2d", null ],
-          [ "get", "group__groupFuncs.html#gac0b2d175099449e40ff542a1d4e784c3", null ],
-          [ "override", "group__groupFuncs.html#ga24b4742136f0eb2c7592d68d2bf9b901", null ],
-          [ "override", "group__groupFuncs.html#ga97f08734dd527439f4741af51c6f7342", null ],
-          [ "set", "group__groupFuncs.html#gab869ad638e9f151cf6127174ee71ee35", null ],
-          [ "set", "group__groupFuncs.html#ga2f7b02a463758ea708dc6b0a6a4187cf", null ],
-          [ "toggle", "group__groupFuncs.html#ga21234920d6d580d8eec6f37c4c7bfd24", null ],
-          [ "toggle", "group__groupFuncs.html#gab42a758aa2548fb9abba996087661e99", null ]
+      [ "Universal", "group__groupUniversal.html", [
+        [ "Interrupt", "group__groupInterrupt.html", [
+          [ "Enums", "group__groupEnumsInt.html", null ],
+          [ "Functions", "group__groupFuncsInt.html", [
+            [ "get_index", "group__groupFuncsInt.html#gaaa3cd37e22080cb2092e2489051a587a", null ],
+            [ "Interrupt", "group__groupFuncsInt.html#ga690cc8d9e4c3af160d3c12497a55f954", null ],
+            [ "makeHandler", "group__groupFuncsInt.html#ga3c1ca22bbd1f50e255b93b3da4c295de", null ],
+            [ "makeInterrupt", "group__groupFuncsInt.html#ga5f85f4bf600d3b93429ab737d496a149", null ]
+          ] ]
         ] ],
-        [ "Enums", "group__groupEnums.html", [
-          [ "BITS16", "group__groupEnums.html#gad3e11bdab2d931211b3c27d888d85016", null ],
-          [ "BITS32", "group__groupEnums.html#ga231ea6adfc458e24ac249680d75a0c1c", null ],
-          [ "BITS8", "group__groupEnums.html#ga401685f15ed6abc5922e69f031190dfc", null ]
+        [ "Register", "group__groupUniversalReg.html", [
+          [ "Enums", "group__groupEnumsReg.html", [
+            [ "BITS16", "group__groupEnumsReg.html#gad3e11bdab2d931211b3c27d888d85016", null ],
+            [ "BITS32", "group__groupEnumsReg.html#ga231ea6adfc458e24ac249680d75a0c1c", null ],
+            [ "BITS8", "group__groupEnumsReg.html#ga401685f15ed6abc5922e69f031190dfc", null ]
+          ] ],
+          [ "Functions", "group__groupFuncsReg.html", [
+            [ "clear", "group__groupFuncsReg.html#ga8975c4870327559cb71370ddb52686dd", null ],
+            [ "clear", "group__groupFuncsReg.html#ga1e40a47d06894d7e24a83505702e8307", null ],
+            [ "compare", "group__groupFuncsReg.html#gaef584f04d1dc4dcf4f5fec44f09e694e", null ],
+            [ "compare", "group__groupFuncsReg.html#ga835a74f5ad9d99284f4b41feb0d50f03", null ],
+            [ "get", "group__groupFuncsReg.html#gab21632a8d9cffeeb202794aec1c8be6d", null ],
+            [ "override", "group__groupFuncsReg.html#gac126957936c4d615c04bc1f957af54df", null ],
+            [ "override", "group__groupFuncsReg.html#gaee78d2a6507f7ea68ebe514cf4b5424e", null ],
+            [ "set", "group__groupFuncsReg.html#ga2a377beddc01f86b8fa9eb53408bf99d", null ],
+            [ "set", "group__groupFuncsReg.html#ga84ce0e5daa7bdf8ffc0df0cca4282b93", null ],
+            [ "toggle", "group__groupFuncsReg.html#gaaa934626b35d865df37d0a116eca5ae0", null ],
+            [ "toggle", "group__groupFuncsReg.html#gae50f5988947e98b93fd4b41ae4a691be", null ]
+          ] ]
         ] ]
       ] ]
     ] ],
@@ -88,24 +99,24 @@ var NAVTREE =
           [ "Universal", null, [
             [ "Interrupt", null, [
               [ "Interrupt", "structMT_1_1Universal_1_1Interrupt_1_1Interrupt.html", [
-                [ "Interrupt", "structMT_1_1Universal_1_1Interrupt_1_1Interrupt.html#a9c5df031de011c4df309d61d047858af", null ],
-                [ "get_index", "structMT_1_1Universal_1_1Interrupt_1_1Interrupt.html#a6e82c0a4495ea0048d508cde8001b4ba", null ],
-                [ "m_indexes", "structMT_1_1Universal_1_1Interrupt_1_1Interrupt.html#a3cef9f57971a9e765cc1c838cadfbb19", null ],
-                [ "m_vectors", "structMT_1_1Universal_1_1Interrupt_1_1Interrupt.html#a712c90866329e99eab5a09a7abe0a6d1", null ]
+                [ "Interrupt", "group__groupFuncsInt.html#ga690cc8d9e4c3af160d3c12497a55f954", null ],
+                [ "get_index", "group__groupFuncsInt.html#gaaa3cd37e22080cb2092e2489051a587a", null ],
+                [ "m_indexes", "structMT_1_1Universal_1_1Interrupt_1_1Interrupt.html#a643ca2e5b26af46987c5211509e886e3", null ],
+                [ "m_vectors", "structMT_1_1Universal_1_1Interrupt_1_1Interrupt.html#aa0bfff0b9835b9e3137fe34ac8303f57", null ]
               ] ]
             ] ],
             [ "Register", "structMT_1_1Universal_1_1Register.html", [
-              [ "clear", "group__groupFuncs.html#gafae65432e8984b3cfcc03ee2e758f5f2", null ],
-              [ "clear", "group__groupFuncs.html#ga1f428c01b6d733779634da722ec91db9", null ],
-              [ "compare", "group__groupFuncs.html#ga8fba4c59f983601c5770a4a633bc0f3f", null ],
-              [ "compare", "group__groupFuncs.html#gae6f6bfed0e473fa345d1403c88e93b2d", null ],
-              [ "get", "group__groupFuncs.html#gac0b2d175099449e40ff542a1d4e784c3", null ],
-              [ "override", "group__groupFuncs.html#ga24b4742136f0eb2c7592d68d2bf9b901", null ],
-              [ "override", "group__groupFuncs.html#ga97f08734dd527439f4741af51c6f7342", null ],
-              [ "set", "group__groupFuncs.html#gab869ad638e9f151cf6127174ee71ee35", null ],
-              [ "set", "group__groupFuncs.html#ga2f7b02a463758ea708dc6b0a6a4187cf", null ],
-              [ "toggle", "group__groupFuncs.html#ga21234920d6d580d8eec6f37c4c7bfd24", null ],
-              [ "toggle", "group__groupFuncs.html#gab42a758aa2548fb9abba996087661e99", null ]
+              [ "clear", "group__groupFuncsReg.html#ga8975c4870327559cb71370ddb52686dd", null ],
+              [ "clear", "group__groupFuncsReg.html#ga1e40a47d06894d7e24a83505702e8307", null ],
+              [ "compare", "group__groupFuncsReg.html#gaef584f04d1dc4dcf4f5fec44f09e694e", null ],
+              [ "compare", "group__groupFuncsReg.html#ga835a74f5ad9d99284f4b41feb0d50f03", null ],
+              [ "get", "group__groupFuncsReg.html#gab21632a8d9cffeeb202794aec1c8be6d", null ],
+              [ "override", "group__groupFuncsReg.html#gac126957936c4d615c04bc1f957af54df", null ],
+              [ "override", "group__groupFuncsReg.html#gaee78d2a6507f7ea68ebe514cf4b5424e", null ],
+              [ "set", "group__groupFuncsReg.html#ga2a377beddc01f86b8fa9eb53408bf99d", null ],
+              [ "set", "group__groupFuncsReg.html#ga84ce0e5daa7bdf8ffc0df0cca4282b93", null ],
+              [ "toggle", "group__groupFuncsReg.html#gaaa934626b35d865df37d0a116eca5ae0", null ],
+              [ "toggle", "group__groupFuncsReg.html#gae50f5988947e98b93fd4b41ae4a691be", null ]
             ] ]
           ] ]
         ] ],
@@ -114,7 +125,8 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions_all.html", [
         [ "All", "functions_all.html", null ],
-        [ "Functions", "functions_func.html", null ]
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [

@@ -1,13 +1,18 @@
-/** @defgroup groupUniversalReg Universal Register Access
+/** @defgroup groupUniversal Universal
+*  non microcontroller specific code
+*/
+
+/** @defgroup groupUniversalReg Register
+ *  @ingroup groupUniversal
 *  a universal compile time register access
 */
 
-/** @defgroup groupFuncs Functions
+/** @defgroup groupFuncsReg Functions
 *  @ingroup groupUniversalReg
 *  Functions in this module
 */
 
-/** @defgroup groupEnums Enums
+/** @defgroup groupEnumsReg Enums
 *  @ingroup groupUniversalReg
 *  Enums in this module
 */
@@ -24,7 +29,7 @@
 
 
 /**
-* @ingroup groupEnums
+* @ingroup groupEnumsReg
 ****************************************************************
 * @brief Bitwise register access with a width of 8bits
 ****************************************************************
@@ -42,7 +47,7 @@ enum class BITS8 : uint8_t {
 ENABLE_ENUM_BITS(BITS8);
 
 /**
-* @ingroup groupEnums
+* @ingroup groupEnumsReg
 ****************************************************************
 * @brief Bitwise register access with a width of 16bits
 ****************************************************************
@@ -68,7 +73,7 @@ enum class BITS16 : uint16_t {
 ENABLE_ENUM_BITS(BITS16);
 
 /**
-* @ingroup groupEnums
+* @ingroup groupEnumsReg
 ****************************************************************
 * @brief Bitwise register access with a width of 32bits
 ****************************************************************
@@ -114,11 +119,11 @@ namespace MT {
 namespace Universal {
     using namespace MT::Details;
 
-    template<volatile auto *reg>
+    template<volatile auto *REG>
     struct Register {
 
         /**
-    	* @ingroup groupFuncs
+    	* @ingroup groupFuncsReg
     	****************************************************************
     	* @brief sets the given bits via a logial or into the register
     	* <br> equivalent to C register access -> reg |= value1 | value2 | ...
@@ -127,17 +132,17 @@ namespace Universal {
     	*  MT::Universal::Register<&HWRegister> reg1;
     	*  reg1.set(0xFF)
     	*  reg1.set((1UL << 0UL)) \endcode
-    	*@tparam Vals bits or bitmask that should be ored into the defined register -> template specialization for integral types
+    	*@tparam VALS bits or bitmask that should be ored into the defined register -> template specialization for integral types
     	****************************************************************
     	*/
-        template<typename... Vals>
-        constexpr void set(const Vals &... vals) noexcept {
-            static_assert(std::is_integral<Vals...>::value, "Integral (e.g. uint8_t, uint16_t,..) value required.");
-            *reg |= (vals | ...);
+        template<typename... VALS>
+        constexpr void set(const VALS &... vals) noexcept {
+            static_assert(std::is_integral<VALS...>::value, "Integral (e.g. uint8_t, uint16_t,..) value required.");
+            *REG |= (vals | ...);
         }
 
         /**
-		* @ingroup groupFuncs
+		* @ingroup groupFuncsReg
 		****************************************************************
 		* @brief clears the given bits via a logial or into the register
 		* <br> equivalent to C register access -> reg &= ~value1 | ~value2 | ~...
@@ -146,17 +151,17 @@ namespace Universal {
 		*  MT::Universal::Register<&HWRegister> reg1;
 		*  reg1.clear(0xFF)
 		*  reg1.clear((1UL << 0UL)) \endcode
-		*@tparam Vals bits or bitmask that should be inverted and put into the defined register via logical and -> template specialization for integral types
+		*@tparam VALS bits or bitmask that should be inverted and put into the defined register via logical and -> template specialization for integral types
 		****************************************************************
 		*/
-        template<typename... Vals>
-        constexpr void clear(const Vals &... vals) noexcept {
-            static_assert(std::is_integral<Vals...>::value, "Integral (e.g. uint8_t, uint16_t,..) value required.");
-            *reg &= ~(vals | ...);
+        template<typename... VALS>
+        constexpr void clear(const VALS &... vals) noexcept {
+            static_assert(std::is_integral<VALS...>::value, "Integral (e.g. uint8_t, uint16_t,..) value required.");
+            *REG &= ~(vals | ...);
         }
 
         /**
-		* @ingroup groupFuncs
+		* @ingroup groupFuncsReg
 		****************************************************************
 		* @brief toggles the given bits via a logial xor in the register
 		* <br> equivalent to C register access -> reg ^= value1 | value2 | ...
@@ -165,17 +170,17 @@ namespace Universal {
 		*  MT::Universal::Register<&HWRegister> reg1;
 		*  reg1.toggle(0xFF)
 		*  reg1.toggle((1UL << 0UL)) \endcode
-		*@tparam Vals bits or bitmask that should be toggeled and put into the defined register -> template specialization for integral types
+		*@tparam VALS bits or bitmask that should be toggeled and put into the defined register -> template specialization for integral types
 		****************************************************************
 		*/
-        template<typename... Vals>
-        constexpr void toggle(const Vals &... vals) noexcept {
-            static_assert(std::is_integral<Vals...>::value, "Integral (e.g. uint8_t, uint16_t,..) value required.");
-            *reg ^= (vals | ...);
+        template<typename... VALS>
+        constexpr void toggle(const VALS &... vals) noexcept {
+            static_assert(std::is_integral<VALS...>::value, "Integral (e.g. uint8_t, uint16_t,..) value required.");
+            *REG ^= (vals | ...);
         }
 
         /**
-		* @ingroup groupFuncs
+		* @ingroup groupFuncsReg
 		****************************************************************
 		* @brief sets the given bits in the register and overrides the leftover bits with zeros
 		* <br> equivalent to C register access -> reg = value1 | value2 | ~...
@@ -184,17 +189,17 @@ namespace Universal {
 		*  MT::Universal::Register<&HWRegister> reg1;
 		*  reg1.override(0xFF)
 		*  reg1.override((1UL << 0UL)) \endcode
-		*@tparam Vals bits or bitmask that should be set into the defined register -> template specialization for integral types
+		*@tparam VALS bits or bitmask that should be set into the defined register -> template specialization for integral types
 		****************************************************************
 		*/
-        template<typename... Vals>
-        constexpr void override(const Vals &... vals) noexcept {
-            static_assert(std::is_integral<Vals...>::value, "Integral (e.g. uint8_t, uint16_t,..) value required.");
-            *reg = (vals | ...);
+        template<typename... VALS>
+        constexpr void override(const VALS &... vals) noexcept {
+            static_assert(std::is_integral<VALS...>::value, "Integral (e.g. uint8_t, uint16_t,..) value required.");
+            *REG = (vals | ...);
         }
 
         /**
-		* @ingroup groupFuncs
+		* @ingroup groupFuncsReg
 		****************************************************************
 		* @brief compares the given bits with the bits in the register and returns true if there is a match
 		* <br> equivalent to C register access -> return (*reg & (value1 | ...));
@@ -203,21 +208,21 @@ namespace Universal {
 		*  MT::Universal::Register<&HWRegister> reg1;
 		*  if (reg1.compare(0xFF) == true) doSomething();
 		*  if (reg1.compare((1UL << 0UL)) == false) doSomeOtherThing(); \endcode
-		*@tparam Vals bits or bitmask that should be set into the defined register -> template specialization for integral types
+		*@tparam VALS bits or bitmask that should be set into the defined register -> template specialization for integral types
 		*@return true if the bitpatterns match false if not
 		****************************************************************
 		*/
-        template<typename... Vals>
-        [[nodiscard]] constexpr bool compare(const Vals &... vals) noexcept {
-            static_assert(std::is_integral<Vals...>::value, "Integral (e.g. uint8_t, uint16_t,..) value required.");
-            return (*reg & (vals | ...));
+        template<typename... VALS>
+        [[nodiscard]] constexpr bool compare(const VALS &... vals) noexcept {
+            static_assert(std::is_integral<VALS...>::value, "Integral (e.g. uint8_t, uint16_t,..) value required.");
+            return (*REG & (vals | ...));
         }
 
         /**
-		* @ingroup groupFuncs
+		* @ingroup groupFuncsReg
 		****************************************************************
 		* @brief returns the content of the underlyoing register
-		* <br> equivalent to C register access -> return *reg;
+		* <br> equivalent to C register access -> return *REG;
 		* @details
 		* Usage: \code {.cpp}
 		*  MT::Universal::Register<&HWRegister> reg1;
@@ -227,11 +232,11 @@ namespace Universal {
 		****************************************************************
 		*/
         [[nodiscard]] constexpr auto get() noexcept {
-            return *reg;
+            return *REG;
         }
 
         /**
-		* @ingroup groupFuncs
+		* @ingroup groupFuncsReg
 		****************************************************************
 		* @brief sets the given bits via a logial or into the register
 		* <br> equivalent to C register access -> reg |= value1 | value2 | ...
@@ -239,18 +244,18 @@ namespace Universal {
 		* Usage: \code {.cpp}
 		*  MT::Universal::Register<&HWRegister> reg1;
 		*  reg1.set(BITS8::B0 | BITS8::B1); \endcode
-		*@tparam Vals bits or bitmask that should be ored into the defined register -> template specialization for Enum types (#BITS8,#BITS16,BITS32)
+		*@tparam BITS bits or bitmask that should be ored into the defined register -> template specialization for Enum types (#BITS8,#BITS16,BITS32)
 		****************************************************************
 		*/
         template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
         constexpr void set(const BIT &bit, const BITS &... bits) noexcept {
             typedef typename std::underlying_type<BIT>::type underlying;
             const BIT                                        sum = orSum(bit, bits...);
-            *reg |= static_cast<underlying>(sum);
+            *REG |= static_cast<underlying>(sum);
         }
 
         /**
-		* @ingroup groupFuncs
+		* @ingroup groupFuncsReg
 		****************************************************************
 		* @brief clears the given bits via a logial or into the register
 		* <br> equivalent to C register access -> reg &= ~value1 | ~value2 | ~...
@@ -258,18 +263,18 @@ namespace Universal {
 		* Usage: \code {.cpp}
 		*  MT::Universal::Register<&HWRegister> reg1;
 		*  reg1.clear(BITS8::B0 | BITS8::B1) \endcode
-		*@tparam Vals bits or bitmask that should be inverted and put into the defined register via logical and -> template specialization for Enum types (#BITS8,#BITS16,BITS32)
+		*@tparam BITS bits or bitmask that should be inverted and put into the defined register via logical and -> template specialization for Enum types (#BITS8,#BITS16,BITS32)
 		****************************************************************
 		*/
         template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
         constexpr void clear(const BIT &bit, const BITS &... bits) noexcept {
             typedef typename std::underlying_type<BIT>::type underlying;
             const BIT                                        sum = orSum(bit, bits...);
-            *reg &= ~(static_cast<underlying>(sum));
+            *REG &= ~(static_cast<underlying>(sum));
         }
 
         /**
-		* @ingroup groupFuncs
+		* @ingroup groupFuncsReg
 		****************************************************************
 		* @brief toggles the given bits via a logial xor in the register
 		* <br> equivalent to C register access -> reg ^= value1 | value2 | ...
@@ -277,18 +282,18 @@ namespace Universal {
 		* Usage: \code {.cpp}
 		*  MT::Universal::Register<&HWRegister> reg1;
 		*  reg1.toggle(BITS8::B0 | BITS8::B1)\endcode
-		*@tparam Vals bits or bitmask that should be toggeled and put into the defined register -> template specialization for Enum types (#BITS8,#BITS16,BITS32)
+		*@tparam BITS bits or bitmask that should be toggeled and put into the defined register -> template specialization for Enum types (#BITS8,#BITS16,BITS32)
 		****************************************************************
 		*/
         template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
         constexpr void toggle(const BIT &bit, const BITS &... bits) noexcept {
             typedef typename std::underlying_type<BIT>::type underlying;
             const BIT                                        sum = orSum(bit, bits...);
-            *reg ^= (static_cast<underlying>(sum));
+            *REG ^= (static_cast<underlying>(sum));
         }
 
         /**
-		* @ingroup groupFuncs
+		* @ingroup groupFuncsReg
 		****************************************************************
 		* @brief sets the given bits in the register and overrides the leftover bits with zeros
 		* <br> equivalent to C register access -> reg = value1 | value2 | ~...
@@ -296,27 +301,27 @@ namespace Universal {
 		* Usage: \code {.cpp}
 		*  MT::Universal::Register<&HWRegister> reg1;
 		*  reg1.override(BITS8::B0 | BITS8::B1)\endcode
-		*@tparam Vals bits or bitmask that should be set into the defined register -> template specialization for Enum types (#BITS8,#BITS16,BITS32)
+		*@tparam BITS bits or bitmask that should be set into the defined register -> template specialization for Enum types (#BITS8,#BITS16,BITS32)
 		****************************************************************
 		*/
         template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
         constexpr void override(const BIT &bit, const BITS &... bits) noexcept {
             typedef typename std::underlying_type<BIT>::type underlying;
             const BIT                                        sum = orSum(bit, bits...);
-            *reg                                                 = static_cast<underlying>(sum);
+            *REG                                                 = static_cast<underlying>(sum);
         }
 
         /**
-		* @ingroup groupFuncs
+		* @ingroup groupFuncsReg
 		****************************************************************
 		* @brief compares the given bits with the bits in the register and returns true if there is a match
-		* <br> equivalent to C register access -> return (*reg & (value1 | ...));
+		* <br> equivalent to C register access -> return (*REG & (value1 | ...));
 		* @details
 		* Usage: \code {.cpp}
 		*  MT::Universal::Register<&HWRegister> reg1;
 		*  if (reg1.compare(BITS8::B0 | BITS8::B1) == true) doSomething();
 		*  if (reg1.compare(BITS8::B6 | BITS8::B7) == false) doSomeOtherThing(); \endcode
-		*@tparam Vals bits or bitmask that should be set into the defined register --> template specialization for Enum types (#BITS8,#BITS16,BITS32)
+		*@tparam BITS bits or bitmask that should be set into the defined register --> template specialization for Enum types (#BITS8,#BITS16,BITS32)
 		*@return true if the bitpatterns match false if not
 		****************************************************************
 		*/
@@ -324,7 +329,7 @@ namespace Universal {
         [[nodiscard]] constexpr bool compare(const BIT &bit, const BITS &... bits) noexcept {
             typedef typename std::underlying_type<BIT>::type underlying;
             const BIT                                        sum = orSum(bit, bits...);
-            return (*reg & static_cast<underlying>(sum));
+            return (*REG & static_cast<underlying>(sum));
         }
     };
 }// namespace Universal

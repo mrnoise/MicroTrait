@@ -1,3 +1,21 @@
+/** @defgroup groupUniversal Universal
+*  non microcontroller specific code
+*/
+
+/** @defgroup groupInterrupt Interrupt
+ *  @ingroup groupUniversal
+*  a universal compile time interrupt callback registration
+*/
+
+/** @defgroup groupFuncsInt Functions
+*  @ingroup groupInterrupt
+*  Functions in this module
+*/
+
+/** @defgroup groupEnumsInt Enums
+*  @ingroup groupInterrupt
+*  Enums in this module
+*/
 
 #ifndef MICROTRAIT_UNIVERSAL_INTERRUPT_HPP_
 #define MICROTRAIT_UNIVERSAL_INTERRUPT_HPP_
@@ -10,27 +28,37 @@
 namespace MT {
 namespace Universal {
     namespace Interrupt {
-        enum class VECTORS {
-            VECTOR1 = 0,
-            VECTOR2,
-            VECTOR3,
-            VECTOR4,
-            VECTOR5,
-            VECTOR6,
-            VECTOR7,
-            VECTOR8
-        };
 
         template<typename ENUM, typename FUNC>
-        using IntHandlers = std::pair<ENUM, FUNC>;
+        using IntHandlers = std::pair<ENUM, FUNC>; /**< this pair represents the ISR -> first the Enum which refers to a vector and second the function to call */
 
-        template<typename ENUM, typename... Vector>
+        template<typename ENUM, typename... VECTOR>
         struct Interrupt {
 
-            constexpr explicit Interrupt(IntHandlers<ENUM, Vector>... handler) noexcept
+            /**
+			* @ingroup groupFuncsInt
+			****************************************************************
+			* @brief constructor of the interrupt
+			* @details
+			* Usage: use maker functions -> makeInterrupt (makeHandler());
+			*@tparam handler std::pair with the enum and the corresponding callback function (std::pair<ENUM, FUNC>)
+			****************************************************************
+			*/
+            constexpr explicit Interrupt(IntHandlers<ENUM, VECTOR>... handler) noexcept
               : m_indexes{ handler.first... }, m_vectors{ std::move(handler.second)... } {
             }
 
+            /**
+			* @ingroup groupFuncsInt
+			****************************************************************
+			* @brief returns the index to given enum
+			* @details
+			* Usage: \code {.cpp}
+			*  std::get<isr.get_index(VECTORS::VECTOR1)>(isr.m_vectors)(); \endcode
+			*@param p the enum for which the index should returned
+			*@return the index to the given enum
+			****************************************************************
+			*/
             [[nodiscard]] constexpr std::size_t get_index(const ENUM p) const noexcept {
 
                 for (std::size_t idx = 0; idx < m_indexes.size(); ++idx) {
@@ -40,16 +68,49 @@ namespace Universal {
                 return std::numeric_limits<std::size_t>::max();
             }
 
-            std::array<ENUM, sizeof...(Vector)> m_indexes;
-            std::tuple<Vector...>               m_vectors;
+
+            std::array<ENUM, sizeof...(VECTOR)> m_indexes; /**< array of indexes -> Enums which refer to the callback */
+            std::tuple<VECTOR...>               m_vectors; /**< tuple  which holds the actual callback function */
         };
 
-
+        /**
+		* @ingroup groupFuncsInt
+		****************************************************************
+		* @brief maker function for a complete callback registration
+		* @details
+		* Usage: \code {.cpp}
+		*   constexpr auto isr = makeInterrupt(
+        *            makeHandler(
+        *                VECTORS::VECTOR1,
+        *                []() {
+        *                    toggle = false;
+        *                })); \endcode
+		*@param t -> all entries to register (std::pair<ENUM, FUNC>)
+		*@return the copile time objects containing all registered callbacks
+		****************************************************************
+		*/
         template<typename ENUM, typename... FUNC>
         [[nodiscard]] constexpr auto makeInterrupt(IntHandlers<ENUM, FUNC>... t) noexcept {
             return Interrupt<ENUM, FUNC...>{ std::move(t)... };
         }
 
+        /**
+		* @ingroup groupFuncsInt
+		****************************************************************
+		* @brief maker function for one callback entry
+		* @details
+		* Usage: cascade with makeInterrupt like: \code {.cpp}
+		*   constexpr auto isr = makeInterrupt(
+		   *            makeHandler(
+		   *                VECTORS::VECTOR1,
+		   *                []() {
+		   *                    toggle = false;
+		   *                })); \endcode
+		*@param p the Enum
+		*@param t the callback
+		*@return one IntHandler (std::pair<ENUM, FUNC>)
+		****************************************************************
+		*/
         template<typename ENUM, typename FUNC>
         [[nodiscard]] constexpr auto makeHandler(ENUM p, FUNC t) noexcept {
             return IntHandlers<ENUM, FUNC>{ p, std::move(t) };

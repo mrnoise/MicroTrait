@@ -288,6 +288,17 @@ namespace Tests {
             bool toggle = true;
             void runInterrupt() noexcept {
 
+                enum class VECTORS {
+                    VECTOR1 = 0,
+                    VECTOR2,
+                    VECTOR3,
+                    VECTOR4,
+                    VECTOR5,
+                    VECTOR6,
+                    VECTOR7,
+                    VECTOR8
+                };
+
                 using namespace MT::Universal::Interrupt;
 
                 constexpr auto isr = makeInterrupt(
