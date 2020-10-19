@@ -434,10 +434,10 @@
         ],
         "macro-expansion": false,
         "predefined-macros": [
-            ""
+            "MT_MSP430_USE_GPIO_COMPILE_TIME_CALLBACKS\nMT_MSP430_USE_WDT_COMPILE_TIME_CALLBACKS"
         ],
-        "search-includes": true,
-        "skip-function-macros": true
+        "search-includes": false,
+        "skip-function-macros": false
     },
     "project": {
         "project-brief": "C++ Microcontroller Library for easy register access without overhead",

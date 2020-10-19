@@ -9,6 +9,8 @@
 * @details
 * Usage: \code {.cpp}
 
+#include "MicroTrait/MT.hpp"
+
 	enum class VECTORS {
 			VECTOR1 = 0,
 			VECTOR2

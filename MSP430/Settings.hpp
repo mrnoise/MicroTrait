@@ -1,4 +1,23 @@
+/** @defgroup groupMSP430 MSP430
+* MSP430 specific code
+*/
 
+/** @defgroup groupMSP430Set Settings
+ *  @ingroup groupMSP430
+* @brief settings to refine usage of the MSP430 lib
+*
+* @details
+* Usage: \code {.cpp}
+
+
+\endcode
+*
+* @author Steffen Fuchs
+*<br> Email: admin@definefalsetrue.com
+*<br> Web: https://definefalsetrue.com
+*
+****************************************************************
+*/
 #ifndef MICROTRAIT_MSP430_SETTINGS_HPP_
 #define MICROTRAIT_MSP430_SETTINGS_HPP_
 

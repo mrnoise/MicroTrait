@@ -1,4 +1,6 @@
 <map id="MSP430" name="MSP430">
-<area shape="rect" id="node1" href="$group__groupInterrupt.html" title=" " alt="" coords="125,5,243,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,77,32"/>
+<area shape="rect" id="node1" href="$group__groupMSP430Gpio.html" title="functions for GPIO hardware access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="151,5,205,32"/>
+<area shape="rect" id="node2" href="$group__groupMSP430GpioInt.html" title="functions to register Interrupt callbacks at compile time or at runtime &#45;&gt; check settings..." alt="" coords="125,56,231,83"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,56,77,83"/>
+<area shape="rect" id="node4" href="$group__groupMSP430Set.html" title="settings to refine usage of the MSP430 lib " alt="" coords="143,107,213,133"/>
 </map>

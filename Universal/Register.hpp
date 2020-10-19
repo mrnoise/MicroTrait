@@ -8,6 +8,9 @@
 *
 * @details
 * Usage: \code {.cpp}
+
+#include "MicroTrait/MT.hpp"
+
     static volatile uint16_t      fakeReg = 0; // Please use your real hw register provided in the header of your vendor
 	MT::Universal::Register<&fakeReg> reg{};
 	reg.set(0xFFFF);
@@ -41,13 +44,11 @@
 #ifndef MICROTRAIT_UNIVERSAL_REGISTER_HPP_
 #define MICROTRAIT_UNIVERSAL_REGISTER_HPP_
 
-
-#include <MicroTrait/Misc/Details.hpp>
-#include <MicroTrait/Misc/EnumBits.hpp>
+#include "MicroTrait/Misc/Details.hpp"
+#include "MicroTrait/Misc/EnumBits.hpp"
 #include <stdint.h>
 #include <type_traits>
 #include <utility>
-
 
 /**
 * @ingroup groupEnumsReg

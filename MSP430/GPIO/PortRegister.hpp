@@ -1,3 +1,52 @@
+/** @defgroup groupMSP430 MSP430
+* MSP430 specific code
+*/
+
+/** @defgroup groupMSP430Gpio GPIO
+ *  @ingroup groupMSP430
+* @brief functions for GPIO hardware access for TIs MSP430 -> Ti Driverlib equivalent naming
+*
+* @details
+* Usage: \code {.cpp}
+
+#include "MicroTrait/MT.hpp"
+
+using namespace MT::MSP430;
+
+    GPIO::Port1 p1{};
+    GPIO::Port2 p2{};
+    p1.setOutputLowOnPin(GPIO_PIN::P0);
+    p1.setAsOutputPin(GPIO_PIN::P0);
+
+    p2.setAsInputPinWithPullUp(GPIO_PIN::P3);
+    p2.selectInterruptEdge(GPIO::INT_EDGE::HIGH_TO_LOW, GPIO_PIN::P3);
+    p2.enableInterrupt(GPIO_PIN::P3);
+    p2.clearInterrupt(GPIO_PIN::P3);
+
+    p1.setAsInputPinWithPullUp(GPIO_PIN::P4);
+    p1.selectInterruptEdge(GPIO::INT_EDGE::HIGH_TO_LOW, GPIO_PIN::P4);
+    p1.enableInterrupt(GPIO_PIN::P4);
+    p1.clearInterrupt(GPIO_PIN::P4);
+
+\endcode
+*
+* @author Steffen Fuchs
+*<br> Email: admin@definefalsetrue.com
+*<br> Web: https://definefalsetrue.com
+*
+****************************************************************
+*/
+
+
+/** @defgroup groupFuncsMSP430Gpio Functions
+*  @ingroup groupMSP430Gpio
+*  Functions in this module
+*/
+
+/** @defgroup groupEnumsMSP430Gpio Enums
+*  @ingroup groupMSP430Gpio
+*  Enums in this module
+*/
 
 #ifndef MICROTRAIT_MSP430_GPIO_PORTREGISTER_HPP_
 #define MICROTRAIT_MSP430_GPIO_PORTREGISTER_HPP_
@@ -16,6 +65,12 @@
 
 #define GPIO_REGISTER_WIDTH uint8_t
 
+/**
+* @ingroup groupEnumsMSP430Gpio
+****************************************************************
+* @brief MSP430 GPIO PINs as a enumeration
+****************************************************************
+*/
 enum class GPIO_PIN : GPIO_REGISTER_WIDTH {
     P0 = (1U << 0U),
     P1 = (1U << 1U),
@@ -29,20 +84,39 @@ enum class GPIO_PIN : GPIO_REGISTER_WIDTH {
 ENABLE_ENUM_BITS(GPIO_PIN);
 
 
-enum class INT_FLAG : uint8_t {
-    FALSE = 0,
-    TRUE
-};
-
 namespace MT {
 namespace MSP430 {
+
+    /**
+	* @ingroup groupEnumsMSP430Gpio
+	****************************************************************
+	* @brief MSP430 Interrupt Flag match as a enumeration
+	****************************************************************
+	*/
+    enum class INT_FLAG : uint8_t {
+        FALSE = 0,
+        TRUE
+    };
+
     namespace GPIO {
 
+        /**
+    	* @ingroup groupEnumsMSP430Gpio
+    	****************************************************************
+    	* @brief Interrupt edge selection
+    	****************************************************************
+    	*/
         enum class INT_EDGE : uint8_t {
             LOW_TO_HIGH = 0,
             HIGH_TO_LOW
         };
 
+        /**
+		* @ingroup groupEnumsMSP430Gpio
+		****************************************************************
+		* @brief GPIO module selection
+		****************************************************************
+		*/
         enum class MODULE_FUNC : uint8_t {
             GPIO = 0,
             PRIMARY,
@@ -50,6 +124,12 @@ namespace MSP430 {
             TERNARY,
         };
 
+        /**
+		* @ingroup groupEnumsMSP430Gpio
+		****************************************************************
+		* @brief GPIO pin state
+		****************************************************************
+		*/
         enum class PIN_STATE : uint8_t {
             LOW = 0,
             HIGH
@@ -73,6 +153,19 @@ namespace MSP430 {
                 MT::Universal::Register<P1SEL>   m_p1sel{};
 
               public:
+                /**
+				* @ingroup groupFuncsMSP430Gpio
+				****************************************************************
+				* @brief sets the given Pins as a output
+				* @details
+				* Usage: \code {.cpp}
+				* using namespace MT::MSP430;
+				*
+				*  GPIO::Port1 p1{};
+    			*  p1.setAsOutputPin(GPIO_PIN::P0 | GPIO_PIN::P1); \endcode
+				*@tparam BITS use enumeration (#GPIO_PIN)
+				****************************************************************
+				*/
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
                 constexpr void setAsOutputPin(const BIT &bit, const BITS &... bits) noexcept {
                     static_assert(std::is_same<GPIO_PIN, BIT>::value, "input must be GPIO_PIN enum");
@@ -83,6 +176,19 @@ namespace MSP430 {
                     m_dir.set(bit, bits...);
                 }
 
+                /**
+				* @ingroup groupFuncsMSP430Gpio
+				****************************************************************
+				* @brief sets the given Pins as a input
+				* @details
+				* Usage: \code {.cpp}
+				* using namespace MT::MSP430;
+				*
+				*  GPIO::Port1 p1{};
+				*  p1.setAsInputPin(GPIO_PIN::P0 | GPIO_PIN::P1); \endcode
+				*@tparam BITS use enumeration (#GPIO_PIN)
+				****************************************************************
+				*/
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
                 constexpr void setAsInputPin(const BIT &bit, const BITS &... bits) noexcept {
                     static_assert(std::is_same<GPIO_PIN, BIT>::value, "input must be GPIO_PIN enum");
@@ -94,6 +200,20 @@ namespace MSP430 {
                     m_pull.clear(bit, bits...);
                 }
 
+                /**
+				* @ingroup groupFuncsMSP430Gpio
+				****************************************************************
+				* @brief sets for the given Pins the module function as a output -> check device datasheet
+				* @details
+				* Usage: \code {.cpp}
+				* using namespace MT::MSP430;
+				*
+				*  GPIO::Port1 p1{};
+				*  p1.setAsPeripheralModuleFunctionOutputPin(GPIO::MODULE_FUNC::PRIMARY, GPIO_PIN::P0 | GPIO_PIN::P1); \endcode
+				*@param func the function for the pin  (#MODULE_FUNC)
+				*@tparam BITS use enumeration (#GPIO_PIN)
+				****************************************************************
+				*/
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
                 constexpr void setAsPeripheralModuleFunctionOutputPin(const MODULE_FUNC func, const BIT &bit, const BITS &... bits) noexcept {
                     static_assert(std::is_same<GPIO_PIN, BIT>::value, "input must be GPIO_PIN enum");
@@ -120,6 +240,20 @@ namespace MSP430 {
                     }
                 }
 
+                /**
+				* @ingroup groupFuncsMSP430Gpio
+				****************************************************************
+				* @brief sets for the given Pins the module function as a input -> check device datasheet
+				* @details
+				* Usage: \code {.cpp}
+				* using namespace MT::MSP430;
+				*
+				*  GPIO::Port1 p1{};
+				*  p1.setAsPeripheralModuleFunctionInputPin(GPIO::MODULE_FUNC::PRIMARY, GPIO_PIN::P0 | GPIO_PIN::P1); \endcode
+				*@param func the function for the pin  (#MODULE_FUNC)
+				*@tparam BITS use enumeration (#GPIO_PIN)
+				****************************************************************
+				*/
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
                 constexpr void setAsPeripheralModuleFunctionInputPin(const MODULE_FUNC func, const BIT &bit, const BITS &... bits) noexcept {
                     static_assert(std::is_same<GPIO_PIN, BIT>::value, "input must be GPIO_PIN enum");
@@ -146,24 +280,76 @@ namespace MSP430 {
                     }
                 }
 
+                /**
+				* @ingroup groupFuncsMSP430Gpio
+				****************************************************************
+				* @brief sets the given Pins high if configured as a output
+				* @details
+				* Usage: \code {.cpp}
+				* using namespace MT::MSP430;
+				*
+				*  GPIO::Port1 p1{};
+				*  p1.setOutputHighOnPin(GPIO_PIN::P0 | GPIO_PIN::P1); \endcode
+				*@tparam BITS use enumeration (#GPIO_PIN)
+				****************************************************************
+				*/
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
                 constexpr void setOutputHighOnPin(const BIT &bit, const BITS &... bits) noexcept {
                     static_assert(std::is_same<GPIO_PIN, BIT>::value, "input must be GPIO_PIN enum");
                     m_out.set(bit, bits...);
                 }
 
+                /**
+				* @ingroup groupFuncsMSP430Gpio
+				****************************************************************
+				* @brief sets the given Pins low if configured as a output
+				* @details
+				* Usage: \code {.cpp}
+				* using namespace MT::MSP430;
+				*
+				*  GPIO::Port1 p1{};
+				*  p1.setOutputLowOnPin(GPIO_PIN::P0 | GPIO_PIN::P1); \endcode
+				*@tparam BITS use enumeration (#GPIO_PIN)
+				****************************************************************
+				*/
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
                 constexpr void setOutputLowOnPin(const BIT &bit, const BITS &... bits) noexcept {
                     static_assert(std::is_same<GPIO_PIN, BIT>::value, "input must be GPIO_PIN enum");
                     m_out.clear(bit, bits...);
                 }
 
+                /**
+				* @ingroup groupFuncsMSP430Gpio
+				****************************************************************
+				* @brief toggles the given Pins if configured as a output
+				* @details
+				* Usage: \code {.cpp}
+				* using namespace MT::MSP430;
+				*
+				*  GPIO::Port1 p1{};
+				*  p1.toggleOutputOnPin(GPIO_PIN::P0 | GPIO_PIN::P1); \endcode
+				*@tparam BITS use enumeration (#GPIO_PIN)
+				****************************************************************
+				*/
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
                 constexpr void toggleOutputOnPin(const BIT &bit, const BITS &... bits) noexcept {
                     static_assert(std::is_same<GPIO_PIN, BIT>::value, "input must be GPIO_PIN enum");
                     m_out.toggle(bit, bits...);
                 }
 
+                /**
+				* @ingroup groupFuncsMSP430Gpio
+				****************************************************************
+				* @brief set the given Pins as a input with Pulldown enabled
+				* @details
+				* Usage: \code {.cpp}
+				* using namespace MT::MSP430;
+				*
+				*  GPIO::Port1 p1{};
+				*  p1.setAsInputPinWithPullDown(GPIO_PIN::P0 | GPIO_PIN::P1); \endcode
+				*@tparam BITS use enumeration (#GPIO_PIN)
+				****************************************************************
+				*/
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
                 constexpr void setAsInputPinWithPullDown(const BIT &bit, const BITS &... bits) noexcept {
                     static_assert(std::is_same<GPIO_PIN, BIT>::value, "input must be GPIO_PIN enum");
@@ -176,6 +362,19 @@ namespace MSP430 {
                     m_out.clear(bit, bits...);
                 }
 
+                /**
+				* @ingroup groupFuncsMSP430Gpio
+				****************************************************************
+				* @brief set the given Pins as a input with Pullup enabled
+				* @details
+				* Usage: \code {.cpp}
+				* using namespace MT::MSP430;
+				*
+				*  GPIO::Port1 p1{};
+				*  p1.setAsInputPinWithPullUp(GPIO_PIN::P0 | GPIO_PIN::P1); \endcode
+				*@tparam BITS use enumeration (#GPIO_PIN)
+				****************************************************************
+				*/
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
                 constexpr void setAsInputPinWithPullUp(const BIT &bit, const BITS &... bits) noexcept {
                     static_assert(std::is_same<GPIO_PIN, BIT>::value, "input must be GPIO_PIN enum");
@@ -188,6 +387,20 @@ namespace MSP430 {
                     m_out.set(bit, bits...);
                 }
 
+                /**
+				* @ingroup groupFuncsMSP430Gpio
+				****************************************************************
+				* @brief returns the Pin state (high or low) if configured as a input
+				* @details
+				* Usage: \code {.cpp}
+				* using namespace MT::MSP430;
+				*
+				*  GPIO::Port1 p1{};
+				*  if(p1.getInputPinValue(GPIO_PIN::P0) == GPIO::PIN_STATE::HIGH) doSomething(); \endcode
+				*@tparam BITS use enumeration (#GPIO_PIN)
+				*@return the Pin state (#PIN_STATE)
+				****************************************************************
+				*/
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
                 [[nodiscard]] constexpr PIN_STATE getInputPinValue(const BIT &bit, const BITS &... bits) noexcept {
                     static_assert(std::is_same<GPIO_PIN, BIT>::value, "input must be GPIO_PIN enum");
@@ -196,18 +409,58 @@ namespace MSP430 {
                         return PIN_STATE::LOW;
                 }
 
+                /**
+				* @ingroup groupFuncsMSP430Gpio
+				****************************************************************
+				* @brief enables for the given pins the Interrupt -> Port must be interrupt capable (normally Port1/2)
+				* @details
+				* Usage: \code {.cpp}
+				* using namespace MT::MSP430;
+				*
+				*  GPIO::Port1 p1{};
+				*  p1.enableInterrupt(GPIO_PIN::P0 | GPIO_PIN::P1); \endcode
+				*@tparam BITS use enumeration (#GPIO_PIN)
+				****************************************************************
+				*/
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
                 constexpr void enableInterrupt(const BIT &bit, const BITS &... bits) noexcept {
                     static_assert(std::is_same<GPIO_PIN, BIT>::value, "input must be GPIO_PIN enum");
                     m_intEn.set(bit, bits...);
                 }
 
+                /**
+				* @ingroup groupFuncsMSP430Gpio
+				****************************************************************
+				* @brief disables for the given pins the Interrupt -> Port must be interrupt capable (normally Port1/2)
+				* @details
+				* Usage: \code {.cpp}
+				* using namespace MT::MSP430;
+				*
+				*  GPIO::Port1 p1{};
+				*  p1.disableInterrupt(GPIO_PIN::P0 | GPIO_PIN::P1); \endcode
+				*@tparam BITS use enumeration (#GPIO_PIN)
+				****************************************************************
+				*/
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
                 constexpr void disableInterrupt(const BIT &bit, const BITS &... bits) noexcept {
                     static_assert(std::is_same<GPIO_PIN, BIT>::value, "input must be GPIO_PIN enum");
                     m_intEn.clear(bit, bits...);
                 }
 
+                /**
+				* @ingroup groupFuncsMSP430Gpio
+				****************************************************************
+				* @brief compares the given pins with the interrupt flags set in the hw register -> Port must be interrupt capable (normally Port1/2)
+				* @details
+				* Usage: \code {.cpp}
+				* using namespace MT::MSP430;
+				*
+				*  GPIO::Port1 p1{};
+				*  if(p1.getInterruptStatus(GPIO_PIN::P0) == INT_FLAG::TRUE) doSomething(); \endcode
+				*@tparam BITS use enumeration (#GPIO_PIN)
+				*@return if all the given bits are set or not(#INT_FLAG)
+				****************************************************************
+				*/
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
                 [[nodiscard]] constexpr INT_FLAG getInterruptStatus(const BIT &bit, const BITS &... bits) noexcept {
                     static_assert(std::is_same<GPIO_PIN, BIT>::value, "input must be GPIO_PIN enum");
@@ -216,12 +469,38 @@ namespace MSP430 {
                         return INT_FLAG::FALSE;
                 }
 
+                /**
+				* @ingroup groupFuncsMSP430Gpio
+				****************************************************************
+				* @brief clears the interrupt flags for the given Pins  -> Port must be interrupt capable (normally Port1/2)
+				* @details
+				* Usage: \code {.cpp}
+				* using namespace MT::MSP430;
+				*
+				*  GPIO::Port1 p1{};
+				*  p1.clearInterrupt(GPIO_PIN::P0 | GPIO_PIN::P1); \endcode
+				*@tparam BITS use enumeration (#GPIO_PIN)
+				****************************************************************
+				*/
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
                 constexpr void clearInterrupt(const BIT &bit, const BITS &... bits) noexcept {
                     static_assert(std::is_same<GPIO_PIN, BIT>::value, "input must be GPIO_PIN enum");
                     m_intFlg.clear(bit, bits...);
                 }
 
+                /**
+				* @ingroup groupFuncsMSP430Gpio
+				****************************************************************
+				* @brief selects the interrupt edge (high or low going edge) for the given Pins -> Port must be interrupt capable (normally Port1/2)
+				* @details
+				* Usage: \code {.cpp}
+				* using namespace MT::MSP430;
+				*
+				*  GPIO::Port1 p1{};
+				*  p1.selectInterruptEdge(GPIO::INT_EDGE::HIGH_TO_LOW, GPIO_PIN::P0 | GPIO_PIN::P1);  \endcode
+				*@tparam BITS use enumeration (#GPIO_PIN)
+				****************************************************************
+				*/
                 template<typename BIT, typename = typename std::enable_if<enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
                 constexpr void selectInterruptEdge(const INT_EDGE edge, const BIT &bit, const BITS &... bits) noexcept {
                     static_assert(std::is_same<GPIO_PIN, BIT>::value, "input must be GPIO_PIN enum");

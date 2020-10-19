@@ -3,6 +3,57 @@ var NAVTREE =
   [ "MicroTrait C++ Microcontroller Library", "index.html", [
     [ "MicroTrait", "md_README.html", null ],
     [ "Modules", "modules.html", [
+      [ "MSP430", "group__groupMSP430.html", [
+        [ "GPIO", "group__groupMSP430Gpio.html", [
+          [ "Enums", "group__groupEnumsMSP430Gpio.html", [
+            [ "GPIO_PIN", "group__groupEnumsMSP430Gpio.html#ga38a2eccf0fc9baaf48bb50da3066134c", null ],
+            [ "INT_EDGE", "group__groupEnumsMSP430Gpio.html#ga4ca73a5b682c09ead2038ed3a5120202", null ],
+            [ "INT_FLAG", "group__groupEnumsMSP430Gpio.html#ga051dc8084f6acc078da8e77114811da0", null ],
+            [ "MODULE_FUNC", "group__groupEnumsMSP430Gpio.html#ga0846e47124273392e8f0a106f7e632af", null ],
+            [ "PIN_STATE", "group__groupEnumsMSP430Gpio.html#gae77085eb34d7dc121b863454dc191633", null ]
+          ] ],
+          [ "Functions", "group__groupFuncsMSP430Gpio.html", [
+            [ "clearInterrupt", "group__groupFuncsMSP430Gpio.html#ga2b3f70914035d012482dd7868964970d", null ],
+            [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#ga6081ec1d4826266878537d6f17002aa1", null ],
+            [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga7ff497469dcecb1543dfc8dea9c6d7d8", null ],
+            [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#ga39d7dfca3d951783a99a324d2db5ce98", null ],
+            [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga45c46b5428d63ce14a8c77b70f3e23eb", null ],
+            [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#ga1aede0078274977a43d8e07d751e1fd9", null ],
+            [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#gae655a13760c53990590dcac9a944206e", null ],
+            [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#gae0ddd1eaf216b18631a6174a0c7f2cd7", null ],
+            [ "setAsInputPinWithPullUp", "group__groupFuncsMSP430Gpio.html#gab66cf5451af99e396af89d9d0f4bcfea", null ],
+            [ "setAsOutputPin", "group__groupFuncsMSP430Gpio.html#gad911a5577b2ba230666bbb297cd5544d", null ],
+            [ "setAsPeripheralModuleFunctionInputPin", "group__groupFuncsMSP430Gpio.html#ga7b8fbe4c41dedb70255176f4299023fa", null ],
+            [ "setAsPeripheralModuleFunctionOutputPin", "group__groupFuncsMSP430Gpio.html#gaca072f1523fb6e544ba068f07365ec0b", null ],
+            [ "setOutputHighOnPin", "group__groupFuncsMSP430Gpio.html#ga0bdd306ce172b848dd692b3b3bf9fda7", null ],
+            [ "setOutputLowOnPin", "group__groupFuncsMSP430Gpio.html#ga9526906127c157372709443b8a2e8458", null ],
+            [ "toggleOutputOnPin", "group__groupFuncsMSP430Gpio.html#gaf673f9ff7ead9b73a0cb9671552a974d", null ]
+          ] ]
+        ] ],
+        [ "GPIO Interrupt", "group__groupMSP430GpioInt.html", [
+          [ "Enums", "group__groupEnumsMSP430GpioInt.html", [
+            [ "PORTS", "group__groupEnumsMSP430GpioInt.html#ga659f33ee9e814354726f18091c14e7f0", null ]
+          ] ],
+          [ "Functions", "group__groupFuncsMSP430GpioInt.html", [
+            [ "makeInterrupt", "group__groupFuncsMSP430GpioInt.html#gaeac9ecb78c96c309169d1036215429b5", null ]
+          ] ]
+        ] ],
+        [ "Settings", "group__groupMSP430Set.html", null ]
+      ] ],
+      [ "Misc", "group__groupMisc.html", [
+        [ "Enumeration as Bits", "group__groupEnumBits.html", [
+          [ "Enums", "group__groupEnumsEnumBits.html", null ],
+          [ "Functions", "group__groupFuncsEnumBits.html", [
+            [ "operator&", "group__groupFuncsEnumBits.html#ga1c56de710c9fc52b5bdccd19c1824aa3", null ],
+            [ "operator&=", "group__groupFuncsEnumBits.html#gada3705a3783d7b9df4ac496a6dba45ab", null ],
+            [ "operator^", "group__groupFuncsEnumBits.html#ga5afe4be1a94726c61190a8c1f4c17ff3", null ],
+            [ "operator^=", "group__groupFuncsEnumBits.html#gad56193c6f59fb4deb8d15d14010beb1c", null ],
+            [ "operator|", "group__groupFuncsEnumBits.html#ga197a2e246e231912fb8a10e17296b26f", null ],
+            [ "operator|=", "group__groupFuncsEnumBits.html#gaf439df5199cd176c7336d7f0ab13546d", null ],
+            [ "operator~", "group__groupFuncsEnumBits.html#ga4b6536f08210fe6644e68a88fe99f47f", null ]
+          ] ]
+        ] ]
+      ] ],
       [ "Universal", "group__groupUniversal.html", [
         [ "Interrupt", "group__groupInterrupt.html", [
           [ "Enums", "group__groupEnumsInt.html", null ],
@@ -10,7 +61,9 @@ var NAVTREE =
             [ "get_index", "group__groupFuncsInt.html#gaaa3cd37e22080cb2092e2489051a587a", null ],
             [ "Interrupt", "group__groupFuncsInt.html#ga690cc8d9e4c3af160d3c12497a55f954", null ],
             [ "makeHandler", "group__groupFuncsInt.html#ga3c1ca22bbd1f50e255b93b3da4c295de", null ],
-            [ "makeInterrupt", "group__groupFuncsInt.html#ga5f85f4bf600d3b93429ab737d496a149", null ]
+            [ "makeHandler", "group__groupFuncsInt.html#gad369e4f2c1e3130e234b9b486e01f35a", null ],
+            [ "makeInterrupt", "group__groupFuncsInt.html#ga5f85f4bf600d3b93429ab737d496a149", null ],
+            [ "registerCallback", "group__groupFuncsInt.html#gaf994a26398b10f919936c7613a37810d", null ]
           ] ]
         ] ],
         [ "Register", "group__groupUniversalReg.html", [
@@ -54,21 +107,21 @@ var NAVTREE =
                   [ "toggleOutputOnPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a87e1f68c5bd6739ef54a6d79d85e2399", null ]
                 ] ],
                 [ "PortWithInt", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html", [
-                  [ "clearInterrupt", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html#a2b3f70914035d012482dd7868964970d", null ],
-                  [ "disableInterrupt", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html#a6081ec1d4826266878537d6f17002aa1", null ],
-                  [ "enableInterrupt", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html#a7ff497469dcecb1543dfc8dea9c6d7d8", null ],
-                  [ "getInputPinValue", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html#a39d7dfca3d951783a99a324d2db5ce98", null ],
-                  [ "getInterruptStatus", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html#a45c46b5428d63ce14a8c77b70f3e23eb", null ],
-                  [ "selectInterruptEdge", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html#a1aede0078274977a43d8e07d751e1fd9", null ],
-                  [ "setAsInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html#ae655a13760c53990590dcac9a944206e", null ],
-                  [ "setAsInputPinWithPullDown", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html#ae0ddd1eaf216b18631a6174a0c7f2cd7", null ],
-                  [ "setAsInputPinWithPullUp", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html#ab66cf5451af99e396af89d9d0f4bcfea", null ],
-                  [ "setAsOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html#ad911a5577b2ba230666bbb297cd5544d", null ],
-                  [ "setAsPeripheralModuleFunctionInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html#a7b8fbe4c41dedb70255176f4299023fa", null ],
-                  [ "setAsPeripheralModuleFunctionOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html#aca072f1523fb6e544ba068f07365ec0b", null ],
-                  [ "setOutputHighOnPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html#a0bdd306ce172b848dd692b3b3bf9fda7", null ],
-                  [ "setOutputLowOnPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html#a9526906127c157372709443b8a2e8458", null ],
-                  [ "toggleOutputOnPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html#af673f9ff7ead9b73a0cb9671552a974d", null ]
+                  [ "clearInterrupt", "group__groupFuncsMSP430Gpio.html#ga2b3f70914035d012482dd7868964970d", null ],
+                  [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#ga6081ec1d4826266878537d6f17002aa1", null ],
+                  [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga7ff497469dcecb1543dfc8dea9c6d7d8", null ],
+                  [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#ga39d7dfca3d951783a99a324d2db5ce98", null ],
+                  [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga45c46b5428d63ce14a8c77b70f3e23eb", null ],
+                  [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#ga1aede0078274977a43d8e07d751e1fd9", null ],
+                  [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#gae655a13760c53990590dcac9a944206e", null ],
+                  [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#gae0ddd1eaf216b18631a6174a0c7f2cd7", null ],
+                  [ "setAsInputPinWithPullUp", "group__groupFuncsMSP430Gpio.html#gab66cf5451af99e396af89d9d0f4bcfea", null ],
+                  [ "setAsOutputPin", "group__groupFuncsMSP430Gpio.html#gad911a5577b2ba230666bbb297cd5544d", null ],
+                  [ "setAsPeripheralModuleFunctionInputPin", "group__groupFuncsMSP430Gpio.html#ga7b8fbe4c41dedb70255176f4299023fa", null ],
+                  [ "setAsPeripheralModuleFunctionOutputPin", "group__groupFuncsMSP430Gpio.html#gaca072f1523fb6e544ba068f07365ec0b", null ],
+                  [ "setOutputHighOnPin", "group__groupFuncsMSP430Gpio.html#ga0bdd306ce172b848dd692b3b3bf9fda7", null ],
+                  [ "setOutputLowOnPin", "group__groupFuncsMSP430Gpio.html#ga9526906127c157372709443b8a2e8458", null ],
+                  [ "toggleOutputOnPin", "group__groupFuncsMSP430Gpio.html#gaf673f9ff7ead9b73a0cb9671552a974d", null ]
                 ] ]
               ] ]
             ] ],
