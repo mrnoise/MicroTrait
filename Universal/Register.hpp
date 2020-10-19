@@ -4,8 +4,29 @@
 
 /** @defgroup groupUniversalReg Register
  *  @ingroup groupUniversal
-*  a universal compile time register access
+* @brief functions to get hardware register access without overhead
+*
+* @details
+* Usage: \code {.cpp}
+    static volatile uint16_t      fakeReg = 0; // Please use your real hw register provided in the header of your vendor
+	MT::Universal::Register<&fakeReg> reg{};
+	reg.set(0xFFFF);
+	reg.clear(0xFFFF);
+	reg.override(0xFFFF);
+
+	reg.set(BITS16::B0 | BITS16::B1);
+	reg.clear(BITS16::B0 | BITS16::B1);
+	reg.override(BITS16::B0 | BITS16::B1);
+
+\endcode
+*
+* @author Steffen Fuchs
+*<br> Email: admin@definefalsetrue.com
+*<br> Web: https://definefalsetrue.com
+*
+****************************************************************
 */
+
 
 /** @defgroup groupFuncsReg Functions
 *  @ingroup groupUniversalReg

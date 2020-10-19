@@ -4,7 +4,46 @@
 
 /** @defgroup groupInterrupt Interrupt
  *  @ingroup groupUniversal
-*  a universal compile time interrupt callback registration
+* @brief Functions to register callbacks for interrupt service routines at compile time
+*
+* @details
+* Usage: \code {.cpp}
+
+	enum class VECTORS {
+			VECTOR1 = 0,
+			VECTOR2
+		  };
+
+
+	using namespace MT::Universal;
+
+	constexpr auto isr = Interrupt::makeInterrupt(
+
+	Interrupt::makeHandler(
+		VECTOR1,
+		 []() {
+		   //put your interrupt code here
+		}),
+
+	Interrupt::makeHandler(
+	   VECTOR2,
+		[]() {
+		   //put your interrupt code here
+	}));
+
+
+	// put this into your interrupt vector 1
+	std::get<isr.get_index(VECTORS::VECTOR1)>(isr.m_vectors)();
+
+	// put this into your interrupt vector 2
+	std::get<isr.get_index(VECTORS::VECTOR2)>(isr.m_vectors)();
+\endcode
+*
+* @author Steffen Fuchs
+*<br> Email: admin@definefalsetrue.com
+*<br> Web: https://definefalsetrue.com
+*
+****************************************************************
 */
 
 /** @defgroup groupFuncsInt Functions
@@ -17,6 +56,7 @@
 *  Enums in this module
 */
 
+
 #ifndef MICROTRAIT_UNIVERSAL_INTERRUPT_HPP_
 #define MICROTRAIT_UNIVERSAL_INTERRUPT_HPP_
 
@@ -28,6 +68,7 @@
 namespace MT {
 namespace Universal {
     namespace Interrupt {
+
 
         template<typename ENUM, typename FUNC>
         using IntHandlers = std::pair<ENUM, FUNC>; /**< this pair represents the ISR -> first the Enum which refers to a vector and second the function to call */

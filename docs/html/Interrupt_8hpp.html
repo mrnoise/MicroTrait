@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="DoxyPress 1.4.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MicroTrait C++ Microcontroller Library: Interrupt</title>
+<title>MicroTrait C++ Microcontroller Library: Universal/Interrupt.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -40,9 +40,14 @@
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
-      <li class="current"><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -57,51 +62,59 @@
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('group__groupInterrupt.html','');});
+$(document).ready(function(){initNavTree('Interrupt_8hpp.html','');});
 </script>
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#groups">Modules</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Interrupt<div class="ingroups"><a class="el" href="group__groupUniversal.html">Universal</a></div></div>  </div>
+<div class="title">Interrupt.hpp File Reference<div class="ingroups"><a class="el" href="group__groupUniversal.html">Universal</a> &raquo; <a class="el" href="group__groupInterrupt.html">Interrupt</a></div></div>  </div>
   <div class="clear-floats"></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Functions to register callbacks for interrupt service routines at compile time.  
 <a href="#details">More...</a></p>
-<div class="dynheader">
-Collaboration diagram for Interrupt:</div>
-<div class="dyncontent">
-<center><table><tr><td><img src="group__groupInterrupt.png" border="0" alt="" usemap="#group____groupInterrupt"/>
-<map name="group____groupInterrupt" id="group____groupInterrupt">
-<area shape="rect"  href="group__groupEnumsInt.html" title=" " alt="" coords="253,5,316,32"/>
-<area shape="rect"  href="group__groupFuncsInt.html" title=" " alt="" coords="245,56,324,83"/>
-<area shape="rect"  title="Functions to register callbacks for interrupt service routines at compile time. " alt="" coords="128,31,197,57"/>
-<area shape="rect"  href="group__groupUniversal.html" title=" " alt="" coords="5,31,80,57"/>
-</map>
-</td></tr></table></center>
-</div>
+
+<p><a href="Interrupt_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:group__groupEnumsInt"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupEnumsInt.html">Enums</a></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMT_1_1Universal_1_1Interrupt_1_1Interrupt.html">MT::Universal::Interrupt::Interrupt&lt; ENUM, VECTOR &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:group__groupFuncsInt"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsInt.html">Functions</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a4e9b8b59b249347da2dfe28cb71c5ca5"><td class="memTemplParams" colspan="2">template&lt;typename ENUM , typename FUNC &gt; </td></tr>
+<tr class="memitem:a4e9b8b59b249347da2dfe28cb71c5ca5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>MT::Universal::Interrupt::IntHandlers</b> = std::pair&lt; ENUM, FUNC &gt;</td></tr>
+<tr class="separator:a4e9b8b59b249347da2dfe28cb71c5ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga5f85f4bf600d3b93429ab737d496a149"><td class="memTemplParams" colspan="2">template&lt;typename ENUM , typename... FUNC&gt; </td></tr>
+<tr class="memitem:ga5f85f4bf600d3b93429ab737d496a149"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsInt.html#ga5f85f4bf600d3b93429ab737d496a149">MT::Universal::Interrupt::makeInterrupt</a> (IntHandlers&lt; ENUM, FUNC &gt;...t) noexcept</td></tr>
+<tr class="memdesc:ga5f85f4bf600d3b93429ab737d496a149"><td class="mdescLeft">&#160;</td><td class="mdescRight">maker function for a complete callback registration  <a href="group__groupFuncsInt.html#ga5f85f4bf600d3b93429ab737d496a149">More...</a><br /></td></tr>
+<tr class="separator:ga5f85f4bf600d3b93429ab737d496a149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3c1ca22bbd1f50e255b93b3da4c295de"><td class="memTemplParams" colspan="2">template&lt;typename ENUM , typename FUNC &gt; </td></tr>
+<tr class="memitem:ga3c1ca22bbd1f50e255b93b3da4c295de"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsInt.html#ga3c1ca22bbd1f50e255b93b3da4c295de">MT::Universal::Interrupt::makeHandler</a> (ENUM p, FUNC t) noexcept</td></tr>
+<tr class="memdesc:ga3c1ca22bbd1f50e255b93b3da4c295de"><td class="mdescLeft">&#160;</td><td class="mdescRight">maker function for one callback entry  <a href="group__groupFuncsInt.html#ga3c1ca22bbd1f50e255b93b3da4c295de">More...</a><br /></td></tr>
+<tr class="separator:ga3c1ca22bbd1f50e255b93b3da4c295de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Functions to register callbacks for interrupt service routines at compile time. </p>
+<div class="textblock"><p>Functions to register callbacks for interrupt service routines at compile time. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">enum class</span> VECTORS {</div><div class="line">        VECTOR1 = 0,</div><div class="line">        VECTOR2</div><div class="line">      };</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="keyword">using namespace </span>MT::Universal;</div><div class="line"> </div><div class="line">constexpr <span class="keyword">auto</span> isr = <a class="code" href="group__groupFuncsInt.html#ga5f85f4bf600d3b93429ab737d496a149">Interrupt::makeInterrupt</a>(</div><div class="line"> </div><div class="line"><a class="code" href="group__groupFuncsInt.html#ga3c1ca22bbd1f50e255b93b3da4c295de">Interrupt::makeHandler</a>(</div><div class="line">    VECTOR1,</div><div class="line">     []() {</div><div class="line">       <span class="comment">//put your interrupt code here</span></div><div class="line">    }),</div><div class="line"> </div><div class="line"><a class="code" href="group__groupFuncsInt.html#ga3c1ca22bbd1f50e255b93b3da4c295de">Interrupt::makeHandler</a>(</div><div class="line">   VECTOR2,</div><div class="line">    []() {</div><div class="line">       <span class="comment">//put your interrupt code here</span></div><div class="line">}));</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="comment">// put this into your interrupt vector 1</span></div><div class="line">std::get&lt;isr.get_index(VECTORS::VECTOR1)&gt;(isr.m_vectors)();</div><div class="line"> </div><div class="line"><span class="comment">// put this into your interrupt vector 2</span></div><div class="line">std::get&lt;isr.get_index(VECTORS::VECTOR2)&gt;(isr.m_vectors)();</div></div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Steffen Fuchs <br/>
  Email: <a href="mailto:admin@definefalsetrue.com">admin@definefalsetrue.com</a> <br/>
  Web: <a href="https://definefalsetrue.com">https://definefalsetrue.com</a> </dd></dl>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- Generated by DoxyPress 1.4.0 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mo Okt 19 2020 09:26:15 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="navelem"><a class="el" href="dir_8a747bb3c4d720dc480715835e2d305c.html">Universal</a></li><li class="navelem"><a class="el" href="Interrupt_8hpp.html">Interrupt.hpp</a></li>
+    <li class="footer">Generated on Mo Okt 19 2020 09:14:07 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>
