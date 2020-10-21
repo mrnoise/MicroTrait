@@ -6,7 +6,7 @@ var NAVTREE =
       [ "MSP430", "group__groupMSP430.html", [
         [ "GPIO", "group__groupMSP430Gpio.html", [
           [ "Enums", "group__groupEnumsMSP430Gpio.html", [
-            [ "GPIO_PIN", "group__groupEnumsMSP430Gpio.html#ga38a2eccf0fc9baaf48bb50da3066134c", null ],
+            [ "PIN", "group__groupEnumsMSP430Gpio.html#ga9498a109dc820344a8c9ae35eaff2de1", null ],
             [ "INT_EDGE", "group__groupEnumsMSP430Gpio.html#ga4ca73a5b682c09ead2038ed3a5120202", null ],
             [ "INT_FLAG", "group__groupEnumsMSP430Gpio.html#ga051dc8084f6acc078da8e77114811da0", null ],
             [ "MODULE_FUNC", "group__groupEnumsMSP430Gpio.html#ga0846e47124273392e8f0a106f7e632af", null ],
@@ -38,19 +38,36 @@ var NAVTREE =
             [ "makeInterrupt", "group__groupFuncsMSP430GpioInt.html#gaeac9ecb78c96c309169d1036215429b5", null ]
           ] ]
         ] ],
+        [ "SFR", "group__groupMSP430Sfr.html", [
+          [ "Enums", "group__groupEnumsMSP430Sfr.html", [
+            [ "INT", "group__groupEnumsMSP430Sfr.html#gabfa179c7aea743f4b369b5242781fa5e", null ],
+            [ "NMI_EDGE", "group__groupEnumsMSP430Sfr.html#ga97b1da589340085a5cffe44121ba87e5", null ],
+            [ "RST_FUNC", "group__groupEnumsMSP430Sfr.html#gaf5ba968e328238eed9003c8b2331757e", null ],
+            [ "RST_RESISTOR", "group__groupEnumsMSP430Sfr.html#gad4f650715a2401a65096d4455016994e", null ]
+          ] ],
+          [ "Functions", "group__groupFuncsMSP430Sfr.html", [
+            [ "clearInterruptStatus", "group__groupFuncsMSP430Sfr.html#gaf628c7d2a7fabf782e8cf41131d8447d", null ],
+            [ "disableInterrupt", "group__groupFuncsMSP430Sfr.html#ga6aa4ac0a33b9ea50314022823249584c", null ],
+            [ "enableInterrupt", "group__groupFuncsMSP430Sfr.html#ga49cf87f702a24bc0ac1ffe8639b02821", null ],
+            [ "getInterruptStatus", "group__groupFuncsMSP430Sfr.html#ga6dcf90c755e55f5075ee1d3b0fc2d306", null ],
+            [ "setNMIEdge", "group__groupFuncsMSP430Sfr.html#ga6717cd4f678cce1bdc6e505331dcaa53", null ],
+            [ "setResetNMIPinFunction", "group__groupFuncsMSP430Sfr.html#gabce2ac33cdfa02bc215ab27693d7f8f8", null ],
+            [ "setResetPinPullResistor", "group__groupFuncsMSP430Sfr.html#ga095995edb9190d9c557506dafe3ad399", null ]
+          ] ]
+        ] ],
         [ "Settings", "group__groupMSP430Set.html", null ]
       ] ],
       [ "Misc", "group__groupMisc.html", [
         [ "Enumeration as Bits", "group__groupEnumBits.html", [
           [ "Enums", "group__groupEnumsEnumBits.html", null ],
           [ "Functions", "group__groupFuncsEnumBits.html", [
-            [ "operator&", "group__groupFuncsEnumBits.html#ga1c56de710c9fc52b5bdccd19c1824aa3", null ],
-            [ "operator&=", "group__groupFuncsEnumBits.html#gada3705a3783d7b9df4ac496a6dba45ab", null ],
-            [ "operator^", "group__groupFuncsEnumBits.html#ga5afe4be1a94726c61190a8c1f4c17ff3", null ],
-            [ "operator^=", "group__groupFuncsEnumBits.html#gad56193c6f59fb4deb8d15d14010beb1c", null ],
-            [ "operator|", "group__groupFuncsEnumBits.html#ga197a2e246e231912fb8a10e17296b26f", null ],
-            [ "operator|=", "group__groupFuncsEnumBits.html#gaf439df5199cd176c7336d7f0ab13546d", null ],
-            [ "operator~", "group__groupFuncsEnumBits.html#ga4b6536f08210fe6644e68a88fe99f47f", null ]
+            [ "operator&", "group__groupFuncsEnumBits.html#ga5532d3a8125cbe4f1d93062873bc6437", null ],
+            [ "operator&=", "group__groupFuncsEnumBits.html#ga4da0c7aee54f6545d1a818caf02d31da", null ],
+            [ "operator^", "group__groupFuncsEnumBits.html#ga9de590dcb0f38e53abb8b7af0dbb65f3", null ],
+            [ "operator^=", "group__groupFuncsEnumBits.html#ga37bfcda163195742607a47337c30892a", null ],
+            [ "operator|", "group__groupFuncsEnumBits.html#gac440b08874fc58a077c1e504cbf25bc4", null ],
+            [ "operator|=", "group__groupFuncsEnumBits.html#ga87a04c37405157bff5143e84e6266523", null ],
+            [ "operator~", "group__groupFuncsEnumBits.html#gae47d21a8ba2843c9323674c955b22fee", null ]
           ] ]
         ] ]
       ] ],
@@ -68,9 +85,9 @@ var NAVTREE =
         ] ],
         [ "Register", "group__groupUniversalReg.html", [
           [ "Enums", "group__groupEnumsReg.html", [
-            [ "BITS16", "group__groupEnumsReg.html#gad3e11bdab2d931211b3c27d888d85016", null ],
-            [ "BITS32", "group__groupEnumsReg.html#ga231ea6adfc458e24ac249680d75a0c1c", null ],
-            [ "BITS8", "group__groupEnumsReg.html#ga401685f15ed6abc5922e69f031190dfc", null ]
+            [ "BITS16", "group__groupEnumsReg.html#ga8779a21c592ffcc487f2b68d4d5aeff1", null ],
+            [ "BITS32", "group__groupEnumsReg.html#ga26a7b5f5b054dcfecb8251310332b90a", null ],
+            [ "BITS8", "group__groupEnumsReg.html#ga0a5451e09f44b4952fd8332b583c652d", null ]
           ] ],
           [ "Functions", "group__groupFuncsReg.html", [
             [ "clear", "group__groupFuncsReg.html#ga8975c4870327559cb71370ddb52686dd", null ],
@@ -137,17 +154,26 @@ var NAVTREE =
               ] ]
             ] ],
             [ "Sfr", "structMT_1_1MSP430_1_1Sfr.html", [
-              [ "NMI_EDGE", "structMT_1_1MSP430_1_1Sfr.html#a97b1da589340085a5cffe44121ba87e5", null ],
-              [ "RST_FUNC", "structMT_1_1MSP430_1_1Sfr.html#af5ba968e328238eed9003c8b2331757e", null ],
-              [ "RST_RESISTOR", "structMT_1_1MSP430_1_1Sfr.html#ad4f650715a2401a65096d4455016994e", null ],
-              [ "clearInterruptStatus", "structMT_1_1MSP430_1_1Sfr.html#af628c7d2a7fabf782e8cf41131d8447d", null ],
-              [ "disableInterrupt", "structMT_1_1MSP430_1_1Sfr.html#a6aa4ac0a33b9ea50314022823249584c", null ],
-              [ "enableInterrupt", "structMT_1_1MSP430_1_1Sfr.html#a49cf87f702a24bc0ac1ffe8639b02821", null ],
-              [ "getInterruptStatus", "structMT_1_1MSP430_1_1Sfr.html#a6dcf90c755e55f5075ee1d3b0fc2d306", null ],
-              [ "setNMIEdge", "structMT_1_1MSP430_1_1Sfr.html#a6717cd4f678cce1bdc6e505331dcaa53", null ],
-              [ "setResetNMIPinFunction", "structMT_1_1MSP430_1_1Sfr.html#abce2ac33cdfa02bc215ab27693d7f8f8", null ],
-              [ "setResetPinPullResistor", "structMT_1_1MSP430_1_1Sfr.html#a095995edb9190d9c557506dafe3ad399", null ]
+              [ "INT", "group__groupEnumsMSP430Sfr.html#gabfa179c7aea743f4b369b5242781fa5e", null ],
+              [ "NMI_EDGE", "group__groupEnumsMSP430Sfr.html#ga97b1da589340085a5cffe44121ba87e5", null ],
+              [ "RST_FUNC", "group__groupEnumsMSP430Sfr.html#gaf5ba968e328238eed9003c8b2331757e", null ],
+              [ "RST_RESISTOR", "group__groupEnumsMSP430Sfr.html#gad4f650715a2401a65096d4455016994e", null ],
+              [ "clearInterruptStatus", "group__groupFuncsMSP430Sfr.html#gaf628c7d2a7fabf782e8cf41131d8447d", null ],
+              [ "disableInterrupt", "group__groupFuncsMSP430Sfr.html#ga6aa4ac0a33b9ea50314022823249584c", null ],
+              [ "enableInterrupt", "group__groupFuncsMSP430Sfr.html#ga49cf87f702a24bc0ac1ffe8639b02821", null ],
+              [ "getInterruptStatus", "group__groupFuncsMSP430Sfr.html#ga6dcf90c755e55f5075ee1d3b0fc2d306", null ],
+              [ "setNMIEdge", "group__groupFuncsMSP430Sfr.html#ga6717cd4f678cce1bdc6e505331dcaa53", null ],
+              [ "setResetNMIPinFunction", "group__groupFuncsMSP430Sfr.html#gabce2ac33cdfa02bc215ab27693d7f8f8", null ],
+              [ "setResetPinPullResistor", "group__groupFuncsMSP430Sfr.html#ga095995edb9190d9c557506dafe3ad399", null ]
             ] ]
+          ] ],
+          [ "Misc", null, [
+            [ "enable_Enum_bits", "structMT_1_1Misc_1_1enable__Enum__bits.html", null ],
+            [ "enable_Enum_bits< BITS16 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS16_01_4.html", null ],
+            [ "enable_Enum_bits< BITS32 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS32_01_4.html", null ],
+            [ "enable_Enum_bits< BITS8 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS8_01_4.html", null ],
+            [ "enable_Enum_bits< GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01GPIO__PIN_01_4.html", null ],
+            [ "enable_Enum_bits< SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01SFR__INT_01_4.html", null ]
           ] ],
           [ "Universal", null, [
             [ "Interrupt", null, [
@@ -172,14 +198,15 @@ var NAVTREE =
               [ "toggle", "group__groupFuncsReg.html#gae50f5988947e98b93fd4b41ae4a691be", null ]
             ] ]
           ] ]
-        ] ],
-        [ "enable_Enum_bits", "structenable__Enum__bits.html", null ]
+        ] ]
       ] ],
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions_all.html", [
         [ "All", "functions_all.html", null ],
         [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Variables", "functions_vars.html", null ],
+        [ "Typedefs", "functions_type.html", null ],
+        [ "Enums", "functions_enum.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
