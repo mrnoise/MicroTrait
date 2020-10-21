@@ -21,8 +21,8 @@ constexpr auto isr = GPIO::Interrupt::makeInterrupt(
         GPIO::Interrupt::PORTS::PORT1,
         []() {
             GPIO::Port1 p1{};
-            p1.clearInterrupt(GPIO_PIN::P4);
-            p1.toggleOutputOnPin(GPIO_PIN::P0);
+            p1.clearInterrupt(GPIO::PIN::P4);
+            p1.toggleOutputOnPin(GPIO::PIN::P0);
         }),
 
     GPIO::Interrupt::makeHandler(
@@ -30,8 +30,8 @@ constexpr auto isr = GPIO::Interrupt::makeInterrupt(
         []() {
             GPIO::Port1 p1{};
             GPIO::Port2 p2{};
-            p2.clearInterrupt(GPIO_PIN::P3);
-            p1.toggleOutputOnPin(GPIO_PIN::P0);
+            p2.clearInterrupt(GPIO::PIN::P3);
+            p1.toggleOutputOnPin(GPIO::PIN::P0);
         }));
 
 
@@ -71,15 +71,15 @@ using namespace MT::MSP430;
 
     GPIO::Interrupt::registerCallback(GPIO::Interrupt::PORTS::PORT1, []() {
         GPIO::Port1 p1{};
-        p1.clearInterrupt(GPIO_PIN::P4);
-        p1.toggleOutputOnPin(GPIO_PIN::P0);
+        p1.clearInterrupt(GPIO::PIN::P4);
+        p1.toggleOutputOnPin(GPIO::PIN::P0);
     });
 
     GPIO::Interrupt::registerCallback(GPIO::Interrupt::PORTS::PORT2, []() {
         GPIO::Port1 p1{};
         GPIO::Port2 p2{};
-        p2.clearInterrupt(GPIO_PIN::P3);
-        p1.toggleOutputOnPin(GPIO_PIN::P0);
+        p2.clearInterrupt(GPIO::PIN::P3);
+        p1.toggleOutputOnPin(GPIO::PIN::P0);
     });
 
 #endif
@@ -154,8 +154,8 @@ namespace MSP430 {
 			*		[]() {
 			*			GPIO::Port1 p1{};
 			*			GPIO::Port2 p2{};
-			*			p2.clearInterrupt(GPIO_PIN::P3);
-			*			p1.toggleOutputOnPin(GPIO_PIN::P0);
+			*			p2.clearInterrupt(GPIO::PIN::P3);
+			*			p1.toggleOutputOnPin(GPIO::PIN::P0);
 			*		})); \endcode
 			*@param t -> all entries to register first the port than the callback
 			*@return the copile time objects containing all registered callbacks
@@ -178,8 +178,8 @@ namespace MSP430 {
 			*		[]() {
 			*			GPIO::Port1 p1{};
 			*			GPIO::Port2 p2{};
-			*			p2.clearInterrupt(GPIO_PIN::P3);
-			*			p1.toggleOutputOnPin(GPIO_PIN::P0);
+			*			p2.clearInterrupt(GPIO::PIN::P3);
+			*			p1.toggleOutputOnPin(GPIO::PIN::P0);
 			*		})); \endcode
 			*@param p the Enum
 			*@param t the callback
@@ -206,11 +206,11 @@ namespace MSP430 {
 			*
 			*	GPIO::Interrupt::registerCallback(GPIO::Interrupt::PORTS::PORT1, []() {
 			*		GPIO::Port1 p1{};
-			*		p1.clearInterrupt(GPIO_PIN::P4);
-			*		p1.toggleOutputOnPin(GPIO_PIN::P0);
+			*		p1.clearInterrupt(GPIO::PIN::P4);
+			*		p1.toggleOutputOnPin(GPIO::PIN::P0);
 			*	});
 			* \endcode
-			*@param ports the port for which the callback should be registered (#PORTS)
+			*@param ports the port for which the callback should be registered (GPIO::Interrupt::PORTS)
 			*@param callback pointer to the callback function
 			****************************************************************
 			*/

@@ -12,6 +12,8 @@ namespace Tests {
     namespace Universal {
         namespace Internal {
 
+            using namespace MT::Misc;
+
             void runRegisterU8() noexcept {
 
                 static volatile uint8_t       val = 0;

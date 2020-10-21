@@ -1,6 +1,7 @@
 #include "MicroTrait/MSP430/WDT/WdtAInterrupt.hpp"
 
 #ifdef MT_USE_MSP430_LIB
+#ifdef __MSP430_HAS_WDT_A__
 #ifndef MT_MSP430_USE_WDT_COMPILE_TIME_CALLBACKS
 
 namespace MT {
@@ -27,5 +28,6 @@ namespace MSP430 {
     }    // namespace WDT
 }// namespace MSP430
 }// namespace MT
+#endif
 #endif
 #endif

@@ -14,6 +14,8 @@ namespace MT {
 namespace MSP430 {
     namespace WDT {
 
+#ifdef __MSP430_HAS_WDT_A__
+
         enum class CLOCKSOURCE : uint16_t {
             SMCLK  = (WDTSSEL_0),
             ACLK   = (WDTSSEL_1),
@@ -31,9 +33,6 @@ namespace MSP430 {
             DIV512   = (WDTIS_6),
             DIV64    = (WDTIS_7)
         };
-
-
-#ifdef __MSP430_HAS_WDT_A__
 
         struct WdtA {
 
