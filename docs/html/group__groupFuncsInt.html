@@ -41,6 +41,7 @@
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -81,21 +82,14 @@ Collaboration diagram for Functions:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gad369e4f2c1e3130e234b9b486e01f35a"><td class="memTemplParams" colspan="2">template&lt;typename ENUM , typename FUNC &gt; </td></tr>
-<tr class="memitem:gad369e4f2c1e3130e234b9b486e01f35a"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsInt.html#gad369e4f2c1e3130e234b9b486e01f35a">MT::MSP430::GPIO::Interrupt::makeHandler</a> (ENUM p, FUNC t) noexcept</td></tr>
-<tr class="memdesc:gad369e4f2c1e3130e234b9b486e01f35a"><td class="mdescLeft">&#160;</td><td class="mdescRight">maker function for one callback entry  <a href="group__groupFuncsInt.html#gad369e4f2c1e3130e234b9b486e01f35a">More...</a><br /></td></tr>
-<tr class="separator:gad369e4f2c1e3130e234b9b486e01f35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf994a26398b10f919936c7613a37810d"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsInt.html#gaf994a26398b10f919936c7613a37810d">MT::MSP430::GPIO::Interrupt::registerCallback</a> (const <a class="el" href="group__groupEnumsMSP430GpioInt.html#ga659f33ee9e814354726f18091c14e7f0">PORTS</a> ports, void (*callback)()) noexcept</td></tr>
-<tr class="memdesc:gaf994a26398b10f919936c7613a37810d"><td class="mdescLeft">&#160;</td><td class="mdescRight">runtime interrupt callback registration  <a href="group__groupFuncsInt.html#gaf994a26398b10f919936c7613a37810d">More...</a><br /></td></tr>
-<tr class="separator:gaf994a26398b10f919936c7613a37810d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga690cc8d9e4c3af160d3c12497a55f954"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsInt.html#ga690cc8d9e4c3af160d3c12497a55f954">MT::Universal::Interrupt::Interrupt&lt; ENUM, VECTOR &gt;::Interrupt</a> (IntHandlers&lt; ENUM, VECTOR &gt;...handler) noexcept</td></tr>
+<tr class="memitem:ga690cc8d9e4c3af160d3c12497a55f954"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsInt.html#ga690cc8d9e4c3af160d3c12497a55f954">MT::Universal::Interrupt::Interrupt&lt; ENUM, VECTOR &gt;::Interrupt</a> (<a class="el" href="namespaceMT_1_1Universal_1_1Interrupt.html#a4e9b8b59b249347da2dfe28cb71c5ca5">IntHandlers</a>&lt; ENUM, VECTOR &gt;...handler) noexcept</td></tr>
 <tr class="memdesc:ga690cc8d9e4c3af160d3c12497a55f954"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor of the interrupt  <a href="#ga690cc8d9e4c3af160d3c12497a55f954">More...</a><br /></td></tr>
 <tr class="separator:ga690cc8d9e4c3af160d3c12497a55f954"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaaa3cd37e22080cb2092e2489051a587a"><td class="memItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsInt.html#gaaa3cd37e22080cb2092e2489051a587a">MT::Universal::Interrupt::Interrupt&lt; ENUM, VECTOR &gt;::get_index</a> (const ENUM p) const noexcept</td></tr>
 <tr class="memdesc:gaaa3cd37e22080cb2092e2489051a587a"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the index to given enum  <a href="#gaaa3cd37e22080cb2092e2489051a587a">More...</a><br /></td></tr>
 <tr class="separator:gaaa3cd37e22080cb2092e2489051a587a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5f85f4bf600d3b93429ab737d496a149"><td class="memTemplParams" colspan="2">template&lt;typename ENUM , typename... FUNC&gt; </td></tr>
-<tr class="memitem:ga5f85f4bf600d3b93429ab737d496a149"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsInt.html#ga5f85f4bf600d3b93429ab737d496a149">MT::Universal::Interrupt::makeInterrupt</a> (IntHandlers&lt; ENUM, FUNC &gt;...t) noexcept</td></tr>
+<tr class="memitem:ga5f85f4bf600d3b93429ab737d496a149"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsInt.html#ga5f85f4bf600d3b93429ab737d496a149">MT::Universal::Interrupt::makeInterrupt</a> (<a class="el" href="namespaceMT_1_1Universal_1_1Interrupt.html#a4e9b8b59b249347da2dfe28cb71c5ca5">IntHandlers</a>&lt; ENUM, FUNC &gt;...t) noexcept</td></tr>
 <tr class="memdesc:ga5f85f4bf600d3b93429ab737d496a149"><td class="mdescLeft">&#160;</td><td class="mdescRight">maker function for a complete callback registration  <a href="group__groupFuncsInt.html#ga5f85f4bf600d3b93429ab737d496a149">More...</a><br /></td></tr>
 <tr class="separator:ga5f85f4bf600d3b93429ab737d496a149"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3c1ca22bbd1f50e255b93b3da4c295de"><td class="memTemplParams" colspan="2">template&lt;typename ENUM , typename FUNC &gt; </td></tr>
@@ -130,7 +124,7 @@ template&lt;typename ENUM , typename... VECTOR&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;Universal/Interrupt.hpp&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Interrupt_8hpp.html">Universal/Interrupt.hpp</a>&gt;</code></p>
 
 <p>returns the index to given enum </p>
 <p>Usage:</p><div class="fragment"><div class="line">std::get&lt;isr.get_index(VECTORS::VECTOR1)&gt;(isr.m_vectors)(); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
@@ -155,7 +149,7 @@ template&lt;typename ENUM , typename... VECTOR&gt; </div>
         <tr>
           <td class="memname">constexpr MT::Universal::Interrupt::Interrupt&lt; ENUM, VECTOR &gt;::Interrupt </td>
           <td>(</td>
-          <td class="paramtype">IntHandlers&lt; ENUM, VECTOR &gt;...&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceMT_1_1Universal_1_1Interrupt.html#a4e9b8b59b249347da2dfe28cb71c5ca5">IntHandlers</a>&lt; ENUM, VECTOR &gt;...&#160;</td>
           <td class="paramname"><em>handler</em></td><td>)</td>
           <td></td>
         </tr>
@@ -167,10 +161,10 @@ template&lt;typename ENUM , typename... VECTOR&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;Universal/Interrupt.hpp&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Interrupt_8hpp.html">Universal/Interrupt.hpp</a>&gt;</code></p>
 
 <p>constructor of the interrupt </p>
-<p>Usage: use maker functions -&gt; makeInterrupt (<a class="el" href="group__groupFuncsInt.html#ga3c1ca22bbd1f50e255b93b3da4c295de" title="maker function for one callback entry ">makeHandler()</a>); </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>Usage: use maker functions -&gt; <a class="el" href="group__groupFuncsInt.html#ga5f85f4bf600d3b93429ab737d496a149" title="maker function for a complete callback registration ">makeInterrupt</a> (<a class="el" href="group__groupFuncsInt.html#ga3c1ca22bbd1f50e255b93b3da4c295de" title="maker function for one callback entry ">makeHandler()</a>); </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">handler</td><td>std::pair with the enum and the corresponding callback function (std::pair&lt;ENUM, FUNC&gt;) </td></tr>
   </table>
@@ -213,10 +207,10 @@ template&lt;typename ENUM , typename FUNC &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;Universal/Interrupt.hpp&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Interrupt_8hpp.html">Universal/Interrupt.hpp</a>&gt;</code></p>
 
 <p>maker function for one callback entry </p>
-<p>Usage: cascade with makeInterrupt like:</p><div class="fragment"><div class="line">constexpr <span class="keyword">auto</span> isr = <a class="code" href="group__groupFuncsInt.html#ga5f85f4bf600d3b93429ab737d496a149">makeInterrupt</a>(</div><div class="line">            <a class="code" href="group__groupFuncsInt.html#ga3c1ca22bbd1f50e255b93b3da4c295de">makeHandler</a>(</div><div class="line">                VECTORS::VECTOR1,</div><div class="line">                []() {</div><div class="line">                    toggle = <span class="keyword">false</span>;</div><div class="line">                })); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+<p>Usage: cascade with <a class="el" href="group__groupFuncsInt.html#ga5f85f4bf600d3b93429ab737d496a149" title="maker function for a complete callback registration ">makeInterrupt</a> like:</p><div class="fragment"><div class="line">constexpr <span class="keyword">auto</span> isr = <a class="code" href="group__groupFuncsInt.html#ga5f85f4bf600d3b93429ab737d496a149">makeInterrupt</a>(</div><div class="line">            <a class="code" href="group__groupFuncsInt.html#ga3c1ca22bbd1f50e255b93b3da4c295de">makeHandler</a>(</div><div class="line">                VECTORS::VECTOR1,</div><div class="line">                []() {</div><div class="line">                    toggle = <span class="keyword">false</span>;</div><div class="line">                })); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p</td><td>the Enum </td></tr>
     <tr><td class="paramname">t</td><td>the callback </td></tr>
@@ -224,54 +218,6 @@ template&lt;typename ENUM , typename FUNC &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>one IntHandler (std::pair&lt;ENUM, FUNC&gt;) </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gad369e4f2c1e3130e234b9b486e01f35a"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ENUM , typename FUNC &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr auto MT::MSP430::GPIO::Interrupt::makeHandler </td>
-          <td>(</td>
-          <td class="paramtype">ENUM&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">FUNC&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;MSP430/GPIO/PortInterrupt.hpp&gt;</code></p>
-
-<p>maker function for one callback entry </p>
-<p>Usage: cascade with makeInterrupt like:</p><div class="fragment"><div class="line"><a class="code" href="group__groupFuncsInt.html#ga3c1ca22bbd1f50e255b93b3da4c295de">GPIO::Interrupt::makeHandler</a>(</div><div class="line">    GPIO::Interrupt::PORTS::PORT2,</div><div class="line">    []() {</div><div class="line">        GPIO::Port1 p1{};</div><div class="line">        GPIO::Port2 p2{};</div><div class="line">        p2.clearInterrupt(GPIO::PIN::P3);</div><div class="line">        p1.toggleOutputOnPin(GPIO::PIN::P0);</div><div class="line">    })); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p</td><td>the Enum </td></tr>
-    <tr><td class="paramname">t</td><td>the callback </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>one IntHandler (std::pair&lt;GPIO::Interrupt::PORTS, FUNC&gt;) </dd></dl>
 
 </div>
 </div>
@@ -287,7 +233,7 @@ template&lt;typename ENUM , typename... FUNC&gt; </div>
         <tr>
           <td class="memname">constexpr auto MT::Universal::Interrupt::makeInterrupt </td>
           <td>(</td>
-          <td class="paramtype">IntHandlers&lt; ENUM, FUNC &gt;...&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceMT_1_1Universal_1_1Interrupt.html#a4e9b8b59b249347da2dfe28cb71c5ca5">IntHandlers</a>&lt; ENUM, FUNC &gt;...&#160;</td>
           <td class="paramname"><em>t</em></td><td>)</td>
           <td></td>
         </tr>
@@ -299,7 +245,7 @@ template&lt;typename ENUM , typename... FUNC&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;Universal/Interrupt.hpp&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Interrupt_8hpp.html">Universal/Interrupt.hpp</a>&gt;</code></p>
 
 <p>maker function for a complete callback registration </p>
 <p>Usage:</p><div class="fragment"><div class="line">constexpr <span class="keyword">auto</span> isr = <a class="code" href="group__groupFuncsInt.html#ga5f85f4bf600d3b93429ab737d496a149">makeInterrupt</a>(</div><div class="line">         <a class="code" href="group__groupFuncsInt.html#ga3c1ca22bbd1f50e255b93b3da4c295de">makeHandler</a>(</div><div class="line">             VECTORS::VECTOR1,</div><div class="line">             []() {</div><div class="line">                 toggle = <span class="keyword">false</span>;</div><div class="line">             })); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
@@ -312,57 +258,12 @@ template&lt;typename ENUM , typename... FUNC&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="gaf994a26398b10f919936c7613a37810d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr void MT::MSP430::GPIO::Interrupt::registerCallback </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__groupEnumsMSP430GpioInt.html#ga659f33ee9e814354726f18091c14e7f0">PORTS</a>&#160;</td>
-          <td class="paramname"><em>ports</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void (*)()&#160;</td>
-          <td class="paramname"><em>callback</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;MSP430/GPIO/PortInterrupt.hpp&gt;</code></p>
-
-<p>runtime interrupt callback registration </p>
-<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span>MT::MSP430;</div><div class="line"> </div><div class="line">   <a class="code" href="group__groupFuncsInt.html#gaf994a26398b10f919936c7613a37810d">GPIO::Interrupt::registerCallback</a>(GPIO::Interrupt::PORTS::PORT1, []() {</div><div class="line">       <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html">GPIO::Port1</a> p1{};</div><div class="line">       p1.<a class="code" href="group__groupFuncsMSP430Gpio.html#ga2b3f70914035d012482dd7868964970d">clearInterrupt</a>(GPIO::PIN::P4);</div><div class="line">       p1.toggleOutputOnPin(GPIO::PIN::P0);</div><div class="line">   });</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ports</td><td>the port for which the callback should be registered (GPIO::Interrupt::PORTS) </td></tr>
-    <tr><td class="paramname">callback</td><td>pointer to the callback function </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- Generated by DoxyPress 1.4.0 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mi Okt 21 2020 15:47:29 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Do Okt 22 2020 15:08:17 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

@@ -41,6 +41,7 @@
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -68,16 +69,14 @@ $(document).ready(function(){initNavTree('Interrupt_8hpp.html','');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Interrupt.hpp File Reference<div class="ingroups"><a class="el" href="group__groupUniversal.html">Universal</a> &raquo; <a class="el" href="group__groupInterrupt.html">Interrupt</a></div></div>  </div>
+<div class="title">Interrupt.hpp File Reference</div>  </div>
   <div class="clear-floats"></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Functions to register callbacks for interrupt service routines at compile time.  
-<a href="#details">More...</a></p>
 
 <p><a href="Interrupt_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -86,10 +85,19 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMT_1_1Universal_1_1Interrupt_1_1Interrupt.html">MT::Universal::Interrupt::Interrupt&lt; ENUM, VECTOR &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceMT"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMT.html">MT</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceMT_1_1Universal"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMT_1_1Universal.html">MT::Universal</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceMT_1_1Universal_1_1Interrupt"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMT_1_1Universal_1_1Interrupt.html">MT::Universal::Interrupt</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a4e9b8b59b249347da2dfe28cb71c5ca5"><td class="memTemplParams" colspan="2">template&lt;typename ENUM , typename FUNC &gt; </td></tr>
-<tr class="memitem:a4e9b8b59b249347da2dfe28cb71c5ca5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>MT::Universal::Interrupt::IntHandlers</b> = std::pair&lt; ENUM, FUNC &gt;</td></tr>
+<tr class="memitem:a4e9b8b59b249347da2dfe28cb71c5ca5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMT_1_1Universal_1_1Interrupt.html#a4e9b8b59b249347da2dfe28cb71c5ca5">MT::Universal::Interrupt::IntHandlers</a> = std::pair&lt; ENUM, FUNC &gt;</td></tr>
 <tr class="separator:a4e9b8b59b249347da2dfe28cb71c5ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -103,18 +111,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga3c1ca22bbd1f50e255b93b3da4c295de"><td class="mdescLeft">&#160;</td><td class="mdescRight">maker function for one callback entry  <a href="group__groupFuncsInt.html#ga3c1ca22bbd1f50e255b93b3da4c295de">More...</a><br /></td></tr>
 <tr class="separator:ga3c1ca22bbd1f50e255b93b3da4c295de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Functions to register callbacks for interrupt service routines at compile time. </p>
-<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">enum class</span> VECTORS {</div><div class="line">        VECTOR1 = 0,</div><div class="line">        VECTOR2</div><div class="line">      };</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="keyword">using namespace </span>MT::Universal;</div><div class="line"> </div><div class="line">constexpr <span class="keyword">auto</span> isr = <a class="code" href="group__groupFuncsInt.html#ga5f85f4bf600d3b93429ab737d496a149">Interrupt::makeInterrupt</a>(</div><div class="line"> </div><div class="line"><a class="code" href="group__groupFuncsInt.html#ga3c1ca22bbd1f50e255b93b3da4c295de">Interrupt::makeHandler</a>(</div><div class="line">    VECTOR1,</div><div class="line">     []() {</div><div class="line">       <span class="comment">//put your interrupt code here</span></div><div class="line">    }),</div><div class="line"> </div><div class="line"><a class="code" href="group__groupFuncsInt.html#ga3c1ca22bbd1f50e255b93b3da4c295de">Interrupt::makeHandler</a>(</div><div class="line">   VECTOR2,</div><div class="line">    []() {</div><div class="line">       <span class="comment">//put your interrupt code here</span></div><div class="line">}));</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="comment">// put this into your interrupt vector 1</span></div><div class="line">std::get&lt;isr.get_index(VECTORS::VECTOR1)&gt;(isr.m_vectors)();</div><div class="line"> </div><div class="line"><span class="comment">// put this into your interrupt vector 2</span></div><div class="line">std::get&lt;isr.get_index(VECTORS::VECTOR2)&gt;(isr.m_vectors)();</div></div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Steffen Fuchs <br/>
- Email: <a href="mailto:admin@definefalsetrue.com">admin@definefalsetrue.com</a> <br/>
- Web: <a href="https://definefalsetrue.com">https://definefalsetrue.com</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- Generated by DoxyPress 1.4.0 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_8a747bb3c4d720dc480715835e2d305c.html">Universal</a></li><li class="navelem"><a class="el" href="Interrupt_8hpp.html">Interrupt.hpp</a></li>
-    <li class="footer">Generated on Mo Okt 19 2020 09:14:07 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Do Okt 22 2020 15:08:17 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

@@ -22,7 +22,7 @@
         "enabled-sections": [
             ""
         ],
-        "extract-all": false,
+        "extract-all": true,
         "extract-anon-namespaces": false,
         "extract-local-classes": false,
         "extract-local-methods": false,
@@ -434,7 +434,7 @@
         ],
         "macro-expansion": false,
         "predefined-macros": [
-            "MT_MSP430_USE_GPIO_COMPILE_TIME_CALLBACKS\nMT_MSP430_USE_WDT_COMPILE_TIME_CALLBACKS"
+            "MT_MSP430_USE_GPIO_COMPILE_TIME_CALLBACKS\nMT_MSP430_USE_WDT_COMPILE_TIME_CALLBACKS\nMT_USE_MSP430_LIB"
         ],
         "search-includes": false,
         "skip-function-macros": false

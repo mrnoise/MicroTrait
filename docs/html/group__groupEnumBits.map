@@ -1,6 +1,6 @@
 <map id="Enumeration as Bits" name="Enumeration as Bits">
-<area shape="rect" id="node1" href="$group__groupFuncsEnumBits.html" title=" " alt="" coords="292,5,371,32"/>
-<area shape="rect" id="node2" href="$group__groupEnumsEnumBits.html" title=" " alt="" coords="300,56,363,83"/>
-<area shape="rect" id="node3" title="free functions to treat a enumeration as bitpatterns " alt="" coords="104,31,244,57"/>
+<area shape="rect" id="node1" href="$group__groupEnumsEnumBits.html" title=" " alt="" coords="300,5,363,32"/>
+<area shape="rect" id="node2" title="free functions to treat a enumeration as bitpatterns " alt="" coords="104,31,244,57"/>
+<area shape="rect" id="node3" href="$group__groupFuncsEnumBits.html" title=" " alt="" coords="292,56,371,83"/>
 <area shape="rect" id="node4" href="$group__groupMisc.html" title=" " alt="" coords="5,31,56,57"/>
 </map>

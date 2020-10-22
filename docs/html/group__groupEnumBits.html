@@ -41,6 +41,7 @@
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -76,9 +77,9 @@ Collaboration diagram for Enumeration as Bits:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="group__groupEnumBits.png" border="0" alt="" usemap="#group____groupEnumBits"/>
 <map name="group____groupEnumBits" id="group____groupEnumBits">
-<area shape="rect"  href="group__groupFuncsEnumBits.html" title=" " alt="" coords="292,5,371,32"/>
-<area shape="rect"  href="group__groupEnumsEnumBits.html" title=" " alt="" coords="300,56,363,83"/>
+<area shape="rect"  href="group__groupEnumsEnumBits.html" title=" " alt="" coords="300,5,363,32"/>
 <area shape="rect"  title="free functions to treat a enumeration as bitpatterns " alt="" coords="104,31,244,57"/>
+<area shape="rect"  href="group__groupFuncsEnumBits.html" title=" " alt="" coords="292,56,371,83"/>
 <area shape="rect"  href="group__groupMisc.html" title=" " alt="" coords="5,31,56,57"/>
 </map>
 </td></tr></table></center>
@@ -93,7 +94,7 @@ Modules</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>free functions to treat a enumeration as bitpatterns </p>
-<p>Usage:</p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;MicroTrait/Misc/EnumBits.hpp&quot;</span></div><div class="line"> </div><div class="line"><span class="keyword">namespace </span>MT {</div><div class="line"><span class="keyword">namespace </span>Misc {</div><div class="line"> </div><div class="line">       <span class="keyword">enum class</span> MYBITS {</div><div class="line">            B0 = (1U &lt;&lt; 0U),</div><div class="line">            B1 = (1U &lt;&lt; 1U),</div><div class="line">            B2 = (1U &lt;&lt; 2U),</div><div class="line">            B3 = (1U &lt;&lt; 3U),</div><div class="line">            B4 = (1U &lt;&lt; 4U),</div><div class="line">            B5 = (1U &lt;&lt; 5U),</div><div class="line">            B6 = (1U &lt;&lt; 6U),</div><div class="line">            B7 = (1U &lt;&lt; 7U)</div><div class="line">        };</div><div class="line">        <span class="keyword">template</span>&lt;&gt;</div><div class="line">        <span class="keyword">struct </span>enable_Enum_bits&lt;MYBITS&gt; {</div><div class="line">            <span class="keyword">static</span> constexpr <span class="keywordtype">bool</span> enable = <span class="keyword">true</span>;</div><div class="line">        }; <span class="comment">// If specialization is not used functions provided here can`t be used -&gt; safe guard for normal enums</span></div><div class="line"> </div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Steffen Fuchs <br/>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="EnumBits_8hpp.html">MicroTrait/Misc/EnumBits.hpp</a>&quot;</span></div><div class="line"> </div><div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceMT.html">MT</a> {</div><div class="line"><span class="keyword">namespace </span>Misc {</div><div class="line"> </div><div class="line">       <span class="keyword">enum class</span> MYBITS {</div><div class="line">            <a class="code" href="group__groupEnumsReg.html#gga0a5451e09f44b4952fd8332b583c652da4c769c2c9989abb9fa024ab9930270e5">B0</a> = (1U &lt;&lt; 0U),</div><div class="line">            <a class="code" href="group__groupEnumsReg.html#gga0a5451e09f44b4952fd8332b583c652dac9512565ef6194ca664dc41ec0de7a53">B1</a> = (1U &lt;&lt; 1U),</div><div class="line">            <a class="code" href="group__groupEnumsReg.html#gga0a5451e09f44b4952fd8332b583c652dabbd97b00c539801e32317ab550867ec4">B2</a> = (1U &lt;&lt; 2U),</div><div class="line">            <a class="code" href="group__groupEnumsReg.html#gga0a5451e09f44b4952fd8332b583c652da0c4ecd7b59ebc5b9f47974cb9845fd02">B3</a> = (1U &lt;&lt; 3U),</div><div class="line">            <a class="code" href="group__groupEnumsReg.html#gga0a5451e09f44b4952fd8332b583c652dad5d4cc7b09d1843517acc9361f8f665e">B4</a> = (1U &lt;&lt; 4U),</div><div class="line">            <a class="code" href="group__groupEnumsReg.html#gga0a5451e09f44b4952fd8332b583c652da2a1ab298edf0162a3305e599b47cbeee">B5</a> = (1U &lt;&lt; 5U),</div><div class="line">            <a class="code" href="group__groupEnumsReg.html#gga0a5451e09f44b4952fd8332b583c652da68b1f1cc15d8987eafe633c9488bdc05">B6</a> = (1U &lt;&lt; 6U),</div><div class="line">            <a class="code" href="group__groupEnumsReg.html#gga0a5451e09f44b4952fd8332b583c652dad8498108dd603522047564a8da7be94c">B7</a> = (1U &lt;&lt; 7U)</div><div class="line">        };</div><div class="line">        <span class="keyword">template</span>&lt;&gt;</div><div class="line">        <span class="keyword">struct </span>enable_Enum_bits&lt;MYBITS&gt; {</div><div class="line">            <span class="keyword">static</span> constexpr <span class="keywordtype">bool</span> <a class="code" href="structMT_1_1Misc_1_1enable__Enum__bits.html#a0f87d0dd781948d6321169ca03c2eb68">enable</a> = <span class="keyword">true</span>;</div><div class="line">        }; <span class="comment">// If specialization is not used functions provided here can`t be used -&gt; safe guard for normal enums</span></div><div class="line"> </div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Steffen Fuchs <br/>
  Email: <a href="mailto:admin@definefalsetrue.com">admin@definefalsetrue.com</a> <br/>
  Web: <a href="https://definefalsetrue.com">https://definefalsetrue.com</a> </dd></dl>
 </div><!-- contents -->
@@ -101,7 +102,7 @@ Modules</h2></td></tr>
 <!-- Generated by DoxyPress 1.4.0 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mi Okt 21 2020 15:47:29 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Do Okt 22 2020 15:08:17 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

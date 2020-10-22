@@ -41,6 +41,7 @@
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -76,8 +77,8 @@ Collaboration diagram for GPIO:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="group__groupMSP430Gpio.png" border="0" alt="" usemap="#group____groupMSP430Gpio"/>
 <map name="group____groupMSP430Gpio" id="group____groupMSP430Gpio">
-<area shape="rect"  href="group__groupEnumsMSP430Gpio.html" title=" " alt="" coords="236,5,299,32"/>
-<area shape="rect"  href="group__groupFuncsMSP430Gpio.html" title=" " alt="" coords="228,56,307,83"/>
+<area shape="rect"  href="group__groupFuncsMSP430Gpio.html" title=" " alt="" coords="228,5,307,32"/>
+<area shape="rect"  href="group__groupEnumsMSP430Gpio.html" title=" " alt="" coords="236,56,299,83"/>
 <area shape="rect"  title="functions for GPIO hardware access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="125,31,180,57"/>
 <area shape="rect"  href="group__groupMSP430.html" title=" " alt="" coords="5,31,77,57"/>
 </map>
@@ -93,7 +94,7 @@ Modules</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>functions for GPIO hardware access for TIs MSP430 -&gt; Ti Driverlib equivalent naming </p>
-<p>Usage:</p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;MicroTrait/MT.hpp&quot;</span></div><div class="line"> </div><div class="line"><span class="keyword">using namespace </span>MT::MSP430;</div><div class="line"> </div><div class="line">    <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html">GPIO::Port1</a> p1{};</div><div class="line">    <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html">GPIO::Port2</a> p2{};</div><div class="line">    p1.<a class="code" href="group__groupFuncsMSP430Gpio.html#ga9526906127c157372709443b8a2e8458">setOutputLowOnPin</a>(GPIO::PIN::P0);</div><div class="line">    p1.setAsOutputPin(GPIO::PIN::P0);</div><div class="line"> </div><div class="line">    p2.setAsInputPinWithPullUp(GPIO::PIN::P3);</div><div class="line">    p2.selectInterruptEdge(GPIO::INT_EDGE::HIGH_TO_LOW, GPIO::PIN::P3);</div><div class="line">    p2.enableInterrupt(GPIO::PIN::P3);</div><div class="line">    p2.clearInterrupt(GPIO::PIN::P3);</div><div class="line"> </div><div class="line">    p1.setAsInputPinWithPullUp(GPIO::PIN::P4);</div><div class="line">    p1.selectInterruptEdge(GPIO::INT_EDGE::HIGH_TO_LOW, GPIO::PIN::P4);</div><div class="line">    p1.enableInterrupt(GPIO::PIN::P4);</div><div class="line">    p1.clearInterrupt(GPIO::PIN::P4);</div></div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Steffen Fuchs <br/>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="MT_8hpp.html">MicroTrait/MT.hpp</a>&quot;</span></div><div class="line"> </div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line">    <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html">GPIO::Port1</a> p1{};</div><div class="line">    <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html">GPIO::Port2</a> p2{};</div><div class="line">    p1.<a class="code" href="group__groupFuncsMSP430Gpio.html#ga9526906127c157372709443b8a2e8458">setOutputLowOnPin</a>(GPIO::PIN::P0);</div><div class="line">    p1.setAsOutputPin(GPIO::PIN::P0);</div><div class="line"> </div><div class="line">    p2.setAsInputPinWithPullUp(GPIO::PIN::P3);</div><div class="line">    p2.selectInterruptEdge(<a class="code" href="group__groupEnumsMSP430Gpio.html#gga4ca73a5b682c09ead2038ed3a5120202a3cfb549d1f39abc05ab85af4de89ebbd">GPIO::INT_EDGE::HIGH_TO_LOW</a>, GPIO::PIN::P3);</div><div class="line">    p2.enableInterrupt(GPIO::PIN::P3);</div><div class="line">    p2.clearInterrupt(GPIO::PIN::P3);</div><div class="line"> </div><div class="line">    p1.setAsInputPinWithPullUp(GPIO::PIN::P4);</div><div class="line">    p1.selectInterruptEdge(<a class="code" href="group__groupEnumsMSP430Gpio.html#gga4ca73a5b682c09ead2038ed3a5120202a3cfb549d1f39abc05ab85af4de89ebbd">GPIO::INT_EDGE::HIGH_TO_LOW</a>, GPIO::PIN::P4);</div><div class="line">    p1.enableInterrupt(GPIO::PIN::P4);</div><div class="line">    p1.clearInterrupt(GPIO::PIN::P4);</div></div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Steffen Fuchs <br/>
  Email: <a href="mailto:admin@definefalsetrue.com">admin@definefalsetrue.com</a> <br/>
  Web: <a href="https://definefalsetrue.com">https://definefalsetrue.com</a> </dd></dl>
 </div><!-- contents -->
@@ -101,7 +102,7 @@ Modules</h2></td></tr>
 <!-- Generated by DoxyPress 1.4.0 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mi Okt 21 2020 15:47:29 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Do Okt 22 2020 15:08:17 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

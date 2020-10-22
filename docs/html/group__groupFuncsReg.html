@@ -41,6 +41,7 @@
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -175,13 +176,13 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;Universal/Register.hpp&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Register_8hpp.html">Universal/Register.hpp</a>&gt;</code></p>
 
 <p>clears the given bits via a logial or into the register <br/>
  equivalent to C register access -&gt; reg &amp;= ~value1 | ~value2 | ~... </p>
 <p>Usage:</p><div class="fragment"><div class="line"><a class="code" href="structMT_1_1Universal_1_1Register.html">MT::Universal::Register&lt;&amp;HWRegister&gt;</a> reg1;</div><div class="line">reg1.<a class="code" href="group__groupFuncsReg.html#ga1e40a47d06894d7e24a83505702e8307">clear</a>(BITS8::B0 | BITS8::B1) </div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">BITS</td><td>bits or bitmask that should be inverted and put into the defined register via logical and -&gt; template specialization for Enum types (Misc::BITS8,Misc::BITS16,Misc::BITS32) </td></tr>
+    <tr><td class="paramname">BITS</td><td>bits or bitmask that should be inverted and put into the defined register via logical and -&gt; template specialization for Enum types (<a class="el" href="group__groupEnumsReg.html#ga0a5451e09f44b4952fd8332b583c652d" title="Bitwise register access with a width of 8bits. ">Misc::BITS8</a>,<a class="el" href="group__groupEnumsReg.html#ga8779a21c592ffcc487f2b68d4d5aeff1" title="Bitwise register access with a width of 16bits. ">Misc::BITS16</a>,<a class="el" href="group__groupEnumsReg.html#ga26a7b5f5b054dcfecb8251310332b90a" title="Bitwise register access with a width of 32bits. ">Misc::BITS32</a>) </td></tr>
   </table>
   </dd>
 </dl>
@@ -214,7 +215,7 @@ template&lt;typename... VALS&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;Universal/Register.hpp&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Register_8hpp.html">Universal/Register.hpp</a>&gt;</code></p>
 
 <p>clears the given bits via a logial or into the register <br/>
  equivalent to C register access -&gt; reg &amp;= ~value1 | ~value2 | ~... </p>
@@ -263,13 +264,13 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;Universal/Register.hpp&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Register_8hpp.html">Universal/Register.hpp</a>&gt;</code></p>
 
 <p>compares the given bits with the bits in the register and returns true if there is a match <br/>
  equivalent to C register access -&gt; return (*REG &amp; (value1 | ...)); </p>
 <p>Usage:</p><div class="fragment"><div class="line"><a class="code" href="structMT_1_1Universal_1_1Register.html">MT::Universal::Register&lt;&amp;HWRegister&gt;</a> reg1;</div><div class="line"><span class="keywordflow">if</span> (reg1.<a class="code" href="group__groupFuncsReg.html#ga835a74f5ad9d99284f4b41feb0d50f03">compare</a>(BITS8::B0 | BITS8::B1) == <span class="keyword">true</span>) doSomething();</div><div class="line"><span class="keywordflow">if</span> (reg1.<a class="code" href="group__groupFuncsReg.html#ga835a74f5ad9d99284f4b41feb0d50f03">compare</a>(BITS8::B6 | BITS8::B7) == <span class="keyword">false</span>) doSomeOtherThing(); </div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">BITS</td><td>bits or bitmask that should be set into the defined register --&gt; template specialization for Enum types (Misc::BITS8,Misc::BITS16,Misc::BITS32) </td></tr>
+    <tr><td class="paramname">BITS</td><td>bits or bitmask that should be set into the defined register --&gt; template specialization for Enum types (<a class="el" href="group__groupEnumsReg.html#ga0a5451e09f44b4952fd8332b583c652d" title="Bitwise register access with a width of 8bits. ">Misc::BITS8</a>,<a class="el" href="group__groupEnumsReg.html#ga8779a21c592ffcc487f2b68d4d5aeff1" title="Bitwise register access with a width of 16bits. ">Misc::BITS16</a>,<a class="el" href="group__groupEnumsReg.html#ga26a7b5f5b054dcfecb8251310332b90a" title="Bitwise register access with a width of 32bits. ">Misc::BITS32</a>) </td></tr>
   </table>
   </dd>
 </dl>
@@ -303,7 +304,7 @@ template&lt;typename... VALS&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;Universal/Register.hpp&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Register_8hpp.html">Universal/Register.hpp</a>&gt;</code></p>
 
 <p>compares the given bits with the bits in the register and returns true if there is a match <br/>
  equivalent to C register access -&gt; return (*reg &amp; (value1 | ...)); </p>
@@ -340,7 +341,7 @@ template&lt;volatile auto * REG&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;Universal/Register.hpp&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Register_8hpp.html">Universal/Register.hpp</a>&gt;</code></p>
 
 <p>returns the content of the underlyoing register <br/>
  equivalent to C register access -&gt; return *REG; </p>
@@ -384,7 +385,7 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;Universal/Register.hpp&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Register_8hpp.html">Universal/Register.hpp</a>&gt;</code></p>
 
 <p>sets the given bits in the register and overrides the leftover bits with zeros <br/>
  equivalent to C register access -&gt; reg = value1 | value2 | ~... </p>
@@ -423,7 +424,7 @@ template&lt;typename... VALS&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;Universal/Register.hpp&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Register_8hpp.html">Universal/Register.hpp</a>&gt;</code></p>
 
 <p>sets the given bits in the register and overrides the leftover bits with zeros <br/>
  equivalent to C register access -&gt; reg = value1 | value2 | ~... </p>
@@ -472,13 +473,13 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;Universal/Register.hpp&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Register_8hpp.html">Universal/Register.hpp</a>&gt;</code></p>
 
 <p>sets the given bits via a logial or into the register <br/>
  equivalent to C register access -&gt; reg |= value1 | value2 | ... </p>
 <p>Usage:</p><div class="fragment"><div class="line"><a class="code" href="structMT_1_1Universal_1_1Register.html">MT::Universal::Register&lt;&amp;HWRegister&gt;</a> reg1;</div><div class="line">reg1.<a class="code" href="group__groupFuncsReg.html#ga84ce0e5daa7bdf8ffc0df0cca4282b93">set</a>(BITS8::B0 | BITS8::B1); </div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">BITS</td><td>bits or bitmask that should be ored into the defined register -&gt; template specialization for Enum types (Misc::BITS8,Misc::BITS16,Misc::BITS32) </td></tr>
+    <tr><td class="paramname">BITS</td><td>bits or bitmask that should be ored into the defined register -&gt; template specialization for Enum types (<a class="el" href="group__groupEnumsReg.html#ga0a5451e09f44b4952fd8332b583c652d" title="Bitwise register access with a width of 8bits. ">Misc::BITS8</a>,<a class="el" href="group__groupEnumsReg.html#ga8779a21c592ffcc487f2b68d4d5aeff1" title="Bitwise register access with a width of 16bits. ">Misc::BITS16</a>,<a class="el" href="group__groupEnumsReg.html#ga26a7b5f5b054dcfecb8251310332b90a" title="Bitwise register access with a width of 32bits. ">Misc::BITS32</a>) </td></tr>
   </table>
   </dd>
 </dl>
@@ -511,7 +512,7 @@ template&lt;typename... VALS&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;Universal/Register.hpp&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Register_8hpp.html">Universal/Register.hpp</a>&gt;</code></p>
 
 <p>sets the given bits via a logial or into the register <br/>
  equivalent to C register access -&gt; reg |= value1 | value2 | ... </p>
@@ -560,13 +561,13 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;Universal/Register.hpp&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Register_8hpp.html">Universal/Register.hpp</a>&gt;</code></p>
 
 <p>toggles the given bits via a logial xor in the register <br/>
  equivalent to C register access -&gt; reg ^= value1 | value2 | ... </p>
 <p>Usage:</p><div class="fragment"><div class="line"><a class="code" href="structMT_1_1Universal_1_1Register.html">MT::Universal::Register&lt;&amp;HWRegister&gt;</a> reg1;</div><div class="line">reg1.<a class="code" href="group__groupFuncsReg.html#gae50f5988947e98b93fd4b41ae4a691be">toggle</a>(BITS8::B0 | BITS8::B1)</div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">BITS</td><td>bits or bitmask that should be toggeled and put into the defined register -&gt; template specialization for Enum types (Misc::BITS8,Misc::BITS16,Misc::BITS32) </td></tr>
+    <tr><td class="paramname">BITS</td><td>bits or bitmask that should be toggeled and put into the defined register -&gt; template specialization for Enum types (<a class="el" href="group__groupEnumsReg.html#ga0a5451e09f44b4952fd8332b583c652d" title="Bitwise register access with a width of 8bits. ">Misc::BITS8</a>,<a class="el" href="group__groupEnumsReg.html#ga8779a21c592ffcc487f2b68d4d5aeff1" title="Bitwise register access with a width of 16bits. ">Misc::BITS16</a>,<a class="el" href="group__groupEnumsReg.html#ga26a7b5f5b054dcfecb8251310332b90a" title="Bitwise register access with a width of 32bits. ">Misc::BITS32</a>) </td></tr>
   </table>
   </dd>
 </dl>
@@ -599,7 +600,7 @@ template&lt;typename... VALS&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;Universal/Register.hpp&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Register_8hpp.html">Universal/Register.hpp</a>&gt;</code></p>
 
 <p>toggles the given bits via a logial xor in the register <br/>
  equivalent to C register access -&gt; reg ^= value1 | value2 | ... </p>
@@ -617,7 +618,7 @@ template&lt;typename... VALS&gt; </div>
 <!-- Generated by DoxyPress 1.4.0 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mi Okt 21 2020 15:47:29 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Do Okt 22 2020 15:08:17 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>
