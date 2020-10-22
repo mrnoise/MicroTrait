@@ -73,7 +73,7 @@ namespace Misc {
 namespace MSP430 {
     namespace SFR {
 
-		/**
+        /**
 		* @ingroup groupEnumsMSP430Sfr
 		****************************************************************
 		* @brief SFR interrupt types
@@ -81,7 +81,7 @@ namespace MSP430 {
 		*/
         using INT = MT::Misc::SFR_INT;
 
-		/**
+        /**
 		* @ingroup groupEnumsMSP430Sfr
 		****************************************************************
 		* @brief Reset pin Pullup/down or disable
@@ -174,7 +174,7 @@ namespace MSP430 {
 		*  Sfr sfr{};
 		*  if(sfr.getInterruptStatus(SFR::INT::WATCHDOG_INTERVAL_TIMER | SFR::INT::OSCILLATOR_FAULT) == INT_FLAG::TRUE) doSomething();  \endcode
 		*@tparam BITS use enumeration SFR::INT
-		*@return if all the given bits are set or not(#MT::MSP430::INT_FLAG)
+		*@return if all the given bits are set or not (MT::MSP430::INT_FLAG)
 		****************************************************************
 		*/
         template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
