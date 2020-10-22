@@ -4,7 +4,7 @@
 
 /** @defgroup groupMSP430GpioInt GPIO Interrupt
  *  @ingroup groupMSP430
-* @brief functions to register Interrupt callbacks at compile time or at runtime -> check settings.hpp
+* @brief functions to register Interrupt callbacks for GPIO Interrupts at compile time or at runtime -> check settings.hpp
 *
 * @details
 * Usage Compile time: \code {.cpp}
@@ -149,6 +149,7 @@ namespace MSP430 {
 			*
 			* using namespace MT::MSP430;
 			*
+			* GPIO::Interrupt::makeInterrupt(
 			*	GPIO::Interrupt::makeHandler(
 			*		GPIO::Interrupt::PORTS::PORT2,
 			*		[]() {
@@ -168,11 +169,12 @@ namespace MSP430 {
             }
 
             /**
-			* @ingroup groupFuncsInt
+			* @ingroup groupFuncsMSP430GpioInt
 			****************************************************************
 			* @brief maker function for one callback entry
 			* @details
 			* Usage: cascade with makeInterrupt like: \code {.cpp}
+			* GPIO::Interrupt::makeInterrupt(
 			*	GPIO::Interrupt::makeHandler(
 			*		GPIO::Interrupt::PORTS::PORT2,
 			*		[]() {
@@ -196,7 +198,7 @@ namespace MSP430 {
             extern std::array<void (*)(), 2> PortVectors;
 
             /**
-			* @ingroup groupFuncsInt
+			* @ingroup groupFuncsMSP430GpioInt
 			****************************************************************
 			* @brief runtime interrupt callback registration
 			* @details
