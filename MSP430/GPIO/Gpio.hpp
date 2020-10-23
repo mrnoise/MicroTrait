@@ -52,6 +52,7 @@ using namespace MT::MSP430;
 #define MICROTRAIT_MSP430_GPIO_GPIO_HPP_
 
 #include "MicroTrait/MSP430/Settings.hpp"
+#include "MicroTrait/MSP430/Types.hpp"
 
 #ifdef MT_USE_MSP430_LIB
 
@@ -87,19 +88,6 @@ namespace Misc {
 
 
 namespace MSP430 {
-
-
-    /**
-	* @ingroup groupEnumsMSP430Gpio
-	****************************************************************
-	* @brief MSP430 Interrupt Flag match
-	****************************************************************
-	*/
-    enum class INT_MASK_MATCH : uint8_t {
-        FALSE = 0,
-        TRUE
-    };
-
     namespace GPIO {
 
         /**
@@ -127,7 +115,7 @@ namespace MSP430 {
 		* @brief GPIO module selection
 		****************************************************************
 		*/
-        enum class MODULE_FUNC : uint8_t {
+        enum class MODULE_FUNC : uint_fast8_t {
             GPIO = 0,
             PRIMARY,
             SECONDARY,
@@ -140,7 +128,7 @@ namespace MSP430 {
 		* @brief GPIO pin state
 		****************************************************************
 		*/
-        enum class PIN_STATE : uint8_t {
+        enum class PIN_STATE : uint_fast8_t {
             LOW = 0,
             HIGH
         };

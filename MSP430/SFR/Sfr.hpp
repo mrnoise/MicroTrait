@@ -41,6 +41,7 @@ using namespace MT::MSP430;
 #define MICROTRAIT_MSP430_SFR_SFR_HPP_
 
 #include "MicroTrait/MSP430/Settings.hpp"
+#include "MicroTrait/MSP430/Types.hpp"
 
 #ifdef MT_USE_MSP430_LIB
 
