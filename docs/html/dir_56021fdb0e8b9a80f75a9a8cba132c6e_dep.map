@@ -1,6 +1,7 @@
 <map id="MSP430" name="MSP430">
-<area shape="rect" id="node2" href="dir_406c66aff740586c12c555eb45f89962.html" title="GPIO" alt="" coords="219,27,291,75"/>
-<area shape="rect" id="node3" href="dir_eb46cb3a04801aaa57212b6bb39afb1a.html" title="SFR" alt="" coords="123,27,195,75"/>
-<area shape="rect" id="node4" href="dir_ccb66b0757fb9c81f3459334107c554a.html" title="WDT" alt="" coords="27,27,99,75"/>
-<area shape="rect" id="clust1" href="dir_56021fdb0e8b9a80f75a9a8cba132c6e.html" alt="" coords="16,16,397,85"/>
+<area shape="rect" id="node2" href="dir_406c66aff740586c12c555eb45f89962.html" title="GPIO" alt="" coords="315,27,387,75"/>
+<area shape="rect" id="node3" href="dir_0649b081d871d69f3189ff95ac2da67e.html" title="PMM" alt="" coords="219,27,291,75"/>
+<area shape="rect" id="node4" href="dir_eb46cb3a04801aaa57212b6bb39afb1a.html" title="SFR" alt="" coords="123,27,195,75"/>
+<area shape="rect" id="node5" href="dir_ccb66b0757fb9c81f3459334107c554a.html" title="WDT" alt="" coords="27,27,99,75"/>
+<area shape="rect" id="clust1" href="dir_56021fdb0e8b9a80f75a9a8cba132c6e.html" alt="" coords="16,16,493,85"/>
 </map>

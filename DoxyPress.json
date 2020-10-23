@@ -267,7 +267,8 @@
             "MSP430/SFR",
             "MSP430/WDT",
             "Misc",
-            "Universal"
+            "Universal",
+            "MSP430/PMM"
         ],
         "mdfile-mainpage": ""
     },

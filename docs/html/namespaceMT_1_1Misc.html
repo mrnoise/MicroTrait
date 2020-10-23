@@ -90,6 +90,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMT_1_1Misc_1_1enable__Enum__bits_3_01GPIO__PIN_01_4.html">enable_Enum_bits&lt; GPIO_PIN &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMT_1_1Misc_1_1enable__Enum__bits_3_01PMM__INT_01_4.html">enable_Enum_bits&lt; PMM_INT &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMT_1_1Misc_1_1enable__Enum__bits_3_01SFR__INT_01_4.html">enable_Enum_bits&lt; SFR_INT &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -201,6 +203,154 @@ Enums</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ga26a7b5f5b054dcfecb8251310332b90a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitwise register access with a width of 32bits.  <a href="group__groupEnumsReg.html#ga26a7b5f5b054dcfecb8251310332b90a">More...</a><br /></td></tr>
 <tr class="separator:ga26a7b5f5b054dcfecb8251310332b90a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ae319575ffec2097512ce11b9bfe07b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07b">PMM_INT</a> : uint16_t { <br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd">PMM_INT::BOR</a> = (PMMBORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f">PMM_INT::RST</a> = (PMMRSTIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92">PMM_INT::POR</a> = (PMMPORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0">PMM_INT::SVSH</a> = (SVSHIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c">PMM_INT::LPM5</a> = (PMMLPM5IFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d">PMM_INT::ALL</a> = (0xA7), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd">PMM_INT::BOR</a> = (PMMBORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f">PMM_INT::RST</a> = (PMMRSTIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92">PMM_INT::POR</a> = (PMMPORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0">PMM_INT::SVSH</a> = (SVSHIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0">PMM_INT::SVSH</a> = (SVSLIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c">PMM_INT::LPM5</a> = (PMMLPM5IFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d">PMM_INT::ALL</a> = (0xB7), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bad7d005160223e7f74f7313f56ba746af">PMM_INT::SVSM_LOWSIDE_DELY_EXP</a> = (SVSMLDLYIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba2fee403bc449248b59227176ece2e487">PMM_INT::SVM_LOWSIDE</a> = (SVMLIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bad901d82da0ab4308bcf3051c6d8ca4ea">PMM_INT::SVM_LOWSIDE_REACHED</a> = (SVMLVLRIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bad02cd24be25247c4d041eef0d334db4b">PMM_INT::SVSM_HIGHSIDE_DELY_EXP</a> = (SVSMHDLYIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bacebbe4dd732571cd935e2a9951bbf0b8">PMM_INT::SVM_HIGHSIDE</a> = (SVMHIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07babf9535e89e1b64f806fb4766deec342a">PMM_INT::SVM_HIGHSIDE_REACHED</a> = (SVMHVLRIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd">PMM_INT::BOR</a> = (PMMBORIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f">PMM_INT::RST</a> = (PMMRSTIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92">PMM_INT::POR</a> = (PMMPORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bae461850e2b25b9ef9ba0ecdcaadef2ab">PMM_INT::SVS_HIGHSIDE</a> = (SVSHIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba2a474c902ff6f6cfc4afd1e2f54e3f62">PMM_INT::SVS_LOWSIDE</a> = (SVSLIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c">PMM_INT::LPM5</a> = (PMMLPM5IFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba863b06cee9907262028eb63665a3704b">PMM_INT::VMON</a> = (VMONIE), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07baf3f6d24c6ad504abfcc686fcc77b621e">PMM_INT::LPM45</a> = (LPM45IFG)
+<br />
+ }</td></tr>
+<tr class="separator:a7ae319575ffec2097512ce11b9bfe07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ae319575ffec2097512ce11b9bfe07b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07b">PMM_INT</a> : uint16_t { <br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd">PMM_INT::BOR</a> = (PMMBORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f">PMM_INT::RST</a> = (PMMRSTIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92">PMM_INT::POR</a> = (PMMPORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0">PMM_INT::SVSH</a> = (SVSHIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c">PMM_INT::LPM5</a> = (PMMLPM5IFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d">PMM_INT::ALL</a> = (0xA7), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd">PMM_INT::BOR</a> = (PMMBORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f">PMM_INT::RST</a> = (PMMRSTIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92">PMM_INT::POR</a> = (PMMPORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0">PMM_INT::SVSH</a> = (SVSHIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0">PMM_INT::SVSH</a> = (SVSLIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c">PMM_INT::LPM5</a> = (PMMLPM5IFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d">PMM_INT::ALL</a> = (0xB7), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bad7d005160223e7f74f7313f56ba746af">PMM_INT::SVSM_LOWSIDE_DELY_EXP</a> = (SVSMLDLYIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba2fee403bc449248b59227176ece2e487">PMM_INT::SVM_LOWSIDE</a> = (SVMLIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bad901d82da0ab4308bcf3051c6d8ca4ea">PMM_INT::SVM_LOWSIDE_REACHED</a> = (SVMLVLRIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bad02cd24be25247c4d041eef0d334db4b">PMM_INT::SVSM_HIGHSIDE_DELY_EXP</a> = (SVSMHDLYIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bacebbe4dd732571cd935e2a9951bbf0b8">PMM_INT::SVM_HIGHSIDE</a> = (SVMHIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07babf9535e89e1b64f806fb4766deec342a">PMM_INT::SVM_HIGHSIDE_REACHED</a> = (SVMHVLRIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd">PMM_INT::BOR</a> = (PMMBORIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f">PMM_INT::RST</a> = (PMMRSTIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92">PMM_INT::POR</a> = (PMMPORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bae461850e2b25b9ef9ba0ecdcaadef2ab">PMM_INT::SVS_HIGHSIDE</a> = (SVSHIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba2a474c902ff6f6cfc4afd1e2f54e3f62">PMM_INT::SVS_LOWSIDE</a> = (SVSLIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c">PMM_INT::LPM5</a> = (PMMLPM5IFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba863b06cee9907262028eb63665a3704b">PMM_INT::VMON</a> = (VMONIE), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07baf3f6d24c6ad504abfcc686fcc77b621e">PMM_INT::LPM45</a> = (LPM45IFG)
+<br />
+ }</td></tr>
+<tr class="separator:a7ae319575ffec2097512ce11b9bfe07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ae319575ffec2097512ce11b9bfe07b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07b">PMM_INT</a> : uint16_t { <br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd">PMM_INT::BOR</a> = (PMMBORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f">PMM_INT::RST</a> = (PMMRSTIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92">PMM_INT::POR</a> = (PMMPORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0">PMM_INT::SVSH</a> = (SVSHIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c">PMM_INT::LPM5</a> = (PMMLPM5IFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d">PMM_INT::ALL</a> = (0xA7), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd">PMM_INT::BOR</a> = (PMMBORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f">PMM_INT::RST</a> = (PMMRSTIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92">PMM_INT::POR</a> = (PMMPORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0">PMM_INT::SVSH</a> = (SVSHIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0">PMM_INT::SVSH</a> = (SVSLIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c">PMM_INT::LPM5</a> = (PMMLPM5IFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d">PMM_INT::ALL</a> = (0xB7), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bad7d005160223e7f74f7313f56ba746af">PMM_INT::SVSM_LOWSIDE_DELY_EXP</a> = (SVSMLDLYIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba2fee403bc449248b59227176ece2e487">PMM_INT::SVM_LOWSIDE</a> = (SVMLIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bad901d82da0ab4308bcf3051c6d8ca4ea">PMM_INT::SVM_LOWSIDE_REACHED</a> = (SVMLVLRIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bad02cd24be25247c4d041eef0d334db4b">PMM_INT::SVSM_HIGHSIDE_DELY_EXP</a> = (SVSMHDLYIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bacebbe4dd732571cd935e2a9951bbf0b8">PMM_INT::SVM_HIGHSIDE</a> = (SVMHIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07babf9535e89e1b64f806fb4766deec342a">PMM_INT::SVM_HIGHSIDE_REACHED</a> = (SVMHVLRIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd">PMM_INT::BOR</a> = (PMMBORIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f">PMM_INT::RST</a> = (PMMRSTIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92">PMM_INT::POR</a> = (PMMPORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bae461850e2b25b9ef9ba0ecdcaadef2ab">PMM_INT::SVS_HIGHSIDE</a> = (SVSHIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba2a474c902ff6f6cfc4afd1e2f54e3f62">PMM_INT::SVS_LOWSIDE</a> = (SVSLIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c">PMM_INT::LPM5</a> = (PMMLPM5IFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba863b06cee9907262028eb63665a3704b">PMM_INT::VMON</a> = (VMONIE), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07baf3f6d24c6ad504abfcc686fcc77b621e">PMM_INT::LPM45</a> = (LPM45IFG)
+<br />
+ }</td></tr>
+<tr class="separator:a7ae319575ffec2097512ce11b9bfe07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ae319575ffec2097512ce11b9bfe07b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07b">PMM_INT</a> : uint16_t { <br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd">PMM_INT::BOR</a> = (PMMBORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f">PMM_INT::RST</a> = (PMMRSTIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92">PMM_INT::POR</a> = (PMMPORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0">PMM_INT::SVSH</a> = (SVSHIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c">PMM_INT::LPM5</a> = (PMMLPM5IFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d">PMM_INT::ALL</a> = (0xA7), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd">PMM_INT::BOR</a> = (PMMBORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f">PMM_INT::RST</a> = (PMMRSTIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92">PMM_INT::POR</a> = (PMMPORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0">PMM_INT::SVSH</a> = (SVSHIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0">PMM_INT::SVSH</a> = (SVSLIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c">PMM_INT::LPM5</a> = (PMMLPM5IFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d">PMM_INT::ALL</a> = (0xB7), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bad7d005160223e7f74f7313f56ba746af">PMM_INT::SVSM_LOWSIDE_DELY_EXP</a> = (SVSMLDLYIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba2fee403bc449248b59227176ece2e487">PMM_INT::SVM_LOWSIDE</a> = (SVMLIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bad901d82da0ab4308bcf3051c6d8ca4ea">PMM_INT::SVM_LOWSIDE_REACHED</a> = (SVMLVLRIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bad02cd24be25247c4d041eef0d334db4b">PMM_INT::SVSM_HIGHSIDE_DELY_EXP</a> = (SVSMHDLYIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bacebbe4dd732571cd935e2a9951bbf0b8">PMM_INT::SVM_HIGHSIDE</a> = (SVMHIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07babf9535e89e1b64f806fb4766deec342a">PMM_INT::SVM_HIGHSIDE_REACHED</a> = (SVMHVLRIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd">PMM_INT::BOR</a> = (PMMBORIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f">PMM_INT::RST</a> = (PMMRSTIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92">PMM_INT::POR</a> = (PMMPORIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07bae461850e2b25b9ef9ba0ecdcaadef2ab">PMM_INT::SVS_HIGHSIDE</a> = (SVSHIFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba2a474c902ff6f6cfc4afd1e2f54e3f62">PMM_INT::SVS_LOWSIDE</a> = (SVSLIFG), 
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c">PMM_INT::LPM5</a> = (PMMLPM5IFG), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07ba863b06cee9907262028eb63665a3704b">PMM_INT::VMON</a> = (VMONIE), 
+<a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07baf3f6d24c6ad504abfcc686fcc77b621e">PMM_INT::LPM45</a> = (LPM45IFG)
+<br />
+ }</td></tr>
+<tr class="separator:a7ae319575ffec2097512ce11b9bfe07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -264,6 +414,202 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07b">MT::Misc::PMM_INT</a> : uint16_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th>Enum Values</th><th>Documentation</th></tr><tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd"></a>BOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f"></a>RST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92"></a>POR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0"></a>SVSH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c"></a>LPM5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d"></a>ALL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd"></a>BOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f"></a>RST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92"></a>POR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0"></a>SVSH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0"></a>SVSH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c"></a>LPM5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d"></a>ALL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bad7d005160223e7f74f7313f56ba746af"></a>SVSM_LOWSIDE_DELY_EXP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba2fee403bc449248b59227176ece2e487"></a>SVM_LOWSIDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bad901d82da0ab4308bcf3051c6d8ca4ea"></a>SVM_LOWSIDE_REACHED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bad02cd24be25247c4d041eef0d334db4b"></a>SVSM_HIGHSIDE_DELY_EXP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bacebbe4dd732571cd935e2a9951bbf0b8"></a>SVM_HIGHSIDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07babf9535e89e1b64f806fb4766deec342a"></a>SVM_HIGHSIDE_REACHED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd"></a>BOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f"></a>RST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92"></a>POR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bae461850e2b25b9ef9ba0ecdcaadef2ab"></a>SVS_HIGHSIDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba2a474c902ff6f6cfc4afd1e2f54e3f62"></a>SVS_LOWSIDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c"></a>LPM5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba863b06cee9907262028eb63665a3704b"></a>VMON&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07baf3f6d24c6ad504abfcc686fcc77b621e"></a>LPM45&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07b">MT::Misc::PMM_INT</a> : uint16_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th>Enum Values</th><th>Documentation</th></tr><tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd"></a>BOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f"></a>RST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92"></a>POR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0"></a>SVSH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c"></a>LPM5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d"></a>ALL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd"></a>BOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f"></a>RST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92"></a>POR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0"></a>SVSH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0"></a>SVSH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c"></a>LPM5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d"></a>ALL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bad7d005160223e7f74f7313f56ba746af"></a>SVSM_LOWSIDE_DELY_EXP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba2fee403bc449248b59227176ece2e487"></a>SVM_LOWSIDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bad901d82da0ab4308bcf3051c6d8ca4ea"></a>SVM_LOWSIDE_REACHED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bad02cd24be25247c4d041eef0d334db4b"></a>SVSM_HIGHSIDE_DELY_EXP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bacebbe4dd732571cd935e2a9951bbf0b8"></a>SVM_HIGHSIDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07babf9535e89e1b64f806fb4766deec342a"></a>SVM_HIGHSIDE_REACHED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd"></a>BOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f"></a>RST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92"></a>POR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bae461850e2b25b9ef9ba0ecdcaadef2ab"></a>SVS_HIGHSIDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba2a474c902ff6f6cfc4afd1e2f54e3f62"></a>SVS_LOWSIDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c"></a>LPM5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba863b06cee9907262028eb63665a3704b"></a>VMON&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07baf3f6d24c6ad504abfcc686fcc77b621e"></a>LPM45&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07b">MT::Misc::PMM_INT</a> : uint16_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th>Enum Values</th><th>Documentation</th></tr><tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd"></a>BOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f"></a>RST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92"></a>POR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0"></a>SVSH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c"></a>LPM5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d"></a>ALL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd"></a>BOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f"></a>RST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92"></a>POR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0"></a>SVSH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0"></a>SVSH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c"></a>LPM5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d"></a>ALL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bad7d005160223e7f74f7313f56ba746af"></a>SVSM_LOWSIDE_DELY_EXP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba2fee403bc449248b59227176ece2e487"></a>SVM_LOWSIDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bad901d82da0ab4308bcf3051c6d8ca4ea"></a>SVM_LOWSIDE_REACHED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bad02cd24be25247c4d041eef0d334db4b"></a>SVSM_HIGHSIDE_DELY_EXP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bacebbe4dd732571cd935e2a9951bbf0b8"></a>SVM_HIGHSIDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07babf9535e89e1b64f806fb4766deec342a"></a>SVM_HIGHSIDE_REACHED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd"></a>BOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f"></a>RST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92"></a>POR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bae461850e2b25b9ef9ba0ecdcaadef2ab"></a>SVS_HIGHSIDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba2a474c902ff6f6cfc4afd1e2f54e3f62"></a>SVS_LOWSIDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c"></a>LPM5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba863b06cee9907262028eb63665a3704b"></a>VMON&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07baf3f6d24c6ad504abfcc686fcc77b621e"></a>LPM45&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceMT_1_1Misc.html#a7ae319575ffec2097512ce11b9bfe07b">MT::Misc::PMM_INT</a> : uint16_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th>Enum Values</th><th>Documentation</th></tr><tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd"></a>BOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f"></a>RST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92"></a>POR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0"></a>SVSH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c"></a>LPM5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d"></a>ALL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd"></a>BOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f"></a>RST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92"></a>POR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0"></a>SVSH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0"></a>SVSH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c"></a>LPM5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d"></a>ALL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bad7d005160223e7f74f7313f56ba746af"></a>SVSM_LOWSIDE_DELY_EXP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba2fee403bc449248b59227176ece2e487"></a>SVM_LOWSIDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bad901d82da0ab4308bcf3051c6d8ca4ea"></a>SVM_LOWSIDE_REACHED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bad02cd24be25247c4d041eef0d334db4b"></a>SVSM_HIGHSIDE_DELY_EXP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bacebbe4dd732571cd935e2a9951bbf0b8"></a>SVM_HIGHSIDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07babf9535e89e1b64f806fb4766deec342a"></a>SVM_HIGHSIDE_REACHED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd"></a>BOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f"></a>RST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92"></a>POR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07bae461850e2b25b9ef9ba0ecdcaadef2ab"></a>SVS_HIGHSIDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba2a474c902ff6f6cfc4afd1e2f54e3f62"></a>SVS_LOWSIDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c"></a>LPM5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07ba863b06cee9907262028eb63665a3704b"></a>VMON&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7ae319575ffec2097512ce11b9bfe07baf3f6d24c6ad504abfcc686fcc77b621e"></a>LPM45&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <a class="anchor" id="ad9ade5975d94fa10ec1b368ec5dd3154"></a>
 <div class="memitem">
 <div class="memproto">
@@ -298,7 +644,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceMT.html">MT</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1Misc.html">Misc</a></li>
-    <li class="footer">Generated on Do Okt 22 2020 15:08:17 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Fr Okt 23 2020 15:51:21 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

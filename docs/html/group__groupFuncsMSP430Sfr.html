@@ -90,10 +90,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga6aa4ac0a33b9ea50314022823249584c"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430Sfr.html#ga6aa4ac0a33b9ea50314022823249584c">MT::MSP430::Sfr::disableInterrupt</a> (const BIT &amp;bit, const BITS &amp;...bits) noexcept</td></tr>
 <tr class="memdesc:ga6aa4ac0a33b9ea50314022823249584c"><td class="mdescLeft">&#160;</td><td class="mdescRight">disables the given interrupts  <a href="#ga6aa4ac0a33b9ea50314022823249584c">More...</a><br /></td></tr>
 <tr class="separator:ga6aa4ac0a33b9ea50314022823249584c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6dcf90c755e55f5075ee1d3b0fc2d306"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </td></tr>
-<tr class="memitem:ga6dcf90c755e55f5075ee1d3b0fc2d306"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="group__groupEnumsMSP430Gpio.html#ga051dc8084f6acc078da8e77114811da0">INT_FLAG</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430Sfr.html#ga6dcf90c755e55f5075ee1d3b0fc2d306">MT::MSP430::Sfr::getInterruptStatus</a> (const BIT &amp;bit, const BITS &amp;...bits) noexcept</td></tr>
-<tr class="memdesc:ga6dcf90c755e55f5075ee1d3b0fc2d306"><td class="mdescLeft">&#160;</td><td class="mdescRight">compares the given SFR_INT(s) with the interrupt flags set in the hw register  <a href="#ga6dcf90c755e55f5075ee1d3b0fc2d306">More...</a><br /></td></tr>
-<tr class="separator:ga6dcf90c755e55f5075ee1d3b0fc2d306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5d3052d59fe5c43fd90db3c3c097acc9"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </td></tr>
+<tr class="memitem:ga5d3052d59fe5c43fd90db3c3c097acc9"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="group__groupEnumsMSP430Types.html#ga479386b6bd2b0b2ba04a910f49697804">INT_MASK_MATCH</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430Sfr.html#ga5d3052d59fe5c43fd90db3c3c097acc9">MT::MSP430::Sfr::getInterruptStatus</a> (const BIT &amp;bit, const BITS &amp;...bits) noexcept</td></tr>
+<tr class="memdesc:ga5d3052d59fe5c43fd90db3c3c097acc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">compares the given SFR_INT(s) with the interrupt flags set in the hw register  <a href="#ga5d3052d59fe5c43fd90db3c3c097acc9">More...</a><br /></td></tr>
+<tr class="separator:ga5d3052d59fe5c43fd90db3c3c097acc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf628c7d2a7fabf782e8cf41131d8447d"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </td></tr>
 <tr class="memitem:gaf628c7d2a7fabf782e8cf41131d8447d"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430Sfr.html#gaf628c7d2a7fabf782e8cf41131d8447d">MT::MSP430::Sfr::clearInterruptStatus</a> (const BIT &amp;bit, const BITS &amp;...bits) noexcept</td></tr>
 <tr class="memdesc:gaf628c7d2a7fabf782e8cf41131d8447d"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear the given interrupts  <a href="#gaf628c7d2a7fabf782e8cf41131d8447d">More...</a><br /></td></tr>
@@ -249,7 +249,7 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 
 </div>
 </div>
-<a class="anchor" id="ga6dcf90c755e55f5075ee1d3b0fc2d306"></a>
+<a class="anchor" id="ga5d3052d59fe5c43fd90db3c3c097acc9"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -259,7 +259,7 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="group__groupEnumsMSP430Gpio.html#ga051dc8084f6acc078da8e77114811da0">INT_FLAG</a> MT::MSP430::Sfr::getInterruptStatus </td>
+          <td class="memname">constexpr <a class="el" href="group__groupEnumsMSP430Types.html#ga479386b6bd2b0b2ba04a910f49697804">INT_MASK_MATCH</a> MT::MSP430::Sfr::getInterruptStatus </td>
           <td>(</td>
           <td class="paramtype">const BIT &amp;&#160;</td>
           <td class="paramname"><em>bit</em>, </td>
@@ -286,13 +286,13 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 <p><code>#include &lt;<a class="el" href="Sfr_8hpp.html">MSP430/SFR/Sfr.hpp</a>&gt;</code></p>
 
 <p>compares the given SFR_INT(s) with the interrupt flags set in the hw register </p>
-<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1Sfr.html">Sfr</a> sfr{};</div><div class="line"> <span class="keywordflow">if</span>(sfr.getInterruptStatus(SFR::INT::WATCHDOG_INTERVAL_TIMER | SFR::INT::OSCILLATOR_FAULT) == <a class="code" href="group__groupEnumsMSP430Gpio.html#gga051dc8084f6acc078da8e77114811da0ac0d83f0b82a6b30de8811e69e6d95c61">INT_FLAG::TRUE</a>) doSomething();  </div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1Sfr.html">Sfr</a> sfr{};</div><div class="line"> <span class="keywordflow">if</span>(sfr.getInterruptStatus(SFR::INT::WATCHDOG_INTERVAL_TIMER | SFR::INT::OSCILLATOR_FAULT) == <a class="code" href="group__groupEnumsMSP430Types.html#gga479386b6bd2b0b2ba04a910f49697804ac0d83f0b82a6b30de8811e69e6d95c61">INT_MASK_MATCH::TRUE</a>) doSomething();  </div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">BITS</td><td>use enumeration <a class="el" href="group__groupEnumsMSP430Sfr.html#gabfa179c7aea743f4b369b5242781fa5e" title="SFR interrupt types. ">SFR::INT</a> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>if all the given bits are set or not (<a class="el" href="group__groupEnumsMSP430Gpio.html#ga051dc8084f6acc078da8e77114811da0" title="MSP430 Interrupt Flag match. ">MT::MSP430::INT_FLAG</a>) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>if all the given bits are set or not (<a class="el" href="group__groupEnumsMSP430Types.html#ga479386b6bd2b0b2ba04a910f49697804" title="Interrupt Flag match. ">MT::MSP430::INT_MASK_MATCH</a>) </dd></dl>
 
 </div>
 </div>
@@ -403,7 +403,7 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 <!-- Generated by DoxyPress 1.4.0 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Do Okt 22 2020 15:08:17 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Fr Okt 23 2020 15:51:21 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

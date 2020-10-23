@@ -1,14 +1,15 @@
 #ifndef MICROTRAIT_MT_HPP_
 #define MICROTRAIT_MT_HPP_
 
-#include "MicroTrait/MSP430/GPIO/Gpio.hpp"
-#include "MicroTrait/MSP430/GPIO/GpioInterrupt.hpp"
 #include "MicroTrait/Version.hpp"
 #include "MicroTrait/Settings.hpp"
 
 #include "MicroTrait/Universal/Register.hpp"
 #include "MicroTrait/Universal/Interrupt.hpp"
 
+#include "MicroTrait/MSP430/Types.hpp"
+#include "MicroTrait/MSP430/GPIO/Gpio.hpp"
+#include "MicroTrait/MSP430/GPIO/GpioInterrupt.hpp"
 #include "MicroTrait/MSP430/Settings.hpp"
 #include "MicroTrait/MSP430/WDT/WdtA.hpp"
 #include "MicroTrait/MSP430/WDT/WdtAInterrupt.hpp"

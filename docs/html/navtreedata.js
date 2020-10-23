@@ -11,19 +11,15 @@ var NAVTREE =
               [ "LOW_TO_HIGH", "group__groupEnumsMSP430Gpio.html#gga4ca73a5b682c09ead2038ed3a5120202a4e82ee4e6da15be13bcdf1b2ac2ff3a2", null ],
               [ "HIGH_TO_LOW", "group__groupEnumsMSP430Gpio.html#gga4ca73a5b682c09ead2038ed3a5120202a3cfb549d1f39abc05ab85af4de89ebbd", null ]
             ] ],
-            [ "INT_FLAG", "group__groupEnumsMSP430Gpio.html#ga051dc8084f6acc078da8e77114811da0", [
-              [ "FALSE", "group__groupEnumsMSP430Gpio.html#gga051dc8084f6acc078da8e77114811da0a946003f97ccc52d5d3b54ac0ec31bbfc", null ],
-              [ "TRUE", "group__groupEnumsMSP430Gpio.html#gga051dc8084f6acc078da8e77114811da0ac0d83f0b82a6b30de8811e69e6d95c61", null ]
+            [ "MODULE_FUNC", "group__groupEnumsMSP430Gpio.html#ga4f655c53b332e36e882d3d4e5a5b8e1d", [
+              [ "GPIO", "group__groupEnumsMSP430Gpio.html#gga4f655c53b332e36e882d3d4e5a5b8e1daa4b03abff0e37da035d6fc0f9a4b1235", null ],
+              [ "PRIMARY", "group__groupEnumsMSP430Gpio.html#gga4f655c53b332e36e882d3d4e5a5b8e1da428429ba9ea83e4841036fb0508fd6dc", null ],
+              [ "SECONDARY", "group__groupEnumsMSP430Gpio.html#gga4f655c53b332e36e882d3d4e5a5b8e1da371b09d93ca01e09a42fbd5a2a423f8e", null ],
+              [ "TERNARY", "group__groupEnumsMSP430Gpio.html#gga4f655c53b332e36e882d3d4e5a5b8e1da8343ca237665c0d9e59cb1b668462f70", null ]
             ] ],
-            [ "MODULE_FUNC", "group__groupEnumsMSP430Gpio.html#ga0846e47124273392e8f0a106f7e632af", [
-              [ "GPIO", "group__groupEnumsMSP430Gpio.html#gga0846e47124273392e8f0a106f7e632afaa4b03abff0e37da035d6fc0f9a4b1235", null ],
-              [ "PRIMARY", "group__groupEnumsMSP430Gpio.html#gga0846e47124273392e8f0a106f7e632afa428429ba9ea83e4841036fb0508fd6dc", null ],
-              [ "SECONDARY", "group__groupEnumsMSP430Gpio.html#gga0846e47124273392e8f0a106f7e632afa371b09d93ca01e09a42fbd5a2a423f8e", null ],
-              [ "TERNARY", "group__groupEnumsMSP430Gpio.html#gga0846e47124273392e8f0a106f7e632afa8343ca237665c0d9e59cb1b668462f70", null ]
-            ] ],
-            [ "PIN_STATE", "group__groupEnumsMSP430Gpio.html#gae77085eb34d7dc121b863454dc191633", [
-              [ "LOW", "group__groupEnumsMSP430Gpio.html#ggae77085eb34d7dc121b863454dc191633a41bc94cbd8eebea13ce0491b2ac11b88", null ],
-              [ "HIGH", "group__groupEnumsMSP430Gpio.html#ggae77085eb34d7dc121b863454dc191633ab89de3b4b81c4facfac906edf29aec8c", null ]
+            [ "PIN_STATE", "group__groupEnumsMSP430Gpio.html#gaadf9434aab62842f21e1acc6b81f3e2b", [
+              [ "LOW", "group__groupEnumsMSP430Gpio.html#ggaadf9434aab62842f21e1acc6b81f3e2ba41bc94cbd8eebea13ce0491b2ac11b88", null ],
+              [ "HIGH", "group__groupEnumsMSP430Gpio.html#ggaadf9434aab62842f21e1acc6b81f3e2bab89de3b4b81c4facfac906edf29aec8c", null ]
             ] ]
           ] ],
           [ "Functions", "group__groupFuncsMSP430Gpio.html", [
@@ -31,7 +27,7 @@ var NAVTREE =
             [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#ga6081ec1d4826266878537d6f17002aa1", null ],
             [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga7ff497469dcecb1543dfc8dea9c6d7d8", null ],
             [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#ga39d7dfca3d951783a99a324d2db5ce98", null ],
-            [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga45c46b5428d63ce14a8c77b70f3e23eb", null ],
+            [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga114fe82841d3668bfc083e8ee0e272c4", null ],
             [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#ga1aede0078274977a43d8e07d751e1fd9", null ],
             [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#gae655a13760c53990590dcac9a944206e", null ],
             [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#gae0ddd1eaf216b18631a6174a0c7f2cd7", null ],
@@ -57,6 +53,80 @@ var NAVTREE =
             [ "registerCallback", "group__groupFuncsMSP430GpioInt.html#gaf994a26398b10f919936c7613a37810d", null ]
           ] ]
         ] ],
+        [ "PMM", "group__groupMSP430Pmm.html", [
+          [ "Enums", "group__groupEnumsMSP430Pmm.html", [
+            [ "INT", "group__groupEnumsMSP430Pmm.html#ga3b67197ff4ca6179cc8232b65433452a", null ],
+            [ "BANDGAP", "group__groupEnumsMSP430Pmm.html#gadaab80caab9f3fdac0d6423779c6f506", null ],
+            [ "BANDGAP_MODE", "group__groupEnumsMSP430Pmm.html#gaf769a85901020df9a15451adda7d4527", null ],
+            [ "BANDGAP_STATUS", "group__groupEnumsMSP430Pmm.html#gadd0cd07a11c2db8455f1e362e78310a7", null ],
+            [ "COREVOLT", "group__groupEnumsMSP430Pmm.html#ga8a958c598e100cbbf96cca52fa6c0440", null ],
+            [ "REF_VOLT_SELECT", "group__groupEnumsMSP430Pmm.html#ga437c68cfc024010509db91a98b633012", null ],
+            [ "REFGEN", "group__groupEnumsMSP430Pmm.html#gaf616b45c98b18c671049293fd4724a74", null ],
+            [ "REFGEN_STATUS", "group__groupEnumsMSP430Pmm.html#ga4451f4aa3fae38aaafe1aa807ab209aa", null ],
+            [ "REGULATOR", "group__groupEnumsMSP430Pmm.html#gae1303f190c6f8a7b26c77a3fa1193ee1", null ],
+            [ "VOLT_MONITOR", "group__groupEnumsMSP430Pmm.html#gabf6a4b47c8166a1389472a7b3947fa5c", null ]
+          ] ],
+          [ "Functions", "group__groupFuncsMSP430Pmm.html", [
+            [ "calibrateReference", "group__groupFuncsMSP430Pmm.html#ga457e278f9b61593d532cb63a971063ad", null ],
+            [ "clearInterrupt", "group__groupFuncsMSP430Pmm.html#gadcc397dfe32296960a969c32c3bca86d", null ],
+            [ "clearPMMIFGS", "group__groupFuncsMSP430Pmm.html#ga273666d63a4d5ed8e286ed467d56a6d8", null ],
+            [ "disableExternalReference", "group__groupFuncsMSP430Pmm.html#ga3f8a10946cf986c45c9216dba8553f66", null ],
+            [ "disableInternalReference", "group__groupFuncsMSP430Pmm.html#ga4f8664891f6b5139e57e4d927792daa7", null ],
+            [ "disableInterrupt", "group__groupFuncsMSP430Pmm.html#ga5d8067e8f99e856eb977f813b508006a", null ],
+            [ "disableSVMH", "group__groupFuncsMSP430Pmm.html#ga3c950e4d978a7728403b29390f9af16b", null ],
+            [ "disableSvmHInterrupt", "group__groupFuncsMSP430Pmm.html#gaa87c98138d5543c5624c7484b149e1fa", null ],
+            [ "disableSVML", "group__groupFuncsMSP430Pmm.html#gacf6983a7b63037007b31e5d5f0bac792", null ],
+            [ "disableSvmLInterrupt", "group__groupFuncsMSP430Pmm.html#gaaf5de35cf5df15cf6795f039241144f4", null ],
+            [ "disableSVSH", "group__groupFuncsMSP430Pmm.html#gacd63f574406bf26f23bf5ae1e6e0d8c3", null ],
+            [ "disableSvsHInLPMFullPerf", "group__groupFuncsMSP430Pmm.html#gaf18479db44eeb6913e949123c516c41e", null ],
+            [ "disableSvsHInLPMNormPerf", "group__groupFuncsMSP430Pmm.html#ga6a078e75c825dc665df3b1bfe9e580d7", null ],
+            [ "disableSvsHReset", "group__groupFuncsMSP430Pmm.html#ga237293939274c972b5b3f7f94eda6457", null ],
+            [ "disableSvsHSvmH", "group__groupFuncsMSP430Pmm.html#gabdf96a15df780faeb606ef03c161cf3e", null ],
+            [ "disableSVSL", "group__groupFuncsMSP430Pmm.html#gaafde20394138bad3d8e55054397d1346", null ],
+            [ "disableSvsLInLPMFastWake", "group__groupFuncsMSP430Pmm.html#ga0b35bbbc66579c91d0363bac24536a51", null ],
+            [ "disableSvsLInLPMSlowWake", "group__groupFuncsMSP430Pmm.html#ga40467fbcede21860a44ec2bccd761e6d", null ],
+            [ "disableSvsLReset", "group__groupFuncsMSP430Pmm.html#ga5c7728e0b3386e641a2453568ebaf478", null ],
+            [ "disableSvsLSvmL", "group__groupFuncsMSP430Pmm.html#ga8de247ea407ba49eb87784d88b1ca40f", null ],
+            [ "disableTempSensor", "group__groupFuncsMSP430Pmm.html#gaafd95869a69385820dabb85eeedd52c3", null ],
+            [ "enableExternalReference", "group__groupFuncsMSP430Pmm.html#ga4ba7ec72f66e8c4b205136398aae6833", null ],
+            [ "enableInterrupt", "group__groupFuncsMSP430Pmm.html#gae2cec647a415939cab237d2bac244f1f", null ],
+            [ "enableSVMH", "group__groupFuncsMSP430Pmm.html#ga74a3a1e67252ab6ea4d233e087df4c2c", null ],
+            [ "enableSvmHInterrupt", "group__groupFuncsMSP430Pmm.html#ga72d6c4670ebe415406dabb651524381e", null ],
+            [ "enableSVML", "group__groupFuncsMSP430Pmm.html#ga1afedecdf374a66f3e1bc2b09719a725", null ],
+            [ "enableSvmLInterrupt", "group__groupFuncsMSP430Pmm.html#gabb13b60274640044b3ea961b827e2cd8", null ],
+            [ "enableSVSH", "group__groupFuncsMSP430Pmm.html#ga49bd38bf88107980c5ed3d4c70b2b0ec", null ],
+            [ "enableSvsHInLPMFullPerf", "group__groupFuncsMSP430Pmm.html#ga265f91a16011c3959a6c5b23311d32cc", null ],
+            [ "enableSvsHInLPMNormPerf", "group__groupFuncsMSP430Pmm.html#gab3d373481d2aefab6fbf66a8c97cee38", null ],
+            [ "enableSvsHReset", "group__groupFuncsMSP430Pmm.html#ga63983bd8ce5babc0c918c8a6c2d24c12", null ],
+            [ "enableSvsHSvmH", "group__groupFuncsMSP430Pmm.html#gac5ef4cfc882e628a71da031433de8e8a", null ],
+            [ "enableSVSL", "group__groupFuncsMSP430Pmm.html#ga2cb47bc76ff722fde0d5246fbf3dcecf", null ],
+            [ "enableSvsLInLPMFastWake", "group__groupFuncsMSP430Pmm.html#ga4587fe3d324ef32b24aef74c6ab347ca", null ],
+            [ "enableSvsLInLPMSlowWake", "group__groupFuncsMSP430Pmm.html#ga79fd94fdb5789708b6eee04706b7d97e", null ],
+            [ "enableSvsLReset", "group__groupFuncsMSP430Pmm.html#gaf3f2e09122b9fc113af85ea8161a98e7", null ],
+            [ "enableSvsLSvmL", "group__groupFuncsMSP430Pmm.html#gaaae74ec45f609507ce9b67dd3980d1ba", null ],
+            [ "enableTempSensor", "group__groupFuncsMSP430Pmm.html#ga42e9c7883109a02242de4b98216c292e", null ],
+            [ "getBandgapMode", "group__groupFuncsMSP430Pmm.html#gabc31069d9dcaeff7b2cfd59d5eb6c4e2", null ],
+            [ "getBufferedBandgapVoltageStatus", "group__groupFuncsMSP430Pmm.html#ga8a51e8068e52d3360849a0c085f2b500", null ],
+            [ "getInterruptStatus", "group__groupFuncsMSP430Pmm.html#ga8c8ddd0716cb0170d6b98014285e51b8", null ],
+            [ "getVariableReferenceVoltageStatus", "group__groupFuncsMSP430Pmm.html#ga2e37c7075fb2bac2e053b13a06cd7b3e", null ],
+            [ "isBandgapActive", "group__groupFuncsMSP430Pmm.html#gab8843108a55ee0fcff2ff3c83a561f5a", null ],
+            [ "isRefGenActive", "group__groupFuncsMSP430Pmm.html#ga2a124d401e9bf48bff9700e55b599b8a", null ],
+            [ "optimizeSvsHInLPMFullPerf", "group__groupFuncsMSP430Pmm.html#gaba02042adaed17e837b4387fd1f8b335", null ],
+            [ "optimizeSvsLInLPMFastWake", "group__groupFuncsMSP430Pmm.html#gade6dfbf9db4a2f3ff9d624b55ca6ac5d", null ],
+            [ "selectVoltageReference", "group__groupFuncsMSP430Pmm.html#ga36f1ebdeeab21fe47fbc785e9580931d", null ],
+            [ "setRegulatorStatus", "group__groupFuncsMSP430Pmm.html#gae3e9b503deac7dc56ba4e69eefaf4db5", null ],
+            [ "setupVoltageMonitor", "group__groupFuncsMSP430Pmm.html#ga95b56b6433fad6dca4fdd40f9386477e", null ],
+            [ "setVCore", "group__groupFuncsMSP430Pmm.html#ga53da2b148820eeef343abae4f00a15b8", null ],
+            [ "setVCoreDown", "group__groupFuncsMSP430Pmm.html#ga89d30b7cf5baacd2d9ef1105b761886d", null ],
+            [ "setVCoreUp", "group__groupFuncsMSP430Pmm.html#gafd8492858a0aff9e0ea88a1b171ad617", null ],
+            [ "trigBOR", "group__groupFuncsMSP430Pmm.html#ga9f6e8839e81d11729ac1b52af2c8e54c", null ],
+            [ "trigPOR", "group__groupFuncsMSP430Pmm.html#ga6036c3a5a9e12962b1d5e3440d8d433b", null ],
+            [ "turnOffRegulator", "group__groupFuncsMSP430Pmm.html#ga37d41b0a0465fbac751beb0eb508f040", null ],
+            [ "turnOnRegulator", "group__groupFuncsMSP430Pmm.html#ga451338b92b266834d445896659f9042b", null ],
+            [ "unlockIOConfiguration", "group__groupFuncsMSP430Pmm.html#gadc440d7c6e1ec25dfebd09cb89816c10", null ],
+            [ "unlockLPM5", "group__groupFuncsMSP430Pmm.html#ga875d175ce4b8c5c6e6865c2e0bbcf48a", null ]
+          ] ]
+        ] ],
         [ "SFR", "group__groupMSP430Sfr.html", [
           [ "Enums", "group__groupEnumsMSP430Sfr.html", [
             [ "INT", "group__groupEnumsMSP430Sfr.html#gabfa179c7aea743f4b369b5242781fa5e", null ],
@@ -68,13 +138,25 @@ var NAVTREE =
             [ "clearInterruptStatus", "group__groupFuncsMSP430Sfr.html#gaf628c7d2a7fabf782e8cf41131d8447d", null ],
             [ "disableInterrupt", "group__groupFuncsMSP430Sfr.html#ga6aa4ac0a33b9ea50314022823249584c", null ],
             [ "enableInterrupt", "group__groupFuncsMSP430Sfr.html#ga49cf87f702a24bc0ac1ffe8639b02821", null ],
-            [ "getInterruptStatus", "group__groupFuncsMSP430Sfr.html#ga6dcf90c755e55f5075ee1d3b0fc2d306", null ],
+            [ "getInterruptStatus", "group__groupFuncsMSP430Sfr.html#ga5d3052d59fe5c43fd90db3c3c097acc9", null ],
             [ "setNMIEdge", "group__groupFuncsMSP430Sfr.html#ga6717cd4f678cce1bdc6e505331dcaa53", null ],
             [ "setResetNMIPinFunction", "group__groupFuncsMSP430Sfr.html#gabce2ac33cdfa02bc215ab27693d7f8f8", null ],
             [ "setResetPinPullResistor", "group__groupFuncsMSP430Sfr.html#ga095995edb9190d9c557506dafe3ad399", null ]
           ] ]
         ] ],
         [ "Settings", "group__groupMSP430Set.html", null ],
+        [ "Types", "group__groupMSP430Types.html", [
+          [ "Enums", "group__groupEnumsMSP430Types.html", [
+            [ "INT_MASK_MATCH", "group__groupEnumsMSP430Types.html#ga479386b6bd2b0b2ba04a910f49697804", [
+              [ "FALSE", "group__groupEnumsMSP430Types.html#gga479386b6bd2b0b2ba04a910f49697804a946003f97ccc52d5d3b54ac0ec31bbfc", null ],
+              [ "TRUE", "group__groupEnumsMSP430Types.html#gga479386b6bd2b0b2ba04a910f49697804ac0d83f0b82a6b30de8811e69e6d95c61", null ]
+            ] ],
+            [ "STATUS", "group__groupEnumsMSP430Types.html#ga72e3944880ce3d32ef46ab09fb7c0305", [
+              [ "FAIL", "group__groupEnumsMSP430Types.html#gga72e3944880ce3d32ef46ab09fb7c0305ac2759effffc94bb9acc71d69fe3e8a1f", null ],
+              [ "SUCCESS", "group__groupEnumsMSP430Types.html#gga72e3944880ce3d32ef46ab09fb7c0305ad0749aaba8b833466dfcbb0428e4f89c", null ]
+            ] ]
+          ] ]
+        ] ],
         [ "Watchdog A", "group__groupMSP430WdtA.html", [
           [ "Enums", "group__groupEnumsMSP430WdtA.html", [
             [ "CLOCKDIVIDER", "group__groupEnumsMSP430WdtA.html#ga05723810294d4c0eb4f7a99255eb40bc", [
@@ -273,7 +355,7 @@ var NAVTREE =
                   [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#ga6081ec1d4826266878537d6f17002aa1", null ],
                   [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga7ff497469dcecb1543dfc8dea9c6d7d8", null ],
                   [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#ga39d7dfca3d951783a99a324d2db5ce98", null ],
-                  [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga45c46b5428d63ce14a8c77b70f3e23eb", null ],
+                  [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga114fe82841d3668bfc083e8ee0e272c4", null ],
                   [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#ga1aede0078274977a43d8e07d751e1fd9", null ],
                   [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#gae655a13760c53990590dcac9a944206e", null ],
                   [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#gae0ddd1eaf216b18631a6174a0c7f2cd7", null ],
@@ -298,6 +380,78 @@ var NAVTREE =
                 [ "startWatchdogTimer", "group__groupFuncsMSP430WdtA.html#gabb1ea835be4d7339d66648391ebf4f3f", null ]
               ] ]
             ] ],
+            [ "Pmm", "structMT_1_1MSP430_1_1Pmm.html", [
+              [ "INT", "group__groupEnumsMSP430Pmm.html#ga3b67197ff4ca6179cc8232b65433452a", null ],
+              [ "BANDGAP", "group__groupEnumsMSP430Pmm.html#gadaab80caab9f3fdac0d6423779c6f506", null ],
+              [ "BANDGAP_MODE", "group__groupEnumsMSP430Pmm.html#gaf769a85901020df9a15451adda7d4527", null ],
+              [ "BANDGAP_STATUS", "group__groupEnumsMSP430Pmm.html#gadd0cd07a11c2db8455f1e362e78310a7", null ],
+              [ "COREVOLT", "group__groupEnumsMSP430Pmm.html#ga8a958c598e100cbbf96cca52fa6c0440", null ],
+              [ "REF_VOLT_SELECT", "group__groupEnumsMSP430Pmm.html#ga437c68cfc024010509db91a98b633012", null ],
+              [ "REFGEN", "group__groupEnumsMSP430Pmm.html#gaf616b45c98b18c671049293fd4724a74", null ],
+              [ "REFGEN_STATUS", "group__groupEnumsMSP430Pmm.html#ga4451f4aa3fae38aaafe1aa807ab209aa", null ],
+              [ "REGULATOR", "group__groupEnumsMSP430Pmm.html#gae1303f190c6f8a7b26c77a3fa1193ee1", null ],
+              [ "VOLT_MONITOR", "group__groupEnumsMSP430Pmm.html#gabf6a4b47c8166a1389472a7b3947fa5c", null ],
+              [ "calibrateReference", "group__groupFuncsMSP430Pmm.html#ga457e278f9b61593d532cb63a971063ad", null ],
+              [ "clearInterrupt", "group__groupFuncsMSP430Pmm.html#gadcc397dfe32296960a969c32c3bca86d", null ],
+              [ "clearInterrupt", "structMT_1_1MSP430_1_1Pmm.html#gadcc397dfe32296960a969c32c3bca86d", null ],
+              [ "clearPMMIFGS", "group__groupFuncsMSP430Pmm.html#ga273666d63a4d5ed8e286ed467d56a6d8", null ],
+              [ "disableExternalReference", "group__groupFuncsMSP430Pmm.html#ga3f8a10946cf986c45c9216dba8553f66", null ],
+              [ "disableInternalReference", "group__groupFuncsMSP430Pmm.html#ga4f8664891f6b5139e57e4d927792daa7", null ],
+              [ "disableInterrupt", "group__groupFuncsMSP430Pmm.html#ga5d8067e8f99e856eb977f813b508006a", null ],
+              [ "disableInterrupt", "structMT_1_1MSP430_1_1Pmm.html#ga5d8067e8f99e856eb977f813b508006a", null ],
+              [ "disableSVMH", "group__groupFuncsMSP430Pmm.html#ga3c950e4d978a7728403b29390f9af16b", null ],
+              [ "disableSvmHInterrupt", "group__groupFuncsMSP430Pmm.html#gaa87c98138d5543c5624c7484b149e1fa", null ],
+              [ "disableSVML", "group__groupFuncsMSP430Pmm.html#gacf6983a7b63037007b31e5d5f0bac792", null ],
+              [ "disableSvmLInterrupt", "group__groupFuncsMSP430Pmm.html#gaaf5de35cf5df15cf6795f039241144f4", null ],
+              [ "disableSVSH", "group__groupFuncsMSP430Pmm.html#gacd63f574406bf26f23bf5ae1e6e0d8c3", null ],
+              [ "disableSvsHInLPMFullPerf", "group__groupFuncsMSP430Pmm.html#gaf18479db44eeb6913e949123c516c41e", null ],
+              [ "disableSvsHInLPMNormPerf", "group__groupFuncsMSP430Pmm.html#ga6a078e75c825dc665df3b1bfe9e580d7", null ],
+              [ "disableSvsHReset", "group__groupFuncsMSP430Pmm.html#ga237293939274c972b5b3f7f94eda6457", null ],
+              [ "disableSvsHSvmH", "group__groupFuncsMSP430Pmm.html#gabdf96a15df780faeb606ef03c161cf3e", null ],
+              [ "disableSVSL", "group__groupFuncsMSP430Pmm.html#gaafde20394138bad3d8e55054397d1346", null ],
+              [ "disableSvsLInLPMFastWake", "group__groupFuncsMSP430Pmm.html#ga0b35bbbc66579c91d0363bac24536a51", null ],
+              [ "disableSvsLInLPMSlowWake", "group__groupFuncsMSP430Pmm.html#ga40467fbcede21860a44ec2bccd761e6d", null ],
+              [ "disableSvsLReset", "group__groupFuncsMSP430Pmm.html#ga5c7728e0b3386e641a2453568ebaf478", null ],
+              [ "disableSvsLSvmL", "group__groupFuncsMSP430Pmm.html#ga8de247ea407ba49eb87784d88b1ca40f", null ],
+              [ "disableTempSensor", "group__groupFuncsMSP430Pmm.html#gaafd95869a69385820dabb85eeedd52c3", null ],
+              [ "enableExternalReference", "group__groupFuncsMSP430Pmm.html#ga4ba7ec72f66e8c4b205136398aae6833", null ],
+              [ "enableInterrupt", "group__groupFuncsMSP430Pmm.html#gae2cec647a415939cab237d2bac244f1f", null ],
+              [ "enableSVMH", "group__groupFuncsMSP430Pmm.html#ga74a3a1e67252ab6ea4d233e087df4c2c", null ],
+              [ "enableSvmHInterrupt", "group__groupFuncsMSP430Pmm.html#ga72d6c4670ebe415406dabb651524381e", null ],
+              [ "enableSVML", "group__groupFuncsMSP430Pmm.html#ga1afedecdf374a66f3e1bc2b09719a725", null ],
+              [ "enableSvmLInterrupt", "group__groupFuncsMSP430Pmm.html#gabb13b60274640044b3ea961b827e2cd8", null ],
+              [ "enableSVSH", "group__groupFuncsMSP430Pmm.html#ga49bd38bf88107980c5ed3d4c70b2b0ec", null ],
+              [ "enableSvsHInLPMFullPerf", "group__groupFuncsMSP430Pmm.html#ga265f91a16011c3959a6c5b23311d32cc", null ],
+              [ "enableSvsHInLPMNormPerf", "group__groupFuncsMSP430Pmm.html#gab3d373481d2aefab6fbf66a8c97cee38", null ],
+              [ "enableSvsHReset", "group__groupFuncsMSP430Pmm.html#ga63983bd8ce5babc0c918c8a6c2d24c12", null ],
+              [ "enableSvsHSvmH", "group__groupFuncsMSP430Pmm.html#gac5ef4cfc882e628a71da031433de8e8a", null ],
+              [ "enableSVSL", "group__groupFuncsMSP430Pmm.html#ga2cb47bc76ff722fde0d5246fbf3dcecf", null ],
+              [ "enableSvsLInLPMFastWake", "group__groupFuncsMSP430Pmm.html#ga4587fe3d324ef32b24aef74c6ab347ca", null ],
+              [ "enableSvsLInLPMSlowWake", "group__groupFuncsMSP430Pmm.html#ga79fd94fdb5789708b6eee04706b7d97e", null ],
+              [ "enableSvsLReset", "group__groupFuncsMSP430Pmm.html#gaf3f2e09122b9fc113af85ea8161a98e7", null ],
+              [ "enableSvsLSvmL", "group__groupFuncsMSP430Pmm.html#gaaae74ec45f609507ce9b67dd3980d1ba", null ],
+              [ "enableTempSensor", "group__groupFuncsMSP430Pmm.html#ga42e9c7883109a02242de4b98216c292e", null ],
+              [ "getBandgapMode", "group__groupFuncsMSP430Pmm.html#gabc31069d9dcaeff7b2cfd59d5eb6c4e2", null ],
+              [ "getBufferedBandgapVoltageStatus", "group__groupFuncsMSP430Pmm.html#ga8a51e8068e52d3360849a0c085f2b500", null ],
+              [ "getInterruptStatus", "group__groupFuncsMSP430Pmm.html#ga8c8ddd0716cb0170d6b98014285e51b8", null ],
+              [ "getVariableReferenceVoltageStatus", "group__groupFuncsMSP430Pmm.html#ga2e37c7075fb2bac2e053b13a06cd7b3e", null ],
+              [ "isBandgapActive", "group__groupFuncsMSP430Pmm.html#gab8843108a55ee0fcff2ff3c83a561f5a", null ],
+              [ "isRefGenActive", "group__groupFuncsMSP430Pmm.html#ga2a124d401e9bf48bff9700e55b599b8a", null ],
+              [ "optimizeSvsHInLPMFullPerf", "group__groupFuncsMSP430Pmm.html#gaba02042adaed17e837b4387fd1f8b335", null ],
+              [ "optimizeSvsLInLPMFastWake", "group__groupFuncsMSP430Pmm.html#gade6dfbf9db4a2f3ff9d624b55ca6ac5d", null ],
+              [ "selectVoltageReference", "group__groupFuncsMSP430Pmm.html#ga36f1ebdeeab21fe47fbc785e9580931d", null ],
+              [ "setRegulatorStatus", "group__groupFuncsMSP430Pmm.html#gae3e9b503deac7dc56ba4e69eefaf4db5", null ],
+              [ "setupVoltageMonitor", "group__groupFuncsMSP430Pmm.html#ga95b56b6433fad6dca4fdd40f9386477e", null ],
+              [ "setVCore", "group__groupFuncsMSP430Pmm.html#ga53da2b148820eeef343abae4f00a15b8", null ],
+              [ "setVCoreDown", "group__groupFuncsMSP430Pmm.html#ga89d30b7cf5baacd2d9ef1105b761886d", null ],
+              [ "setVCoreUp", "group__groupFuncsMSP430Pmm.html#gafd8492858a0aff9e0ea88a1b171ad617", null ],
+              [ "trigBOR", "group__groupFuncsMSP430Pmm.html#ga9f6e8839e81d11729ac1b52af2c8e54c", null ],
+              [ "trigPOR", "group__groupFuncsMSP430Pmm.html#ga6036c3a5a9e12962b1d5e3440d8d433b", null ],
+              [ "turnOffRegulator", "group__groupFuncsMSP430Pmm.html#ga37d41b0a0465fbac751beb0eb508f040", null ],
+              [ "turnOnRegulator", "group__groupFuncsMSP430Pmm.html#ga451338b92b266834d445896659f9042b", null ],
+              [ "unlockIOConfiguration", "group__groupFuncsMSP430Pmm.html#gadc440d7c6e1ec25dfebd09cb89816c10", null ],
+              [ "unlockLPM5", "group__groupFuncsMSP430Pmm.html#ga875d175ce4b8c5c6e6865c2e0bbcf48a", null ]
+            ] ],
             [ "Sfr", "structMT_1_1MSP430_1_1Sfr.html", [
               [ "INT", "group__groupEnumsMSP430Sfr.html#gabfa179c7aea743f4b369b5242781fa5e", null ],
               [ "NMI_EDGE", "group__groupEnumsMSP430Sfr.html#ga97b1da589340085a5cffe44121ba87e5", null ],
@@ -306,7 +460,7 @@ var NAVTREE =
               [ "clearInterruptStatus", "group__groupFuncsMSP430Sfr.html#gaf628c7d2a7fabf782e8cf41131d8447d", null ],
               [ "disableInterrupt", "group__groupFuncsMSP430Sfr.html#ga6aa4ac0a33b9ea50314022823249584c", null ],
               [ "enableInterrupt", "group__groupFuncsMSP430Sfr.html#ga49cf87f702a24bc0ac1ffe8639b02821", null ],
-              [ "getInterruptStatus", "group__groupFuncsMSP430Sfr.html#ga6dcf90c755e55f5075ee1d3b0fc2d306", null ],
+              [ "getInterruptStatus", "group__groupFuncsMSP430Sfr.html#ga5d3052d59fe5c43fd90db3c3c097acc9", null ],
               [ "setNMIEdge", "group__groupFuncsMSP430Sfr.html#ga6717cd4f678cce1bdc6e505331dcaa53", null ],
               [ "setResetNMIPinFunction", "group__groupFuncsMSP430Sfr.html#gabce2ac33cdfa02bc215ab27693d7f8f8", null ],
               [ "setResetPinPullResistor", "group__groupFuncsMSP430Sfr.html#ga095995edb9190d9c557506dafe3ad399", null ]
@@ -318,6 +472,7 @@ var NAVTREE =
             [ "enable_Enum_bits< BITS32 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS32_01_4.html", null ],
             [ "enable_Enum_bits< BITS8 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS8_01_4.html", null ],
             [ "enable_Enum_bits< GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01GPIO__PIN_01_4.html", null ],
+            [ "enable_Enum_bits< PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01PMM__INT_01_4.html", null ],
             [ "enable_Enum_bits< SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01SFR__INT_01_4.html", null ]
           ] ],
           [ "Universal", "namespaceMT_1_1Universal.html", [
@@ -358,23 +513,7 @@ var NAVTREE =
       [ "File List", "files.html", [
         [ "MSP430", "dir_56021fdb0e8b9a80f75a9a8cba132c6e.html", [
           [ "GPIO", "dir_406c66aff740586c12c555eb45f89962.html", [
-            [ "PortInterrupt.cpp", "PortInterrupt_8cpp.html", [
-              [ "Port_1", "PortInterrupt_8cpp.html#ae19d374d7165ea30524f78d9d922bfb5", null ],
-              [ "Port_2", "PortInterrupt_8cpp.html#a807abd3c5fa80d9cb694b99d9515b6a6", null ],
-              [ "PortVectors", "PortInterrupt_8cpp.html#a675e0e9dea9b2a06d6628331cdacd5b5", null ]
-            ] ],
-            [ "PortInterrupt.hpp", "PortInterrupt_8hpp.html", [
-              [ "Interrupt", "PortInterrupt_8hpp.html#a393c8acbc16850845522d17d29702da2", null ],
-              [ "IntHandlers", "PortInterrupt_8hpp.html#ae5088d8ef7f707a17f3a99d025e4ab26", null ],
-              [ "PORTS", "PortInterrupt_8hpp.html#ga659f33ee9e814354726f18091c14e7f0", [
-                [ "PORT1", "PortInterrupt_8hpp.html#gga659f33ee9e814354726f18091c14e7f0ac455d7a285f95e8dd4ea3327006d91b7", null ],
-                [ "PORT2", "PortInterrupt_8hpp.html#gga659f33ee9e814354726f18091c14e7f0afb973c23511de656a94e22abf746e434", null ]
-              ] ],
-              [ "makeHandler", "PortInterrupt_8hpp.html#gad369e4f2c1e3130e234b9b486e01f35a", null ],
-              [ "makeInterrupt", "PortInterrupt_8hpp.html#gaeac9ecb78c96c309169d1036215429b5", null ],
-              [ "registerCallback", "PortInterrupt_8hpp.html#gaf994a26398b10f919936c7613a37810d", null ]
-            ] ],
-            [ "PortRegister.hpp", "PortRegister_8hpp.html", [
+            [ "Gpio.hpp", "Gpio_8hpp.html", [
               [ "Port", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html", [
                 [ "getInputPinValue", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a1ec54e4da04a7583ccaad25b452acfed", null ],
                 [ "setAsInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a070d29fda1ba25c38cda1b5c55065481", null ],
@@ -392,7 +531,7 @@ var NAVTREE =
                 [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#ga6081ec1d4826266878537d6f17002aa1", null ],
                 [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga7ff497469dcecb1543dfc8dea9c6d7d8", null ],
                 [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#ga39d7dfca3d951783a99a324d2db5ce98", null ],
-                [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga45c46b5428d63ce14a8c77b70f3e23eb", null ],
+                [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga114fe82841d3668bfc083e8ee0e272c4", null ],
                 [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#ga1aede0078274977a43d8e07d751e1fd9", null ],
                 [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#gae655a13760c53990590dcac9a944206e", null ],
                 [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#gae0ddd1eaf216b18631a6174a0c7f2cd7", null ],
@@ -405,45 +544,250 @@ var NAVTREE =
                 [ "toggleOutputOnPin", "group__groupFuncsMSP430Gpio.html#gaf673f9ff7ead9b73a0cb9671552a974d", null ]
               ] ],
               [ "enable_Enum_bits< GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01GPIO__PIN_01_4.html", null ],
-              [ "PIN", "PortRegister_8hpp.html#ga9498a109dc820344a8c9ae35eaff2de1", null ],
-              [ "Port1", "PortRegister_8hpp.html#ad0c7d40f9239493cb76a434ccc287241", null ],
-              [ "Port10", "PortRegister_8hpp.html#ac98b69cea663bf02768761a65e967a03", null ],
-              [ "Port2", "PortRegister_8hpp.html#a0f36b08ccb32171aef5f18ec9d4703be", null ],
-              [ "Port3", "PortRegister_8hpp.html#aa207960776d48d7bb09e6673099d7555", null ],
-              [ "Port4", "PortRegister_8hpp.html#a9d947aa771cca608833263838d894155", null ],
-              [ "Port5", "PortRegister_8hpp.html#aa2a44bc22d469e7e873580310269aa43", null ],
-              [ "Port6", "PortRegister_8hpp.html#a347b5b7b99c1c45b55750588d8ea8535", null ],
-              [ "Port7", "PortRegister_8hpp.html#a9355afe37d078afc7b0d82124a89ba8c", null ],
-              [ "Port8", "PortRegister_8hpp.html#a121cb9723cfe0f0fa8b441fbf47667cd", null ],
-              [ "Port9", "PortRegister_8hpp.html#a966605b00a9d78857670f8bb20d694b1", null ],
-              [ "PortJ", "PortRegister_8hpp.html#af9705e7167fa22800983e7027a9a3102", null ],
-              [ "GPIO_PIN", "PortRegister_8hpp.html#af7bdac7a7ad7774542b30333738c4da2", [
-                [ "P0", "PortRegister_8hpp.html#af7bdac7a7ad7774542b30333738c4da2a16a2e561c536a77cbfd10490ea398be6", null ],
-                [ "P1", "PortRegister_8hpp.html#af7bdac7a7ad7774542b30333738c4da2a5f2b9323c39ee3c861a7b382d205c3d3", null ],
-                [ "P2", "PortRegister_8hpp.html#af7bdac7a7ad7774542b30333738c4da2a5890595e16cbebb8866e1842e4bd6ec7", null ],
-                [ "P3", "PortRegister_8hpp.html#af7bdac7a7ad7774542b30333738c4da2abd11537f1bc31e334497ec5463fc575e", null ],
-                [ "P4", "PortRegister_8hpp.html#af7bdac7a7ad7774542b30333738c4da2a905ad4f16a809a8f8408ed499e75be09", null ],
-                [ "P5", "PortRegister_8hpp.html#af7bdac7a7ad7774542b30333738c4da2ac6b1847fa30bd92ff87464e39859e7c0", null ],
-                [ "P6", "PortRegister_8hpp.html#af7bdac7a7ad7774542b30333738c4da2a53453c482d4d75c2fcc000cda7f2dd81", null ],
-                [ "P7", "PortRegister_8hpp.html#af7bdac7a7ad7774542b30333738c4da2ad8db410ef2444bf4b29cd8fbb9b698a3", null ]
+              [ "PIN", "Gpio_8hpp.html#ga9498a109dc820344a8c9ae35eaff2de1", null ],
+              [ "Port1", "Gpio_8hpp.html#ad0c7d40f9239493cb76a434ccc287241", null ],
+              [ "Port10", "Gpio_8hpp.html#ac98b69cea663bf02768761a65e967a03", null ],
+              [ "Port2", "Gpio_8hpp.html#a0f36b08ccb32171aef5f18ec9d4703be", null ],
+              [ "Port3", "Gpio_8hpp.html#aa207960776d48d7bb09e6673099d7555", null ],
+              [ "Port4", "Gpio_8hpp.html#a9d947aa771cca608833263838d894155", null ],
+              [ "Port5", "Gpio_8hpp.html#aa2a44bc22d469e7e873580310269aa43", null ],
+              [ "Port6", "Gpio_8hpp.html#a347b5b7b99c1c45b55750588d8ea8535", null ],
+              [ "Port7", "Gpio_8hpp.html#a9355afe37d078afc7b0d82124a89ba8c", null ],
+              [ "Port8", "Gpio_8hpp.html#a121cb9723cfe0f0fa8b441fbf47667cd", null ],
+              [ "Port9", "Gpio_8hpp.html#a966605b00a9d78857670f8bb20d694b1", null ],
+              [ "PortJ", "Gpio_8hpp.html#af9705e7167fa22800983e7027a9a3102", null ],
+              [ "GPIO_PIN", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2", [
+                [ "P0", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2a16a2e561c536a77cbfd10490ea398be6", null ],
+                [ "P1", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2a5f2b9323c39ee3c861a7b382d205c3d3", null ],
+                [ "P2", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2a5890595e16cbebb8866e1842e4bd6ec7", null ],
+                [ "P3", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2abd11537f1bc31e334497ec5463fc575e", null ],
+                [ "P4", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2a905ad4f16a809a8f8408ed499e75be09", null ],
+                [ "P5", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2ac6b1847fa30bd92ff87464e39859e7c0", null ],
+                [ "P6", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2a53453c482d4d75c2fcc000cda7f2dd81", null ],
+                [ "P7", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2ad8db410ef2444bf4b29cd8fbb9b698a3", null ]
               ] ],
-              [ "INT_EDGE", "PortRegister_8hpp.html#ga4ca73a5b682c09ead2038ed3a5120202", [
-                [ "LOW_TO_HIGH", "PortRegister_8hpp.html#gga4ca73a5b682c09ead2038ed3a5120202a4e82ee4e6da15be13bcdf1b2ac2ff3a2", null ],
-                [ "HIGH_TO_LOW", "PortRegister_8hpp.html#gga4ca73a5b682c09ead2038ed3a5120202a3cfb549d1f39abc05ab85af4de89ebbd", null ]
+              [ "INT_EDGE", "Gpio_8hpp.html#ga4ca73a5b682c09ead2038ed3a5120202", [
+                [ "LOW_TO_HIGH", "Gpio_8hpp.html#gga4ca73a5b682c09ead2038ed3a5120202a4e82ee4e6da15be13bcdf1b2ac2ff3a2", null ],
+                [ "HIGH_TO_LOW", "Gpio_8hpp.html#gga4ca73a5b682c09ead2038ed3a5120202a3cfb549d1f39abc05ab85af4de89ebbd", null ]
               ] ],
-              [ "INT_FLAG", "PortRegister_8hpp.html#ga051dc8084f6acc078da8e77114811da0", [
-                [ "FALSE", "PortRegister_8hpp.html#gga051dc8084f6acc078da8e77114811da0a946003f97ccc52d5d3b54ac0ec31bbfc", null ],
-                [ "TRUE", "PortRegister_8hpp.html#gga051dc8084f6acc078da8e77114811da0ac0d83f0b82a6b30de8811e69e6d95c61", null ]
+              [ "MODULE_FUNC", "Gpio_8hpp.html#ga4f655c53b332e36e882d3d4e5a5b8e1d", [
+                [ "GPIO", "Gpio_8hpp.html#gga4f655c53b332e36e882d3d4e5a5b8e1daa4b03abff0e37da035d6fc0f9a4b1235", null ],
+                [ "PRIMARY", "Gpio_8hpp.html#gga4f655c53b332e36e882d3d4e5a5b8e1da428429ba9ea83e4841036fb0508fd6dc", null ],
+                [ "SECONDARY", "Gpio_8hpp.html#gga4f655c53b332e36e882d3d4e5a5b8e1da371b09d93ca01e09a42fbd5a2a423f8e", null ],
+                [ "TERNARY", "Gpio_8hpp.html#gga4f655c53b332e36e882d3d4e5a5b8e1da8343ca237665c0d9e59cb1b668462f70", null ]
               ] ],
-              [ "MODULE_FUNC", "PortRegister_8hpp.html#ga0846e47124273392e8f0a106f7e632af", [
-                [ "GPIO", "PortRegister_8hpp.html#gga0846e47124273392e8f0a106f7e632afaa4b03abff0e37da035d6fc0f9a4b1235", null ],
-                [ "PRIMARY", "PortRegister_8hpp.html#gga0846e47124273392e8f0a106f7e632afa428429ba9ea83e4841036fb0508fd6dc", null ],
-                [ "SECONDARY", "PortRegister_8hpp.html#gga0846e47124273392e8f0a106f7e632afa371b09d93ca01e09a42fbd5a2a423f8e", null ],
-                [ "TERNARY", "PortRegister_8hpp.html#gga0846e47124273392e8f0a106f7e632afa8343ca237665c0d9e59cb1b668462f70", null ]
+              [ "PIN_STATE", "Gpio_8hpp.html#gaadf9434aab62842f21e1acc6b81f3e2b", [
+                [ "LOW", "Gpio_8hpp.html#ggaadf9434aab62842f21e1acc6b81f3e2ba41bc94cbd8eebea13ce0491b2ac11b88", null ],
+                [ "HIGH", "Gpio_8hpp.html#ggaadf9434aab62842f21e1acc6b81f3e2bab89de3b4b81c4facfac906edf29aec8c", null ]
+              ] ]
+            ] ],
+            [ "GpioInterrupt.cpp", "GpioInterrupt_8cpp.html", [
+              [ "Port_1", "GpioInterrupt_8cpp.html#ae19d374d7165ea30524f78d9d922bfb5", null ],
+              [ "Port_2", "GpioInterrupt_8cpp.html#a807abd3c5fa80d9cb694b99d9515b6a6", null ],
+              [ "PortVectors", "GpioInterrupt_8cpp.html#a675e0e9dea9b2a06d6628331cdacd5b5", null ]
+            ] ],
+            [ "GpioInterrupt.hpp", "GpioInterrupt_8hpp.html", [
+              [ "Interrupt", "GpioInterrupt_8hpp.html#a393c8acbc16850845522d17d29702da2", null ],
+              [ "IntHandlers", "GpioInterrupt_8hpp.html#ae5088d8ef7f707a17f3a99d025e4ab26", null ],
+              [ "PORTS", "GpioInterrupt_8hpp.html#ga659f33ee9e814354726f18091c14e7f0", [
+                [ "PORT1", "GpioInterrupt_8hpp.html#gga659f33ee9e814354726f18091c14e7f0ac455d7a285f95e8dd4ea3327006d91b7", null ],
+                [ "PORT2", "GpioInterrupt_8hpp.html#gga659f33ee9e814354726f18091c14e7f0afb973c23511de656a94e22abf746e434", null ]
               ] ],
-              [ "PIN_STATE", "PortRegister_8hpp.html#gae77085eb34d7dc121b863454dc191633", [
-                [ "LOW", "PortRegister_8hpp.html#ggae77085eb34d7dc121b863454dc191633a41bc94cbd8eebea13ce0491b2ac11b88", null ],
-                [ "HIGH", "PortRegister_8hpp.html#ggae77085eb34d7dc121b863454dc191633ab89de3b4b81c4facfac906edf29aec8c", null ]
+              [ "makeHandler", "GpioInterrupt_8hpp.html#gad369e4f2c1e3130e234b9b486e01f35a", null ],
+              [ "makeInterrupt", "GpioInterrupt_8hpp.html#gaeac9ecb78c96c309169d1036215429b5", null ],
+              [ "registerCallback", "GpioInterrupt_8hpp.html#gaf994a26398b10f919936c7613a37810d", null ]
+            ] ]
+          ] ],
+          [ "PMM", "dir_0649b081d871d69f3189ff95ac2da67e.html", [
+            [ "Pmm.hpp", "Pmm_8hpp.html", [
+              [ "Pmm", "structMT_1_1MSP430_1_1Pmm.html", [
+                [ "INT", "group__groupEnumsMSP430Pmm.html#ga3b67197ff4ca6179cc8232b65433452a", null ],
+                [ "BANDGAP", "group__groupEnumsMSP430Pmm.html#gadaab80caab9f3fdac0d6423779c6f506", null ],
+                [ "BANDGAP_MODE", "group__groupEnumsMSP430Pmm.html#gaf769a85901020df9a15451adda7d4527", null ],
+                [ "BANDGAP_STATUS", "group__groupEnumsMSP430Pmm.html#gadd0cd07a11c2db8455f1e362e78310a7", null ],
+                [ "COREVOLT", "group__groupEnumsMSP430Pmm.html#ga8a958c598e100cbbf96cca52fa6c0440", null ],
+                [ "REF_VOLT_SELECT", "group__groupEnumsMSP430Pmm.html#ga437c68cfc024010509db91a98b633012", null ],
+                [ "REFGEN", "group__groupEnumsMSP430Pmm.html#gaf616b45c98b18c671049293fd4724a74", null ],
+                [ "REFGEN_STATUS", "group__groupEnumsMSP430Pmm.html#ga4451f4aa3fae38aaafe1aa807ab209aa", null ],
+                [ "REGULATOR", "group__groupEnumsMSP430Pmm.html#gae1303f190c6f8a7b26c77a3fa1193ee1", null ],
+                [ "VOLT_MONITOR", "group__groupEnumsMSP430Pmm.html#gabf6a4b47c8166a1389472a7b3947fa5c", null ],
+                [ "calibrateReference", "group__groupFuncsMSP430Pmm.html#ga457e278f9b61593d532cb63a971063ad", null ],
+                [ "clearInterrupt", "group__groupFuncsMSP430Pmm.html#gadcc397dfe32296960a969c32c3bca86d", null ],
+                [ "clearInterrupt", "structMT_1_1MSP430_1_1Pmm.html#gadcc397dfe32296960a969c32c3bca86d", null ],
+                [ "clearPMMIFGS", "group__groupFuncsMSP430Pmm.html#ga273666d63a4d5ed8e286ed467d56a6d8", null ],
+                [ "disableExternalReference", "group__groupFuncsMSP430Pmm.html#ga3f8a10946cf986c45c9216dba8553f66", null ],
+                [ "disableInternalReference", "group__groupFuncsMSP430Pmm.html#ga4f8664891f6b5139e57e4d927792daa7", null ],
+                [ "disableInterrupt", "group__groupFuncsMSP430Pmm.html#ga5d8067e8f99e856eb977f813b508006a", null ],
+                [ "disableInterrupt", "structMT_1_1MSP430_1_1Pmm.html#ga5d8067e8f99e856eb977f813b508006a", null ],
+                [ "disableSVMH", "group__groupFuncsMSP430Pmm.html#ga3c950e4d978a7728403b29390f9af16b", null ],
+                [ "disableSvmHInterrupt", "group__groupFuncsMSP430Pmm.html#gaa87c98138d5543c5624c7484b149e1fa", null ],
+                [ "disableSVML", "group__groupFuncsMSP430Pmm.html#gacf6983a7b63037007b31e5d5f0bac792", null ],
+                [ "disableSvmLInterrupt", "group__groupFuncsMSP430Pmm.html#gaaf5de35cf5df15cf6795f039241144f4", null ],
+                [ "disableSVSH", "group__groupFuncsMSP430Pmm.html#gacd63f574406bf26f23bf5ae1e6e0d8c3", null ],
+                [ "disableSvsHInLPMFullPerf", "group__groupFuncsMSP430Pmm.html#gaf18479db44eeb6913e949123c516c41e", null ],
+                [ "disableSvsHInLPMNormPerf", "group__groupFuncsMSP430Pmm.html#ga6a078e75c825dc665df3b1bfe9e580d7", null ],
+                [ "disableSvsHReset", "group__groupFuncsMSP430Pmm.html#ga237293939274c972b5b3f7f94eda6457", null ],
+                [ "disableSvsHSvmH", "group__groupFuncsMSP430Pmm.html#gabdf96a15df780faeb606ef03c161cf3e", null ],
+                [ "disableSVSL", "group__groupFuncsMSP430Pmm.html#gaafde20394138bad3d8e55054397d1346", null ],
+                [ "disableSvsLInLPMFastWake", "group__groupFuncsMSP430Pmm.html#ga0b35bbbc66579c91d0363bac24536a51", null ],
+                [ "disableSvsLInLPMSlowWake", "group__groupFuncsMSP430Pmm.html#ga40467fbcede21860a44ec2bccd761e6d", null ],
+                [ "disableSvsLReset", "group__groupFuncsMSP430Pmm.html#ga5c7728e0b3386e641a2453568ebaf478", null ],
+                [ "disableSvsLSvmL", "group__groupFuncsMSP430Pmm.html#ga8de247ea407ba49eb87784d88b1ca40f", null ],
+                [ "disableTempSensor", "group__groupFuncsMSP430Pmm.html#gaafd95869a69385820dabb85eeedd52c3", null ],
+                [ "enableExternalReference", "group__groupFuncsMSP430Pmm.html#ga4ba7ec72f66e8c4b205136398aae6833", null ],
+                [ "enableInterrupt", "group__groupFuncsMSP430Pmm.html#gae2cec647a415939cab237d2bac244f1f", null ],
+                [ "enableSVMH", "group__groupFuncsMSP430Pmm.html#ga74a3a1e67252ab6ea4d233e087df4c2c", null ],
+                [ "enableSvmHInterrupt", "group__groupFuncsMSP430Pmm.html#ga72d6c4670ebe415406dabb651524381e", null ],
+                [ "enableSVML", "group__groupFuncsMSP430Pmm.html#ga1afedecdf374a66f3e1bc2b09719a725", null ],
+                [ "enableSvmLInterrupt", "group__groupFuncsMSP430Pmm.html#gabb13b60274640044b3ea961b827e2cd8", null ],
+                [ "enableSVSH", "group__groupFuncsMSP430Pmm.html#ga49bd38bf88107980c5ed3d4c70b2b0ec", null ],
+                [ "enableSvsHInLPMFullPerf", "group__groupFuncsMSP430Pmm.html#ga265f91a16011c3959a6c5b23311d32cc", null ],
+                [ "enableSvsHInLPMNormPerf", "group__groupFuncsMSP430Pmm.html#gab3d373481d2aefab6fbf66a8c97cee38", null ],
+                [ "enableSvsHReset", "group__groupFuncsMSP430Pmm.html#ga63983bd8ce5babc0c918c8a6c2d24c12", null ],
+                [ "enableSvsHSvmH", "group__groupFuncsMSP430Pmm.html#gac5ef4cfc882e628a71da031433de8e8a", null ],
+                [ "enableSVSL", "group__groupFuncsMSP430Pmm.html#ga2cb47bc76ff722fde0d5246fbf3dcecf", null ],
+                [ "enableSvsLInLPMFastWake", "group__groupFuncsMSP430Pmm.html#ga4587fe3d324ef32b24aef74c6ab347ca", null ],
+                [ "enableSvsLInLPMSlowWake", "group__groupFuncsMSP430Pmm.html#ga79fd94fdb5789708b6eee04706b7d97e", null ],
+                [ "enableSvsLReset", "group__groupFuncsMSP430Pmm.html#gaf3f2e09122b9fc113af85ea8161a98e7", null ],
+                [ "enableSvsLSvmL", "group__groupFuncsMSP430Pmm.html#gaaae74ec45f609507ce9b67dd3980d1ba", null ],
+                [ "enableTempSensor", "group__groupFuncsMSP430Pmm.html#ga42e9c7883109a02242de4b98216c292e", null ],
+                [ "getBandgapMode", "group__groupFuncsMSP430Pmm.html#gabc31069d9dcaeff7b2cfd59d5eb6c4e2", null ],
+                [ "getBufferedBandgapVoltageStatus", "group__groupFuncsMSP430Pmm.html#ga8a51e8068e52d3360849a0c085f2b500", null ],
+                [ "getInterruptStatus", "group__groupFuncsMSP430Pmm.html#ga8c8ddd0716cb0170d6b98014285e51b8", null ],
+                [ "getVariableReferenceVoltageStatus", "group__groupFuncsMSP430Pmm.html#ga2e37c7075fb2bac2e053b13a06cd7b3e", null ],
+                [ "isBandgapActive", "group__groupFuncsMSP430Pmm.html#gab8843108a55ee0fcff2ff3c83a561f5a", null ],
+                [ "isRefGenActive", "group__groupFuncsMSP430Pmm.html#ga2a124d401e9bf48bff9700e55b599b8a", null ],
+                [ "optimizeSvsHInLPMFullPerf", "group__groupFuncsMSP430Pmm.html#gaba02042adaed17e837b4387fd1f8b335", null ],
+                [ "optimizeSvsLInLPMFastWake", "group__groupFuncsMSP430Pmm.html#gade6dfbf9db4a2f3ff9d624b55ca6ac5d", null ],
+                [ "selectVoltageReference", "group__groupFuncsMSP430Pmm.html#ga36f1ebdeeab21fe47fbc785e9580931d", null ],
+                [ "setRegulatorStatus", "group__groupFuncsMSP430Pmm.html#gae3e9b503deac7dc56ba4e69eefaf4db5", null ],
+                [ "setupVoltageMonitor", "group__groupFuncsMSP430Pmm.html#ga95b56b6433fad6dca4fdd40f9386477e", null ],
+                [ "setVCore", "group__groupFuncsMSP430Pmm.html#ga53da2b148820eeef343abae4f00a15b8", null ],
+                [ "setVCoreDown", "group__groupFuncsMSP430Pmm.html#ga89d30b7cf5baacd2d9ef1105b761886d", null ],
+                [ "setVCoreUp", "group__groupFuncsMSP430Pmm.html#gafd8492858a0aff9e0ea88a1b171ad617", null ],
+                [ "trigBOR", "group__groupFuncsMSP430Pmm.html#ga9f6e8839e81d11729ac1b52af2c8e54c", null ],
+                [ "trigPOR", "group__groupFuncsMSP430Pmm.html#ga6036c3a5a9e12962b1d5e3440d8d433b", null ],
+                [ "turnOffRegulator", "group__groupFuncsMSP430Pmm.html#ga37d41b0a0465fbac751beb0eb508f040", null ],
+                [ "turnOnRegulator", "group__groupFuncsMSP430Pmm.html#ga451338b92b266834d445896659f9042b", null ],
+                [ "unlockIOConfiguration", "group__groupFuncsMSP430Pmm.html#gadc440d7c6e1ec25dfebd09cb89816c10", null ],
+                [ "unlockLPM5", "group__groupFuncsMSP430Pmm.html#ga875d175ce4b8c5c6e6865c2e0bbcf48a", null ]
+              ] ],
+              [ "enable_Enum_bits< PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01PMM__INT_01_4.html", null ],
+              [ "PMM_INT", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07b", [
+                [ "BOR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd", null ],
+                [ "RST", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f", null ],
+                [ "POR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92", null ],
+                [ "SVSH", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0", null ],
+                [ "LPM5", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c", null ],
+                [ "ALL", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d", null ],
+                [ "BOR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd", null ],
+                [ "RST", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f", null ],
+                [ "POR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92", null ],
+                [ "SVSH", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0", null ],
+                [ "SVSH", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0", null ],
+                [ "LPM5", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c", null ],
+                [ "ALL", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d", null ],
+                [ "SVSM_LOWSIDE_DELY_EXP", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bad7d005160223e7f74f7313f56ba746af", null ],
+                [ "SVM_LOWSIDE", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba2fee403bc449248b59227176ece2e487", null ],
+                [ "SVM_LOWSIDE_REACHED", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bad901d82da0ab4308bcf3051c6d8ca4ea", null ],
+                [ "SVSM_HIGHSIDE_DELY_EXP", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bad02cd24be25247c4d041eef0d334db4b", null ],
+                [ "SVM_HIGHSIDE", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bacebbe4dd732571cd935e2a9951bbf0b8", null ],
+                [ "SVM_HIGHSIDE_REACHED", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07babf9535e89e1b64f806fb4766deec342a", null ],
+                [ "BOR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd", null ],
+                [ "RST", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f", null ],
+                [ "POR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92", null ],
+                [ "SVS_HIGHSIDE", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bae461850e2b25b9ef9ba0ecdcaadef2ab", null ],
+                [ "SVS_LOWSIDE", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba2a474c902ff6f6cfc4afd1e2f54e3f62", null ],
+                [ "LPM5", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c", null ],
+                [ "VMON", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba863b06cee9907262028eb63665a3704b", null ],
+                [ "LPM45", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf3f6d24c6ad504abfcc686fcc77b621e", null ]
+              ] ],
+              [ "PMM_INT", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07b", [
+                [ "BOR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd", null ],
+                [ "RST", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f", null ],
+                [ "POR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92", null ],
+                [ "SVSH", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0", null ],
+                [ "LPM5", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c", null ],
+                [ "ALL", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d", null ],
+                [ "BOR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd", null ],
+                [ "RST", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f", null ],
+                [ "POR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92", null ],
+                [ "SVSH", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0", null ],
+                [ "SVSH", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0", null ],
+                [ "LPM5", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c", null ],
+                [ "ALL", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d", null ],
+                [ "SVSM_LOWSIDE_DELY_EXP", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bad7d005160223e7f74f7313f56ba746af", null ],
+                [ "SVM_LOWSIDE", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba2fee403bc449248b59227176ece2e487", null ],
+                [ "SVM_LOWSIDE_REACHED", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bad901d82da0ab4308bcf3051c6d8ca4ea", null ],
+                [ "SVSM_HIGHSIDE_DELY_EXP", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bad02cd24be25247c4d041eef0d334db4b", null ],
+                [ "SVM_HIGHSIDE", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bacebbe4dd732571cd935e2a9951bbf0b8", null ],
+                [ "SVM_HIGHSIDE_REACHED", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07babf9535e89e1b64f806fb4766deec342a", null ],
+                [ "BOR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd", null ],
+                [ "RST", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f", null ],
+                [ "POR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92", null ],
+                [ "SVS_HIGHSIDE", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bae461850e2b25b9ef9ba0ecdcaadef2ab", null ],
+                [ "SVS_LOWSIDE", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba2a474c902ff6f6cfc4afd1e2f54e3f62", null ],
+                [ "LPM5", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c", null ],
+                [ "VMON", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba863b06cee9907262028eb63665a3704b", null ],
+                [ "LPM45", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf3f6d24c6ad504abfcc686fcc77b621e", null ]
+              ] ],
+              [ "PMM_INT", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07b", [
+                [ "BOR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd", null ],
+                [ "RST", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f", null ],
+                [ "POR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92", null ],
+                [ "SVSH", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0", null ],
+                [ "LPM5", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c", null ],
+                [ "ALL", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d", null ],
+                [ "BOR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd", null ],
+                [ "RST", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f", null ],
+                [ "POR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92", null ],
+                [ "SVSH", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0", null ],
+                [ "SVSH", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0", null ],
+                [ "LPM5", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c", null ],
+                [ "ALL", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d", null ],
+                [ "SVSM_LOWSIDE_DELY_EXP", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bad7d005160223e7f74f7313f56ba746af", null ],
+                [ "SVM_LOWSIDE", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba2fee403bc449248b59227176ece2e487", null ],
+                [ "SVM_LOWSIDE_REACHED", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bad901d82da0ab4308bcf3051c6d8ca4ea", null ],
+                [ "SVSM_HIGHSIDE_DELY_EXP", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bad02cd24be25247c4d041eef0d334db4b", null ],
+                [ "SVM_HIGHSIDE", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bacebbe4dd732571cd935e2a9951bbf0b8", null ],
+                [ "SVM_HIGHSIDE_REACHED", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07babf9535e89e1b64f806fb4766deec342a", null ],
+                [ "BOR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd", null ],
+                [ "RST", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f", null ],
+                [ "POR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92", null ],
+                [ "SVS_HIGHSIDE", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bae461850e2b25b9ef9ba0ecdcaadef2ab", null ],
+                [ "SVS_LOWSIDE", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba2a474c902ff6f6cfc4afd1e2f54e3f62", null ],
+                [ "LPM5", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c", null ],
+                [ "VMON", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba863b06cee9907262028eb63665a3704b", null ],
+                [ "LPM45", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf3f6d24c6ad504abfcc686fcc77b621e", null ]
+              ] ],
+              [ "PMM_INT", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07b", [
+                [ "BOR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd", null ],
+                [ "RST", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f", null ],
+                [ "POR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92", null ],
+                [ "SVSH", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0", null ],
+                [ "LPM5", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c", null ],
+                [ "ALL", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d", null ],
+                [ "BOR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd", null ],
+                [ "RST", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f", null ],
+                [ "POR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92", null ],
+                [ "SVSH", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0", null ],
+                [ "SVSH", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0f1771347d04c3d489f4fc3b1cafd7c0", null ],
+                [ "LPM5", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c", null ],
+                [ "ALL", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba5fb1f955b45e38e31789286a1790398d", null ],
+                [ "SVSM_LOWSIDE_DELY_EXP", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bad7d005160223e7f74f7313f56ba746af", null ],
+                [ "SVM_LOWSIDE", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba2fee403bc449248b59227176ece2e487", null ],
+                [ "SVM_LOWSIDE_REACHED", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bad901d82da0ab4308bcf3051c6d8ca4ea", null ],
+                [ "SVSM_HIGHSIDE_DELY_EXP", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bad02cd24be25247c4d041eef0d334db4b", null ],
+                [ "SVM_HIGHSIDE", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bacebbe4dd732571cd935e2a9951bbf0b8", null ],
+                [ "SVM_HIGHSIDE_REACHED", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07babf9535e89e1b64f806fb4766deec342a", null ],
+                [ "BOR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd", null ],
+                [ "RST", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f", null ],
+                [ "POR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba7b47bb0f9f8c72f84d891e8e22a1fb92", null ],
+                [ "SVS_HIGHSIDE", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bae461850e2b25b9ef9ba0ecdcaadef2ab", null ],
+                [ "SVS_LOWSIDE", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba2a474c902ff6f6cfc4afd1e2f54e3f62", null ],
+                [ "LPM5", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c", null ],
+                [ "VMON", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba863b06cee9907262028eb63665a3704b", null ],
+                [ "LPM45", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf3f6d24c6ad504abfcc686fcc77b621e", null ]
               ] ]
             ] ]
           ] ],
@@ -457,7 +801,7 @@ var NAVTREE =
                 [ "clearInterruptStatus", "group__groupFuncsMSP430Sfr.html#gaf628c7d2a7fabf782e8cf41131d8447d", null ],
                 [ "disableInterrupt", "group__groupFuncsMSP430Sfr.html#ga6aa4ac0a33b9ea50314022823249584c", null ],
                 [ "enableInterrupt", "group__groupFuncsMSP430Sfr.html#ga49cf87f702a24bc0ac1ffe8639b02821", null ],
-                [ "getInterruptStatus", "group__groupFuncsMSP430Sfr.html#ga6dcf90c755e55f5075ee1d3b0fc2d306", null ],
+                [ "getInterruptStatus", "group__groupFuncsMSP430Sfr.html#ga5d3052d59fe5c43fd90db3c3c097acc9", null ],
                 [ "setNMIEdge", "group__groupFuncsMSP430Sfr.html#ga6717cd4f678cce1bdc6e505331dcaa53", null ],
                 [ "setResetNMIPinFunction", "group__groupFuncsMSP430Sfr.html#gabce2ac33cdfa02bc215ab27693d7f8f8", null ],
                 [ "setResetPinPullResistor", "group__groupFuncsMSP430Sfr.html#ga095995edb9190d9c557506dafe3ad399", null ]
@@ -516,7 +860,17 @@ var NAVTREE =
               [ "registerCallback", "WdtAInterrupt_8hpp.html#ga5201033fa974c2c7dc553e9e789f3fad", null ]
             ] ]
           ] ],
-          [ "Settings.hpp", "MSP430_2Settings_8hpp.html", null ]
+          [ "Settings.hpp", "MSP430_2Settings_8hpp.html", null ],
+          [ "Types.hpp", "Types_8hpp.html", [
+            [ "INT_MASK_MATCH", "Types_8hpp.html#ga479386b6bd2b0b2ba04a910f49697804", [
+              [ "FALSE", "Types_8hpp.html#gga479386b6bd2b0b2ba04a910f49697804a946003f97ccc52d5d3b54ac0ec31bbfc", null ],
+              [ "TRUE", "Types_8hpp.html#gga479386b6bd2b0b2ba04a910f49697804ac0d83f0b82a6b30de8811e69e6d95c61", null ]
+            ] ],
+            [ "STATUS", "Types_8hpp.html#ga72e3944880ce3d32ef46ab09fb7c0305", [
+              [ "FAIL", "Types_8hpp.html#gga72e3944880ce3d32ef46ab09fb7c0305ac2759effffc94bb9acc71d69fe3e8a1f", null ],
+              [ "SUCCESS", "Types_8hpp.html#gga72e3944880ce3d32ef46ab09fb7c0305ad0749aaba8b833466dfcbb0428e4f89c", null ]
+            ] ]
+          ] ]
         ] ],
         [ "Misc", "dir_b11b26c345ed0f7c972184e81ad6f440.html", [
           [ "Details.hpp", "Details_8hpp.html", [
@@ -635,8 +989,11 @@ var NAVTREE =
     [ "File Source", "filesource.html", [
       [ "MSP430", "dir_56021fdb0e8b9a80f75a9a8cba132c6e.html", [
         [ "GPIO", "dir_406c66aff740586c12c555eb45f89962.html", [
-          [ "PortInterrupt.hpp", "PortInterrupt_8hpp_source.html", null ],
-          [ "PortRegister.hpp", "PortRegister_8hpp_source.html", null ]
+          [ "Gpio.hpp", "Gpio_8hpp_source.html", null ],
+          [ "GpioInterrupt.hpp", "GpioInterrupt_8hpp_source.html", null ]
+        ] ],
+        [ "PMM", "dir_0649b081d871d69f3189ff95ac2da67e.html", [
+          [ "Pmm.hpp", "Pmm_8hpp_source.html", null ]
         ] ],
         [ "SFR", "dir_eb46cb3a04801aaa57212b6bb39afb1a.html", [
           [ "Sfr.hpp", "Sfr_8hpp_source.html", null ]
@@ -645,7 +1002,8 @@ var NAVTREE =
           [ "WdtA.hpp", "WdtA_8hpp_source.html", null ],
           [ "WdtAInterrupt.hpp", "WdtAInterrupt_8hpp_source.html", null ]
         ] ],
-        [ "Settings.hpp", "MSP430_2Settings_8hpp_source.html", null ]
+        [ "Settings.hpp", "MSP430_2Settings_8hpp_source.html", null ],
+        [ "Types.hpp", "Types_8hpp_source.html", null ]
       ] ],
       [ "Misc", "dir_b11b26c345ed0f7c972184e81ad6f440.html", [
         [ "Details.hpp", "Details_8hpp_source.html", null ],
@@ -665,7 +1023,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Details_8hpp.html",
-"group__groupEnumsReg.html#gga0a5451e09f44b4952fd8332b583c652da0c4ecd7b59ebc5b9f47974cb9845fd02"
+"Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a54efeb9c25fb92c8c79b1f494f85f313",
+"group__groupFuncsMSP430GpioInt.html#gaeac9ecb78c96c309169d1036215429b5"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
