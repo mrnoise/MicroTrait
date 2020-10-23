@@ -172,17 +172,17 @@ namespace MSP430 {
 		* using namespace MT::MSP430;
 		*
 		*  Sfr sfr{};
-		*  if(sfr.getInterruptStatus(SFR::INT::WATCHDOG_INTERVAL_TIMER | SFR::INT::OSCILLATOR_FAULT) == INT_FLAG::TRUE) doSomething();  \endcode
+		*  if(sfr.getInterruptStatus(SFR::INT::WATCHDOG_INTERVAL_TIMER | SFR::INT::OSCILLATOR_FAULT) == INT_MASK_MATCH::TRUE) doSomething();  \endcode
 		*@tparam BITS use enumeration SFR::INT
-		*@return if all the given bits are set or not (MT::MSP430::INT_FLAG)
+		*@return if all the given bits are set or not (MT::MSP430::INT_MASK_MATCH)
 		****************************************************************
 		*/
         template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        [[nodiscard]] constexpr INT_FLAG getInterruptStatus(const BIT &bit, const BITS &... bits) noexcept {
+        [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const BIT &bit, const BITS &... bits) noexcept {
             static_assert(std::is_same<MT::MSP430::SFR::INT, BIT>::value, "input must be SFR::INT enum");
-            if (m_if.compare(bit, bits...)) return INT_FLAG::TRUE;
+            if (m_if.compare(bit, bits...)) return INT_MASK_MATCH::TRUE;
             else
-                return INT_FLAG::FALSE;
+                return INT_MASK_MATCH::FALSE;
         }
 
         /**
