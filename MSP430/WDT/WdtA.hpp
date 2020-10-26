@@ -2,7 +2,7 @@
 * MSP430 specific code
 */
 
-/** @defgroup groupMSP430WdtA Watchdog A
+/** @defgroup groupMSP430WdtA WDT A
  *  @ingroup groupMSP430
 * @brief functions for Watchdog A register access for TIs MSP430 -> Ti Driverlib equivalent naming
 *
@@ -56,12 +56,11 @@ using namespace MT::MSP430;
 #include <msp430.h>
 #include <utility>
 
-
 namespace MT {
 namespace MSP430 {
     namespace WDT {
 
-#ifdef __MSP430_HAS_WDT_A__
+#if defined(__MSP430_HAS_WDT_A__) || defined(__MSP430_HAS_WDT__)
 
         /**
 		* @ingroup groupEnumsMSP430WdtA
@@ -70,10 +69,15 @@ namespace MSP430 {
 		****************************************************************
 		*/
         enum class CLOCKSOURCE : uint16_t {
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
             SMCLK  = (WDTSSEL_0),
             ACLK   = (WDTSSEL_1),
             VLOCLK = (WDTSSEL_2),
             XCLK   = (WDTSSEL_3)
+#else
+            SMCLK   = (0x0000),
+            ACLK    = (WDTSSEL)
+#endif
         };
 
         /**
@@ -83,6 +87,7 @@ namespace MSP430 {
 		****************************************************************
 		*/
         enum class CLOCKDIVIDER : uint16_t {
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
             DIV2G    = (WDTIS_0),
             DIV128M  = (WDTIS_1),
             DIV8192K = (WDTIS_2),
@@ -91,6 +96,12 @@ namespace MSP430 {
             DIV8192  = (WDTIS_5),
             DIV512   = (WDTIS_6),
             DIV64    = (WDTIS_7)
+#else
+            DIV32K  = (0x0000),
+            DIV8192 = (WDTIS0),
+            DIV512  = (WDTIS1),
+            DIV64   = (WDTIS0 | WDTIS1)
+#endif
         };
 
         struct WdtA {
