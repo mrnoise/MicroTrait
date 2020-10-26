@@ -7,6 +7,10 @@ var NAVTREE =
         [ "GPIO", "group__groupMSP430Gpio.html", [
           [ "Enums", "group__groupEnumsMSP430Gpio.html", [
             [ "PIN", "group__groupEnumsMSP430Gpio.html#ga9498a109dc820344a8c9ae35eaff2de1", null ],
+            [ "DRV_STRENGTH", "group__groupEnumsMSP430Gpio.html#ga1f0636faeb8e0ffd526ecb3226ac8d59", [
+              [ "REDUCED", "group__groupEnumsMSP430Gpio.html#gga1f0636faeb8e0ffd526ecb3226ac8d59a783282f3802a8ab2acc54f97de059f18", null ],
+              [ "FULL", "group__groupEnumsMSP430Gpio.html#gga1f0636faeb8e0ffd526ecb3226ac8d59aba7de5bc6888294e5884b024a4c894f1", null ]
+            ] ],
             [ "INT_EDGE", "group__groupEnumsMSP430Gpio.html#ga4ca73a5b682c09ead2038ed3a5120202", [
               [ "LOW_TO_HIGH", "group__groupEnumsMSP430Gpio.html#gga4ca73a5b682c09ead2038ed3a5120202a4e82ee4e6da15be13bcdf1b2ac2ff3a2", null ],
               [ "HIGH_TO_LOW", "group__groupEnumsMSP430Gpio.html#gga4ca73a5b682c09ead2038ed3a5120202a3cfb549d1f39abc05ab85af4de89ebbd", null ]
@@ -23,21 +27,22 @@ var NAVTREE =
             ] ]
           ] ],
           [ "Functions", "group__groupFuncsMSP430Gpio.html", [
-            [ "clearInterrupt", "group__groupFuncsMSP430Gpio.html#ga2b3f70914035d012482dd7868964970d", null ],
-            [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#ga6081ec1d4826266878537d6f17002aa1", null ],
-            [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga7ff497469dcecb1543dfc8dea9c6d7d8", null ],
-            [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#ga39d7dfca3d951783a99a324d2db5ce98", null ],
-            [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga114fe82841d3668bfc083e8ee0e272c4", null ],
-            [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#ga1aede0078274977a43d8e07d751e1fd9", null ],
-            [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#gae655a13760c53990590dcac9a944206e", null ],
-            [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#gae0ddd1eaf216b18631a6174a0c7f2cd7", null ],
-            [ "setAsInputPinWithPullUp", "group__groupFuncsMSP430Gpio.html#gab66cf5451af99e396af89d9d0f4bcfea", null ],
-            [ "setAsOutputPin", "group__groupFuncsMSP430Gpio.html#gad911a5577b2ba230666bbb297cd5544d", null ],
-            [ "setAsPeripheralModuleFunctionInputPin", "group__groupFuncsMSP430Gpio.html#ga7b8fbe4c41dedb70255176f4299023fa", null ],
-            [ "setAsPeripheralModuleFunctionOutputPin", "group__groupFuncsMSP430Gpio.html#gaca072f1523fb6e544ba068f07365ec0b", null ],
-            [ "setOutputHighOnPin", "group__groupFuncsMSP430Gpio.html#ga0bdd306ce172b848dd692b3b3bf9fda7", null ],
-            [ "setOutputLowOnPin", "group__groupFuncsMSP430Gpio.html#ga9526906127c157372709443b8a2e8458", null ],
-            [ "toggleOutputOnPin", "group__groupFuncsMSP430Gpio.html#gaf673f9ff7ead9b73a0cb9671552a974d", null ]
+            [ "clearInterrupt", "group__groupFuncsMSP430Gpio.html#ga82a4719f0b422e9f398568c0ccbcc9e7", null ],
+            [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#gabf5374a85222aba91e9347624a1a3ebe", null ],
+            [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga3d70c4c8666d49548933c8c103f8fae9", null ],
+            [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#gad619448fdcbd173837a8b3af49ad1e85", null ],
+            [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga1e7949543e5e32c4d83db90b2e2846db", null ],
+            [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#gaccf62d23e1c4f67568de3d24df0e4fc4", null ],
+            [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#ga6017dd83e32af36bd7dbfac6c4dd5f11", null ],
+            [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#gabfcfe17a9bdbf108262d5003936fbce5", null ],
+            [ "setAsInputPinWithPullUp", "group__groupFuncsMSP430Gpio.html#gaa4c7de9d9d4c5eb222ce52cfd0221935", null ],
+            [ "setAsOutputPin", "group__groupFuncsMSP430Gpio.html#ga072863860a40ea0c54139f43484a44b8", null ],
+            [ "setAsPeripheralModuleFunctionInputPin", "group__groupFuncsMSP430Gpio.html#gab5ab0f9c938b420e8dabc8a2167ed471", null ],
+            [ "setAsPeripheralModuleFunctionOutputPin", "group__groupFuncsMSP430Gpio.html#ga4c97b085e1fde96020b5baa2441b2b91", null ],
+            [ "setDriveStrength", "group__groupFuncsMSP430Gpio.html#gab906e6071e225d8f63b0cb0961465a76", null ],
+            [ "setOutputHighOnPin", "group__groupFuncsMSP430Gpio.html#ga470717ecb6941950357b1fbc439777f0", null ],
+            [ "setOutputLowOnPin", "group__groupFuncsMSP430Gpio.html#ga3d01383acbd88038844beec4744319d3", null ],
+            [ "toggleOutputOnPin", "group__groupFuncsMSP430Gpio.html#ga625e7fd6bb9506eb6ffa5f60f2489f37", null ]
           ] ],
           [ "Interrupt", "group__groupMSP430GpioInt.html", [
             [ "Enums", "group__groupEnumsMSP430GpioInt.html", [
@@ -364,35 +369,62 @@ var NAVTREE =
           [ "MSP430", "namespaceMT_1_1MSP430.html", [
             [ "GPIO", "namespaceMT_1_1MSP430_1_1GPIO.html", [
               [ "Internal", "namespaceMT_1_1MSP430_1_1GPIO_1_1Internal.html", [
-                [ "Port", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html", [
-                  [ "getInputPinValue", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a1ec54e4da04a7583ccaad25b452acfed", null ],
-                  [ "setAsInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a070d29fda1ba25c38cda1b5c55065481", null ],
-                  [ "setAsInputPinWithPullDown", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a54c8e7aebe19e0f4021e1088dd9d278f", null ],
-                  [ "setAsInputPinWithPullUp", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#adf4bfa21ec760831438f84fe7baeb8c6", null ],
-                  [ "setAsOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a242d721bccbb96127127ef6236cb6be2", null ],
-                  [ "setAsPeripheralModuleFunctionInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a0d257e77bfce325fcb0cbc422d595d2d", null ],
-                  [ "setAsPeripheralModuleFunctionOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#ad8d6b1d440f01e5267f3d992260da81c", null ],
-                  [ "setOutputHighOnPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#ab50d14a484802eaf3eb65b11416aac40", null ],
-                  [ "setOutputLowOnPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#af11e9438b419cf6175b164fb19411cf1", null ],
-                  [ "toggleOutputOnPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a87e1f68c5bd6739ef54a6d79d85e2399", null ]
+                [ "Port", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html", null ],
+                [ "PortCommon", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortCommon.html", [
+                  [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#gad619448fdcbd173837a8b3af49ad1e85", null ],
+                  [ "setOutputHighOnPin", "group__groupFuncsMSP430Gpio.html#ga470717ecb6941950357b1fbc439777f0", null ],
+                  [ "setOutputLowOnPin", "group__groupFuncsMSP430Gpio.html#ga3d01383acbd88038844beec4744319d3", null ],
+                  [ "toggleOutputOnPin", "group__groupFuncsMSP430Gpio.html#ga625e7fd6bb9506eb6ffa5f60f2489f37", null ]
                 ] ],
-                [ "PortWithInt", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html", [
-                  [ "clearInterrupt", "group__groupFuncsMSP430Gpio.html#ga2b3f70914035d012482dd7868964970d", null ],
-                  [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#ga6081ec1d4826266878537d6f17002aa1", null ],
-                  [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga7ff497469dcecb1543dfc8dea9c6d7d8", null ],
-                  [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#ga39d7dfca3d951783a99a324d2db5ce98", null ],
-                  [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga114fe82841d3668bfc083e8ee0e272c4", null ],
-                  [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#ga1aede0078274977a43d8e07d751e1fd9", null ],
-                  [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#gae655a13760c53990590dcac9a944206e", null ],
-                  [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#gae0ddd1eaf216b18631a6174a0c7f2cd7", null ],
-                  [ "setAsInputPinWithPullUp", "group__groupFuncsMSP430Gpio.html#gab66cf5451af99e396af89d9d0f4bcfea", null ],
-                  [ "setAsOutputPin", "group__groupFuncsMSP430Gpio.html#gad911a5577b2ba230666bbb297cd5544d", null ],
-                  [ "setAsPeripheralModuleFunctionInputPin", "group__groupFuncsMSP430Gpio.html#ga7b8fbe4c41dedb70255176f4299023fa", null ],
-                  [ "setAsPeripheralModuleFunctionOutputPin", "group__groupFuncsMSP430Gpio.html#gaca072f1523fb6e544ba068f07365ec0b", null ],
-                  [ "setOutputHighOnPin", "group__groupFuncsMSP430Gpio.html#ga0bdd306ce172b848dd692b3b3bf9fda7", null ],
-                  [ "setOutputLowOnPin", "group__groupFuncsMSP430Gpio.html#ga9526906127c157372709443b8a2e8458", null ],
-                  [ "toggleOutputOnPin", "group__groupFuncsMSP430Gpio.html#gaf673f9ff7ead9b73a0cb9671552a974d", null ]
-                ] ]
+                [ "PortDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortDrv.html", null ],
+                [ "PortInt", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortInt.html", [
+                  [ "clearInterrupt", "group__groupFuncsMSP430Gpio.html#ga82a4719f0b422e9f398568c0ccbcc9e7", null ],
+                  [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#gabf5374a85222aba91e9347624a1a3ebe", null ],
+                  [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga3d70c4c8666d49548933c8c103f8fae9", null ],
+                  [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga1e7949543e5e32c4d83db90b2e2846db", null ],
+                  [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#gaccf62d23e1c4f67568de3d24df0e4fc4", null ]
+                ] ],
+                [ "PortNoSel", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortNoSel.html", [
+                  [ "setAsInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortNoSel.html#a66a39ca63aa379a545a7af4da21a5ba1", null ],
+                  [ "setAsInputPinWithPullDown", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortNoSel.html#a9d0d7c4e85e7e8fa946406c148a2f46e", null ],
+                  [ "setAsInputPinWithPullUp", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortNoSel.html#aa47f736c270ad4396087e263b3aa770b", null ],
+                  [ "setAsOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortNoSel.html#a853e48b4511fe4e022760a6a17a69352", null ]
+                ] ],
+                [ "PortSel0", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0.html", null ],
+                [ "PortSel0Drv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0Drv.html", null ],
+                [ "PortSel0and1", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1.html", [
+                  [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#ga6017dd83e32af36bd7dbfac6c4dd5f11", null ],
+                  [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#gabfcfe17a9bdbf108262d5003936fbce5", null ],
+                  [ "setAsInputPinWithPullUp", "group__groupFuncsMSP430Gpio.html#gaa4c7de9d9d4c5eb222ce52cfd0221935", null ],
+                  [ "setAsOutputPin", "group__groupFuncsMSP430Gpio.html#ga072863860a40ea0c54139f43484a44b8", null ],
+                  [ "setAsPeripheralModuleFunctionInputPin", "group__groupFuncsMSP430Gpio.html#gab5ab0f9c938b420e8dabc8a2167ed471", null ],
+                  [ "setAsPeripheralModuleFunctionOutputPin", "group__groupFuncsMSP430Gpio.html#ga4c97b085e1fde96020b5baa2441b2b91", null ]
+                ] ],
+                [ "PortSel0and1WithoutPull", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html", [
+                  [ "setAsInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a09bc680b47647d088d1a27d7d8fc9476", null ],
+                  [ "setAsOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a6f8a4c24b87e5299391de336b056eaee", null ],
+                  [ "setAsPeripheralModuleFunctionInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a8216c716b7c2a0d8dec0a3a57f2022ae", null ],
+                  [ "setAsPeripheralModuleFunctionOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a1ac5fc68fbb04ed50b8fab210f1c8f25", null ]
+                ] ],
+                [ "PortSelOff", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOff.html", null ],
+                [ "PortSelOffDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOffDrv.html", null ],
+                [ "PortSelOnly0", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOnly0.html", [
+                  [ "setAsInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOnly0.html#ad38cd307690166ef25e0b59bc9910daa", null ],
+                  [ "setAsInputPinWithPullDown", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOnly0.html#a8a64a85619c39de267bc7c00411ccb3a", null ],
+                  [ "setAsInputPinWithPullUp", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOnly0.html#a138f3ea4b94bd7eb4da88f3b90b3e070", null ],
+                  [ "setAsOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOnly0.html#a6d2e2695287d2b1bdd6a12f6dd031882", null ],
+                  [ "setAsPeripheralModuleFunctionInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOnly0.html#a11a0da5d05a8225a89e3c30d01f4902f", null ],
+                  [ "setAsPeripheralModuleFunctionOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOnly0.html#a7aecb53e9e6ed2c2cc6610dcd48089ee", null ]
+                ] ],
+                [ "PortWithDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithDrv.html", [
+                  [ "setDriveStrength", "group__groupFuncsMSP430Gpio.html#gab906e6071e225d8f63b0cb0961465a76", null ]
+                ] ],
+                [ "PortWithInt", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html", null ],
+                [ "PortWithIntDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html", null ],
+                [ "PortWithIntNoPull", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntNoPull.html", null ],
+                [ "PortWithIntNoPullDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntNoPullDrv.html", null ],
+                [ "PortWithIntSel0", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntSel0.html", null ],
+                [ "PortWithIntSel0Drv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntSel0Drv.html", null ]
               ] ]
             ] ],
             [ "WDT", "namespaceMT_1_1MSP430_1_1WDT.html", [
@@ -534,6 +566,98 @@ var NAVTREE =
         ] ]
       ] ],
       [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", [
+        [ "MT::Misc::enable_Enum_bits< E >", "structMT_1_1Misc_1_1enable__Enum__bits.html", null ],
+        [ "MT::Misc::enable_Enum_bits< BITS16 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS16_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< BITS32 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS32_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< BITS8 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS8_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01GPIO__PIN_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01PMM__INT_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01SFR__INT_01_4.html", null ],
+        [ "MT::MSP430::GPIO::Internal::PortCommon< INREG, OUTREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortCommon.html", [
+          [ "MT::MSP430::GPIO::Internal::Port< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortDrv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortDrv.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortSel0< INREG, OUTREG, DIRREG, PRENREG, P0SEL >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortSel0Drv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0Drv.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortSelOff< INREG, OUTREG, DIRREG, PRENREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOff.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortSelOffDrv< INREG, OUTREG, DIRREG, PRENREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOffDrv.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithInt< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntDrv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntNoPull< INREG, OUTREG, DIRREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntNoPull.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntNoPullDrv< INREG, OUTREG, DIRREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntNoPullDrv.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntSel0< INREG, OUTREG, DIRREG, PRENREG, P0SEL, IESREG, IEREG, IFGREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntSel0.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntSel0Drv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, IESREG, IEREG, IFGREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntSel0Drv.html", null ]
+        ] ],
+        [ "MT::MSP430::GPIO::Internal::PortInt< IESREG, IEREG, IFGREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortInt.html", [
+          [ "MT::MSP430::GPIO::Internal::PortWithInt< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntDrv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntNoPull< INREG, OUTREG, DIRREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntNoPull.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntNoPullDrv< INREG, OUTREG, DIRREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntNoPullDrv.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntSel0< INREG, OUTREG, DIRREG, PRENREG, P0SEL, IESREG, IEREG, IFGREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntSel0.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntSel0Drv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, IESREG, IEREG, IFGREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntSel0Drv.html", null ]
+        ] ],
+        [ "MT::MSP430::GPIO::Internal::PortNoSel< INREG, OUTREG, DIRREG, PRENREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortNoSel.html", [
+          [ "MT::MSP430::GPIO::Internal::PortSelOff< INREG, OUTREG, DIRREG, PRENREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOff.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortSelOffDrv< INREG, OUTREG, DIRREG, PRENREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOffDrv.html", null ]
+        ] ],
+        [ "MT::MSP430::GPIO::Internal::PortSel0and1< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1.html", [
+          [ "MT::MSP430::GPIO::Internal::Port< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortDrv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortDrv.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithInt< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntDrv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html", null ]
+        ] ],
+        [ "MT::MSP430::GPIO::Internal::PortSel0and1WithoutPull< INREG, OUTREG, DIRREG, P0SEL, P1SEL >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html", [
+          [ "MT::MSP430::GPIO::Internal::PortWithIntNoPull< INREG, OUTREG, DIRREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntNoPull.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntNoPullDrv< INREG, OUTREG, DIRREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntNoPullDrv.html", null ]
+        ] ],
+        [ "MT::MSP430::GPIO::Internal::PortSelOnly0< INREG, OUTREG, DIRREG, PRENREG, P0SEL >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOnly0.html", [
+          [ "MT::MSP430::GPIO::Internal::PortSel0< INREG, OUTREG, DIRREG, PRENREG, P0SEL >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortSel0Drv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0Drv.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntSel0< INREG, OUTREG, DIRREG, PRENREG, P0SEL, IESREG, IEREG, IFGREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntSel0.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntSel0Drv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, IESREG, IEREG, IFGREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntSel0Drv.html", null ]
+        ] ],
+        [ "MT::MSP430::GPIO::Internal::PortWithDrv< DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithDrv.html", [
+          [ "MT::MSP430::GPIO::Internal::PortDrv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortDrv.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortSel0Drv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0Drv.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortSelOffDrv< INREG, OUTREG, DIRREG, PRENREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOffDrv.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntDrv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntNoPullDrv< INREG, OUTREG, DIRREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntNoPullDrv.html", null ],
+          [ "MT::MSP430::GPIO::Internal::PortWithIntSel0Drv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, IESREG, IEREG, IFGREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntSel0Drv.html", null ]
+        ] ],
+        [ "MT::MSP430::Pmm", "structMT_1_1MSP430_1_1Pmm.html", null ],
+        [ "MT::MSP430::Sfr", "structMT_1_1MSP430_1_1Sfr.html", null ],
+        [ "MT::MSP430::WDT::WdtA", "structMT_1_1MSP430_1_1WDT_1_1WdtA.html", null ],
+        [ "MT::Universal::Interrupt::Interrupt< ENUM, VECTOR >", "structMT_1_1Universal_1_1Interrupt_1_1Interrupt.html", null ],
+        [ "MT::Universal::Register< REG >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< DIRREG >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< DRVREG >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< IEREG >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< IESREG >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< IFGREG >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< INREG >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< OUTREG >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< P0SEL >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< P1SEL >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< PRENREG >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&LPM45CTL >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&PM5CTL0 >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&PMMCTL0_H >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&PMMCTL0_L >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&PMMCTL1 >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&PMMCTL2 >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&PMMIFG >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&PMMRIE >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&REFCAL0 >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&REFCAL1 >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&SFRIE1 >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&SFRIFG1 >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&SFRRPCR >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&SVSMHCTL >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&SVSMIO >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&SVSMLCTL >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&VMONCTL >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&WDTCTL >", "structMT_1_1Universal_1_1Register.html", null ]
+      ] ],
       [ "Class Members", "functions_all.html", [
         [ "All", "functions_all.html", null ],
         [ "Functions", "functions_func.html", null ],
@@ -547,48 +671,80 @@ var NAVTREE =
         [ "MSP430", "dir_56021fdb0e8b9a80f75a9a8cba132c6e.html", [
           [ "GPIO", "dir_406c66aff740586c12c555eb45f89962.html", [
             [ "Gpio.hpp", "Gpio_8hpp.html", [
-              [ "Port", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html", [
-                [ "getInputPinValue", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a1ec54e4da04a7583ccaad25b452acfed", null ],
-                [ "setAsInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a070d29fda1ba25c38cda1b5c55065481", null ],
-                [ "setAsInputPinWithPullDown", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a54c8e7aebe19e0f4021e1088dd9d278f", null ],
-                [ "setAsInputPinWithPullUp", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#adf4bfa21ec760831438f84fe7baeb8c6", null ],
-                [ "setAsOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a242d721bccbb96127127ef6236cb6be2", null ],
-                [ "setAsPeripheralModuleFunctionInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a0d257e77bfce325fcb0cbc422d595d2d", null ],
-                [ "setAsPeripheralModuleFunctionOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#ad8d6b1d440f01e5267f3d992260da81c", null ],
-                [ "setOutputHighOnPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#ab50d14a484802eaf3eb65b11416aac40", null ],
-                [ "setOutputLowOnPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#af11e9438b419cf6175b164fb19411cf1", null ],
-                [ "toggleOutputOnPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a87e1f68c5bd6739ef54a6d79d85e2399", null ]
+              [ "Port", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html", null ],
+              [ "PortCommon", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortCommon.html", [
+                [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#gad619448fdcbd173837a8b3af49ad1e85", null ],
+                [ "setOutputHighOnPin", "group__groupFuncsMSP430Gpio.html#ga470717ecb6941950357b1fbc439777f0", null ],
+                [ "setOutputLowOnPin", "group__groupFuncsMSP430Gpio.html#ga3d01383acbd88038844beec4744319d3", null ],
+                [ "toggleOutputOnPin", "group__groupFuncsMSP430Gpio.html#ga625e7fd6bb9506eb6ffa5f60f2489f37", null ]
               ] ],
-              [ "PortWithInt", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html", [
-                [ "clearInterrupt", "group__groupFuncsMSP430Gpio.html#ga2b3f70914035d012482dd7868964970d", null ],
-                [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#ga6081ec1d4826266878537d6f17002aa1", null ],
-                [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga7ff497469dcecb1543dfc8dea9c6d7d8", null ],
-                [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#ga39d7dfca3d951783a99a324d2db5ce98", null ],
-                [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga114fe82841d3668bfc083e8ee0e272c4", null ],
-                [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#ga1aede0078274977a43d8e07d751e1fd9", null ],
-                [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#gae655a13760c53990590dcac9a944206e", null ],
-                [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#gae0ddd1eaf216b18631a6174a0c7f2cd7", null ],
-                [ "setAsInputPinWithPullUp", "group__groupFuncsMSP430Gpio.html#gab66cf5451af99e396af89d9d0f4bcfea", null ],
-                [ "setAsOutputPin", "group__groupFuncsMSP430Gpio.html#gad911a5577b2ba230666bbb297cd5544d", null ],
-                [ "setAsPeripheralModuleFunctionInputPin", "group__groupFuncsMSP430Gpio.html#ga7b8fbe4c41dedb70255176f4299023fa", null ],
-                [ "setAsPeripheralModuleFunctionOutputPin", "group__groupFuncsMSP430Gpio.html#gaca072f1523fb6e544ba068f07365ec0b", null ],
-                [ "setOutputHighOnPin", "group__groupFuncsMSP430Gpio.html#ga0bdd306ce172b848dd692b3b3bf9fda7", null ],
-                [ "setOutputLowOnPin", "group__groupFuncsMSP430Gpio.html#ga9526906127c157372709443b8a2e8458", null ],
-                [ "toggleOutputOnPin", "group__groupFuncsMSP430Gpio.html#gaf673f9ff7ead9b73a0cb9671552a974d", null ]
+              [ "PortDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortDrv.html", null ],
+              [ "PortInt", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortInt.html", [
+                [ "clearInterrupt", "group__groupFuncsMSP430Gpio.html#ga82a4719f0b422e9f398568c0ccbcc9e7", null ],
+                [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#gabf5374a85222aba91e9347624a1a3ebe", null ],
+                [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga3d70c4c8666d49548933c8c103f8fae9", null ],
+                [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga1e7949543e5e32c4d83db90b2e2846db", null ],
+                [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#gaccf62d23e1c4f67568de3d24df0e4fc4", null ]
               ] ],
+              [ "PortNoSel", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortNoSel.html", [
+                [ "setAsInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortNoSel.html#a66a39ca63aa379a545a7af4da21a5ba1", null ],
+                [ "setAsInputPinWithPullDown", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortNoSel.html#a9d0d7c4e85e7e8fa946406c148a2f46e", null ],
+                [ "setAsInputPinWithPullUp", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortNoSel.html#aa47f736c270ad4396087e263b3aa770b", null ],
+                [ "setAsOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortNoSel.html#a853e48b4511fe4e022760a6a17a69352", null ]
+              ] ],
+              [ "PortSel0", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0.html", null ],
+              [ "PortSel0Drv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0Drv.html", null ],
+              [ "PortSel0and1", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1.html", [
+                [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#ga6017dd83e32af36bd7dbfac6c4dd5f11", null ],
+                [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#gabfcfe17a9bdbf108262d5003936fbce5", null ],
+                [ "setAsInputPinWithPullUp", "group__groupFuncsMSP430Gpio.html#gaa4c7de9d9d4c5eb222ce52cfd0221935", null ],
+                [ "setAsOutputPin", "group__groupFuncsMSP430Gpio.html#ga072863860a40ea0c54139f43484a44b8", null ],
+                [ "setAsPeripheralModuleFunctionInputPin", "group__groupFuncsMSP430Gpio.html#gab5ab0f9c938b420e8dabc8a2167ed471", null ],
+                [ "setAsPeripheralModuleFunctionOutputPin", "group__groupFuncsMSP430Gpio.html#ga4c97b085e1fde96020b5baa2441b2b91", null ]
+              ] ],
+              [ "PortSel0and1WithoutPull", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html", [
+                [ "setAsInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a09bc680b47647d088d1a27d7d8fc9476", null ],
+                [ "setAsOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a6f8a4c24b87e5299391de336b056eaee", null ],
+                [ "setAsPeripheralModuleFunctionInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a8216c716b7c2a0d8dec0a3a57f2022ae", null ],
+                [ "setAsPeripheralModuleFunctionOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a1ac5fc68fbb04ed50b8fab210f1c8f25", null ]
+              ] ],
+              [ "PortSelOff", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOff.html", null ],
+              [ "PortSelOffDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOffDrv.html", null ],
+              [ "PortSelOnly0", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOnly0.html", [
+                [ "setAsInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOnly0.html#ad38cd307690166ef25e0b59bc9910daa", null ],
+                [ "setAsInputPinWithPullDown", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOnly0.html#a8a64a85619c39de267bc7c00411ccb3a", null ],
+                [ "setAsInputPinWithPullUp", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOnly0.html#a138f3ea4b94bd7eb4da88f3b90b3e070", null ],
+                [ "setAsOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOnly0.html#a6d2e2695287d2b1bdd6a12f6dd031882", null ],
+                [ "setAsPeripheralModuleFunctionInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOnly0.html#a11a0da5d05a8225a89e3c30d01f4902f", null ],
+                [ "setAsPeripheralModuleFunctionOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOnly0.html#a7aecb53e9e6ed2c2cc6610dcd48089ee", null ]
+              ] ],
+              [ "PortWithDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithDrv.html", [
+                [ "setDriveStrength", "group__groupFuncsMSP430Gpio.html#gab906e6071e225d8f63b0cb0961465a76", null ]
+              ] ],
+              [ "PortWithInt", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html", null ],
+              [ "PortWithIntDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html", null ],
+              [ "PortWithIntNoPull", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntNoPull.html", null ],
+              [ "PortWithIntNoPullDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntNoPullDrv.html", null ],
+              [ "PortWithIntSel0", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntSel0.html", null ],
+              [ "PortWithIntSel0Drv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntSel0Drv.html", null ],
               [ "enable_Enum_bits< GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01GPIO__PIN_01_4.html", null ],
               [ "PIN", "Gpio_8hpp.html#ga9498a109dc820344a8c9ae35eaff2de1", null ],
-              [ "Port1", "Gpio_8hpp.html#ad0c7d40f9239493cb76a434ccc287241", null ],
-              [ "Port10", "Gpio_8hpp.html#ac98b69cea663bf02768761a65e967a03", null ],
-              [ "Port2", "Gpio_8hpp.html#a0f36b08ccb32171aef5f18ec9d4703be", null ],
-              [ "Port3", "Gpio_8hpp.html#aa207960776d48d7bb09e6673099d7555", null ],
-              [ "Port4", "Gpio_8hpp.html#a9d947aa771cca608833263838d894155", null ],
-              [ "Port5", "Gpio_8hpp.html#aa2a44bc22d469e7e873580310269aa43", null ],
-              [ "Port6", "Gpio_8hpp.html#a347b5b7b99c1c45b55750588d8ea8535", null ],
-              [ "Port7", "Gpio_8hpp.html#a9355afe37d078afc7b0d82124a89ba8c", null ],
-              [ "Port8", "Gpio_8hpp.html#a121cb9723cfe0f0fa8b441fbf47667cd", null ],
-              [ "Port9", "Gpio_8hpp.html#a966605b00a9d78857670f8bb20d694b1", null ],
-              [ "PortJ", "Gpio_8hpp.html#af9705e7167fa22800983e7027a9a3102", null ],
+              [ "Port1", "Gpio_8hpp.html#a9866e38abfe2c07a046badfbc40630ee", null ],
+              [ "Port10", "Gpio_8hpp.html#ad7bdb66315edf9c23dd4896d789018b6", null ],
+              [ "Port11", "Gpio_8hpp.html#a817905165aff31a71f25565cc25658ee", null ],
+              [ "Port2", "Gpio_8hpp.html#a128717d4afdc6d9a94a83d1a7089944b", null ],
+              [ "Port3", "Gpio_8hpp.html#a9be8d344cea6a0aedf8d3d321e9fc7c2", null ],
+              [ "Port4", "Gpio_8hpp.html#ae94a9cbeb2398c6d401821f761d636fb", null ],
+              [ "Port5", "Gpio_8hpp.html#ae83526e8c133010bf0e6bc577ae0628d", null ],
+              [ "Port6", "Gpio_8hpp.html#acf684dc242b316bcc80372381b3b6216", null ],
+              [ "Port7", "Gpio_8hpp.html#a23ad2069f0ada15fcdd9cd89e1544fd7", null ],
+              [ "Port8", "Gpio_8hpp.html#af4bc8a70416dbfcc3fcfcde65926a8d4", null ],
+              [ "Port9", "Gpio_8hpp.html#a27b89b9daded8c0736376d4db53872dc", null ],
+              [ "PortJ", "Gpio_8hpp.html#a5fc6378c8c4053ea291cfc27cd028aac", null ],
+              [ "DRV_STRENGTH", "Gpio_8hpp.html#ga1f0636faeb8e0ffd526ecb3226ac8d59", [
+                [ "REDUCED", "Gpio_8hpp.html#gga1f0636faeb8e0ffd526ecb3226ac8d59a783282f3802a8ab2acc54f97de059f18", null ],
+                [ "FULL", "Gpio_8hpp.html#gga1f0636faeb8e0ffd526ecb3226ac8d59aba7de5bc6888294e5884b024a4c894f1", null ]
+              ] ],
               [ "GPIO_PIN", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2", [
                 [ "P0", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2a16a2e561c536a77cbfd10490ea398be6", null ],
                 [ "P1", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2a5f2b9323c39ee3c861a7b382d205c3d3", null ],
@@ -1070,9 +1226,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Details_8hpp.html",
-"Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a0773d10974a4b37c47c6060054a2c142",
-"group__groupFuncsMSP430FPmm.html#ga40467fbcede21860a44ec2bccd761e6d",
-"namespacemembers_vars.html"
+"Settings_8hpp_source.html",
+"group__groupFuncsMSP430FPmm.html#ga273666d63a4d5ed8e286ed467d56a6d8",
+"namespaceMT_1_1Misc.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
