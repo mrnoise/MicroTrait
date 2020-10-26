@@ -1,6 +1,6 @@
 <map id="GPIO" name="GPIO">
-<area shape="rect" id="node1" href="$group__groupEnumsMSP430Gpio.html" title=" " alt="" coords="236,5,299,32"/>
-<area shape="rect" id="node2" href="$group__groupFuncsMSP430Gpio.html" title=" " alt="" coords="228,56,307,83"/>
-<area shape="rect" id="node3" title="functions for GPIO hardware access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="125,31,180,57"/>
+<area shape="rect" id="node1" href="$group__groupFuncsMSP430Gpio.html" title=" " alt="" coords="228,5,307,32"/>
+<area shape="rect" id="node2" title="functions for GPIO hardware access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="125,31,180,57"/>
+<area shape="rect" id="node3" href="$group__groupEnumsMSP430Gpio.html" title=" " alt="" coords="236,56,299,83"/>
 <area shape="rect" id="node4" href="$group__groupMSP430.html" title=" " alt="" coords="5,31,77,57"/>
 </map>

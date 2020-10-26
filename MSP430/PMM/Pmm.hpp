@@ -25,14 +25,50 @@ using namespace MT::MSP430;
 ****************************************************************
 */
 
-
-/** @defgroup groupFuncsMSP430Pmm Functions
+/** @defgroup groupMSP430FRAMPmm FRAM specific
 *  @ingroup groupMSP430Pmm
+*  Functions for MSP430 FRAM Family
+*/
+
+/** @defgroup groupFuncsMSP430FRAMPmm Functions
+*  @ingroup groupMSP430FRAMPmm
 *  Functions in this module
 */
 
-/** @defgroup groupEnumsMSP430Pmm Enums
+/** @defgroup groupEnumsMSP430FRAMPmm Enums
+*  @ingroup groupMSP430FRAMPmm
+*  Enums in this module
+*/
+
+
+/** @defgroup groupMSP430FPmm F5xx/6xx specific
 *  @ingroup groupMSP430Pmm
+*  Functions for MSP430F5xx/6xx Family
+*/
+
+/** @defgroup groupFuncsMSP430FPmm Functions
+*  @ingroup groupMSP430FPmm
+*  Functions in this module
+*/
+
+/** @defgroup groupEnumsMSP430FPmm Enums
+*  @ingroup groupMSP430FPmm
+*  Enums in this module
+*/
+
+
+/** @defgroup groupMSP430IPmm i2xx specific
+*  @ingroup groupMSP430Pmm
+*  Functions for MSP430i2xx Family
+*/
+
+/** @defgroup groupFuncsMSP430IPmm Functions
+*  @ingroup groupMSP430IPmm
+*  Functions in this module
+*/
+
+/** @defgroup groupEnumsMSP430IPmm Enums
+*  @ingroup groupMSP430IPmm
 *  Enums in this module
 */
 
@@ -51,10 +87,13 @@ using namespace MT::MSP430;
 
 #if defined(__MSP430_HAS_PMM__) || defined(__MSP430_HAS_PMM_FR5xx__) || defined(__MSP430_HAS_PMM_FRAM__)
 
+#if defined(__MSP430_HAS_PMM_FRAM__) || defined(__MSP430_HAS_PMM_FR5xx__)
+
 namespace MT {
 namespace Misc {
 
 #if defined(__MSP430_HAS_PMM_FRAM__)
+
     enum class PMM_INT : uint16_t {
         BOR  = (PMMBORIFG),
         RST  = (PMMRSTIFG),
@@ -67,15 +106,15 @@ namespace Misc {
     struct enable_Enum_bits<PMM_INT> {
         static constexpr bool enable = true;
     };
-#endif
 
-#if defined(__MSP430_HAS_PMM_FR5xx__)
+#elif defined(__MSP430_HAS_PMM_FR5xx__)
+
     enum class PMM_INT : uint16_t {
         BOR  = (PMMBORIFG),
         RST  = (PMMRSTIFG),
         POR  = (PMMPORIFG),
         SVSH = (SVSHIFG),
-        SVSH = (SVSLIFG),
+        SVSL = (SVSLIFG),
         LPM5 = (PMMLPM5IFG),
         ALL  = (0xB7)
     };
@@ -83,9 +122,545 @@ namespace Misc {
     struct enable_Enum_bits<PMM_INT> {
         static constexpr bool enable = true;
     };
+
 #endif
 
-#if defined(__MSP430F5XX_6XX_FAMILY__)
+}// namespace Misc
+}// namespace MT
+
+namespace MT {
+namespace MSP430 {
+    namespace PMM {
+
+        /**
+  		* @ingroup groupEnumsMSP430FRAMPmm
+  		****************************************************************
+  		* @brief PMM interrupt types
+  		****************************************************************
+  		*/
+        using INT = MT::Misc::PMM_INT;
+
+#if defined(__MSP430FR2XX_4XX_FAMILY__)
+        /**
+		* @ingroup groupEnumsMSP430FRAMPmm
+		****************************************************************
+		* @brief Bandgap mode -> only available for MSP430FR2xx/4xx Family
+		****************************************************************
+		*/
+        enum class BANDGAP_MODE : uint_fast8_t {
+            STATIC = 0,
+            SAMPLE
+        };
+
+        /**
+		* @ingroup groupEnumsMSP430FRAMPmm
+		****************************************************************
+		* @brief Bandgap active or not -> only available for MSP430FR2xx/4xx Family
+		****************************************************************
+		*/
+        enum class BANDGAP : uint_fast8_t {
+            INACTIVE = 0,
+            ACTIVE
+        };
+
+        /**
+		* @ingroup groupEnumsMSP430FRAMPmm
+		****************************************************************
+		* @brief Reference generator active or not -> only available for MSP430FR2xx/4xx Family
+		****************************************************************
+		*/
+        enum class REFGEN : uint_fast8_t {
+            INACTIVE = 0,
+            ACTIVE
+        };
+
+        /**
+		* @ingroup groupEnumsMSP430FRAMPmm
+		****************************************************************
+		* @brief Bandgap status -> only available for MSP430FR2xx/4xx Family
+		****************************************************************
+		*/
+        enum class BANDGAP_STATUS : uint_fast8_t {
+            NOTREADY = 0,
+            READY
+        };
+
+        /**
+		* @ingroup groupEnumsMSP430FRAMPmm
+		****************************************************************
+		* @brief reference generator status -> only available for MSP430FR2xx/4xx Family
+		****************************************************************
+		*/
+        enum class REFGEN_STATUS : uint_fast8_t {
+            NOTREADY = 0,
+            READY
+        };
+
+#if defined(REFVSEL)
+        /**
+		* @ingroup groupEnumsMSP430FRAMPmm
+		****************************************************************
+		* @brief reference voltage selection -> only available for MSP430FR2xx/4xx Family
+		****************************************************************
+		*/
+        enum class REF_VOLT_SELECT : uint16_t {
+            V1_5 = (REFVSEL_0),
+            V2_0 = (REFVSEL_1),
+            V2_5 = (REFVSEL_2)
+        };
+#endif
+#endif
+
+    }// namespace PMM
+
+    struct Pmm {
+
+      private:
+        MT::Universal::Register<&PMMCTL0_L> m_ctl0{};
+        MT::Universal::Register<&PMMCTL0_H> m_ctl0pwd{};
+        MT::Universal::Register<&PMMCTL1>   m_ctl1{};
+        MT::Universal::Register<&PMMCTL2>   m_ctl2{};
+        MT::Universal::Register<&PMMIFG>    m_if{};
+        MT::Universal::Register<&PM5CTL0>   m_lpm5{};
+
+      public:
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief enables the voltage supervisor high side -> only available for MSP430 FRAM Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.enableSVSH(); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void enableSVSH() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_ctl0.set(SVSHE);
+            m_ctl0pwd.override(0x00);
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief disables the voltage supervisor high side -> only available for MSP430 FRAM Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.disableSVSH(); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void disableSVSH() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_ctl0.clear(SVSHE);
+            m_ctl0pwd.override(0x00);
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief Makes the LDO remain ON when going into LPM 3/4 -> only available for MSP430 FRAM Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.turnOnRegulator(); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void turnOnRegulator() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_ctl0.clear(PMMREGOFF);
+            m_ctl0pwd.override(0x00);
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief Turns off the LDO when going into LPM3/4, thus the system will enter LPM3.5 or LPM4.5 respectively -> only available for MSP430 FRAM Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.turnOffRegulator(); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void turnOffRegulator() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_ctl0.set(PMMREGOFF);
+            m_ctl0pwd.override(0x00);
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief triggers a software Power On Reset (POR) -> only available for MSP430 FRAM Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.trigPOR(); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void trigPOR() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_ctl0.set(PMMSWPOR);
+            m_ctl0pwd.override(0x00);
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief triggers a software Brown Out Rest (BOR) -> only available for MSP430 FRAM Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.trigBOR(); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void trigBOR() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_ctl0.set(PMMSWBOR);
+            m_ctl0pwd.override(0x00);
+        }
+
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief clears the interrupt flags for the given mask -> only available for MSP430 FRAM Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.clearInterrupt(PMM::INT::BOR | PMM::INT::POR); \endcode
+		*@tparam BITS use enumeration PMM::INT
+		****************************************************************
+		*/
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
+        constexpr void clearInterrupt(const BIT &bit, const BITS &... bits) noexcept {
+            static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
+            m_ctl0pwd.override(PMMPW_H);
+            m_if.clear(bit, bits...);
+            m_ctl0pwd.override(0x00);
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief compares the given pins with the interrupt flags set in the hw register -> only available for MSP430 FRAM Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  if(pmm.getInterruptStatus(PMM::INT::BOR | PMM::INT::POR) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
+		*@tparam BITS use enumeration PMM::INT
+		*@return if all the given bits are set or not (INT_MASK_MATCH)
+		****************************************************************
+		*/
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
+        [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const BIT &bit, const BITS &... bits) noexcept {
+            static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
+            if (m_if.compare(bit, bits...)) return INT_MASK_MATCH::TRUE;
+            else
+                return INT_MASK_MATCH::FALSE;
+        }
+
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief Disable the GPIO power-on default high-impedance mode to activate previously configured port settings -> only available for MSP430 FRAM Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.unlockLPM5(); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void unlockLPM5() noexcept {
+            m_lpm5.clear(LOCKLPM5);
+        }
+
+#if defined(__MSP430_HAS_PMM_FR5xx__)
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief enables the voltage supervisor low side -> only available for MSP430FR5xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.enableSVSL(); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void enableSVSL() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_ctl0.set(SVSLE);
+            m_ctl0pwd.override(0x00);
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief disables the voltage supervisor low side-> only available for MSP430FR5xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.disableSVSL(); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void disableSVSL() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_ctl0.clear(SVSLE);
+            m_ctl0pwd.override(0x00);
+        }
+#endif
+
+#if defined(__MSP430FR2XX_4XX_FAMILY__)
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief returns the bandgap mode of the PMM module -> only available for MSP430FR2xx/4xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  if(pmm.getBandgapMode() == PMM::BANDGAP_MODE::SAMPLE) doSomething(); \endcode
+		*@return the curretn bandgap mode (PMM::BANDGAP_MODE)
+		****************************************************************
+		*/
+        [[nodiscard]] constexpr PMM::BANDGAP_MODE getBandgapMode() noexcept {
+            if (m_ctl2.compare(BGMODE)) return PMM::BANDGAP_MODE::SAMPLE;
+            else
+                return PMM::BANDGAP_MODE::STATIC;
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief returns the active status of the bandgap in the PMM module -> only available for MSP430FR2xx/4xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  if(pmm.isBandgapActive() == PMM::BANDGAP::ACTIVE) doSomething(); \endcode
+		*@return if the bandgap is active or not (PMM::BANDGAP)
+		****************************************************************
+		*/
+        [[nodiscard]] constexpr PMM::BANDGAP isBandgapActive() noexcept {
+            if (m_ctl2.compare(REFBGACT)) return PMM::BANDGAP::ACTIVE;
+            else
+                return PMM::BANDGAP::INACTIVE;
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief the active status of the reference generator in the PMM module -> only available for MSP430FR2xx/4xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  if(pmm.isRefGenActive() == PMM::BANDGAP::ACTIVE) doSomething(); \endcode
+		*@return if the reference generator is active or not (PMM::REFGEN)
+		****************************************************************
+		*/
+        [[nodiscard]] constexpr PMM::REFGEN isRefGenActive() noexcept {
+            if (m_ctl2.compare(REFGENACT)) return PMM::REFGEN::ACTIVE;
+            else
+                return PMM::REFGEN::INACTIVE;
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief returns the active status of the buffered bandgap voltage in the PMM -> only available for MSP430FR2xx/4xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  if(pmm.getBufferedBandgapVoltageStatus() == PMM::BANDGAP_STATUS::READY) doSomething(); \endcode
+		*@return if the bandgap status is ready or not (PMM::BANDGAP_STATUS)
+		****************************************************************
+		*/
+        [[nodiscard]] constexpr PMM::BANDGAP_STATUS getBufferedBandgapVoltageStatus() noexcept {
+            if (m_ctl2.compare(REFBGRDY)) return PMM::BANDGAP_STATUS::READY;
+            else
+                return PMM::BANDGAP_STATUS::NOTREADY;
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief returns the status of the variable reference voltage in the PMM -> only available for MSP430FR2xx/4xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  if(pmm.getVariableReferenceVoltageStatus() == PMM::REFGEN_STATUS::READY) doSomething(); \endcode
+		*@return if the variable reference status is ready or not(PMM::REFGEN_STATUS)
+		****************************************************************
+		*/
+        [[nodiscard]] constexpr PMM::REFGEN_STATUS getVariableReferenceVoltageStatus() noexcept {
+            if (m_ctl2.compare(REFGENRDY)) return PMM::REFGEN_STATUS::READY;
+            else
+                return PMM::REFGEN_STATUS::NOTREADY;
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief Disables the internal temperature sensor to save power consumption -> only available for MSP430FR2xx/4xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.disableTempSensor(); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void disableTempSensor() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_ctl2.clear(TSENSOREN);
+            m_ctl0pwd.override(0x00);
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief Enables the internal temperature sensor to save power consumption -> only available for MSP430FR2xx/4xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.enableTempSensor(); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void enableTempSensor() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_ctl2.set(TSENSOREN);
+            m_ctl0pwd.override(0x00);
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief Disables the external reference output -> only available for MSP430FR2xx/4xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.disableExternalReference(); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void disableExternalReference() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_ctl2.clear(EXTREFEN);
+            m_ctl0pwd.override(0x00);
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief Enables the external reference output -> only available for MSP430FR2xx/4xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.enableExternalReference(); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void enableExternalReference() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_ctl2.set(EXTREFEN);
+            m_ctl0pwd.override(0x00);
+        }
+
+
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief Disables the internal reference output -> only available for MSP430FR2xx/4xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.disableInternalReference(); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void disableInternalReference() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_ctl2.clear(INTREFEN);
+            m_ctl0pwd.override(0x00);
+        }
+
+#if defined(REFVSEL)
+        /**
+		* @ingroup groupFuncsMSP430FRAMPmm
+		****************************************************************
+		* @brief Selects reference voltage level -> only available for MSP430FR2xx/4xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.selectVoltageReference(PMM::REF_VOLT_SELECT::V1_5); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void selectVoltageReference(const PMM::REF_VOLT_SELECT sel) noexcept {
+            m_ctl2.clear(REFVSEL);
+            typedef typename std::underlying_type<PMM::REF_VOLT_SELECT>::type underlying;
+            m_ctl2.set(static_cast<underlying>(sel));
+        }
+#endif
+#endif
+    };
+}// namespace MSP430
+}// namespace MT
+
+#elif defined(__MSP430_HAS_PMM__) && defined(__MSP430F5XX_6XX_FAMILY__)
+
+namespace MT {
+namespace Misc {
     enum class PMM_INT : uint16_t {
         SVSM_LOWSIDE_DELY_EXP  = (SVSMLDLYIFG),
         SVM_LOWSIDE            = (SVMLIFG),
@@ -104,353 +679,91 @@ namespace Misc {
     struct enable_Enum_bits<PMM_INT> {
         static constexpr bool enable = true;
     };
-#endif
-
-#if defined(__MSP430_HAS_MSP430I_CPU__)
-    enum class PMM_INT : uint16_t {
-        VMON  = (VMONIE),
-        LPM45 = (LPM45IFG)
-    };
-    template<>
-    struct enable_Enum_bits<PMM_INT> {
-        static constexpr bool enable = true;
-    };
-#endif
-
 }// namespace Misc
+}// namespace MT
 
+namespace MT {
 namespace MSP430 {
     namespace PMM {
 
         /**
-		* @ingroup groupEnumsMSP430Pmm
-		****************************************************************
-		* @brief PMM interrupt types
-		****************************************************************
-		*/
+  		* @ingroup groupEnumsMSP430FPmm
+  		****************************************************************
+  		* @brief PMM interrupt types
+  		****************************************************************
+  		*/
         using INT = MT::Misc::PMM_INT;
 
-#if defined(__MSP430FR2XX_4XX_FAMILY__)
         /**
-		* @ingroup groupEnumsMSP430Pmm
+		* @ingroup groupEnumsMSP430FPmm
 		****************************************************************
-		* @brief Bandgap mode
-		****************************************************************
-		*/
-        enum class BANDGAP_MODE : uint_fast8_t {
-            STATIC = 0,
-            SAMPLE
-        };
-
-        /**
-		* @ingroup groupEnumsMSP430Pmm
-		****************************************************************
-		* @brief Bandgap active or not
-		****************************************************************
-		*/
-        enum class BANDGAP : uint_fast8_t {
-            INACTIVE = 0,
-            ACTIVE
-        };
-
-        /**
-		* @ingroup groupEnumsMSP430Pmm
-		****************************************************************
-		* @brief Reference generator active or not
-		****************************************************************
-		*/
-        enum class REFGEN : uint_fast8_t {
-            INACTIVE = 0,
-            ACTIVE
-        };
-
-        /**
-		* @ingroup groupEnumsMSP430Pmm
-		****************************************************************
-		* @brief Bandgap status
-		****************************************************************
-		*/
-        enum class BANDGAP_STATUS : uint_fast8_t {
-            NOTREADY = 0,
-            READY
-        };
-
-        /**
-		* @ingroup groupEnumsMSP430Pmm
-		****************************************************************
-		* @brief reference generator status
-		****************************************************************
-		*/
-        enum class REFGEN_STATUS : uint_fast8_t {
-            NOTREADY = 0,
-            READY
-        };
-
-#if defined(REFVSEL)
-        /**
-		* @ingroup groupEnumsMSP430Pmm
-		****************************************************************
-		* @brief reference voltage selection
-		****************************************************************
-		*/
-        enum class REF_VOLT_SELECT : uint16_t {
-            V1_5 = (REFVSEL_0),
-            V2_0 = (REFVSEL_1),
-            V2_5 = (REFVSEL_2)
-        };
-#endif
-#endif
-
-#if defined(__MSP430F5XX_6XX_FAMILY__)
-
-        /**
-		* @ingroup groupEnumsMSP430Pmm
-		****************************************************************
-		* @brief core voltage selection
+		* @brief core voltage selection -> only available for MSP430F5xx/6xx Family
 		****************************************************************
 		*/
         enum class COREVOLT : uint16_t {
             LEVEL0 = (PMMCOREV_0),
             LEVEL1 = (PMMCOREV_1),
             LEVEL2 = (PMMCOREV_2),
-            LEVEL2 = (PMMCOREV_3)
+            LEVEL3 = (PMMCOREV_3)
         };
-#endif
-
-
-#if defined(__MSP430_HAS_MSP430I_CPU__)
-        /**
-		* @ingroup groupEnumsMSP430Pmm
-		****************************************************************
-		* @brief voltage monitor
-		****************************************************************
-		*/
-        enum class VOLT_MONITOR : uint16_t {
-            DISABLE       = (VMONLVL_0),
-            DVCC_2350MV   = (VMONLVL_1),
-            DVCC_2650MV   = (VMONLVL_2),
-            DVCC_2850MV   = (VMONLVL_3),
-            VMONIN_1160MV = (VMONLVL_7)
-        };
-
-        /**
-		* @ingroup groupEnumsMSP430Pmm
-		****************************************************************
-		* @brief voltage monitor
-		****************************************************************
-		*/
-        enum class REGULATOR : uint8_t {
-            ON  = (0x00),
-            OFF = (0x10)
-        };
-#endif
-
     }// namespace PMM
 
     struct Pmm {
 
       private:
-#if defined(__MSP430_HAS_PMM_FR5xx__) || defined(__MSP430_HAS_PMM_FRAM__) || defined(__MSP430F5XX_6XX_FAMILY__)
         MT::Universal::Register<&PMMCTL0_L> m_ctl0{};
         MT::Universal::Register<&PMMCTL0_H> m_ctl0pwd{};
         MT::Universal::Register<&PMMCTL1>   m_ctl1{};
         MT::Universal::Register<&PMMIFG>    m_if{};
         MT::Universal::Register<&PM5CTL0>   m_lpm5{};
-
-#if defined(__MSP430_HAS_PMM_FR5xx__) || defined(__MSP430_HAS_PMM_FRAM__)
-        MT::Universal::Register<&PMMCTL2> m_ctl2{};
-#endif
-
-#if defined(__MSP430F5XX_6XX_FAMILY__)
-        MT::Universal::Register<&SVSMHCTL> m_svsmh{};
-        MT::Universal::Register<&SVSMLCTL> m_svsml{};
-        MT::Universal::Register<&SVSMIO>   m_svsmio{};
-        MT::Universal::Register<&PMMRIE>   m_ie{};
-#endif
-#endif
-
-#if defined(__MSP430_HAS_MSP430I_CPU__)
-        MT::Universal::Register<&LPM45CTL> m_lpm45{};
-        MT::Universal::Register<&VMONCTL>  m_vmon{};
-        MT::Universal::Register<&REFCAL0>  m_rcal0{};
-        MT::Universal::Register<&REFCAL1>  m_rcal1{};
-#endif
-
+        MT::Universal::Register<&SVSMHCTL>  m_svsmh{};
+        MT::Universal::Register<&SVSMLCTL>  m_svsml{};
+        MT::Universal::Register<&SVSMIO>    m_svsmio{};
+        MT::Universal::Register<&PMMRIE>    m_ie{};
 
       public:
-#if defined(__MSP430_HAS_MSP430I_CPU__)
-
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief sets up the voltage monitor
+		* @brief enables the voltage supervisor low side -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
 		*
 		*  Pmm pmm{};
-		*  pmm.setupVoltageMonitor(PMM::VOLT_MONITOR::DVCC_2350MV); \endcode
-		*@param mon new voltage monitor level
+		*  pmm.enableSVSL(); \endcode
+		*
 		****************************************************************
 		*/
-        constexpr void setupVoltageMonitor(const PMM::VOLT_MONITOR mon) noexcept {
-            uint8_t currentStatus = m_vmon.get();
-            currentStatus &= ~(0x07);
-            currentStatus |= static_cast<uint8_t>(mon);
-            m_vmon.override(currentStatus);
+        constexpr void enableSVSL() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_svsml.set(SVSLE);
+            m_ctl0pwd.override(0x00);
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief  sets up the calibration of the internal reference
+		* @brief disables the voltage supervisor low side -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
 		*
 		*  Pmm pmm{};
-		*  pmm.calibrateReference(); \endcode
+		*  pmm.disableSVSL(); \endcode
 		*
 		****************************************************************
 		*/
-        constexpr void calibrateReference() noexcept {
-            m_rcal0.override(TLV_START + TLV_CAL_REFCAL0);
-            m_rcal1.override(TLV_START + TLV_CAL_REFCAL1);
+        constexpr void disableSVSL() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_svsml.clear(SVSLE);
+            m_ctl0pwd.override(0x00);
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief sets the status of the PMM regulator
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.setRegulatorStatus(PMM::REGULATOR::ON); \endcode
-		*@param reg regulator on or off
-		****************************************************************
-		*/
-        constexpr void setRegulatorStatus(const PMM::REGULATOR reg) noexcept {
-            uint8_t currentStatus = m_lpm45.get();
-            currentStatus &= ~(PMMREGOFF);
-            currentStatus |= static_cast<uint8_t>(reg);
-            m_lpm45.override(currentStatus);
-        }
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief  unlocks the IO
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.unlockIOConfiguration(); \endcode
-		*
-		****************************************************************
-		*/
-        constexpr void unlockIOConfiguration() noexcept {
-            m_lpm45.clear(LOCKLPM45);
-        }
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief  enables interrupts
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.enableInterrupt(PMM::INT::LPM45); \endcode
-		*
-		****************************************************************
-		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void enableInterrupt(const BIT &bit, const BITS &... bits) noexcept {
-            static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
-            m_vmon.set(bit, bits...);
-        }
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief  disables interrupts
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.disableInterrupt(PMM::INT::LPM45); \endcode
-		*@tparam BITS use enumeration PMM::INT
-		****************************************************************
-		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void disableInterrupt(const BIT &bit, const BITS &... bits) noexcept {
-            static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
-            m_vmon.clear(bit, bits...);
-        }
-
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief  disables interrupts
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.disableInterrupt(PMM::INT::LPM45); \endcode
-		*@tparam BITS use enumeration PMM::INT
-		*@return if all the given bits are set or not (INT_MASK_MATCH)
-		****************************************************************
-		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr INT_MASK_MATCH disableInterrupt(const BIT &bit, const BITS &... bits) noexcept {
-            static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
-
-            const BIT     sum  = MT::Details::orSum(bit, bits...);
-            const uint8_t mask = static_cast<uint8_t>(sum);
-
-            if ((mask & PMM_VMON_INTERRUPT) && (VMONCTL & VMONIFG)) return INT_MASK_MATCH::TRUE;
-            else if (mask & PMM_LPM45_INTERRUPT)
-                return INT_MASK_MATCH::TRUE;
-
-            return INT_MASK_MATCH::FALSE;
-        }
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief  disables interrupts
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.disableInterrupt(PMM::INT::LPM45); \endcode
-		*@tparam BITS use enumeration PMM::INT
-		****************************************************************
-		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void clearInterrupt(const BIT &bit, const BITS &... bits) noexcept {
-            static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
-            const BIT     sum  = MT::Details::orSum(bit, bits...);
-            const uint8_t mask = static_cast<uint8_t>(sum);
-            m_lpm45.clear(mask);
-        }
-
-
-#endif
-
-#if defined(__MSP430F5XX_6XX_FAMILY__)
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief enables the low-side SVM circuitry
+		* @brief enables the low-side SVM circuitry -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -467,9 +780,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief disables the low-side SVM circuitry
+		* @brief disables the low-side SVM circuitry -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -486,9 +799,48 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief enables the high-side SVM circuitry
+		* @brief enables the voltage supervisor high side -> only available for MSP430F5xx/6xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.enableSVSH(); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void enableSVSH() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_svsmh.set(SVSHE);
+            m_ctl0pwd.override(0x00);
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430FPmm
+		****************************************************************
+		* @brief disables the voltage supervisor high side -> only available for MSP430F5xx/6xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.disableSVSH(); \endcode
+		*
+		****************************************************************
+		*/
+        constexpr void disableSVSH() noexcept {
+            m_ctl0pwd.override(PMMPW_H);
+            m_svsmh.clear(SVSHE);
+            m_ctl0pwd.override(0x00);
+        }
+
+
+        /**
+		* @ingroup groupFuncsMSP430FPmm
+		****************************************************************
+		* @brief enables the high-side SVM circuitry -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -505,9 +857,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief disables the high-side SVM circuitry
+		* @brief disables the high-side SVM circuitry -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -524,9 +876,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief enables the low-side SVS and SVM circuitry
+		* @brief enables the low-side SVS and SVM circuitry -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -543,9 +895,9 @@ namespace MSP430 {
         }
 
         /**
-        * @ingroup groupFuncsMSP430Pmm
+	    * @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief disables the low-side SVS and SVM circuitry
+		* @brief disables the low-side SVS and SVM circuitry -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -562,9 +914,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief enables the high-side SVS and SVM circuitry
+		* @brief enables the high-side SVS and SVM circuitry -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -581,9 +933,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief disables the high-side SVS and SVM circuitry
+		* @brief disables the high-side SVS and SVM circuitry -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -600,9 +952,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief  enables the POR signal generation when a low-voltage event is registered by the low-side SVS
+		* @brief  enables the POR signal generation when a low-voltage event is registered by the low-side SVS -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -619,9 +971,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief  disables the POR signal generation when a low-voltage event is registered by the low-side SVS
+		* @brief  disables the POR signal generation when a low-voltage event is registered by the low-side SVS -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -638,9 +990,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief enables the interrupt generation when a low-voltage event is registered by the low-side SVM
+		* @brief enables the interrupt generation when a low-voltage event is registered by the low-side SVM -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -658,9 +1010,9 @@ namespace MSP430 {
 
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief disables the interrupt generation when a low-voltage event is registered by the low-side SVM
+		* @brief disables the interrupt generation when a low-voltage event is registered by the low-side SVM -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -677,9 +1029,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief enables the POR signal generation when a low-voltage event is registered by the high-side SVS
+		* @brief enables the POR signal generation when a low-voltage event is registered by the high-side SVS -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -696,9 +1048,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief disables the POR signal generation when a low-voltage event is registered by the high-side SVS
+		* @brief disables the POR signal generation when a low-voltage event is registered by the high-side SVS -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -715,9 +1067,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief enables the interrupt generation when a low-voltage event is registered by the high-side SVM
+		* @brief enables the interrupt generation when a low-voltage event is registered by the high-side SVM -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -734,9 +1086,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief disables the interrupt generation when a low-voltage event is registered by the high-side SVM
+		* @brief disables the interrupt generation when a low-voltage event is registered by the high-side SVM -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -753,7 +1105,7 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
 		* @brief clear all interrupt flags for the PMM
 		* @details
@@ -772,9 +1124,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief  enables supervisor low side in LPM with twake-up-fast from LPM2, LPM3, and LPM4
+		* @brief  enables supervisor low side in LPM with twake-up-fast from LPM2, LPM3, and LPM4 -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -792,9 +1144,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief  enables supervisor low side in LPM with twake-up-slow from LPM2, LPM3, and LPM4
+		* @brief  enables supervisor low side in LPM with twake-up-slow from LPM2, LPM3, and LPM4 -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -812,9 +1164,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief  disables supervisor low side in LPM with twake-up-fast from LPM2, LPM3, and LPM4
+		* @brief  disables supervisor low side in LPM with twake-up-fast from LPM2, LPM3, and LPM4 -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -832,9 +1184,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief  disables supervisor low side in LPM with twake-up-slow from LPM2, LPM3, and LPM4
+		* @brief  disables supervisor low side in LPM with twake-up-slow from LPM2, LPM3, and LPM4 -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -846,14 +1198,14 @@ namespace MSP430 {
 		*/
         constexpr void disableSvsLInLPMSlowWake() noexcept {
             m_ctl0pwd.override(PMMPW_H);
-            m_svsml.clear(VSLFP + SVSMLACE + SVSLMD);
+            m_svsml.clear(SVSLFP + SVSMLACE + SVSLMD);
             m_ctl0pwd.override(0x00);
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief  Enables supervisor high side in LPM with tpd = 20 s
+		* @brief  Enables supervisor high side in LPM with tpd = 20 s -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -871,9 +1223,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief  Enables supervisor high side in LPM with tpd = 2.5 s
+		* @brief  Enables supervisor high side in LPM with tpd = 2.5 s -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -891,9 +1243,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief disables supervisor high side in LPM with tpd = 20 s
+		* @brief disables supervisor high side in LPM with tpd = 20 s -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -910,9 +1262,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief disables supervisor high side in LPM with tpd = 2.5 s
+		* @brief disables supervisor high side in LPM with tpd = 2.5 s -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -930,9 +1282,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief optimized to provide twake-up-fast from LPM2, LPM3, and LPM4 with least power
+		* @brief optimized to provide twake-up-fast from LPM2, LPM3, and LPM4 with least power -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -948,11 +1300,10 @@ namespace MSP430 {
             m_ctl0pwd.override(0x00);
         }
 
-
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief optimized to provide tpd = 2.5 s in LPM with least power
+		* @brief optimized to provide tpd = 2.5 s in LPM with least power -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -969,9 +1320,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief Decrease Vcore by one level
+		* @brief Decrease Vcore by one level -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -1076,11 +1427,10 @@ namespace MSP430 {
             return STATUS::SUCCESS;
         }
 
-
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief Increase Vcore by one level
+		* @brief Increase Vcore by one level -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -1090,7 +1440,7 @@ namespace MSP430 {
 		*@param lev level to which Vcore needs to be increased (PMM::COREVOLT)
 		*@return the status of the cmoannd execution(STATUS)
 		****************************************************************
-        */
+	    */
         [[nodiscard]] constexpr STATUS setVCoreUp(PMM::COREVOLT lev) noexcept {
 
             //The code flow for increasing the Vcore has been altered to work around
@@ -1154,9 +1504,9 @@ namespace MSP430 {
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief Increase Vcore by one level
+		* @brief Increase Vcore by one level -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -1166,14 +1516,14 @@ namespace MSP430 {
 		*@param lev level to which Vcore needs to be decreased/increased (PMM::COREVOLT)
 		*@return the status of the cmoannd execution(STATUS)
 		****************************************************************
-	    */
-        [[nodiscard]] constexpr STATUS setVCore(PMM::COREVOLT lev) noexcept {
+		*/
+        [[nodiscard]] STATUS setVCore(PMM::COREVOLT lev) noexcept {
 
             STATUS status = STATUS::SUCCESS;
 
             typedef typename std::underlying_type<PMM::COREVOLT>::type underlying;
 
-            const uint16_t level = static_cast<underlying>(lev);
+            uint16_t level = static_cast<underlying>(lev);
 
             //Set Mask for Max. level
             level &= PMMCOREV_3;
@@ -1205,107 +1555,10 @@ namespace MSP430 {
         }
 
 
-#endif
-
-#if defined(__MSP430_HAS_PMM_FR5xx__) || (defined(__MSP430F5XX_6XX_FAMILY__))
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430FPmm
 		****************************************************************
-		* @brief enables the voltage supervisor low side
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.enableSVSL(); \endcode
-		*
-		****************************************************************
-		*/
-        constexpr void enableSVSL() noexcept {
-            m_ctl0pwd.override(PMMPW_H);
-#if defined(__MSP430F5XX_6XX_FAMILY__)
-            m_svsml.set(SVSLE);
-#else
-            m_ctl0.set(SVSLE);
-#endif
-            m_ctl0pwd.override(0x00);
-        }
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief disables the voltage supervisor low side
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.disableSVSL(); \endcode
-		*
-		****************************************************************
-		*/
-        constexpr void disableSVSL() noexcept {
-            m_ctl0pwd.override(PMMPW_H);
-#if defined(__MSP430F5XX_6XX_FAMILY__)
-            m_svsml.clear(SVSLE);
-#else
-            m_ctl0.clear(SVSLE);
-#endif
-            m_ctl0pwd.override(0x00);
-        }
-#endif
-
-#if defined(__MSP430_HAS_PMM_FRAM__) || (defined(__MSP430F5XX_6XX_FAMILY__))
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief enables the voltage supervisor high side
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.enableSVSH(); \endcode
-		*
-		****************************************************************
-		*/
-        constexpr void enableSVSH() noexcept {
-            m_ctl0pwd.override(PMMPW_H);
-#if defined(__MSP430F5XX_6XX_FAMILY__)
-            m_svsmh.set(SVSHE);
-#else
-            m_ctl0.set(SVSHE);
-#endif
-            m_ctl0pwd.override(0x00);
-        }
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief disables the voltage supervisor high side
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.disableSVSH(); \endcode
-		*
-		****************************************************************
-		*/
-        constexpr void disableSVSH() noexcept {
-            m_ctl0pwd.override(PMMPW_H);
-#if defined(__MSP430F5XX_6XX_FAMILY__)
-            m_svsmh.clear(SVSHE);
-#else
-            m_ctl0.clear(SVSHE);
-#endif
-            m_ctl0pwd.override(0x00);
-        }
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief compares the given pins with the interrupt flags set in the hw register
+		* @brief compares the given pins with the interrupt flags set in the hw register -> only available for MSP430F5xx/6xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -1323,352 +1576,241 @@ namespace MSP430 {
             else
                 return INT_MASK_MATCH::FALSE;
         }
-#endif
+    };
+}// namespace MSP430
+}// namespace MT
 
-#if defined(__MSP430_HAS_PMM_FRAM__) || (__MSP430_HAS_PMM_FR5xx__)
 
+#elif defined(__MSP430_HAS_PMM__) && defined(__MSP430_HAS_MSP430I_CPU__)
+
+namespace MT {
+namespace Misc {
+    enum class PMM_INT : uint16_t {
+        VMON  = (VMONIE),
+        LPM45 = (LPM45IFG)
+    };
+    template<>
+    struct enable_Enum_bits<PMM_INT> {
+        static constexpr bool enable = true;
+    };
+}// namespace Misc
+}// namespace MT
+
+
+namespace MT {
+namespace MSP430 {
+    namespace PMM {
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+  		* @ingroup groupEnumsMSP430IPmm
+  		****************************************************************
+  		* @brief PMM interrupt types
+  		****************************************************************
+  		*/
+        using INT = MT::Misc::PMM_INT;
+
+        /**
+		* @ingroup groupEnumsMSP430IPmm
 		****************************************************************
-		* @brief Makes the LDO remain ON when going into LPM 3/4
+		* @brief voltage monitor -> only available for MSP430i2xx Family
+		****************************************************************
+		*/
+        enum class VOLT_MONITOR : uint16_t {
+            DISABLE       = (VMONLVL_0),
+            DVCC_2350MV   = (VMONLVL_1),
+            DVCC_2650MV   = (VMONLVL_2),
+            DVCC_2850MV   = (VMONLVL_3),
+            VMONIN_1160MV = (VMONLVL_7)
+        };
+
+        /**
+		* @ingroup groupEnumsMSP430IPmm
+		****************************************************************
+		* @brief voltage monitor -> only available for MSP430i2xx Family
+		****************************************************************
+		*/
+        enum class REGULATOR : uint8_t {
+            ON  = (0x00),
+            OFF = (0x10)
+        };
+    }// namespace PMM
+
+    struct Pmm {
+
+      private:
+        MT::Universal::Register<&LPM45CTL> m_lpm45{};
+        MT::Universal::Register<&VMONCTL>  m_vmon{};
+        MT::Universal::Register<&REFCAL0>  m_rcal0{};
+        MT::Universal::Register<&REFCAL1>  m_rcal1{};
+
+      public:
+        /**
+		* @ingroup groupFuncsMSP430IPmm
+		****************************************************************
+		* @brief sets up the voltage monitor -> only available for MSP430i2xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
 		*
 		*  Pmm pmm{};
-		*  pmm.turnOnRegulator(); \endcode
-		*
+		*  pmm.setupVoltageMonitor(PMM::VOLT_MONITOR::DVCC_2350MV); \endcode
+		*@param mon new voltage monitor level
 		****************************************************************
 		*/
-        constexpr void turnOnRegulator() noexcept {
-            m_ctl0pwd.override(PMMPW_H);
-            m_ctl0.clear(PMMREGOFF);
-            m_ctl0pwd.override(0x00);
+        constexpr void setupVoltageMonitor(const PMM::VOLT_MONITOR mon) noexcept {
+            uint8_t currentStatus = m_vmon.get();
+            currentStatus &= ~(0x07);
+            currentStatus |= static_cast<uint8_t>(mon);
+            m_vmon.override(currentStatus);
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430IPmm
 		****************************************************************
-		* @brief Turns off the LDO when going into LPM3/4, thus the system will enter LPM3.5 or LPM4.5 respectively
+		* @brief  sets up the calibration of the internal reference -> only available for MSP430i2xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
 		*
 		*  Pmm pmm{};
-		*  pmm.turnOffRegulator(); \endcode
+		*  pmm.calibrateReference(); \endcode
 		*
 		****************************************************************
 		*/
-        constexpr void turnOffRegulator() noexcept {
-            m_ctl0pwd.override(PMMPW_H);
-            m_ctl0.set(PMMREGOFF);
-            m_ctl0pwd.override(0x00);
+        constexpr void calibrateReference() noexcept {
+            m_rcal0.override(TLV_START + TLV_CAL_REFCAL0);
+            m_rcal1.override(TLV_START + TLV_CAL_REFCAL1);
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430IPmm
 		****************************************************************
-		* @brief triggers a software Power On Reset (POR)
+		* @brief sets the status of the PMM regulator -> only available for MSP430i2xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
 		*
 		*  Pmm pmm{};
-		*  pmm.trigPOR(); \endcode
+		*  pmm.setRegulatorStatus(PMM::REGULATOR::ON); \endcode
+		*@param reg regulator on or off
+		****************************************************************
+		*/
+        constexpr void setRegulatorStatus(const PMM::REGULATOR reg) noexcept {
+            uint8_t currentStatus = m_lpm45.get();
+            currentStatus &= ~(PMMREGOFF);
+            currentStatus |= static_cast<uint8_t>(reg);
+            m_lpm45.override(currentStatus);
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430IPmm
+		****************************************************************
+		* @brief  unlocks the IO -> only available for MSP430i2xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.unlockIOConfiguration(); \endcode
 		*
 		****************************************************************
 		*/
-        constexpr void trigPOR() noexcept {
-            m_ctl0pwd.override(PMMPW_H);
-            m_ctl0.set(PMMSWPOR);
-            m_ctl0pwd.override(0x00);
+        constexpr void unlockIOConfiguration() noexcept {
+            m_lpm45.clear(LOCKLPM45);
         }
 
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430IPmm
 		****************************************************************
-		* @brief triggers a software Brown Out Rest (BOR)
+		* @brief  enables interrupts -> only available for MSP430i2xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
 		*
 		*  Pmm pmm{};
-		*  pmm.trigBOR(); \endcode
+		*  pmm.enableInterrupt(PMM::INT::LPM45); \endcode
 		*
 		****************************************************************
 		*/
-        constexpr void trigBOR() noexcept {
-            m_ctl0pwd.override(PMMPW_H);
-            m_ctl0.set(PMMSWBOR);
-            m_ctl0pwd.override(0x00);
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
+        constexpr void enableInterrupt(const BIT &bit, const BITS &... bits) noexcept {
+            static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
+            m_vmon.set(bit, bits...);
         }
 
-
         /**
-		* @ingroup groupFuncsMSP430Pmm
+		* @ingroup groupFuncsMSP430IPmm
 		****************************************************************
-		* @brief clears the interrupt flags for the given mask
+		* @brief  disables interrupts -> only available for MSP430i2xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
 		*
 		*  Pmm pmm{};
-		*  pmm.clearInterrupt(PMM::INT::BOR | PMM::INT::POR); \endcode
+		*  pmm.disableInterrupt(PMM::INT::LPM45); \endcode
+		*@tparam BITS use enumeration PMM::INT
+		****************************************************************
+		*/
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
+        constexpr void disableInterrupt(const BIT &bit, const BITS &... bits) noexcept {
+            static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
+            m_vmon.clear(bit, bits...);
+        }
+
+
+        /**
+		* @ingroup groupFuncsMSP430IPmm
+		****************************************************************
+		* @brief  disables interrupts -> only available for MSP430i2xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.disableInterrupt(PMM::INT::LPM45); \endcode
+		*@tparam BITS use enumeration PMM::INT
+		*@return if all the given bits are set or not (INT_MASK_MATCH)
+		****************************************************************
+		*/
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
+        constexpr INT_MASK_MATCH disableInterrupt(const BIT &bit, const BITS &... bits) noexcept {
+            static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
+
+            const BIT     sum  = MT::Details::orSum(bit, bits...);
+            const uint8_t mask = static_cast<uint8_t>(sum);
+
+            if ((mask & VMONIE) && (VMONCTL & VMONIFG)) return INT_MASK_MATCH::TRUE;
+            else if (mask & LPM45IFG)
+                return INT_MASK_MATCH::TRUE;
+
+            return INT_MASK_MATCH::FALSE;
+        }
+
+        /**
+		* @ingroup groupFuncsMSP430IPmm
+		****************************************************************
+		* @brief  disables interrupts -> only available for MSP430i2xx Family
+		* @details
+		* Usage: \code {.cpp}
+		* using namespace MT::MSP430;
+		*
+		*  Pmm pmm{};
+		*  pmm.disableInterrupt(PMM::INT::LPM45); \endcode
 		*@tparam BITS use enumeration PMM::INT
 		****************************************************************
 		*/
         template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
         constexpr void clearInterrupt(const BIT &bit, const BITS &... bits) noexcept {
             static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
-            m_ctl0pwd.override(PMMPW_H);
-            m_if.clear(bit, bits...);
-            m_ctl0pwd.override(0x00);
+            const BIT     sum  = MT::Details::orSum(bit, bits...);
+            const uint8_t mask = static_cast<uint8_t>(sum);
+            m_lpm45.clear(mask);
         }
-
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief Disable the GPIO power-on default high-impedance mode to activate previously configured port settings
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.unlockLPM5(); \endcode
-		*
-		****************************************************************
-		*/
-        constexpr void unlockLPM5() noexcept {
-            m_lpm5.clear(LOCKLPM5);
-        }
-#endif
-
-#if defined(__MSP430FR2XX_4XX_FAMILY__)
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief returns the bandgap mode of the PMM module
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  if(pmm.getBandgapMode() == PMM::BANDGAP_MODE::SAMPLE) doSomething(); \endcode
-		*@return the curretn bandgap mode (PMM::BANDGAP_MODE)
-		****************************************************************
-		*/
-        [[nodiscard]] constexpr PMM::BANDGAP_MODE getBandgapMode() noexcept {
-
-            if (m_ctl2.compare(BGMODE)) return PMM::BANDGAP_MODE::SAMPLE;
-            else
-                return PMM::BANDGAP_MODE::STATIC;
-        }
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief returns the active status of the bandgap in the PMM module
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  if(pmm.isBandgapActive() == PMM::BANDGAP::ACTIVE) doSomething(); \endcode
-		*@return if the bandgap is active or not (PMM::BANDGAP)
-		****************************************************************
-		*/
-        [[nodiscard]] constexpr PMM::BANDGAP isBandgapActive() noexcept {
-
-            if (m_ctl2.compare(REFBGACT)) return PMM::BANDGAP::ACTIVE;
-            else
-                return PMM::BANDGAP::INACTIVE;
-        }
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief the active status of the reference generator in the PMM module
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  if(pmm.isRefGenActive() == PMM::BANDGAP::ACTIVE) doSomething(); \endcode
-		*@return if the reference generator is active or not (PMM::REFGEN)
-		****************************************************************
-		*/
-        [[nodiscard]] constexpr PMM::REFGEN isRefGenActive() noexcept {
-
-            if (m_ctl2.compare(REFGENACT)) return PMM::REFGEN::ACTIVE;
-            else
-                return PMM::REFGEN::INACTIVE;
-        }
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief returns the active status of the buffered bandgap voltage in the PMM
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  if(pmm.getBufferedBandgapVoltageStatus() == PMM::BANDGAP_STATUS::READY) doSomething(); \endcode
-		*@return if the bandgap status is ready or not (PMM::BANDGAP_STATUS)
-		****************************************************************
-		*/
-        [[nodiscard]] constexpr PMM::BANDGAP_STATUS getBufferedBandgapVoltageStatus() noexcept {
-
-            if (m_ctl2.compare(REFBGRDY)) return PMM::BANDGAP_STATUS::READY;
-            else
-                return PMM::BANDGAP_STATUS::NOTREADY;
-        }
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief returns the status of the variable reference voltage in the PMM
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  if(pmm.getVariableReferenceVoltageStatus() == PMM::REFGEN_STATUS::READY) doSomething(); \endcode
-		*@return if the variable reference status is ready or not(PMM::REFGEN_STATUS)
-		****************************************************************
-		*/
-        [[nodiscard]] constexpr PMM::REFGEN_STATUS getVariableReferenceVoltageStatus() noexcept {
-
-            if (m_ctl2.compare(REFGENRDY)) return PMM::REFGEN_STATUS::READY;
-            else
-                return PMM::REFGEN_STATUS::NOTREADY;
-        }
-
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief Disables the internal temperature sensor to save power consumption
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.disableTempSensor(); \endcode
-		*
-		****************************************************************
-		*/
-        constexpr void disableTempSensor() noexcept {
-            m_ctl0pwd.override(PMMPW_H);
-            m_ctl2.clear(TSENSOREN);
-            m_ctl0pwd.override(0x00);
-        }
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief Enables the internal temperature sensor to save power consumption
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.enableTempSensor(); \endcode
-		*
-		****************************************************************
-		*/
-        constexpr void enableTempSensor() noexcept {
-            m_ctl0pwd.override(PMMPW_H);
-            m_ctl2.set(TSENSOREN);
-            m_ctl0pwd.override(0x00);
-        }
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief Disables the external reference output
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.disableExternalReference(); \endcode
-		*
-		****************************************************************
-		*/
-        constexpr void disableExternalReference() noexcept {
-            m_ctl0pwd.override(PMMPW_H);
-            m_ctl2.clear(EXTREFEN);
-            m_ctl0pwd.override(0x00);
-        }
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief Enables the external reference output
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.enableExternalReference(); \endcode
-		*
-		****************************************************************
-		*/
-        constexpr void enableExternalReference() noexcept {
-            m_ctl0pwd.override(PMMPW_H);
-            m_ctl2.set(EXTREFEN);
-            m_ctl0pwd.override(0x00);
-        }
-
-
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief Disables the internal reference output
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.disableInternalReference(); \endcode
-		*
-		****************************************************************
-		*/
-        constexpr void disableInternalReference() noexcept {
-            m_ctl0pwd.override(PMMPW_H);
-            m_ctl2.clear(INTREFEN);
-            m_ctl0pwd.override(0x00);
-        }
-
-#if defined(REFVSEL)
-        /**
-		* @ingroup groupFuncsMSP430Pmm
-		****************************************************************
-		* @brief Selects reference voltage level
-		* @details
-		* Usage: \code {.cpp}
-		* using namespace MT::MSP430;
-		*
-		*  Pmm pmm{};
-		*  pmm.selectVoltageReference(PMM::REF_VOLT_SELECT::V1_5); \endcode
-		*
-		****************************************************************
-		*/
-        constexpr void selectVoltageReference(const PMM::REF_VOLT_SELECT sel) noexcept {
-            m_ctl2.clear(REFVSEL);
-            typedef typename std::underlying_type<PMM::REF_VOLT_SELECT>::type underlying;
-            m_ctl2.set(static_cast<underlying>(sel));
-        }
-#endif
-#endif
     };
-
 }// namespace MSP430
 }// namespace MT
 
+#endif
 #endif
 #endif
 #endif /* MICROTRAIT_MSP430_PMM_PMM_HPP_ */

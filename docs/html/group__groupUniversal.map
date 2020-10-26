@@ -1,5 +1,5 @@
 <map id="Universal" name="Universal">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,80,57"/>
-<area shape="rect" id="node2" href="$group__groupUniversalReg.html" title="functions to get hardware register access without overhead " alt="" coords="128,5,199,32"/>
+<area shape="rect" id="node1" href="$group__groupUniversalReg.html" title="functions to get hardware register access without overhead " alt="" coords="128,5,199,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,31,80,57"/>
 <area shape="rect" id="node3" href="$group__groupInterrupt.html" title="Functions to register callbacks for interrupt service routines at compile time. " alt="" coords="129,56,198,83"/>
 </map>
