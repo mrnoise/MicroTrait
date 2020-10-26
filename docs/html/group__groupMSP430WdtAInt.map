@@ -1,6 +1,6 @@
 <map id="Watchdog A Interrupt" name="Watchdog A Interrupt">
-<area shape="rect" id="node1" href="$group__groupEnumsMSP430WdtAInt.html" title=" " alt="" coords="327,5,389,32"/>
-<area shape="rect" id="node2" href="$group__groupFuncsMSP430WdtAInt.html" title=" " alt="" coords="319,56,397,83"/>
-<area shape="rect" id="node3" title="functions to register Interrupt callbacks for Watchdog A interrupts at compile time or at runtime &#45;&gt;..." alt="" coords="125,31,271,57"/>
+<area shape="rect" id="node1" title="functions to register Interrupt callbacks for Watchdog A interrupts at compile time or at runtime &#45;&gt;..." alt="" coords="125,31,271,57"/>
+<area shape="rect" id="node2" href="$group__groupEnumsMSP430WdtAInt.html" title=" " alt="" coords="327,5,389,32"/>
+<area shape="rect" id="node3" href="$group__groupFuncsMSP430WdtAInt.html" title=" " alt="" coords="319,56,397,83"/>
 <area shape="rect" id="node4" href="$group__groupMSP430.html" title=" " alt="" coords="5,31,77,57"/>
 </map>

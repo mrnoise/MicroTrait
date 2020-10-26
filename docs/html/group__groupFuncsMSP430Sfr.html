@@ -99,13 +99,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaf628c7d2a7fabf782e8cf41131d8447d"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear the given interrupts  <a href="#gaf628c7d2a7fabf782e8cf41131d8447d">More...</a><br /></td></tr>
 <tr class="separator:gaf628c7d2a7fabf782e8cf41131d8447d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga095995edb9190d9c557506dafe3ad399"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430Sfr.html#ga095995edb9190d9c557506dafe3ad399">MT::MSP430::Sfr::setResetPinPullResistor</a> (const SFR::RST_RESISTOR rst) noexcept</td></tr>
-<tr class="memdesc:ga095995edb9190d9c557506dafe3ad399"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the Pullup/down/disable configuration of the reset pin  <a href="#ga095995edb9190d9c557506dafe3ad399">More...</a><br /></td></tr>
+<tr class="memdesc:ga095995edb9190d9c557506dafe3ad399"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the Pullup/down/disable configuration of the reset pin -&gt; not available for MSP430i2xx Family  <a href="#ga095995edb9190d9c557506dafe3ad399">More...</a><br /></td></tr>
 <tr class="separator:ga095995edb9190d9c557506dafe3ad399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6717cd4f678cce1bdc6e505331dcaa53"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430Sfr.html#ga6717cd4f678cce1bdc6e505331dcaa53">MT::MSP430::Sfr::setNMIEdge</a> (const SFR::NMI_EDGE edge) noexcept</td></tr>
-<tr class="memdesc:ga6717cd4f678cce1bdc6e505331dcaa53"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the edge configuration of the reset pin  <a href="#ga6717cd4f678cce1bdc6e505331dcaa53">More...</a><br /></td></tr>
+<tr class="memdesc:ga6717cd4f678cce1bdc6e505331dcaa53"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the edge configuration of the reset pin -&gt; not available for MSP430i2xx Family  <a href="#ga6717cd4f678cce1bdc6e505331dcaa53">More...</a><br /></td></tr>
 <tr class="separator:ga6717cd4f678cce1bdc6e505331dcaa53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabce2ac33cdfa02bc215ab27693d7f8f8"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430Sfr.html#gabce2ac33cdfa02bc215ab27693d7f8f8">MT::MSP430::Sfr::setResetNMIPinFunction</a> (const SFR::RST_FUNC func) noexcept</td></tr>
-<tr class="memdesc:gabce2ac33cdfa02bc215ab27693d7f8f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets function of the reset pin  <a href="#gabce2ac33cdfa02bc215ab27693d7f8f8">More...</a><br /></td></tr>
+<tr class="memdesc:gabce2ac33cdfa02bc215ab27693d7f8f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets function of the reset pin -&gt; not available for MSP430i2xx Family  <a href="#gabce2ac33cdfa02bc215ab27693d7f8f8">More...</a><br /></td></tr>
 <tr class="separator:gabce2ac33cdfa02bc215ab27693d7f8f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -320,10 +320,10 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 
 <p><code>#include &lt;<a class="el" href="Sfr_8hpp.html">MSP430/SFR/Sfr.hpp</a>&gt;</code></p>
 
-<p>sets the edge configuration of the reset pin </p>
+<p>sets the edge configuration of the reset pin -&gt; not available for MSP430i2xx Family </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1Sfr.html">Sfr</a> sfr{};</div><div class="line"> sfr.<a class="code" href="group__groupFuncsMSP430Sfr.html#ga6717cd4f678cce1bdc6e505331dcaa53">setNMIEdge</a>(SFR::NMI_EDGE::RISING); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">edge</td><td>the configuration (<a class="el" href="group__groupEnumsMSP430Sfr.html#ga97b1da589340085a5cffe44121ba87e5" title="Reset (NMI) edge selection. ">NMI_EDGE</a>) </td></tr>
+    <tr><td class="paramname">edge</td><td>the configuration (<a class="el" href="group__groupEnumsMSP430Sfr.html#ga97b1da589340085a5cffe44121ba87e5" title="Reset (NMI) edge selection -> not available for MSP430i2xx Family. ">NMI_EDGE</a>) </td></tr>
   </table>
   </dd>
 </dl>
@@ -354,10 +354,10 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 
 <p><code>#include &lt;<a class="el" href="Sfr_8hpp.html">MSP430/SFR/Sfr.hpp</a>&gt;</code></p>
 
-<p>sets function of the reset pin </p>
+<p>sets function of the reset pin -&gt; not available for MSP430i2xx Family </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1Sfr.html">Sfr</a> sfr{};</div><div class="line"> sfr.<a class="code" href="group__groupFuncsMSP430Sfr.html#gabce2ac33cdfa02bc215ab27693d7f8f8">setResetNMIPinFunction</a>(SFR::RST_FUNC::RESET); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">func</td><td>the configuration (<a class="el" href="group__groupEnumsMSP430Sfr.html#gaf5ba968e328238eed9003c8b2331757e" title="Reset pin function. ">RST_FUNC</a>) </td></tr>
+    <tr><td class="paramname">func</td><td>the configuration (<a class="el" href="group__groupEnumsMSP430Sfr.html#gaf5ba968e328238eed9003c8b2331757e" title="Reset pin function -> not available for MSP430i2xx Family. ">RST_FUNC</a>) </td></tr>
   </table>
   </dd>
 </dl>
@@ -388,10 +388,10 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 
 <p><code>#include &lt;<a class="el" href="Sfr_8hpp.html">MSP430/SFR/Sfr.hpp</a>&gt;</code></p>
 
-<p>sets the Pullup/down/disable configuration of the reset pin </p>
+<p>sets the Pullup/down/disable configuration of the reset pin -&gt; not available for MSP430i2xx Family </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1Sfr.html">Sfr</a> sfr{};</div><div class="line"> sfr.<a class="code" href="group__groupFuncsMSP430Sfr.html#ga095995edb9190d9c557506dafe3ad399">setResetPinPullResistor</a>(SFR::RST_RESISTOR::PULLUP); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">rst</td><td>the configuration (<a class="el" href="group__groupEnumsMSP430Sfr.html#gad4f650715a2401a65096d4455016994e" title="Reset pin Pullup/down or disable. ">RST_RESISTOR</a>) </td></tr>
+    <tr><td class="paramname">rst</td><td>the configuration (<a class="el" href="group__groupEnumsMSP430Sfr.html#gad4f650715a2401a65096d4455016994e" title="Reset pin Pullup/down or disable -> not available for MSP430i2xx Family. ">RST_RESISTOR</a>) </td></tr>
   </table>
   </dd>
 </dl>
@@ -403,7 +403,7 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 <!-- Generated by DoxyPress 1.4.0 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mo Okt 26 2020 09:34:17 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Mo Okt 26 2020 10:02:48 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

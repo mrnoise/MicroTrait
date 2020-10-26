@@ -849,7 +849,10 @@ var NAVTREE =
                 [ "NMI_PIN", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154afb7c266cd54f331da2f90ab701f1eb58", null ],
                 [ "VACANT_MEMORY_ACCESS", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a0773d10974a4b37c47c6060054a2c142", null ],
                 [ "OSCILLATOR_FAULT", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154aa3d4deda557d70cb4b82a88cc124dd47", null ],
-                [ "WATCHDOG_INTERVAL_TIMER", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154ab69486c2330ce690c6ecf807a65784e1", null ]
+                [ "WATCHDOG_INTERVAL_TIMER", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154ab69486c2330ce690c6ecf807a65784e1", null ],
+                [ "FLASH_CONTROLLER_ACCESS_VIOLATION", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a2847b57f5dea0cbe9cfb22ae4f50e9c5", null ],
+                [ "EXTERNAL_RESET", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a41b44972e6b2203cf644c12884ca71e0", null ],
+                [ "BROWN_OUT_RESET", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a064da46b65a549befa1ec615ab840402", null ]
               ] ]
             ] ]
           ] ],
@@ -1059,9 +1062,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Details_8hpp.html",
-"Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a54efeb9c25fb92c8c79b1f494f85f313",
-"group__groupFuncsMSP430FPmm.html#ga72d6c4670ebe415406dabb651524381e",
-"structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#ad8d6b1d440f01e5267f3d992260da81c"
+"Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a0773d10974a4b37c47c6060054a2c142",
+"group__groupFuncsMSP430FPmm.html#ga63983bd8ce5babc0c918c8a6c2d24c12",
+"structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a54c8e7aebe19e0f4021e1088dd9d278f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

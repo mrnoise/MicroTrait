@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a0773d10974a4b37c47c6060054a2c142":[4,0,0,2,0,2,3],
+"Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a2847b57f5dea0cbe9cfb22ae4f50e9c5":[4,0,0,2,0,2,6],
+"Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a41b44972e6b2203cf644c12884ca71e0":[4,0,0,2,0,2,7],
 "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a54efeb9c25fb92c8c79b1f494f85f313":[4,0,0,2,0,2,1],
 "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154aa3d4deda557d70cb4b82a88cc124dd47":[4,0,0,2,0,2,4],
 "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154ab69486c2330ce690c6ecf807a65784e1":[4,0,0,2,0,2,5],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "group__groupFuncsMSP430FPmm.html#ga49bd38bf88107980c5ed3d4c70b2b0ec":[1,0,2,0,1,19],
 "group__groupFuncsMSP430FPmm.html#ga5c7728e0b3386e641a2453568ebaf478":[3,0,0,0,2,34],
 "group__groupFuncsMSP430FPmm.html#ga5c7728e0b3386e641a2453568ebaf478":[1,0,2,0,1,13],
-"group__groupFuncsMSP430FPmm.html#ga63983bd8ce5babc0c918c8a6c2d24c12":[3,0,0,0,2,47],
-"group__groupFuncsMSP430FPmm.html#ga63983bd8ce5babc0c918c8a6c2d24c12":[1,0,2,0,1,22],
-"group__groupFuncsMSP430FPmm.html#ga6a078e75c825dc665df3b1bfe9e580d7":[3,0,0,0,2,27],
-"group__groupFuncsMSP430FPmm.html#ga6a078e75c825dc665df3b1bfe9e580d7":[1,0,2,0,1,7]
+"group__groupFuncsMSP430FPmm.html#ga63983bd8ce5babc0c918c8a6c2d24c12":[3,0,0,0,2,47]
 };

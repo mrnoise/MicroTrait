@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"group__groupFuncsMSP430FPmm.html#ga63983bd8ce5babc0c918c8a6c2d24c12":[1,0,2,0,1,22],
+"group__groupFuncsMSP430FPmm.html#ga6a078e75c825dc665df3b1bfe9e580d7":[3,0,0,0,2,27],
+"group__groupFuncsMSP430FPmm.html#ga6a078e75c825dc665df3b1bfe9e580d7":[1,0,2,0,1,7],
 "group__groupFuncsMSP430FPmm.html#ga72d6c4670ebe415406dabb651524381e":[3,0,0,0,2,40],
 "group__groupFuncsMSP430FPmm.html#ga72d6c4670ebe415406dabb651524381e":[1,0,2,0,1,16],
 "group__groupFuncsMSP430FPmm.html#ga74a3a1e67252ab6ea4d233e087df4c2c":[3,0,0,0,2,39],
@@ -246,8 +249,5 @@ var NAVTREEINDEX2 =
 "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a070d29fda1ba25c38cda1b5c55065481":[3,0,0,0,0,0,0,1],
 "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a0d257e77bfce325fcb0cbc422d595d2d":[3,0,0,0,0,0,0,5],
 "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a1ec54e4da04a7583ccaad25b452acfed":[3,0,0,0,0,0,0,0],
-"structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a242d721bccbb96127127ef6236cb6be2":[3,0,0,0,0,0,0,4],
-"structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a54c8e7aebe19e0f4021e1088dd9d278f":[3,0,0,0,0,0,0,2],
-"structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a87e1f68c5bd6739ef54a6d79d85e2399":[3,0,0,0,0,0,0,9],
-"structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#ab50d14a484802eaf3eb65b11416aac40":[3,0,0,0,0,0,0,7]
+"structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a242d721bccbb96127127ef6236cb6be2":[3,0,0,0,0,0,0,4]
 };

@@ -56,12 +56,22 @@ namespace MT {
 namespace Misc {
 
     enum class SFR_INT : uint16_t {
-        JTAG_OUTBOX             = (JMBOUTIE),
-        JTAG_INBOX              = (JMBINIE),
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
+        JTAG_OUTBOX = (JMBOUTIE),
+        JTAG_INBOX  = (JMBINIE),
+#endif
         NMI_PIN                 = (NMIIE),
         VACANT_MEMORY_ACCESS    = (VMAIE),
         OSCILLATOR_FAULT        = (OFIE),
-        WATCHDOG_INTERVAL_TIMER = (WDTIE)
+        WATCHDOG_INTERVAL_TIMER = (WDTIE),
+#if defined(__MSP430F5XX_6XX_FAMILY__) || defined(__MSP430_HAS_MSP430I_CPU__)
+        FLASH_CONTROLLER_ACCESS_VIOLATION = (ACCVIE),
+#endif
+
+#if defined(__MSP430_HAS_MSP430I_CPU__)
+        EXTERNAL_RESET  = (RSTIFG),
+        BROWN_OUT_RESET = (BORIFG),
+#endif
     };
     template<>
     struct enable_Enum_bits<SFR_INT> {
@@ -82,10 +92,11 @@ namespace MSP430 {
 		*/
         using INT = MT::Misc::SFR_INT;
 
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
         /**
 		* @ingroup groupEnumsMSP430Sfr
 		****************************************************************
-		* @brief Reset pin Pullup/down or disable
+		* @brief Reset pin Pullup/down or disable -> not available for MSP430i2xx Family
 		****************************************************************
 		*/
         enum class RST_RESISTOR : uint16_t {
@@ -97,7 +108,7 @@ namespace MSP430 {
         /**
 		* @ingroup groupEnumsMSP430Sfr
 		****************************************************************
-		* @brief Reset (NMI) edge selection
+		* @brief Reset (NMI) edge selection -> not available for MSP430i2xx Family
 		****************************************************************
 		*/
         enum class NMI_EDGE : uint16_t {
@@ -108,13 +119,14 @@ namespace MSP430 {
         /**
 		* @ingroup groupEnumsMSP430Sfr
 		****************************************************************
-		* @brief Reset pin function
+		* @brief Reset pin function -> not available for MSP430i2xx Family
 		****************************************************************
 		*/
         enum class RST_FUNC : uint16_t {
             RESET = (!(SYSNMI)),
             NMI   = (SYSNMI)
         };
+#endif
 
     }// namespace SFR
 
@@ -205,10 +217,11 @@ namespace MSP430 {
             m_if.clear(bit, bits...);
         }
 
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
         /**
 		* @ingroup groupFuncsMSP430Sfr
 		****************************************************************
-		* @brief sets the Pullup/down/disable configuration of the reset pin
+		* @brief sets the Pullup/down/disable configuration of the reset pin -> not available for MSP430i2xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -226,7 +239,7 @@ namespace MSP430 {
         /**
 		* @ingroup groupFuncsMSP430Sfr
 		****************************************************************
-		* @brief sets the edge configuration of the reset pin
+		* @brief sets the edge configuration of the reset pin -> not available for MSP430i2xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -244,7 +257,7 @@ namespace MSP430 {
         /**
 		* @ingroup groupFuncsMSP430Sfr
 		****************************************************************
-		* @brief sets function of the reset pin
+		* @brief sets function of the reset pin -> not available for MSP430i2xx Family
 		* @details
 		* Usage: \code {.cpp}
 		* using namespace MT::MSP430;
@@ -258,9 +271,8 @@ namespace MSP430 {
             m_reset.clear(SYSNMI);
             m_reset.set(static_cast<uint16_t>(func));
         }
+#endif
     };
-
-
 }// namespace MSP430
 }// namespace MT
 
