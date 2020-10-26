@@ -38,19 +38,19 @@ var NAVTREE =
             [ "setOutputHighOnPin", "group__groupFuncsMSP430Gpio.html#ga0bdd306ce172b848dd692b3b3bf9fda7", null ],
             [ "setOutputLowOnPin", "group__groupFuncsMSP430Gpio.html#ga9526906127c157372709443b8a2e8458", null ],
             [ "toggleOutputOnPin", "group__groupFuncsMSP430Gpio.html#gaf673f9ff7ead9b73a0cb9671552a974d", null ]
-          ] ]
-        ] ],
-        [ "GPIO Interrupt", "group__groupMSP430GpioInt.html", [
-          [ "Enums", "group__groupEnumsMSP430GpioInt.html", [
-            [ "PORTS", "group__groupEnumsMSP430GpioInt.html#ga659f33ee9e814354726f18091c14e7f0", [
-              [ "PORT1", "group__groupEnumsMSP430GpioInt.html#gga659f33ee9e814354726f18091c14e7f0ac455d7a285f95e8dd4ea3327006d91b7", null ],
-              [ "PORT2", "group__groupEnumsMSP430GpioInt.html#gga659f33ee9e814354726f18091c14e7f0afb973c23511de656a94e22abf746e434", null ]
-            ] ]
           ] ],
-          [ "Functions", "group__groupFuncsMSP430GpioInt.html", [
-            [ "makeHandler", "group__groupFuncsMSP430GpioInt.html#gad369e4f2c1e3130e234b9b486e01f35a", null ],
-            [ "makeInterrupt", "group__groupFuncsMSP430GpioInt.html#gaeac9ecb78c96c309169d1036215429b5", null ],
-            [ "registerCallback", "group__groupFuncsMSP430GpioInt.html#gaf994a26398b10f919936c7613a37810d", null ]
+          [ "Interrupt", "group__groupMSP430GpioInt.html", [
+            [ "Enums", "group__groupEnumsMSP430GpioInt.html", [
+              [ "PORTS", "group__groupEnumsMSP430GpioInt.html#ga659f33ee9e814354726f18091c14e7f0", [
+                [ "PORT1", "group__groupEnumsMSP430GpioInt.html#gga659f33ee9e814354726f18091c14e7f0ac455d7a285f95e8dd4ea3327006d91b7", null ],
+                [ "PORT2", "group__groupEnumsMSP430GpioInt.html#gga659f33ee9e814354726f18091c14e7f0afb973c23511de656a94e22abf746e434", null ]
+              ] ]
+            ] ],
+            [ "Functions", "group__groupFuncsMSP430GpioInt.html", [
+              [ "makeHandler", "group__groupFuncsMSP430GpioInt.html#gad369e4f2c1e3130e234b9b486e01f35a", null ],
+              [ "makeInterrupt", "group__groupFuncsMSP430GpioInt.html#gaeac9ecb78c96c309169d1036215429b5", null ],
+              [ "registerCallback", "group__groupFuncsMSP430GpioInt.html#gaf994a26398b10f919936c7613a37810d", null ]
+            ] ]
           ] ]
         ] ],
         [ "PMM", "group__groupMSP430Pmm.html", [
@@ -179,7 +179,7 @@ var NAVTREE =
             ] ]
           ] ]
         ] ],
-        [ "Watchdog A", "group__groupMSP430WdtA.html", [
+        [ "WDT A", "group__groupMSP430WdtA.html", [
           [ "Enums", "group__groupEnumsMSP430WdtA.html", [
             [ "CLOCKDIVIDER", "group__groupEnumsMSP430WdtA.html#ga05723810294d4c0eb4f7a99255eb40bc", [
               [ "DIV2G", "group__groupEnumsMSP430WdtA.html#gga05723810294d4c0eb4f7a99255eb40bca4af1754549e4792be246afc24cae1051", null ],
@@ -189,13 +189,17 @@ var NAVTREE =
               [ "DIV32K", "group__groupEnumsMSP430WdtA.html#gga05723810294d4c0eb4f7a99255eb40bcaff7e712ea13a5587d998fdecfd305fbe", null ],
               [ "DIV8192", "group__groupEnumsMSP430WdtA.html#gga05723810294d4c0eb4f7a99255eb40bca75d8e3c452a8fb4c1bad4812c4c8b03a", null ],
               [ "DIV512", "group__groupEnumsMSP430WdtA.html#gga05723810294d4c0eb4f7a99255eb40bcacd1ab3cf2eee396e25dd77601e14fd4a", null ],
+              [ "DIV64", "group__groupEnumsMSP430WdtA.html#gga05723810294d4c0eb4f7a99255eb40bca57a4cc1267abf6f652801910fbc0ae81", null ],
+              [ "DIV8192", "group__groupEnumsMSP430WdtA.html#gga05723810294d4c0eb4f7a99255eb40bca75d8e3c452a8fb4c1bad4812c4c8b03a", null ],
+              [ "DIV512", "group__groupEnumsMSP430WdtA.html#gga05723810294d4c0eb4f7a99255eb40bcacd1ab3cf2eee396e25dd77601e14fd4a", null ],
               [ "DIV64", "group__groupEnumsMSP430WdtA.html#gga05723810294d4c0eb4f7a99255eb40bca57a4cc1267abf6f652801910fbc0ae81", null ]
             ] ],
             [ "CLOCKSOURCE", "group__groupEnumsMSP430WdtA.html#ga300bae9fa315f4500bf409bdd6bf1baa", [
               [ "SMCLK", "group__groupEnumsMSP430WdtA.html#gga300bae9fa315f4500bf409bdd6bf1baaab88c7c2fc640bdbd4125b363c2c018de", null ],
               [ "ACLK", "group__groupEnumsMSP430WdtA.html#gga300bae9fa315f4500bf409bdd6bf1baaa1320ed38f3060289a221f2aa841d7216", null ],
               [ "VLOCLK", "group__groupEnumsMSP430WdtA.html#gga300bae9fa315f4500bf409bdd6bf1baaaf2aa6c272799c55c0997ba522a6338bc", null ],
-              [ "XCLK", "group__groupEnumsMSP430WdtA.html#gga300bae9fa315f4500bf409bdd6bf1baaa992058eb9750f48327c98fbcca5feeac", null ]
+              [ "XCLK", "group__groupEnumsMSP430WdtA.html#gga300bae9fa315f4500bf409bdd6bf1baaa992058eb9750f48327c98fbcca5feeac", null ],
+              [ "ACLK", "group__groupEnumsMSP430WdtA.html#gga300bae9fa315f4500bf409bdd6bf1baaa1320ed38f3060289a221f2aa841d7216", null ]
             ] ]
           ] ],
           [ "Functions", "group__groupFuncsMSP430WdtA.html", [
@@ -206,18 +210,18 @@ var NAVTREE =
             [ "start", "group__groupFuncsMSP430WdtA.html#gaffb864b16f1da5b994ba4b884b02cb92", null ],
             [ "startIntervalTimer", "group__groupFuncsMSP430WdtA.html#ga4068f41b723dcffb681f409768b6e5ba", null ],
             [ "startWatchdogTimer", "group__groupFuncsMSP430WdtA.html#gabb1ea835be4d7339d66648391ebf4f3f", null ]
-          ] ]
-        ] ],
-        [ "Watchdog A Interrupt", "group__groupMSP430WdtAInt.html", [
-          [ "Enums", "group__groupEnumsMSP430WdtAInt.html", [
-            [ "WDT", "group__groupEnumsMSP430WdtAInt.html#ga9d1f28d0a974170eae7e366044c8fe86", [
-              [ "WDTA", "group__groupEnumsMSP430WdtAInt.html#gga9d1f28d0a974170eae7e366044c8fe86a856889eb5e7308b7bf27c63c0ac0fae6", null ]
-            ] ]
           ] ],
-          [ "Functions", "group__groupFuncsMSP430WdtAInt.html", [
-            [ "makeHandler", "group__groupFuncsMSP430WdtAInt.html#ga44d6831fc6de4036680425c2b5c07d81", null ],
-            [ "makeInterrupt", "group__groupFuncsMSP430WdtAInt.html#ga270b458519f2748bec956335cc9e0d1d", null ],
-            [ "registerCallback", "group__groupFuncsMSP430WdtAInt.html#ga5201033fa974c2c7dc553e9e789f3fad", null ]
+          [ "Interrupt", "group__groupMSP430WdtAInt.html", [
+            [ "Enums", "group__groupEnumsMSP430WdtAInt.html", [
+              [ "WDT", "group__groupEnumsMSP430WdtAInt.html#ga9d1f28d0a974170eae7e366044c8fe86", [
+                [ "WDTA", "group__groupEnumsMSP430WdtAInt.html#gga9d1f28d0a974170eae7e366044c8fe86a856889eb5e7308b7bf27c63c0ac0fae6", null ]
+              ] ]
+            ] ],
+            [ "Functions", "group__groupFuncsMSP430WdtAInt.html", [
+              [ "makeHandler", "group__groupFuncsMSP430WdtAInt.html#ga44d6831fc6de4036680425c2b5c07d81", null ],
+              [ "makeInterrupt", "group__groupFuncsMSP430WdtAInt.html#ga270b458519f2748bec956335cc9e0d1d", null ],
+              [ "registerCallback", "group__groupFuncsMSP430WdtAInt.html#ga5201033fa974c2c7dc553e9e789f3fad", null ]
+            ] ]
           ] ]
         ] ]
       ] ],
@@ -875,13 +879,17 @@ var NAVTREE =
                 [ "DIV32K", "WdtA_8hpp.html#gga05723810294d4c0eb4f7a99255eb40bcaff7e712ea13a5587d998fdecfd305fbe", null ],
                 [ "DIV8192", "WdtA_8hpp.html#gga05723810294d4c0eb4f7a99255eb40bca75d8e3c452a8fb4c1bad4812c4c8b03a", null ],
                 [ "DIV512", "WdtA_8hpp.html#gga05723810294d4c0eb4f7a99255eb40bcacd1ab3cf2eee396e25dd77601e14fd4a", null ],
+                [ "DIV64", "WdtA_8hpp.html#gga05723810294d4c0eb4f7a99255eb40bca57a4cc1267abf6f652801910fbc0ae81", null ],
+                [ "DIV8192", "WdtA_8hpp.html#gga05723810294d4c0eb4f7a99255eb40bca75d8e3c452a8fb4c1bad4812c4c8b03a", null ],
+                [ "DIV512", "WdtA_8hpp.html#gga05723810294d4c0eb4f7a99255eb40bcacd1ab3cf2eee396e25dd77601e14fd4a", null ],
                 [ "DIV64", "WdtA_8hpp.html#gga05723810294d4c0eb4f7a99255eb40bca57a4cc1267abf6f652801910fbc0ae81", null ]
               ] ],
               [ "CLOCKSOURCE", "WdtA_8hpp.html#ga300bae9fa315f4500bf409bdd6bf1baa", [
                 [ "SMCLK", "WdtA_8hpp.html#gga300bae9fa315f4500bf409bdd6bf1baaab88c7c2fc640bdbd4125b363c2c018de", null ],
                 [ "ACLK", "WdtA_8hpp.html#gga300bae9fa315f4500bf409bdd6bf1baaa1320ed38f3060289a221f2aa841d7216", null ],
                 [ "VLOCLK", "WdtA_8hpp.html#gga300bae9fa315f4500bf409bdd6bf1baaaf2aa6c272799c55c0997ba522a6338bc", null ],
-                [ "XCLK", "WdtA_8hpp.html#gga300bae9fa315f4500bf409bdd6bf1baaa992058eb9750f48327c98fbcca5feeac", null ]
+                [ "XCLK", "WdtA_8hpp.html#gga300bae9fa315f4500bf409bdd6bf1baaa992058eb9750f48327c98fbcca5feeac", null ],
+                [ "ACLK", "WdtA_8hpp.html#gga300bae9fa315f4500bf409bdd6bf1baaa1320ed38f3060289a221f2aa841d7216", null ]
               ] ]
             ] ],
             [ "WdtAInterrupt.cpp", "WdtAInterrupt_8cpp.html", [
@@ -1063,8 +1071,8 @@ var NAVTREEINDEX =
 [
 "Details_8hpp.html",
 "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a0773d10974a4b37c47c6060054a2c142",
-"group__groupFuncsMSP430FPmm.html#ga63983bd8ce5babc0c918c8a6c2d24c12",
-"structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html#a54c8e7aebe19e0f4021e1088dd9d278f"
+"group__groupFuncsMSP430FPmm.html#ga40467fbcede21860a44ec2bccd761e6d",
+"namespacemembers_vars.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

@@ -2,8 +2,8 @@
 * MSP430 specific code
 */
 
-/** @defgroup groupMSP430GpioInt GPIO Interrupt
- *  @ingroup groupMSP430
+/** @defgroup groupMSP430GpioInt Interrupt
+ *  @ingroup groupMSP430Gpio
 * @brief functions to register Interrupt callbacks for GPIO Interrupts at compile time or at runtime -> check settings.hpp
 *
 * @details

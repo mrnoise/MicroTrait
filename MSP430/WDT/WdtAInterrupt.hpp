@@ -2,8 +2,8 @@
 * MSP430 specific code
 */
 
-/** @defgroup groupMSP430WdtAInt Watchdog A Interrupt
- *  @ingroup groupMSP430
+/** @defgroup groupMSP430WdtAInt Interrupt
+ *  @ingroup groupMSP430WdtA
 * @brief  functions to register Interrupt callbacks for Watchdog A interrupts at compile time or at runtime -> check settings.hpp
 *
 * @details
