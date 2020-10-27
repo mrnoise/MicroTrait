@@ -55,15 +55,14 @@ namespace Misc {
 
 #include <type_traits>
 
-namespace MT {
-namespace Misc {
+namespace MT::Misc {
 
-    template<typename E>
-    struct enable_Enum_bits {
-        static constexpr bool enable = false;
-    };
+template<typename E>
+struct enable_Enum_bits {
+    static constexpr bool enable = false;
+};
 
-    /**
+/**
 * @ingroup groupFuncsEnumBits
 ****************************************************************
 * @brief operator overload for logical or
@@ -73,14 +72,14 @@ namespace Misc {
 *@tparam E the enumeration provided
 ****************************************************************
 */
-    template<typename E>
-    typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator|(const E lhs, const E rhs) noexcept {
-        typedef typename std::underlying_type<E>::type underlying;
-        return static_cast<E>(
-            static_cast<underlying>(lhs) | static_cast<underlying>(rhs));
-    }
+template<typename E>
+typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator|(const E lhs, const E rhs) noexcept {
+    typedef typename std::underlying_type<E>::type underlying;
+    return static_cast<E>(
+        static_cast<underlying>(lhs) | static_cast<underlying>(rhs));
+}
 
-    /**
+/**
 * @ingroup groupFuncsEnumBits
 ****************************************************************
 * @brief operator overload for logical and
@@ -90,14 +89,14 @@ namespace Misc {
 *@tparam E the enumeration provided
 ****************************************************************
 */
-    template<typename E>
-    typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator&(const E lhs, const E rhs) noexcept {
-        typedef typename std::underlying_type<E>::type underlying;
-        return static_cast<E>(
-            static_cast<underlying>(lhs) & static_cast<underlying>(rhs));
-    }
+template<typename E>
+typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator&(const E lhs, const E rhs) noexcept {
+    typedef typename std::underlying_type<E>::type underlying;
+    return static_cast<E>(
+        static_cast<underlying>(lhs) & static_cast<underlying>(rhs));
+}
 
-    /**
+/**
 * @ingroup groupFuncsEnumBits
 ****************************************************************
 * @brief operator overload for logical xor
@@ -107,14 +106,14 @@ namespace Misc {
 *@tparam E the enumeration provided
 ****************************************************************
 */
-    template<typename E>
-    typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator^(const E lhs, const E rhs) noexcept {
-        typedef typename std::underlying_type<E>::type underlying;
-        return static_cast<E>(
-            static_cast<underlying>(lhs) ^ static_cast<underlying>(rhs));
-    }
+template<typename E>
+typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator^(const E lhs, const E rhs) noexcept {
+    typedef typename std::underlying_type<E>::type underlying;
+    return static_cast<E>(
+        static_cast<underlying>(lhs) ^ static_cast<underlying>(rhs));
+}
 
-    /**
+/**
 * @ingroup groupFuncsEnumBits
 ****************************************************************
 * @brief operator overload for logical invertion
@@ -124,14 +123,14 @@ namespace Misc {
 *@tparam E the enumeration provided
 ****************************************************************
 */
-    template<typename E>
-    typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator~(const E lhs) noexcept {
-        typedef typename std::underlying_type<E>::type underlying;
-        return static_cast<E>(
-            ~static_cast<underlying>(lhs));
-    }
+template<typename E>
+typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator~(const E lhs) noexcept {
+    typedef typename std::underlying_type<E>::type underlying;
+    return static_cast<E>(
+        ~static_cast<underlying>(lhs));
+}
 
-    /**
+/**
 * @ingroup groupFuncsEnumBits
 ****************************************************************
 * @brief operator overload for logical or assignment
@@ -141,15 +140,15 @@ namespace Misc {
 *@tparam E the enumeration provided
 ****************************************************************
 */
-    template<typename E>
-    typename std::enable_if<enable_Enum_bits<E>::enable, E &>::type constexpr operator|=(E &lhs, const E rhs) noexcept {
-        typedef typename std::underlying_type<E>::type underlying;
-        lhs = static_cast<E>(
-            static_cast<underlying>(lhs) | static_cast<underlying>(rhs));
-        return lhs;
-    }
+template<typename E>
+typename std::enable_if<enable_Enum_bits<E>::enable, E &>::type constexpr operator|=(E &lhs, const E rhs) noexcept {
+    typedef typename std::underlying_type<E>::type underlying;
+    lhs = static_cast<E>(
+        static_cast<underlying>(lhs) | static_cast<underlying>(rhs));
+    return lhs;
+}
 
-    /**
+/**
 * @ingroup groupFuncsEnumBits
 ****************************************************************
 * @brief operator overload for logical and assignment
@@ -159,15 +158,15 @@ namespace Misc {
 *@tparam E the enumeration provided
 ****************************************************************
 */
-    template<typename E>
-    typename std::enable_if<enable_Enum_bits<E>::enable, E &>::type constexpr operator&=(E &lhs, const E rhs) noexcept {
-        typedef typename std::underlying_type<E>::type underlying;
-        lhs = static_cast<E>(
-            static_cast<underlying>(lhs) & static_cast<underlying>(rhs));
-        return lhs;
-    }
+template<typename E>
+typename std::enable_if<enable_Enum_bits<E>::enable, E &>::type constexpr operator&=(E &lhs, const E rhs) noexcept {
+    typedef typename std::underlying_type<E>::type underlying;
+    lhs = static_cast<E>(
+        static_cast<underlying>(lhs) & static_cast<underlying>(rhs));
+    return lhs;
+}
 
-    /**
+/**
 * @ingroup groupFuncsEnumBits
 ****************************************************************
 * @brief operator overload for logical xor assignment
@@ -177,15 +176,15 @@ namespace Misc {
 *@tparam E the enumeration provided
 ****************************************************************
 */
-    template<typename E>
-    typename std::enable_if<enable_Enum_bits<E>::enable, E &>::type constexpr operator^=(E &lhs, const E rhs) noexcept {
-        typedef typename std::underlying_type<E>::type underlying;
-        lhs = static_cast<E>(
-            static_cast<underlying>(lhs) ^ static_cast<underlying>(rhs));
-        return lhs;
-    }
+template<typename E>
+typename std::enable_if<enable_Enum_bits<E>::enable, E &>::type constexpr operator^=(E &lhs, const E rhs) noexcept {
+    typedef typename std::underlying_type<E>::type underlying;
+    lhs = static_cast<E>(
+        static_cast<underlying>(lhs) ^ static_cast<underlying>(rhs));
+    return lhs;
+}
 
-}// namespace Misc
-}// namespace MT
+
+}// namespace MT::Misc
 
 #endif /* MICROTRAIT_MISC_ENUMBITS_HPP_ */

@@ -24,31 +24,30 @@
 
 #include <stdint.h>
 
-namespace MT {
-namespace MSP430 {
+namespace MT::MSP430 {
 
-    /**
-	* @ingroup groupEnumsMSP430Types
-	****************************************************************
-	* @brief generic Status
-	****************************************************************
-	*/
-    enum class STATUS : uint_fast8_t {
-        FAIL = 0,
-        SUCCESS
-    };
+/**
+* @ingroup groupEnumsMSP430Types
+****************************************************************
+* @brief generic Status
+****************************************************************
+*/
+enum class STATUS : uint_fast8_t {
+    FAIL = 0,
+    SUCCESS
+};
 
-    /**
-	* @ingroup groupEnumsMSP430Types
-	****************************************************************
-	* @brief Interrupt Flag match
-	****************************************************************
-	*/
-    enum class INT_MASK_MATCH : uint_fast8_t {
-        FALSE = 0,
-        TRUE
-    };
-}// namespace MSP430
-}// namespace MT
+/**
+* @ingroup groupEnumsMSP430Types
+****************************************************************
+* @brief Interrupt Flag match
+****************************************************************
+*/
+enum class INT_MASK_MATCH : uint_fast8_t {
+    FALSE = 0,
+    TRUE
+};
+
+}// namespace MT::MSP430
 
 #endif /* MICROTRAIT_MSP430_TYPES_HPP_ */

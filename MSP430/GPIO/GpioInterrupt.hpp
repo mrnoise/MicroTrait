@@ -116,114 +116,109 @@ using namespace MT::MSP430;
 #include <limits>
 #include <array>
 
-namespace MT {
-namespace MSP430 {
-    namespace GPIO {
-        namespace Interrupt {
+namespace MT::MSP430::GPIO::Interrupt {
 
-            /**
-          	* @ingroup groupEnumsMSP430GpioInt
-          	****************************************************************
-          	* @brief Available Ports for interrupt callbacks
-          	****************************************************************
-          	*/
-            enum class PORTS {
-                PORT1 = 0,
-                PORT2
-            };
+/**
+* @ingroup groupEnumsMSP430GpioInt
+****************************************************************
+* @brief Available Ports for interrupt callbacks
+****************************************************************
+*/
+enum PORTS {
+    PORT1 = 0,
+    PORT2
+};
 
 #ifdef MT_MSP430_USE_GPIO_COMPILE_TIME_CALLBACKS
 
-            template<typename ENUM, typename FUNC>
-            using IntHandlers = MT::Universal::Interrupt::IntHandlers<ENUM, FUNC>; /**< this pair represents the ISR -> first the Enum which refers to a vector and second the function to call */
+template<typename ENUM, typename FUNC>
+using IntHandlers = MT::Universal::Interrupt::IntHandlers<ENUM, FUNC>; /**< this pair represents the ISR -> first the Enum which refers to a vector and second the function to call */
 
-            template<typename... Vector>
-            using Interrupt = MT::Universal::Interrupt::Interrupt<Vector...>;
+template<typename... Vector>
+using Interrupt = MT::Universal::Interrupt::Interrupt<Vector...>;
 
-            /**
-			* @ingroup groupFuncsMSP430GpioInt
-			****************************************************************
-			* @brief maker function for a complete callback registration
-			* @details
-			* Usage: \code {.cpp}
-			*
-			* using namespace MT::MSP430;
-			*
-			* GPIO::Interrupt::makeInterrupt(
-			*	GPIO::Interrupt::makeHandler(
-			*		GPIO::Interrupt::PORTS::PORT2,
-			*		[]() {
-			*			GPIO::Port1 p1{};
-			*			GPIO::Port2 p2{};
-			*			p2.clearInterrupt(GPIO::PIN::P3);
-			*			p1.toggleOutputOnPin(GPIO::PIN::P0);
-			*		})); \endcode
-			*@param t -> all entries to register first the port than the callback
-			*@return the copile time objects containing all registered callbacks
-			****************************************************************
-			*/
-            template<typename ENUM, typename... FUNC>
-            [[nodiscard]] constexpr auto makeInterrupt(IntHandlers<ENUM, FUNC>... t) noexcept {
-                static_assert(std::is_same<ENUM, PORTS>::value, "input must be PORTS enum");
-                return Interrupt<ENUM, FUNC...>{ std::move(t)... };
-            }
+/**
+* @ingroup groupFuncsMSP430GpioInt
+****************************************************************
+* @brief maker function for a complete callback registration
+* @details
+* Usage: \code {.cpp}
+*
+* using namespace MT::MSP430;
+*
+* GPIO::Interrupt::makeInterrupt(
+*	GPIO::Interrupt::makeHandler(
+*		GPIO::Interrupt::PORTS::PORT2,
+*		[]() {
+*			GPIO::Port1 p1{};
+*			GPIO::Port2 p2{};
+*			p2.clearInterrupt(GPIO::PIN::P3);
+*			p1.toggleOutputOnPin(GPIO::PIN::P0);
+*		})); \endcode
+*@param t -> all entries to register first the port than the callback
+*@return the copile time objects containing all registered callbacks
+****************************************************************
+*/
+template<typename ENUM, typename... FUNC>
+[[nodiscard]] constexpr auto makeInterrupt(IntHandlers<ENUM, FUNC>... t) noexcept {
+    static_assert(std::is_same<ENUM, PORTS>::value, "input must be PORTS enum");
+    return Interrupt<ENUM, FUNC...>{ std::move(t)... };
+}
 
-            /**
-			* @ingroup groupFuncsMSP430GpioInt
-			****************************************************************
-			* @brief maker function for one callback entry
-			* @details
-			* Usage: cascade with makeInterrupt like: \code {.cpp}
-			* GPIO::Interrupt::makeInterrupt(
-			*	GPIO::Interrupt::makeHandler(
-			*		GPIO::Interrupt::PORTS::PORT2,
-			*		[]() {
-			*			GPIO::Port1 p1{};
-			*			GPIO::Port2 p2{};
-			*			p2.clearInterrupt(GPIO::PIN::P3);
-			*			p1.toggleOutputOnPin(GPIO::PIN::P0);
-			*		})); \endcode
-			*@param p the Enum
-			*@param t the callback
-			*@return one IntHandler (std::pair<GPIO::Interrupt::PORTS, FUNC>)
-			****************************************************************
-			*/
-            template<typename ENUM, typename FUNC>
-            [[nodiscard]] constexpr auto makeHandler(ENUM p, FUNC t) noexcept {
-                static_assert(std::is_same<ENUM, PORTS>::value, "input must be PORTS enum");
-                return IntHandlers<ENUM, FUNC>{ p, std::move(t) };
-            }
+/**
+* @ingroup groupFuncsMSP430GpioInt
+****************************************************************
+* @brief maker function for one callback entry
+* @details
+* Usage: cascade with makeInterrupt like: \code {.cpp}
+* GPIO::Interrupt::makeInterrupt(
+*	GPIO::Interrupt::makeHandler(
+*		GPIO::Interrupt::PORTS::PORT2,
+*		[]() {
+*			GPIO::Port1 p1{};
+*			GPIO::Port2 p2{};
+*			p2.clearInterrupt(GPIO::PIN::P3);
+*			p1.toggleOutputOnPin(GPIO::PIN::P0);
+*		})); \endcode
+*@param p the Enum
+*@param t the callback
+*@return one IntHandler (std::pair<GPIO::Interrupt::PORTS, FUNC>)
+****************************************************************
+*/
+template<typename ENUM, typename FUNC>
+[[nodiscard]] constexpr auto makeHandler(ENUM p, FUNC t) noexcept {
+    static_assert(std::is_same<ENUM, PORTS>::value, "input must be PORTS enum");
+    return IntHandlers<ENUM, FUNC>{ p, std::move(t) };
+}
 
 #else
-            extern std::array<void (*)(), 2> PortVectors;
+extern std::array<void (*)(), 2> PortVectors;
 
-            /**
-			* @ingroup groupFuncsMSP430GpioInt
-			****************************************************************
-			* @brief runtime interrupt callback registration
-			* @details
-			* Usage:  \code {.cpp}
-			*
-			* using namespace MT::MSP430;
-			*
-			*	GPIO::Interrupt::registerCallback(GPIO::Interrupt::PORTS::PORT1, []() {
-			*		GPIO::Port1 p1{};
-			*		p1.clearInterrupt(GPIO::PIN::P4);
-			*		p1.toggleOutputOnPin(GPIO::PIN::P0);
-			*	});
-			* \endcode
-			*@param ports the port for which the callback should be registered (GPIO::Interrupt::PORTS)
-			*@param callback pointer to the callback function
-			****************************************************************
-			*/
-            constexpr void registerCallback(const PORTS ports, void (*callback)()) noexcept {
-                PortVectors[ports] = callback;
-            };
+/**
+* @ingroup groupFuncsMSP430GpioInt
+****************************************************************
+* @brief runtime interrupt callback registration
+* @details
+* Usage:  \code {.cpp}
+*
+* using namespace MT::MSP430;
+*
+*	GPIO::Interrupt::registerCallback(GPIO::Interrupt::PORTS::PORT1, []() {
+*		GPIO::Port1 p1{};
+*		p1.clearInterrupt(GPIO::PIN::P4);
+*		p1.toggleOutputOnPin(GPIO::PIN::P0);
+*	});
+* \endcode
+*@param ports the port for which the callback should be registered (GPIO::Interrupt::PORTS)
+*@param callback pointer to the callback function
+****************************************************************
+*/
+constexpr void registerCallback(const PORTS ports, void (*callback)()) noexcept {
+    PortVectors[ports] = callback;
+};
 #endif
-        }// namespace Interrupt
-    }    // namespace GPIO
-}// namespace MSP430
-}// namespace MT
+
+}// namespace MT::MSP430::GPIO::Interrupt
 
 #endif
 

@@ -4,15 +4,10 @@
 
 #include "MicroTrait/Tests/TestUniversal.hpp"
 
-namespace MT {
-namespace Tests {
-    void run() noexcept {
-
-        MT::Tests::Universal::run();
-    }
-
-}// namespace Tests
-}// namespace MT
-
+namespace MT::Tests {
+void run() noexcept {
+    MT::Tests::Universal::run();
+}
+}// namespace MT::Tests
 
 #endif /* MICROTRAIT_TESTS_TESTRUNNER_HPP_ */
