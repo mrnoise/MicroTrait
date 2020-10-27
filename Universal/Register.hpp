@@ -281,9 +281,8 @@ struct Register {
 	*/
     template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
     constexpr void set(const BIT &bit, const BITS &... bits) noexcept {
-        typedef typename std::underlying_type<BIT>::type underlying;
-        const BIT                                        sum = orSum(bit, bits...);
-        *REG |= static_cast<underlying>(sum);
+        const BIT sum = orSum(bit, bits...);
+        *REG |= (MT::Details::castToUnderlyingType(sum));
     }
 
     /**
@@ -300,9 +299,8 @@ struct Register {
 	*/
     template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
     constexpr void clear(const BIT &bit, const BITS &... bits) noexcept {
-        typedef typename std::underlying_type<BIT>::type underlying;
-        const BIT                                        sum = orSum(bit, bits...);
-        *REG &= ~(static_cast<underlying>(sum));
+        const BIT sum = orSum(bit, bits...);
+        *REG &= ~(MT::Details::castToUnderlyingType(sum));
     }
 
     /**
@@ -319,9 +317,8 @@ struct Register {
 	*/
     template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
     constexpr void toggle(const BIT &bit, const BITS &... bits) noexcept {
-        typedef typename std::underlying_type<BIT>::type underlying;
-        const BIT                                        sum = orSum(bit, bits...);
-        *REG ^= (static_cast<underlying>(sum));
+        const BIT sum = orSum(bit, bits...);
+        *REG ^= (MT::Details::castToUnderlyingType(sum));
     }
 
     /**
@@ -338,9 +335,8 @@ struct Register {
 	*/
     template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
     constexpr void override(const BIT &bit, const BITS &... bits) noexcept {
-        typedef typename std::underlying_type<BIT>::type underlying;
-        const BIT                                        sum = orSum(bit, bits...);
-        *REG                                                 = static_cast<underlying>(sum);
+        const BIT sum = orSum(bit, bits...);
+        *REG          = (MT::Details::castToUnderlyingType(sum));
     }
 
     /**
@@ -359,9 +355,8 @@ struct Register {
 	*/
     template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
     [[nodiscard]] constexpr bool compare(const BIT &bit, const BITS &... bits) noexcept {
-        typedef typename std::underlying_type<BIT>::type underlying;
-        const BIT                                        sum = orSum(bit, bits...);
-        return (*REG & static_cast<underlying>(sum));
+        const BIT sum = orSum(bit, bits...);
+        return (*REG & MT::Details::castToUnderlyingType(sum));
     }
 };
 }// namespace MT::Universal

@@ -15,6 +15,7 @@
 #include "MicroTrait/MSP430/WDTA/WdtAInterrupt.hpp"
 #include "MicroTrait/MSP430/SFR/Sfr.hpp"
 #include "MicroTrait/MSP430/PMM/Pmm.hpp"
+#include "MicroTrait/MSP430/TimerA/TimerA.hpp"
 
 #if defined(__GNUC__)
 #else
