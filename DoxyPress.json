@@ -262,13 +262,13 @@
         "input-recursive": false,
         "input-source": [
             ".",
+            "Misc",
+            "Universal",
             "MSP430",
             "MSP430/GPIO",
             "MSP430/SFR",
-            "MSP430/WDT",
-            "Misc",
-            "Universal",
-            "MSP430/PMM"
+            "MSP430/PMM",
+            "MSP430/WDTA"
         ],
         "mdfile-mainpage": ""
     },
