@@ -1,0 +1,6 @@
+<map id="Timer A" name="Timer A">
+<area shape="rect" id="node1" href="$group__groupEnumsMSP430TimerA.html" title=" " alt="" coords="248,5,311,32"/>
+<area shape="rect" id="node2" href="$group__groupFuncsMSP430TimerA.html" title=" " alt="" coords="240,56,319,83"/>
+<area shape="rect" id="node3" title="functions for Timer A register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="125,31,192,57"/>
+<area shape="rect" id="node4" href="$group__groupMSP430.html" title=" " alt="" coords="5,31,77,57"/>
+</map>

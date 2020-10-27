@@ -48,6 +48,18 @@ enum class INT_MASK_MATCH : uint_fast8_t {
     TRUE
 };
 
+
+/**
+* @ingroup groupEnumsMSP430Types
+****************************************************************
+* @brief Interrupt pending or not
+****************************************************************
+*/
+enum class INT_PENDING_STATUS : uint_fast8_t {
+    NOT_PENDING = 0,
+    PENDING
+};
+
 }// namespace MT::MSP430
 
 #endif /* MICROTRAIT_MSP430_TYPES_HPP_ */

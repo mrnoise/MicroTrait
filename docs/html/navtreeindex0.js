@@ -1,8 +1,9 @@
 var NAVTREEINDEX0 =
 {
 "Details_8hpp.html":[4,0,1,0],
-"Details_8hpp.html#a2122569154b08e37c14c76fe418cf834":[4,0,1,0,0],
-"Details_8hpp.html#aea60d6299e8c61172c619a96c40f762f":[4,0,1,0,1],
+"Details_8hpp.html#a2122569154b08e37c14c76fe418cf834":[4,0,1,0,1],
+"Details_8hpp.html#a68bdf88839bcf429167f3850a7b51571":[4,0,1,0,0],
+"Details_8hpp.html#aea60d6299e8c61172c619a96c40f762f":[4,0,1,0,2],
 "Details_8hpp_source.html":[5,1,0],
 "EnumBits_8hpp.html":[4,0,1,1],
 "EnumBits_8hpp.html#ga37bfcda163195742607a47337c30892a":[4,0,1,1,4],
@@ -70,8 +71,8 @@ var NAVTREEINDEX0 =
 "Interrupt_8hpp.html#ga3c1ca22bbd1f50e255b93b3da4c295de":[4,0,2,0,2],
 "Interrupt_8hpp.html#ga5f85f4bf600d3b93429ab737d496a149":[4,0,2,0,3],
 "Interrupt_8hpp_source.html":[5,2,0],
-"MSP430_2Settings_8hpp.html":[4,0,0,4],
-"MSP430_2Settings_8hpp_source.html":[5,0,4],
+"MSP430_2Settings_8hpp.html":[4,0,0,5],
+"MSP430_2Settings_8hpp_source.html":[5,0,5],
 "MT_8hpp.html":[4,0,3],
 "MT_8hpp_source.html":[5,3],
 "Pmm_8hpp.html":[4,0,0,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "Register_8hpp.html#gga8779a21c592ffcc487f2b68d4d5aeff1ad5d4cc7b09d1843517acc9361f8f665e":[4,0,2,1,4,4],
 "Register_8hpp.html#gga8779a21c592ffcc487f2b68d4d5aeff1ad8498108dd603522047564a8da7be94c":[4,0,2,1,4,7],
 "Register_8hpp.html#gga8779a21c592ffcc487f2b68d4d5aeff1aed90f7f5841740336de541fe04853637":[4,0,2,1,4,13],
-"Register_8hpp_source.html":[5,2,1],
-"Settings_8hpp.html":[4,0,4]
+"Register_8hpp_source.html":[5,2,1]
 };

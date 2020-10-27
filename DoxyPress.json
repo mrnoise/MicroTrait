@@ -268,7 +268,8 @@
             "MSP430/GPIO",
             "MSP430/SFR",
             "MSP430/PMM",
-            "MSP430/WDTA"
+            "MSP430/WDTA",
+            "MSP430/TIMERA"
         ],
         "mdfile-mainpage": ""
     },
