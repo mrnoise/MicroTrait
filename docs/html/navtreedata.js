@@ -891,7 +891,8 @@ var NAVTREE =
                 [ "P4", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2a905ad4f16a809a8f8408ed499e75be09", null ],
                 [ "P5", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2ac6b1847fa30bd92ff87464e39859e7c0", null ],
                 [ "P6", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2a53453c482d4d75c2fcc000cda7f2dd81", null ],
-                [ "P7", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2ad8db410ef2444bf4b29cd8fbb9b698a3", null ]
+                [ "P7", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2ad8db410ef2444bf4b29cd8fbb9b698a3", null ],
+                [ "ALL", "Gpio_8hpp.html#af7bdac7a7ad7774542b30333738c4da2a5fb1f955b45e38e31789286a1790398d", null ]
               ] ],
               [ "INT_EDGE", "Gpio_8hpp.html#ga4ca73a5b682c09ead2038ed3a5120202", [
                 [ "LOW_TO_HIGH", "Gpio_8hpp.html#gga4ca73a5b682c09ead2038ed3a5120202a4e82ee4e6da15be13bcdf1b2ac2ff3a2", null ],
@@ -1496,10 +1497,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Details_8hpp.html",
-"Settings_8hpp.html",
-"group__groupEnumsMSP430TimerA.html#gga04614f11ea4a6dc78186af21246d270fa88559a0cfd8250c9d65970cc145c92d4",
+"Register_8hpp_source.html",
+"group__groupEnumsMSP430TimerA.html#gae55512f05376cc6404a9b1d330a507d1",
 "group__groupFuncsMSP430FRAMPmm.html#ga49bd38bf88107980c5ed3d4c70b2b0ec",
-"structMT_1_1Misc_1_1enable__Enum__bits_3_01TIMERA__INT_01_4.html"
+"structMT_1_1Misc_1_1enable__Enum__bits_3_01SFR__INT_01_4.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

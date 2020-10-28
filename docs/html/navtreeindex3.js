@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"group__groupFuncsMSP430FRAMPmm.html#ga49bd38bf88107980c5ed3d4c70b2b0ec":[3,0,0,0,3,43],
 "group__groupFuncsMSP430FRAMPmm.html#ga49bd38bf88107980c5ed3d4c70b2b0ec":[1,0,1,1,1,7],
 "group__groupFuncsMSP430FRAMPmm.html#ga4ba7ec72f66e8c4b205136398aae6833":[3,0,0,0,3,37],
 "group__groupFuncsMSP430FRAMPmm.html#ga4ba7ec72f66e8c4b205136398aae6833":[1,0,1,1,1,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS32_01_4.html":[3,0,0,1,2],
 "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS8_01_4.html":[3,0,0,1,3],
 "structMT_1_1Misc_1_1enable__Enum__bits_3_01GPIO__PIN_01_4.html":[3,0,0,1,4],
-"structMT_1_1Misc_1_1enable__Enum__bits_3_01PMM__INT_01_4.html":[3,0,0,1,5],
-"structMT_1_1Misc_1_1enable__Enum__bits_3_01SFR__INT_01_4.html":[3,0,0,1,6]
+"structMT_1_1Misc_1_1enable__Enum__bits_3_01PMM__INT_01_4.html":[3,0,0,1,5]
 };

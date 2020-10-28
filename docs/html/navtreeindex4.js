@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"structMT_1_1Misc_1_1enable__Enum__bits_3_01SFR__INT_01_4.html":[3,0,0,1,6],
 "structMT_1_1Misc_1_1enable__Enum__bits_3_01TIMERA__INT_01_4.html":[3,0,0,1,7],
 "structMT_1_1Universal_1_1Interrupt_1_1Interrupt.html":[3,0,0,2,0,0],
 "structMT_1_1Universal_1_1Interrupt_1_1Interrupt.html#a643ca2e5b26af46987c5211509e886e3":[3,0,0,2,0,0,2],

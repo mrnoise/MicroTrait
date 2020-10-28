@@ -3,10 +3,12 @@
 #define MICROTRAIT_TESTS_TESTRUNNER_HPP_
 
 #include "MicroTrait/Tests/TestUniversal.hpp"
+#include "MicroTrait/Tests/MSP430/TestGpio.hpp"
 
 namespace MT::Tests {
 void run() noexcept {
     MT::Tests::Universal::run();
+    MT::Tests::MSP430::GPIO::run();
 }
 }// namespace MT::Tests
 

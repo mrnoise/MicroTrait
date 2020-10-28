@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"Register_8hpp_source.html":[5,2,1],
 "Settings_8hpp.html":[4,0,4],
 "Settings_8hpp_source.html":[5,4],
 "Sfr_8hpp.html":[4,0,0,2,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "group__groupEnumsMSP430TimerA.html#gab25b5f23ee74d42373db2865fb7b4bcc":[1,0,4,0,9],
 "group__groupEnumsMSP430TimerA.html#gab6d2d15906509b095cba0047e83fba0f":[1,0,4,0,10],
 "group__groupEnumsMSP430TimerA.html#gab7477f732df38878ffec805fafbba881":[1,0,4,0,13],
-"group__groupEnumsMSP430TimerA.html#gadc8967398abb61c9fc7c32c6be447707":[1,0,4,0,4],
-"group__groupEnumsMSP430TimerA.html#gae55512f05376cc6404a9b1d330a507d1":[1,0,4,0,0]
+"group__groupEnumsMSP430TimerA.html#gadc8967398abb61c9fc7c32c6be447707":[1,0,4,0,4]
 };
