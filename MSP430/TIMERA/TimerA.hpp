@@ -20,11 +20,19 @@ using namespace MT::MSP430;
 		TIMERA::CLOCK_DIV::DIV1,
 		TIMERA::GLOBAL_INT::DISABLE,
 		TIMERA::CLEAR_COUNT_DIR::ENABLE,
-		false
+		true
 	};
 
-	ta0.initContinuousMode(param);
+	constexpr TIMERA::initCompare paramCom{
+		TIMERA::CAPTURE_COMPARE::REGISTER0,
+		TIMERA::CAPTURE_COMPARE_INT::ENABLE,
+		TIMERA::COMPARE_OUTPUT::BITVALUE,
+		COMPARE_VALUE
+	};
 
+	ta0.clearCaptureCompareInterrupt(TIMERA::CAPTURE_COMPARE::REGISTER0);
+	ta0.initCompareMode(paramCom);
+	ta0.initContinuousMode(param);
 \endcode
 *
 * @author Steffen Fuchs
@@ -396,35 +404,10 @@ struct Base {
 	****************************************************************
 	*/
     constexpr void initContinuousMode(const initContinuous &param) noexcept {
-        m_ctl.override(castToUnderlyingType(param.src) + castToUnderlyingType(param.clearTimer) + castToUnderlyingType(param.global_int_en) + ((castToUnderlyingType(param.div) >> 3) << 6));
-        if (param.startTimer) m_ctl.set(castToUnderlyingType(MODE::CONTINUOUS));
-    }
-
-    /**
-   	* @ingroup groupFuncsMSP430TimerA
-   	****************************************************************
-   	* @brief Configures Timer_A in up mode
-   	* @details
-   	* Usage: \code {.cpp}
-   	* using namespace MT::MSP430;
-   	*
-   	*  TIMERA::TA0 ta0;
-   	*
-   	* constexpr TIMERA::initContinuous param{
-   	*	TIMERA::CLOCKSOURCE::SMCLK,
-   	*	TIMERA::CLOCK_DIV::DIV1,
-   	*	TIMERA::GLOBAL_INT::DISABLE,
-   	*	TIMERA::CLEAR_COUNT_DIR::ENABLE,
-   	*	false
-   	* };
-   	*
-   	* ta0.initContinuousMode(param); \endcode
-   	*@param param -> settings for this mode -> use type initUp
-   	****************************************************************
-   	*/
-    constexpr void initUpMode(const initContinuous &param) noexcept {
-        m_ctl.override(castToUnderlyingType(param.src) + castToUnderlyingType(param.clearTimer) + castToUnderlyingType(param.global_int_en) + ((castToUnderlyingType(param.div) >> 3) << 6));
-        if (param.startTimer) m_ctl.set(castToUnderlyingType(MODE::CONTINUOUS));
+        uint16_t ucMode = 0;
+        if (param.startTimer) ucMode = castToUnderlyingType(MODE::CONTINUOUS);
+        m_ctl.override(ucMode | castToUnderlyingType(param.src) | castToUnderlyingType(param.clearTimer)
+                       | castToUnderlyingType(param.global_int_en) | ((castToUnderlyingType(param.div) >> 3) << 6));
     }
 };
 
@@ -445,9 +428,11 @@ struct BaseEX0 {
     }
 
     constexpr void initContinuousMode(const initContinuous &param) noexcept {
+        uint16_t ucMode = 0;
+        if (param.startTimer) ucMode = castToUnderlyingType(MODE::CONTINUOUS);
         m_ex0.override((castToUnderlyingType(param.div)) & 0x7000);
-        m_ctl.override(castToUnderlyingType(param.src) + castToUnderlyingType(param.clearTimer) + castToUnderlyingType(param.global_int_en) + ((castToUnderlyingType(param.div) >> 3) << 6));
-        if (param.startTimer) m_ctl.set(castToUnderlyingType(MODE::CONTINUOUS));
+        m_ctl.override(ucMode | castToUnderlyingType(param.src) | castToUnderlyingType(param.clearTimer)
+                       | castToUnderlyingType(param.global_int_en) | ((castToUnderlyingType(param.div) >> 3) << 6));
     }
 };
 
@@ -583,7 +568,7 @@ struct TxA2 : Base<TAXCTL, TAXR, TAXCCTL0>
 
 namespace MT::MSP430::TIMERA {
 
-
+#warning for testing only
 using TA0 = Internal::TxA2withEX0<&TA0CTL, &TA0R, &TA0EX0, &TA0CCTL0, &TA0CCTL1, &TA0CCTL2, &TA0CCR0, &TA0CCR1, &TA0CCR2>;
 
 #if not defined(__MSP430_HAS_MSP430I_CPU__)

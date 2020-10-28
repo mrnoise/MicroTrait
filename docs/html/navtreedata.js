@@ -156,8 +156,8 @@ var NAVTREE =
         ] ],
         [ "SFR", "group__groupMSP430Sfr.html", [
           [ "Enums", "group__groupEnumsMSP430Sfr.html", [
-            [ "INT", "group__groupEnumsMSP430Sfr.html#gab4b8f95b0b5575f3aa7bfadcbce68093", null ],
             [ "INT", "group__groupEnumsMSP430Sfr.html#gabfa179c7aea743f4b369b5242781fa5e", null ],
+            [ "INT", "group__groupEnumsMSP430Sfr.html#gab4b8f95b0b5575f3aa7bfadcbce68093", null ],
             [ "NMI_EDGE", "group__groupEnumsMSP430Sfr.html#ga97b1da589340085a5cffe44121ba87e5", null ],
             [ "RST_FUNC", "group__groupEnumsMSP430Sfr.html#gaf5ba968e328238eed9003c8b2331757e", null ],
             [ "RST_RESISTOR", "group__groupEnumsMSP430Sfr.html#gad4f650715a2401a65096d4455016994e", null ]
@@ -276,7 +276,6 @@ var NAVTREE =
             [ "clearCaptureCompareInterrupt", "group__groupFuncsMSP430TimerA.html#gaf1b921e932e19598995563aa87d67c59", null ],
             [ "initCompareMode", "group__groupFuncsMSP430TimerA.html#ga624b524d3d846eef6f4c88aa1c1cf95c", null ],
             [ "initContinuousMode", "group__groupFuncsMSP430TimerA.html#ga79d7542719831580db675c9f53680beb", null ],
-            [ "initUpMode", "group__groupFuncsMSP430TimerA.html#ga24bc7500e3d4ef4807132fc8b9c404ae", null ],
             [ "setCompareValue", "group__groupFuncsMSP430TimerA.html#gad10bfe90f9d9b0a1ddea405307b08822", null ],
             [ "startCounter", "group__groupFuncsMSP430TimerA.html#ga42fd8d2c3ca79f098d0712ac17a1431d", null ]
           ] ]
@@ -529,7 +528,6 @@ var NAVTREE =
               [ "Internal", "namespaceMT_1_1MSP430_1_1TIMERA_1_1Internal.html", [
                 [ "Base", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1Base.html", [
                   [ "initContinuousMode", "group__groupFuncsMSP430TimerA.html#ga79d7542719831580db675c9f53680beb", null ],
-                  [ "initUpMode", "group__groupFuncsMSP430TimerA.html#ga24bc7500e3d4ef4807132fc8b9c404ae", null ],
                   [ "startCounter", "group__groupFuncsMSP430TimerA.html#ga42fd8d2c3ca79f098d0712ac17a1431d", null ]
                 ] ],
                 [ "BaseEX0", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1BaseEX0.html", [
@@ -1160,7 +1158,6 @@ var NAVTREE =
             [ "TimerA.hpp", "TimerA_8hpp.html", [
               [ "Base", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1Base.html", [
                 [ "initContinuousMode", "group__groupFuncsMSP430TimerA.html#ga79d7542719831580db675c9f53680beb", null ],
-                [ "initUpMode", "group__groupFuncsMSP430TimerA.html#ga24bc7500e3d4ef4807132fc8b9c404ae", null ],
                 [ "startCounter", "group__groupFuncsMSP430TimerA.html#ga42fd8d2c3ca79f098d0712ac17a1431d", null ]
               ] ],
               [ "BaseEX0", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1BaseEX0.html", [
@@ -1502,7 +1499,7 @@ var NAVTREEINDEX =
 "Settings_8hpp.html",
 "group__groupEnumsMSP430TimerA.html#gga04614f11ea4a6dc78186af21246d270fa88559a0cfd8250c9d65970cc145c92d4",
 "group__groupFuncsMSP430FRAMPmm.html#ga49bd38bf88107980c5ed3d4c70b2b0ec",
-"structMT_1_1Misc_1_1enable__Enum__bits_3_01PMM__INT_01_4.html"
+"structMT_1_1Misc_1_1enable__Enum__bits_3_01TIMERA__INT_01_4.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
