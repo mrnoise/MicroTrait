@@ -208,10 +208,12 @@ struct Pmm {
   private:
     MT::Universal::Register<&PMMCTL0_L> m_ctl0{};
     MT::Universal::Register<&PMMCTL0_H> m_ctl0pwd{};
-    MT::Universal::Register<&PMMCTL1>   m_ctl1{};
-    MT::Universal::Register<&PMMCTL2>   m_ctl2{};
-    MT::Universal::Register<&PMMIFG>    m_if{};
-    MT::Universal::Register<&PM5CTL0>   m_lpm5{};
+#if defined(__MSP430FR2XX_4XX_FAMILY__)
+    MT::Universal::Register<&PMMCTL1> m_ctl1{};
+    MT::Universal::Register<&PMMCTL2> m_ctl2{};
+#endif
+    MT::Universal::Register<&PMMIFG>  m_if{};
+    MT::Universal::Register<&PM5CTL0> m_lpm5{};
 
   public:
     /**
@@ -700,7 +702,6 @@ struct Pmm {
   private:
     MT::Universal::Register<&PMMCTL0_L> m_ctl0{};
     MT::Universal::Register<&PMMCTL0_H> m_ctl0pwd{};
-    MT::Universal::Register<&PMMCTL1>   m_ctl1{};
     MT::Universal::Register<&PMMIFG>    m_if{};
     MT::Universal::Register<&PM5CTL0>   m_lpm5{};
     MT::Universal::Register<&SVSMHCTL>  m_svsmh{};
