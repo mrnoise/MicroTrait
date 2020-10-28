@@ -346,13 +346,13 @@ namespace MT::MSP430::TIMERA::Internal {
 
 using namespace MT::Details;
 
-template<volatile auto *CTLREG, volatile auto *COUNTREG, volatile auto *CCTL0REG>
+template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXCCTL0>
 struct Base {
 
   private:
-    MT::Universal::Register<CTLREG>   m_ctl{};
-    MT::Universal::Register<COUNTREG> m_count{};
-    MT::Universal::Register<CCTL0REG> m_cctl0{};
+    MT::Universal::Register<TAXCTL>   m_ctl{};
+    MT::Universal::Register<TAXR>     m_count{};
+    MT::Universal::Register<TAXCCTL0> m_cctl0{};
 
   public:
     /**
@@ -391,7 +391,7 @@ struct Base {
 	*	false
 	* };
 	*
-	* ta0.initContinuousMode(param);; \endcode
+	* ta0.initContinuousMode(param); \endcode
 	*@param param -> settings for this mode -> use type initContinuous
 	****************************************************************
 	*/
@@ -418,7 +418,7 @@ struct Base {
    	*	false
    	* };
    	*
-   	* ta0.initContinuousMode(param);; \endcode
+   	* ta0.initContinuousMode(param); \endcode
    	*@param param -> settings for this mode -> use type initUp
    	****************************************************************
    	*/
@@ -429,14 +429,14 @@ struct Base {
 };
 
 
-template<volatile auto *CTLREG, volatile auto *COUNTREG, volatile auto *CCTL0REG, volatile auto *EX0REG>
+template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXCCTL0, volatile auto *TAXEX0>
 struct BaseEX0 {
 
   private:
-    MT::Universal::Register<CTLREG>   m_ctl{};
-    MT::Universal::Register<COUNTREG> m_count{};
-    MT::Universal::Register<CCTL0REG> m_cctl0{};
-    MT::Universal::Register<EX0REG>   m_ex0{};
+    MT::Universal::Register<TAXCTL>   m_ctl{};
+    MT::Universal::Register<TAXR>     m_count{};
+    MT::Universal::Register<TAXCCTL0> m_cctl0{};
+    MT::Universal::Register<TAXEX0>   m_ex0{};
 
   public:
     constexpr void startCounter(const TIMERA::MODE mode) noexcept {
@@ -452,24 +452,131 @@ struct BaseEX0 {
 };
 
 
-template<volatile auto *CTLREG, volatile auto *COUNTREG, volatile auto *CCTL0REG>
+template<volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCTL2, volatile auto *TAXCCR0, volatile auto *TAXCCR1, volatile auto *TAXCCR2>
 struct CCTL0_2 {
 
   private:
-    MT::Universal::Register<CTLREG>   m_ctl{};
-    MT::Universal::Register<COUNTREG> m_count{};
-    MT::Universal::Register<CCTL0REG> m_cctl0{};
+    MT::Universal::Register<TAXCCTL0> m_cctl0{};
+    MT::Universal::Register<TAXCCTL1> m_cctl1{};
+    MT::Universal::Register<TAXCCTL2> m_cctl2{};
+    MT::Universal::Register<TAXCCR0>  m_ccr0{};
+    MT::Universal::Register<TAXCCR1>  m_ccr1{};
+    MT::Universal::Register<TAXCCR2>  m_ccr2{};
 
   public:
+    /**
+  	* @ingroup groupFuncsMSP430TimerA
+  	****************************************************************
+  	* @brief  Sets the value of the capture-compare register
+  	* @details
+  	* Usage: \code {.cpp}
+  	* using namespace MT::MSP430;
+  	*
+  	*  TIMERA::TA0 ta0;
+  	*  ta0.setCompareValue(TIMERA::CAPTURE_COMPARE::REGISTER0,50000); \endcode
+  	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
+  	*@param compareValue is the count to be compared with in compare mode
+  	****************************************************************
+  	*/
+    constexpr void setCompareValue(const TIMERA::CAPTURE_COMPARE reg, const uint16_t compareValue) noexcept {
+
+        switch (reg) {
+            case CAPTURE_COMPARE::REGISTER0:
+                m_ccr0.override(compareValue);
+                return;
+
+            case CAPTURE_COMPARE::REGISTER1:
+                m_ccr1.override(compareValue);
+                return;
+
+            case CAPTURE_COMPARE::REGISTER2:
+                m_ccr1.override(compareValue);
+                return;
+        }
+    }
+
+    /**
+	* @ingroup groupFuncsMSP430TimerA
+	****************************************************************
+	* @brief  Clears the capture-compare interrupt flag
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430;
+	*
+	*  TIMERA::TA0 ta0;
+	*  ta0.clearCaptureCompareInterrupt(TIMERA::CAPTURE_COMPARE::REGISTER0); \endcode
+	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
+	****************************************************************
+	*/
+    constexpr void clearCaptureCompareInterrupt(const TIMERA::CAPTURE_COMPARE reg) noexcept {
+
+        switch (reg) {
+            case CAPTURE_COMPARE::REGISTER0:
+                m_cctl0.clear(CCIFG);
+                return;
+
+            case CAPTURE_COMPARE::REGISTER1:
+                m_cctl0.clear(CCIFG);
+                return;
+
+            case CAPTURE_COMPARE::REGISTER2:
+                m_cctl0.clear(CCIFG);
+                return;
+        }
+    }
+
+    /**
+	* @ingroup groupFuncsMSP430TimerA
+	****************************************************************
+	* @brief  Initializes Capture Mode
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430;
+	*
+	*  TIMERA::TA0 ta0;
+	*
+	*  constexpr TIMERA::initCompare paramCom {
+    *    TIMERA::CAPTURE_COMPARE::REGISTER0,
+    *    TIMERA::CAPTURE_COMPARE_INT::ENABLE,
+    *    TIMERA::COMPARE_OUTPUT::BITVALUE,
+    *    50000
+    * };
+	*
+	* ta0.initCompareMode(param); \endcode
+	*@param param -> settings for this mode -> use type initCompare
+	****************************************************************
+	*/
+    constexpr void initCompareMode(const initCompare &param) noexcept {
+
+        const auto cctlx = castToUnderlyingType(param.int_en) | castToUnderlyingType(param.out);
+
+        switch (param.reg) {
+            case CAPTURE_COMPARE::REGISTER0:
+                m_cctl0.set(cctlx);
+                m_ccr0.override(param.compareValue);
+                return;
+
+            case CAPTURE_COMPARE::REGISTER1:
+                m_cctl1.set(cctlx);
+                m_ccr1.override(param.compareValue);
+                return;
+
+            case CAPTURE_COMPARE::REGISTER2:
+                m_cctl1.set(cctlx);
+                m_ccr1.override(param.compareValue);
+                return;
+        }
+    }
 };
 
 
-template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXCCTL0, volatile auto *TAXEX0>
-struct TxA2withEX0 : BaseEX0<TAXCTL, TAXR, TAXCCTL0, TAXEX0> {};
+template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXEX0, volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCTL2, volatile auto *TAXCCR0, volatile auto *TAXCCR1, volatile auto *TAXCCR2>
+struct TxA2withEX0 : BaseEX0<TAXCTL, TAXR, TAXCCTL0, TAXEX0>
+  , CCTL0_2<TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2> {};
 
-template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXCCTL0>
-struct TxA2 : Base<TAXCTL, TAXR, TAXCCTL0> {};
-
+template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCTL2, volatile auto *TAXCCR0, volatile auto *TAXCCR1, volatile auto *TAXCCR2>
+struct TxA2 : Base<TAXCTL, TAXR, TAXCCTL0>
+  , CCTL0_2<TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2> {};
 
 }// namespace MT::MSP430::TIMERA::Internal
 
@@ -477,7 +584,7 @@ struct TxA2 : Base<TAXCTL, TAXR, TAXCCTL0> {};
 namespace MT::MSP430::TIMERA {
 
 
-using TA0 = Internal::TxA2withEX0<&TA0CTL, &TA0R, &TA0CCTL0, &TA0EX0>;
+using TA0 = Internal::TxA2withEX0<&TA0CTL, &TA0R, &TA0EX0, &TA0CCTL0, &TA0CCTL1, &TA0CCTL2, &TA0CCR0, &TA0CCR1, &TA0CCR2>;
 
 #if not defined(__MSP430_HAS_MSP430I_CPU__)
 #if defined(__MSP430_HAS_T0A2__)

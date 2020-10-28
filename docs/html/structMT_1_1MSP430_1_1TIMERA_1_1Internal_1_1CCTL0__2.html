@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="DoxyPress 1.4.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MicroTrait C++ Microcontroller Library: MT::MSP430::TIMERA::Internal::CCTL0_2&lt; CTLREG, COUNTREG, CCTL0REG &gt; Struct Template Reference</title>
+<title>MicroTrait C++ Microcontroller Library: MT::MSP430::TIMERA::Internal::CCTL0_2&lt; TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2 &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,14 +71,38 @@ $(document).ready(function(){initNavTree('structMT_1_1MSP430_1_1TIMERA_1_1Intern
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1CCTL0__2-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">MT::MSP430::TIMERA::Internal::CCTL0_2&lt; CTLREG, COUNTREG, CCTL0REG &gt; Struct Template Reference</div>  </div>
+<div class="title">MT::MSP430::TIMERA::Internal::CCTL0_2&lt; TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2 &gt; Struct Template Reference</div>  </div>
   <div class="clear-floats"></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="TimerA_8hpp_source.html">TimerA.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for MT::MSP430::TIMERA::Internal::CCTL0_2&lt; TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2 &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1CCTL0__2__inherit__graph.png" border="0" usemap="#MT_1_1MSP430_1_1TIMERA_1_1Internal_1_1CCTL0__2_3_01TAXCCTL0_00_01TAXCCTL1_00_01TAXCCTL2_00_01TAXCCR0_00_01TAXCCR1_00_01TAXCCR2_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="MT_1_1MSP430_1_1TIMERA_1_1Internal_1_1CCTL0__2_3_01TAXCCTL0_00_01TAXCCTL1_00_01TAXCCTL2_00_01TAXCCR0_00_01TAXCCR1_00_01TAXCCR2_01_4_inherit__map" id="MT_1_1MSP430_1_1TIMERA_1_1Internal_1_1CCTL0__2_3_01TAXCCTL0_00_01TAXCCTL1_00_01TAXCCTL2_00_01TAXCCR0_00_01TAXCCR1_00_01TAXCCR2_01_4_inherit__map">
+<area shape="rect"  title=" " alt="" coords="5,46,228,131"/>
+<area shape="rect"  href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html" title=" " alt="" coords="283,5,509,76"/>
+<area shape="rect"  href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2withEX0.html" title=" " alt="" coords="276,100,516,171"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:gad10bfe90f9d9b0a1ddea405307b08822"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430TimerA.html#gad10bfe90f9d9b0a1ddea405307b08822">setCompareValue</a> (const <a class="el" href="group__groupEnumsMSP430TimerA.html#ga21040d060f3945bbccbafcef84eb5305">TIMERA::CAPTURE_COMPARE</a> reg, const uint16_t compareValue) noexcept</td></tr>
+<tr class="memdesc:gad10bfe90f9d9b0a1ddea405307b08822"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value of the capture-compare register.  <a href="group__groupFuncsMSP430TimerA.html#gad10bfe90f9d9b0a1ddea405307b08822">More...</a><br /></td></tr>
+<tr class="separator:gad10bfe90f9d9b0a1ddea405307b08822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf1b921e932e19598995563aa87d67c59"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430TimerA.html#gaf1b921e932e19598995563aa87d67c59">clearCaptureCompareInterrupt</a> (const <a class="el" href="group__groupEnumsMSP430TimerA.html#ga21040d060f3945bbccbafcef84eb5305">TIMERA::CAPTURE_COMPARE</a> reg) noexcept</td></tr>
+<tr class="memdesc:gaf1b921e932e19598995563aa87d67c59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the capture-compare interrupt flag.  <a href="group__groupFuncsMSP430TimerA.html#gaf1b921e932e19598995563aa87d67c59">More...</a><br /></td></tr>
+<tr class="separator:gaf1b921e932e19598995563aa87d67c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga624b524d3d846eef6f4c88aa1c1cf95c"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430TimerA.html#ga624b524d3d846eef6f4c88aa1c1cf95c">initCompareMode</a> (const <a class="el" href="namespaceMT_1_1MSP430_1_1TIMERA.html#adb4cd3b2e52d762b0f3abad93f339283">initCompare</a> &amp;param) noexcept</td></tr>
+<tr class="memdesc:ga624b524d3d846eef6f4c88aa1c1cf95c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes Capture Mode.  <a href="group__groupFuncsMSP430TimerA.html#ga624b524d3d846eef6f4c88aa1c1cf95c">More...</a><br /></td></tr>
+<tr class="separator:ga624b524d3d846eef6f4c88aa1c1cf95c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>MSP430/TIMERA/<a class="el" href="TimerA_8hpp_source.html">TimerA.hpp</a></li>
 </ul>
@@ -88,7 +112,7 @@ $(document).ready(function(){initNavTree('structMT_1_1MSP430_1_1TIMERA_1_1Intern
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceMT.html">MT</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430.html">MSP430</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430_1_1TIMERA.html">TIMERA</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430_1_1TIMERA_1_1Internal.html">Internal</a></li><li class="navelem"><a class="el" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1CCTL0__2.html">CCTL0_2</a></li>
-    <li class="footer">Generated on Di Okt 27 2020 15:55:47 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Mi Okt 28 2020 12:00:44 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>
