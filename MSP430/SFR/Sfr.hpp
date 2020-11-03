@@ -53,15 +53,17 @@ using namespace MT::MSP430;
 #ifdef __MSP430_HAS_SFR__
 
 namespace MT::Misc {
-enum class SFR_INT : uint16_t {
-#if not defined(__MSP430_HAS_MSP430I_CPU__)
-    JTAG_OUTBOX = (JMBOUTIE),
-    JTAG_INBOX  = (JMBINIE),
-#endif
+enum class SFR_INT : uint8_t {
     NMI_PIN                 = (NMIIE),
-    VACANT_MEMORY_ACCESS    = (VMAIE),
     OSCILLATOR_FAULT        = (OFIE),
     WATCHDOG_INTERVAL_TIMER = (WDTIE),
+
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
+    JTAG_OUTBOX          = (JMBOUTIE),
+    JTAG_INBOX           = (JMBINIE),
+    VACANT_MEMORY_ACCESS = (VMAIE),
+#endif
+
 #if defined(__MSP430F5XX_6XX_FAMILY__) || defined(__MSP430_HAS_MSP430I_CPU__)
     FLASH_CONTROLLER_ACCESS_VIOLATION = (ACCVIE),
 #endif
@@ -131,9 +133,11 @@ namespace MT::MSP430 {
 struct Sfr {
 
   private:
-    MT::Universal::Register<&SFRIE1>  m_ie{};
-    MT::Universal::Register<&SFRIFG1> m_if{};
+    MT::Universal::Register<&SFRIE1_L>  m_ie{};
+    MT::Universal::Register<&SFRIFG1_L> m_if{};
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
     MT::Universal::Register<&SFRRPCR> m_reset{};
+#endif
 
   public:
     /**

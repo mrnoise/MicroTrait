@@ -787,8 +787,8 @@ var NAVTREE =
         [ "MT::Universal::Register<&PMMRIE >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register<&REFCAL0 >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register<&REFCAL1 >", "structMT_1_1Universal_1_1Register.html", null ],
-        [ "MT::Universal::Register<&SFRIE1 >", "structMT_1_1Universal_1_1Register.html", null ],
-        [ "MT::Universal::Register<&SFRIFG1 >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&SFRIE1_L >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register<&SFRIFG1_L >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register<&SFRRPCR >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register<&SVSMHCTL >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register<&SVSMIO >", "structMT_1_1Universal_1_1Register.html", null ],
@@ -1142,16 +1142,16 @@ var NAVTREE =
                 [ "setResetPinPullResistor", "group__groupFuncsMSP430Sfr.html#ga095995edb9190d9c557506dafe3ad399", null ]
               ] ],
               [ "enable_Enum_bits< SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01SFR__INT_01_4.html", null ],
-              [ "SFR_INT", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154", [
-                [ "JTAG_OUTBOX", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154acb8ccd498b44bce80fd0febf896d2fb8", null ],
-                [ "JTAG_INBOX", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a54efeb9c25fb92c8c79b1f494f85f313", null ],
-                [ "NMI_PIN", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154afb7c266cd54f331da2f90ab701f1eb58", null ],
-                [ "VACANT_MEMORY_ACCESS", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a0773d10974a4b37c47c6060054a2c142", null ],
-                [ "OSCILLATOR_FAULT", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154aa3d4deda557d70cb4b82a88cc124dd47", null ],
-                [ "WATCHDOG_INTERVAL_TIMER", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154ab69486c2330ce690c6ecf807a65784e1", null ],
-                [ "FLASH_CONTROLLER_ACCESS_VIOLATION", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a2847b57f5dea0cbe9cfb22ae4f50e9c5", null ],
-                [ "EXTERNAL_RESET", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a41b44972e6b2203cf644c12884ca71e0", null ],
-                [ "BROWN_OUT_RESET", "Sfr_8hpp.html#ad9ade5975d94fa10ec1b368ec5dd3154a064da46b65a549befa1ec615ab840402", null ]
+              [ "SFR_INT", "Sfr_8hpp.html#adecbbd506e805a49962cbdc6a8c3f675", [
+                [ "NMI_PIN", "Sfr_8hpp.html#adecbbd506e805a49962cbdc6a8c3f675afb7c266cd54f331da2f90ab701f1eb58", null ],
+                [ "OSCILLATOR_FAULT", "Sfr_8hpp.html#adecbbd506e805a49962cbdc6a8c3f675aa3d4deda557d70cb4b82a88cc124dd47", null ],
+                [ "WATCHDOG_INTERVAL_TIMER", "Sfr_8hpp.html#adecbbd506e805a49962cbdc6a8c3f675ab69486c2330ce690c6ecf807a65784e1", null ],
+                [ "JTAG_OUTBOX", "Sfr_8hpp.html#adecbbd506e805a49962cbdc6a8c3f675acb8ccd498b44bce80fd0febf896d2fb8", null ],
+                [ "JTAG_INBOX", "Sfr_8hpp.html#adecbbd506e805a49962cbdc6a8c3f675a54efeb9c25fb92c8c79b1f494f85f313", null ],
+                [ "VACANT_MEMORY_ACCESS", "Sfr_8hpp.html#adecbbd506e805a49962cbdc6a8c3f675a0773d10974a4b37c47c6060054a2c142", null ],
+                [ "FLASH_CONTROLLER_ACCESS_VIOLATION", "Sfr_8hpp.html#adecbbd506e805a49962cbdc6a8c3f675a2847b57f5dea0cbe9cfb22ae4f50e9c5", null ],
+                [ "EXTERNAL_RESET", "Sfr_8hpp.html#adecbbd506e805a49962cbdc6a8c3f675a41b44972e6b2203cf644c12884ca71e0", null ],
+                [ "BROWN_OUT_RESET", "Sfr_8hpp.html#adecbbd506e805a49962cbdc6a8c3f675a064da46b65a549befa1ec615ab840402", null ]
               ] ]
             ] ]
           ] ],
