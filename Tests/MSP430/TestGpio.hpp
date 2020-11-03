@@ -10,11 +10,6 @@ namespace MT::Tests::MSP430::GPIO::Internal {
 
 using namespace MT::MSP430::GPIO;
 
-template<typename PORT>
-void testOut(PORT p, volatile uint16_t *reg) noexcept {
-}
-
-
 void runPortDirection() noexcept {
 
 #if defined(__MSP430_HAS_PORT1_R__) || defined(__MSP430_HAS_PORT1__)

@@ -4,11 +4,13 @@
 
 #include "MicroTrait/Tests/TestUniversal.hpp"
 #include "MicroTrait/Tests/MSP430/TestGpio.hpp"
+#include "MicroTrait/Tests/MSP430/TestSfr.hpp"
 
 namespace MT::Tests {
 void run() noexcept {
     MT::Tests::Universal::run();
     MT::Tests::MSP430::GPIO::run();
+    MT::Tests::MSP430::SFR::run();
 }
 }// namespace MT::Tests
 
