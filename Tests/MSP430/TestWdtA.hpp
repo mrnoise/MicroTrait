@@ -1,0 +1,210 @@
+#ifndef MICROTRAIT_TESTS_MSP430_TESTWDTA_HPP_
+#define MICROTRAIT_TESTS_MSP430_TESTWDTA_HPP_
+
+#include "MicroTrait/MSP430/WDTA/WdtA.hpp"
+#include <assert.h>
+
+namespace MT::Tests::MSP430::WDTA::Internal {
+
+using namespace MT::MSP430;
+
+void runMisc() noexcept {
+    WdtA wdt{};
+
+    wdt.start();
+    assert((WDTCTL & WDTHOLD) == 0);
+
+    wdt.hold();
+    assert(WDTCTL & WDTHOLD);
+
+    /* wdt.resetTimer(); // can´t be tested because bit is cleared when set
+    assert(WDTCTL & WDTCNTCL);*/
+}
+
+void runTimer() noexcept {
+    WdtA wdt{};
+
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
+
+    wdt.initWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV2G);
+    assert(WDTCTL == (0x6900 | WDTHOLD | WDTSSEL_1 | WDTIS_0));
+
+    wdt.initWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV128M);
+    assert(WDTCTL == (0x6900 | WDTHOLD | WDTSSEL_1 | WDTIS_1));
+
+    wdt.initWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV8192K);
+    assert(WDTCTL == (0x6900 | WDTHOLD | WDTSSEL_1 | WDTIS_2));
+
+    wdt.initWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV512K);
+    assert(WDTCTL == (0x6900 | WDTHOLD | WDTSSEL_1 | WDTIS_3));
+
+    wdt.initWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV32K);
+    assert(WDTCTL == (0x6900 | WDTHOLD | WDTSSEL_1 | WDTIS_4));
+
+    wdt.initWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV8192);
+    assert(WDTCTL == (0x6900 | WDTHOLD | WDTSSEL_1 | WDTIS_5));
+
+    wdt.initWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::SMCLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV512);
+    assert(WDTCTL == (0x6900 | WDTHOLD | WDTSSEL_0 | WDTIS_6));
+
+    wdt.initWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::VLOCLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV64);
+    assert(WDTCTL == (0x6900 | WDTHOLD | WDTSSEL_2 | WDTIS_7));
+
+#ifndef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
+    wdt.startWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV2G);
+    assert(WDTCTL == (0x6900 | WDTSSEL_1 | WDTIS_0));
+
+    wdt.startWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV128M);
+    assert(WDTCTL == (0x6900 | WDTSSEL_1 | WDTIS_1));
+
+    wdt.startWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV8192K);
+    assert(WDTCTL == (0x6900 | WDTSSEL_1 | WDTIS_2));
+
+    wdt.startWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV512K);
+    assert(WDTCTL == (0x6900 | WDTSSEL_1 | WDTIS_3));
+
+    wdt.startWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV32K);
+    assert(WDTCTL == (0x6900 | WDTSSEL_1 | WDTIS_4));
+
+    wdt.startWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV8192);
+    assert(WDTCTL == (0x6900 | WDTSSEL_1 | WDTIS_5));
+
+    wdt.startWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::SMCLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV512);
+    assert(WDTCTL == (0x6900 | WDTSSEL_0 | WDTIS_6));
+
+    wdt.startWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::VLOCLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV64);
+    assert(WDTCTL == (0x6900 | WDTSSEL_2 | WDTIS_7));
+#endif
+
+#else
+    wdt.initWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV32K);
+    assert(WDTCTL == (0x6900 | WDTHOLD | WDTSSEL));
+
+    wdt.initWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV8192);
+    assert(WDTCTL == (0x6900 | WDTHOLD | WDTSSEL | WDTIS0));
+
+    wdt.initWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV512);
+    assert(WDTCTL == (0x6900 | WDTHOLD | WDTSSEL | WDTIS1));
+
+    wdt.initWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::SMCLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV64);
+    assert(WDTCTL == (0x6900 | WDTHOLD | WDTIS0 | WDTIS1));
+
+#ifndef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
+    wdt.startWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV32K);
+    assert(WDTCTL == (0x6900 | WDTSSEL));
+
+    wdt.startWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV8192);
+    assert(WDTCTL == (0x6900 | WDTSSEL | WDTIS0));
+
+    wdt.startWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV512);
+    assert(WDTCTL == (0x6900 | WDTSSEL | WDTIS1));
+
+    wdt.startWatchdogTimer(MT::MSP430::WDTA::CLOCKSOURCE::SMCLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV64);
+    assert(WDTCTL == (0x6900 | WDTIS0 | WDTIS1));
+#endif
+#endif
+    wdt.hold();
+    wdt.resetTimer();
+}
+
+void runIntervalTimer() noexcept {
+    WdtA wdt{};
+
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
+
+    wdt.initIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV2G);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTHOLD | WDTSSEL_1 | WDTIS_0));
+
+    wdt.initIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV128M);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTHOLD | WDTSSEL_1 | WDTIS_1));
+
+    wdt.initIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV8192K);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTHOLD | WDTSSEL_1 | WDTIS_2));
+
+    wdt.initIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV512K);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTHOLD | WDTSSEL_1 | WDTIS_3));
+
+    wdt.initIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV32K);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTHOLD | WDTSSEL_1 | WDTIS_4));
+
+    wdt.initIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV8192);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTHOLD | WDTSSEL_1 | WDTIS_5));
+
+    wdt.initIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::SMCLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV512);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTHOLD | WDTSSEL_0 | WDTIS_6));
+
+    wdt.initIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::VLOCLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV64);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTHOLD | WDTSSEL_2 | WDTIS_7));
+
+#ifndef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
+    wdt.startIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV2G);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTSSEL_1 | WDTIS_0));
+
+    wdt.startIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV128M);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTSSEL_1 | WDTIS_1));
+
+    wdt.startIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV8192K);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTSSEL_1 | WDTIS_2));
+
+    wdt.startIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV512K);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTSSEL_1 | WDTIS_3));
+
+    wdt.startIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV32K);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTSSEL_1 | WDTIS_4));
+
+    wdt.startIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV8192);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTSSEL_1 | WDTIS_5));
+
+    wdt.startIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::SMCLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV512);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTSSEL_0 | WDTIS_6));
+
+    wdt.startIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::VLOCLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV64);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTSSEL_2 | WDTIS_7));
+#endif
+
+#else
+    wdt.initIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV32K);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTHOLD | WDTSSEL));
+
+    wdt.initIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV8192);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTHOLD | WDTSSEL | WDTIS0));
+
+    wdt.initIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV512);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTHOLD | WDTSSEL | WDTIS1));
+
+    wdt.initIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::SMCLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV64);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTHOLD | WDTIS0 | WDTIS1));
+
+#ifndef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
+
+    wdt.startIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV32K);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTSSEL));
+
+    wdt.startIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV8192);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTSSEL | WDTIS0));
+
+    wdt.startIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::ACLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV512);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTSSEL | WDTIS1));
+
+    wdt.startIntervalTimer(MT::MSP430::WDTA::CLOCKSOURCE::SMCLK, MT::MSP430::WDTA::CLOCKDIVIDER::DIV64);
+    assert(WDTCTL == (0x6900 | WDTTMSEL | WDTIS0 | WDTIS1));
+
+#endif
+#endif
+    wdt.hold();
+    wdt.resetTimer();
+}
+
+}// namespace MT::Tests::MSP430::WDTA::Internal
+
+
+namespace MT::Tests::MSP430::WDTA {
+void run() noexcept {
+    Internal::runMisc();
+    Internal::runTimer();
+    Internal::runIntervalTimer();
+}
+}// namespace MT::Tests::MSP430::WDTA
+
+
+#endif /* MICROTRAIT_TESTS_MSP430_TESTWDTA_HPP_ */
