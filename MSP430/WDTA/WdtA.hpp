@@ -147,7 +147,7 @@ struct WdtA {
 	*/
     constexpr void start() noexcept {
         const auto state = ((m_ctl.get() & 0x00FF) & ~(WDTHOLD));
-        m_ctl.override(WDTPW + state);
+        m_ctl.override(WDTPW | state);
     }
 
     /**
@@ -166,7 +166,7 @@ struct WdtA {
     constexpr void resetTimer() noexcept {
 #ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
         const auto state = ((m_ctl.get() & 0x00FF) | WDTCNTCL);
-        m_ctl.override(WDTPW + state);
+        m_ctl.override(WDTPW | state);
 #else
         m_ctl.override(WDTPW | WDTCNTCL);
 #endif
@@ -226,7 +226,7 @@ struct WdtA {
 	****************************************************************
 	*/
     constexpr void startWatchdogTimer(const WDTA::CLOCKSOURCE src, const WDTA::CLOCKDIVIDER div) noexcept {
-        m_ctl.override(WDTPW | WDTCNTCL | WDTTMSEL | (static_cast<uint16_t>(src)) | (static_cast<uint16_t>(div)));
+        m_ctl.override(WDTPW | WDTCNTCL | (static_cast<uint16_t>(src)) | (static_cast<uint16_t>(div)));
     }
 
     /**
