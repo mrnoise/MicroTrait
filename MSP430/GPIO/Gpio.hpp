@@ -56,7 +56,7 @@ using namespace MT::MSP430;
 
 #ifdef MT_USE_MSP430_LIB
 
-#include "MicroTrait/Misc/Details.hpp"
+#include <MicroTrait/Misc/Cast.hpp>
 #include "MicroTrait/Misc/EnumBits.hpp"
 #include "MicroTrait/Universal/Register.hpp"
 #include <stdint.h>
@@ -67,15 +67,15 @@ using namespace MT::MSP430;
 
 namespace MT::Misc {
 enum class GPIO_PIN : GPIO_REGISTER_WIDTH {
-    P0   = (1U << 0U),
-    P1   = (1U << 1U),
-    P2   = (1U << 2U),
-    P3   = (1U << 3U),
-    P4   = (1U << 4U),
-    P5   = (1U << 5U),
-    P6   = (1U << 6U),
-    P7   = (1U << 7U),
-    ALL  = (0xFF)
+    P0  = (1U << 0U),
+    P1  = (1U << 1U),
+    P2  = (1U << 2U),
+    P3  = (1U << 3U),
+    P4  = (1U << 4U),
+    P5  = (1U << 5U),
+    P6  = (1U << 6U),
+    P7  = (1U << 7U),
+    ALL = (0xFF)
 };
 template<>
 struct enable_Enum_bits<GPIO_PIN> {
@@ -161,13 +161,13 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.setOutputHighOnPin(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BITS use enumeration GPIO::PIN
+		*@tparam BIT use enumeration GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setOutputHighOnPin(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setOutputHighOnPin(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            m_out.set(bit, bits...);
+            m_out.set(bit);
         }
 
         /**
@@ -180,13 +180,13 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.setOutputLowOnPin(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BITS use enumeration GPIO::PIN
+		*@tparam BIT use enumeration GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setOutputLowOnPin(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setOutputLowOnPin(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            m_out.clear(bit, bits...);
+            m_out.clear(bit);
         }
 
         /**
@@ -199,13 +199,13 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.toggleOutputOnPin(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BITS use enumeration GPIO::PIN
+		*@tparam BIT use enumeration GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void toggleOutputOnPin(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void toggleOutputOnPin(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            m_out.toggle(bit, bits...);
+            m_out.toggle(bit);
         }
 
 
@@ -219,14 +219,14 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  if(p1.getInputPinValue(GPIO::PIN::P0) == GPIO::PIN_STATE::HIGH) doSomething(); \endcode
-		*@tparam BITS use enumeration GPIO::PIN
+		*@tparam BIT use enumeration GPIO::PIN
 		*@return the Pin state (GPIO::PIN_STATE)
 		****************************************************************
 		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        [[nodiscard]] constexpr PIN_STATE getInputPinValue(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        [[nodiscard]] constexpr PIN_STATE getInputPinValue(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            if (m_in.compare(bit, bits...)) return PIN_STATE::HIGH;
+            if (m_in.compare(bit)) return PIN_STATE::HIGH;
             else
                 return PIN_STATE::LOW;
         }
@@ -254,17 +254,17 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.setAsOutputPin(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BITS use enumeration GPIO::PIN
+		*@tparam BIT use enumeration GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsOutputPin(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsOutputPin(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
 #ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-            m_p0sel.clear(bit, bits...);
-            m_p1sel.clear(bit, bits...);
+            m_p0sel.clear(bit);
+            m_p1sel.clear(bit);
 #endif
-            m_dir.set(bit, bits...);
+            m_dir.set(bit);
         }
 
         /**
@@ -277,18 +277,18 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.setAsInputPin(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BITS use enumeration GPIO::PIN
+		*@tparam BIT use enumeration GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsInputPin(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsInputPin(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
 #ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-            m_p0sel.clear(bit, bits...);
-            m_p1sel.clear(bit, bits...);
+            m_p0sel.clear(bit);
+            m_p1sel.clear(bit);
 #endif
-            m_dir.clear(bit, bits...);
-            m_pull.clear(bit, bits...);
+            m_dir.clear(bit);
+            m_pull.clear(bit);
         }
 
         /**
@@ -302,29 +302,30 @@ namespace Internal {
 		*  GPIO::Port1 p1{};
 		*  p1.setAsPeripheralModuleFunctionOutputPin(GPIO::MODULE_FUNC::PRIMARY, GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
 		*@param func the function for the pin  (GPIO::MODULE_FUNC)
-		*@tparam BITS use enumeration GPIO::PIN
+		*@tparam BIT use enumeration GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsPeripheralModuleFunctionOutputPin(const MODULE_FUNC func, const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsPeripheralModuleFunctionOutputPin(const MODULE_FUNC func, const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            m_dir.set(bit, bits...);
+            m_dir.set(bit);
+
             switch (func) {
                 case MODULE_FUNC::GPIO:
-                    m_p0sel.clear(bit, bits...);
-                    m_p1sel.clear(bit, bits...);
+                    m_p0sel.clear(bit);
+                    m_p1sel.clear(bit);
                     break;
                 case MODULE_FUNC::PRIMARY:
-                    m_p0sel.set(bit, bits...);
-                    m_p1sel.clear(bit, bits...);
+                    m_p0sel.set(bit);
+                    m_p1sel.clear(bit);
                     break;
                 case MODULE_FUNC::SECONDARY:
-                    m_p0sel.clear(bit, bits...);
-                    m_p1sel.set(bit, bits...);
+                    m_p0sel.clear(bit);
+                    m_p1sel.set(bit);
                     break;
                 case MODULE_FUNC::TERNARY:
-                    m_p0sel.set(bit, bits...);
-                    m_p1sel.set(bit, bits...);
+                    m_p0sel.set(bit);
+                    m_p1sel.set(bit);
                     break;
                 default:
                     break;
@@ -342,29 +343,29 @@ namespace Internal {
 		*  GPIO::Port1 p1{};
 		*  p1.setAsPeripheralModuleFunctionInputPin(GPIO::MODULE_FUNC::PRIMARY, GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
 		*@param func the function for the pin  (GPIO::MODULE_FUNC)
-		*@tparam BITS use enumeration GPIO::PIN
+		*@tparam BIT use enumeration GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsPeripheralModuleFunctionInputPin(const MODULE_FUNC func, const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsPeripheralModuleFunctionInputPin(const MODULE_FUNC func, const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            m_dir.clear(bit, bits...);
+            m_dir.clear(bit);
             switch (func) {
                 case MODULE_FUNC::GPIO:
-                    m_p0sel.clear(bit, bits...);
-                    m_p1sel.clear(bit, bits...);
+                    m_p0sel.clear(bit);
+                    m_p1sel.clear(bit);
                     break;
                 case MODULE_FUNC::PRIMARY:
-                    m_p0sel.set(bit, bits...);
-                    m_p1sel.clear(bit, bits...);
+                    m_p0sel.set(bit);
+                    m_p1sel.clear(bit);
                     break;
                 case MODULE_FUNC::SECONDARY:
-                    m_p0sel.clear(bit, bits...);
-                    m_p1sel.set(bit, bits...);
+                    m_p0sel.clear(bit);
+                    m_p1sel.set(bit);
                     break;
                 case MODULE_FUNC::TERNARY:
-                    m_p0sel.set(bit, bits...);
-                    m_p1sel.set(bit, bits...);
+                    m_p0sel.set(bit);
+                    m_p1sel.set(bit);
                     break;
                 default:
                     break;
@@ -382,19 +383,19 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.setAsInputPinWithPullDown(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BITS use enumeration GPIO::PIN
+		*@tparam BIT use enumeration GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsInputPinWithPullDown(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsInputPinWithPullDown(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
 #ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-            m_p0sel.clear(bit, bits...);
-            m_p1sel.clear(bit, bits...);
+            m_p0sel.clear(bit);
+            m_p1sel.clear(bit);
 #endif
-            m_dir.clear(bit, bits...);
-            m_pull.set(bit, bits...);
-            m_out.clear(bit, bits...);
+            m_dir.clear(bit);
+            m_pull.set(bit);
+            m_out.clear(bit);
         }
 
         /**
@@ -407,19 +408,19 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.setAsInputPinWithPullUp(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BITS use enumeration GPIO::PIN
+		*@tparam BIT use enumeration GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsInputPinWithPullUp(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsInputPinWithPullUp(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
 #ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-            m_p0sel.clear(bit, bits...);
-            m_p1sel.clear(bit, bits...);
+            m_p0sel.clear(bit);
+            m_p1sel.clear(bit);
 #endif
-            m_dir.clear(bit, bits...);
-            m_pull.set(bit, bits...);
-            m_out.set(bit, bits...);
+            m_dir.clear(bit);
+            m_pull.set(bit);
+            m_out.set(bit);
         }
     };
 
@@ -434,74 +435,74 @@ namespace Internal {
         MT::Universal::Register<P1SEL>  m_p1sel{};
 
       public:
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsOutputPin(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsOutputPin(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
 #ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-            m_p0sel.clear(bit, bits...);
-            m_p1sel.clear(bit, bits...);
+            m_p0sel.clear(bit);
+            m_p1sel.clear(bit);
 #endif
-            m_dir.set(bit, bits...);
+            m_dir.set(bit);
         }
 
 
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsInputPin(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsInputPin(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
 #ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-            m_p0sel.clear(bit, bits...);
-            m_p1sel.clear(bit, bits...);
+            m_p0sel.clear(bit);
+            m_p1sel.clear(bit);
 #endif
-            m_dir.clear(bit, bits...);
+            m_dir.clear(bit);
         }
 
 
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsPeripheralModuleFunctionOutputPin(const MODULE_FUNC func, const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsPeripheralModuleFunctionOutputPin(const MODULE_FUNC func, const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            m_dir.set(bit, bits...);
+            m_dir.set(bit);
             switch (func) {
                 case MODULE_FUNC::GPIO:
-                    m_p0sel.clear(bit, bits...);
-                    m_p1sel.clear(bit, bits...);
+                    m_p0sel.clear(bit);
+                    m_p1sel.clear(bit);
                     break;
                 case MODULE_FUNC::PRIMARY:
-                    m_p0sel.set(bit, bits...);
-                    m_p1sel.clear(bit, bits...);
+                    m_p0sel.set(bit);
+                    m_p1sel.clear(bit);
                     break;
                 case MODULE_FUNC::SECONDARY:
-                    m_p0sel.clear(bit, bits...);
-                    m_p1sel.set(bit, bits...);
+                    m_p0sel.clear(bit);
+                    m_p1sel.set(bit);
                     break;
                 case MODULE_FUNC::TERNARY:
-                    m_p0sel.set(bit, bits...);
-                    m_p1sel.set(bit, bits...);
+                    m_p0sel.set(bit);
+                    m_p1sel.set(bit);
                     break;
                 default:
                     break;
             }
         }
 
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsPeripheralModuleFunctionInputPin(const MODULE_FUNC func, const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsPeripheralModuleFunctionInputPin(const MODULE_FUNC func, const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            m_dir.clear(bit, bits...);
+            m_dir.clear(bit);
             switch (func) {
                 case MODULE_FUNC::GPIO:
-                    m_p0sel.clear(bit, bits...);
-                    m_p1sel.clear(bit, bits...);
+                    m_p0sel.clear(bit);
+                    m_p1sel.clear(bit);
                     break;
                 case MODULE_FUNC::PRIMARY:
-                    m_p0sel.set(bit, bits...);
-                    m_p1sel.clear(bit, bits...);
+                    m_p0sel.set(bit);
+                    m_p1sel.clear(bit);
                     break;
                 case MODULE_FUNC::SECONDARY:
-                    m_p0sel.clear(bit, bits...);
-                    m_p1sel.set(bit, bits...);
+                    m_p0sel.clear(bit);
+                    m_p1sel.set(bit);
                     break;
                 case MODULE_FUNC::TERNARY:
-                    m_p0sel.set(bit, bits...);
-                    m_p1sel.set(bit, bits...);
+                    m_p0sel.set(bit);
+                    m_p1sel.set(bit);
                     break;
                 default:
                     break;
@@ -521,90 +522,90 @@ namespace Internal {
         MT::Universal::Register<P0SEL>   m_p0sel{};
 
       public:
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsOutputPin(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsOutputPin(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
 #ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-            m_p0sel.clear(bit, bits...);
+            m_p0sel.clear(bit);
 #endif
-            m_dir.set(bit, bits...);
+            m_dir.set(bit);
         }
 
 
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsInputPin(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsInputPin(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
 #ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-            m_p0sel.clear(bit, bits...);
+            m_p0sel.clear(bit);
 #endif
-            m_dir.clear(bit, bits...);
-            m_pull.clear(bit, bits...);
+            m_dir.clear(bit);
+            m_pull.clear(bit);
         }
 
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsPeripheralModuleFunctionOutputPin(const MODULE_FUNC func, const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsPeripheralModuleFunctionOutputPin(const MODULE_FUNC func, const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            m_dir.set(bit, bits...);
+            m_dir.set(bit);
             switch (func) {
                 case MODULE_FUNC::GPIO:
-                    m_p0sel.clear(bit, bits...);
+                    m_p0sel.clear(bit);
                     break;
                 case MODULE_FUNC::PRIMARY:
-                    m_p0sel.set(bit, bits...);
+                    m_p0sel.set(bit);
                     break;
                 case MODULE_FUNC::SECONDARY:
-                    m_p0sel.clear(bit, bits...);
+                    m_p0sel.clear(bit);
                     break;
                 case MODULE_FUNC::TERNARY:
-                    m_p0sel.set(bit, bits...);
+                    m_p0sel.set(bit);
                     break;
                 default:
                     break;
             }
         }
 
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsPeripheralModuleFunctionInputPin(const MODULE_FUNC func, const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsPeripheralModuleFunctionInputPin(const MODULE_FUNC func, const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            m_dir.clear(bit, bits...);
+            m_dir.clear(bit);
             switch (func) {
                 case MODULE_FUNC::GPIO:
-                    m_p0sel.clear(bit, bits...);
+                    m_p0sel.clear(bit);
                     break;
                 case MODULE_FUNC::PRIMARY:
-                    m_p0sel.set(bit, bits...);
+                    m_p0sel.set(bit);
                     break;
                 case MODULE_FUNC::SECONDARY:
-                    m_p0sel.clear(bit, bits...);
+                    m_p0sel.clear(bit);
                     break;
                 case MODULE_FUNC::TERNARY:
-                    m_p0sel.set(bit, bits...);
+                    m_p0sel.set(bit);
                     break;
                 default:
                     break;
             }
         }
 
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsInputPinWithPullDown(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsInputPinWithPullDown(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
 #ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-            m_p0sel.clear(bit, bits...);
+            m_p0sel.clear(bit);
 #endif
-            m_dir.clear(bit, bits...);
-            m_pull.set(bit, bits...);
-            m_out.clear(bit, bits...);
+            m_dir.clear(bit);
+            m_pull.set(bit);
+            m_out.clear(bit);
         }
 
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsInputPinWithPullUp(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsInputPinWithPullUp(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
 #ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-            m_p0sel.clear(bit, bits...);
+            m_p0sel.clear(bit);
 #endif
-            m_dir.clear(bit, bits...);
-            m_pull.set(bit, bits...);
-            m_out.set(bit, bits...);
+            m_dir.clear(bit);
+            m_pull.set(bit);
+            m_out.set(bit);
         }
     };
 
@@ -619,34 +620,34 @@ namespace Internal {
         MT::Universal::Register<PRENREG> m_pull{};
 
       public:
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsOutputPin(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsOutputPin(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            m_dir.set(bit, bits...);
+            m_dir.set(bit);
         }
 
 
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsInputPin(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsInputPin(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            m_dir.clear(bit, bits...);
-            m_pull.clear(bit, bits...);
+            m_dir.clear(bit);
+            m_pull.clear(bit);
         }
 
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsInputPinWithPullDown(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsInputPinWithPullDown(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            m_dir.clear(bit, bits...);
-            m_pull.set(bit, bits...);
-            m_out.clear(bit, bits...);
+            m_dir.clear(bit);
+            m_pull.set(bit);
+            m_out.clear(bit);
         }
 
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setAsInputPinWithPullUp(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setAsInputPinWithPullUp(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            m_dir.clear(bit, bits...);
-            m_pull.set(bit, bits...);
-            m_out.set(bit, bits...);
+            m_dir.clear(bit);
+            m_pull.set(bit);
+            m_out.set(bit);
         }
     };
 
@@ -670,13 +671,13 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.enableInterrupt(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BITS use enumeration GPIO::PIN
+		*@tparam BIT use enumeration GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void enableInterrupt(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void enableInterrupt(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            m_intEn.set(bit, bits...);
+            m_intEn.set(bit);
         }
 
         /**
@@ -689,13 +690,13 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.disableInterrupt(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BITS use enumeration GPIO::PIN
+		*@tparam BIT use enumeration GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void disableInterrupt(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void disableInterrupt(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            m_intEn.clear(bit, bits...);
+            m_intEn.clear(bit);
         }
 
         /**
@@ -708,14 +709,14 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  if(p1.getInterruptStatus(GPIO::PIN::P0) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
-		*@tparam BITS use enumeration GPIO::PIN
+		*@tparam BIT use enumeration GPIO::PIN
 		*@return if all the given bits are set or not (INT_MASK_MATCH)
 		****************************************************************
 		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            if (m_intFlg.compare(bit, bits...)) return INT_MASK_MATCH::TRUE;
+            if (m_intFlg.compare(bit)) return INT_MASK_MATCH::TRUE;
             else
                 return INT_MASK_MATCH::FALSE;
         }
@@ -730,13 +731,13 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.clearInterrupt(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BITS use enumeration GPIO::PIN
+		*@tparam BIT use enumeration GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void clearInterrupt(const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void clearInterrupt(const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            m_intFlg.clear(bit, bits...);
+            m_intFlg.clear(bit);
         }
 
         /**
@@ -749,15 +750,15 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.selectInterruptEdge(GPIO::INT_EDGE::HIGH_TO_LOW, GPIO::PIN::P0 | GPIO::PIN::P1);  \endcode
-		*@tparam BITS use enumeration GPIO::PIN
+		*@tparam BIT use enumeration GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void selectInterruptEdge(const INT_EDGE edge, const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void selectInterruptEdge(const INT_EDGE edge, const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
-            if (edge == INT_EDGE::LOW_TO_HIGH) m_intEdge.clear(bit, bits...);
+            if (edge == INT_EDGE::LOW_TO_HIGH) m_intEdge.clear(bit);
             else
-                m_intEdge.set(bit, bits...);
+                m_intEdge.set(bit);
         }
     };
 
@@ -779,16 +780,16 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.setDriveStrength(GPIO::DRV_STRENGTH::REDUCED, GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BITS use enumeration GPIO::PIN
+		*@tparam BIT use enumeration GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-        constexpr void setDriveStrength(const DRV_STRENGTH drv, const BIT &bit, const BITS &... bits) noexcept {
+        template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+        constexpr void setDriveStrength(const DRV_STRENGTH drv, const BIT &bit) noexcept {
             static_assert(std::is_same<MT::MSP430::GPIO::PIN, BIT>::value, "input must be GPIO::PIN enum");
 
-            if (drv == DRV_STRENGTH::REDUCED) m_drv.clear(bit, bits...);
+            if (drv == DRV_STRENGTH::REDUCED) m_drv.clear(bit);
             else
-                m_drv.set(bit, bits...);
+                m_drv.set(bit);
         }
 #endif
     };

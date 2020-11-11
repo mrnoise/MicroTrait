@@ -150,13 +150,13 @@ struct Sfr {
 	*
 	*  Sfr sfr{};
 	*  sfr.enableInterrupt(SFR::INT::WATCHDOG_INTERVAL_TIMER | SFR::INT::OSCILLATOR_FAULT); \endcode
-	*@tparam BITS use enumeration SFR::INT
+	*@tparam BIT use enumeration SFR::INT
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-    constexpr void enableInterrupt(const BIT &bit, const BITS &... bits) noexcept {
+    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    constexpr void enableInterrupt(const BIT &bit) noexcept {
         static_assert(std::is_same<MT::MSP430::SFR::INT, BIT>::value, "input must be SFR::INT enum");
-        m_ie.set(bit, bits...);
+        m_ie.set(bit);
     }
 
     /**
@@ -169,13 +169,13 @@ struct Sfr {
 	*
 	*  Sfr sfr{};
 	*  sfr.disableInterrupt(SFR::INT::WATCHDOG_INTERVAL_TIMER | SFR::INT::OSCILLATOR_FAULT); \endcode
-	*@tparam BITS use enumeration SFR::INT
+	*@tparam BIT use enumeration SFR::INT
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-    constexpr void disableInterrupt(const BIT &bit, const BITS &... bits) noexcept {
+    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    constexpr void disableInterrupt(const BIT &bit) noexcept {
         static_assert(std::is_same<MT::MSP430::SFR::INT, BIT>::value, "input must be SFR::INT enum");
-        m_ie.clear(bit, bits...);
+        m_ie.clear(bit);
     }
 
     /**
@@ -188,14 +188,14 @@ struct Sfr {
 	*
 	*  Sfr sfr{};
 	*  if(sfr.getInterruptStatus(SFR::INT::WATCHDOG_INTERVAL_TIMER | SFR::INT::OSCILLATOR_FAULT) == INT_MASK_MATCH::TRUE) doSomething();  \endcode
-	*@tparam BITS use enumeration SFR::INT
+	*@tparam BIT use enumeration SFR::INT
 	*@return if all the given bits are set or not (MT::MSP430::INT_MASK_MATCH)
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-    [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const BIT &bit, const BITS &... bits) noexcept {
+    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const BIT &bit) noexcept {
         static_assert(std::is_same<MT::MSP430::SFR::INT, BIT>::value, "input must be SFR::INT enum");
-        if (m_if.compare(bit, bits...)) return INT_MASK_MATCH::TRUE;
+        if (m_if.compare(bit)) return INT_MASK_MATCH::TRUE;
         else
             return INT_MASK_MATCH::FALSE;
     }
@@ -210,13 +210,13 @@ struct Sfr {
 	*
 	*  Sfr sfr{};
 	*  sfr.clearInterruptStatus(SFR::INT::WATCHDOG_INTERVAL_TIMER | SFR::INT::OSCILLATOR_FAULT); \endcode
-	*@tparam BITS use enumeration SFR::INT
+	*@tparam BIT use enumeration SFR::INT
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-    constexpr void clearInterruptStatus(const BIT &bit, const BITS &... bits) noexcept {
+    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    constexpr void clearInterruptStatus(const BIT &bit) noexcept {
         static_assert(std::is_same<MT::MSP430::SFR::INT, BIT>::value, "input must be SFR::INT enum");
-        m_if.clear(bit, bits...);
+        m_if.clear(bit);
     }
 
 #if not defined(__MSP430_HAS_MSP430I_CPU__)

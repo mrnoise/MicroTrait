@@ -53,8 +53,8 @@ namespace Misc {
 #ifndef MICROTRAIT_MISC_ENUMBITS_HPP_
 #define MICROTRAIT_MISC_ENUMBITS_HPP_
 
+#include <MicroTrait/Misc/Cast.hpp>
 #include <type_traits>
-#include "MicroTrait/Misc/Details.hpp"
 
 namespace MT::Misc {
 
@@ -75,7 +75,7 @@ struct enable_Enum_bits {
 */
 template<typename E>
 typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator|(const E lhs, const E rhs) noexcept {
-    return static_cast<E>(MT::Details::castToUnderlyingType(lhs) | MT::Details::castToUnderlyingType(rhs));
+    return static_cast<E>(MT::Cast::toUnderlyingType(lhs) | MT::Cast::toUnderlyingType(rhs));
 }
 
 /**
@@ -90,7 +90,7 @@ typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator
 */
 template<typename E>
 typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator&(const E lhs, const E rhs) noexcept {
-    return static_cast<E>(MT::Details::castToUnderlyingType(lhs) & MT::Details::castToUnderlyingType(rhs));
+    return static_cast<E>(MT::Cast::toUnderlyingType(lhs) & MT::Cast::toUnderlyingType(rhs));
 }
 
 /**
@@ -105,7 +105,7 @@ typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator
 */
 template<typename E>
 typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator^(const E lhs, const E rhs) noexcept {
-    return static_cast<E>(MT::Details::castToUnderlyingType(lhs) ^ MT::Details::castToUnderlyingType(rhs));
+    return static_cast<E>(MT::Cast::toUnderlyingType(lhs) ^ MT::Cast::toUnderlyingType(rhs));
 }
 
 /**
@@ -120,7 +120,7 @@ typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator
 */
 template<typename E>
 typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator~(const E lhs) noexcept {
-    return static_cast<E>(~MT::Details::castToUnderlyingType(lhs));
+    return static_cast<E>(~MT::Cast::toUnderlyingType(lhs));
 }
 
 /**
@@ -135,7 +135,7 @@ typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator
 */
 template<typename E>
 typename std::enable_if<enable_Enum_bits<E>::enable, E &>::type constexpr operator|=(E &lhs, const E rhs) noexcept {
-    lhs = static_cast<E>(MT::Details::castToUnderlyingType(lhs) | MT::Details::castToUnderlyingType(rhs));
+    lhs = static_cast<E>(MT::Cast::toUnderlyingType(lhs) | MT::Cast::toUnderlyingType(rhs));
     return lhs;
 }
 
@@ -151,7 +151,7 @@ typename std::enable_if<enable_Enum_bits<E>::enable, E &>::type constexpr operat
 */
 template<typename E>
 typename std::enable_if<enable_Enum_bits<E>::enable, E &>::type constexpr operator&=(E &lhs, const E rhs) noexcept {
-    lhs = static_cast<E>(MT::Details::castToUnderlyingType(lhs) & MT::Details::castToUnderlyingType(rhs));
+    lhs = static_cast<E>(MT::Cast::toUnderlyingType(lhs) & MT::Cast::toUnderlyingType(rhs));
     return lhs;
 }
 
@@ -167,7 +167,7 @@ typename std::enable_if<enable_Enum_bits<E>::enable, E &>::type constexpr operat
 */
 template<typename E>
 typename std::enable_if<enable_Enum_bits<E>::enable, E &>::type constexpr operator^=(E &lhs, const E rhs) noexcept {
-    lhs = static_cast<E>(MT::Details::castToUnderlyingType(lhs) ^ MT::Details::castToUnderlyingType(rhs));
+    lhs = static_cast<E>(MT::Cast::toUnderlyingType(lhs) ^ MT::Cast::toUnderlyingType(rhs));
     return lhs;
 }
 

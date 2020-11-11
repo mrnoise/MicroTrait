@@ -341,14 +341,14 @@ struct Pmm {
 	*
 	*  Pmm pmm{};
 	*  pmm.clearInterrupt(PMM::INT::BOR | PMM::INT::POR); \endcode
-	*@tparam BITS use enumeration PMM::INT
+	*@tparam BIT use enumeration PMM::INT
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-    constexpr void clearInterrupt(const BIT &bit, const BITS &... bits) noexcept {
+    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    constexpr void clearInterrupt(const BIT &bit) noexcept {
         static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
         m_ctl0pwd.override(PMMPW_H);
-        m_if.clear(bit, bits...);
+        m_if.clear(bit);
         m_ctl0pwd.override(0x00);
     }
 
@@ -362,14 +362,14 @@ struct Pmm {
 	*
 	*  Pmm pmm{};
 	*  if(pmm.getInterruptStatus(PMM::INT::BOR | PMM::INT::POR) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
-	*@tparam BITS use enumeration PMM::INT
+	*@tparam BIT use enumeration PMM::INT
 	*@return if all the given bits are set or not (INT_MASK_MATCH)
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-    [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const BIT &bit, const BITS &... bits) noexcept {
+    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const BIT &bit) noexcept {
         static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
-        if (m_if.compare(bit, bits...)) return INT_MASK_MATCH::TRUE;
+        if (m_if.compare(bit)) return INT_MASK_MATCH::TRUE;
         else
             return INT_MASK_MATCH::FALSE;
     }
@@ -1553,14 +1553,14 @@ struct Pmm {
 	*
 	*  Pmm pmm{};
 	*  if(pmm.getInterruptStatus(PMM::INT::BOR | PMM::INT::POR) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
-	*@tparam BITS use enumeration PMM::INT
+	*@tparam BIT use enumeration PMM::INT
 	*@return if all the given bits are set or not (INT_MASK_MATCH)
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-    [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const BIT &bit, const BITS &... bits) noexcept {
+    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const BIT &bit) noexcept {
         static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
-        if (m_if.compare(bit, bits...)) return INT_MASK_MATCH::TRUE;
+        if (m_if.compare(bit)) return INT_MASK_MATCH::TRUE;
         else
             return INT_MASK_MATCH::FALSE;
     }
@@ -1716,10 +1716,10 @@ struct Pmm {
 	*
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-    constexpr void enableInterrupt(const BIT &bit, const BITS &... bits) noexcept {
+    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    constexpr void enableInterrupt(const BIT &bit) noexcept {
         static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
-        m_vmon.set(bit, bits...);
+        m_vmon.set(bit);
     }
 
     /**
@@ -1732,13 +1732,13 @@ struct Pmm {
 	*
 	*  Pmm pmm{};
 	*  pmm.disableInterrupt(PMM::INT::LPM45); \endcode
-	*@tparam BITS use enumeration PMM::INT
+	*@tparam BIT use enumeration PMM::INT
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-    constexpr void disableInterrupt(const BIT &bit, const BITS &... bits) noexcept {
+    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    constexpr void disableInterrupt(const BIT &bit) noexcept {
         static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
-        m_vmon.clear(bit, bits...);
+        m_vmon.clear(bit);
     }
 
 
@@ -1752,15 +1752,15 @@ struct Pmm {
 	*
 	*  Pmm pmm{};
 	*  pmm.disableInterrupt(PMM::INT::LPM45); \endcode
-	*@tparam BITS use enumeration PMM::INT
+	*@tparam BIT use enumeration PMM::INT
 	*@return if all the given bits are set or not (INT_MASK_MATCH)
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-    constexpr INT_MASK_MATCH disableInterrupt(const BIT &bit, const BITS &... bits) noexcept {
+    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    constexpr INT_MASK_MATCH disableInterrupt(const BIT &bit) noexcept {
         static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
 
-        const BIT     sum  = MT::Details::orSum(bit, bits...);
+        const BIT     sum  = MT::Details::orSum(bit);
         const uint8_t mask = static_cast<uint8_t>(sum);
 
         if ((mask & VMONIE) && (VMONCTL & VMONIFG)) return INT_MASK_MATCH::TRUE;
@@ -1780,13 +1780,13 @@ struct Pmm {
 	*
 	*  Pmm pmm{};
 	*  pmm.disableInterrupt(PMM::INT::LPM45); \endcode
-	*@tparam BITS use enumeration PMM::INT
+	*@tparam BIT use enumeration PMM::INT
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type, typename... BITS>
-    constexpr void clearInterrupt(const BIT &bit, const BITS &... bits) noexcept {
+    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    constexpr void clearInterrupt(const BIT &bit) noexcept {
         static_assert(std::is_same<MT::MSP430::PMM::INT, BIT>::value, "input must be PMM::INT enum");
-        const BIT     sum  = MT::Details::orSum(bit, bits...);
+        const BIT     sum  = MT::Details::orSum(bit);
         const uint8_t mask = static_cast<uint8_t>(sum);
         m_lpm45.clear(mask);
     }
