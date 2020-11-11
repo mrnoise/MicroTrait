@@ -52,6 +52,13 @@ using namespace MT::MSP430;
 *  @ingroup groupMSP430TimerA
 *  Enums in this module
 */
+
+/** @defgroup groupParamsMSP430TimerA Parameter
+*  @ingroup groupMSP430TimerA
+*  Parameterstructures in this module
+*/
+
+
 #ifndef MICROTRAIT_MSP430_TIMERA_TIMERA_HPP_
 #define MICROTRAIT_MSP430_TIMERA_TIMERA_HPP_
 
@@ -61,12 +68,10 @@ using namespace MT::MSP430;
 #ifdef MT_USE_MSP430_LIB
 
 #include "MicroTrait/Universal/Register.hpp"
-#include "MicroTrait/Misc/Details.hpp"
+#include <MicroTrait/Misc/Cast.hpp>
 #include <msp430.h>
 #include <utility>
 #include <type_traits>
-
-//#include "msp430i2021.h"
 
 #if defined(__MSP430_HAS_T0A2__) || defined(__MSP430_HAS_T1A2__) || defined(__MSP430_HAS_T2A2__) || defined(__MSP430_HAS_T3A2__)    \
     || defined(__MSP430_HAS_T0A3__) || defined(__MSP430_HAS_T1A3__) || defined(__MSP430_HAS_T2A3__) || defined(__MSP430_HAS_T3A3__) \
@@ -293,7 +298,7 @@ enum class CAPTURE_COMPARE_INPUT : uint16_t {
 /**
 * @ingroup groupEnumsMSP430TimerA
 ****************************************************************
-* @brief Comapre output bit value low or high for Timer A
+* @brief Compare output bit value low or high for Timer A
 ****************************************************************
 */
 enum class COMPARE_OUT_BIT : uint16_t {
@@ -301,7 +306,12 @@ enum class COMPARE_OUT_BIT : uint16_t {
     LOW  = (0x0000)
 };
 
-
+/**
+* @ingroup groupParamsMSP430TimerA
+****************************************************************
+* @brief Parameter to initalize a continuous running timer
+****************************************************************
+*/
 using initContinuous = struct {
     CLOCKSOURCE     src;
     CLOCK_DIV       div;
@@ -310,7 +320,12 @@ using initContinuous = struct {
     bool            startTimer;
 };
 
-
+/**
+* @ingroup groupParamsMSP430TimerA
+****************************************************************
+* @brief Parameter to initalize a up/down counting timer
+****************************************************************
+*/
 using initUp = struct {
     CLOCKSOURCE         src;
     CLOCK_DIV           div;
@@ -323,6 +338,13 @@ using initUp = struct {
 
 using initUpDown = initUp;
 
+
+/**
+* @ingroup groupParamsMSP430TimerA
+****************************************************************
+* @brief Parameter to initalize a capture register
+****************************************************************
+*/
 using initCapture = struct {
     CAPTURE_COMPARE     reg;
     CAPTURE_MODE        mode;
@@ -332,6 +354,12 @@ using initCapture = struct {
     COMPARE_OUTPUT      out;
 };
 
+/**
+* @ingroup groupParamsMSP430TimerA
+****************************************************************
+* @brief Parameter to initalize a compare register
+****************************************************************
+*/
 using initCompare = struct {
     CAPTURE_COMPARE     reg;
     CAPTURE_COMPARE_INT int_en;
@@ -339,6 +367,13 @@ using initCompare = struct {
     uint16_t            compareValue;
 };
 
+
+/**
+* @ingroup groupParamsMSP430TimerA
+****************************************************************
+* @brief Parameter to initalize pwm functionality
+****************************************************************
+*/
 using initPWM = struct {
     CLOCKSOURCE     src;
     CLOCK_DIV       div;
@@ -352,7 +387,7 @@ using initPWM = struct {
 
 namespace MT::MSP430::TIMERA::Internal {
 
-using namespace MT::Details;
+using namespace MT::Cast;
 
 template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXCCTL0>
 struct Base {
@@ -378,7 +413,7 @@ struct Base {
 	*/
     constexpr void startCounter(const TIMERA::MODE mode) noexcept {
         m_ctl.clear(MC_3);
-        m_ctl.set(castToUnderlyingType(mode));
+        m_ctl.set(toUnderlyingType(mode));
     }
 
     /**
@@ -405,9 +440,9 @@ struct Base {
 	*/
     constexpr void initContinuousMode(const initContinuous &param) noexcept {
         uint16_t ucMode = 0;
-        if (param.startTimer) ucMode = castToUnderlyingType(MODE::CONTINUOUS);
-        m_ctl.override(ucMode | castToUnderlyingType(param.src) | castToUnderlyingType(param.clearTimer)
-                       | castToUnderlyingType(param.global_int_en) | ((castToUnderlyingType(param.div) >> 3) << 6));
+        if (param.startTimer) ucMode = toUnderlyingType(MODE::CONTINUOUS);
+        m_ctl.override(ucMode | toUnderlyingType(param.src) | toUnderlyingType(param.clearTimer)
+                       | toUnderlyingType(param.global_int_en) | ((toUnderlyingType(param.div) >> 3) << 6));
     }
 };
 
@@ -424,15 +459,15 @@ struct BaseEX0 {
   public:
     constexpr void startCounter(const TIMERA::MODE mode) noexcept {
         m_ctl.clear(MC_3);
-        m_ctl.set(castToUnderlyingType(mode));
+        m_ctl.set(toUnderlyingType(mode));
     }
 
     constexpr void initContinuousMode(const initContinuous &param) noexcept {
         uint16_t ucMode = 0;
-        if (param.startTimer) ucMode = castToUnderlyingType(MODE::CONTINUOUS);
-        m_ex0.override((castToUnderlyingType(param.div)) & 0x7000);
-        m_ctl.override(ucMode | castToUnderlyingType(param.src) | castToUnderlyingType(param.clearTimer)
-                       | castToUnderlyingType(param.global_int_en) | ((castToUnderlyingType(param.div) >> 3) << 6));
+        if (param.startTimer) ucMode = toUnderlyingType(MODE::CONTINUOUS);
+        m_ex0.override((toUnderlyingType(param.div)) & 0x7000);
+        m_ctl.override(ucMode | toUnderlyingType(param.src) | toUnderlyingType(param.clearTimer)
+                       | toUnderlyingType(param.global_int_en) | ((toUnderlyingType(param.div) >> 3) << 6));
     }
 };
 
@@ -533,7 +568,7 @@ struct CCTL0_2 {
 	*/
     constexpr void initCompareMode(const initCompare &param) noexcept {
 
-        const auto cctlx = castToUnderlyingType(param.int_en) | castToUnderlyingType(param.out);
+        const auto cctlx = toUnderlyingType(param.int_en) | toUnderlyingType(param.out);
 
         switch (param.reg) {
             case CAPTURE_COMPARE::REGISTER0:

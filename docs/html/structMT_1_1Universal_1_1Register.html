@@ -112,31 +112,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:gab21632a8d9cffeeb202794aec1c8be6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the content of the underlyoing register <br/>
  equivalent to C register access -&gt; return *REG;  <a href="group__groupFuncsReg.html#gab21632a8d9cffeeb202794aec1c8be6d">More...</a><br /></td></tr>
 <tr class="separator:gab21632a8d9cffeeb202794aec1c8be6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2a377beddc01f86b8fa9eb53408bf99d"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </td></tr>
-<tr class="memitem:ga2a377beddc01f86b8fa9eb53408bf99d"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsReg.html#ga2a377beddc01f86b8fa9eb53408bf99d">set</a> (const BIT &amp;bit, const BITS &amp;...bits) noexcept</td></tr>
-<tr class="memdesc:ga2a377beddc01f86b8fa9eb53408bf99d"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the given bits via a logial or into the register <br/>
- equivalent to C register access -&gt; reg |= value1 | value2 | ...  <a href="group__groupFuncsReg.html#ga2a377beddc01f86b8fa9eb53408bf99d">More...</a><br /></td></tr>
-<tr class="separator:ga2a377beddc01f86b8fa9eb53408bf99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8975c4870327559cb71370ddb52686dd"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </td></tr>
-<tr class="memitem:ga8975c4870327559cb71370ddb52686dd"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsReg.html#ga8975c4870327559cb71370ddb52686dd">clear</a> (const BIT &amp;bit, const BITS &amp;...bits) noexcept</td></tr>
-<tr class="memdesc:ga8975c4870327559cb71370ddb52686dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">clears the given bits via a logial or into the register <br/>
- equivalent to C register access -&gt; reg &amp;= ~value1 | ~value2 | ~...  <a href="group__groupFuncsReg.html#ga8975c4870327559cb71370ddb52686dd">More...</a><br /></td></tr>
-<tr class="separator:ga8975c4870327559cb71370ddb52686dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaa934626b35d865df37d0a116eca5ae0"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </td></tr>
-<tr class="memitem:gaaa934626b35d865df37d0a116eca5ae0"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsReg.html#gaaa934626b35d865df37d0a116eca5ae0">toggle</a> (const BIT &amp;bit, const BITS &amp;...bits) noexcept</td></tr>
-<tr class="memdesc:gaaa934626b35d865df37d0a116eca5ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">toggles the given bits via a logial xor in the register <br/>
- equivalent to C register access -&gt; reg ^= value1 | value2 | ...  <a href="group__groupFuncsReg.html#gaaa934626b35d865df37d0a116eca5ae0">More...</a><br /></td></tr>
-<tr class="separator:gaaa934626b35d865df37d0a116eca5ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac126957936c4d615c04bc1f957af54df"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </td></tr>
-<tr class="memitem:gac126957936c4d615c04bc1f957af54df"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsReg.html#gac126957936c4d615c04bc1f957af54df">override</a> (const BIT &amp;bit, const BITS &amp;...bits) noexcept</td></tr>
-<tr class="memdesc:gac126957936c4d615c04bc1f957af54df"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the given bits in the register and overrides the leftover bits with zeros <br/>
- equivalent to C register access -&gt; reg = value1 | value2 | ~...  <a href="group__groupFuncsReg.html#gac126957936c4d615c04bc1f957af54df">More...</a><br /></td></tr>
-<tr class="separator:gac126957936c4d615c04bc1f957af54df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaef584f04d1dc4dcf4f5fec44f09e694e"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type, typename... BITS&gt; </td></tr>
-<tr class="memitem:gaef584f04d1dc4dcf4f5fec44f09e694e"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsReg.html#gaef584f04d1dc4dcf4f5fec44f09e694e">compare</a> (const BIT &amp;bit, const BITS &amp;...bits) noexcept</td></tr>
-<tr class="memdesc:gaef584f04d1dc4dcf4f5fec44f09e694e"><td class="mdescLeft">&#160;</td><td class="mdescRight">compares the given bits with the bits in the register and returns true if there is a match <br/>
- equivalent to C register access -&gt; return (*REG &amp; (value1 | ...));  <a href="group__groupFuncsReg.html#gaef584f04d1dc4dcf4f5fec44f09e694e">More...</a><br /></td></tr>
-<tr class="separator:gaef584f04d1dc4dcf4f5fec44f09e694e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd6b2f21bdc386de0c2990e6651fb9fa"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </td></tr>
+<tr class="memitem:gadd6b2f21bdc386de0c2990e6651fb9fa"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsReg.html#gadd6b2f21bdc386de0c2990e6651fb9fa">set</a> (const BIT &amp;bit) noexcept</td></tr>
+<tr class="memdesc:gadd6b2f21bdc386de0c2990e6651fb9fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the given bits via a logial or into the register <br/>
+ equivalent to C register access -&gt; reg |= value1 | value2 | ...  <a href="group__groupFuncsReg.html#gadd6b2f21bdc386de0c2990e6651fb9fa">More...</a><br /></td></tr>
+<tr class="separator:gadd6b2f21bdc386de0c2990e6651fb9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26283a7164b656b39c9393f1307488b7"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </td></tr>
+<tr class="memitem:ga26283a7164b656b39c9393f1307488b7"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsReg.html#ga26283a7164b656b39c9393f1307488b7">clear</a> (const BIT &amp;bit) noexcept</td></tr>
+<tr class="memdesc:ga26283a7164b656b39c9393f1307488b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">clears the given bits via a logial or into the register <br/>
+ equivalent to C register access -&gt; reg &amp;= ~value1 | ~value2 | ~...  <a href="group__groupFuncsReg.html#ga26283a7164b656b39c9393f1307488b7">More...</a><br /></td></tr>
+<tr class="separator:ga26283a7164b656b39c9393f1307488b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade7cafbb3b8756c3c680cd28a5d62e8b"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </td></tr>
+<tr class="memitem:gade7cafbb3b8756c3c680cd28a5d62e8b"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsReg.html#gade7cafbb3b8756c3c680cd28a5d62e8b">toggle</a> (const BIT &amp;bit) noexcept</td></tr>
+<tr class="memdesc:gade7cafbb3b8756c3c680cd28a5d62e8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">toggles the given bits via a logial xor in the register <br/>
+ equivalent to C register access -&gt; reg ^= value1 | value2 | ...  <a href="group__groupFuncsReg.html#gade7cafbb3b8756c3c680cd28a5d62e8b">More...</a><br /></td></tr>
+<tr class="separator:gade7cafbb3b8756c3c680cd28a5d62e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70f1282d8ec5d6bcd214bad59eb42990"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </td></tr>
+<tr class="memitem:ga70f1282d8ec5d6bcd214bad59eb42990"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsReg.html#ga70f1282d8ec5d6bcd214bad59eb42990">override</a> (const BIT &amp;bit) noexcept</td></tr>
+<tr class="memdesc:ga70f1282d8ec5d6bcd214bad59eb42990"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the given bits in the register and overrides the leftover bits with zeros <br/>
+ equivalent to C register access -&gt; reg = value1 | value2 | ~...  <a href="group__groupFuncsReg.html#ga70f1282d8ec5d6bcd214bad59eb42990">More...</a><br /></td></tr>
+<tr class="separator:ga70f1282d8ec5d6bcd214bad59eb42990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3d80bc91652fb353b5ba8e75e0f958e9"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </td></tr>
+<tr class="memitem:ga3d80bc91652fb353b5ba8e75e0f958e9"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsReg.html#ga3d80bc91652fb353b5ba8e75e0f958e9">compare</a> (const BIT &amp;bit) noexcept</td></tr>
+<tr class="memdesc:ga3d80bc91652fb353b5ba8e75e0f958e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">compares the given bits with the bits in the register and returns true if there is a match <br/>
+ equivalent to C register access -&gt; return (*REG &amp; (value1 | ...));  <a href="group__groupFuncsReg.html#ga3d80bc91652fb353b5ba8e75e0f958e9">More...</a><br /></td></tr>
+<tr class="separator:ga3d80bc91652fb353b5ba8e75e0f958e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>Universal/<a class="el" href="Register_8hpp_source.html">Register.hpp</a></li>
@@ -147,7 +147,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceMT.html">MT</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1Universal.html">Universal</a></li><li class="navelem"><a class="el" href="structMT_1_1Universal_1_1Register.html">Register</a></li>
-    <li class="footer">Generated on Di Nov 10 2020 17:18:16 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Mi Nov 11 2020 16:39:37 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>
