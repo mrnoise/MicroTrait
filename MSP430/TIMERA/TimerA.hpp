@@ -389,13 +389,22 @@ namespace MT::MSP430::TIMERA::Internal {
 
 using namespace MT::Cast;
 
+
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
+template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXCCTL0, volatile auto *TAXCCR0, volatile auto *TAXEX0>
+#else
 template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXCCTL0>
+#endif
 struct Base {
 
   private:
     MT::Universal::Register<TAXCTL>   m_ctl{};
     MT::Universal::Register<TAXR>     m_count{};
     MT::Universal::Register<TAXCCTL0> m_cctl0{};
+    MT::Universal::Register<TAXCCR0>  m_ccr0{};
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
+    MT::Universal::Register<TAXEX0> m_ex0{};
+#endif
 
   public:
     /**
@@ -438,38 +447,57 @@ struct Base {
 	*@param param -> settings for this mode -> use type initContinuous
 	****************************************************************
 	*/
-    constexpr void initContinuousMode(const initContinuous &param) noexcept {
-        uint16_t ucMode = 0;
-        if (param.startTimer) ucMode = toUnderlyingType(MODE::CONTINUOUS);
-        m_ctl.override(ucMode | toUnderlyingType(param.src) | toUnderlyingType(param.clearTimer)
-                       | toUnderlyingType(param.global_int_en) | ((toUnderlyingType(param.div) >> 3) << 6));
-    }
-};
-
-
-template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXCCTL0, volatile auto *TAXEX0>
-struct BaseEX0 {
-
-  private:
-    MT::Universal::Register<TAXCTL>   m_ctl{};
-    MT::Universal::Register<TAXR>     m_count{};
-    MT::Universal::Register<TAXCCTL0> m_cctl0{};
-    MT::Universal::Register<TAXEX0>   m_ex0{};
-
-  public:
-    constexpr void startCounter(const TIMERA::MODE mode) noexcept {
-        m_ctl.clear(MC_3);
-        m_ctl.set(toUnderlyingType(mode));
-    }
 
     constexpr void initContinuousMode(const initContinuous &param) noexcept {
         uint16_t ucMode = 0;
         if (param.startTimer) ucMode = toUnderlyingType(MODE::CONTINUOUS);
-        m_ex0.override((toUnderlyingType(param.div)) & 0x7000);
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
+        m_ex0.override((toUnderlyingType(param.div)) & 0x0007);
+#endif
         m_ctl.override(ucMode | toUnderlyingType(param.src) | toUnderlyingType(param.clearTimer)
                        | toUnderlyingType(param.global_int_en) | ((toUnderlyingType(param.div) >> 3) << 6));
     }
-};
+
+
+    /**
+	* @ingroup groupFuncsMSP430TimerA
+	****************************************************************
+	* @brief Configures Timer_A in up mode
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430;
+	*
+	*  TIMERA::TA0 ta0;
+	*
+	* constexpr TIMERA::initUp param{
+	*	TIMERA::CLOCKSOURCE::SMCLK,
+	*	TIMERA::CLOCK_DIV::DIV1,
+	*	TIMERA::GLOBAL_INT::DISABLE,
+	*	TIMERA::CLEAR_COUNT_DIR::ENABLE,
+	*	TIMERA::CAPTURE_COMPARE_INT::ENABLE,
+	*	false
+	* };
+	*
+	* ta0.initUpMode(param); \endcode
+	*@param param -> settings for this mode -> use type initUp
+	****************************************************************
+	*/
+    constexpr void initUpMode(const initUp &param) noexcept {
+        uint16_t ucMode = 0;
+        if (param.startTimer) ucMode = toUnderlyingType(MODE::UP);
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
+        m_ex0.override((toUnderlyingType(param.div)) & 0x0007);
+#endif
+        m_ctl.override(ucMode | toUnderlyingType(param.src) | toUnderlyingType(param.clearTimer)
+                       | toUnderlyingType(param.global_int_en) | ((toUnderlyingType(param.div) >> 3) << 6));
+
+        if (param.ccr_in_en == CAPTURE_COMPARE_INT::ENABLE) m_cctl0.set(toUnderlyingType(CAPTURE_COMPARE_INT::ENABLE));
+        else
+            m_cctl0.clear(toUnderlyingType(CAPTURE_COMPARE_INT::ENABLE));
+        m_ccr0.override(param.timerPeriod);
+    };
+
+};// namespace MT::MSP430::TIMERA::Internal
 
 
 template<volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCTL2, volatile auto *TAXCCR0, volatile auto *TAXCCR1, volatile auto *TAXCCR2>
@@ -589,14 +617,16 @@ struct CCTL0_2 {
     }
 };
 
-
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
 template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXEX0, volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCTL2, volatile auto *TAXCCR0, volatile auto *TAXCCR1, volatile auto *TAXCCR2>
-struct TxA2withEX0 : BaseEX0<TAXCTL, TAXR, TAXCCTL0, TAXEX0>
+struct TxA2 : Base<TAXCTL, TAXR, TAXCCTL0, TAXCCR0, TAXEX0>
   , CCTL0_2<TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2> {};
-
+#else
 template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCTL2, volatile auto *TAXCCR0, volatile auto *TAXCCR1, volatile auto *TAXCCR2>
-struct TxA2 : Base<TAXCTL, TAXR, TAXCCTL0>
+struct TxA2 : Base<TAXCTL, TAXR, TAXCCTL0, TAXCCR0>
   , CCTL0_2<TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2> {};
+#endif
+
 
 }// namespace MT::MSP430::TIMERA::Internal
 
@@ -604,7 +634,7 @@ struct TxA2 : Base<TAXCTL, TAXR, TAXCCTL0>
 namespace MT::MSP430::TIMERA {
 
 #warning for testing only
-using TA0 = Internal::TxA2withEX0<&TA0CTL, &TA0R, &TA0EX0, &TA0CCTL0, &TA0CCTL1, &TA0CCTL2, &TA0CCR0, &TA0CCR1, &TA0CCR2>;
+using TA0 = Internal::TxA2<&TA0CTL, &TA0R, &TA0EX0, &TA0CCTL0, &TA0CCTL1, &TA0CCTL2, &TA0CCR0, &TA0CCR1, &TA0CCR2>;
 
 #if not defined(__MSP430_HAS_MSP430I_CPU__)
 #if defined(__MSP430_HAS_T0A2__)
