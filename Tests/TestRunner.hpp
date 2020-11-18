@@ -7,6 +7,7 @@
 #include "MicroTrait/Tests/MSP430/TestSfr.hpp"
 #include "MicroTrait/Tests/MSP430/TestWdtA.hpp"
 #include "MicroTrait/Tests/MSP430/TestPmm.hpp"
+#include "MicroTrait/Tests/MSP430/TestTimerA.hpp"
 
 namespace MT::Tests {
 void run() noexcept {
@@ -15,6 +16,7 @@ void run() noexcept {
     MT::Tests::MSP430::SFR::run();
     MT::Tests::MSP430::WDTA::run();
     MT::Tests::MSP430::PMM::run();
+    MT::Tests::MSP430::TIMERA::run();
 }
 }// namespace MT::Tests
 
