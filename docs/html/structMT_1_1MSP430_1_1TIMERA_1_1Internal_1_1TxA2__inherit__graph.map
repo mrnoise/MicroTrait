@@ -1,5 +1,5 @@
-<map id="MT::MSP430::TIMERA::Internal::TxA2&lt; TAXCTL, TAXR, TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2 &gt;" name="MT::MSP430::TIMERA::Internal::TxA2&lt; TAXCTL, TAXR, TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2 &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="276,39,499,124"/>
-<area shape="rect" id="node2" href="$structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1Base.html" title=" " alt="" coords="31,5,203,61"/>
+<map id="MT::MSP430::TIMERA::Internal::TxA2&lt; TAXCTL, TAXR, TAXEX0, TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2 &gt;" name="MT::MSP430::TIMERA::Internal::TxA2&lt; TAXCTL, TAXR, TAXEX0, TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2 &gt;">
+<area shape="rect" id="node1" title=" " alt="" coords="276,39,503,124"/>
+<area shape="rect" id="node2" href="$structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1Base.html" title=" " alt="" coords="14,5,219,61"/>
 <area shape="rect" id="node3" href="$structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1CCTL0__2.html" title=" " alt="" coords="5,85,228,171"/>
 </map>

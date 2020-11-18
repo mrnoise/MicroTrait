@@ -1,10 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"group__groupEnumsMSP430TimerA.html#gab6d2d15906509b095cba0047e83fba0f":[1,0,4,0,10],
-"group__groupEnumsMSP430TimerA.html#gab7477f732df38878ffec805fafbba881":[1,0,4,0,13],
-"group__groupEnumsMSP430TimerA.html#gadc8967398abb61c9fc7c32c6be447707":[1,0,4,0,4],
-"group__groupEnumsMSP430TimerA.html#gae55512f05376cc6404a9b1d330a507d1":[1,0,4,0,0],
-"group__groupEnumsMSP430TimerA.html#gga04614f11ea4a6dc78186af21246d270fa88559a0cfd8250c9d65970cc145c92d4":[1,0,4,0,6,0],
 "group__groupEnumsMSP430TimerA.html#gga04614f11ea4a6dc78186af21246d270fac1a26907f9dd2855a13c3c36d2040699":[1,0,4,0,6,2],
 "group__groupEnumsMSP430TimerA.html#gga04614f11ea4a6dc78186af21246d270fad12f27e8b3f4a2284f9463367e03d86b":[1,0,4,0,6,3],
 "group__groupEnumsMSP430TimerA.html#gga04614f11ea4a6dc78186af21246d270fad85243a747ac5537ef0b7adde99c3e98":[1,0,4,0,6,1],
@@ -249,5 +244,10 @@ var NAVTREEINDEX2 =
 "group__groupFuncsMSP430FRAMPmm.html#ga37d41b0a0465fbac751beb0eb508f040":[1,0,1,1,1,19],
 "group__groupFuncsMSP430FRAMPmm.html#ga3f8a10946cf986c45c9216dba8553f66":[3,0,0,0,3,16],
 "group__groupFuncsMSP430FRAMPmm.html#ga3f8a10946cf986c45c9216dba8553f66":[1,0,1,1,1,1],
-"group__groupFuncsMSP430FRAMPmm.html#ga42e9c7883109a02242de4b98216c292e":[3,0,0,0,3,55]
+"group__groupFuncsMSP430FRAMPmm.html#ga42e9c7883109a02242de4b98216c292e":[3,0,0,0,3,55],
+"group__groupFuncsMSP430FRAMPmm.html#ga42e9c7883109a02242de4b98216c292e":[1,0,1,1,1,9],
+"group__groupFuncsMSP430FRAMPmm.html#ga451338b92b266834d445896659f9042b":[3,0,0,0,3,74],
+"group__groupFuncsMSP430FRAMPmm.html#ga451338b92b266834d445896659f9042b":[1,0,1,1,1,20],
+"group__groupFuncsMSP430FRAMPmm.html#ga49bd38bf88107980c5ed3d4c70b2b0ec":[3,0,0,0,3,43],
+"group__groupFuncsMSP430FRAMPmm.html#ga49bd38bf88107980c5ed3d4c70b2b0ec":[1,0,1,1,1,7]
 };

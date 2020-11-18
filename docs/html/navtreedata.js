@@ -275,9 +275,10 @@ var NAVTREE =
           [ "Functions", "group__groupFuncsMSP430TimerA.html", [
             [ "clearCaptureCompareInterrupt", "group__groupFuncsMSP430TimerA.html#gaf1b921e932e19598995563aa87d67c59", null ],
             [ "initCompareMode", "group__groupFuncsMSP430TimerA.html#ga624b524d3d846eef6f4c88aa1c1cf95c", null ],
-            [ "initContinuousMode", "group__groupFuncsMSP430TimerA.html#ga79d7542719831580db675c9f53680beb", null ],
+            [ "initContinuousMode", "group__groupFuncsMSP430TimerA.html#ga48ce29f7a6fe3b5337282c016f371b41", null ],
+            [ "initUpMode", "group__groupFuncsMSP430TimerA.html#ga76396845af8b97f6f0173a338b196c5b", null ],
             [ "setCompareValue", "group__groupFuncsMSP430TimerA.html#gad10bfe90f9d9b0a1ddea405307b08822", null ],
-            [ "startCounter", "group__groupFuncsMSP430TimerA.html#ga42fd8d2c3ca79f098d0712ac17a1431d", null ]
+            [ "startCounter", "group__groupFuncsMSP430TimerA.html#ga0dc24cb638bce2f2976e96df99633dd2", null ]
           ] ],
           [ "Parameter", "group__groupParamsMSP430TimerA.html", [
             [ "initCapture", "group__groupParamsMSP430TimerA.html#gaa06a94a57d42d9d50a5815c970da9bdf", null ],
@@ -440,7 +441,6 @@ var NAVTREE =
       [ "Namespace List", "namespaces.html", [
         [ "MT", "namespaceMT.html", [
           [ "Cast", "namespaceMT_1_1Cast.html", null ],
-          [ "Details", "namespaceMT_1_1Details.html", null ],
           [ "MSP430", "namespaceMT_1_1MSP430.html", [
             [ "GPIO", "namespaceMT_1_1MSP430_1_1GPIO.html", [
               [ "Internal", "namespaceMT_1_1MSP430_1_1GPIO_1_1Internal.html", null ],
@@ -535,20 +535,16 @@ var NAVTREE =
             [ "TIMERA", "namespaceMT_1_1MSP430_1_1TIMERA.html", [
               [ "Internal", "namespaceMT_1_1MSP430_1_1TIMERA_1_1Internal.html", [
                 [ "Base", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1Base.html", [
-                  [ "initContinuousMode", "group__groupFuncsMSP430TimerA.html#ga79d7542719831580db675c9f53680beb", null ],
-                  [ "startCounter", "group__groupFuncsMSP430TimerA.html#ga42fd8d2c3ca79f098d0712ac17a1431d", null ]
-                ] ],
-                [ "BaseEX0", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1BaseEX0.html", [
-                  [ "initContinuousMode", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1BaseEX0.html#a6a62f6fbaba13b2e6849884321e4334e", null ],
-                  [ "startCounter", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1BaseEX0.html#a6be972cecf97aeb5f88f57d1f87cd9c7", null ]
+                  [ "initContinuousMode", "group__groupFuncsMSP430TimerA.html#ga48ce29f7a6fe3b5337282c016f371b41", null ],
+                  [ "initUpMode", "group__groupFuncsMSP430TimerA.html#ga76396845af8b97f6f0173a338b196c5b", null ],
+                  [ "startCounter", "group__groupFuncsMSP430TimerA.html#ga0dc24cb638bce2f2976e96df99633dd2", null ]
                 ] ],
                 [ "CCTL0_2", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1CCTL0__2.html", [
                   [ "clearCaptureCompareInterrupt", "group__groupFuncsMSP430TimerA.html#gaf1b921e932e19598995563aa87d67c59", null ],
                   [ "initCompareMode", "group__groupFuncsMSP430TimerA.html#ga624b524d3d846eef6f4c88aa1c1cf95c", null ],
                   [ "setCompareValue", "group__groupFuncsMSP430TimerA.html#gad10bfe90f9d9b0a1ddea405307b08822", null ]
                 ] ],
-                [ "TxA2", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html", null ],
-                [ "TxA2withEX0", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2withEX0.html", null ]
+                [ "TxA2", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html", null ]
               ] ]
             ] ],
             [ "WDTA", "namespaceMT_1_1MSP430_1_1WDTA.html", null ],
@@ -693,6 +689,9 @@ var NAVTREE =
       ] ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", [
+        [ "MT::MSP430::TIMERA::Internal::Base< TAXCTL, TAXR, TAXCCTL0, TAXCCR0 >", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1Base.html", [
+          [ "MT::MSP430::TIMERA::Internal::TxA2< TAXCTL, TAXR, TAXEX0, TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2 >", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html", null ]
+        ] ],
         [ "MT::Misc::enable_Enum_bits< E >", "structMT_1_1Misc_1_1enable__Enum__bits.html", null ],
         [ "MT::Misc::enable_Enum_bits< BITS16 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS16_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< BITS32 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS32_01_4.html", null ],
@@ -753,15 +752,9 @@ var NAVTREE =
         ] ],
         [ "MT::MSP430::Pmm", "structMT_1_1MSP430_1_1Pmm.html", null ],
         [ "MT::MSP430::Sfr", "structMT_1_1MSP430_1_1Sfr.html", null ],
-        [ "MT::MSP430::TIMERA::Internal::Base< TAXCTL, TAXR, TAXCCTL0 >", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1Base.html", [
-          [ "MT::MSP430::TIMERA::Internal::TxA2< TAXCTL, TAXR, TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2 >", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html", null ]
-        ] ],
-        [ "MT::MSP430::TIMERA::Internal::BaseEX0< TAXCTL, TAXR, TAXCCTL0, TAXEX0 >", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1BaseEX0.html", [
-          [ "MT::MSP430::TIMERA::Internal::TxA2withEX0< TAXCTL, TAXR, TAXEX0, TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2 >", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2withEX0.html", null ]
-        ] ],
+        [ "MT::MSP430::TIMERA::Internal::Base< TAXCTL, TAXR, TAXCCTL0, TAXCCR0, TAXEX0 >", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1Base.html", null ],
         [ "MT::MSP430::TIMERA::Internal::CCTL0_2< TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2 >", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1CCTL0__2.html", [
-          [ "MT::MSP430::TIMERA::Internal::TxA2< TAXCTL, TAXR, TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2 >", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html", null ],
-          [ "MT::MSP430::TIMERA::Internal::TxA2withEX0< TAXCTL, TAXR, TAXEX0, TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2 >", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2withEX0.html", null ]
+          [ "MT::MSP430::TIMERA::Internal::TxA2< TAXCTL, TAXR, TAXEX0, TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2 >", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html", null ]
         ] ],
         [ "MT::MSP430::WdtA", "structMT_1_1MSP430_1_1WdtA.html", null ],
         [ "MT::Universal::Interrupt::Interrupt< ENUM, VECTOR >", "structMT_1_1Universal_1_1Interrupt_1_1Interrupt.html", null ],
@@ -1166,12 +1159,9 @@ var NAVTREE =
           [ "TIMERA", "dir_6d6df6efa756aeae42a466bfb1eed0c5.html", [
             [ "TimerA.hpp", "TimerA_8hpp.html", [
               [ "Base", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1Base.html", [
-                [ "initContinuousMode", "group__groupFuncsMSP430TimerA.html#ga79d7542719831580db675c9f53680beb", null ],
-                [ "startCounter", "group__groupFuncsMSP430TimerA.html#ga42fd8d2c3ca79f098d0712ac17a1431d", null ]
-              ] ],
-              [ "BaseEX0", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1BaseEX0.html", [
-                [ "initContinuousMode", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1BaseEX0.html#a6a62f6fbaba13b2e6849884321e4334e", null ],
-                [ "startCounter", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1BaseEX0.html#a6be972cecf97aeb5f88f57d1f87cd9c7", null ]
+                [ "initContinuousMode", "group__groupFuncsMSP430TimerA.html#ga48ce29f7a6fe3b5337282c016f371b41", null ],
+                [ "initUpMode", "group__groupFuncsMSP430TimerA.html#ga76396845af8b97f6f0173a338b196c5b", null ],
+                [ "startCounter", "group__groupFuncsMSP430TimerA.html#ga0dc24cb638bce2f2976e96df99633dd2", null ]
               ] ],
               [ "CCTL0_2", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1CCTL0__2.html", [
                 [ "clearCaptureCompareInterrupt", "group__groupFuncsMSP430TimerA.html#gaf1b921e932e19598995563aa87d67c59", null ],
@@ -1179,7 +1169,6 @@ var NAVTREE =
                 [ "setCompareValue", "group__groupFuncsMSP430TimerA.html#gad10bfe90f9d9b0a1ddea405307b08822", null ]
               ] ],
               [ "TxA2", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html", null ],
-              [ "TxA2withEX0", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2withEX0.html", null ],
               [ "enable_Enum_bits< TIMERA_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01TIMERA__INT_01_4.html", null ],
               [ "initCapture", "TimerA_8hpp.html#gaa06a94a57d42d9d50a5815c970da9bdf", null ],
               [ "initCompare", "TimerA_8hpp.html#gadb4cd3b2e52d762b0f3abad93f339283", null ],
@@ -1188,7 +1177,7 @@ var NAVTREE =
               [ "initUp", "TimerA_8hpp.html#ga89f688ae0b10b06c35ef018aba4d659f", null ],
               [ "initUpDown", "TimerA_8hpp.html#ad814cfd16869166b4daa0b985fb7e7dc", null ],
               [ "INT", "TimerA_8hpp.html#gab4b8f95b0b5575f3aa7bfadcbce68093", null ],
-              [ "TA0", "TimerA_8hpp.html#a088a8e89eb439c8790cd9ced529b25b5", null ],
+              [ "TA0", "TimerA_8hpp.html#a7a4234f978735a87fdde67a3ce453562", null ],
               [ "CAPTURE", "TimerA_8hpp.html#gae55512f05376cc6404a9b1d330a507d1", [
                 [ "ASYNCHRONOUS", "TimerA_8hpp.html#ggae55512f05376cc6404a9b1d330a507d1a04d77525ac06bb7f113ae919853b0d00", null ],
                 [ "SYNCHRONOUS", "TimerA_8hpp.html#ggae55512f05376cc6404a9b1d330a507d1a6003168ea156fdffb3b212d5568e16cf", null ]
@@ -1354,11 +1343,6 @@ var NAVTREE =
           [ "Cast.hpp", "Cast_8hpp.html", [
             [ "toUnderlyingType", "Cast_8hpp.html#ab880d087b828a35f69ba83ed8dbbbfa5", null ]
           ] ],
-          [ "Details.hpp", "Details_8hpp.html", [
-            [ "castToUnderlyingType", "Details_8hpp.html#a68bdf88839bcf429167f3850a7b51571", null ],
-            [ "orSum", "Details_8hpp.html#a2122569154b08e37c14c76fe418cf834", null ],
-            [ "orSum", "Details_8hpp.html#aea60d6299e8c61172c619a96c40f762f", null ]
-          ] ],
           [ "EnumBits.hpp", "EnumBits_8hpp.html", [
             [ "enable_Enum_bits", "structMT_1_1Misc_1_1enable__Enum__bits.html", null ],
             [ "operator&", "EnumBits_8hpp.html#ga5532d3a8125cbe4f1d93062873bc6437", null ],
@@ -1492,7 +1476,6 @@ var NAVTREE =
       ] ],
       [ "Misc", "dir_b11b26c345ed0f7c972184e81ad6f440.html", [
         [ "Cast.hpp", "Cast_8hpp_source.html", null ],
-        [ "Details.hpp", "Details_8hpp_source.html", null ],
         [ "EnumBits.hpp", "EnumBits_8hpp_source.html", null ]
       ] ],
       [ "Universal", "dir_8a747bb3c4d720dc480715835e2d305c.html", [
@@ -1509,10 +1492,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Cast_8hpp.html",
-"Register_8hpp.html#gga8779a21c592ffcc487f2b68d4d5aeff1ad5d4cc7b09d1843517acc9361f8f665e",
-"group__groupEnumsMSP430TimerA.html#gab6d2d15906509b095cba0047e83fba0f",
-"group__groupFuncsMSP430FRAMPmm.html#ga42e9c7883109a02242de4b98216c292e",
-"structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1CCTL0__2.html"
+"Settings_8hpp_source.html",
+"group__groupEnumsMSP430TimerA.html#gga04614f11ea4a6dc78186af21246d270fac1a26907f9dd2855a13c3c36d2040699",
+"group__groupFuncsMSP430FRAMPmm.html#ga4ba7ec72f66e8c4b205136398aae6833",
+"structMT_1_1Misc_1_1enable__Enum__bits_3_01GPIO__PIN_01_4.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

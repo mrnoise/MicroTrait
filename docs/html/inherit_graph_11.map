@@ -1,7 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1CCTL0__2.html" title=" " alt="" coords="5,85,228,171"/>
-<area shape="rect" id="node2" href="$structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html" title=" " alt="" coords="281,13,503,99"/>
-<area shape="rect" id="node3" href="$structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2withEX0.html" title=" " alt="" coords="276,144,508,229"/>
-<area shape="rect" id="node4" href="$structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1BaseEX0.html" title=" " alt="" coords="19,195,214,266"/>
-<area shape="rect" id="node5" href="$structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1Base.html" title=" " alt="" coords="31,5,203,61"/>
+<area shape="rect" id="node1" href="$structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1CCTL0__2.html" title=" " alt="" coords="5,5,228,91"/>
+<area shape="rect" id="node2" href="$structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html" title=" " alt="" coords="276,53,503,139"/>
+<area shape="rect" id="node3" href="$structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1Base.html" title=" " alt="" coords="14,115,219,171"/>
 </map>
