@@ -302,7 +302,7 @@ namespace Internal {
 		*  GPIO::Port1 p1{};
 		*  p1.setAsPeripheralModuleFunctionOutputPin(GPIO::MODULE_FUNC::PRIMARY, GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
 		*@param func the function for the pin  (GPIO::MODULE_FUNC)
-		*@tparam BIT use enumeration GPIO::PIN
+		*@param bit use enumeration GPIO::PIN
 		****************************************************************
 		*/
         template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
@@ -343,7 +343,7 @@ namespace Internal {
 		*  GPIO::Port1 p1{};
 		*  p1.setAsPeripheralModuleFunctionInputPin(GPIO::MODULE_FUNC::PRIMARY, GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
 		*@param func the function for the pin  (GPIO::MODULE_FUNC)
-		*@tparam BIT use enumeration GPIO::PIN
+		*@param bit use enumeration GPIO::PIN
 		****************************************************************
 		*/
         template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>

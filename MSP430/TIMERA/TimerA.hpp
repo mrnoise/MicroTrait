@@ -470,12 +470,13 @@ struct Base {
 	*  TIMERA::TA0 ta0;
 	*
 	* constexpr TIMERA::initUp param{
-	*	TIMERA::CLOCKSOURCE::SMCLK,
-	*	TIMERA::CLOCK_DIV::DIV1,
-	*	TIMERA::GLOBAL_INT::DISABLE,
-	*	TIMERA::CLEAR_COUNT_DIR::ENABLE,
-	*	TIMERA::CAPTURE_COMPARE_INT::ENABLE,
-	*	false
+	*	 CLOCKSOURCE::SMCLK,
+    *    CLOCK_DIV::DIV1,
+    *    32767,
+    *    GLOBAL_INT::DISABLE,
+    *    CAPTURE_COMPARE_INT::DISABLE,
+    *    CLEAR_COUNT_DIR::ENABLE,
+    *    true
 	* };
 	*
 	* ta0.initUpMode(param); \endcode
