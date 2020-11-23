@@ -178,6 +178,7 @@ var NAVTREEINDEX1 =
 "functions_func.html":[3,3,1],
 "functions_type.html":[3,3,3],
 "functions_vars.html":[3,3,2],
+"group__groupCast.html":[1,1,2],
 "group__groupEnumBits.html":[1,1,0],
 "group__groupEnumsEnumBits.html":[1,1,0,0],
 "group__groupEnumsInt.html":[1,2,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "group__groupEnumsMSP430TimerA.html#ga6eca85d59f71ae98f1b991f55abba958":[1,0,4,0,8],
 "group__groupEnumsMSP430TimerA.html#gaaac37abe95f284356eb54bbe51c2fe08":[1,0,4,0,2],
 "group__groupEnumsMSP430TimerA.html#gaaf349f39ff658349c88598e3f164ffce":[1,0,4,0,5],
-"group__groupEnumsMSP430TimerA.html#gab25b5f23ee74d42373db2865fb7b4bcc":[1,0,4,0,9],
-"group__groupEnumsMSP430TimerA.html#gab6d2d15906509b095cba0047e83fba0f":[1,0,4,0,10]
+"group__groupEnumsMSP430TimerA.html#gab25b5f23ee74d42373db2865fb7b4bcc":[1,0,4,0,9]
 };

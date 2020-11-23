@@ -337,13 +337,27 @@ var NAVTREE =
           [ "Enums", "group__groupEnumsEnumBits.html", null ],
           [ "Functions", "group__groupFuncsEnumBits.html", [
             [ "operator&", "group__groupFuncsEnumBits.html#gadd57baf72238f32b22126dcbbf3a436f", null ],
-            [ "operator&=", "group__groupFuncsEnumBits.html#ga4da0c7aee54f6545d1a818caf02d31da", null ],
+            [ "operator&=", "group__groupFuncsEnumBits.html#ga06eb3b24d1496e1eb7361e4c605628d3", null ],
             [ "operator^", "group__groupFuncsEnumBits.html#gab27fca0419bd874d8ee47eb3de707cd6", null ],
-            [ "operator^=", "group__groupFuncsEnumBits.html#ga37bfcda163195742607a47337c30892a", null ],
+            [ "operator^=", "group__groupFuncsEnumBits.html#ga44b0d8e644e527072ac8b134eaf76512", null ],
             [ "operator|", "group__groupFuncsEnumBits.html#ga26ae980a4b4b40f31549fbf544bf6765", null ],
-            [ "operator|=", "group__groupFuncsEnumBits.html#ga87a04c37405157bff5143e84e6266523", null ],
+            [ "operator|=", "group__groupFuncsEnumBits.html#ga425dca8d6741020fd9802cfe4cef255c", null ],
             [ "operator~", "group__groupFuncsEnumBits.html#ga67d364255d92d2ac4e1a5d94958db78c", null ]
           ] ]
+        ] ],
+        [ "Metaprogramming", "group__groupMeta.html", [
+          [ "Functions", "group__groupFuncsMeta.html", [
+            [ "compareBareType", "group__groupFuncsMeta.html#ga363d597ba0abc4977021bca8550adf02", null ]
+          ] ],
+          [ "Types", "group__groupTypesMeta.html", [
+            [ "BareType", "group__groupTypesMeta.html#gace3d0e14d50ca010257ffb57fcdcf60a", null ]
+          ] ]
+        ] ],
+        [ "Type casting", "group__groupCast.html", [
+          [ "Functions", "group__groupFuncsCast.html", [
+            [ "toUnderlyingType", "group__groupFuncsCast.html#ga4b55126da7bfbb7956b4d88b9e9b4df1", null ]
+          ] ],
+          [ "Types", "group__groupTypesCast.html", null ]
         ] ]
       ] ],
       [ "Universal", "group__groupUniversal.html", [
@@ -440,7 +454,6 @@ var NAVTREE =
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", [
         [ "MT", "namespaceMT.html", [
-          [ "Cast", "namespaceMT_1_1Cast.html", null ],
           [ "MSP430", "namespaceMT_1_1MSP430.html", [
             [ "GPIO", "namespaceMT_1_1MSP430_1_1GPIO.html", [
               [ "Internal", "namespaceMT_1_1MSP430_1_1GPIO_1_1Internal.html", null ],
@@ -453,8 +466,10 @@ var NAVTREE =
               [ "Interrupt", "namespaceMT_1_1MSP430_1_1WDTA_1_1Interrupt.html", null ]
             ] ]
           ] ],
-          [ "Meta", "namespaceMT_1_1Meta.html", null ],
-          [ "Misc", "namespaceMT_1_1Misc.html", null ],
+          [ "Misc", "namespaceMT_1_1Misc.html", [
+            [ "Cast", "namespaceMT_1_1Misc_1_1Cast.html", null ],
+            [ "Meta", "namespaceMT_1_1Misc_1_1Meta.html", null ]
+          ] ],
           [ "Universal", "namespaceMT_1_1Universal.html", [
             [ "Interrupt", "namespaceMT_1_1Universal_1_1Interrupt.html", null ]
           ] ]
@@ -1360,21 +1375,21 @@ var NAVTREE =
         ] ],
         [ "Misc", "dir_b11b26c345ed0f7c972184e81ad6f440.html", [
           [ "Cast.hpp", "Cast_8hpp.html", [
-            [ "toUnderlyingType", "Cast_8hpp.html#ab880d087b828a35f69ba83ed8dbbbfa5", null ]
+            [ "toUnderlyingType", "Cast_8hpp.html#ga4b55126da7bfbb7956b4d88b9e9b4df1", null ]
           ] ],
           [ "EnumBits.hpp", "EnumBits_8hpp.html", [
             [ "enable_Enum_bits", "structMT_1_1Misc_1_1enable__Enum__bits.html", null ],
             [ "operator&", "EnumBits_8hpp.html#gadd57baf72238f32b22126dcbbf3a436f", null ],
-            [ "operator&=", "EnumBits_8hpp.html#ga4da0c7aee54f6545d1a818caf02d31da", null ],
+            [ "operator&=", "EnumBits_8hpp.html#ga06eb3b24d1496e1eb7361e4c605628d3", null ],
             [ "operator^", "EnumBits_8hpp.html#gab27fca0419bd874d8ee47eb3de707cd6", null ],
-            [ "operator^=", "EnumBits_8hpp.html#ga37bfcda163195742607a47337c30892a", null ],
+            [ "operator^=", "EnumBits_8hpp.html#ga44b0d8e644e527072ac8b134eaf76512", null ],
             [ "operator|", "EnumBits_8hpp.html#ga26ae980a4b4b40f31549fbf544bf6765", null ],
-            [ "operator|=", "EnumBits_8hpp.html#ga87a04c37405157bff5143e84e6266523", null ],
+            [ "operator|=", "EnumBits_8hpp.html#ga425dca8d6741020fd9802cfe4cef255c", null ],
             [ "operator~", "EnumBits_8hpp.html#ga67d364255d92d2ac4e1a5d94958db78c", null ]
           ] ],
           [ "Meta.hpp", "Meta_8hpp.html", [
-            [ "BareType", "Meta_8hpp.html#a0f42afbae7957c15b4b18fe9a6a1ad69", null ],
-            [ "compareBareType", "Meta_8hpp.html#ab06bad43e508fbf60667d88c94dc0174", null ]
+            [ "BareType", "Meta_8hpp.html#gace3d0e14d50ca010257ffb57fcdcf60a", null ],
+            [ "compareBareType", "Meta_8hpp.html#ga363d597ba0abc4977021bca8550adf02", null ]
           ] ]
         ] ],
         [ "Universal", "dir_8a747bb3c4d720dc480715835e2d305c.html", [
@@ -1520,9 +1535,9 @@ var NAVTREEINDEX =
 [
 "Cast_8hpp.html",
 "Register_8hpp.html#gga8779a21c592ffcc487f2b68d4d5aeff1ad8498108dd603522047564a8da7be94c",
-"group__groupEnumsMSP430TimerA.html#gab7477f732df38878ffec805fafbba881",
-"group__groupFuncsMSP430FRAMPmm.html#ga451338b92b266834d445896659f9042b",
-"structMT_1_1MSP430_1_1WdtA.html"
+"group__groupEnumsMSP430TimerA.html#gab6d2d15906509b095cba0047e83fba0f",
+"group__groupFuncsMSP430FRAMPmm.html#ga3f8a10946cf986c45c9216dba8553f66",
+"structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntNoPullDrv.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
