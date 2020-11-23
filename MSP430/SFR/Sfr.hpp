@@ -46,6 +46,7 @@ using namespace MT::MSP430;
 #ifdef MT_USE_MSP430_LIB
 
 #include "MicroTrait/Universal/Register.hpp"
+#include "MicroTrait/Misc/Meta.hpp"
 #include <msp430.h>
 #include <utility>
 #include <type_traits>
@@ -77,6 +78,12 @@ template<>
 struct enable_Enum_bits<SFR_INT> {
     static constexpr bool enable = true;
 };
+
+template<>
+struct enable_Enum_bits<volatile SFR_INT> {
+    static constexpr bool enable = true;
+};
+
 }// namespace MT::Misc
 
 
@@ -153,9 +160,9 @@ struct Sfr {
 	*@tparam BIT use enumeration SFR::INT
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     constexpr void enableInterrupt(const BIT &bit) noexcept {
-        static_assert(std::is_same<MT::MSP430::SFR::INT, BIT>::value, "input must be SFR::INT enum");
+        static_assert(MT::Meta::compareBareType<MT::MSP430::SFR::INT, BIT>(), "input must be SFR::INT enum");
         m_ie.set(bit);
     }
 
@@ -172,9 +179,9 @@ struct Sfr {
 	*@tparam BIT use enumeration SFR::INT
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     constexpr void disableInterrupt(const BIT &bit) noexcept {
-        static_assert(std::is_same<MT::MSP430::SFR::INT, BIT>::value, "input must be SFR::INT enum");
+        static_assert(MT::Meta::compareBareType<MT::MSP430::SFR::INT, BIT>(), "input must be SFR::INT enum");
         m_ie.clear(bit);
     }
 
@@ -192,9 +199,9 @@ struct Sfr {
 	*@return if all the given bits are set or not (MT::MSP430::INT_MASK_MATCH)
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const BIT &bit) noexcept {
-        static_assert(std::is_same<MT::MSP430::SFR::INT, BIT>::value, "input must be SFR::INT enum");
+        static_assert(MT::Meta::compareBareType<MT::MSP430::SFR::INT, BIT>(), "input must be SFR::INT enum");
         if (m_if.compare(bit)) return INT_MASK_MATCH::TRUE;
         else
             return INT_MASK_MATCH::FALSE;
@@ -213,9 +220,9 @@ struct Sfr {
 	*@tparam BIT use enumeration SFR::INT
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     constexpr void clearInterruptStatus(const BIT &bit) noexcept {
-        static_assert(std::is_same<MT::MSP430::SFR::INT, BIT>::value, "input must be SFR::INT enum");
+        static_assert(MT::Meta::compareBareType<MT::MSP430::SFR::INT, BIT>(), "input must be SFR::INT enum");
         m_if.clear(bit);
     }
 

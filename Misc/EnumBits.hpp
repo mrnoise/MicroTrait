@@ -29,6 +29,11 @@ namespace Misc {
 			static constexpr bool enable = true;
 		}; // If specialization is not used functions provided here can`t be used -> safe guard for normal enums
 
+		template<>
+		struct enable_Enum_bits<volatile MYBITS> { -> specialization if a volatile value is used
+			static constexpr bool enable = true;
+		}; // If specialization is not used functions provided here can`t be used -> safe guard for normal enums
+
 	}
 }
 \endcode
@@ -74,7 +79,7 @@ struct enable_Enum_bits {
 ****************************************************************
 */
 template<typename E>
-typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator|(const E lhs, const E rhs) noexcept {
+typename std::enable_if_t<enable_Enum_bits<E>::enable, E> constexpr operator|(const E lhs, const E rhs) noexcept {
     return static_cast<E>(MT::Cast::toUnderlyingType(lhs) | MT::Cast::toUnderlyingType(rhs));
 }
 
@@ -89,7 +94,7 @@ typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator
 ****************************************************************
 */
 template<typename E>
-typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator&(const E lhs, const E rhs) noexcept {
+typename std::enable_if_t<enable_Enum_bits<E>::enable, E> constexpr operator&(const E lhs, const E rhs) noexcept {
     return static_cast<E>(MT::Cast::toUnderlyingType(lhs) & MT::Cast::toUnderlyingType(rhs));
 }
 
@@ -104,7 +109,7 @@ typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator
 ****************************************************************
 */
 template<typename E>
-typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator^(const E lhs, const E rhs) noexcept {
+typename std::enable_if_t<enable_Enum_bits<E>::enable, E> constexpr operator^(const E lhs, const E rhs) noexcept {
     return static_cast<E>(MT::Cast::toUnderlyingType(lhs) ^ MT::Cast::toUnderlyingType(rhs));
 }
 
@@ -119,7 +124,7 @@ typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator
 ****************************************************************
 */
 template<typename E>
-typename std::enable_if<enable_Enum_bits<E>::enable, E>::type constexpr operator~(const E lhs) noexcept {
+typename std::enable_if_t<enable_Enum_bits<E>::enable, E> constexpr operator~(const E lhs) noexcept {
     return static_cast<E>(~MT::Cast::toUnderlyingType(lhs));
 }
 

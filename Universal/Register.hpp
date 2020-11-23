@@ -73,6 +73,11 @@ struct enable_Enum_bits<BITS8> {
     static constexpr bool enable = true;
 };
 
+template<>
+struct enable_Enum_bits<volatile BITS8> {
+    static constexpr bool enable = true;
+};
+
 /**
 * @ingroup groupEnumsReg
 ****************************************************************
@@ -99,6 +104,11 @@ enum class BITS16 : uint16_t {
 };
 template<>
 struct enable_Enum_bits<BITS16> {
+    static constexpr bool enable = true;
+};
+
+template<>
+struct enable_Enum_bits<volatile BITS16> {
     static constexpr bool enable = true;
 };
 
@@ -144,6 +154,11 @@ enum class BITS32 : uint32_t {
 };
 template<>
 struct enable_Enum_bits<BITS32> {
+    static constexpr bool enable = true;
+};
+
+template<>
+struct enable_Enum_bits<volatile BITS32> {
     static constexpr bool enable = true;
 };
 }// namespace MT::Misc
@@ -278,7 +293,7 @@ struct Register {
 	*@tparam BIT bit or bitmask that should be ored into the defined register -> template specialization for Enum types (Misc::BITS8,Misc::BITS16,Misc::BITS32)
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     constexpr void set(const BIT &bit) noexcept {
         *REG |= (MT::Cast::toUnderlyingType(bit));
     }
@@ -295,7 +310,7 @@ struct Register {
 	*@tparam BIT bit or bitmask that should be inverted and put into the defined register via logical and -> template specialization for Enum types (Misc::BITS8,Misc::BITS16,Misc::BITS32)
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     constexpr void clear(const BIT &bit) noexcept {
         *REG &= ~(MT::Cast::toUnderlyingType(bit));
     }
@@ -312,7 +327,7 @@ struct Register {
 	*@tparam BIT bit or bitmask that should be toggeled and put into the defined register -> template specialization for Enum types (Misc::BITS8,Misc::BITS16,Misc::BITS32)
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     constexpr void toggle(const BIT &bit) noexcept {
         *REG ^= (MT::Cast::toUnderlyingType(bit));
     }
@@ -329,7 +344,7 @@ struct Register {
 	*@tparam BIT bit or bitmask that should be set into the defined register -> template specialization for Enum types(Misc::BITS8,Misc::BITS16,Misc::BITS32)
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     constexpr void override(const BIT &bit) noexcept {
         *REG = (MT::Cast::toUnderlyingType(bit));
     }
@@ -348,7 +363,7 @@ struct Register {
 	*@return true if the bitpatterns match false if not
 	****************************************************************
 	*/
-    template<typename BIT, typename = typename std::enable_if<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>::type>
+    template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     [[nodiscard]] constexpr bool compare(const BIT &bit) noexcept {
         return (*REG & MT::Cast::toUnderlyingType(bit));
     }

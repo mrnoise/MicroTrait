@@ -69,6 +69,7 @@ using namespace MT::MSP430;
 
 #include "MicroTrait/Universal/Register.hpp"
 #include <MicroTrait/Misc/Cast.hpp>
+#include <MicroTrait/Misc/Meta.hpp>
 #include <msp430.h>
 #include <utility>
 #include <type_traits>
@@ -85,6 +86,11 @@ enum class TIMERA_INT : uint16_t {
 };
 template<>
 struct enable_Enum_bits<TIMERA_INT> {
+    static constexpr bool enable = true;
+};
+
+template<>
+struct enable_Enum_bits<volatile TIMERA_INT> {
     static constexpr bool enable = true;
 };
 }// namespace MT::Misc

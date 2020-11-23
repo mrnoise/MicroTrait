@@ -111,6 +111,7 @@ using namespace MT::MSP430;
 #ifdef MT_USE_MSP430_LIB
 
 #include "MicroTrait/Universal/Interrupt.hpp"
+#include "MicroTrait/Misc/Meta.hpp"
 #include <msp430.h>
 #include <utility>
 #include <limits>
@@ -161,7 +162,7 @@ using Interrupt = MT::Universal::Interrupt::Interrupt<Vector...>;
 */
 template<typename ENUM, typename... FUNC>
 [[nodiscard]] constexpr auto makeInterrupt(IntHandlers<ENUM, FUNC>... t) noexcept {
-    static_assert(std::is_same<ENUM, PORTS>::value, "input must be PORTS enum");
+    static_assert(MT::Meta::compareBareType<ENUM, PORTS>(), "input must be PORTS enum");
     return Interrupt<ENUM, FUNC...>{ std::move(t)... };
 }
 
@@ -187,7 +188,7 @@ template<typename ENUM, typename... FUNC>
 */
 template<typename ENUM, typename FUNC>
 [[nodiscard]] constexpr auto makeHandler(ENUM p, FUNC t) noexcept {
-    static_assert(std::is_same<ENUM, PORTS>::value, "input must be PORTS enum");
+    static_assert(MT::Meta::compareBareType<ENUM, PORTS>(), "input must be PORTS enum");
     return IntHandlers<ENUM, FUNC>{ p, std::move(t) };
 }
 
