@@ -94,15 +94,15 @@ Functions</h2></td></tr>
 <tr class="memitem:gadc440d7c6e1ec25dfebd09cb89816c10"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430IPmm.html#gadc440d7c6e1ec25dfebd09cb89816c10">MT::MSP430::Pmm::unlockIOConfiguration</a> () noexcept</td></tr>
 <tr class="memdesc:gadc440d7c6e1ec25dfebd09cb89816c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">unlocks the IO -&gt; only available for MSP430i2xx Family  <a href="#gadc440d7c6e1ec25dfebd09cb89816c10">More...</a><br /></td></tr>
 <tr class="separator:gadc440d7c6e1ec25dfebd09cb89816c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga271a1a430f51fc332ce64bc0d27bcdd4"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </td></tr>
+<tr class="memitem:ga271a1a430f51fc332ce64bc0d27bcdd4"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </td></tr>
 <tr class="memitem:ga271a1a430f51fc332ce64bc0d27bcdd4"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430IPmm.html#ga271a1a430f51fc332ce64bc0d27bcdd4">MT::MSP430::Pmm::enableInterrupt</a> (const BIT &amp;bit) noexcept</td></tr>
 <tr class="memdesc:ga271a1a430f51fc332ce64bc0d27bcdd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">enables interrupts -&gt; only available for MSP430i2xx Family  <a href="#ga271a1a430f51fc332ce64bc0d27bcdd4">More...</a><br /></td></tr>
 <tr class="separator:ga271a1a430f51fc332ce64bc0d27bcdd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacfea4fc0a9b2721d2138193272ad56e0"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </td></tr>
+<tr class="memitem:gacfea4fc0a9b2721d2138193272ad56e0"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </td></tr>
 <tr class="memitem:gacfea4fc0a9b2721d2138193272ad56e0"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430IPmm.html#gacfea4fc0a9b2721d2138193272ad56e0">MT::MSP430::Pmm::disableInterrupt</a> (const BIT &amp;bit) noexcept</td></tr>
 <tr class="memdesc:gacfea4fc0a9b2721d2138193272ad56e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">disables interrupts -&gt; only available for MSP430i2xx Family  <a href="#gacfea4fc0a9b2721d2138193272ad56e0">More...</a><br /></td></tr>
 <tr class="separator:gacfea4fc0a9b2721d2138193272ad56e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafc48ad5a27a693cbd2554801a28e1a1c"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </td></tr>
+<tr class="memitem:gafc48ad5a27a693cbd2554801a28e1a1c"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </td></tr>
 <tr class="memitem:gafc48ad5a27a693cbd2554801a28e1a1c"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430IPmm.html#gafc48ad5a27a693cbd2554801a28e1a1c">MT::MSP430::Pmm::clearInterrupt</a> (const BIT &amp;bit) noexcept</td></tr>
 <tr class="memdesc:gafc48ad5a27a693cbd2554801a28e1a1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">disables interrupts -&gt; only available for MSP430i2xx Family  <a href="#gafc48ad5a27a693cbd2554801a28e1a1c">More...</a><br /></td></tr>
 <tr class="separator:gafc48ad5a27a693cbd2554801a28e1a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,7 +141,7 @@ Functions</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </div>
+template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -177,7 +177,7 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </div>
+template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -213,7 +213,7 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </div>
+template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -339,7 +339,7 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 <!-- Generated by DoxyPress 1.4.0 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Do Nov 19 2020 08:37:38 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Mo Nov 23 2020 11:11:41 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

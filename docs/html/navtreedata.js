@@ -336,13 +336,13 @@ var NAVTREE =
         [ "Enumeration as Bits", "group__groupEnumBits.html", [
           [ "Enums", "group__groupEnumsEnumBits.html", null ],
           [ "Functions", "group__groupFuncsEnumBits.html", [
-            [ "operator&", "group__groupFuncsEnumBits.html#ga5532d3a8125cbe4f1d93062873bc6437", null ],
+            [ "operator&", "group__groupFuncsEnumBits.html#gadd57baf72238f32b22126dcbbf3a436f", null ],
             [ "operator&=", "group__groupFuncsEnumBits.html#ga4da0c7aee54f6545d1a818caf02d31da", null ],
-            [ "operator^", "group__groupFuncsEnumBits.html#ga9de590dcb0f38e53abb8b7af0dbb65f3", null ],
+            [ "operator^", "group__groupFuncsEnumBits.html#gab27fca0419bd874d8ee47eb3de707cd6", null ],
             [ "operator^=", "group__groupFuncsEnumBits.html#ga37bfcda163195742607a47337c30892a", null ],
-            [ "operator|", "group__groupFuncsEnumBits.html#gac440b08874fc58a077c1e504cbf25bc4", null ],
+            [ "operator|", "group__groupFuncsEnumBits.html#ga26ae980a4b4b40f31549fbf544bf6765", null ],
             [ "operator|=", "group__groupFuncsEnumBits.html#ga87a04c37405157bff5143e84e6266523", null ],
-            [ "operator~", "group__groupFuncsEnumBits.html#gae47d21a8ba2843c9323674c955b22fee", null ]
+            [ "operator~", "group__groupFuncsEnumBits.html#ga67d364255d92d2ac4e1a5d94958db78c", null ]
           ] ]
         ] ]
       ] ],
@@ -453,6 +453,7 @@ var NAVTREE =
               [ "Interrupt", "namespaceMT_1_1MSP430_1_1WDTA_1_1Interrupt.html", null ]
             ] ]
           ] ],
+          [ "Meta", "namespaceMT_1_1Meta.html", null ],
           [ "Misc", "namespaceMT_1_1Misc.html", null ],
           [ "Universal", "namespaceMT_1_1Universal.html", [
             [ "Interrupt", "namespaceMT_1_1Universal_1_1Interrupt.html", null ]
@@ -660,7 +661,14 @@ var NAVTREE =
             [ "enable_Enum_bits< GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01GPIO__PIN_01_4.html", null ],
             [ "enable_Enum_bits< PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01PMM__INT_01_4.html", null ],
             [ "enable_Enum_bits< SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01SFR__INT_01_4.html", null ],
-            [ "enable_Enum_bits< TIMERA_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01TIMERA__INT_01_4.html", null ]
+            [ "enable_Enum_bits< TIMERA_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01TIMERA__INT_01_4.html", null ],
+            [ "enable_Enum_bits< volatile BITS16 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS16_01_4.html", null ],
+            [ "enable_Enum_bits< volatile BITS32 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS32_01_4.html", null ],
+            [ "enable_Enum_bits< volatile BITS8 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS8_01_4.html", null ],
+            [ "enable_Enum_bits< volatile GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01GPIO__PIN_01_4.html", null ],
+            [ "enable_Enum_bits< volatile PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01PMM__INT_01_4.html", null ],
+            [ "enable_Enum_bits< volatile SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01SFR__INT_01_4.html", null ],
+            [ "enable_Enum_bits< volatile TIMERA_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01TIMERA__INT_01_4.html", null ]
           ] ],
           [ "Universal", "namespaceMT_1_1Universal.html", [
             [ "Interrupt", "namespaceMT_1_1Universal_1_1Interrupt.html", [
@@ -700,6 +708,13 @@ var NAVTREE =
         [ "MT::Misc::enable_Enum_bits< PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01PMM__INT_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01SFR__INT_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< TIMERA_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01TIMERA__INT_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< volatile BITS16 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS16_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< volatile BITS32 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS32_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< volatile BITS8 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS8_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< volatile GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01GPIO__PIN_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< volatile PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01PMM__INT_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< volatile SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01SFR__INT_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< volatile TIMERA_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01TIMERA__INT_01_4.html", null ],
         [ "MT::MSP430::GPIO::Internal::PortCommon< INREG, OUTREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortCommon.html", [
           [ "MT::MSP430::GPIO::Internal::Port< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html", null ],
           [ "MT::MSP430::GPIO::Internal::PortDrv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortDrv.html", null ],
@@ -867,6 +882,7 @@ var NAVTREE =
               [ "PortWithIntSel0", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntSel0.html", null ],
               [ "PortWithIntSel0Drv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntSel0Drv.html", null ],
               [ "enable_Enum_bits< GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01GPIO__PIN_01_4.html", null ],
+              [ "enable_Enum_bits< volatile GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01GPIO__PIN_01_4.html", null ],
               [ "PIN", "Gpio_8hpp.html#ga9498a109dc820344a8c9ae35eaff2de1", null ],
               [ "Port1", "Gpio_8hpp.html#a9866e38abfe2c07a046badfbc40630ee", null ],
               [ "Port10", "Gpio_8hpp.html#ad7bdb66315edf9c23dd4896d789018b6", null ],
@@ -1009,6 +1025,7 @@ var NAVTREE =
                 [ "unlockLPM5", "group__groupFuncsMSP430FRAMPmm.html#ga875d175ce4b8c5c6e6865c2e0bbcf48a", null ]
               ] ],
               [ "enable_Enum_bits< PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01PMM__INT_01_4.html", null ],
+              [ "enable_Enum_bits< volatile PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01PMM__INT_01_4.html", null ],
               [ "PMM_INT", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07b", [
                 [ "BOR", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07ba0adf6aac232504c55ea4202e09498bfd", null ],
                 [ "RST", "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f", null ],
@@ -1143,6 +1160,7 @@ var NAVTREE =
                 [ "setResetPinPullResistor", "group__groupFuncsMSP430Sfr.html#ga095995edb9190d9c557506dafe3ad399", null ]
               ] ],
               [ "enable_Enum_bits< SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01SFR__INT_01_4.html", null ],
+              [ "enable_Enum_bits< volatile SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01SFR__INT_01_4.html", null ],
               [ "SFR_INT", "Sfr_8hpp.html#adecbbd506e805a49962cbdc6a8c3f675", [
                 [ "NMI_PIN", "Sfr_8hpp.html#adecbbd506e805a49962cbdc6a8c3f675afb7c266cd54f331da2f90ab701f1eb58", null ],
                 [ "OSCILLATOR_FAULT", "Sfr_8hpp.html#adecbbd506e805a49962cbdc6a8c3f675aa3d4deda557d70cb4b82a88cc124dd47", null ],
@@ -1170,6 +1188,7 @@ var NAVTREE =
               ] ],
               [ "TxA2", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html", null ],
               [ "enable_Enum_bits< TIMERA_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01TIMERA__INT_01_4.html", null ],
+              [ "enable_Enum_bits< volatile TIMERA_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01TIMERA__INT_01_4.html", null ],
               [ "initCapture", "TimerA_8hpp.html#gaa06a94a57d42d9d50a5815c970da9bdf", null ],
               [ "initCompare", "TimerA_8hpp.html#gadb4cd3b2e52d762b0f3abad93f339283", null ],
               [ "initContinuous", "TimerA_8hpp.html#gaa9720a83de3882e4dd2cb583a5e9f1fa", null ],
@@ -1345,13 +1364,17 @@ var NAVTREE =
           ] ],
           [ "EnumBits.hpp", "EnumBits_8hpp.html", [
             [ "enable_Enum_bits", "structMT_1_1Misc_1_1enable__Enum__bits.html", null ],
-            [ "operator&", "EnumBits_8hpp.html#ga5532d3a8125cbe4f1d93062873bc6437", null ],
+            [ "operator&", "EnumBits_8hpp.html#gadd57baf72238f32b22126dcbbf3a436f", null ],
             [ "operator&=", "EnumBits_8hpp.html#ga4da0c7aee54f6545d1a818caf02d31da", null ],
-            [ "operator^", "EnumBits_8hpp.html#ga9de590dcb0f38e53abb8b7af0dbb65f3", null ],
+            [ "operator^", "EnumBits_8hpp.html#gab27fca0419bd874d8ee47eb3de707cd6", null ],
             [ "operator^=", "EnumBits_8hpp.html#ga37bfcda163195742607a47337c30892a", null ],
-            [ "operator|", "EnumBits_8hpp.html#gac440b08874fc58a077c1e504cbf25bc4", null ],
+            [ "operator|", "EnumBits_8hpp.html#ga26ae980a4b4b40f31549fbf544bf6765", null ],
             [ "operator|=", "EnumBits_8hpp.html#ga87a04c37405157bff5143e84e6266523", null ],
-            [ "operator~", "EnumBits_8hpp.html#gae47d21a8ba2843c9323674c955b22fee", null ]
+            [ "operator~", "EnumBits_8hpp.html#ga67d364255d92d2ac4e1a5d94958db78c", null ]
+          ] ],
+          [ "Meta.hpp", "Meta_8hpp.html", [
+            [ "BareType", "Meta_8hpp.html#a0f42afbae7957c15b4b18fe9a6a1ad69", null ],
+            [ "compareBareType", "Meta_8hpp.html#ab06bad43e508fbf60667d88c94dc0174", null ]
           ] ]
         ] ],
         [ "Universal", "dir_8a747bb3c4d720dc480715835e2d305c.html", [
@@ -1370,6 +1393,9 @@ var NAVTREE =
             [ "enable_Enum_bits< BITS16 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS16_01_4.html", null ],
             [ "enable_Enum_bits< BITS32 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS32_01_4.html", null ],
             [ "enable_Enum_bits< BITS8 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS8_01_4.html", null ],
+            [ "enable_Enum_bits< volatile BITS16 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS16_01_4.html", null ],
+            [ "enable_Enum_bits< volatile BITS32 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS32_01_4.html", null ],
+            [ "enable_Enum_bits< volatile BITS8 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS8_01_4.html", null ],
             [ "Register", "structMT_1_1Universal_1_1Register.html", [
               [ "clear", "group__groupFuncsReg.html#ga26283a7164b656b39c9393f1307488b7", null ],
               [ "clear", "group__groupFuncsReg.html#ga1e40a47d06894d7e24a83505702e8307", null ],
@@ -1476,7 +1502,8 @@ var NAVTREE =
       ] ],
       [ "Misc", "dir_b11b26c345ed0f7c972184e81ad6f440.html", [
         [ "Cast.hpp", "Cast_8hpp_source.html", null ],
-        [ "EnumBits.hpp", "EnumBits_8hpp_source.html", null ]
+        [ "EnumBits.hpp", "EnumBits_8hpp_source.html", null ],
+        [ "Meta.hpp", "Meta_8hpp_source.html", null ]
       ] ],
       [ "Universal", "dir_8a747bb3c4d720dc480715835e2d305c.html", [
         [ "Interrupt.hpp", "Interrupt_8hpp_source.html", null ],
@@ -1492,10 +1519,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Cast_8hpp.html",
-"Settings_8hpp_source.html",
-"group__groupEnumsMSP430TimerA.html#gga04614f11ea4a6dc78186af21246d270fac1a26907f9dd2855a13c3c36d2040699",
-"group__groupFuncsMSP430FRAMPmm.html#ga4ba7ec72f66e8c4b205136398aae6833",
-"structMT_1_1Misc_1_1enable__Enum__bits_3_01GPIO__PIN_01_4.html"
+"Register_8hpp.html#gga8779a21c592ffcc487f2b68d4d5aeff1ad8498108dd603522047564a8da7be94c",
+"group__groupEnumsMSP430TimerA.html#gab7477f732df38878ffec805fafbba881",
+"group__groupFuncsMSP430FRAMPmm.html#ga451338b92b266834d445896659f9042b",
+"structMT_1_1MSP430_1_1WdtA.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

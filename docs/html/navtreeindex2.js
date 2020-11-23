@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"group__groupEnumsMSP430TimerA.html#gab7477f732df38878ffec805fafbba881":[1,0,4,0,13],
+"group__groupEnumsMSP430TimerA.html#gadc8967398abb61c9fc7c32c6be447707":[1,0,4,0,4],
+"group__groupEnumsMSP430TimerA.html#gae55512f05376cc6404a9b1d330a507d1":[1,0,4,0,0],
+"group__groupEnumsMSP430TimerA.html#gga04614f11ea4a6dc78186af21246d270fa88559a0cfd8250c9d65970cc145c92d4":[1,0,4,0,6,0],
 "group__groupEnumsMSP430TimerA.html#gga04614f11ea4a6dc78186af21246d270fac1a26907f9dd2855a13c3c36d2040699":[1,0,4,0,6,2],
 "group__groupEnumsMSP430TimerA.html#gga04614f11ea4a6dc78186af21246d270fad12f27e8b3f4a2284f9463367e03d86b":[1,0,4,0,6,3],
 "group__groupEnumsMSP430TimerA.html#gga04614f11ea4a6dc78186af21246d270fad85243a747ac5537ef0b7adde99c3e98":[1,0,4,0,6,1],
@@ -146,13 +150,13 @@ var NAVTREEINDEX2 =
 "group__groupEnumsReg.html#gga8779a21c592ffcc487f2b68d4d5aeff1ad8498108dd603522047564a8da7be94c":[1,2,1,0,0,7],
 "group__groupEnumsReg.html#gga8779a21c592ffcc487f2b68d4d5aeff1aed90f7f5841740336de541fe04853637":[1,2,1,0,0,13],
 "group__groupFuncsEnumBits.html":[1,1,0,1],
+"group__groupFuncsEnumBits.html#ga26ae980a4b4b40f31549fbf544bf6765":[1,1,0,1,4],
 "group__groupFuncsEnumBits.html#ga37bfcda163195742607a47337c30892a":[1,1,0,1,3],
 "group__groupFuncsEnumBits.html#ga4da0c7aee54f6545d1a818caf02d31da":[1,1,0,1,1],
-"group__groupFuncsEnumBits.html#ga5532d3a8125cbe4f1d93062873bc6437":[1,1,0,1,0],
+"group__groupFuncsEnumBits.html#ga67d364255d92d2ac4e1a5d94958db78c":[1,1,0,1,6],
 "group__groupFuncsEnumBits.html#ga87a04c37405157bff5143e84e6266523":[1,1,0,1,5],
-"group__groupFuncsEnumBits.html#ga9de590dcb0f38e53abb8b7af0dbb65f3":[1,1,0,1,2],
-"group__groupFuncsEnumBits.html#gac440b08874fc58a077c1e504cbf25bc4":[1,1,0,1,4],
-"group__groupFuncsEnumBits.html#gae47d21a8ba2843c9323674c955b22fee":[1,1,0,1,6],
+"group__groupFuncsEnumBits.html#gab27fca0419bd874d8ee47eb3de707cd6":[1,1,0,1,2],
+"group__groupFuncsEnumBits.html#gadd57baf72238f32b22126dcbbf3a436f":[1,1,0,1,0],
 "group__groupFuncsInt.html":[1,2,0,1],
 "group__groupFuncsInt.html#ga3c1ca22bbd1f50e255b93b3da4c295de":[1,2,0,1,2],
 "group__groupFuncsInt.html#ga5f85f4bf600d3b93429ab737d496a149":[1,2,0,1,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX2 =
 "group__groupFuncsMSP430FRAMPmm.html#ga3f8a10946cf986c45c9216dba8553f66":[3,0,0,0,3,16],
 "group__groupFuncsMSP430FRAMPmm.html#ga3f8a10946cf986c45c9216dba8553f66":[1,0,1,1,1,1],
 "group__groupFuncsMSP430FRAMPmm.html#ga42e9c7883109a02242de4b98216c292e":[3,0,0,0,3,55],
-"group__groupFuncsMSP430FRAMPmm.html#ga42e9c7883109a02242de4b98216c292e":[1,0,1,1,1,9],
-"group__groupFuncsMSP430FRAMPmm.html#ga451338b92b266834d445896659f9042b":[3,0,0,0,3,74],
-"group__groupFuncsMSP430FRAMPmm.html#ga451338b92b266834d445896659f9042b":[1,0,1,1,1,20],
-"group__groupFuncsMSP430FRAMPmm.html#ga49bd38bf88107980c5ed3d4c70b2b0ec":[3,0,0,0,3,43],
-"group__groupFuncsMSP430FRAMPmm.html#ga49bd38bf88107980c5ed3d4c70b2b0ec":[1,0,1,1,1,7]
+"group__groupFuncsMSP430FRAMPmm.html#ga42e9c7883109a02242de4b98216c292e":[1,0,1,1,1,9]
 };

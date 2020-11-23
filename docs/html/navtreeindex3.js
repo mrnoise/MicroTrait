@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"group__groupFuncsMSP430FRAMPmm.html#ga451338b92b266834d445896659f9042b":[3,0,0,0,3,74],
+"group__groupFuncsMSP430FRAMPmm.html#ga451338b92b266834d445896659f9042b":[1,0,1,1,1,20],
+"group__groupFuncsMSP430FRAMPmm.html#ga49bd38bf88107980c5ed3d4c70b2b0ec":[3,0,0,0,3,43],
+"group__groupFuncsMSP430FRAMPmm.html#ga49bd38bf88107980c5ed3d4c70b2b0ec":[1,0,1,1,1,7],
 "group__groupFuncsMSP430FRAMPmm.html#ga4ba7ec72f66e8c4b205136398aae6833":[3,0,0,0,3,37],
 "group__groupFuncsMSP430FRAMPmm.html#ga4ba7ec72f66e8c4b205136398aae6833":[1,0,1,1,1,6],
 "group__groupFuncsMSP430FRAMPmm.html#ga4f8664891f6b5139e57e4d927792daa7":[3,0,0,0,3,17],
@@ -192,12 +196,13 @@ var NAVTREEINDEX3 =
 "namespaceMT_1_1MSP430_1_1WDTA.html":[3,0,0,0,2],
 "namespaceMT_1_1MSP430_1_1WDTA.html":[2,0,0,1,2],
 "namespaceMT_1_1MSP430_1_1WDTA_1_1Interrupt.html":[2,0,0,1,2,0],
+"namespaceMT_1_1Meta.html":[2,0,0,2],
 "namespaceMT_1_1Misc.html":[3,0,0,1],
-"namespaceMT_1_1Misc.html":[2,0,0,2],
+"namespaceMT_1_1Misc.html":[2,0,0,3],
 "namespaceMT_1_1Universal.html":[3,0,0,2],
-"namespaceMT_1_1Universal.html":[2,0,0,3],
+"namespaceMT_1_1Universal.html":[2,0,0,4],
 "namespaceMT_1_1Universal_1_1Interrupt.html":[3,0,0,2,0],
-"namespaceMT_1_1Universal_1_1Interrupt.html":[2,0,0,3,0],
+"namespaceMT_1_1Universal_1_1Interrupt.html":[2,0,0,4,0],
 "namespacemembers.html":[2,1,0],
 "namespacemembers_enum.html":[2,1,4],
 "namespacemembers_eval.html":[2,1,5],
@@ -244,10 +249,5 @@ var NAVTREEINDEX3 =
 "structMT_1_1MSP430_1_1Sfr.html":[3,0,0,0,4],
 "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1Base.html":[3,0,0,0,1,0,0],
 "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1CCTL0__2.html":[3,0,0,0,1,0,1],
-"structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html":[3,0,0,0,1,0,2],
-"structMT_1_1MSP430_1_1WdtA.html":[3,0,0,0,5],
-"structMT_1_1Misc_1_1enable__Enum__bits.html":[3,0,0,1,0],
-"structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS16_01_4.html":[3,0,0,1,1],
-"structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS32_01_4.html":[3,0,0,1,2],
-"structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS8_01_4.html":[3,0,0,1,3]
+"structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html":[3,0,0,0,1,0,2]
 };

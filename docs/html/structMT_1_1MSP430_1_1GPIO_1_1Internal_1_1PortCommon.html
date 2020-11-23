@@ -103,19 +103,19 @@ Inheritance diagram for MT::MSP430::GPIO::Internal::PortCommon&lt; INREG, OUTREG
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ga31e29ab73b2e9387b731ac67fd1fbc20"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </td></tr>
+<tr class="memitem:ga31e29ab73b2e9387b731ac67fd1fbc20"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </td></tr>
 <tr class="memitem:ga31e29ab73b2e9387b731ac67fd1fbc20"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430Gpio.html#ga31e29ab73b2e9387b731ac67fd1fbc20">setOutputHighOnPin</a> (const BIT &amp;bit) noexcept</td></tr>
 <tr class="memdesc:ga31e29ab73b2e9387b731ac67fd1fbc20"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the given Pins high if configured as a output  <a href="group__groupFuncsMSP430Gpio.html#ga31e29ab73b2e9387b731ac67fd1fbc20">More...</a><br /></td></tr>
 <tr class="separator:ga31e29ab73b2e9387b731ac67fd1fbc20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaeaedde49f66612c8c0d55857c5a02eca"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </td></tr>
+<tr class="memitem:gaeaedde49f66612c8c0d55857c5a02eca"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </td></tr>
 <tr class="memitem:gaeaedde49f66612c8c0d55857c5a02eca"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430Gpio.html#gaeaedde49f66612c8c0d55857c5a02eca">setOutputLowOnPin</a> (const BIT &amp;bit) noexcept</td></tr>
 <tr class="memdesc:gaeaedde49f66612c8c0d55857c5a02eca"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the given Pins low if configured as a output  <a href="group__groupFuncsMSP430Gpio.html#gaeaedde49f66612c8c0d55857c5a02eca">More...</a><br /></td></tr>
 <tr class="separator:gaeaedde49f66612c8c0d55857c5a02eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafd91b2fede455b305d65946b8c1f56de"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </td></tr>
+<tr class="memitem:gafd91b2fede455b305d65946b8c1f56de"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </td></tr>
 <tr class="memitem:gafd91b2fede455b305d65946b8c1f56de"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430Gpio.html#gafd91b2fede455b305d65946b8c1f56de">toggleOutputOnPin</a> (const BIT &amp;bit) noexcept</td></tr>
 <tr class="memdesc:gafd91b2fede455b305d65946b8c1f56de"><td class="mdescLeft">&#160;</td><td class="mdescRight">toggles the given Pins if configured as a output  <a href="group__groupFuncsMSP430Gpio.html#gafd91b2fede455b305d65946b8c1f56de">More...</a><br /></td></tr>
 <tr class="separator:gafd91b2fede455b305d65946b8c1f56de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3b66a51e73a3a3f0e146ce55de807c8c"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </td></tr>
+<tr class="memitem:ga3b66a51e73a3a3f0e146ce55de807c8c"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </td></tr>
 <tr class="memitem:ga3b66a51e73a3a3f0e146ce55de807c8c"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="group__groupEnumsMSP430Gpio.html#gaadf9434aab62842f21e1acc6b81f3e2b">PIN_STATE</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430Gpio.html#ga3b66a51e73a3a3f0e146ce55de807c8c">getInputPinValue</a> (const BIT &amp;bit) noexcept</td></tr>
 <tr class="memdesc:ga3b66a51e73a3a3f0e146ce55de807c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the Pin state (high or low) if configured as a input  <a href="group__groupFuncsMSP430Gpio.html#ga3b66a51e73a3a3f0e146ce55de807c8c">More...</a><br /></td></tr>
 <tr class="separator:ga3b66a51e73a3a3f0e146ce55de807c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,7 +129,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceMT.html">MT</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430.html">MSP430</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430_1_1GPIO.html">GPIO</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430_1_1GPIO_1_1Internal.html">Internal</a></li><li class="navelem"><a class="el" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortCommon.html">PortCommon</a></li>
-    <li class="footer">Generated on Do Nov 19 2020 08:37:38 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Mo Nov 23 2020 11:11:41 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

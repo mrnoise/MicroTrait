@@ -93,16 +93,16 @@ Inheritance diagram for MT::MSP430::GPIO::Internal::PortNoSel&lt; INREG, OUTREG,
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7efafc669f01ec5b534b91325d6eb179"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </td></tr>
+<tr class="memitem:a7efafc669f01ec5b534b91325d6eb179"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </td></tr>
 <tr class="memitem:a7efafc669f01ec5b534b91325d6eb179"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortNoSel.html#a7efafc669f01ec5b534b91325d6eb179">setAsOutputPin</a> (const BIT &amp;bit) noexcept</td></tr>
 <tr class="separator:a7efafc669f01ec5b534b91325d6eb179"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0295e39031e65b71314feb23e5298636"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </td></tr>
+<tr class="memitem:a0295e39031e65b71314feb23e5298636"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </td></tr>
 <tr class="memitem:a0295e39031e65b71314feb23e5298636"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortNoSel.html#a0295e39031e65b71314feb23e5298636">setAsInputPin</a> (const BIT &amp;bit) noexcept</td></tr>
 <tr class="separator:a0295e39031e65b71314feb23e5298636"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c76c8160eef21d4e48b1d28385dae93"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </td></tr>
+<tr class="memitem:a9c76c8160eef21d4e48b1d28385dae93"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </td></tr>
 <tr class="memitem:a9c76c8160eef21d4e48b1d28385dae93"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortNoSel.html#a9c76c8160eef21d4e48b1d28385dae93">setAsInputPinWithPullDown</a> (const BIT &amp;bit) noexcept</td></tr>
 <tr class="separator:a9c76c8160eef21d4e48b1d28385dae93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29a24f459532d5c7e0ef2d2364265ab9"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </td></tr>
+<tr class="memitem:a29a24f459532d5c7e0ef2d2364265ab9"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </td></tr>
 <tr class="memitem:a29a24f459532d5c7e0ef2d2364265ab9"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortNoSel.html#a29a24f459532d5c7e0ef2d2364265ab9">setAsInputPinWithPullUp</a> (const BIT &amp;bit) noexcept</td></tr>
 <tr class="separator:a29a24f459532d5c7e0ef2d2364265ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -113,7 +113,7 @@ Public Member Functions</h2></td></tr>
 <div class="memtemplate">
 template&lt;volatile auto * INREG, volatile auto * OUTREG, volatile auto * DIRREG, volatile auto * PRENREG&gt; </div>
 <div class="memtemplate">
-template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </div>
+template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -141,7 +141,7 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 <div class="memtemplate">
 template&lt;volatile auto * INREG, volatile auto * OUTREG, volatile auto * DIRREG, volatile auto * PRENREG&gt; </div>
 <div class="memtemplate">
-template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </div>
+template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -169,7 +169,7 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 <div class="memtemplate">
 template&lt;volatile auto * INREG, volatile auto * OUTREG, volatile auto * DIRREG, volatile auto * PRENREG&gt; </div>
 <div class="memtemplate">
-template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </div>
+template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -197,7 +197,7 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 <div class="memtemplate">
 template&lt;volatile auto * INREG, volatile auto * OUTREG, volatile auto * DIRREG, volatile auto * PRENREG&gt; </div>
 <div class="memtemplate">
-template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;::type&gt; </div>
+template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -228,7 +228,7 @@ template&lt;typename BIT , typename  = typename std::enable_if&lt;MT::Misc::enab
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceMT.html">MT</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430.html">MSP430</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430_1_1GPIO.html">GPIO</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430_1_1GPIO_1_1Internal.html">Internal</a></li><li class="navelem"><a class="el" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortNoSel.html">PortNoSel</a></li>
-    <li class="footer">Generated on Do Nov 19 2020 08:37:38 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Mo Nov 23 2020 11:11:41 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>
