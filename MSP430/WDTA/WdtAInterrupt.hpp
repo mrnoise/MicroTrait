@@ -127,7 +127,7 @@ using Interrupt = MT::Universal::Interrupt::Interrupt<Vector...>;
 */
 template<typename ENUM, typename... FUNC>
 [[nodiscard]] constexpr auto makeInterrupt(IntHandlers<ENUM, FUNC>... t) noexcept {
-    static_assert(MT ::Meta::compareBareType<ENUM, WDTA>(), "input must be WDT  enum");
+    static_assert(MT::Misc::Meta::compareBareType<ENUM, WDTA>(), "input must be WDT  enum");
     return Interrupt<ENUM, FUNC...>{ std::move(t)... };
 }
 
@@ -151,7 +151,7 @@ template<typename ENUM, typename... FUNC>
 */
 template<typename ENUM, typename FUNC>
 [[nodiscard]] constexpr auto makeHandler(ENUM p, FUNC t) noexcept {
-    static_assert(MT::Meta::compareBareType<ENUM, WDTA>(), "input must be WDT  enum");
+    static_assert(MT::Misc::Meta::compareBareType<ENUM, WDTA>(), "input must be WDT  enum");
     return IntHandlers<ENUM, FUNC>{ p, std::move(t) };
 }
 

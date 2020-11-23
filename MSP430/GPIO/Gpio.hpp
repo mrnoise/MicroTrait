@@ -152,7 +152,7 @@ enum class DRV_STRENGTH : uint_fast8_t {
 
 namespace Internal {
 
-    using namespace MT::Meta;
+    using namespace MT::Misc::Meta;
 
     template<volatile auto *INREG, volatile auto *OUTREG>
     struct PortCommon {

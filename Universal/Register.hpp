@@ -295,7 +295,7 @@ struct Register {
 	*/
     template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     constexpr void set(const BIT &bit) noexcept {
-        *REG |= (MT::Cast::toUnderlyingType(bit));
+        *REG |= (MT::Misc::Cast::toUnderlyingType(bit));
     }
 
     /**
@@ -312,7 +312,7 @@ struct Register {
 	*/
     template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     constexpr void clear(const BIT &bit) noexcept {
-        *REG &= ~(MT::Cast::toUnderlyingType(bit));
+        *REG &= ~(MT::Misc::Cast::toUnderlyingType(bit));
     }
 
     /**
@@ -329,7 +329,7 @@ struct Register {
 	*/
     template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     constexpr void toggle(const BIT &bit) noexcept {
-        *REG ^= (MT::Cast::toUnderlyingType(bit));
+        *REG ^= (MT::Misc::Cast::toUnderlyingType(bit));
     }
 
     /**
@@ -346,7 +346,7 @@ struct Register {
 	*/
     template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     constexpr void override(const BIT &bit) noexcept {
-        *REG = (MT::Cast::toUnderlyingType(bit));
+        *REG = (MT::Misc::Cast::toUnderlyingType(bit));
     }
 
     /**
@@ -365,7 +365,7 @@ struct Register {
 	*/
     template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     [[nodiscard]] constexpr bool compare(const BIT &bit) noexcept {
-        return (*REG & MT::Cast::toUnderlyingType(bit));
+        return (*REG & MT::Misc::Cast::toUnderlyingType(bit));
     }
 };
 }// namespace MT::Universal

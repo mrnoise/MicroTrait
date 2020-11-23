@@ -393,7 +393,7 @@ using initPWM = struct {
 
 namespace MT::MSP430::TIMERA::Internal {
 
-using namespace MT::Cast;
+using namespace MT::Misc::Cast;
 
 
 #if not defined(__MSP430_HAS_MSP430I_CPU__)

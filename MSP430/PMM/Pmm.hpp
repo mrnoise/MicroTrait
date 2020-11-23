@@ -357,7 +357,7 @@ struct Pmm {
 	*/
     template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     constexpr void clearInterrupt(const BIT &bit) noexcept {
-        static_assert(MT::Meta::compareBareType<MT::MSP430::PMM::INT, BIT>(), "input must be PMM::INT enum");
+        static_assert(MT::Misc::Meta::compareBareType<MT::MSP430::PMM::INT, BIT>(), "input must be PMM::INT enum");
         m_ctl0pwd.override(PMMPW_H);
         m_if.clear(bit);
         m_ctl0pwd.override(0x00);
@@ -379,7 +379,7 @@ struct Pmm {
 	*/
     template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const BIT &bit) noexcept {
-        static_assert(MT::Meta::compareBareType<MT::MSP430::PMM::INT, BIT>(), "input must be PMM::INT enum");
+        static_assert(MT::Misc::Meta::compareBareType<MT::MSP430::PMM::INT, BIT>(), "input must be PMM::INT enum");
         if (m_if.compare(bit)) return INT_MASK_MATCH::TRUE;
         else
             return INT_MASK_MATCH::FALSE;
@@ -1570,7 +1570,7 @@ struct Pmm {
 	*/
     template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const BIT &bit) noexcept {
-        static_assert(MT::Meta::compareBareType<MT::MSP430::PMM::INT, BIT>(), "input must be PMM::INT enum");
+        static_assert(MT::Misc::Meta::compareBareType<MT::MSP430::PMM::INT, BIT>(), "input must be PMM::INT enum");
         if (m_if.compare(bit)) return INT_MASK_MATCH::TRUE;
         else
             return INT_MASK_MATCH::FALSE;
@@ -1729,7 +1729,7 @@ struct Pmm {
 	*/
     template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     constexpr void enableInterrupt(const BIT &bit) noexcept {
-        static_assert(MT::Meta::compareBareType<MT::MSP430::PMM::INT, BIT>(), "input must be PMM::INT enum");
+        static_assert(MT::Misc::Meta::compareBareType<MT::MSP430::PMM::INT, BIT>(), "input must be PMM::INT enum");
         m_vmon.set(bit);
     }
 
@@ -1748,7 +1748,7 @@ struct Pmm {
 	*/
     template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     constexpr void disableInterrupt(const BIT &bit) noexcept {
-        static_assert(MT::Meta::compareBareType<MT::MSP430::PMM::INT, BIT>(), "input must be PMM::INT enum");
+        static_assert(MT::Misc::Meta::compareBareType<MT::MSP430::PMM::INT, BIT>(), "input must be PMM::INT enum");
         m_vmon.clear(bit);
     }
 
@@ -1769,7 +1769,7 @@ struct Pmm {
 	*/
     template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     constexpr INT_MASK_MATCH disableInterrupt(const BIT &bit) noexcept {
-        static_assert(MT::Meta::compareBareType<MT::MSP430::PMM::INT, BIT>(), "input must be PMM::INT enum");
+        static_assert(MT::Misc::Meta::compareBareType<MT::MSP430::PMM::INT, BIT>(), "input must be PMM::INT enum");
 
         const BIT     sum  = MT::Details::orSum(bit);
         const uint8_t mask = static_cast<uint8_t>(sum);
@@ -1796,7 +1796,7 @@ struct Pmm {
 	*/
     template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
     constexpr void clearInterrupt(const BIT &bit) noexcept {
-        static_assert(MT::Meta::compareBareType<MT::MSP430::PMM::INT, BIT>(), "input must be PMM::INT enum");
+        static_assert(MT::Misc::Meta::compareBareType<MT::MSP430::PMM::INT, BIT>(), "input must be PMM::INT enum");
         const BIT     sum  = MT::Details::orSum(bit);
         const uint8_t mask = static_cast<uint8_t>(sum);
         m_lpm45.clear(mask);
