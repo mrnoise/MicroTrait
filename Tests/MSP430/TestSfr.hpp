@@ -8,6 +8,7 @@ namespace MT::Tests::MSP430::SFR::Internal {
 
 using namespace MT::MSP430::SFR;
 
+
 void runInt() noexcept {
     MT::MSP430::Sfr sfr{};
 
@@ -59,6 +60,20 @@ void runReset() noexcept {
 }
 
 
+void runMeta() noexcept {
+    MT::MSP430::Sfr sfr{};
+
+    volatile INT vint = INT::WATCHDOG_INTERVAL_TIMER;
+    sfr.clearInterruptStatus(vint);
+
+    const INT cint = INT::WATCHDOG_INTERVAL_TIMER;
+    sfr.clearInterruptStatus(cint);
+
+    const volatile INT cvint = INT::WATCHDOG_INTERVAL_TIMER;
+    sfr.clearInterruptStatus(cvint);
+}
+
+
 }// namespace MT::Tests::MSP430::SFR::Internal
 
 
@@ -68,6 +83,7 @@ void run() noexcept {
 #if not defined(__MSP430_HAS_MSP430I_CPU__)
     Internal::runReset();
 #endif
+    Internal::runMeta();
 }
 }// namespace MT::Tests::MSP430::SFR
 

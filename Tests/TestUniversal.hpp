@@ -11,6 +11,7 @@ namespace MT::Tests::Universal::Internal {
 
 using namespace MT::Misc;
 
+
 void runRegisterU8() noexcept {
 
     static volatile uint8_t       val = 0;
@@ -315,6 +316,49 @@ void runInterrupt() noexcept {
     assert(toggle == false);
 }
 
+
+void runMetaU8() noexcept {
+    static volatile uint8_t       val = 0;
+    MT::Universal::Register<&val> reg{};
+
+    volatile BITS8 v = BITS8::B0;
+    reg.set(v);
+
+    const BITS8 c = BITS8::B0;
+    reg.set(c);
+
+    const volatile BITS8 cv = BITS8::B0;
+    reg.set(cv);
+}
+
+void runMetaU16() noexcept {
+    static volatile uint16_t      val = 0;
+    MT::Universal::Register<&val> reg{};
+
+    volatile BITS16 v = BITS16::B0;
+    reg.set(v);
+
+    const BITS16 c = BITS16::B0;
+    reg.set(c);
+
+    const volatile BITS16 cv = BITS16::B0;
+    reg.set(cv);
+}
+
+void runMetaU32() noexcept {
+    static volatile uint32_t      val = 0;
+    MT::Universal::Register<&val> reg{};
+
+    volatile BITS32 v = BITS32::B0;
+    reg.set(v);
+
+    const BITS32 c = BITS32::B0;
+    reg.set(c);
+
+    const volatile BITS32 cv = BITS32::B0;
+    reg.set(cv);
+}
+
 }// namespace MT::Tests::Universal::Internal
 
 namespace MT::Tests::Universal {
@@ -323,6 +367,9 @@ void run() noexcept {
     Internal::runRegisterU16();
     Internal::runRegisterU32();
     Internal::runInterrupt();
+    Internal::runMetaU8();
+    Internal::runMetaU16();
+    Internal::runMetaU32();
 }
 }// namespace MT::Tests::Universal
 

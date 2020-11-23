@@ -1351,6 +1351,24 @@ void runPortOut() noexcept {
 #endif
 }
 
+
+void runMeta() noexcept {
+
+#if defined(__MSP430_HAS_PORT1_R__) || defined(__MSP430_HAS_PORT1__)
+    Port1 p1{};
+
+    volatile PIN vpin = PIN::P0;
+    p1.setAsInputPin(vpin);
+
+    const volatile PIN cvpin = PIN::P0;
+    p1.setAsInputPin(cvpin);
+
+    const PIN cpin = PIN::P0;
+    p1.setAsInputPin(cpin);
+#endif
+}
+
+
 }// namespace MT::Tests::MSP430::GPIO::Internal
 
 namespace MT::Tests::MSP430::GPIO {
@@ -1360,6 +1378,7 @@ void run() noexcept {
     Internal::runPortSelection();
     Internal::runPortInterrupt();
     Internal::runPortOut();
+    Internal::runMeta();
 }
 }// namespace MT::Tests::MSP430::GPIO
 

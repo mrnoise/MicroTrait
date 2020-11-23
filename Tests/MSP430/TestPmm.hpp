@@ -9,7 +9,6 @@ namespace MT::Tests::MSP430::PMM::Internal {
 
 using namespace MT::MSP430;
 
-
 void runSVS() noexcept {
 
     Pmm pmm;
@@ -57,6 +56,22 @@ void runInterrupt() noexcept {
 }
 
 
+void runMeta() noexcept {
+    Pmm pmm;
+#if defined(__MSP430_HAS_PMM_FRAM__) || defined(__MSP430_HAS_PMM_FR5xx__)
+
+    volatile MT::MSP430::PMM::INT vint = MT::MSP430::PMM::INT::RST;
+    pmm.clearInterrupt(vint);
+
+    const MT::MSP430::PMM::INT cint = MT::MSP430::PMM::INT::RST;
+    pmm.clearInterrupt(cint);
+
+    const volatile MT::MSP430::PMM::INT cvint = MT::MSP430::PMM::INT::RST;
+    pmm.clearInterrupt(cvint);
+#endif
+}
+
+
 }// namespace MT::Tests::MSP430::PMM::Internal
 
 
@@ -65,6 +80,7 @@ void run() noexcept {
     Internal::runSVS();
     Internal::runMisc();
     Internal::runInterrupt();
+    Internal::runMeta();
 }
 }// namespace MT::Tests::MSP430::PMM
 
