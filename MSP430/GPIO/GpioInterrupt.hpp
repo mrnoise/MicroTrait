@@ -135,8 +135,8 @@ enum PORTS {
 template<typename ENUM, typename FUNC>
 using IntHandlers = MT::Universal::Interrupt::IntHandlers<ENUM, FUNC>; /**< this pair represents the ISR -> first the Enum which refers to a vector and second the function to call */
 
-template<typename... Vector>
-using Interrupt = MT::Universal::Interrupt::Interrupt<Vector...>;
+template<typename ENUM, typename... Vector>
+using Interrupt = MT::Universal::Interrupt::Interrupt<ENUM, Vector...>;
 
 /**
 * @ingroup groupFuncsMSP430GpioInt

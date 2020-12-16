@@ -102,8 +102,8 @@ enum WDTA {
 template<typename ENUM, typename FUNC>
 using IntHandlers = MT::Universal::Interrupt::IntHandlers<ENUM, FUNC>;
 
-template<typename... Vector>
-using Interrupt = MT::Universal::Interrupt::Interrupt<Vector...>;
+template<typename ENUM, typename... Vector>
+using Interrupt = MT::Universal::Interrupt::Interrupt<ENUM, Vector...>;
 
 /**
 * @ingroup groupFuncsMSP430WdtAInt
