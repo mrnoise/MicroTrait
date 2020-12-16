@@ -74,6 +74,7 @@ using namespace MT::MSP430;
 #include <msp430.h>
 #include <utility>
 #include <type_traits>
+#include <cstddef>
 
 #if defined(__MSP430_HAS_T0A2__) || defined(__MSP430_HAS_T1A2__) || defined(__MSP430_HAS_T2A2__) || defined(__MSP430_HAS_T3A2__)    \
     || defined(__MSP430_HAS_T0A3__) || defined(__MSP430_HAS_T1A3__) || defined(__MSP430_HAS_T2A3__) || defined(__MSP430_HAS_T3A3__) \
@@ -241,15 +242,13 @@ enum class COMPARE_OUTPUT : uint16_t {
 ****************************************************************
 */
 enum class CAPTURE_COMPARE : uint16_t {
-    REGISTER0 = (0x02),
-    REGISTER1 = (0x04),
-    REGISTER2 = (0x06),
-#if not defined(__MSP430_HAS_MSP430I_CPU__) && not defined(__MSP430FR2XX_4XX_FAMILY__)
-    REGISTER3 = (0x08),
-    REGISTER4 = (0x0A),
-    REGISTER5 = (0x0C),
-    REGISTER6 = (0x0E)
-#endif
+    REGISTER0 = 0,
+    REGISTER1 = 1,
+    REGISTER2 = 2,
+    REGISTER3 = 3,
+    REGISTER4 = 4,
+    REGISTER5 = 5,
+    REGISTER6 = 6
 };
 
 
@@ -678,40 +677,185 @@ struct Base {
 };
 
 
-template<volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCR0, volatile auto *TAXCCR1>
-struct CCTL0_1 {
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
+template<volatile auto *TAXCTL, volatile auto *TAXEX0, typename REGTYPE, REGTYPE... REGS>
+#else
+template<volatile auto *TAXCTL, typename REGTYPE, REGTYPE... REGS>
+#endif
+struct CCTLx {
 
   private:
-    MT::Universal::Register<TAXCCTL0> m_cctl0{};
-    MT::Universal::Register<TAXCCTL1> m_cctl1{};
-    MT::Universal::Register<TAXCCR0>  m_ccr0{};
-    MT::Universal::Register<TAXCCR1>  m_ccr1{};
+    constexpr static REGTYPE m_regs[]{ REGS... };
+    constexpr static size_t  m_size{ sizeof(m_regs) / sizeof(REGTYPE) };
+    constexpr static size_t  m_startCCTL = 0;
+    constexpr static size_t  m_startCCR{ (m_size / 2) };
+    constexpr static size_t  m_maxTa2 = 4;
+    constexpr static size_t  m_maxTa3 = 6;
+    constexpr static size_t  m_maxTa5 = 10;
+    constexpr static size_t  m_maxTa7 = 14;
+
+    MT::Universal::Register<TAXCTL> m_ctl{};
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
+    MT::Universal::Register<TAXEX0> m_ex0{};
+#endif
+
 
   public:
     /**
-  	* @ingroup groupFuncsMSP430TimerA
-  	****************************************************************
-  	* @brief  Sets the value of the capture-compare register
-  	* @details
-  	* Usage: \code {.cpp}
-  	* using namespace MT::MSP430;
-  	*
-  	*  TIMERA::TA0 ta0;
-  	*  ta0.setCompareValue(TIMERA::CAPTURE_COMPARE::REGISTER0,50000); \endcode
-  	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
-  	*@param compareValue is the count to be compared with in compare mode
-  	****************************************************************
-  	*/
+	* @ingroup groupFuncsMSP430TimerA
+	****************************************************************
+	* @brief  Sets the value of the capture-compare register
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430;
+	*
+	*  TIMERA::TA0 ta0;
+	*  ta0.setCompareValue(TIMERA::CAPTURE_COMPARE::REGISTER0,50000); \endcode
+	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
+	*@param compareValue is the count to be compared with in compare mode
+	****************************************************************
+	*/
     constexpr void setCompareValue(const TIMERA::CAPTURE_COMPARE reg, const uint16_t compareValue) noexcept {
 
         switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_ccr0.override(compareValue);
+            case CAPTURE_COMPARE::REGISTER0: {
+                MT::Universal::Register<m_regs[m_startCCR]> ccr;
+                ccr.override(compareValue);
                 return;
+            }
 
-            case CAPTURE_COMPARE::REGISTER1:
-                m_ccr1.override(compareValue);
+            case CAPTURE_COMPARE::REGISTER1: {
+                MT::Universal::Register<m_regs[m_startCCR + 1]> ccr;
+                ccr.override(compareValue);
                 return;
+            }
+            default: break;
+        }
+
+        if constexpr (m_size >= m_maxTa3) {
+            switch (reg) {
+                case CAPTURE_COMPARE::REGISTER2: {
+                    MT::Universal::Register<m_regs[m_startCCR + 2]> ccr;
+                    ccr.override(compareValue);
+                    return;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa5) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER3: {
+                    MT::Universal::Register<m_regs[m_startCCR + 3]> ccr;
+                    ccr.override(compareValue);
+                    return;
+                }
+
+                case CAPTURE_COMPARE::REGISTER4: {
+                    MT::Universal::Register<m_regs[m_startCCR + 4]> ccr;
+                    ccr.override(compareValue);
+                    return;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa7) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER5: {
+                    MT::Universal::Register<m_regs[m_startCCR + 5]> ccr;
+                    ccr.override(compareValue);
+                    return;
+                }
+
+                case CAPTURE_COMPARE::REGISTER6: {
+                    MT::Universal::Register<m_regs[m_startCCR + 6]> ccr;
+                    ccr.override(compareValue);
+                    return;
+                }
+                default: break;
+            }
+        }
+    }
+
+
+    /**
+   	* @ingroup groupFuncsMSP430TimerA
+   	****************************************************************
+   	* @brief  Enable capture compare interrupt
+   	* @details
+   	* Usage: \code {.cpp}
+   	* using namespace MT::MSP430;
+   	*
+   	*  TIMERA::TA0 ta0;
+   	*  ta0.enableCaptureCompareInterrupt(TIMERA::CAPTURE_COMPARE::REGISTER0); \endcode
+   	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
+   	****************************************************************
+   	*/
+    constexpr void enableCaptureCompareInterrupt(const TIMERA::CAPTURE_COMPARE reg) noexcept {
+
+        switch (reg) {
+            case CAPTURE_COMPARE::REGISTER0: {
+                MT::Universal::Register<m_regs[m_startCCTL]> cctl;
+                cctl.set(CCIE);
+                return;
+            }
+
+            case CAPTURE_COMPARE::REGISTER1: {
+                MT::Universal::Register<m_regs[m_startCCTL + 1]> cctl;
+                cctl.set(CCIE);
+                return;
+            }
+            default: break;
+        }
+
+        if constexpr (m_size >= m_maxTa3) {
+            switch (reg) {
+                case CAPTURE_COMPARE::REGISTER2: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 2]> cctl;
+                    cctl.set(CCIE);
+                    return;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa5) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER3: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 3]> cctl;
+                    cctl.set(CCIE);
+                    return;
+                }
+
+                case CAPTURE_COMPARE::REGISTER4: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 4]> cctl;
+                    cctl.set(CCIE);
+                    return;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa7) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER5: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 5]> cctl;
+                    cctl.set(CCIE);
+                    return;
+                }
+
+                case CAPTURE_COMPARE::REGISTER6: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 6]> cctl;
+                    cctl.set(CCIE);
+                    return;
+                }
+                default: break;
+            }
         }
     }
 
@@ -719,85 +863,168 @@ struct CCTL0_1 {
     /**
 	* @ingroup groupFuncsMSP430TimerA
 	****************************************************************
-	* @brief  Enable capture compare interrupt
+	* @brief  Disable capture compare interrupt
 	* @details
 	* Usage: \code {.cpp}
 	* using namespace MT::MSP430;
 	*
 	*  TIMERA::TA0 ta0;
-	*  ta0.enableCaptureCompareInterrupt(TIMERA::CAPTURE_COMPARE::REGISTER0); \endcode
+	*  ta0.disableCaptureCompareInterrupt(TIMERA::CAPTURE_COMPARE::REGISTER0); \endcode
 	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
 	****************************************************************
 	*/
-    constexpr void enableCaptureCompareInterrupt(const TIMERA::CAPTURE_COMPARE reg) noexcept {
-
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.set(CCIE);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.set(CCIE);
-                return;
-        }
-    }
-
-
-    /**
-  	* @ingroup groupFuncsMSP430TimerA
-  	****************************************************************
-  	* @brief  Disable capture compare interrupt
-  	* @details
-  	* Usage: \code {.cpp}
-  	* using namespace MT::MSP430;
-  	*
-  	*  TIMERA::TA0 ta0;
-  	*  ta0.disableCaptureCompareInterrupt(TIMERA::CAPTURE_COMPARE::REGISTER0); \endcode
-  	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
-  	****************************************************************
-  	*/
     constexpr void disableCaptureCompareInterrupt(const TIMERA::CAPTURE_COMPARE reg) noexcept {
 
         switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.clear(CCIE);
+            case CAPTURE_COMPARE::REGISTER0: {
+                MT::Universal::Register<m_regs[m_startCCTL + 0]> cctl;
+                cctl.clear(CCIE);
                 return;
+            }
 
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.clear(CCIE);
+            case CAPTURE_COMPARE::REGISTER1: {
+                MT::Universal::Register<m_regs[m_startCCTL + 1]> cctl;
+                cctl.clear(CCIE);
                 return;
+            }
+            default: break;
+        }
+
+
+        if constexpr (m_size >= m_maxTa3) {
+            switch (reg) {
+                case CAPTURE_COMPARE::REGISTER2: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 2]> cctl;
+                    cctl.clear(CCIE);
+                    return;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa5) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER3: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 3]> cctl;
+                    cctl.clear(CCIE);
+                    return;
+                }
+
+                case CAPTURE_COMPARE::REGISTER4: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 4]> cctl;
+                    cctl.clear(CCIE);
+                    return;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa7) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER5: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 5]> cctl;
+                    cctl.clear(CCIE);
+                    return;
+                }
+
+                case CAPTURE_COMPARE::REGISTER6: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 6]> cctl;
+                    cctl.clear(CCIE);
+                    return;
+                }
+                default: break;
+            }
         }
     }
 
 
     /**
- 	* @ingroup groupFuncsMSP430TimerA
- 	****************************************************************
- 	* @brief Return capture compare interrupt status
- 	* @details
- 	* Usage: \code {.cpp}
- 	* using namespace MT::MSP430;
- 	*
- 	*  TIMERA::TA0 ta0;
- 	*
- 	*  if(ta0.getCaptureCompareInterruptStatus(TIMERA::CAPTURE_COMPARE::REGISTER0, TIMERA::INT::CAPTURE_INTERRUPT | TIMERA::INT::CAPTURE_OVERFLOW) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
- 	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
- 	*@param mask -> which flag(s) should be checked -> use type TIMERA::INT
- 	*@return if mask is set or not (INT_MASK_MATCH)
- 	****************************************************************
- 	*/
+	* @ingroup groupFuncsMSP430TimerA
+	****************************************************************
+	* @brief Return capture compare interrupt status
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430;
+	*
+	*  TIMERA::TA0 ta0;
+	*
+	*  if(ta0.getCaptureCompareInterruptStatus(TIMERA::CAPTURE_COMPARE::REGISTER0, TIMERA::INT::CAPTURE_INTERRUPT | TIMERA::INT::CAPTURE_OVERFLOW) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
+	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
+	*@param mask -> which flag(s) should be checked -> use type TIMERA::INT
+	*@return if mask is set or not (INT_MASK_MATCH)
+	****************************************************************
+	*/
     [[nodiscard]] constexpr INT_MASK_MATCH getCaptureCompareInterruptStatus(const TIMERA::CAPTURE_COMPARE reg, const TIMERA::INT mask) noexcept {
 
         switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                if (m_cctl0.compare(mask)) return INT_MASK_MATCH::TRUE;
+            case CAPTURE_COMPARE::REGISTER0: {
+                MT::Universal::Register<m_regs[m_startCCTL]> cctl;
+                if (cctl.compare(mask)) return INT_MASK_MATCH::TRUE;
                 else
                     return INT_MASK_MATCH::FALSE;
+            }
 
-            case CAPTURE_COMPARE::REGISTER1:
-                if (m_cctl1.compare(mask)) return INT_MASK_MATCH::TRUE;
+            case CAPTURE_COMPARE::REGISTER1: {
+                MT::Universal::Register<m_regs[m_startCCTL + 1]> cctl;
+                if (cctl.compare(mask)) return INT_MASK_MATCH::TRUE;
                 else
                     return INT_MASK_MATCH::FALSE;
+            }
+            default: break;
+        }
+
+        if constexpr (m_size >= m_maxTa3) {
+            switch (reg) {
+                case CAPTURE_COMPARE::REGISTER2: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 2]> cctl;
+                    if (cctl.compare(mask)) return INT_MASK_MATCH::TRUE;
+                    else
+                        return INT_MASK_MATCH::FALSE;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa5) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER3: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 3]> cctl;
+                    if (cctl.compare(mask)) return INT_MASK_MATCH::TRUE;
+                    else
+                        return INT_MASK_MATCH::FALSE;
+                }
+
+                case CAPTURE_COMPARE::REGISTER4: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 4]> cctl;
+                    if (cctl.compare(mask)) return INT_MASK_MATCH::TRUE;
+                    else
+                        return INT_MASK_MATCH::FALSE;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa7) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER5: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 5]> cctl;
+                    if (cctl.compare(mask)) return INT_MASK_MATCH::TRUE;
+                    else
+                        return INT_MASK_MATCH::FALSE;
+                }
+
+                case CAPTURE_COMPARE::REGISTER6: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 6]> cctl;
+                    if (cctl.compare(mask)) return INT_MASK_MATCH::TRUE;
+                    else
+                        return INT_MASK_MATCH::FALSE;
+                }
+                default: break;
+            }
         }
 
         return INT_MASK_MATCH::FALSE;
@@ -805,86 +1032,192 @@ struct CCTL0_1 {
 
 
     /**
-	* @ingroup groupFuncsMSP430TimerA
-	****************************************************************
-	* @brief  Clears the capture-compare interrupt flag
-	* @details
-	* Usage: \code {.cpp}
-	* using namespace MT::MSP430;
-	*
-	*  TIMERA::TA0 ta0;
-	*  ta0.clearCaptureCompareInterrupt(TIMERA::CAPTURE_COMPARE::REGISTER0); \endcode
-	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
-	****************************************************************
-	*/
+   	* @ingroup groupFuncsMSP430TimerA
+   	****************************************************************
+   	* @brief  Clears the capture-compare interrupt flag
+   	* @details
+   	* Usage: \code {.cpp}
+   	* using namespace MT::MSP430;
+   	*
+   	*  TIMERA::TA0 ta0;
+   	*  ta0.clearCaptureCompareInterrupt(TIMERA::CAPTURE_COMPARE::REGISTER0); \endcode
+   	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
+   	****************************************************************
+   	*/
     constexpr void clearCaptureCompareInterrupt(const TIMERA::CAPTURE_COMPARE reg) noexcept {
         clearCaptureCompareInterrupt(reg, TIMERA::INT::CAPTURE_INTERRUPT);
     }
 
 
     /**
-   	* @ingroup groupFuncsMSP430TimerA
-   	****************************************************************
-   	* @brief  Clears the capture-compare interrupt flag -> overload to clear specific flag
-   	* @details
-   	* Usage: \code {.cpp}
-   	* using namespace MT::MSP430;
-   	*
-   	*  TIMERA::TA0 ta0;
-   	*  ta0.clearCaptureCompareInterrupt(TIMERA::CAPTURE_COMPARE::REGISTER0, TIMERA::INT::CAPTURE_INTERRUPT | TIMERA::INT::CAPTURE_OVERFLOW); \endcode
-   	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
- 	*@param mask -> which flag(s) should be cleared -> use type TIMERA::INT
-   	****************************************************************
-   	*/
+	* @ingroup groupFuncsMSP430TimerA
+	****************************************************************
+	* @brief  Clears the capture-compare interrupt flag -> overload to clear specific flag
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430;
+	*
+	*  TIMERA::TA0 ta0;
+	*  ta0.clearCaptureCompareInterrupt(TIMERA::CAPTURE_COMPARE::REGISTER0, TIMERA::INT::CAPTURE_INTERRUPT | TIMERA::INT::CAPTURE_OVERFLOW); \endcode
+	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
+	*@param mask -> which flag(s) should be cleared -> use type TIMERA::INT
+	****************************************************************
+	*/
     constexpr void clearCaptureCompareInterrupt(const TIMERA::CAPTURE_COMPARE reg, const TIMERA::INT mask) noexcept {
 
         switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.clear(mask);
+            case CAPTURE_COMPARE::REGISTER0: {
+                MT::Universal::Register<m_regs[m_startCCTL]> cctl;
+                cctl.clear(mask);
                 return;
+            }
 
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.clear(mask);
+            case CAPTURE_COMPARE::REGISTER1: {
+                MT::Universal::Register<m_regs[m_startCCTL + 1]> cctl;
+                cctl.clear(mask);
                 return;
+            }
+            default: break;
+        }
+
+
+        if constexpr (m_size >= m_maxTa3) {
+            switch (reg) {
+                case CAPTURE_COMPARE::REGISTER2: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 2]> cctl;
+                    cctl.clear(mask);
+                    return;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa5) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER3: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 3]> cctl;
+                    cctl.clear(mask);
+                    return;
+                }
+
+                case CAPTURE_COMPARE::REGISTER4: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 4]> cctl;
+                    cctl.clear(mask);
+                    return;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa7) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER5: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 5]> cctl;
+                    cctl.clear(mask);
+                    return;
+                }
+
+                case CAPTURE_COMPARE::REGISTER6: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 6]> cctl;
+                    cctl.clear(mask);
+                    return;
+                }
+                default: break;
+            }
         }
     }
 
 
     /**
- 	* @ingroup groupFuncsMSP430TimerA
- 	****************************************************************
- 	* @brief  Initializes Capture Mode
- 	* @details
- 	* Usage: \code {.cpp}
- 	* using namespace MT::MSP430;
- 	*
- 	*  TIMERA::TA0 ta0;
- 	*
- 	*  constexpr initCapture param{
-    *    CAPTURE_COMPARE::REGISTER0,
-    *    CAPTURE_MODE::RISING_EDGE,
-    *    CAPTURE_INPUT::CCIXA,
-    *    CAPTURE::SYNCHRONOUS,
-    *    CAPTURE_COMPARE_INT::ENABLE,
-    *    COMPARE_OUTPUT::BITVALUE
-    *  };
- 	*
- 	* ta0.initCaptureMode(param); \endcode
- 	*@param param -> settings for this mode -> use type initCapture
- 	****************************************************************
- 	*/
+	* @ingroup groupFuncsMSP430TimerA
+	****************************************************************
+	* @brief  Initializes Capture Mode
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430;
+	*
+	*  TIMERA::TA0 ta0;
+	*
+	*  constexpr initCapture param{
+	*    CAPTURE_COMPARE::REGISTER0,
+	*    CAPTURE_MODE::RISING_EDGE,
+	*    CAPTURE_INPUT::CCIXA,
+	*    CAPTURE::SYNCHRONOUS,
+	*    CAPTURE_COMPARE_INT::ENABLE,
+	*    COMPARE_OUTPUT::BITVALUE
+	*  };
+	*
+	* ta0.initCaptureMode(param); \endcode
+	*@param param -> settings for this mode -> use type initCapture
+	****************************************************************
+	*/
     constexpr void initCaptureMode(const initCapture &param) noexcept {
 
         const auto cctlx = toUnderlyingType(param.mode) | toUnderlyingType(param.input) | toUnderlyingType(param.sync) | toUnderlyingType(param.int_en) | toUnderlyingType(param.out) | CAP;
 
         switch (param.reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.override(cctlx);
+            case CAPTURE_COMPARE::REGISTER0: {
+                MT::Universal::Register<m_regs[m_startCCTL]> cctl;
+                cctl.override(cctlx);
                 return;
+            }
 
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.override(cctlx);
+            case CAPTURE_COMPARE::REGISTER1: {
+                MT::Universal::Register<m_regs[m_startCCTL + 1]> cctl;
+                cctl.override(cctlx);
                 return;
+            }
+            default: break;
+        }
+
+
+        if constexpr (m_size >= m_maxTa3) {
+            switch (param.reg) {
+                case CAPTURE_COMPARE::REGISTER2: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 2]> cctl;
+                    cctl.override(cctlx);
+                    return;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa5) {
+            switch (param.reg) {
+
+                case CAPTURE_COMPARE::REGISTER3: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 3]> cctl;
+                    cctl.override(cctlx);
+                    return;
+                }
+
+                case CAPTURE_COMPARE::REGISTER4: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 4]> cctl;
+                    cctl.override(cctlx);
+                    return;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa7) {
+            switch (param.reg) {
+
+                case CAPTURE_COMPARE::REGISTER5: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 5]> cctl;
+                    cctl.override(cctlx);
+                    return;
+                }
+
+                case CAPTURE_COMPARE::REGISTER6: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 6]> cctl;
+                    cctl.override(cctlx);
+                    return;
+                }
+                default: break;
+            }
         }
     }
 
@@ -900,11 +1233,11 @@ struct CCTL0_1 {
 	*  TIMERA::TA0 ta0;
 	*
 	*  constexpr TIMERA::initCompare param {
-    *    TIMERA::CAPTURE_COMPARE::REGISTER0,
-    *    TIMERA::CAPTURE_COMPARE_INT::ENABLE,
-    *    TIMERA::COMPARE_OUTPUT::BITVALUE,
-    *    50000
-    * };
+	*    TIMERA::CAPTURE_COMPARE::REGISTER0,
+	*    TIMERA::CAPTURE_COMPARE_INT::ENABLE,
+	*    TIMERA::COMPARE_OUTPUT::BITVALUE,
+	*    50000
+	* };
 	*
 	* ta0.initCompareMode(param); \endcode
 	*@param param -> settings for this mode -> use type initCompare
@@ -915,145 +1248,87 @@ struct CCTL0_1 {
         const auto cctlx = toUnderlyingType(param.int_en) | toUnderlyingType(param.out);
 
         switch (param.reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.override(cctlx);
-                m_ccr0.override(param.compareValue);
+            case CAPTURE_COMPARE::REGISTER0: {
+                MT::Universal::Register<m_regs[m_startCCTL]> cctl;
+                cctl.override(cctlx);
+
+                MT::Universal::Register<m_regs[m_startCCR]> ccr;
+                ccr.override(param.compareValue);
                 return;
+            }
 
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.override(cctlx);
-                m_ccr1.override(param.compareValue);
+            case CAPTURE_COMPARE::REGISTER1: {
+                MT::Universal::Register<m_regs[m_startCCTL + 1]> cctl;
+                cctl.override(cctlx);
+
+                MT::Universal::Register<m_regs[m_startCCR + 1]> ccr;
+                ccr.override(param.compareValue);
                 return;
-        }
-    }
-
-
-    /**
-	* @ingroup groupFuncsMSP430TimerA
-	****************************************************************
-	* @brief  Get synchronized capture/compare input
-	* @details
-	* Usage: \code {.cpp}
-	* using namespace MT::MSP430;
-	*
-	*  TIMERA::TA0 ta0;
-	*
-	* if(ta0.getSynchronizedCaptureCompareInput(TIMERA::CAPTURE_COMPARE::REGISTER0, TIMERA::CAPTURE_COMPARE_READ_INPUT::SYNCED) == TIMERA::CAPTURE_COMPARE_INPUT::HIGH) doSomething(); \endcode
-	*
-	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
-	*@param sync -> if the synchronous or asynchronous input should be read -> use type TIMERA::CAPTURE_COMPARE_READ_INPUT
-	*@return if input is high or low -> CAPTURE_COMPARE_INPUT
-	****************************************************************
-	*/
-    [[nodiscard]] constexpr CAPTURE_COMPARE_INPUT getSynchronizedCaptureCompareInput(const TIMERA::CAPTURE_COMPARE reg, CAPTURE_COMPARE_READ_INPUT sync) noexcept {
-
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                if (m_cctl0.get() & toUnderlyingType(sync)) return CAPTURE_COMPARE_INPUT::HIGH;
-                else
-                    return CAPTURE_COMPARE_INPUT::LOW;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                if (m_cctl1.get() & toUnderlyingType(sync)) return CAPTURE_COMPARE_INPUT::HIGH;
-                else
-                    return CAPTURE_COMPARE_INPUT::LOW;
+            }
+            default: break;
         }
 
-        return CAPTURE_COMPARE_INPUT::LOW;
-    }
 
+        if constexpr (m_size >= m_maxTa3) {
+            switch (param.reg) {
+                case CAPTURE_COMPARE::REGISTER2: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 2]> cctl;
+                    cctl.override(cctlx);
 
-    /**
-	* @ingroup groupFuncsMSP430TimerA
-	****************************************************************
-	* @brief  Get output bit for output mode
-	* @details
-	* Usage: \code {.cpp}
-	* using namespace MT::MSP430;
-	*
-	*  TIMERA::TA0 ta0;
-	*
-	* if(ta0.getOutputForOutputModeOutBitValue(TIMERA::CAPTURE_COMPARE::REGISTER0) == TIMERA::COMPARE_OUT_BIT::HIGH) doSomething(); \endcode
-	*
-	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
-	*@return if input is high or low -> CAPTURE_COMPARE_INPUT
-	****************************************************************
-	*/
-    [[nodiscard]] constexpr COMPARE_OUT_BIT getOutputForOutputModeOutBitValue(const TIMERA::CAPTURE_COMPARE reg) noexcept {
-
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                if (m_cctl0.get() & OUT) return COMPARE_OUT_BIT::HIGH;
-                else
-                    return COMPARE_OUT_BIT::LOW;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                if (m_cctl1.get() & OUT) return COMPARE_OUT_BIT::HIGH;
-                else
-                    return COMPARE_OUT_BIT::LOW;
+                    MT::Universal::Register<m_regs[m_startCCR + 2]> ccr;
+                    ccr.override(param.compareValue);
+                    return;
+                }
+                default: break;
+            }
         }
 
-        return COMPARE_OUT_BIT::LOW;
-    }
+        if constexpr (m_size >= m_maxTa5) {
+            switch (param.reg) {
 
+                case CAPTURE_COMPARE::REGISTER3: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 3]> cctl;
+                    cctl.override(cctlx);
 
-    /**
-   	* @ingroup groupFuncsMSP430TimerA
-   	****************************************************************
-   	* @brief Get current capturecompare count
-   	* @details
-   	* Usage: \code {.cpp}
-   	* using namespace MT::MSP430;
-   	*
-   	* TIMERA::TA0 ta0;
-   	*
-   	* const uint16_t count = ta0.getCaptureCompareCount(TIMERA::CAPTURE_COMPARE::REGISTER0); \endcode
-   	*
-   	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
-   	*@return the current count value of the CCRx register
-   	****************************************************************
-   	*/
-    [[nodiscard]] constexpr uint16_t getCaptureCompareCount(const TIMERA::CAPTURE_COMPARE reg) noexcept {
+                    MT::Universal::Register<m_regs[m_startCCR + 3]> ccr;
+                    ccr.override(param.compareValue);
+                    return;
+                }
 
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                return m_ccr0.get();
+                case CAPTURE_COMPARE::REGISTER4: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 4]> cctl;
+                    cctl.override(cctlx);
 
-            case CAPTURE_COMPARE::REGISTER1:
-                return m_ccr1.get();
+                    MT::Universal::Register<m_regs[m_startCCR + 4]> ccr;
+                    ccr.override(param.compareValue);
+                    return;
+                }
+                default: break;
+            }
         }
-        return 0;
-    }
 
+        if constexpr (m_size >= m_maxTa7) {
+            switch (param.reg) {
 
-    /**
-	* @ingroup groupFuncsMSP430TimerA
-	****************************************************************
-	* @brief  Set output bit for output mode
-	* @details
-	* Usage: \code {.cpp}
-	* using namespace MT::MSP430;
-	*
-	*  TIMERA::TA0 ta0;
-	*  ta0.setOutputForOutputModeOutBitValue(TIMERA::CAPTURE_COMPARE::REGISTER0, TIMERA::COMPARE_OUT_BIT::HIGH); \endcode
-	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
-	*@param bit -> High or Low? -> use type COMPARE_OUT_BIT
-	****************************************************************
-	*/
-    constexpr void setOutputForOutputModeOutBitValue(const TIMERA::CAPTURE_COMPARE reg, const COMPARE_OUT_BIT bit) noexcept {
+                case CAPTURE_COMPARE::REGISTER5: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 5]> cctl;
+                    cctl.override(cctlx);
 
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                if (bit == COMPARE_OUT_BIT::HIGH) m_cctl0.set(OUT);
-                else
-                    m_cctl0.clear(OUT);
-                return;
+                    MT::Universal::Register<m_regs[m_startCCR + 5]> ccr;
+                    ccr.override(param.compareValue);
+                    return;
+                }
 
-            case CAPTURE_COMPARE::REGISTER1:
-                if (bit == COMPARE_OUT_BIT::HIGH) m_cctl1.set(OUT);
-                else
-                    m_cctl1.clear(OUT);
-                return;
+                case CAPTURE_COMPARE::REGISTER6: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 6]> cctl;
+                    cctl.override(cctlx);
+
+                    MT::Universal::Register<m_regs[m_startCCR + 6]> ccr;
+                    ccr.override(param.compareValue);
+                    return;
+                }
+                default: break;
+            }
         }
     }
 
@@ -1061,567 +1336,528 @@ struct CCTL0_1 {
     /**
    	* @ingroup groupFuncsMSP430TimerA
    	****************************************************************
-   	* @brief  Sets the output mode for the timer even the timer is already running
+   	* @brief  Get synchronized capture/compare input
    	* @details
    	* Usage: \code {.cpp}
    	* using namespace MT::MSP430;
    	*
    	*  TIMERA::TA0 ta0;
-   	*  ta0.setOutputMode(TIMERA::CAPTURE_COMPARE::REGISTER0, TIMERA::COMPARE_OUTPUT::RESET_SET); \endcode
+   	*
+   	* if(ta0.getSynchronizedCaptureCompareInput(TIMERA::CAPTURE_COMPARE::REGISTER0, TIMERA::CAPTURE_COMPARE_READ_INPUT::SYNCED) == TIMERA::CAPTURE_COMPARE_INPUT::HIGH) doSomething(); \endcode
    	*
    	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
-   	*@param out -> use type COMPARE_OUTPUT
+   	*@param sync -> if the synchronous or asynchronous input should be read -> use type TIMERA::CAPTURE_COMPARE_READ_INPUT
+   	*@return if input is high or low -> CAPTURE_COMPARE_INPUT
    	****************************************************************
    	*/
-    constexpr void setOutputMode(const TIMERA::CAPTURE_COMPARE reg, const COMPARE_OUTPUT out) noexcept {
-
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.set((m_cctl0.get() & ~(OUTMOD_7)) | toUnderlyingType(out));
-                return;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.set((m_cctl1.get() & ~(OUTMOD_7)) | toUnderlyingType(out));
-                return;
-        }
-    }
-};
-
-template<volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCTL2, volatile auto *TAXCCR0, volatile auto *TAXCCR1, volatile auto *TAXCCR2>
-struct CCTL0_2 {
-
-  private:
-    MT::Universal::Register<TAXCCTL0> m_cctl0{};
-    MT::Universal::Register<TAXCCTL1> m_cctl1{};
-    MT::Universal::Register<TAXCCTL2> m_cctl2{};
-    MT::Universal::Register<TAXCCR0>  m_ccr0{};
-    MT::Universal::Register<TAXCCR1>  m_ccr1{};
-    MT::Universal::Register<TAXCCR2>  m_ccr2{};
-
-  public:
-    constexpr void setCompareValue(const TIMERA::CAPTURE_COMPARE reg, const uint16_t compareValue) noexcept {
-
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_ccr0.override(compareValue);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                m_ccr1.override(compareValue);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                m_ccr2.override(compareValue);
-                return;
-        }
-    }
-
-    constexpr void enableCaptureCompareInterrupt(const TIMERA::CAPTURE_COMPARE reg) noexcept {
-
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.set(CCIE);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.set(CCIE);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                m_cctl2.set(CCIE);
-                return;
-        }
-    }
-
-    constexpr void disableCaptureCompareInterrupt(const TIMERA::CAPTURE_COMPARE reg) noexcept {
-
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.clear(CCIE);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.clear(CCIE);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                m_cctl2.clear(CCIE);
-                return;
-        }
-    }
-
-    [[nodiscard]] constexpr INT_MASK_MATCH getCaptureCompareInterruptStatus(const TIMERA::CAPTURE_COMPARE reg, const TIMERA::INT mask) noexcept {
-
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                if (m_cctl0.compare(mask)) return INT_MASK_MATCH::TRUE;
-                else
-                    return INT_MASK_MATCH::FALSE;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                if (m_cctl1.compare(mask)) return INT_MASK_MATCH::TRUE;
-                else
-                    return INT_MASK_MATCH::FALSE;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                if (m_cctl2.compare(mask)) return INT_MASK_MATCH::TRUE;
-                else
-                    return INT_MASK_MATCH::FALSE;
-        }
-
-        return INT_MASK_MATCH::FALSE;
-    }
-
-    constexpr void clearCaptureCompareInterrupt(const TIMERA::CAPTURE_COMPARE reg) noexcept {
-        clearCaptureCompareInterrupt(reg, TIMERA::INT::CAPTURE_INTERRUPT);
-    }
-
-    constexpr void clearCaptureCompareInterrupt(const TIMERA::CAPTURE_COMPARE reg, const TIMERA::INT mask) noexcept {
-
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.clear(mask);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.clear(mask);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                m_cctl2.clear(mask);
-                return;
-        }
-    }
-
-    constexpr void initCaptureMode(const initCapture &param) noexcept {
-
-        const auto cctlx = toUnderlyingType(param.mode) | toUnderlyingType(param.input) | toUnderlyingType(param.sync) | toUnderlyingType(param.int_en) | toUnderlyingType(param.out) | CAP;
-
-        switch (param.reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.override(cctlx);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.override(cctlx);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                m_cctl2.override(cctlx);
-                return;
-        }
-    }
-
-    constexpr void initCompareMode(const initCompare &param) noexcept {
-
-        const auto cctlx = toUnderlyingType(param.int_en) | toUnderlyingType(param.out);
-
-        switch (param.reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.override(cctlx);
-                m_ccr0.override(param.compareValue);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.override(cctlx);
-                m_ccr1.override(param.compareValue);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                m_cctl2.override(cctlx);
-                m_ccr2.override(param.compareValue);
-                return;
-        }
-    }
-
     [[nodiscard]] constexpr CAPTURE_COMPARE_INPUT getSynchronizedCaptureCompareInput(const TIMERA::CAPTURE_COMPARE reg, CAPTURE_COMPARE_READ_INPUT sync) noexcept {
 
         switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                if (m_cctl0.get() & toUnderlyingType(sync)) return CAPTURE_COMPARE_INPUT::HIGH;
+            case CAPTURE_COMPARE::REGISTER0: {
+                MT::Universal::Register<m_regs[m_startCCTL + 0]> cctl;
+                if (cctl.get() & toUnderlyingType(sync)) return CAPTURE_COMPARE_INPUT::HIGH;
                 else
                     return CAPTURE_COMPARE_INPUT::LOW;
+            }
 
-            case CAPTURE_COMPARE::REGISTER1:
-                if (m_cctl1.get() & toUnderlyingType(sync)) return CAPTURE_COMPARE_INPUT::HIGH;
+            case CAPTURE_COMPARE::REGISTER1: {
+                MT::Universal::Register<m_regs[m_startCCTL + 1]> cctl;
+                if (cctl.get() & toUnderlyingType(sync)) return CAPTURE_COMPARE_INPUT::HIGH;
                 else
                     return CAPTURE_COMPARE_INPUT::LOW;
+            }
+            default: break;
+        }
 
-            case CAPTURE_COMPARE::REGISTER2:
-                if (m_cctl2.get() & toUnderlyingType(sync)) return CAPTURE_COMPARE_INPUT::HIGH;
-                else
-                    return CAPTURE_COMPARE_INPUT::LOW;
+
+        if constexpr (m_size >= m_maxTa3) {
+            switch (reg) {
+                case CAPTURE_COMPARE::REGISTER2: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 2]> cctl;
+                    if (cctl.get() & toUnderlyingType(sync)) return CAPTURE_COMPARE_INPUT::HIGH;
+                    else
+                        return CAPTURE_COMPARE_INPUT::LOW;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa5) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER3: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 3]> cctl;
+                    if (cctl.get() & toUnderlyingType(sync)) return CAPTURE_COMPARE_INPUT::HIGH;
+                    else
+                        return CAPTURE_COMPARE_INPUT::LOW;
+                }
+
+                case CAPTURE_COMPARE::REGISTER4: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 4]> cctl;
+                    if (cctl.get() & toUnderlyingType(sync)) return CAPTURE_COMPARE_INPUT::HIGH;
+                    else
+                        return CAPTURE_COMPARE_INPUT::LOW;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa7) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER5: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 5]> cctl;
+                    if (cctl.get() & toUnderlyingType(sync)) return CAPTURE_COMPARE_INPUT::HIGH;
+                    else
+                        return CAPTURE_COMPARE_INPUT::LOW;
+                }
+
+                case CAPTURE_COMPARE::REGISTER6: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 6]> cctl;
+                    if (cctl.get() & toUnderlyingType(sync)) return CAPTURE_COMPARE_INPUT::HIGH;
+                    else
+                        return CAPTURE_COMPARE_INPUT::LOW;
+                }
+                default: break;
+            }
         }
 
         return CAPTURE_COMPARE_INPUT::LOW;
     }
 
+
+    /**
+   	* @ingroup groupFuncsMSP430TimerA
+   	****************************************************************
+   	* @brief  Get output bit for output mode
+   	* @details
+   	* Usage: \code {.cpp}
+   	* using namespace MT::MSP430;
+   	*
+   	*  TIMERA::TA0 ta0;
+   	*
+   	* if(ta0.getOutputForOutputModeOutBitValue(TIMERA::CAPTURE_COMPARE::REGISTER0) == TIMERA::COMPARE_OUT_BIT::HIGH) doSomething(); \endcode
+   	*
+   	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
+   	*@return if input is high or low -> CAPTURE_COMPARE_INPUT
+   	****************************************************************
+   	*/
     [[nodiscard]] constexpr COMPARE_OUT_BIT getOutputForOutputModeOutBitValue(const TIMERA::CAPTURE_COMPARE reg) noexcept {
 
         switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                if (m_cctl0.get() & OUT) return COMPARE_OUT_BIT::HIGH;
+            case CAPTURE_COMPARE::REGISTER0: {
+                MT::Universal::Register<m_regs[m_startCCTL + 0]> cctl;
+                if (cctl.get() & OUT) return COMPARE_OUT_BIT::HIGH;
                 else
                     return COMPARE_OUT_BIT::LOW;
+            }
 
-            case CAPTURE_COMPARE::REGISTER1:
-                if (m_cctl1.get() & OUT) return COMPARE_OUT_BIT::HIGH;
+            case CAPTURE_COMPARE::REGISTER1: {
+                MT::Universal::Register<m_regs[m_startCCTL + 1]> cctl;
+                if (cctl.get() & OUT) return COMPARE_OUT_BIT::HIGH;
                 else
                     return COMPARE_OUT_BIT::LOW;
+            }
+            default: break;
+        }
 
-            case CAPTURE_COMPARE::REGISTER2:
-                if (m_cctl2.get() & OUT) return COMPARE_OUT_BIT::HIGH;
-                else
-                    return COMPARE_OUT_BIT::LOW;
+
+        if constexpr (m_size >= m_maxTa3) {
+            switch (reg) {
+                case CAPTURE_COMPARE::REGISTER2: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 2]> cctl;
+                    if (cctl.get() & OUT) return COMPARE_OUT_BIT::HIGH;
+                    else
+                        return COMPARE_OUT_BIT::LOW;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa5) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER3: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 3]> cctl;
+                    if (cctl.get() & OUT) return COMPARE_OUT_BIT::HIGH;
+                    else
+                        return COMPARE_OUT_BIT::LOW;
+                }
+
+                case CAPTURE_COMPARE::REGISTER4: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 4]> cctl;
+                    if (cctl.get() & OUT) return COMPARE_OUT_BIT::HIGH;
+                    else
+                        return COMPARE_OUT_BIT::LOW;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa7) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER5: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 5]> cctl;
+                    if (cctl.get() & OUT) return COMPARE_OUT_BIT::HIGH;
+                    else
+                        return COMPARE_OUT_BIT::LOW;
+                }
+
+                case CAPTURE_COMPARE::REGISTER6: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 6]> cctl;
+                    if (cctl.get() & OUT) return COMPARE_OUT_BIT::HIGH;
+                    else
+                        return COMPARE_OUT_BIT::LOW;
+                }
+                default: break;
+            }
         }
 
         return COMPARE_OUT_BIT::LOW;
     }
 
+
+    /**
+	* @ingroup groupFuncsMSP430TimerA
+	****************************************************************
+	* @brief Get current capturecompare count
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430;
+	*
+	* TIMERA::TA0 ta0;
+	*
+	* const uint16_t count = ta0.getCaptureCompareCount(TIMERA::CAPTURE_COMPARE::REGISTER0); \endcode
+	*
+	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
+	*@return the current count value of the CCRx register
+	****************************************************************
+	*/
     [[nodiscard]] constexpr uint16_t getCaptureCompareCount(const TIMERA::CAPTURE_COMPARE reg) noexcept {
 
         switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                return m_ccr0.get();
+            case CAPTURE_COMPARE::REGISTER0: {
+                MT::Universal::Register<m_regs[m_startCCR]> ccr;
+                return ccr.get();
+            }
 
-            case CAPTURE_COMPARE::REGISTER1:
-                return m_ccr1.get();
+            case CAPTURE_COMPARE::REGISTER1: {
+                MT::Universal::Register<m_regs[m_startCCR + 1]> ccr;
+                return ccr.get();
+            }
+            default: break;
+        }
 
-            case CAPTURE_COMPARE::REGISTER2:
-                return m_ccr2.get();
+        if constexpr (m_size >= m_maxTa3) {
+            switch (reg) {
+                case CAPTURE_COMPARE::REGISTER2: {
+                    MT::Universal::Register<m_regs[m_startCCR + 2]> ccr;
+                    return ccr.get();
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa5) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER3: {
+                    MT::Universal::Register<m_regs[m_startCCR + 3]> ccr;
+                    return ccr.get();
+                }
+
+                case CAPTURE_COMPARE::REGISTER4: {
+                    MT::Universal::Register<m_regs[m_startCCR + 4]> ccr;
+                    return ccr.get();
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa7) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER5: {
+                    MT::Universal::Register<m_regs[m_startCCR + 5]> ccr;
+                    return ccr.get();
+                }
+
+                case CAPTURE_COMPARE::REGISTER6: {
+                    MT::Universal::Register<m_regs[m_startCCR + 6]> ccr;
+                    return ccr.get();
+                }
+                default: break;
+            }
         }
         return 0;
     }
 
+
+    /**
+   	* @ingroup groupFuncsMSP430TimerA
+   	****************************************************************
+   	* @brief  Set output bit for output mode
+   	* @details
+   	* Usage: \code {.cpp}
+   	* using namespace MT::MSP430;
+   	*
+   	*  TIMERA::TA0 ta0;
+   	*  ta0.setOutputForOutputModeOutBitValue(TIMERA::CAPTURE_COMPARE::REGISTER0, TIMERA::COMPARE_OUT_BIT::HIGH); \endcode
+   	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
+   	*@param bit -> High or Low? -> use type COMPARE_OUT_BIT
+   	****************************************************************
+   	*/
     constexpr void setOutputForOutputModeOutBitValue(const TIMERA::CAPTURE_COMPARE reg, const COMPARE_OUT_BIT bit) noexcept {
 
         switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                if (bit == COMPARE_OUT_BIT::HIGH) m_cctl0.set(OUT);
+            case CAPTURE_COMPARE::REGISTER0: {
+                MT::Universal::Register<m_regs[m_startCCTL]> cctl;
+                if (bit == COMPARE_OUT_BIT::HIGH) cctl.set(OUT);
                 else
-                    m_cctl0.clear(OUT);
+                    cctl.clear(OUT);
                 return;
+            }
 
-            case CAPTURE_COMPARE::REGISTER1:
-                if (bit == COMPARE_OUT_BIT::HIGH) m_cctl1.set(OUT);
+            case CAPTURE_COMPARE::REGISTER1: {
+                MT::Universal::Register<m_regs[m_startCCTL + 1]> cctl;
+                if (bit == COMPARE_OUT_BIT::HIGH) cctl.set(OUT);
                 else
-                    m_cctl1.clear(OUT);
+                    cctl.clear(OUT);
                 return;
+            }
+            default: break;
+        }
 
-            case CAPTURE_COMPARE::REGISTER2:
-                if (bit == COMPARE_OUT_BIT::HIGH) m_cctl2.set(OUT);
-                else
-                    m_cctl2.clear(OUT);
-                return;
+
+        if constexpr (m_size >= m_maxTa3) {
+            switch (reg) {
+                case CAPTURE_COMPARE::REGISTER2: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 2]> cctl;
+                    if (bit == COMPARE_OUT_BIT::HIGH) cctl.set(OUT);
+                    else
+                        cctl.clear(OUT);
+                    return;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa5) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER3: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 3]> cctl;
+                    if (bit == COMPARE_OUT_BIT::HIGH) cctl.set(OUT);
+                    else
+                        cctl.clear(OUT);
+                    return;
+                }
+
+                case CAPTURE_COMPARE::REGISTER4: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 4]> cctl;
+                    if (bit == COMPARE_OUT_BIT::HIGH) cctl.set(OUT);
+                    else
+                        cctl.clear(OUT);
+                    return;
+                }
+                default: break;
+            }
+        }
+
+        if constexpr (m_size >= m_maxTa7) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER5: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 5]> cctl;
+                    if (bit == COMPARE_OUT_BIT::HIGH) cctl.set(OUT);
+                    else
+                        cctl.clear(OUT);
+                    return;
+                }
+
+                case CAPTURE_COMPARE::REGISTER6: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 6]> cctl;
+                    if (bit == COMPARE_OUT_BIT::HIGH) cctl.set(OUT);
+                    else
+                        cctl.clear(OUT);
+                    return;
+                }
+                default: break;
+            }
         }
     }
 
+
+    /**
+	* @ingroup groupFuncsMSP430TimerA
+	****************************************************************
+	* @brief  Sets the output mode for the timer even the timer is already running
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430;
+	*
+	*  TIMERA::TA0 ta0;
+	*  ta0.setOutputMode(TIMERA::CAPTURE_COMPARE::REGISTER0, TIMERA::COMPARE_OUTPUT::RESET_SET); \endcode
+	*
+	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
+	*@param out -> use type COMPARE_OUTPUT
+	****************************************************************
+	*/
     constexpr void setOutputMode(const TIMERA::CAPTURE_COMPARE reg, const COMPARE_OUTPUT out) noexcept {
 
         switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.set((m_cctl0.get() & ~(OUTMOD_7)) | toUnderlyingType(out));
+            case CAPTURE_COMPARE::REGISTER0: {
+                MT::Universal::Register<m_regs[m_startCCTL]> cctl;
+                cctl.override((cctl.get() & ~(OUTMOD_7)) | toUnderlyingType(out));
                 return;
+            }
 
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.set((m_cctl1.get() & ~(OUTMOD_7)) | toUnderlyingType(out));
+            case CAPTURE_COMPARE::REGISTER1: {
+                MT::Universal::Register<m_regs[m_startCCTL + 1]> cctl;
+                cctl.override((cctl.get() & ~(OUTMOD_7)) | toUnderlyingType(out));
                 return;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                m_cctl2.set((m_cctl2.get() & ~(OUTMOD_7)) | toUnderlyingType(out));
-                return;
+            }
+            default: break;
         }
-    }
-};
-
-template<volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCTL2, volatile auto *TAXCCTL3, volatile auto *TAXCCTL4, volatile auto *TAXCCR0, volatile auto *TAXCCR1, volatile auto *TAXCCR2, volatile auto *TAXCCR3, volatile auto *TAXCCR4>
-struct CCTL0_4 {
-
-  private:
-    MT::Universal::Register<TAXCCTL0> m_cctl0{};
-    MT::Universal::Register<TAXCCTL1> m_cctl1{};
-    MT::Universal::Register<TAXCCTL2> m_cctl2{};
-    MT::Universal::Register<TAXCCTL3> m_cctl3{};
-    MT::Universal::Register<TAXCCTL4> m_cctl4{};
-    MT::Universal::Register<TAXCCR0>  m_ccr0{};
-    MT::Universal::Register<TAXCCR1>  m_ccr1{};
-    MT::Universal::Register<TAXCCR2>  m_ccr2{};
-    MT::Universal::Register<TAXCCR3>  m_ccr3{};
-    MT::Universal::Register<TAXCCR4>  m_ccr4{};
 
 
-  public:
-    constexpr void setCompareValue(const TIMERA::CAPTURE_COMPARE reg, const uint16_t compareValue) noexcept {
-
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_ccr0.override(compareValue);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                m_ccr1.override(compareValue);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                m_ccr2.override(compareValue);
-                return;
+        if constexpr (m_size >= m_maxTa3) {
+            switch (reg) {
+                case CAPTURE_COMPARE::REGISTER2: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 2]> cctl;
+                    cctl.override((cctl.get() & ~(OUTMOD_7)) | toUnderlyingType(out));
+                    return;
+                }
+                default: break;
+            }
         }
-    }
 
-    constexpr void enableCaptureCompareInterrupt(const TIMERA::CAPTURE_COMPARE reg) noexcept {
+        if constexpr (m_size >= m_maxTa5) {
+            switch (reg) {
 
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.set(CCIE);
-                return;
+                case CAPTURE_COMPARE::REGISTER3: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 3]> cctl;
+                    cctl.override((cctl.get() & ~(OUTMOD_7)) | toUnderlyingType(out));
+                    return;
+                }
 
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.set(CCIE);
-                return;
+                case CAPTURE_COMPARE::REGISTER4: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 4]> cctl;
+                    cctl.override((cctl.get() & ~(OUTMOD_7)) | toUnderlyingType(out));
+                    return;
+                }
+                default: break;
+            }
+        }
 
-            case CAPTURE_COMPARE::REGISTER2:
-                m_cctl2.set(CCIE);
-                return;
+        if constexpr (m_size >= m_maxTa7) {
+            switch (reg) {
+
+                case CAPTURE_COMPARE::REGISTER5: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 5]> cctl;
+                    cctl.override((cctl.get() & ~(OUTMOD_7)) | toUnderlyingType(out));
+                    return;
+                }
+
+                case CAPTURE_COMPARE::REGISTER6: {
+                    MT::Universal::Register<m_regs[m_startCCTL + 6]> cctl;
+                    cctl.override((cctl.get() & ~(OUTMOD_7)) | toUnderlyingType(out));
+                    return;
+                }
+                default: break;
+            }
         }
     }
 
-    constexpr void disableCaptureCompareInterrupt(const TIMERA::CAPTURE_COMPARE reg) noexcept {
 
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.clear(CCIE);
-                return;
+    /**
+	* @ingroup groupFuncsMSP430TimerA
+	****************************************************************
+	* @brief  Generate a PWM with timer running in up mode
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430;
+	*
+	*  TIMERA::TA0 ta0;
+	*
+	* constexpr TIMERA::initPWM param{
+	*	 CLOCKSOURCE::SMCLK,
+    *    CLOCK_DIV::DIV1,
+    *    32767,
+    *    CAPTURE_COMPARE::REGISTER0,
+    *    COMPARE_OUTPUT::RESET_SET,
+    *    1600
+	* };
+	*
+	* ta0.outputPWM(param); \endcode
+	*@param param -> settings for this mode -> use type initPWM
+	****************************************************************
+	*/
+    constexpr void outputPWM(const initPWM &param) noexcept {
 
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.clear(CCIE);
-                return;
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
+        m_ex0.override((toUnderlyingType(param.div)) & 0x0007);
+#endif
+        m_ctl.override(toUnderlyingType(param.src) | toUnderlyingType(MODE::UP) | TACLR | ((toUnderlyingType(param.div) >> 3) << 6));
 
-            case CAPTURE_COMPARE::REGISTER2:
-                m_cctl2.clear(CCIE);
-                return;
-        }
-    }
+        setCompareValue(CAPTURE_COMPARE::REGISTER0, param.timerPeriod);
 
-    [[nodiscard]] constexpr INT_MASK_MATCH getCaptureCompareInterruptStatus(const TIMERA::CAPTURE_COMPARE reg, const TIMERA::INT mask) noexcept {
+        MT::Universal::Register<m_regs[m_startCCTL]> cctl0;
+        cctl0.clear(CCIE | OUTMOD_7);
 
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                if (m_cctl0.compare(mask)) return INT_MASK_MATCH::TRUE;
-                else
-                    return INT_MASK_MATCH::FALSE;
+        setOutputMode(param.reg, param.out);
+        setCompareValue(param.reg, param.dutyCycle);
+    };
+};// namespace MT::MSP430::TIMERA::Internal
 
-            case CAPTURE_COMPARE::REGISTER1:
-                if (m_cctl1.compare(mask)) return INT_MASK_MATCH::TRUE;
-                else
-                    return INT_MASK_MATCH::FALSE;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                if (m_cctl2.compare(mask)) return INT_MASK_MATCH::TRUE;
-                else
-                    return INT_MASK_MATCH::FALSE;
-        }
-
-        return INT_MASK_MATCH::FALSE;
-    }
-
-    constexpr void clearCaptureCompareInterrupt(const TIMERA::CAPTURE_COMPARE reg) noexcept {
-        clearCaptureCompareInterrupt(reg, TIMERA::INT::CAPTURE_INTERRUPT);
-    }
-
-    constexpr void clearCaptureCompareInterrupt(const TIMERA::CAPTURE_COMPARE reg, const TIMERA::INT mask) noexcept {
-
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.clear(mask);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.clear(mask);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                m_cctl2.clear(mask);
-                return;
-        }
-    }
-
-    constexpr void initCaptureMode(const initCapture &param) noexcept {
-
-        const auto cctlx = toUnderlyingType(param.mode) | toUnderlyingType(param.input) | toUnderlyingType(param.sync) | toUnderlyingType(param.int_en) | toUnderlyingType(param.out) | CAP;
-
-        switch (param.reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.override(cctlx);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.override(cctlx);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                m_cctl2.override(cctlx);
-                return;
-        }
-    }
-
-    constexpr void initCompareMode(const initCompare &param) noexcept {
-
-        const auto cctlx = toUnderlyingType(param.int_en) | toUnderlyingType(param.out);
-
-        switch (param.reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.override(cctlx);
-                m_ccr0.override(param.compareValue);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.override(cctlx);
-                m_ccr1.override(param.compareValue);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                m_cctl2.override(cctlx);
-                m_ccr2.override(param.compareValue);
-                return;
-        }
-    }
-
-    [[nodiscard]] constexpr CAPTURE_COMPARE_INPUT getSynchronizedCaptureCompareInput(const TIMERA::CAPTURE_COMPARE reg, CAPTURE_COMPARE_READ_INPUT sync) noexcept {
-
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                if (m_cctl0.get() & toUnderlyingType(sync)) return CAPTURE_COMPARE_INPUT::HIGH;
-                else
-                    return CAPTURE_COMPARE_INPUT::LOW;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                if (m_cctl1.get() & toUnderlyingType(sync)) return CAPTURE_COMPARE_INPUT::HIGH;
-                else
-                    return CAPTURE_COMPARE_INPUT::LOW;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                if (m_cctl2.get() & toUnderlyingType(sync)) return CAPTURE_COMPARE_INPUT::HIGH;
-                else
-                    return CAPTURE_COMPARE_INPUT::LOW;
-        }
-
-        return CAPTURE_COMPARE_INPUT::LOW;
-    }
-
-    [[nodiscard]] constexpr COMPARE_OUT_BIT getOutputForOutputModeOutBitValue(const TIMERA::CAPTURE_COMPARE reg) noexcept {
-
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                if (m_cctl0.get() & OUT) return COMPARE_OUT_BIT::HIGH;
-                else
-                    return COMPARE_OUT_BIT::LOW;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                if (m_cctl1.get() & OUT) return COMPARE_OUT_BIT::HIGH;
-                else
-                    return COMPARE_OUT_BIT::LOW;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                if (m_cctl2.get() & OUT) return COMPARE_OUT_BIT::HIGH;
-                else
-                    return COMPARE_OUT_BIT::LOW;
-        }
-
-        return COMPARE_OUT_BIT::LOW;
-    }
-
-    [[nodiscard]] constexpr uint16_t getCaptureCompareCount(const TIMERA::CAPTURE_COMPARE reg) noexcept {
-
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                return m_ccr0.get();
-
-            case CAPTURE_COMPARE::REGISTER1:
-                return m_ccr1.get();
-
-            case CAPTURE_COMPARE::REGISTER2:
-                return m_ccr2.get();
-        }
-        return 0;
-    }
-
-    constexpr void setOutputForOutputModeOutBitValue(const TIMERA::CAPTURE_COMPARE reg, const COMPARE_OUT_BIT bit) noexcept {
-
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                if (bit == COMPARE_OUT_BIT::HIGH) m_cctl0.set(OUT);
-                else
-                    m_cctl0.clear(OUT);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                if (bit == COMPARE_OUT_BIT::HIGH) m_cctl1.set(OUT);
-                else
-                    m_cctl1.clear(OUT);
-                return;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                if (bit == COMPARE_OUT_BIT::HIGH) m_cctl2.set(OUT);
-                else
-                    m_cctl2.clear(OUT);
-                return;
-        }
-    }
-
-    constexpr void setOutputMode(const TIMERA::CAPTURE_COMPARE reg, const COMPARE_OUTPUT out) noexcept {
-
-        switch (reg) {
-            case CAPTURE_COMPARE::REGISTER0:
-                m_cctl0.set((m_cctl0.get() & ~(OUTMOD_7)) | toUnderlyingType(out));
-                return;
-
-            case CAPTURE_COMPARE::REGISTER1:
-                m_cctl1.set((m_cctl1.get() & ~(OUTMOD_7)) | toUnderlyingType(out));
-                return;
-
-            case CAPTURE_COMPARE::REGISTER2:
-                m_cctl2.set((m_cctl2.get() & ~(OUTMOD_7)) | toUnderlyingType(out));
-                return;
-        }
-    }
-};
 
 #if not defined(__MSP430_HAS_MSP430I_CPU__)
 template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXEX0, volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCR0, volatile auto *TAXCCR1>
 struct TxA2 : Base<TAXCTL, TAXR, TAXCCTL0, TAXCCR0, TAXEX0>
-  , CCTL0_1<TAXCCTL0, TAXCCTL1, TAXCCR0, TAXCCR1> {};
+  , CCTLx<TAXCTL, TAXEX0, decltype(TAXCCTL0), TAXCCTL0, TAXCCTL1, TAXCCR0, TAXCCR1> {};
 #else
 template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCTL2, volatile auto *TAXCCR0, volatile auto *TAXCCR1, volatile auto *TAXCCR2>
 struct TxA2 : Base<TAXCTL, TAXR, TAXCCTL0, TAXCCR0>
-  , CCTL0_1<TAXCCTL0, TAXCCTL1, TAXCCR0, TAXCCR1> {};
+  , CCTLx<TAXCTL, decltype(TAXCCTL0), TAXCCTL0, TAXCCTL1, TAXCCR0, TAXCCR1> {};
 #endif
+
 
 #if not defined(__MSP430_HAS_MSP430I_CPU__)
 template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXEX0, volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCTL2, volatile auto *TAXCCR0, volatile auto *TAXCCR1, volatile auto *TAXCCR2>
 struct TxA3 : Base<TAXCTL, TAXR, TAXCCTL0, TAXCCR0, TAXEX0>
-  , CCTL0_2<TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2> {};
+  , CCTLx<TAXCTL, TAXEX0, decltype(TAXCCTL0), TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2> {};
 #else
 template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCTL2, volatile auto *TAXCCR0, volatile auto *TAXCCR1, volatile auto *TAXCCR2>
 struct TxA3 : Base<TAXCTL, TAXR, TAXCCTL0, TAXCCR0>
-  , CCTL0_2<TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2> {};
+  , CCTLx<TAXCTL, decltype(TAXCCTL0), TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCR0, TAXCCR1, TAXCCR2> {};
 #endif
 
 #if not defined(__MSP430_HAS_MSP430I_CPU__)
 template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXEX0, volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCTL2, volatile auto *TAXCCTL3, volatile auto *TAXCCTL4, volatile auto *TAXCCR0, volatile auto *TAXCCR1, volatile auto *TAXCCR2, volatile auto *TAXCCR3, volatile auto *TAXCCR4>
 struct TxA5 : Base<TAXCTL, TAXR, TAXCCTL0, TAXCCR0, TAXEX0>
-  , CCTL0_4<TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCTL3, TAXCCTL4, TAXCCR0, TAXCCR1, TAXCCR2, TAXCCR3, TAXCCR4> {};
+  , CCTLx<TAXCTL, TAXEX0, decltype(TAXCCTL0), TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCTL3, TAXCCTL4, TAXCCR0, TAXCCR1, TAXCCR2, TAXCCR3, TAXCCR4> {};
 #else
 template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCTL2, volatile auto *TAXCCTL3, volatile auto *TAXCCR0, volatile auto *TAXCCR1, volatile auto *TAXCCR2, volatile auto *TAXCCR3>
 struct TxA5 : Base<TAXCTL, TAXR, TAXCCTL0, TAXCCR0>
-  , CCTL0_4<TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCTL3, TAXCCTL4, TAXCCR0, TAXCCR1, TAXCCR2, TAXCCR3, TAXCCR4> {};
+  , CCTLx<TAXCTL, decltype(TAXCCTL0), TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCTL3, TAXCCTL4, TAXCCR0, TAXCCR1, TAXCCR2, TAXCCR3, TAXCCR4> {};
 #endif
 
+
+#if not defined(__MSP430_HAS_MSP430I_CPU__)
+template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXEX0, volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCTL2, volatile auto *TAXCCTL3, volatile auto *TAXCCTL4, volatile auto *TAXCCTL5, volatile auto *TAXCCTL6, volatile auto *TAXCCR0, volatile auto *TAXCCR1, volatile auto *TAXCCR2, volatile auto *TAXCCR3, volatile auto *TAXCCR4, volatile auto *TAXCCR5, volatile auto *TAXCCR6>
+struct TxA7 : Base<TAXCTL, TAXR, TAXCCTL0, TAXCCR0, TAXEX0>
+  , CCTLx<TAXCTL, TAXEX0, decltype(TAXCCTL0), TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCTL3, TAXCCTL4, TAXCCTL5, TAXCCTL6, TAXCCR0, TAXCCR1, TAXCCR2, TAXCCR3, TAXCCR4, TAXCCR5, TAXCCR6> {};
+#else
+template<volatile auto *TAXCTL, volatile auto *TAXR, volatile auto *TAXCCTL0, volatile auto *TAXCCTL1, volatile auto *TAXCCTL2, volatile auto *TAXCCTL3, volatile auto *TAXCCR0, volatile auto *TAXCCR1, volatile auto *TAXCCR2, volatile auto *TAXCCR3>
+struct TxA7 : Base<TAXCTL, TAXR, TAXCCTL0, TAXCCR0>
+  , CCTLx<TAXCTL, decltype(TAXCCTL0), TAXCCTL0, TAXCCTL1, TAXCCTL2, TAXCCTL3, TAXCCTL4, TAXCCTL5, TAXCCTL6, TAXCCR0, TAXCCR1, TAXCCR2, TAXCCR3, TAXCCR4, TAXCCR5, TAXCCR6> {};
+#endif
 
 }// namespace MT::MSP430::TIMERA::Internal
 
 
 namespace MT::MSP430::TIMERA {
-
 
 #if not defined(__MSP430_HAS_MSP430I_CPU__)
 #if defined(__MSP430_HAS_T0A2__)
@@ -1631,51 +1867,73 @@ using TA0 = Internal::TxA3<&TA0CTL, &TA0R, &TA0EX0, &TA0CCTL0, &TA0CCTL1, &TA0CC
 #elif defined(__MSP430_HAS_T0A5__)
 using TA0 = Internal::TxA5<&TA0CTL, &TA0R, &TA0EX0, &TA0CCTL0, &TA0CCTL1, &TA0CCTL2, &TA0CCTL3, &TA0CCTL4, &TA0CCR0, &TA0CCR1, &TA0CCR2, &TA0CCR3, &TA0CCR4>;
 #elif defined(__MSP430_HAS_T0A7__)
+using TA0 = Internal::TxA7<&TA0CTL, &TA0R, &TA0EX0, &TA0CCTL0, &TA0CCTL1, &TA0CCTL2, &TA0CCTL3, &TA0CCTL4, &TA0CCTL5, &TA0CCTL6, &TA0CCR0, &TA0CCR1, &TA0CCR2, &TA0CCR3, &TA0CCR4, &TA0CCR5, &TA0CCR6>;
 #endif
 #else
-#if defined(__MSP430_HAS_T3A2__)
-#elif defined(__MSP430_HAS_T3A3__)
+#if defined(__MSP430_HAS_T0A2__)
+using TA0 = Internal::TxA2<&TA0CTL, &TA0R, &TA0CCTL0, &TA0CCTL1, &TA0CCR0, &TA0CCR1>;
+#elif defined(__MSP430_HAS_T0A3__)
+using TA0 = Internal::TxA3<&TA0CTL, &TA0R, &TA0CCTL0, &TA0CCTL1, &TA0CCTL2, &TA0CCR0, &TA0CCR1, &TA0CCR2>;
 #endif
 #endif
 
 
 #if not defined(__MSP430_HAS_MSP430I_CPU__)
 #if defined(__MSP430_HAS_T1A2__)
+using TA1 = Internal::TxA2<&TA1CTL, &TA1R, &TA1EX0, &TA1CCTL0, &TA1CCTL1, &TA1CCR0, &TA1CCR1>;
 #elif defined(__MSP430_HAS_T1A3__)
+using TA1 = Internal::TxA3<&TA1CTL, &TA1R, &TA1EX0, &TA1CCTL0, &TA1CCTL1, &TA1CCTL2, &TA1CCR0, &TA1CCR1, &TA1CCR2>;
 #elif defined(__MSP430_HAS_T1A5__)
+using TA1 = Internal::TxA5<&TA1CTL, &TA1R, &TA1EX0, &TA1CCTL0, &TA1CCTL1, &TA1CCTL2, &TA1CCTL3, &TA1CCTL4, &TA1CCR0, &TA1CCR1, &TA1CCR2, &TA1CCR3, &TA1CCR4>;
 #elif defined(__MSP430_HAS_T1A7__)
+using TA1 = Internal::TxA7<&TA1CTL, &TA1R, &TA1EX0, &TA1CCTL0, &TA1CCTL1, &TA1CCTL2, &TA1CCTL3, &TA1CCTL4, &TA1CCTL5, &TA1CCTL6, &TA1CCR0, &TA1CCR1, &TA1CCR2, &TA1CCR3, &TA1CCR4, &TA1CCR5, &TA1CCR6>;
 #endif
 #else
-#if defined(__MSP430_HAS_T3A2__)
-#elif defined(__MSP430_HAS_T3A3__)
+#if defined(__MSP430_HAS_T1A2__)
+using TA1 = Internal::TxA2<&TA1CTL, &TA1R, &TA1CCTL0, &TA1CCTL1, &TA1CCR0, &TA1CCR1>;
+#elif defined(__MSP430_HAS_T1A3__)
+using TA1 = Internal::TxA3<&TA1CTL, &TA1R, &TA1CCTL0, &TA1CCTL1, &TA1CCTL2, &TA1CCR0, &TA1CCR1, &TA1CCR2>;
 #endif
 #endif
 
 
 #if not defined(__MSP430_HAS_MSP430I_CPU__)
 #if defined(__MSP430_HAS_T2A2__)
+using TA2 = Internal::TxA2<&TA2CTL, &TA2R, &TA2EX0, &TA2CCTL0, &TA2CCTL1, &TA2CCR0, &TA2CCR1>;
 #elif defined(__MSP430_HAS_T2A3__)
+using TA2 = Internal::TxA3<&TA2CTL, &TA2R, &TA2EX0, &TA2CCTL0, &TA2CCTL1, &TA2CCTL2, &TA2CCR0, &TA2CCR1, &TA2CCR2>;
 #elif defined(__MSP430_HAS_T2A5__)
+using TA2 = Internal::TxA5<&TA2CTL, &TA2R, &TA2EX0, &TA2CCTL0, &TA2CCTL1, &TA2CCTL2, &TA2CCTL3, &TA2CCTL4, &TA2CCR0, &TA2CCR1, &TA2CCR2, &TA2CCR3, &TA2CCR4>;
 #elif defined(__MSP430_HAS_T2A7__)
+using TA2 = Internal::TxA7<&TA2CTL, &TA2R, &TA2EX0, &TA2CCTL0, &TA2CCTL1, &TA2CCTL2, &TA2CCTL3, &TA2CCTL4, &TA2CCTL5, &TA2CCTL6, &TA2CCR0, &TA2CCR1, &TA2CCR2, &TA2CCR3, &TA2CCR4, &TA2CCR5, &TA2CCR6>;
 #endif
 #else
-#if defined(__MSP430_HAS_T3A2__)
-#elif defined(__MSP430_HAS_T3A3__)
+#if defined(__MSP430_HAS_T2A2__)
+using TA2 = Internal::TxA2<&TA2CTL, &TA2R, &TA2CCTL0, &TA2CCTL1, &TA2CCR0, &TA2CCR1>;
+#elif defined(__MSP430_HAS_T2A3__)
+using TA2 = Internal::TxA3<&TA2CTL, &TA2R, &TA2CCTL0, &TA2CCTL1, &TA2CCTL2, &TA2CCR0, &TA2CCR1, &TA2CCR2>;
 #endif
 #endif
 
 
 #if not defined(__MSP430_HAS_MSP430I_CPU__)
 #if defined(__MSP430_HAS_T3A2__)
+using TA3 = Internal::TxA2<&TA3CTL, &TA3R, &TA3EX0, &TA3CCTL0, &TA3CCTL1, &TA3CCR0, &TA3CCR1>;
 #elif defined(__MSP430_HAS_T3A3__)
+using TA3 = Internal::TxA3<&TA3CTL, &TA3R, &TA3EX0, &TA3CCTL0, &TA3CCTL1, &TA3CCTL2, &TA3CCR0, &TA3CCR1, &TA3CCR2>;
 #elif defined(__MSP430_HAS_T3A5__)
+using TA3 = Internal::TxA5<&TA3CTL, &TA3R, &TA3EX0, &TA3CCTL0, &TA3CCTL1, &TA3CCTL2, &TA3CCTL3, &TA3CCTL4, &TA3CCR0, &TA3CCR1, &TA3CCR2, &TA3CCR3, &TA3CCR4>;
 #elif defined(__MSP430_HAS_T3A7__)
+using TA3 = Internal::TxA7<&TA3CTL, &TA3R, &TA3EX0, &TA3CCTL0, &TA3CCTL1, &TA3CCTL2, &TA3CCTL3, &TA3CCTL4, &TA3CCTL5, &TA3CCTL6, &TA3CCR0, &TA3CCR1, &TA3CCR2, &TA3CCR3, &TA3CCR4, &TA3CCR5, &TA3CCR6>;
 #endif
 #else
 #if defined(__MSP430_HAS_T3A2__)
+using TA3 = Internal::TxA2<&TA3CTL, &TA3R, &TA3CCTL0, &TA3CCTL1, &TA3CCR0, &TA3CCR1>;
 #elif defined(__MSP430_HAS_T3A3__)
+using TA3 = Internal::TxA3<&TA3CTL, &TA3R, &TA3CCTL0, &TA3CCTL1, &TA3CCTL2, &TA3CCR0, &TA3CCR1, &TA3CCR2>;
 #endif
 #endif
+
 
 }// namespace MT::MSP430::TIMERA
 #endif
