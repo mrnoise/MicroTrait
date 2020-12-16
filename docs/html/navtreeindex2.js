@@ -1,17 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"group__groupEnumsMSP430Sfr.html#gad4f650715a2401a65096d4455016994e":[3,0,0,0,4,3],
-"group__groupEnumsMSP430Sfr.html#gad4f650715a2401a65096d4455016994e":[1,0,2,0,4],
-"group__groupEnumsMSP430Sfr.html#gaf5ba968e328238eed9003c8b2331757e":[3,0,0,0,4,2],
-"group__groupEnumsMSP430Sfr.html#gaf5ba968e328238eed9003c8b2331757e":[1,0,2,0,3],
-"group__groupEnumsMSP430TimerA.html":[1,0,4,0],
-"group__groupEnumsMSP430TimerA.html#ga04614f11ea4a6dc78186af21246d270f":[1,0,4,0,6],
-"group__groupEnumsMSP430TimerA.html#ga21040d060f3945bbccbafcef84eb5305":[1,0,4,0,1],
-"group__groupEnumsMSP430TimerA.html#ga3a22beecab57abfb3c453bf438235635":[1,0,4,0,11],
-"group__groupEnumsMSP430TimerA.html#ga3ffe47d24337d38fbed76ef8328e2011":[1,0,4,0,7],
-"group__groupEnumsMSP430TimerA.html#ga45d48c423d9348d2c6e19866138c9a0f":[1,0,4,0,3],
-"group__groupEnumsMSP430TimerA.html#ga6eca85d59f71ae98f1b991f55abba958":[1,0,4,0,8],
-"group__groupEnumsMSP430TimerA.html#gaaac37abe95f284356eb54bbe51c2fe08":[1,0,4,0,2],
 "group__groupEnumsMSP430TimerA.html#gaaf349f39ff658349c88598e3f164ffce":[1,0,4,0,5],
 "group__groupEnumsMSP430TimerA.html#gab25b5f23ee74d42373db2865fb7b4bcc":[1,0,4,0,9],
 "group__groupEnumsMSP430TimerA.html#gab6d2d15906509b095cba0047e83fba0f":[1,0,4,0,10],
@@ -249,5 +237,17 @@ var NAVTREEINDEX2 =
 "group__groupFuncsMSP430FPmm.html#gade6dfbf9db4a2f3ff9d624b55ca6ac5d":[1,0,1,0,1,31],
 "group__groupFuncsMSP430FPmm.html#gaf18479db44eeb6913e949123c516c41e":[3,0,0,0,3,26],
 "group__groupFuncsMSP430FPmm.html#gaf18479db44eeb6913e949123c516c41e":[1,0,1,0,1,6],
-"group__groupFuncsMSP430FPmm.html#gaf3f2e09122b9fc113af85ea8161a98e7":[3,0,0,0,3,53]
+"group__groupFuncsMSP430FPmm.html#gaf3f2e09122b9fc113af85ea8161a98e7":[3,0,0,0,3,53],
+"group__groupFuncsMSP430FPmm.html#gaf3f2e09122b9fc113af85ea8161a98e7":[1,0,1,0,1,27],
+"group__groupFuncsMSP430FPmm.html#gafd8492858a0aff9e0ea88a1b171ad617":[3,0,0,0,3,70],
+"group__groupFuncsMSP430FPmm.html#gafd8492858a0aff9e0ea88a1b171ad617":[1,0,1,0,1,34],
+"group__groupFuncsMSP430FRAMPmm.html":[1,0,1,1,1],
+"group__groupFuncsMSP430FRAMPmm.html#ga2a124d401e9bf48bff9700e55b599b8a":[3,0,0,0,3,62],
+"group__groupFuncsMSP430FRAMPmm.html#ga2a124d401e9bf48bff9700e55b599b8a":[1,0,1,1,1,15],
+"group__groupFuncsMSP430FRAMPmm.html#ga2cb47bc76ff722fde0d5246fbf3dcecf":[3,0,0,0,3,49],
+"group__groupFuncsMSP430FRAMPmm.html#ga2cb47bc76ff722fde0d5246fbf3dcecf":[1,0,1,1,1,8],
+"group__groupFuncsMSP430FRAMPmm.html#ga2e37c7075fb2bac2e053b13a06cd7b3e":[3,0,0,0,3,60],
+"group__groupFuncsMSP430FRAMPmm.html#ga2e37c7075fb2bac2e053b13a06cd7b3e":[1,0,1,1,1,13],
+"group__groupFuncsMSP430FRAMPmm.html#ga36f1ebdeeab21fe47fbc785e9580931d":[3,0,0,0,3,65],
+"group__groupFuncsMSP430FRAMPmm.html#ga36f1ebdeeab21fe47fbc785e9580931d":[1,0,1,1,1,16]
 };

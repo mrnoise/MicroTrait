@@ -1,6 +1,0 @@
-<map id="Register" name="Register">
-<area shape="rect" id="node1" href="$group__groupFuncsMSP430Reg.html" title=" " alt="" coords="244,5,323,32"/>
-<area shape="rect" id="node2" title="functions for GPIO hardware access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="125,31,196,57"/>
-<area shape="rect" id="node3" href="$group__groupEnumsMSP430Reg.html" title=" " alt="" coords="252,56,315,83"/>
-<area shape="rect" id="node4" href="$group__groupMSP430.html" title=" " alt="" coords="5,31,77,57"/>
-</map>
