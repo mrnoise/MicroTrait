@@ -69,15 +69,16 @@ using namespace MT::MSP430;
 
 namespace MT::Misc {
 enum class GPIO_PIN : GPIO_REGISTER_WIDTH {
-    P0  = (1U << 0U),
-    P1  = (1U << 1U),
-    P2  = (1U << 2U),
-    P3  = (1U << 3U),
-    P4  = (1U << 4U),
-    P5  = (1U << 5U),
-    P6  = (1U << 6U),
-    P7  = (1U << 7U),
-    ALL = (0xFF)
+    NONE = 0,
+    P0   = (1U << 0U),
+    P1   = (1U << 1U),
+    P2   = (1U << 2U),
+    P3   = (1U << 3U),
+    P4   = (1U << 4U),
+    P5   = (1U << 5U),
+    P6   = (1U << 6U),
+    P7   = (1U << 7U),
+    ALL  = (0xFF)
 };
 
 template<>
