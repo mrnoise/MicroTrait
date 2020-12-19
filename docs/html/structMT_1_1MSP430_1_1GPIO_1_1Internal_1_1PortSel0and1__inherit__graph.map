@@ -1,7 +1,0 @@
-<map id="MT::MSP430::GPIO::Internal::PortSel0and1&lt; INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL &gt;" name="MT::MSP430::GPIO::Internal::PortSel0and1&lt; INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="5,137,263,193"/>
-<area shape="rect" id="node2" href="$structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html" title=" " alt="" coords="325,5,554,61"/>
-<area shape="rect" id="node3" href="$structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortDrv.html" title=" " alt="" coords="339,86,539,157"/>
-<area shape="rect" id="node4" href="$structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html" title=" " alt="" coords="311,181,568,237"/>
-<area shape="rect" id="node5" href="$structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html" title=" " alt="" coords="333,262,546,333"/>
-</map>
