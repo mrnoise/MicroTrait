@@ -17,6 +17,7 @@
 #include <MicroTrait/MSP430/TIMER/TimerA.hpp>
 #include <MicroTrait/MSP430/WDT/WdtA.hpp>
 #include <MicroTrait/MSP430/WDT/WdtAInterrupt.hpp>
+#include <MicroTrait/MSP430/EUSCI/EusciA.hpp>
 
 #if defined(__GNUC__)
 #else
