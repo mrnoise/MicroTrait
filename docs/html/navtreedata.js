@@ -4,6 +4,61 @@ var NAVTREE =
     [ "MicroTrait", "md_README.html", null ],
     [ "Modules", "modules.html", [
       [ "MSP430", "group__groupMSP430.html", [
+        [ "EUSCI A", "group__groupMSP430EUSCI__A.html", [
+          [ "SPI Enums", "group__groupEnumsMSP430SPI__EUSCI__A.html", [
+            [ "INT", "group__groupEnumsMSP430SPI__EUSCI__A.html#gaeb5734045a77c66c8b6d1f08b90534df", null ]
+          ] ],
+          [ "SPI Functions", "group__groupFuncsMSP430SPI__EUSCI__A.html", null ],
+          [ "SPI Parameter", "group__groupParamsMSP430SPI__EUSCI__A.html", null ],
+          [ "UART Enums", "group__groupEnumsMSP430UART__EUSCI__A.html", [
+            [ "INT", "group__groupEnumsMSP430UART__EUSCI__A.html#ga70a5e7b167e2c17ee87ce948a111ce7d", null ],
+            [ "INT_EXT", "group__groupEnumsMSP430UART__EUSCI__A.html#gaa798418d78f5220ceeb6f6832b3e2a33", null ],
+            [ "STATUS", "group__groupEnumsMSP430UART__EUSCI__A.html#ga00a582e6ae48b7a9d58a3d8106ff3dc5", null ],
+            [ "BAUD_GENERATION", "group__groupEnumsMSP430UART__EUSCI__A.html#ga368813cacafb2479ae64f87488cfe506", [
+              [ "OVERSAMPLING", "group__groupEnumsMSP430UART__EUSCI__A.html#gga368813cacafb2479ae64f87488cfe506a70494093196af3b7172e0f61b5264e1b", null ],
+              [ "LOW_FREQUENCY", "group__groupEnumsMSP430UART__EUSCI__A.html#gga368813cacafb2479ae64f87488cfe506ae575bcf1fd2b1608d169e87a189b6842", null ]
+            ] ],
+            [ "CLOCKSOURCE", "group__groupEnumsMSP430UART__EUSCI__A.html#ga3ca65c5b262e34207f1fc69894ad8d99", [
+              [ "UCLK", "group__groupEnumsMSP430UART__EUSCI__A.html#gga3ca65c5b262e34207f1fc69894ad8d99a53e3e0766dc25ff61da8b0a5d5d43fe1", null ],
+              [ "SMCLK", "group__groupEnumsMSP430UART__EUSCI__A.html#gga3ca65c5b262e34207f1fc69894ad8d99ab88c7c2fc640bdbd4125b363c2c018de", null ],
+              [ "ACLK", "group__groupEnumsMSP430UART__EUSCI__A.html#gga3ca65c5b262e34207f1fc69894ad8d99a1320ed38f3060289a221f2aa841d7216", null ],
+              [ "MODCLK", "group__groupEnumsMSP430UART__EUSCI__A.html#gga3ca65c5b262e34207f1fc69894ad8d99a2287b51f5f8d4d4df9f4d4e6cb24f883", null ]
+            ] ],
+            [ "DEGLITCH", "group__groupEnumsMSP430UART__EUSCI__A.html#ga4d481229cec2de264ddca344a8663a6e", [
+              [ "TIME_2NS", "group__groupEnumsMSP430UART__EUSCI__A.html#gga4d481229cec2de264ddca344a8663a6ea08d7b8dd18e62527cef087b98e7eb722", null ],
+              [ "TIME_50NS", "group__groupEnumsMSP430UART__EUSCI__A.html#gga4d481229cec2de264ddca344a8663a6ea562ef810dac738b1f76f6d5d1ec87f70", null ],
+              [ "TIME_100NS", "group__groupEnumsMSP430UART__EUSCI__A.html#gga4d481229cec2de264ddca344a8663a6eaa9b1daee4bf1c2c52213aaf7c2694acc", null ],
+              [ "TIME_200NS", "group__groupEnumsMSP430UART__EUSCI__A.html#gga4d481229cec2de264ddca344a8663a6ea9719a5b6f0d1ed32dfea5bc391b3046c", null ]
+            ] ],
+            [ "ENDIAN", "group__groupEnumsMSP430UART__EUSCI__A.html#ga7f489334c9bf63e0d42f7b50330ed49a", [
+              [ "LSB_FIRST", "group__groupEnumsMSP430UART__EUSCI__A.html#gga7f489334c9bf63e0d42f7b50330ed49aaa34fb35b522d4b8f2757b9adf8aefd96", null ],
+              [ "MSB_FIRST", "group__groupEnumsMSP430UART__EUSCI__A.html#gga7f489334c9bf63e0d42f7b50330ed49aa89488e0251a0b2be79602890ef16ddb3", null ]
+            ] ],
+            [ "MODE", "group__groupEnumsMSP430UART__EUSCI__A.html#ga6e71743d1e33fb17990bdd372b6a6372", [
+              [ "UART", "group__groupEnumsMSP430UART__EUSCI__A.html#gga6e71743d1e33fb17990bdd372b6a6372acec5769b01fb096efaf0d6186823c78f", null ],
+              [ "IDLE_LINE_MULTI_PROCESSOR", "group__groupEnumsMSP430UART__EUSCI__A.html#gga6e71743d1e33fb17990bdd372b6a6372adaf8a8b1ffdeb66ca30040d36ee90333", null ],
+              [ "ADDRESS_BIT_MULTI_PROCESSOR", "group__groupEnumsMSP430UART__EUSCI__A.html#gga6e71743d1e33fb17990bdd372b6a6372a9a7f931285c15ff0ca7e9802e9c34081", null ],
+              [ "AUTOMATIC_BAUDRATE_DETECTION", "group__groupEnumsMSP430UART__EUSCI__A.html#gga6e71743d1e33fb17990bdd372b6a6372a4fc81d0abd6f3d8aa21450935aeb0012", null ]
+            ] ],
+            [ "PARITY", "group__groupEnumsMSP430UART__EUSCI__A.html#gadbb38e8ebaf258d0c4daac22675f70a2", [
+              [ "NO", "group__groupEnumsMSP430UART__EUSCI__A.html#ggadbb38e8ebaf258d0c4daac22675f70a2ac2f3f489a00553e7a01d369c103c7251", null ],
+              [ "ODD", "group__groupEnumsMSP430UART__EUSCI__A.html#ggadbb38e8ebaf258d0c4daac22675f70a2a57a1355d5527355458c7cc08ba70bf94", null ],
+              [ "EVEN", "group__groupEnumsMSP430UART__EUSCI__A.html#ggadbb38e8ebaf258d0c4daac22675f70a2a6634c67f28ba9a80efe941b9519aa106", null ]
+            ] ],
+            [ "REMAP_PINS", "group__groupEnumsMSP430UART__EUSCI__A.html#gaa2870431c9a7705a4f87497cd5ee766a", [
+              [ "FALSE", "group__groupEnumsMSP430UART__EUSCI__A.html#ggaa2870431c9a7705a4f87497cd5ee766aa946003f97ccc52d5d3b54ac0ec31bbfc", null ],
+              [ "TRUE", "group__groupEnumsMSP430UART__EUSCI__A.html#ggaa2870431c9a7705a4f87497cd5ee766aac0d83f0b82a6b30de8811e69e6d95c61", null ]
+            ] ],
+            [ "STOPBIT", "group__groupEnumsMSP430UART__EUSCI__A.html#ga9230ebd6e8540fdbed38457395e3e2d2", [
+              [ "ONE", "group__groupEnumsMSP430UART__EUSCI__A.html#gga9230ebd6e8540fdbed38457395e3e2d2abc21e6484530fc9d0313cb816b733396", null ],
+              [ "TWO", "group__groupEnumsMSP430UART__EUSCI__A.html#gga9230ebd6e8540fdbed38457395e3e2d2a0f82d86afa0f5dc965c5c15aca58dcfb", null ]
+            ] ]
+          ] ],
+          [ "UART Functions", "group__groupFuncsMSP430UART__EUSCI__A.html", null ],
+          [ "UART Parameter", "group__groupParamsMSP430UART__EUSCI__A.html", [
+            [ "initParam", "group__groupParamsMSP430UART__EUSCI__A.html#ga430e96ba4dc4385b28f3adfde8debccd", null ]
+          ] ]
+        ] ],
         [ "GPIO", "group__groupMSP430Gpio.html", [
           [ "Enums", "group__groupEnumsMSP430Gpio.html", [
             [ "PIN", "group__groupEnumsMSP430Gpio.html#ga9498a109dc820344a8c9ae35eaff2de1", null ],
@@ -375,7 +430,6 @@ var NAVTREE =
         [ "SFR", "group__groupMSP430Sfr.html", [
           [ "Enums", "group__groupEnumsMSP430Sfr.html", [
             [ "INT", "group__groupEnumsMSP430Sfr.html#gabfa179c7aea743f4b369b5242781fa5e", null ],
-            [ "INT", "group__groupEnumsMSP430Sfr.html#gab4b8f95b0b5575f3aa7bfadcbce68093", null ],
             [ "NMI_EDGE", "group__groupEnumsMSP430Sfr.html#ga97b1da589340085a5cffe44121ba87e5", null ],
             [ "RST_FUNC", "group__groupEnumsMSP430Sfr.html#gaf5ba968e328238eed9003c8b2331757e", null ],
             [ "RST_RESISTOR", "group__groupEnumsMSP430Sfr.html#gad4f650715a2401a65096d4455016994e", null ]
@@ -393,6 +447,7 @@ var NAVTREE =
         [ "Settings", "group__groupMSP430Set.html", null ],
         [ "Timer A", "group__groupMSP430TimerA.html", [
           [ "Enums", "group__groupEnumsMSP430TimerA.html", [
+            [ "INT", "group__groupEnumsMSP430TimerA.html#gab4b8f95b0b5575f3aa7bfadcbce68093", null ],
             [ "CAPTURE", "group__groupEnumsMSP430TimerA.html#gae55512f05376cc6404a9b1d330a507d1", [
               [ "ASYNCHRONOUS", "group__groupEnumsMSP430TimerA.html#ggae55512f05376cc6404a9b1d330a507d1a04d77525ac06bb7f113ae919853b0d00", null ],
               [ "SYNCHRONOUS", "group__groupEnumsMSP430TimerA.html#ggae55512f05376cc6404a9b1d330a507d1a6003168ea156fdffb3b212d5568e16cf", null ]
@@ -692,6 +747,12 @@ var NAVTREE =
       [ "Namespace List", "namespaces.html", [
         [ "MT", "namespaceMT.html", [
           [ "MSP430", "namespaceMT_1_1MSP430.html", [
+            [ "EUSCIA", "namespaceMT_1_1MSP430_1_1EUSCIA.html", [
+              [ "SPI", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1SPI.html", null ],
+              [ "UART", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART.html", [
+                [ "INTERNAL", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1INTERNAL.html", null ]
+              ] ]
+            ] ],
             [ "GPIO", "namespaceMT_1_1MSP430_1_1GPIO.html", [
               [ "Internal", "namespaceMT_1_1MSP430_1_1GPIO_1_1Internal.html", null ],
               [ "Interrupt", "namespaceMT_1_1MSP430_1_1GPIO_1_1Interrupt.html", null ]
@@ -715,9 +776,12 @@ var NAVTREE =
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", [
           [ "_", "namespacemembers__.html", null ],
+          [ "a", "namespacemembers_a.html", null ],
           [ "b", "namespacemembers_b.html", null ],
           [ "c", "namespacemembers_c.html", null ],
           [ "d", "namespacemembers_d.html", null ],
+          [ "e", "namespacemembers_e.html", null ],
+          [ "f", "namespacemembers_f.html", null ],
           [ "g", "namespacemembers_g.html", null ],
           [ "i", "namespacemembers_i.html", null ],
           [ "m", "namespacemembers_m.html", null ],
@@ -741,6 +805,13 @@ var NAVTREE =
       [ "Class List", "annotated.html", [
         [ "MT", "namespaceMT.html", [
           [ "MSP430", "namespaceMT_1_1MSP430.html", [
+            [ "EUSCIA", "namespaceMT_1_1MSP430_1_1EUSCIA.html", [
+              [ "UART", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART.html", [
+                [ "INTERNAL", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1INTERNAL.html", [
+                  [ "UART", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1INTERNAL_1_1UART.html", null ]
+                ] ]
+              ] ]
+            ] ],
             [ "GPIO", "namespaceMT_1_1MSP430_1_1GPIO.html", [
               [ "Internal", "namespaceMT_1_1MSP430_1_1GPIO_1_1Internal.html", [
                 [ "Port", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html", null ],
@@ -934,6 +1005,10 @@ var NAVTREE =
             [ "enable_Enum_bits< BITS16 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS16_01_4.html", null ],
             [ "enable_Enum_bits< BITS32 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS32_01_4.html", null ],
             [ "enable_Enum_bits< BITS8 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS8_01_4.html", null ],
+            [ "enable_Enum_bits< EUSCIA_SPI_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__SPI__INT_01_4.html", null ],
+            [ "enable_Enum_bits< EUSCIA_UART_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__INT_01_4.html", null ],
+            [ "enable_Enum_bits< EUSCIA_UART_INT_EXT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__INT__EXT_01_4.html", null ],
+            [ "enable_Enum_bits< EUSCIA_UART_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__STATUS_01_4.html", null ],
             [ "enable_Enum_bits< GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01GPIO__PIN_01_4.html", null ],
             [ "enable_Enum_bits< PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01PMM__INT_01_4.html", null ],
             [ "enable_Enum_bits< SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01SFR__INT_01_4.html", null ],
@@ -941,6 +1016,10 @@ var NAVTREE =
             [ "enable_Enum_bits< volatile BITS16 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS16_01_4.html", null ],
             [ "enable_Enum_bits< volatile BITS32 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS32_01_4.html", null ],
             [ "enable_Enum_bits< volatile BITS8 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS8_01_4.html", null ],
+            [ "enable_Enum_bits< volatile EUSCIA_SPI_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__SPI__INT_01_4.html", null ],
+            [ "enable_Enum_bits< volatile EUSCIA_UART_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__INT_01_4.html", null ],
+            [ "enable_Enum_bits< volatile EUSCIA_UART_INT_EXT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__INT__EXT_01_4.html", null ],
+            [ "enable_Enum_bits< volatile EUSCIA_UART_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__STATUS_01_4.html", null ],
             [ "enable_Enum_bits< volatile GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01GPIO__PIN_01_4.html", null ],
             [ "enable_Enum_bits< volatile PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01PMM__INT_01_4.html", null ],
             [ "enable_Enum_bits< volatile SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01SFR__INT_01_4.html", null ],
@@ -995,6 +1074,10 @@ var NAVTREE =
         [ "MT::Misc::enable_Enum_bits< BITS16 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS16_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< BITS32 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS32_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< BITS8 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01BITS8_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< EUSCIA_SPI_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__SPI__INT_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< EUSCIA_UART_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__INT_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< EUSCIA_UART_INT_EXT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__INT__EXT_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< EUSCIA_UART_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__STATUS_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01GPIO__PIN_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01PMM__INT_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01SFR__INT_01_4.html", null ],
@@ -1002,10 +1085,15 @@ var NAVTREE =
         [ "MT::Misc::enable_Enum_bits< volatile BITS16 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS16_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< volatile BITS32 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS32_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< volatile BITS8 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS8_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< volatile EUSCIA_SPI_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__SPI__INT_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< volatile EUSCIA_UART_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__INT_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< volatile EUSCIA_UART_INT_EXT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__INT__EXT_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< volatile EUSCIA_UART_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__STATUS_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< volatile GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01GPIO__PIN_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< volatile PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01PMM__INT_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< volatile SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01SFR__INT_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< volatile TIMERA_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01TIMERA__INT_01_4.html", null ],
+        [ "MT::MSP430::EUSCIA::UART::INTERNAL::UART< CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG >", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1INTERNAL_1_1UART.html", null ],
         [ "MT::MSP430::GPIO::Internal::PortCommon< INREG, OUTREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortCommon.html", [
           [ "MT::MSP430::GPIO::Internal::Port< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html", null ],
           [ "MT::MSP430::GPIO::Internal::PortDrv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortDrv.html", null ],
@@ -1064,21 +1152,32 @@ var NAVTREE =
           [ "MT::MSP430::GPIO::Internal::PortWithInt< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html", null ],
           [ "MT::MSP430::GPIO::Internal::PortWithIntDrv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html", null ]
         ] ],
+        [ "MT::Universal::Register< ABCTL >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< BRW >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< CTLW0 >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< CTLW1 >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< DIRREG >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< DRVREG >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< IE >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< IEREG >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< IESREG >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< IFG >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< IFGREG >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< INREG >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< IRCTL >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< MCTLW >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< OUTREG >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< P0SEL >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< P1SEL >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< PRENREG >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< RXBUF >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< STATW >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< TAXCCR0 >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< TAXCCTL0 >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< TAXCTL >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< TAXEX0 >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< TAXR >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< TXBUF >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register<&LPM45CTL >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register<&PM5CTL0 >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register<&PMMCTL0_H >", "structMT_1_1Universal_1_1Register.html", null ],
@@ -1109,6 +1208,100 @@ var NAVTREE =
     [ "Files", "files.html", [
       [ "File List", "files.html", [
         [ "MSP430", "dir_56021fdb0e8b9a80f75a9a8cba132c6e.html", [
+          [ "EUSCI", "dir_b96257ce7418cb41a351567345760a24.html", [
+            [ "EusciA.hpp", "EusciA_8hpp.html", [
+              [ "UART", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1INTERNAL_1_1UART.html", null ],
+              [ "enable_Enum_bits< EUSCIA_SPI_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__SPI__INT_01_4.html", null ],
+              [ "enable_Enum_bits< EUSCIA_UART_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__INT_01_4.html", null ],
+              [ "enable_Enum_bits< EUSCIA_UART_INT_EXT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__INT__EXT_01_4.html", null ],
+              [ "enable_Enum_bits< EUSCIA_UART_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__STATUS_01_4.html", null ],
+              [ "enable_Enum_bits< volatile EUSCIA_SPI_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__SPI__INT_01_4.html", null ],
+              [ "enable_Enum_bits< volatile EUSCIA_UART_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__INT_01_4.html", null ],
+              [ "enable_Enum_bits< volatile EUSCIA_UART_INT_EXT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__INT__EXT_01_4.html", null ],
+              [ "enable_Enum_bits< volatile EUSCIA_UART_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__STATUS_01_4.html", null ],
+              [ "A0", "EusciA_8hpp.html#ab482b4c448f5e0c718a415fe227ee923", null ],
+              [ "A1", "EusciA_8hpp.html#af8a65461df77f493dafc3c41601c3c76", null ],
+              [ "A2", "EusciA_8hpp.html#ae7e8df1705e8cc941ff4c76769900a87", null ],
+              [ "A3", "EusciA_8hpp.html#ab886b20b13188df39eaeab32d8356c85", null ],
+              [ "initParam", "EusciA_8hpp.html#ga430e96ba4dc4385b28f3adfde8debccd", null ],
+              [ "INT", "EusciA_8hpp.html#ga70a5e7b167e2c17ee87ce948a111ce7d", null ],
+              [ "INT", "EusciA_8hpp.html#gaeb5734045a77c66c8b6d1f08b90534df", null ],
+              [ "INT_EXT", "EusciA_8hpp.html#gaa798418d78f5220ceeb6f6832b3e2a33", null ],
+              [ "STATUS", "EusciA_8hpp.html#ga00a582e6ae48b7a9d58a3d8106ff3dc5", null ],
+              [ "BAUD_GENERATION", "EusciA_8hpp.html#ga368813cacafb2479ae64f87488cfe506", [
+                [ "OVERSAMPLING", "EusciA_8hpp.html#gga368813cacafb2479ae64f87488cfe506a70494093196af3b7172e0f61b5264e1b", null ],
+                [ "LOW_FREQUENCY", "EusciA_8hpp.html#gga368813cacafb2479ae64f87488cfe506ae575bcf1fd2b1608d169e87a189b6842", null ]
+              ] ],
+              [ "CLOCKSOURCE", "EusciA_8hpp.html#ga3ca65c5b262e34207f1fc69894ad8d99", [
+                [ "UCLK", "EusciA_8hpp.html#gga3ca65c5b262e34207f1fc69894ad8d99a53e3e0766dc25ff61da8b0a5d5d43fe1", null ],
+                [ "SMCLK", "EusciA_8hpp.html#gga3ca65c5b262e34207f1fc69894ad8d99ab88c7c2fc640bdbd4125b363c2c018de", null ],
+                [ "ACLK", "EusciA_8hpp.html#gga3ca65c5b262e34207f1fc69894ad8d99a1320ed38f3060289a221f2aa841d7216", null ],
+                [ "MODCLK", "EusciA_8hpp.html#gga3ca65c5b262e34207f1fc69894ad8d99a2287b51f5f8d4d4df9f4d4e6cb24f883", null ]
+              ] ],
+              [ "DEGLITCH", "EusciA_8hpp.html#ga4d481229cec2de264ddca344a8663a6e", [
+                [ "TIME_2NS", "EusciA_8hpp.html#gga4d481229cec2de264ddca344a8663a6ea08d7b8dd18e62527cef087b98e7eb722", null ],
+                [ "TIME_50NS", "EusciA_8hpp.html#gga4d481229cec2de264ddca344a8663a6ea562ef810dac738b1f76f6d5d1ec87f70", null ],
+                [ "TIME_100NS", "EusciA_8hpp.html#gga4d481229cec2de264ddca344a8663a6eaa9b1daee4bf1c2c52213aaf7c2694acc", null ],
+                [ "TIME_200NS", "EusciA_8hpp.html#gga4d481229cec2de264ddca344a8663a6ea9719a5b6f0d1ed32dfea5bc391b3046c", null ]
+              ] ],
+              [ "ENDIAN", "EusciA_8hpp.html#ga7f489334c9bf63e0d42f7b50330ed49a", [
+                [ "LSB_FIRST", "EusciA_8hpp.html#gga7f489334c9bf63e0d42f7b50330ed49aaa34fb35b522d4b8f2757b9adf8aefd96", null ],
+                [ "MSB_FIRST", "EusciA_8hpp.html#gga7f489334c9bf63e0d42f7b50330ed49aa89488e0251a0b2be79602890ef16ddb3", null ]
+              ] ],
+              [ "EUSCIA_SPI_INT", "EusciA_8hpp.html#af6c723d3acc2058d157b74a55cfeae2e", [
+                [ "RECEIVE", "EusciA_8hpp.html#af6c723d3acc2058d157b74a55cfeae2ea42ddaaef1ffd16ad35901150add8f8f2", null ],
+                [ "TRANSMIT", "EusciA_8hpp.html#af6c723d3acc2058d157b74a55cfeae2ea02d786cd0f7318c2533125f8b591abc5", null ]
+              ] ],
+              [ "EUSCIA_UART_INT", "EusciA_8hpp.html#aaab2352676762d65cd7004aaa4b461cc", [
+                [ "RECEIVE", "EusciA_8hpp.html#aaab2352676762d65cd7004aaa4b461cca42ddaaef1ffd16ad35901150add8f8f2", null ],
+                [ "TRANSMIT", "EusciA_8hpp.html#aaab2352676762d65cd7004aaa4b461cca02d786cd0f7318c2533125f8b591abc5", null ],
+                [ "STARTBIT", "EusciA_8hpp.html#aaab2352676762d65cd7004aaa4b461cca40685907bfdc328b07ca77c9f47e9014", null ],
+                [ "TRANSMIT_COMPLETE", "EusciA_8hpp.html#aaab2352676762d65cd7004aaa4b461ccae352a517ea0c9cc97ec2da5f2d0f06c9", null ]
+              ] ],
+              [ "EUSCIA_UART_INT_EXT", "EusciA_8hpp.html#ab3c7d647f3e9bc76237a7c3c97d95c68", [
+                [ "RECEIVE_ERROR", "EusciA_8hpp.html#ab3c7d647f3e9bc76237a7c3c97d95c68a892a643eb340f74fff27ab376b6105bf", null ],
+                [ "BREAKCHAR", "EusciA_8hpp.html#ab3c7d647f3e9bc76237a7c3c97d95c68a3b5a1dfa7a142232da820b3bb0cf8254", null ]
+              ] ],
+              [ "EUSCIA_UART_STATUS", "EusciA_8hpp.html#a2e72e53fa583ce634776e9cebbc4a24c", [
+                [ "LISTEN_ENABLE", "EusciA_8hpp.html#a2e72e53fa583ce634776e9cebbc4a24ca7e0916a072e80ec22d4f3f0b6cb9da0b", null ],
+                [ "FRAMING_ERROR", "EusciA_8hpp.html#a2e72e53fa583ce634776e9cebbc4a24caa61b2eab33f2b577d368d15633c255a9", null ],
+                [ "OVERRUN_ERROR", "EusciA_8hpp.html#a2e72e53fa583ce634776e9cebbc4a24caa607a4a202294658bd387cd8e3636566", null ],
+                [ "PARITY_ERROR", "EusciA_8hpp.html#a2e72e53fa583ce634776e9cebbc4a24cac660efeaf70229ba5fd5e53da70c9a7c", null ],
+                [ "BREAK_DETECT", "EusciA_8hpp.html#a2e72e53fa583ce634776e9cebbc4a24cac124f00269f48ebbe75c997d6944dc50", null ],
+                [ "RECEIVE_ERROR", "EusciA_8hpp.html#a2e72e53fa583ce634776e9cebbc4a24ca892a643eb340f74fff27ab376b6105bf", null ],
+                [ "ADDRESS_RECEIVED", "EusciA_8hpp.html#a2e72e53fa583ce634776e9cebbc4a24caaf2d902b2c7e42084c4abc6086c3ef74", null ],
+                [ "IDLELINE", "EusciA_8hpp.html#a2e72e53fa583ce634776e9cebbc4a24caf14ed839770833de3b7ac8e68b922247", null ],
+                [ "BUSY", "EusciA_8hpp.html#a2e72e53fa583ce634776e9cebbc4a24ca802706a9238e2928077f97736854bad4", null ]
+              ] ],
+              [ "MODE", "EusciA_8hpp.html#ga6e71743d1e33fb17990bdd372b6a6372", [
+                [ "UART", "EusciA_8hpp.html#gga6e71743d1e33fb17990bdd372b6a6372acec5769b01fb096efaf0d6186823c78f", null ],
+                [ "IDLE_LINE_MULTI_PROCESSOR", "EusciA_8hpp.html#gga6e71743d1e33fb17990bdd372b6a6372adaf8a8b1ffdeb66ca30040d36ee90333", null ],
+                [ "ADDRESS_BIT_MULTI_PROCESSOR", "EusciA_8hpp.html#gga6e71743d1e33fb17990bdd372b6a6372a9a7f931285c15ff0ca7e9802e9c34081", null ],
+                [ "AUTOMATIC_BAUDRATE_DETECTION", "EusciA_8hpp.html#gga6e71743d1e33fb17990bdd372b6a6372a4fc81d0abd6f3d8aa21450935aeb0012", null ]
+              ] ],
+              [ "PARITY", "EusciA_8hpp.html#gadbb38e8ebaf258d0c4daac22675f70a2", [
+                [ "NO", "EusciA_8hpp.html#ggadbb38e8ebaf258d0c4daac22675f70a2ac2f3f489a00553e7a01d369c103c7251", null ],
+                [ "ODD", "EusciA_8hpp.html#ggadbb38e8ebaf258d0c4daac22675f70a2a57a1355d5527355458c7cc08ba70bf94", null ],
+                [ "EVEN", "EusciA_8hpp.html#ggadbb38e8ebaf258d0c4daac22675f70a2a6634c67f28ba9a80efe941b9519aa106", null ]
+              ] ],
+              [ "REMAP_PINS", "EusciA_8hpp.html#gaa2870431c9a7705a4f87497cd5ee766a", [
+                [ "FALSE", "EusciA_8hpp.html#ggaa2870431c9a7705a4f87497cd5ee766aa946003f97ccc52d5d3b54ac0ec31bbfc", null ],
+                [ "TRUE", "EusciA_8hpp.html#ggaa2870431c9a7705a4f87497cd5ee766aac0d83f0b82a6b30de8811e69e6d95c61", null ]
+              ] ],
+              [ "STOPBIT", "EusciA_8hpp.html#ga9230ebd6e8540fdbed38457395e3e2d2", [
+                [ "ONE", "EusciA_8hpp.html#gga9230ebd6e8540fdbed38457395e3e2d2abc21e6484530fc9d0313cb816b733396", null ],
+                [ "TWO", "EusciA_8hpp.html#gga9230ebd6e8540fdbed38457395e3e2d2a0f82d86afa0f5dc965c5c15aca58dcfb", null ]
+              ] ],
+              [ "clockPrescalar", "EusciA_8hpp.html#a1c688db4fd10aed7ce683d9dfec8d3a4", null ],
+              [ "firstModReg", "EusciA_8hpp.html#a16d06ccd6818d1d43389214b050d21a6", null ],
+              [ "gen", "EusciA_8hpp.html#a429131f2b4b14744f274cd91c8fcbeb5", null ],
+              [ "mode", "EusciA_8hpp.html#a1723b39b518f1d2eb1fe35693879ecd6", null ],
+              [ "msbOrLsbFirst", "EusciA_8hpp.html#a13988cd2990b6111c41fb5e412ba4825", null ],
+              [ "parity", "EusciA_8hpp.html#a79c1efb3e7d76af67c2221a378f3ff84", null ],
+              [ "secondModReg", "EusciA_8hpp.html#a756d59d1a7ef4a8b983fdc35b302a4f2", null ],
+              [ "stopBits", "EusciA_8hpp.html#a1acc40b45265f892df48fa3d85ccdc33", null ]
+            ] ]
+          ] ],
           [ "GPIO", "dir_406c66aff740586c12c555eb45f89962.html", [
             [ "Gpio.hpp", "Gpio_8hpp.html", [
               [ "Port", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html", null ],
@@ -2006,6 +2199,9 @@ var NAVTREE =
     ] ],
     [ "File Source", "filesource.html", [
       [ "MSP430", "dir_56021fdb0e8b9a80f75a9a8cba132c6e.html", [
+        [ "EUSCI", "dir_b96257ce7418cb41a351567345760a24.html", [
+          [ "EusciA.hpp", "EusciA_8hpp_source.html", null ]
+        ] ],
         [ "GPIO", "dir_406c66aff740586c12c555eb45f89962.html", [
           [ "Gpio.hpp", "Gpio_8hpp_source.html", null ],
           [ "GpioInterrupt.hpp", "GpioInterrupt_8hpp_source.html", null ]
@@ -2045,12 +2241,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Cast_8hpp.html",
-"GpioInterrupt_8hpp.html#gga44c9807eb53dfd1d2e71e723c4585b36aff4cd66be1f2e309ecc064bed9165896",
-"TimerA_8hpp.html#a34ef3c2490ed523582e2361505c16a90",
-"group__groupEnumsMSP430GpioInt.html#gga44c9807eb53dfd1d2e71e723c4585b36a3a9cfd0bf58960f51a019f792de65330",
-"group__groupEnumsMSP430TimerA.html#ggaaf349f39ff658349c88598e3f164ffcea01db972763294804a52bbb74cc96a867",
-"group__groupFuncsMSP430Gpio.html#gaa51eaac4624b0a7a9dff38227cc18b92",
-"structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA7.html"
+"GpioInterrupt_8hpp.html#gga44c9807eb53dfd1d2e71e723c4585b36aba179ce8071934e036593e2e8bf48413",
+"Register_8hpp.html#gga0a5451e09f44b4952fd8332b583c652dac9512565ef6194ca664dc41ec0de7a53",
+"group__groupEnumsMSP430FRAMPmm.html#gadd0cd07a11c2db8455f1e362e78310a7",
+"group__groupEnumsMSP430SPI__EUSCI__A.html",
+"group__groupFuncsMSP430FPmm.html#ga6a078e75c825dc665df3b1bfe9e580d7",
+"group__groupFuncsReg.html#gade7cafbb3b8756c3c680cd28a5d62e8b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
