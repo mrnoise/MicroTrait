@@ -2,9 +2,9 @@
 #ifndef MICROTRAIT_TESTS_MSP430_TESTTIMERA_HPP_
 #define MICROTRAIT_TESTS_MSP430_TESTTIMERA_HPP_
 
-#include "MicroTrait/MSP430/TIMERA/TimerA.hpp"
 #include <MicroTrait/MSP430/Types.hpp>
 #include <assert.h>
+#include <MicroTrait/MSP430/TIMER/TimerA.hpp>
 
 namespace MT::Tests::MSP430::TIMERA::Internal {
 
