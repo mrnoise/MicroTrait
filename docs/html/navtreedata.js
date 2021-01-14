@@ -1675,7 +1675,7 @@ var NAVTREE =
               ] ]
             ] ]
           ] ],
-          [ "TIMERA", "dir_6d6df6efa756aeae42a466bfb1eed0c5.html", [
+          [ "TIMER", "dir_014c8d4f687b7fc2b555f0195222eaba.html", [
             [ "TimerA.hpp", "TimerA_8hpp.html", [
               [ "Base", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1Base.html", [
                 [ "clear", "group__groupFuncsMSP430TimerA.html#ga5d70a313300c369f2023de7df054c571", null ],
@@ -1839,7 +1839,7 @@ var NAVTREE =
               [ "timerPeriod", "TimerA_8hpp.html#a694176193a73663242453cdbd0b84112", null ]
             ] ]
           ] ],
-          [ "WDTA", "dir_2eee81a5747256a97f42b074c252ba6d.html", [
+          [ "WDT", "dir_ccb66b0757fb9c81f3459334107c554a.html", [
             [ "WdtA.hpp", "WdtA_8hpp.html", [
               [ "WdtA", "structMT_1_1MSP430_1_1WdtA.html", [
                 [ "CLOCKDIVIDER", "group__groupEnumsMSP430WdtA.html#ga2337c85cf25b4ff1d438890ffb24e437", null ],
@@ -2016,10 +2016,10 @@ var NAVTREE =
         [ "SFR", "dir_eb46cb3a04801aaa57212b6bb39afb1a.html", [
           [ "Sfr.hpp", "Sfr_8hpp_source.html", null ]
         ] ],
-        [ "TIMERA", "dir_6d6df6efa756aeae42a466bfb1eed0c5.html", [
+        [ "TIMER", "dir_014c8d4f687b7fc2b555f0195222eaba.html", [
           [ "TimerA.hpp", "TimerA_8hpp_source.html", null ]
         ] ],
-        [ "WDTA", "dir_2eee81a5747256a97f42b074c252ba6d.html", [
+        [ "WDT", "dir_ccb66b0757fb9c81f3459334107c554a.html", [
           [ "WdtA.hpp", "WdtA_8hpp_source.html", null ],
           [ "WdtAInterrupt.hpp", "WdtAInterrupt_8hpp_source.html", null ]
         ] ],

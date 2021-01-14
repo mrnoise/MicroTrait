@@ -184,7 +184,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Reset/Clear the timer clock divider, count direction, count. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> TIMERA::A0 a0;</div><div class="line"> a0.clear(); </div></div><!-- fragment --> 
@@ -214,7 +214,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXEX0, typename REGTYPE , R
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Clears the capture-compare interrupt flag. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#gaf80bf92c9a372750d03e856e4d7d810e">clearCaptureCompareInterrupt</a>(<a class="code" href="group__groupEnumsMSP430TimerA.html#gga21040d060f3945bbccbafcef84eb5305abf5b8f7cc26f9792d509e6db6fd634c8">TIMERA::CAPTURE_COMPARE::REGISTER0</a>); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
@@ -260,7 +260,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXEX0, typename REGTYPE , R
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Clears the capture-compare interrupt flag -&gt; overload to clear specific flag. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#gaf80bf92c9a372750d03e856e4d7d810e">clearCaptureCompareInterrupt</a>(<a class="code" href="group__groupEnumsMSP430TimerA.html#gga21040d060f3945bbccbafcef84eb5305abf5b8f7cc26f9792d509e6db6fd634c8">TIMERA::CAPTURE_COMPARE::REGISTER0</a>, TIMERA::INT::CAPTURE_INTERRUPT | TIMERA::INT::CAPTURE_OVERFLOW); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
@@ -297,7 +297,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Clears the Timer TAIFG interrupt flag. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> </div><div class="line">ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#ga22ae02138bdb0a5549dca212da46cc5f">clearTimerInterrupt</a>(); </div></div><!-- fragment --> 
@@ -327,7 +327,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXEX0, typename REGTYPE , R
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Disable capture compare interrupt. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#ga37941fc0d30b0c6bc3dfe7295a73ce10">disableCaptureCompareInterrupt</a>(<a class="code" href="group__groupEnumsMSP430TimerA.html#gga21040d060f3945bbccbafcef84eb5305abf5b8f7cc26f9792d509e6db6fd634c8">TIMERA::CAPTURE_COMPARE::REGISTER0</a>); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
@@ -363,7 +363,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Disable timer interrupt -&gt; TAIE. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> </div><div class="line">ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#gaaa71dcec7383c57a1b56fa051d1d6cb2">disableInterrupt</a>(); </div></div><!-- fragment --> 
@@ -393,7 +393,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXEX0, typename REGTYPE , R
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Enable capture compare interrupt. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#ga4b51eb3f0eec25051e7f1bce815682fe">enableCaptureCompareInterrupt</a>(<a class="code" href="group__groupEnumsMSP430TimerA.html#gga21040d060f3945bbccbafcef84eb5305abf5b8f7cc26f9792d509e6db6fd634c8">TIMERA::CAPTURE_COMPARE::REGISTER0</a>); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
@@ -429,7 +429,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Enable timer interrupt -&gt; TAIE. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> </div><div class="line">ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#ga3a40cadc6e43d13909086f9bd97741a1">enableInterrupt</a>(); </div></div><!-- fragment --> 
@@ -459,7 +459,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXEX0, typename REGTYPE , R
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Get current capturecompare count. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> </div><div class="line"><span class="keyword">const</span> uint16_t count = ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#ga15cc0d4c607d1e9231a0707daf8cf8b7">getCaptureCompareCount</a>(<a class="code" href="group__groupEnumsMSP430TimerA.html#gga21040d060f3945bbccbafcef84eb5305abf5b8f7cc26f9792d509e6db6fd634c8">TIMERA::CAPTURE_COMPARE::REGISTER0</a>); </div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
@@ -506,7 +506,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXEX0, typename REGTYPE , R
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Return capture compare interrupt status. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> </div><div class="line"> <span class="keywordflow">if</span>(ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#ga2215ac2cf109c1f6f7e491f26ee8ce43">getCaptureCompareInterruptStatus</a>(<a class="code" href="group__groupEnumsMSP430TimerA.html#gga21040d060f3945bbccbafcef84eb5305abf5b8f7cc26f9792d509e6db6fd634c8">TIMERA::CAPTURE_COMPARE::REGISTER0</a>, TIMERA::INT::CAPTURE_INTERRUPT | TIMERA::INT::CAPTURE_OVERFLOW) == <a class="code" href="group__groupEnumsMSP430Types.html#gga479386b6bd2b0b2ba04a910f49697804ac0d83f0b82a6b30de8811e69e6d95c61">INT_MASK_MATCH::TRUE</a>) doSomething(); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
@@ -543,7 +543,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Reads the current timer count value -&gt; not Atomic! </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> TIMERA::A0 a0;</div><div class="line"> <span class="keyword">const</span> uint16_t count = a0.getCounterValue(); </div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>current count value -&gt; read only in ISR context! </dd></dl>
@@ -573,7 +573,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Get timer interrupt status. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> </div><div class="line"> <span class="keywordflow">if</span>(ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#ga94d82d0ed0bd5fe1841b2aa444c4785f">getInterruptStatus</a>() == <a class="code" href="group__groupEnumsMSP430Types.html#gga479386b6bd2b0b2ba04a910f49697804ac0d83f0b82a6b30de8811e69e6d95c61">INT_MASK_MATCH::TRUE</a>) doSomething(); </div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>if TAIFG is set or not (<a class="el" href="group__groupEnumsMSP430Types.html#ga479386b6bd2b0b2ba04a910f49697804" title="Interrupt Flag match. ">INT_MASK_MATCH</a>) </dd></dl>
@@ -604,7 +604,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXEX0, typename REGTYPE , R
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Get output bit for output mode. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> </div><div class="line"><span class="keywordflow">if</span>(ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#ga088fe536a14a92cfc333a9db52d2b9cc">getOutputForOutputModeOutBitValue</a>(<a class="code" href="group__groupEnumsMSP430TimerA.html#gga21040d060f3945bbccbafcef84eb5305abf5b8f7cc26f9792d509e6db6fd634c8">TIMERA::CAPTURE_COMPARE::REGISTER0</a>) == <a class="code" href="group__groupEnumsMSP430TimerA.html#ggaaac37abe95f284356eb54bbe51c2fe08ab89de3b4b81c4facfac906edf29aec8c">TIMERA::COMPARE_OUT_BIT::HIGH</a>) doSomething(); </div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
@@ -651,7 +651,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXEX0, typename REGTYPE , R
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Get synchronized capture/compare input. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> </div><div class="line"><span class="keywordflow">if</span>(ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#ga8bf0baefba8ea755dc294b4112a31063">getSynchronizedCaptureCompareInput</a>(<a class="code" href="group__groupEnumsMSP430TimerA.html#gga21040d060f3945bbccbafcef84eb5305abf5b8f7cc26f9792d509e6db6fd634c8">TIMERA::CAPTURE_COMPARE::REGISTER0</a>, <a class="code" href="group__groupEnumsMSP430TimerA.html#ggadc8967398abb61c9fc7c32c6be447707a5edb4049492eb3b6ea1ca32a48252f47">TIMERA::CAPTURE_COMPARE_READ_INPUT::SYNCED</a>) == <a class="code" href="group__groupEnumsMSP430TimerA.html#ggaaac37abe95f284356eb54bbe51c2fe08ab89de3b4b81c4facfac906edf29aec8c">TIMERA::CAPTURE_COMPARE_INPUT::HIGH</a>) doSomething(); </div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
@@ -689,7 +689,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXEX0, typename REGTYPE , R
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Initializes Capture Mode. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> </div><div class="line"> constexpr <a class="code" href="group__groupParamsMSP430TimerA.html#gaa06a94a57d42d9d50a5815c970da9bdf">initCapture</a> param{</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#gga21040d060f3945bbccbafcef84eb5305abf5b8f7cc26f9792d509e6db6fd634c8">CAPTURE_COMPARE::REGISTER0</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#gga04614f11ea4a6dc78186af21246d270fad85243a747ac5537ef0b7adde99c3e98">CAPTURE_MODE::RISING_EDGE</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#ggaaf349f39ff658349c88598e3f164ffceab2e32491de8147e6c23971ec0a50ce0b">CAPTURE_INPUT::CCIXA</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#ggae55512f05376cc6404a9b1d330a507d1a6003168ea156fdffb3b212d5568e16cf">CAPTURE::SYNCHRONOUS</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#gga3ffe47d24337d38fbed76ef8328e2011ab332708e4304e13c9b424e7465254954">CAPTURE_COMPARE_INT::ENABLE</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#gga3a22beecab57abfb3c453bf438235635a4c4eb65fa364ef0c8e802c1c57cb1ea3">COMPARE_OUTPUT::BITVALUE</a></div><div class="line"> };</div><div class="line"> </div><div class="line">ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#gaa526e20c4c0fce08c0942bbbcdac480e">initCaptureMode</a>(param); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
@@ -725,7 +725,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXEX0, typename REGTYPE , R
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Initializes Compare Mode. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> </div><div class="line"> constexpr <a class="code" href="group__groupParamsMSP430TimerA.html#gadb4cd3b2e52d762b0f3abad93f339283">TIMERA::initCompare</a> param {</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#gga21040d060f3945bbccbafcef84eb5305abf5b8f7cc26f9792d509e6db6fd634c8">TIMERA::CAPTURE_COMPARE::REGISTER0</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#gga3ffe47d24337d38fbed76ef8328e2011ab332708e4304e13c9b424e7465254954">TIMERA::CAPTURE_COMPARE_INT::ENABLE</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#gga3a22beecab57abfb3c453bf438235635a4c4eb65fa364ef0c8e802c1c57cb1ea3">TIMERA::COMPARE_OUTPUT::BITVALUE</a>,</div><div class="line">   50000</div><div class="line">};</div><div class="line"> </div><div class="line">ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#ga77d713017c5b6cf7bd1e67d6e1cc7fc3">initCompareMode</a>(param); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
@@ -761,7 +761,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Configures Timer_A in continuous mode. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> </div><div class="line">constexpr <a class="code" href="group__groupParamsMSP430TimerA.html#gaa9720a83de3882e4dd2cb583a5e9f1fa">TIMERA::initContinuous</a> param{</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#ggab25b5f23ee74d42373db2865fb7b4bccab88c7c2fc640bdbd4125b363c2c018de">TIMERA::CLOCKSOURCE::SMCLK</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#gga6eca85d59f71ae98f1b991f55abba958a2fc2fd654d18496249256860fc5ee0ca">TIMERA::CLOCK_DIV::DIV1</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#ggac1dd95679486b8aa5c19efb3ada37dc8afc93ea58f6d27ffed2b6518ffecf3e4e">TIMERA::GLOBAL_INT::DISABLE</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#gga3ffe47d24337d38fbed76ef8328e2011ab332708e4304e13c9b424e7465254954">TIMERA::CLEAR_COUNT_DIR::ENABLE</a>,</div><div class="line">   <span class="keyword">false</span></div><div class="line">};</div><div class="line"> </div><div class="line">ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#ga48ce29f7a6fe3b5337282c016f371b41">initContinuousMode</a>(param); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
@@ -797,7 +797,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Configures Timer_A in up/down mode. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> </div><div class="line">constexpr <a class="code" href="namespaceMT_1_1MSP430_1_1TIMERA.html#ad814cfd16869166b4daa0b985fb7e7dc">TIMERA::initUpDown</a> param{</div><div class="line">    <a class="code" href="group__groupEnumsMSP430TimerA.html#ggab25b5f23ee74d42373db2865fb7b4bccab88c7c2fc640bdbd4125b363c2c018de">CLOCKSOURCE::SMCLK</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#gga6eca85d59f71ae98f1b991f55abba958a2fc2fd654d18496249256860fc5ee0ca">CLOCK_DIV::DIV1</a>,</div><div class="line">   32767,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#ggac1dd95679486b8aa5c19efb3ada37dc8afc93ea58f6d27ffed2b6518ffecf3e4e">GLOBAL_INT::DISABLE</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#ggac1dd95679486b8aa5c19efb3ada37dc8afc93ea58f6d27ffed2b6518ffecf3e4e">CAPTURE_COMPARE_INT::DISABLE</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#gga3ffe47d24337d38fbed76ef8328e2011ab332708e4304e13c9b424e7465254954">CLEAR_COUNT_DIR::ENABLE</a>,</div><div class="line">   <span class="keyword">true</span></div><div class="line">};</div><div class="line"> </div><div class="line">ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#ga0de6587675b0220332a1b4d1949862d1">initUpDownMode</a>(param); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
@@ -833,7 +833,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Configures Timer_A in up mode. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> </div><div class="line">constexpr <a class="code" href="group__groupParamsMSP430TimerA.html#ga89f688ae0b10b06c35ef018aba4d659f">TIMERA::initUp</a> param{</div><div class="line">    <a class="code" href="group__groupEnumsMSP430TimerA.html#ggab25b5f23ee74d42373db2865fb7b4bccab88c7c2fc640bdbd4125b363c2c018de">CLOCKSOURCE::SMCLK</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#gga6eca85d59f71ae98f1b991f55abba958a2fc2fd654d18496249256860fc5ee0ca">CLOCK_DIV::DIV1</a>,</div><div class="line">   32767,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#ggac1dd95679486b8aa5c19efb3ada37dc8afc93ea58f6d27ffed2b6518ffecf3e4e">GLOBAL_INT::DISABLE</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#ggac1dd95679486b8aa5c19efb3ada37dc8afc93ea58f6d27ffed2b6518ffecf3e4e">CAPTURE_COMPARE_INT::DISABLE</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#gga3ffe47d24337d38fbed76ef8328e2011ab332708e4304e13c9b424e7465254954">CLEAR_COUNT_DIR::ENABLE</a>,</div><div class="line">   <span class="keyword">true</span></div><div class="line">};</div><div class="line"> </div><div class="line">ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#ga76396845af8b97f6f0173a338b196c5b">initUpMode</a>(param); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
@@ -869,7 +869,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXEX0, typename REGTYPE , R
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Generate a PWM with timer running in up mode. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> </div><div class="line">constexpr <a class="code" href="group__groupParamsMSP430TimerA.html#ga214d054925a7875d073c63be8b35ef78">TIMERA::initPWM</a> param{</div><div class="line">    <a class="code" href="group__groupEnumsMSP430TimerA.html#ggab25b5f23ee74d42373db2865fb7b4bccab88c7c2fc640bdbd4125b363c2c018de">CLOCKSOURCE::SMCLK</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#gga6eca85d59f71ae98f1b991f55abba958a2fc2fd654d18496249256860fc5ee0ca">CLOCK_DIV::DIV1</a>,</div><div class="line">   32767,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#gga21040d060f3945bbccbafcef84eb5305abf5b8f7cc26f9792d509e6db6fd634c8">CAPTURE_COMPARE::REGISTER0</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430TimerA.html#gga3a22beecab57abfb3c453bf438235635ac1c06735bd96fcb338d7210f448d33ef">COMPARE_OUTPUT::RESET_SET</a>,</div><div class="line">   1600</div><div class="line">};</div><div class="line"> </div><div class="line">ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#ga835a08e15ce4fb26a9f9517ebbdb8836">outputPWM</a>(param); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
@@ -915,7 +915,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXEX0, typename REGTYPE , R
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Sets the value of the capture-compare register. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#gacf211ff06d86df8e8cf0e1552e1795c2">setCompareValue</a>(<a class="code" href="group__groupEnumsMSP430TimerA.html#gga21040d060f3945bbccbafcef84eb5305abf5b8f7cc26f9792d509e6db6fd634c8">TIMERA::CAPTURE_COMPARE::REGISTER0</a>,50000); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
@@ -962,7 +962,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXEX0, typename REGTYPE , R
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Set output bit for output mode. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#gaa55a066720b1d226d98b04048c8c9c0e">setOutputForOutputModeOutBitValue</a>(<a class="code" href="group__groupEnumsMSP430TimerA.html#gga21040d060f3945bbccbafcef84eb5305abf5b8f7cc26f9792d509e6db6fd634c8">TIMERA::CAPTURE_COMPARE::REGISTER0</a>, <a class="code" href="group__groupEnumsMSP430TimerA.html#ggaaac37abe95f284356eb54bbe51c2fe08ab89de3b4b81c4facfac906edf29aec8c">TIMERA::COMPARE_OUT_BIT::HIGH</a>); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
@@ -1009,7 +1009,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXEX0, typename REGTYPE , R
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Sets the output mode for the timer even the timer is already running. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA2.html">TIMERA::TA0</a> ta0;</div><div class="line"> ta0.<a class="code" href="group__groupFuncsMSP430TimerA.html#ga1bfcdaca58c64b61ed48c5fe56b53562">setOutputMode</a>(<a class="code" href="group__groupEnumsMSP430TimerA.html#gga21040d060f3945bbccbafcef84eb5305abf5b8f7cc26f9792d509e6db6fd634c8">TIMERA::CAPTURE_COMPARE::REGISTER0</a>, <a class="code" href="group__groupEnumsMSP430TimerA.html#gga3a22beecab57abfb3c453bf438235635ac1c06735bd96fcb338d7210f448d33ef">TIMERA::COMPARE_OUTPUT::RESET_SET</a>); </div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
@@ -1046,7 +1046,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Starts Timer_A counter. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> TIMERA::A0 a0;</div><div class="line"> a0.startCounter(<a class="code" href="group__groupEnumsMSP430TimerA.html#ggab7477f732df38878ffec805fafbba881afbaedde498cdead4f2780217646e9ba1">TIMERA::MODE::UP</a>); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
@@ -1081,7 +1081,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMERA/TimerA.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Stops the timer. </p>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> TIMERA::A0 a0;</div><div class="line"> a0.stop(); </div></div><!-- fragment --> 
@@ -1092,7 +1092,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 <!-- Generated by DoxyPress 1.4.0 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sa Dez 19 2020 18:41:28 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Do Jan 14 2021 10:34:15 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>
