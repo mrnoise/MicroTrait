@@ -101,7 +101,7 @@ struct enable_Enum_bits<volatile TIMERA_INT> {
 namespace MT::MSP430::TIMERA {
 
 /**
-* @ingroup groupEnumsMSP430Sfr
+* @ingroup groupEnumsMSP430TimerA
 ****************************************************************
 * @brief Timer A interrupt types
 ****************************************************************
