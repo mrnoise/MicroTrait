@@ -1,8 +1,8 @@
 #ifndef MICROTRAIT_TESTS_MSP430_TESTWDTA_HPP_
 #define MICROTRAIT_TESTS_MSP430_TESTWDTA_HPP_
 
-#include "MicroTrait/MSP430/WDTA/WdtA.hpp"
 #include <assert.h>
+#include <MicroTrait/MSP430/WDT/WdtA.hpp>
 
 namespace MT::Tests::MSP430::WDTA::Internal {
 
