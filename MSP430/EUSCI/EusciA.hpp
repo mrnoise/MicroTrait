@@ -178,7 +178,7 @@ using STATUS = MT::Misc::EUSCIA_UART_STATUS;
 enum class PARITY : uint8_t {
     NO   = (0x00),
     ODD  = (0x01),
-    EVEN = (0x01)
+    EVEN = (0x02)
 };
 
 
@@ -319,7 +319,9 @@ using INT = MT::Misc::EUSCIA_SPI_INT;
 }// namespace MT::MSP430::EUSCIA::SPI
 
 
-namespace MT::MSP430::EUSCIA::UART::INTERNAL {
+namespace MT::MSP430::EUSCIA::UART::Internal {
+
+using namespace MT::Misc::Cast;
 
 template<volatile auto *CTLW0, volatile auto *CTLW1, volatile auto *BRW, volatile auto *MCTLW, volatile auto *STATW, volatile auto *RXBUF, volatile auto *TXBUF, volatile auto *ABCTL, volatile auto *IRCTL, volatile auto *IE, volatile auto *IFG>
 struct UART {
@@ -342,7 +344,8 @@ struct UART {
     /**
 	* @ingroup groupFuncsMSP430UART_EUSCI_A
 	****************************************************************
-	* @brief Starts Timer_A counter
+	* @brief initialization routine for the UART block
+	* calculate Baudrate -> http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSP430BaudRateConverter/index.html
 	* @details
 	* Usage: \code {.cpp}
 	* using namespace MT::MSP430;
@@ -352,27 +355,50 @@ struct UART {
 	*@param mode -> stop,up,continuous,up/down -> use enumeration TIMERA::MODE
 	****************************************************************
 	*/
+    constexpr void init(const initParam &param) noexcept {
+
+        uint16_t parity = 0;
+        switch (param.parity) {
+            case PARITY::NO:
+                break;
+
+            case PARITY::ODD:
+                parity = UCPEN;
+                break;
+
+            case PARITY::EVEN:
+                parity = UCPEN | UCPAR;
+                break;
+        }
+
+        const uint16_t ctlw0 = UCSWRST | toUnderlyingType(param.clkSource) | toUnderlyingType(param.msbOrLsbFirst) | toUnderlyingType(param.stopBits) | parity | toUnderlyingType(param.mode);
+
+        m_ctlw0.override(ctlw0);
+
+        m_brw.override(param.clockPrescalar);
+        m_mctlw.override((param.secondModReg << 8)
+                         + (param.firstModReg << 4) + toUnderlyingType(param.gen));
+    }
 };
-}// namespace MT::MSP430::EUSCIA::UART::INTERNAL
+}// namespace MT::MSP430::EUSCIA::UART::Internal
 
 
 namespace MT::MSP430::EUSCIA::UART {
 
-
 #if defined(__MSP430_HAS_EUSCI_A0__)
-using A0 = INTERNAL::UART<&UCA0CTLW0, &UCA0CTLW1, &UCA0BRW, &UCA0MCTLW, &UCA0STATW, &UCA0RXBUF, &UCA0TXBUF, &UCA0ABCTL, &UCA0IRCTL, &UCA0IE, &UCA0IFG>;
+using A0 = Internal::UART<&UCA0CTLW0, &UCA0CTLW1, &UCA0BRW, &UCA0MCTLW, &UCA0STATW, &UCA0RXBUF, &UCA0TXBUF, &UCA0ABCTL, &UCA0IRCTL, &UCA0IE, &UCA0IFG>;
 #endif
 
 #if defined(__MSP430_HAS_EUSCI_A1__)
-using A1 = INTERNAL::UART<&UCA1CTLW0, &UCA1CTLW1, &UCA1BRW, &UCA1MCTLW, &UCA1STATW, &UCA1RXBUF, &UCA1TXBUF, &UCA1ABCTL, &UCA1IRCTL, &UCA1IE, &UCA1IFG>;
+using A1 = Internal::UART<&UCA1CTLW0, &UCA1CTLW1, &UCA1BRW, &UCA1MCTLW, &UCA1STATW, &UCA1RXBUF, &UCA1TXBUF, &UCA1ABCTL, &UCA1IRCTL, &UCA1IE, &UCA1IFG>;
 #endif
 
 #if defined(__MSP430_HAS_EUSCI_A2__)
-using A2 = INTERNAL::UART<&UCA2CTLW0, &UCA2CTLW1, &UCA2BRW, &UCA2MCTLW, &UCA2STATW, &UCA2RXBUF, &UCA2TXBUF, &UCA2ABCTL, &UCA2IRCTL, &UCA2IE, &UCA2IFG>;
+using A2 = Internal::UART<&UCA2CTLW0, &UCA2CTLW1, &UCA2BRW, &UCA2MCTLW, &UCA2STATW, &UCA2RXBUF, &UCA2TXBUF, &UCA2ABCTL, &UCA2IRCTL, &UCA2IE, &UCA2IFG>;
 #endif
 
 #if defined(__MSP430_HAS_EUSCI_A3__)
-using A3 = INTERNAL::UART<&UCA3CTLW0, &UCA3CTLW1, &UCA3BRW, &UCA3MCTLW, &UCA3STATW, &UCA3RXBUF, &UCA3TXBUF, &UCA3ABCTL, &UCA3IRCTL, &UCA3IE, &UCA3IFG>;
+using A3 = Internal::UART<&UCA3CTLW0, &UCA3CTLW1, &UCA3BRW, &UCA3MCTLW, &UCA3STATW, &UCA3RXBUF, &UCA3TXBUF, &UCA3ABCTL, &UCA3IRCTL, &UCA3IE, &UCA3IFG>;
 #endif
 
 
