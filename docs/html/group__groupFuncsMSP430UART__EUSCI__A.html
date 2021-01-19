@@ -62,6 +62,8 @@ $(document).ready(function(){initNavTree('group__groupFuncsMSP430UART__EUSCI__A.
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">UART Functions<div class="ingroups"><a class="el" href="group__groupMSP430.html">MSP430</a> &raquo; <a class="el" href="group__groupMSP430EUSCI__A.html">EUSCI A</a></div></div>  </div>
   <div class="clear-floats"></div>
@@ -77,13 +79,653 @@ Collaboration diagram for UART Functions:</div>
 </map>
 </td></tr></table></center>
 </div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga1c3c76ae7f7e530d0cff16306cd44131"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga1c3c76ae7f7e530d0cff16306cd44131">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::init</a> (const <a class="el" href="group__groupParamsMSP430UART__EUSCI__A.html#ga430e96ba4dc4385b28f3adfde8debccd">initParam</a> &amp;param) noexcept</td></tr>
+<tr class="memdesc:ga1c3c76ae7f7e530d0cff16306cd44131"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialization routine for the <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> block calculate Baudrate -&gt; <a href="http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSP430BaudRateConverter/index.html">http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSP430BaudRateConverter/index.html</a>  <a href="#ga1c3c76ae7f7e530d0cff16306cd44131">More...</a><br /></td></tr>
+<tr class="separator:ga1c3c76ae7f7e530d0cff16306cd44131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f4ff8f4e4fb337410a0e5453611f968"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga7f4ff8f4e4fb337410a0e5453611f968">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::transmitData</a> (const uint8_t data) noexcept</td></tr>
+<tr class="memdesc:ga7f4ff8f4e4fb337410a0e5453611f968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmits a byte from the <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> Module.  <a href="#ga7f4ff8f4e4fb337410a0e5453611f968">More...</a><br /></td></tr>
+<tr class="separator:ga7f4ff8f4e4fb337410a0e5453611f968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga754954b9f0b5df6c716fb78326ba60b2"><td class="memItemLeft" align="right" valign="top">constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga754954b9f0b5df6c716fb78326ba60b2">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::receiveData</a> () noexcept</td></tr>
+<tr class="memdesc:ga754954b9f0b5df6c716fb78326ba60b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a byte that has been sent to the <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> Module.  <a href="#ga754954b9f0b5df6c716fb78326ba60b2">More...</a><br /></td></tr>
+<tr class="separator:ga754954b9f0b5df6c716fb78326ba60b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga514f9962c191fc15724e5b9ac1c9d089"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga514f9962c191fc15724e5b9ac1c9d089">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::enableInterrupt</a> (const <a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461cc">INT</a> base, const <a class="el" href="namespaceMT_1_1Misc.html#ab3c7d647f3e9bc76237a7c3c97d95c68">INT_EXT</a> ext) noexcept</td></tr>
+<tr class="memdesc:ga514f9962c191fc15724e5b9ac1c9d089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables individual <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> interrupt sources.  <a href="#ga514f9962c191fc15724e5b9ac1c9d089">More...</a><br /></td></tr>
+<tr class="separator:ga514f9962c191fc15724e5b9ac1c9d089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf310b2d62cb64d8b9d44a781d43256a5"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#gaf310b2d62cb64d8b9d44a781d43256a5">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::disableInterrupt</a> (const <a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461cc">INT</a> base, const <a class="el" href="namespaceMT_1_1Misc.html#ab3c7d647f3e9bc76237a7c3c97d95c68">INT_EXT</a> ext) noexcept</td></tr>
+<tr class="memdesc:gaf310b2d62cb64d8b9d44a781d43256a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables individual <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> interrupt sources.  <a href="#gaf310b2d62cb64d8b9d44a781d43256a5">More...</a><br /></td></tr>
+<tr class="separator:gaf310b2d62cb64d8b9d44a781d43256a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d3645ced1a8ecd4dbde7d97ffa8ecda"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__groupEnumsMSP430Types.html#ga479386b6bd2b0b2ba04a910f49697804">INT_MASK_MATCH</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga0d3645ced1a8ecd4dbde7d97ffa8ecda">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::getInterruptStatus</a> (const <a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461cc">INT</a> base) noexcept</td></tr>
+<tr class="memdesc:ga0d3645ced1a8ecd4dbde7d97ffa8ecda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> interrupt status.  <a href="#ga0d3645ced1a8ecd4dbde7d97ffa8ecda">More...</a><br /></td></tr>
+<tr class="separator:ga0d3645ced1a8ecd4dbde7d97ffa8ecda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43e5fd2772fff4ff154e14431a81c461"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga43e5fd2772fff4ff154e14431a81c461">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::clearInterrupt</a> (const <a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461cc">INT</a> base) noexcept</td></tr>
+<tr class="memdesc:ga43e5fd2772fff4ff154e14431a81c461"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> interrupt sources.  <a href="#ga43e5fd2772fff4ff154e14431a81c461">More...</a><br /></td></tr>
+<tr class="separator:ga43e5fd2772fff4ff154e14431a81c461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9ac55b24030408383bf24f1f26e1eb14"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga9ac55b24030408383bf24f1f26e1eb14">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::enable</a> () noexcept</td></tr>
+<tr class="memdesc:ga9ac55b24030408383bf24f1f26e1eb14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> block.  <a href="#ga9ac55b24030408383bf24f1f26e1eb14">More...</a><br /></td></tr>
+<tr class="separator:ga9ac55b24030408383bf24f1f26e1eb14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6a97727bd415946a6154d278a3d9464c"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga6a97727bd415946a6154d278a3d9464c">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::disable</a> () noexcept</td></tr>
+<tr class="memdesc:ga6a97727bd415946a6154d278a3d9464c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> block.  <a href="#ga6a97727bd415946a6154d278a3d9464c">More...</a><br /></td></tr>
+<tr class="separator:ga6a97727bd415946a6154d278a3d9464c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaebf3c455da5462536b47f76f44225872"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__groupEnumsMSP430Types.html#ga479386b6bd2b0b2ba04a910f49697804">INT_MASK_MATCH</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#gaebf3c455da5462536b47f76f44225872">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::queryStatusFlags</a> (const <a class="el" href="namespaceMT_1_1Misc.html#a2e72e53fa583ce634776e9cebbc4a24c">STATUS</a> stat) noexcept</td></tr>
+<tr class="memdesc:gaebf3c455da5462536b47f76f44225872"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> status flags.  <a href="#gaebf3c455da5462536b47f76f44225872">More...</a><br /></td></tr>
+<tr class="separator:gaebf3c455da5462536b47f76f44225872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga106d11e10cd0e56496d23f150666b492"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga106d11e10cd0e56496d23f150666b492">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::setDormant</a> () noexcept</td></tr>
+<tr class="memdesc:ga106d11e10cd0e56496d23f150666b492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> module in dormant mode.  <a href="#ga106d11e10cd0e56496d23f150666b492">More...</a><br /></td></tr>
+<tr class="separator:ga106d11e10cd0e56496d23f150666b492"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae983a0d439730a7623065886e6f6cf39"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#gae983a0d439730a7623065886e6f6cf39">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::resetDormant</a> () noexcept</td></tr>
+<tr class="memdesc:gae983a0d439730a7623065886e6f6cf39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-enables <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> module from dormant mode.  <a href="#gae983a0d439730a7623065886e6f6cf39">More...</a><br /></td></tr>
+<tr class="separator:gae983a0d439730a7623065886e6f6cf39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaae2bc7add063c1bd67c7378b18f67957"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#gaae2bc7add063c1bd67c7378b18f67957">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::transmitAddress</a> (const uint8_t transmitAddr) noexcept</td></tr>
+<tr class="memdesc:gaae2bc7add063c1bd67c7378b18f67957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmits the next byte to be transmitted marked as address depending on selected multiprocessor mode.  <a href="#gaae2bc7add063c1bd67c7378b18f67957">More...</a><br /></td></tr>
+<tr class="separator:gaae2bc7add063c1bd67c7378b18f67957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d09833366a91545cc6e6f2b4751fe7b"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga0d09833366a91545cc6e6f2b4751fe7b">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::transmitBreak</a> () noexcept</td></tr>
+<tr class="memdesc:ga0d09833366a91545cc6e6f2b4751fe7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmits a break with the next write to the transmit buffer.  <a href="#ga0d09833366a91545cc6e6f2b4751fe7b">More...</a><br /></td></tr>
+<tr class="separator:ga0d09833366a91545cc6e6f2b4751fe7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6570827a853a4d790b01eb17242888b1"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga6570827a853a4d790b01eb17242888b1">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::getReceiveBufferAddress</a> () noexcept</td></tr>
+<tr class="memdesc:ga6570827a853a4d790b01eb17242888b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the address of the RX Buffer of the <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> for the DMA module.  <a href="#ga6570827a853a4d790b01eb17242888b1">More...</a><br /></td></tr>
+<tr class="separator:ga6570827a853a4d790b01eb17242888b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaccd7246b15b4eee6a56d7d2bfd411ad7"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#gaccd7246b15b4eee6a56d7d2bfd411ad7">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::getTransmitBufferAddress</a> () noexcept</td></tr>
+<tr class="memdesc:gaccd7246b15b4eee6a56d7d2bfd411ad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the address of the TX Buffer of the <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> for the DMA module.  <a href="#gaccd7246b15b4eee6a56d7d2bfd411ad7">More...</a><br /></td></tr>
+<tr class="separator:gaccd7246b15b4eee6a56d7d2bfd411ad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c00aa4eeb7c03e54c47e05ea9934089"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga9c00aa4eeb7c03e54c47e05ea9934089">MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::selectDeglitchTime</a> (const <a class="el" href="group__groupEnumsMSP430UART__EUSCI__A.html#ga4d481229cec2de264ddca344a8663a6e">DEGLITCH</a> time) noexcept</td></tr>
+<tr class="memdesc:ga9c00aa4eeb7c03e54c47e05ea9934089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmits the next byte to be transmitted marked as address depending on selected multiprocessor mode.  <a href="#ga9c00aa4eeb7c03e54c47e05ea9934089">More...</a><br /></td></tr>
+<tr class="separator:ga9c00aa4eeb7c03e54c47e05ea9934089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Functions in this module for UART mode </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ga43e5fd2772fff4ff154e14431a81c461"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::clearInterrupt </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461cc">INT</a>&#160;</td>
+          <td class="paramname"><em>base</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>Clears <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> interrupt sources. </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line">a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga43e5fd2772fff4ff154e14431a81c461">clearInterrupt</a>(UART::INT::RECEIVE | UART::INT::TRANSMIT); </div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td>-&gt; base interrupt sources to clear -&gt; use Enumeration <a class="el" href="group__groupEnumsMSP430UART__EUSCI__A.html#ga70a5e7b167e2c17ee87ce948a111ce7d" title="EUSCI A UART interrupt types. ">UART::INT</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6a97727bd415946a6154d278a3d9464c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::disable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>Disables the <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> block. </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line">a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga6a97727bd415946a6154d278a3d9464c">disable</a>(); </div></div><!-- fragment --> 
+</div>
+</div>
+<a class="anchor" id="gaf310b2d62cb64d8b9d44a781d43256a5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::disableInterrupt </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461cc">INT</a>&#160;</td>
+          <td class="paramname"><em>base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceMT_1_1Misc.html#ab3c7d647f3e9bc76237a7c3c97d95c68">INT_EXT</a>&#160;</td>
+          <td class="paramname"><em>ext</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>Disables individual <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> interrupt sources. </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line">a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#gaf310b2d62cb64d8b9d44a781d43256a5">disableInterrupt</a>(UART::INT::RECEIVE | UART::INT::TRANSMIT, UART::INT_EXT::RECEIVE_ERROR); </div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td>-&gt; base interrupt sources to disable -&gt; use Enumeration <a class="el" href="group__groupEnumsMSP430UART__EUSCI__A.html#ga70a5e7b167e2c17ee87ce948a111ce7d" title="EUSCI A UART interrupt types. ">UART::INT</a> </td></tr>
+    <tr><td class="paramname">ext</td><td>-&gt; additional interrupt sources to disable -&gt; use Enumeration <a class="el" href="group__groupEnumsMSP430UART__EUSCI__A.html#gaa798418d78f5220ceeb6f6832b3e2a33" title="EUSCI A UART interrupt types extentions. ">UART::INT_EXT</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga9ac55b24030408383bf24f1f26e1eb14"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::enable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>Enables the <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> block. </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line">a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga9ac55b24030408383bf24f1f26e1eb14">enable</a>(); </div></div><!-- fragment --> 
+</div>
+</div>
+<a class="anchor" id="ga514f9962c191fc15724e5b9ac1c9d089"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::enableInterrupt </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461cc">INT</a>&#160;</td>
+          <td class="paramname"><em>base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceMT_1_1Misc.html#ab3c7d647f3e9bc76237a7c3c97d95c68">INT_EXT</a>&#160;</td>
+          <td class="paramname"><em>ext</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>Enables individual <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> interrupt sources. </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line">a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga514f9962c191fc15724e5b9ac1c9d089">enableInterrupt</a>(UART::INT::RECEIVE | UART::INT::TRANSMIT, UART::INT_EXT::RECEIVE_ERROR); </div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td>-&gt; base interrupt sources to enable -&gt; use Enumeration <a class="el" href="group__groupEnumsMSP430UART__EUSCI__A.html#ga70a5e7b167e2c17ee87ce948a111ce7d" title="EUSCI A UART interrupt types. ">UART::INT</a> </td></tr>
+    <tr><td class="paramname">ext</td><td>-&gt; additional interrupt sources to enable -&gt; use Enumeration <a class="el" href="group__groupEnumsMSP430UART__EUSCI__A.html#gaa798418d78f5220ceeb6f6832b3e2a33" title="EUSCI A UART interrupt types extentions. ">UART::INT_EXT</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0d3645ced1a8ecd4dbde7d97ffa8ecda"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__groupEnumsMSP430Types.html#ga479386b6bd2b0b2ba04a910f49697804">INT_MASK_MATCH</a> MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::getInterruptStatus </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461cc">INT</a>&#160;</td>
+          <td class="paramname"><em>base</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>Gets the current <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> interrupt status. </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line"><span class="keywordflow">if</span>(a0.getInterruptStatus(UART::INT::RECEIVE | UART::INT::TRANSMIT) == <a class="code" href="group__groupEnumsMSP430Types.html#gga479386b6bd2b0b2ba04a910f49697804ac0d83f0b82a6b30de8811e69e6d95c61">INT_MASK_MATCH::TRUE</a>) doSomething(); </div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td>-&gt; base interrupt sources to check for status -&gt; use Enumeration <a class="el" href="group__groupEnumsMSP430UART__EUSCI__A.html#ga70a5e7b167e2c17ee87ce948a111ce7d" title="EUSCI A UART interrupt types. ">UART::INT</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>if all the given base flags are set or not (<a class="el" href="group__groupEnumsMSP430Types.html#ga479386b6bd2b0b2ba04a910f49697804" title="Interrupt Flag match. ">MT::MSP430::INT_MASK_MATCH</a>) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6570827a853a4d790b01eb17242888b1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::getReceiveBufferAddress </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>Returns the address of the RX Buffer of the <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> for the DMA module. </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> rxBufAdr = a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga6570827a853a4d790b01eb17242888b1">getReceiveBufferAddress</a>(); </div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Address of RX Buffer </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaccd7246b15b4eee6a56d7d2bfd411ad7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::getTransmitBufferAddress </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>Returns the address of the TX Buffer of the <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> for the DMA module. </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> txBufAdr = a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#gaccd7246b15b4eee6a56d7d2bfd411ad7">getTransmitBufferAddress</a>(); </div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Address of TX Buffer </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga1c3c76ae7f7e530d0cff16306cd44131"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::init </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__groupParamsMSP430UART__EUSCI__A.html#ga430e96ba4dc4385b28f3adfde8debccd">initParam</a> &amp;&#160;</td>
+          <td class="paramname"><em>param</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>initialization routine for the <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> block calculate Baudrate -&gt; <a href="http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSP430BaudRateConverter/index.html">http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSP430BaudRateConverter/index.html</a> </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="group__groupParamsMSP430UART__EUSCI__A.html#ga430e96ba4dc4385b28f3adfde8debccd">UART::initParam</a> param{</div><div class="line">   <a class="code" href="group__groupEnumsMSP430UART__EUSCI__A.html#gga3ca65c5b262e34207f1fc69894ad8d99ab88c7c2fc640bdbd4125b363c2c018de">UART::CLOCKSOURCE::SMCLK</a>,</div><div class="line">   6,</div><div class="line">   8,</div><div class="line">   17,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430UART__EUSCI__A.html#ggabe64307040f3a333760db9b1ddc03bb8a6634c67f28ba9a80efe941b9519aa106">UART::PARITY::EVEN</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430UART__EUSCI__A.html#gga7f489334c9bf63e0d42f7b50330ed49aa89488e0251a0b2be79602890ef16ddb3">UART::ENDIAN::MSB_FIRST</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430UART__EUSCI__A.html#gga9230ebd6e8540fdbed38457395e3e2d2a0f82d86afa0f5dc965c5c15aca58dcfb">UART::STOPBIT::TWO</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430UART__EUSCI__A.html#gga6e71743d1e33fb17990bdd372b6a6372acec5769b01fb096efaf0d6186823c78f">UART::MODE::UART</a>,</div><div class="line">   <a class="code" href="group__groupEnumsMSP430UART__EUSCI__A.html#gga368813cacafb2479ae64f87488cfe506a70494093196af3b7172e0f61b5264e1b">UART::BAUD_GENERATION::OVERSAMPLING</a></div><div class="line">   };</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line">a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga1c3c76ae7f7e530d0cff16306cd44131">init</a>(param); </div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>-&gt; parameter to initialize <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> -&gt; use enumeration <a class="el" href="group__groupParamsMSP430UART__EUSCI__A.html#ga430e96ba4dc4385b28f3adfde8debccd" title="Parameter structure to init UART. ">UART::initParam</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaebf3c455da5462536b47f76f44225872"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__groupEnumsMSP430Types.html#ga479386b6bd2b0b2ba04a910f49697804">INT_MASK_MATCH</a> MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::queryStatusFlags </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceMT_1_1Misc.html#a2e72e53fa583ce634776e9cebbc4a24c">STATUS</a>&#160;</td>
+          <td class="paramname"><em>stat</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>Gets the current <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> status flags. </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line"><span class="keywordflow">if</span>(a0.queryStatusFlags(UART::STATUS::RECEIVE_ERROR | UART::STATUS::FRAMING_ERROR) == <a class="code" href="group__groupEnumsMSP430Types.html#gga479386b6bd2b0b2ba04a910f49697804ac0d83f0b82a6b30de8811e69e6d95c61">INT_MASK_MATCH::TRUE</a>) doSomething(); </div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stat</td><td>-&gt; status flags to check for -&gt; use Enumeration <a class="el" href="group__groupEnumsMSP430UART__EUSCI__A.html#ga00a582e6ae48b7a9d58a3d8106ff3dc5" title="EUSCI A UART status types. ">UART::STATUS</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>if all the given status flags are set or not (<a class="el" href="group__groupEnumsMSP430Types.html#ga479386b6bd2b0b2ba04a910f49697804" title="Interrupt Flag match. ">MT::MSP430::INT_MASK_MATCH</a>) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga754954b9f0b5df6c716fb78326ba60b2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint8_t MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::receiveData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>Receives a byte that has been sent to the <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> Module. </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line"><span class="keyword">const</span> unit8_t byte = a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga754954b9f0b5df6c716fb78326ba60b2">receiveData</a>(); </div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>the byte received </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gae983a0d439730a7623065886e6f6cf39"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::resetDormant </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>Re-enables <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> module from dormant mode. </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line">a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#gae983a0d439730a7623065886e6f6cf39">resetDormant</a>(); </div></div><!-- fragment --> 
+</div>
+</div>
+<a class="anchor" id="ga9c00aa4eeb7c03e54c47e05ea9934089"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::selectDeglitchTime </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__groupEnumsMSP430UART__EUSCI__A.html#ga4d481229cec2de264ddca344a8663a6e">DEGLITCH</a>&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>Transmits the next byte to be transmitted marked as address depending on selected multiprocessor mode. </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line">a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga9c00aa4eeb7c03e54c47e05ea9934089">selectDeglitchTime</a>(<a class="code" href="group__groupEnumsMSP430UART__EUSCI__A.html#gga4d481229cec2de264ddca344a8663a6ea9719a5b6f0d1ed32dfea5bc391b3046c">UART::DEGLITCH::TIME_200NS</a>); </div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>is the selected deglitch time </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga106d11e10cd0e56496d23f150666b492"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::setDormant </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>Sets the <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> module in dormant mode. </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line">a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga106d11e10cd0e56496d23f150666b492">setDormant</a>(); </div></div><!-- fragment --> 
+</div>
+</div>
+<a class="anchor" id="gaae2bc7add063c1bd67c7378b18f67957"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::transmitAddress </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>transmitAddr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>Transmits the next byte to be transmitted marked as address depending on selected multiprocessor mode. </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line">a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#gaae2bc7add063c1bd67c7378b18f67957">transmitAddress</a>(127); </div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">transmitAddr</td><td>is the next byte to be transmitted </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0d09833366a91545cc6e6f2b4751fe7b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::transmitBreak </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>Transmits a break with the next write to the transmit buffer. </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line">a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga0d09833366a91545cc6e6f2b4751fe7b">transmitBreak</a>(); </div></div><!-- fragment --> 
+</div>
+</div>
+<a class="anchor" id="ga7f4ff8f4e4fb337410a0e5453611f968"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;volatile auto * CTLW0, volatile auto * CTLW1, volatile auto * BRW, volatile auto * MCTLW, volatile auto * STATW, volatile auto * RXBUF, volatile auto * TXBUF, volatile auto * ABCTL, volatile auto * IRCTL, volatile auto * IE, volatile auto * IFG&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void MT::MSP430::EUSCIA::UART::Internal::UART&lt; CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG &gt;::transmitData </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="EusciA_8hpp.html">MSP430/EUSCI/EusciA.hpp</a>&gt;</code></p>
+
+<p>Transmits a byte from the <a class="el" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART</a> Module. </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA.html">MT::MSP430::EUSCIA</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div><div class="line">a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga7f4ff8f4e4fb337410a0e5453611f968">transmitData</a>(127); </div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>-&gt; data byte to transmit </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- Generated by DoxyPress 1.4.0 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Do Jan 14 2021 13:42:57 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Di Jan 19 2021 10:00:55 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

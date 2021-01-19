@@ -402,13 +402,18 @@ Enums</h2></td></tr>
 <a class="el" href="namespaceMT_1_1Misc.html#a4f3fac528ad366ec5cb938c2ac2328ccae304fac687078bdea14506e778e95fc2">TIMERA_INT::CAPTURE_INTERRUPT</a> = (CCIFG)
  }</td></tr>
 <tr class="separator:a4f3fac528ad366ec5cb938c2ac2328cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaab2352676762d65cd7004aaa4b461cc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461cc">EUSCIA_UART_INT</a> : uint16_t { <a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461cca42ddaaef1ffd16ad35901150add8f8f2">EUSCIA_UART_INT::RECEIVE</a> = (UCRXIE), 
+<tr class="memitem:aaab2352676762d65cd7004aaa4b461cc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461cc">EUSCIA_UART_INT</a> : uint16_t { <br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461ccab50339a10e1de285ac99d4c3990b8693">EUSCIA_UART_INT::NONE</a> = (0x0000), 
+<a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461cca42ddaaef1ffd16ad35901150add8f8f2">EUSCIA_UART_INT::RECEIVE</a> = (UCRXIE), 
 <a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461cca02d786cd0f7318c2533125f8b591abc5">EUSCIA_UART_INT::TRANSMIT</a> = (UCTXIE), 
 <a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461cca40685907bfdc328b07ca77c9f47e9014">EUSCIA_UART_INT::STARTBIT</a> = (UCSTTIE), 
-<a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461ccae352a517ea0c9cc97ec2da5f2d0f06c9">EUSCIA_UART_INT::TRANSMIT_COMPLETE</a> = (UCTXCPTIE)
+<br />
+&#160;&#160;<a class="el" href="namespaceMT_1_1Misc.html#aaab2352676762d65cd7004aaa4b461ccae352a517ea0c9cc97ec2da5f2d0f06c9">EUSCIA_UART_INT::TRANSMIT_COMPLETE</a> = (UCTXCPTIE)
+<br />
  }</td></tr>
 <tr class="separator:aaab2352676762d65cd7004aaa4b461cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3c7d647f3e9bc76237a7c3c97d95c68"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMT_1_1Misc.html#ab3c7d647f3e9bc76237a7c3c97d95c68">EUSCIA_UART_INT_EXT</a> : uint16_t { <a class="el" href="namespaceMT_1_1Misc.html#ab3c7d647f3e9bc76237a7c3c97d95c68a892a643eb340f74fff27ab376b6105bf">EUSCIA_UART_INT_EXT::RECEIVE_ERROR</a> = (UCRXEIE), 
+<tr class="memitem:ab3c7d647f3e9bc76237a7c3c97d95c68"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMT_1_1Misc.html#ab3c7d647f3e9bc76237a7c3c97d95c68">EUSCIA_UART_INT_EXT</a> : uint16_t { <a class="el" href="namespaceMT_1_1Misc.html#ab3c7d647f3e9bc76237a7c3c97d95c68ab50339a10e1de285ac99d4c3990b8693">EUSCIA_UART_INT_EXT::NONE</a> = (0x0000), 
+<a class="el" href="namespaceMT_1_1Misc.html#ab3c7d647f3e9bc76237a7c3c97d95c68a892a643eb340f74fff27ab376b6105bf">EUSCIA_UART_INT_EXT::RECEIVE_ERROR</a> = (UCRXEIE), 
 <a class="el" href="namespaceMT_1_1Misc.html#ab3c7d647f3e9bc76237a7c3c97d95c68a3b5a1dfa7a142232da820b3bb0cf8254">EUSCIA_UART_INT_EXT::BREAKCHAR</a> = (UCBRKIE)
  }</td></tr>
 <tr class="separator:ab3c7d647f3e9bc76237a7c3c97d95c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -506,7 +511,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th>Enum Values</th><th>Documentation</th></tr><tr><td class="fieldname"><a class="anchor" id="aaab2352676762d65cd7004aaa4b461cca42ddaaef1ffd16ad35901150add8f8f2"></a>RECEIVE&#160;</td><td class="fielddoc"></td></tr>
+<tr><th>Enum Values</th><th>Documentation</th></tr><tr><td class="fieldname"><a class="anchor" id="aaab2352676762d65cd7004aaa4b461ccab50339a10e1de285ac99d4c3990b8693"></a>NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aaab2352676762d65cd7004aaa4b461cca42ddaaef1ffd16ad35901150add8f8f2"></a>RECEIVE&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aaab2352676762d65cd7004aaa4b461cca02d786cd0f7318c2533125f8b591abc5"></a>TRANSMIT&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aaab2352676762d65cd7004aaa4b461cca40685907bfdc328b07ca77c9f47e9014"></a>STARTBIT&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aaab2352676762d65cd7004aaa4b461ccae352a517ea0c9cc97ec2da5f2d0f06c9"></a>TRANSMIT_COMPLETE&#160;</td><td class="fielddoc"></td></tr>
@@ -532,7 +538,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th>Enum Values</th><th>Documentation</th></tr><tr><td class="fieldname"><a class="anchor" id="ab3c7d647f3e9bc76237a7c3c97d95c68a892a643eb340f74fff27ab376b6105bf"></a>RECEIVE_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><th>Enum Values</th><th>Documentation</th></tr><tr><td class="fieldname"><a class="anchor" id="ab3c7d647f3e9bc76237a7c3c97d95c68ab50339a10e1de285ac99d4c3990b8693"></a>NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ab3c7d647f3e9bc76237a7c3c97d95c68a892a643eb340f74fff27ab376b6105bf"></a>RECEIVE_ERROR&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a class="anchor" id="ab3c7d647f3e9bc76237a7c3c97d95c68a3b5a1dfa7a142232da820b3bb0cf8254"></a>BREAKCHAR&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
@@ -858,7 +865,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceMT.html">MT</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1Misc.html">Misc</a></li>
-    <li class="footer">Generated on Do Jan 14 2021 13:42:57 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Di Jan 19 2021 10:00:55 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

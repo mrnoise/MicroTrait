@@ -187,7 +187,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 <p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Reset/Clear the timer clock divider, count direction, count. </p>
-<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART.html#ab482b4c448f5e0c718a415fe227ee923">TIMERA::A0</a> a0;</div><div class="line"> a0.clear(); </div></div><!-- fragment --> 
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART.html#a74f5f81f72427afa79fc77de72727f01">TIMERA::A0</a> a0;</div><div class="line"> a0.clear(); </div></div><!-- fragment --> 
 </div>
 </div>
 <a class="anchor" id="gaf80bf92c9a372750d03e856e4d7d810e"></a>
@@ -546,7 +546,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 <p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Reads the current timer count value -&gt; not Atomic! </p>
-<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART.html#ab482b4c448f5e0c718a415fe227ee923">TIMERA::A0</a> a0;</div><div class="line"> <span class="keyword">const</span> uint16_t count = a0.getCounterValue(); </div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>current count value -&gt; read only in ISR context! </dd></dl>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART.html#a74f5f81f72427afa79fc77de72727f01">TIMERA::A0</a> a0;</div><div class="line"> <span class="keyword">const</span> uint16_t count = a0.getCounterValue(); </div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>current count value -&gt; read only in ISR context! </dd></dl>
 
 </div>
 </div>
@@ -1049,7 +1049,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 <p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Starts Timer_A counter. </p>
-<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART.html#ab482b4c448f5e0c718a415fe227ee923">TIMERA::A0</a> a0;</div><div class="line"> a0.startCounter(<a class="code" href="group__groupEnumsMSP430TimerA.html#ggab7477f732df38878ffec805fafbba881afbaedde498cdead4f2780217646e9ba1">TIMERA::MODE::UP</a>); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART.html#a74f5f81f72427afa79fc77de72727f01">TIMERA::A0</a> a0;</div><div class="line"> a0.startCounter(<a class="code" href="group__groupEnumsMSP430TimerA.html#ggab7477f732df38878ffec805fafbba881afbaedde498cdead4f2780217646e9ba1">TIMERA::MODE::UP</a>); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mode</td><td>-&gt; stop,up,continuous,up/down -&gt; use enumeration <a class="el" href="group__groupEnumsMSP430TimerA.html#gab7477f732df38878ffec805fafbba881" title="Timer mode for Timer A. ">TIMERA::MODE</a> </td></tr>
   </table>
@@ -1084,7 +1084,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 <p><code>#include &lt;<a class="el" href="TimerA_8hpp.html">MSP430/TIMER/TimerA.hpp</a>&gt;</code></p>
 
 <p>Stops the timer. </p>
-<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART.html#ab482b4c448f5e0c718a415fe227ee923">TIMERA::A0</a> a0;</div><div class="line"> a0.stop(); </div></div><!-- fragment --> 
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART.html#a74f5f81f72427afa79fc77de72727f01">TIMERA::A0</a> a0;</div><div class="line"> a0.stop(); </div></div><!-- fragment --> 
 </div>
 </div>
 </div><!-- contents -->
@@ -1092,7 +1092,7 @@ template&lt;volatile auto * TAXCTL, volatile auto * TAXR, volatile auto * TAXCCT
 <!-- Generated by DoxyPress 1.4.0 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Do Jan 14 2021 13:42:57 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Di Jan 19 2021 10:00:55 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

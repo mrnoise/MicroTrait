@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"group__groupEnumsMSP430FRAMPmm.html#gadd0cd07a11c2db8455f1e362e78310a7":[3,0,0,0,4,5],
 "group__groupEnumsMSP430FRAMPmm.html#gadd0cd07a11c2db8455f1e362e78310a7":[1,0,2,1,0,3],
 "group__groupEnumsMSP430FRAMPmm.html#gaf616b45c98b18c671049293fd4724a74":[3,0,0,0,4,8],
 "group__groupEnumsMSP430FRAMPmm.html#gaf616b45c98b18c671049293fd4724a74":[1,0,2,1,0,5],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "group__groupEnumsMSP430IPmm.html#gabf6a4b47c8166a1389472a7b3947fa5c":[3,0,0,0,4,11],
 "group__groupEnumsMSP430IPmm.html#gabf6a4b47c8166a1389472a7b3947fa5c":[1,0,2,2,0,2],
 "group__groupEnumsMSP430IPmm.html#gae1303f190c6f8a7b26c77a3fa1193ee1":[3,0,0,0,4,10],
-"group__groupEnumsMSP430IPmm.html#gae1303f190c6f8a7b26c77a3fa1193ee1":[1,0,2,2,0,1]
+"group__groupEnumsMSP430IPmm.html#gae1303f190c6f8a7b26c77a3fa1193ee1":[1,0,2,2,0,1],
+"group__groupEnumsMSP430SPI__EUSCI__A.html":[1,0,0,0]
 };

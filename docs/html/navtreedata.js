@@ -40,21 +40,35 @@ var NAVTREE =
               [ "ADDRESS_BIT_MULTI_PROCESSOR", "group__groupEnumsMSP430UART__EUSCI__A.html#gga6e71743d1e33fb17990bdd372b6a6372a9a7f931285c15ff0ca7e9802e9c34081", null ],
               [ "AUTOMATIC_BAUDRATE_DETECTION", "group__groupEnumsMSP430UART__EUSCI__A.html#gga6e71743d1e33fb17990bdd372b6a6372a4fc81d0abd6f3d8aa21450935aeb0012", null ]
             ] ],
-            [ "PARITY", "group__groupEnumsMSP430UART__EUSCI__A.html#gadbb38e8ebaf258d0c4daac22675f70a2", [
-              [ "NO", "group__groupEnumsMSP430UART__EUSCI__A.html#ggadbb38e8ebaf258d0c4daac22675f70a2ac2f3f489a00553e7a01d369c103c7251", null ],
-              [ "ODD", "group__groupEnumsMSP430UART__EUSCI__A.html#ggadbb38e8ebaf258d0c4daac22675f70a2a57a1355d5527355458c7cc08ba70bf94", null ],
-              [ "EVEN", "group__groupEnumsMSP430UART__EUSCI__A.html#ggadbb38e8ebaf258d0c4daac22675f70a2a6634c67f28ba9a80efe941b9519aa106", null ]
-            ] ],
-            [ "REMAP_PINS", "group__groupEnumsMSP430UART__EUSCI__A.html#gaa2870431c9a7705a4f87497cd5ee766a", [
-              [ "FALSE", "group__groupEnumsMSP430UART__EUSCI__A.html#ggaa2870431c9a7705a4f87497cd5ee766aa946003f97ccc52d5d3b54ac0ec31bbfc", null ],
-              [ "TRUE", "group__groupEnumsMSP430UART__EUSCI__A.html#ggaa2870431c9a7705a4f87497cd5ee766aac0d83f0b82a6b30de8811e69e6d95c61", null ]
+            [ "PARITY", "group__groupEnumsMSP430UART__EUSCI__A.html#gabe64307040f3a333760db9b1ddc03bb8", [
+              [ "NO", "group__groupEnumsMSP430UART__EUSCI__A.html#ggabe64307040f3a333760db9b1ddc03bb8ac2f3f489a00553e7a01d369c103c7251", null ],
+              [ "ODD", "group__groupEnumsMSP430UART__EUSCI__A.html#ggabe64307040f3a333760db9b1ddc03bb8a57a1355d5527355458c7cc08ba70bf94", null ],
+              [ "EVEN", "group__groupEnumsMSP430UART__EUSCI__A.html#ggabe64307040f3a333760db9b1ddc03bb8a6634c67f28ba9a80efe941b9519aa106", null ]
             ] ],
             [ "STOPBIT", "group__groupEnumsMSP430UART__EUSCI__A.html#ga9230ebd6e8540fdbed38457395e3e2d2", [
               [ "ONE", "group__groupEnumsMSP430UART__EUSCI__A.html#gga9230ebd6e8540fdbed38457395e3e2d2abc21e6484530fc9d0313cb816b733396", null ],
               [ "TWO", "group__groupEnumsMSP430UART__EUSCI__A.html#gga9230ebd6e8540fdbed38457395e3e2d2a0f82d86afa0f5dc965c5c15aca58dcfb", null ]
             ] ]
           ] ],
-          [ "UART Functions", "group__groupFuncsMSP430UART__EUSCI__A.html", null ],
+          [ "UART Functions", "group__groupFuncsMSP430UART__EUSCI__A.html", [
+            [ "clearInterrupt", "group__groupFuncsMSP430UART__EUSCI__A.html#ga43e5fd2772fff4ff154e14431a81c461", null ],
+            [ "disable", "group__groupFuncsMSP430UART__EUSCI__A.html#ga6a97727bd415946a6154d278a3d9464c", null ],
+            [ "disableInterrupt", "group__groupFuncsMSP430UART__EUSCI__A.html#gaf310b2d62cb64d8b9d44a781d43256a5", null ],
+            [ "enable", "group__groupFuncsMSP430UART__EUSCI__A.html#ga9ac55b24030408383bf24f1f26e1eb14", null ],
+            [ "enableInterrupt", "group__groupFuncsMSP430UART__EUSCI__A.html#ga514f9962c191fc15724e5b9ac1c9d089", null ],
+            [ "getInterruptStatus", "group__groupFuncsMSP430UART__EUSCI__A.html#ga0d3645ced1a8ecd4dbde7d97ffa8ecda", null ],
+            [ "getReceiveBufferAddress", "group__groupFuncsMSP430UART__EUSCI__A.html#ga6570827a853a4d790b01eb17242888b1", null ],
+            [ "getTransmitBufferAddress", "group__groupFuncsMSP430UART__EUSCI__A.html#gaccd7246b15b4eee6a56d7d2bfd411ad7", null ],
+            [ "init", "group__groupFuncsMSP430UART__EUSCI__A.html#ga1c3c76ae7f7e530d0cff16306cd44131", null ],
+            [ "queryStatusFlags", "group__groupFuncsMSP430UART__EUSCI__A.html#gaebf3c455da5462536b47f76f44225872", null ],
+            [ "receiveData", "group__groupFuncsMSP430UART__EUSCI__A.html#ga754954b9f0b5df6c716fb78326ba60b2", null ],
+            [ "resetDormant", "group__groupFuncsMSP430UART__EUSCI__A.html#gae983a0d439730a7623065886e6f6cf39", null ],
+            [ "selectDeglitchTime", "group__groupFuncsMSP430UART__EUSCI__A.html#ga9c00aa4eeb7c03e54c47e05ea9934089", null ],
+            [ "setDormant", "group__groupFuncsMSP430UART__EUSCI__A.html#ga106d11e10cd0e56496d23f150666b492", null ],
+            [ "transmitAddress", "group__groupFuncsMSP430UART__EUSCI__A.html#gaae2bc7add063c1bd67c7378b18f67957", null ],
+            [ "transmitBreak", "group__groupFuncsMSP430UART__EUSCI__A.html#ga0d09833366a91545cc6e6f2b4751fe7b", null ],
+            [ "transmitData", "group__groupFuncsMSP430UART__EUSCI__A.html#ga7f4ff8f4e4fb337410a0e5453611f968", null ]
+          ] ],
           [ "UART Parameter", "group__groupParamsMSP430UART__EUSCI__A.html", [
             [ "initParam", "group__groupParamsMSP430UART__EUSCI__A.html#ga430e96ba4dc4385b28f3adfde8debccd", null ]
           ] ]
@@ -750,7 +764,7 @@ var NAVTREE =
             [ "EUSCIA", "namespaceMT_1_1MSP430_1_1EUSCIA.html", [
               [ "SPI", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1SPI.html", null ],
               [ "UART", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART.html", [
-                [ "INTERNAL", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1INTERNAL.html", null ]
+                [ "Internal", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal.html", null ]
               ] ]
             ] ],
             [ "GPIO", "namespaceMT_1_1MSP430_1_1GPIO.html", [
@@ -807,8 +821,26 @@ var NAVTREE =
           [ "MSP430", "namespaceMT_1_1MSP430.html", [
             [ "EUSCIA", "namespaceMT_1_1MSP430_1_1EUSCIA.html", [
               [ "UART", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART.html", [
-                [ "INTERNAL", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1INTERNAL.html", [
-                  [ "UART", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1INTERNAL_1_1UART.html", null ]
+                [ "Internal", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal.html", [
+                  [ "UART", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html", [
+                    [ "clearInterrupt", "group__groupFuncsMSP430UART__EUSCI__A.html#ga43e5fd2772fff4ff154e14431a81c461", null ],
+                    [ "disable", "group__groupFuncsMSP430UART__EUSCI__A.html#ga6a97727bd415946a6154d278a3d9464c", null ],
+                    [ "disableInterrupt", "group__groupFuncsMSP430UART__EUSCI__A.html#gaf310b2d62cb64d8b9d44a781d43256a5", null ],
+                    [ "enable", "group__groupFuncsMSP430UART__EUSCI__A.html#ga9ac55b24030408383bf24f1f26e1eb14", null ],
+                    [ "enableInterrupt", "group__groupFuncsMSP430UART__EUSCI__A.html#ga514f9962c191fc15724e5b9ac1c9d089", null ],
+                    [ "getInterruptStatus", "group__groupFuncsMSP430UART__EUSCI__A.html#ga0d3645ced1a8ecd4dbde7d97ffa8ecda", null ],
+                    [ "getReceiveBufferAddress", "group__groupFuncsMSP430UART__EUSCI__A.html#ga6570827a853a4d790b01eb17242888b1", null ],
+                    [ "getTransmitBufferAddress", "group__groupFuncsMSP430UART__EUSCI__A.html#gaccd7246b15b4eee6a56d7d2bfd411ad7", null ],
+                    [ "init", "group__groupFuncsMSP430UART__EUSCI__A.html#ga1c3c76ae7f7e530d0cff16306cd44131", null ],
+                    [ "queryStatusFlags", "group__groupFuncsMSP430UART__EUSCI__A.html#gaebf3c455da5462536b47f76f44225872", null ],
+                    [ "receiveData", "group__groupFuncsMSP430UART__EUSCI__A.html#ga754954b9f0b5df6c716fb78326ba60b2", null ],
+                    [ "resetDormant", "group__groupFuncsMSP430UART__EUSCI__A.html#gae983a0d439730a7623065886e6f6cf39", null ],
+                    [ "selectDeglitchTime", "group__groupFuncsMSP430UART__EUSCI__A.html#ga9c00aa4eeb7c03e54c47e05ea9934089", null ],
+                    [ "setDormant", "group__groupFuncsMSP430UART__EUSCI__A.html#ga106d11e10cd0e56496d23f150666b492", null ],
+                    [ "transmitAddress", "group__groupFuncsMSP430UART__EUSCI__A.html#gaae2bc7add063c1bd67c7378b18f67957", null ],
+                    [ "transmitBreak", "group__groupFuncsMSP430UART__EUSCI__A.html#ga0d09833366a91545cc6e6f2b4751fe7b", null ],
+                    [ "transmitData", "group__groupFuncsMSP430UART__EUSCI__A.html#ga7f4ff8f4e4fb337410a0e5453611f968", null ]
+                  ] ]
                 ] ]
               ] ]
             ] ],
@@ -1093,7 +1125,7 @@ var NAVTREE =
         [ "MT::Misc::enable_Enum_bits< volatile PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01PMM__INT_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< volatile SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01SFR__INT_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< volatile TIMERA_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01TIMERA__INT_01_4.html", null ],
-        [ "MT::MSP430::EUSCIA::UART::INTERNAL::UART< CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG >", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1INTERNAL_1_1UART.html", null ],
+        [ "MT::MSP430::EUSCIA::UART::Internal::UART< CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG >", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html", null ],
         [ "MT::MSP430::GPIO::Internal::PortCommon< INREG, OUTREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortCommon.html", [
           [ "MT::MSP430::GPIO::Internal::Port< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html", null ],
           [ "MT::MSP430::GPIO::Internal::PortDrv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortDrv.html", null ],
@@ -1210,7 +1242,25 @@ var NAVTREE =
         [ "MSP430", "dir_56021fdb0e8b9a80f75a9a8cba132c6e.html", [
           [ "EUSCI", "dir_b96257ce7418cb41a351567345760a24.html", [
             [ "EusciA.hpp", "EusciA_8hpp.html", [
-              [ "UART", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1INTERNAL_1_1UART.html", null ],
+              [ "UART", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html", [
+                [ "clearInterrupt", "group__groupFuncsMSP430UART__EUSCI__A.html#ga43e5fd2772fff4ff154e14431a81c461", null ],
+                [ "disable", "group__groupFuncsMSP430UART__EUSCI__A.html#ga6a97727bd415946a6154d278a3d9464c", null ],
+                [ "disableInterrupt", "group__groupFuncsMSP430UART__EUSCI__A.html#gaf310b2d62cb64d8b9d44a781d43256a5", null ],
+                [ "enable", "group__groupFuncsMSP430UART__EUSCI__A.html#ga9ac55b24030408383bf24f1f26e1eb14", null ],
+                [ "enableInterrupt", "group__groupFuncsMSP430UART__EUSCI__A.html#ga514f9962c191fc15724e5b9ac1c9d089", null ],
+                [ "getInterruptStatus", "group__groupFuncsMSP430UART__EUSCI__A.html#ga0d3645ced1a8ecd4dbde7d97ffa8ecda", null ],
+                [ "getReceiveBufferAddress", "group__groupFuncsMSP430UART__EUSCI__A.html#ga6570827a853a4d790b01eb17242888b1", null ],
+                [ "getTransmitBufferAddress", "group__groupFuncsMSP430UART__EUSCI__A.html#gaccd7246b15b4eee6a56d7d2bfd411ad7", null ],
+                [ "init", "group__groupFuncsMSP430UART__EUSCI__A.html#ga1c3c76ae7f7e530d0cff16306cd44131", null ],
+                [ "queryStatusFlags", "group__groupFuncsMSP430UART__EUSCI__A.html#gaebf3c455da5462536b47f76f44225872", null ],
+                [ "receiveData", "group__groupFuncsMSP430UART__EUSCI__A.html#ga754954b9f0b5df6c716fb78326ba60b2", null ],
+                [ "resetDormant", "group__groupFuncsMSP430UART__EUSCI__A.html#gae983a0d439730a7623065886e6f6cf39", null ],
+                [ "selectDeglitchTime", "group__groupFuncsMSP430UART__EUSCI__A.html#ga9c00aa4eeb7c03e54c47e05ea9934089", null ],
+                [ "setDormant", "group__groupFuncsMSP430UART__EUSCI__A.html#ga106d11e10cd0e56496d23f150666b492", null ],
+                [ "transmitAddress", "group__groupFuncsMSP430UART__EUSCI__A.html#gaae2bc7add063c1bd67c7378b18f67957", null ],
+                [ "transmitBreak", "group__groupFuncsMSP430UART__EUSCI__A.html#ga0d09833366a91545cc6e6f2b4751fe7b", null ],
+                [ "transmitData", "group__groupFuncsMSP430UART__EUSCI__A.html#ga7f4ff8f4e4fb337410a0e5453611f968", null ]
+              ] ],
               [ "enable_Enum_bits< EUSCIA_SPI_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__SPI__INT_01_4.html", null ],
               [ "enable_Enum_bits< EUSCIA_UART_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__INT_01_4.html", null ],
               [ "enable_Enum_bits< EUSCIA_UART_INT_EXT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__INT__EXT_01_4.html", null ],
@@ -1219,10 +1269,10 @@ var NAVTREE =
               [ "enable_Enum_bits< volatile EUSCIA_UART_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__INT_01_4.html", null ],
               [ "enable_Enum_bits< volatile EUSCIA_UART_INT_EXT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__INT__EXT_01_4.html", null ],
               [ "enable_Enum_bits< volatile EUSCIA_UART_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__STATUS_01_4.html", null ],
-              [ "A0", "EusciA_8hpp.html#ab482b4c448f5e0c718a415fe227ee923", null ],
-              [ "A1", "EusciA_8hpp.html#af8a65461df77f493dafc3c41601c3c76", null ],
-              [ "A2", "EusciA_8hpp.html#ae7e8df1705e8cc941ff4c76769900a87", null ],
-              [ "A3", "EusciA_8hpp.html#ab886b20b13188df39eaeab32d8356c85", null ],
+              [ "A0", "EusciA_8hpp.html#a74f5f81f72427afa79fc77de72727f01", null ],
+              [ "A1", "EusciA_8hpp.html#ace41378d83a887c78264cd54fc5431cc", null ],
+              [ "A2", "EusciA_8hpp.html#a5fc986746ef626296bc766e63815d9b9", null ],
+              [ "A3", "EusciA_8hpp.html#a4f5b84f4f3ddbf704b6c4796f60c835b", null ],
               [ "initParam", "EusciA_8hpp.html#ga430e96ba4dc4385b28f3adfde8debccd", null ],
               [ "INT", "EusciA_8hpp.html#ga70a5e7b167e2c17ee87ce948a111ce7d", null ],
               [ "INT", "EusciA_8hpp.html#gaeb5734045a77c66c8b6d1f08b90534df", null ],
@@ -1253,12 +1303,14 @@ var NAVTREE =
                 [ "TRANSMIT", "EusciA_8hpp.html#af6c723d3acc2058d157b74a55cfeae2ea02d786cd0f7318c2533125f8b591abc5", null ]
               ] ],
               [ "EUSCIA_UART_INT", "EusciA_8hpp.html#aaab2352676762d65cd7004aaa4b461cc", [
+                [ "NONE", "EusciA_8hpp.html#aaab2352676762d65cd7004aaa4b461ccab50339a10e1de285ac99d4c3990b8693", null ],
                 [ "RECEIVE", "EusciA_8hpp.html#aaab2352676762d65cd7004aaa4b461cca42ddaaef1ffd16ad35901150add8f8f2", null ],
                 [ "TRANSMIT", "EusciA_8hpp.html#aaab2352676762d65cd7004aaa4b461cca02d786cd0f7318c2533125f8b591abc5", null ],
                 [ "STARTBIT", "EusciA_8hpp.html#aaab2352676762d65cd7004aaa4b461cca40685907bfdc328b07ca77c9f47e9014", null ],
                 [ "TRANSMIT_COMPLETE", "EusciA_8hpp.html#aaab2352676762d65cd7004aaa4b461ccae352a517ea0c9cc97ec2da5f2d0f06c9", null ]
               ] ],
               [ "EUSCIA_UART_INT_EXT", "EusciA_8hpp.html#ab3c7d647f3e9bc76237a7c3c97d95c68", [
+                [ "NONE", "EusciA_8hpp.html#ab3c7d647f3e9bc76237a7c3c97d95c68ab50339a10e1de285ac99d4c3990b8693", null ],
                 [ "RECEIVE_ERROR", "EusciA_8hpp.html#ab3c7d647f3e9bc76237a7c3c97d95c68a892a643eb340f74fff27ab376b6105bf", null ],
                 [ "BREAKCHAR", "EusciA_8hpp.html#ab3c7d647f3e9bc76237a7c3c97d95c68a3b5a1dfa7a142232da820b3bb0cf8254", null ]
               ] ],
@@ -1279,14 +1331,10 @@ var NAVTREE =
                 [ "ADDRESS_BIT_MULTI_PROCESSOR", "EusciA_8hpp.html#gga6e71743d1e33fb17990bdd372b6a6372a9a7f931285c15ff0ca7e9802e9c34081", null ],
                 [ "AUTOMATIC_BAUDRATE_DETECTION", "EusciA_8hpp.html#gga6e71743d1e33fb17990bdd372b6a6372a4fc81d0abd6f3d8aa21450935aeb0012", null ]
               ] ],
-              [ "PARITY", "EusciA_8hpp.html#gadbb38e8ebaf258d0c4daac22675f70a2", [
-                [ "NO", "EusciA_8hpp.html#ggadbb38e8ebaf258d0c4daac22675f70a2ac2f3f489a00553e7a01d369c103c7251", null ],
-                [ "ODD", "EusciA_8hpp.html#ggadbb38e8ebaf258d0c4daac22675f70a2a57a1355d5527355458c7cc08ba70bf94", null ],
-                [ "EVEN", "EusciA_8hpp.html#ggadbb38e8ebaf258d0c4daac22675f70a2a6634c67f28ba9a80efe941b9519aa106", null ]
-              ] ],
-              [ "REMAP_PINS", "EusciA_8hpp.html#gaa2870431c9a7705a4f87497cd5ee766a", [
-                [ "FALSE", "EusciA_8hpp.html#ggaa2870431c9a7705a4f87497cd5ee766aa946003f97ccc52d5d3b54ac0ec31bbfc", null ],
-                [ "TRUE", "EusciA_8hpp.html#ggaa2870431c9a7705a4f87497cd5ee766aac0d83f0b82a6b30de8811e69e6d95c61", null ]
+              [ "PARITY", "EusciA_8hpp.html#gabe64307040f3a333760db9b1ddc03bb8", [
+                [ "NO", "EusciA_8hpp.html#ggabe64307040f3a333760db9b1ddc03bb8ac2f3f489a00553e7a01d369c103c7251", null ],
+                [ "ODD", "EusciA_8hpp.html#ggabe64307040f3a333760db9b1ddc03bb8a57a1355d5527355458c7cc08ba70bf94", null ],
+                [ "EVEN", "EusciA_8hpp.html#ggabe64307040f3a333760db9b1ddc03bb8a6634c67f28ba9a80efe941b9519aa106", null ]
               ] ],
               [ "STOPBIT", "EusciA_8hpp.html#ga9230ebd6e8540fdbed38457395e3e2d2", [
                 [ "ONE", "EusciA_8hpp.html#gga9230ebd6e8540fdbed38457395e3e2d2abc21e6484530fc9d0313cb816b733396", null ],
@@ -2241,12 +2289,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Cast_8hpp.html",
-"GpioInterrupt_8hpp.html#gga44c9807eb53dfd1d2e71e723c4585b36aba179ce8071934e036593e2e8bf48413",
-"Register_8hpp.html#gga0a5451e09f44b4952fd8332b583c652dac9512565ef6194ca664dc41ec0de7a53",
+"GpioInterrupt_8hpp.html#gga44c9807eb53dfd1d2e71e723c4585b36aba38d57eb0b80cd4f945996449a836bf",
+"Register_8hpp.html#gga0a5451e09f44b4952fd8332b583c652dad5d4cc7b09d1843517acc9361f8f665e",
 "group__groupEnumsMSP430FRAMPmm.html#gadd0cd07a11c2db8455f1e362e78310a7",
-"group__groupEnumsMSP430SPI__EUSCI__A.html",
-"group__groupFuncsMSP430FPmm.html#ga6a078e75c825dc665df3b1bfe9e580d7",
-"group__groupFuncsReg.html#gade7cafbb3b8756c3c680cd28a5d62e8b"
+"group__groupEnumsMSP430SPI__EUSCI__A.html#gaeb5734045a77c66c8b6d1f08b90534df",
+"group__groupFuncsMSP430FPmm.html#ga74a3a1e67252ab6ea4d233e087df4c2c",
+"group__groupFuncsMSP430WdtA.html#gae20a829cd75c566a997927d7894727e6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

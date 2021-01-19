@@ -8,13 +8,25 @@
 *
 * @details
 * Usage: \code {.cpp}
-
-#include "MicroTrait/MT.hpp"
-
-using namespace MT::MSP430;
-
-
-\endcode
+*
+*#include "MicroTrait/MT.hpp"
+*
+* using namespace MT::MSP430;
+*
+*  UART::initParam param{
+*    UART::CLOCKSOURCE::SMCLK,
+*    6,
+*    8,
+*    17,
+*    UART::PARITY::EVEN,
+*    UART::ENDIAN::MSB_FIRST,
+*    UART::STOPBIT::TWO,
+*    UART::MODE::UART,
+*    UART::BAUD_GENERATION::OVERSAMPLING
+*	};
+*
+* UART::A0 a0;
+* a0.init(param); \endcode
 *
 * @author Steffen Fuchs
 *<br> Email: admin@definefalsetrue.com
@@ -72,6 +84,7 @@ using namespace MT::MSP430;
 namespace MT::Misc {
 
 enum class EUSCIA_UART_INT : uint16_t {
+    NONE              = (0x0000),
     RECEIVE           = (UCRXIE),
     TRANSMIT          = (UCTXIE),
     STARTBIT          = (UCSTTIE),
@@ -88,6 +101,7 @@ struct enable_Enum_bits<volatile EUSCIA_UART_INT> {
 };
 
 enum class EUSCIA_UART_INT_EXT : uint16_t {
+    NONE          = (0x0000),
     RECEIVE_ERROR = (UCRXEIE),
     BREAKCHAR     = (UCBRKIE)
 };
@@ -175,10 +189,10 @@ using STATUS = MT::Misc::EUSCIA_UART_STATUS;
 * @brief UART Parity options
 ****************************************************************
 */
-enum class PARITY : uint8_t {
+enum class PARITY : uint16_t {
     NO   = (0x00),
-    ODD  = (0x01),
-    EVEN = (0x02)
+    ODD  = (UCPEN),
+    EVEN = (UCPEN | UCPAR)
 };
 
 
@@ -270,20 +284,6 @@ enum class DEGLITCH : uint16_t {
     TIME_200NS = (UCGLIT0 + UCGLIT1)
 };
 
-
-#if defined(__MSP430FR2XX_4XX_FAMILY__)
-/**
-* @ingroup groupEnumsMSP430UART_EUSCI_A
-****************************************************************
-* @brief UART Pin remaping options
-****************************************************************
-*/
-enum class REMAP_PINS : uint16_t {
-    FALSE = (0x0000),
-    TRUE  = (USCIARMP)
-};
-#endif
-
 /**
 * @ingroup groupParamsMSP430UART_EUSCI_A
 ****************************************************************
@@ -348,38 +348,358 @@ struct UART {
 	* calculate Baudrate -> http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSP430BaudRateConverter/index.html
 	* @details
 	* Usage: \code {.cpp}
-	* using namespace MT::MSP430;
+	* using namespace MT::MSP430::EUSCIA;
 	*
-	*  TIMERA::A0 a0;
-	*  a0.startCounter(TIMERA::MODE::UP); \endcode
-	*@param mode -> stop,up,continuous,up/down -> use enumeration TIMERA::MODE
+	*  UART::initParam param{
+    *    UART::CLOCKSOURCE::SMCLK,
+    *    6,
+    *    8,
+    *    17,
+    *    UART::PARITY::EVEN,
+    *    UART::ENDIAN::MSB_FIRST,
+    *    UART::STOPBIT::TWO,
+    *    UART::MODE::UART,
+    *    UART::BAUD_GENERATION::OVERSAMPLING
+    *	};
+	*
+	* UART::A0 a0;
+    * a0.init(param); \endcode
+    *
+	*@param param -> parameter to initialize UART -> use enumeration UART::initParam
 	****************************************************************
 	*/
     constexpr void init(const initParam &param) noexcept {
+        m_ctlw0.override(UCSWRST | toUnderlyingType(param.clkSource) | toUnderlyingType(param.msbOrLsbFirst) | toUnderlyingType(param.stopBits) | toUnderlyingType(param.parity) | toUnderlyingType(param.mode));
+        m_brw.override(param.clockPrescalar);
+        m_mctlw.override((param.secondModReg << 8) + (param.firstModReg << 4) + toUnderlyingType(param.gen));
+    }
 
-        uint16_t parity = 0;
-        switch (param.parity) {
-            case PARITY::NO:
-                break;
 
-            case PARITY::ODD:
-                parity = UCPEN;
-                break;
+    /**
+	* @ingroup groupFuncsMSP430UART_EUSCI_A
+	****************************************************************
+	* @brief Transmits a byte from the UART Module
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* UART::A0 a0;
+    * a0.transmitData(127); \endcode
+    *
+	*@param data -> data byte to transmit
+	****************************************************************
+	*/
+    constexpr void transmitData(const uint8_t data) noexcept {
 
-            case PARITY::EVEN:
-                parity = UCPEN | UCPAR;
-                break;
+        if (!(m_ie.get() & UCTXIE)) {
+            while (!(m_ifg.get() & UCTXIFG))
+                ;
         }
 
-        const uint16_t ctlw0 = UCSWRST | toUnderlyingType(param.clkSource) | toUnderlyingType(param.msbOrLsbFirst) | toUnderlyingType(param.stopBits) | parity | toUnderlyingType(param.mode);
+        m_txbuf.override(data);
+    }
 
-        m_ctlw0.override(ctlw0);
+    /**
+   	* @ingroup groupFuncsMSP430UART_EUSCI_A
+   	****************************************************************
+   	* @brief Receives a byte that has been sent to the UART Module
+   	* @details
+   	* Usage: \code {.cpp}
+   	* using namespace MT::MSP430::EUSCIA;
+   	*
+   	* UART::A0 a0;
+	* const unit8_t byte = a0.receiveData(); \endcode
+	*
+   	*@return the byte received
+   	****************************************************************
+   	*/
+    [[nodiscard]] constexpr uint8_t receiveData() noexcept {
 
-        m_brw.override(param.clockPrescalar);
-        m_mctlw.override((param.secondModReg << 8)
-                         + (param.firstModReg << 4) + toUnderlyingType(param.gen));
+        if (!(m_ie.get() & UCRXIE)) {
+            while (!(m_ifg.get() & UCRXIFG))
+                ;
+        }
+        return m_rxbuf.get();
+    }
+
+
+    /**
+ 	* @ingroup groupFuncsMSP430UART_EUSCI_A
+ 	****************************************************************
+ 	* @brief Enables individual UART interrupt sources
+ 	* @details
+ 	* Usage: \code {.cpp}
+ 	* using namespace MT::MSP430::EUSCIA;
+ 	*
+ 	* UART::A0 a0;
+	* a0.enableInterrupt(UART::INT::RECEIVE | UART::INT::TRANSMIT, UART::INT_EXT::RECEIVE_ERROR); \endcode
+	*
+ 	*@param base -> base interrupt sources to enable -> use Enumeration UART::INT
+ 	*@param ext -> additional interrupt sources to enable -> use Enumeration UART::INT_EXT
+ 	****************************************************************
+ 	*/
+    constexpr void enableInterrupt(const INT base, const INT_EXT ext) noexcept {
+        m_ie.set(base);
+        m_ctlw0.set(ext);
+    }
+
+    /**
+	* @ingroup groupFuncsMSP430UART_EUSCI_A
+	****************************************************************
+	* @brief Disables individual UART interrupt sources
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* UART::A0 a0;
+	* a0.disableInterrupt(UART::INT::RECEIVE | UART::INT::TRANSMIT, UART::INT_EXT::RECEIVE_ERROR); \endcode
+	*
+	*@param base -> base interrupt sources to disable -> use Enumeration UART::INT
+	*@param ext -> additional interrupt sources to disable -> use Enumeration UART::INT_EXT
+	****************************************************************
+	*/
+    constexpr void disableInterrupt(const INT base, const INT_EXT ext) noexcept {
+        m_ie.clear(base);
+        m_ctlw0.clear(ext);
+    }
+
+    /**
+	* @ingroup groupFuncsMSP430UART_EUSCI_A
+	****************************************************************
+	* @brief Gets the current UART interrupt status
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* UART::A0 a0;
+	* if(a0.getInterruptStatus(UART::INT::RECEIVE | UART::INT::TRANSMIT) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
+	*
+	*@param base -> base interrupt sources to check for status -> use Enumeration UART::INT
+	*@return if all the given base flags are set or not (MT::MSP430::INT_MASK_MATCH)
+	****************************************************************
+	*/
+    [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const INT base) noexcept {
+        if (m_ifg.compare(base)) return INT_MASK_MATCH::TRUE;
+        else
+            return INT_MASK_MATCH::FALSE;
+    }
+
+
+    /**
+	* @ingroup groupFuncsMSP430UART_EUSCI_A
+	****************************************************************
+	* @brief Clears UART interrupt sources
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* UART::A0 a0;
+	* a0.clearInterrupt(UART::INT::RECEIVE | UART::INT::TRANSMIT); \endcode
+	*
+	*@param base -> base interrupt sources to clear -> use Enumeration UART::INT
+	****************************************************************
+	*/
+    constexpr void clearInterrupt(const INT base) noexcept {
+        m_ifg.clear(base);
+    }
+
+    /**
+	* @ingroup groupFuncsMSP430UART_EUSCI_A
+	****************************************************************
+	* @brief Enables the UART block
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* UART::A0 a0;
+	* a0.enable(); \endcode
+	*
+	****************************************************************
+	*/
+    constexpr void enable() noexcept {
+        m_ctlw0.clear(UCSWRST);
+    }
+
+    /**
+  	* @ingroup groupFuncsMSP430UART_EUSCI_A
+  	****************************************************************
+  	* @brief Disables the UART block
+  	* @details
+  	* Usage: \code {.cpp}
+  	* using namespace MT::MSP430::EUSCIA;
+  	*
+  	* UART::A0 a0;
+  	* a0.disable(); \endcode
+  	*
+  	****************************************************************
+  	*/
+    constexpr void disable() noexcept {
+        m_ctlw0.set(UCSWRST);
+    }
+
+
+    /**
+   	* @ingroup groupFuncsMSP430UART_EUSCI_A
+   	****************************************************************
+   	* @brief Gets the current UART status flags
+   	* @details
+   	* Usage: \code {.cpp}
+   	* using namespace MT::MSP430::EUSCIA;
+   	*
+   	* UART::A0 a0;
+   	* if(a0.queryStatusFlags(UART::STATUS::RECEIVE_ERROR | UART::STATUS::FRAMING_ERROR) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
+   	*
+   	*@param stat -> status flags to check for -> use Enumeration UART::STATUS
+   	*@return if all the given status flags are set or not (MT::MSP430::INT_MASK_MATCH)
+   	****************************************************************
+   	*/
+    [[nodiscard]] constexpr INT_MASK_MATCH queryStatusFlags(const STATUS stat) noexcept {
+        if (m_statw.compare(stat)) return INT_MASK_MATCH::TRUE;
+        else
+            return INT_MASK_MATCH::FALSE;
+    }
+
+
+    /**
+	* @ingroup groupFuncsMSP430UART_EUSCI_A
+	****************************************************************
+	* @brief Sets the UART module in dormant mode
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* UART::A0 a0;
+	* a0.setDormant(); \endcode
+	*
+	****************************************************************
+	*/
+    constexpr void setDormant() noexcept {
+        m_ctlw0.set(UCDORM);
+    }
+
+
+    /**
+	* @ingroup groupFuncsMSP430UART_EUSCI_A
+	****************************************************************
+	* @brief Re-enables UART module from dormant mode
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* UART::A0 a0;
+	* a0.resetDormant(); \endcode
+	*
+	****************************************************************
+	*/
+    constexpr void resetDormant() noexcept {
+        m_ctlw0.clear(UCDORM);
+    }
+
+
+    /**
+	* @ingroup groupFuncsMSP430UART_EUSCI_A
+	****************************************************************
+	* @brief  Transmits the next byte to be transmitted marked as address
+	* 		  depending on selected multiprocessor mode
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* UART::A0 a0;
+	* a0.transmitAddress(127); \endcode
+	*
+	*@param transmitAddr is the next byte to be transmitted
+	****************************************************************
+	*/
+    constexpr void transmitAddress(const uint8_t transmitAddr) noexcept {
+        m_ctlw0.set(UCTXADDR);
+        m_txbuf.override(transmitAddr);
+    }
+
+
+    /**
+	* @ingroup groupFuncsMSP430UART_EUSCI_A
+	****************************************************************
+	* @brief  Transmits a break with the next write to the transmit buffer
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* UART::A0 a0;
+	* a0.transmitBreak(); \endcode
+	*
+	****************************************************************
+	*/
+    constexpr void transmitBreak() noexcept {
+        m_ctlw0.set(UCTXBRK);
+        if (m_ctlw0.compare(toUnderlyingType(MODE::AUTOMATIC_BAUDRATE_DETECTION))) m_txbuf.override(0x55);
+        else
+            m_txbuf.override(0x00);
+
+        if (!(m_ie.get() & UCTXIE)) {
+            while (!(m_ifg.get() & UCTXIFG))
+                ;
+        }
+    }
+
+    /**
+	* @ingroup groupFuncsMSP430UART_EUSCI_A
+	****************************************************************
+	* @brief Returns the address of the RX Buffer of the UART for the DMA module
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* UART::A0 a0;
+	* const auto rxBufAdr = a0.getReceiveBufferAddress(); \endcode
+	*
+	*@return Address of RX Buffer
+	****************************************************************
+	*/
+    [[nodiscard]] constexpr auto getReceiveBufferAddress() noexcept {
+        return m_rxbuf.get();
+    }
+
+    /**
+	* @ingroup groupFuncsMSP430UART_EUSCI_A
+	****************************************************************
+	* @brief Returns the address of the TX Buffer of the UART for the DMA module
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* UART::A0 a0;
+	* const auto txBufAdr = a0.getTransmitBufferAddress(); \endcode
+	*
+	*@return Address of TX Buffer
+	****************************************************************
+	*/
+    [[nodiscard]] constexpr auto getTransmitBufferAddress() noexcept {
+        return m_txbuf.get();
+    }
+
+
+    /**
+   	* @ingroup groupFuncsMSP430UART_EUSCI_A
+   	****************************************************************
+   	* @brief  Transmits the next byte to be transmitted marked as address
+   	* 		  depending on selected multiprocessor mode
+   	* @details
+   	* Usage: \code {.cpp}
+   	* using namespace MT::MSP430::EUSCIA;
+   	*
+   	* UART::A0 a0;
+   	* a0.selectDeglitchTime(UART::DEGLITCH::TIME_200NS); \endcode
+   	*
+   	*@param time is the selected deglitch time
+   	****************************************************************
+   	*/
+    constexpr void selectDeglitchTime(const DEGLITCH time) noexcept {
+        m_ctlw1.override(toUnderlyingType(time));
     }
 };
+
+
 }// namespace MT::MSP430::EUSCIA::UART::Internal
 
 

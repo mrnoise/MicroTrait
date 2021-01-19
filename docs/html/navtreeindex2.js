@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"Register_8hpp.html#gga0a5451e09f44b4952fd8332b583c652dac9512565ef6194ca664dc41ec0de7a53":[4,0,2,1,9,1],
 "Register_8hpp.html#gga0a5451e09f44b4952fd8332b583c652dad5d4cc7b09d1843517acc9361f8f665e":[4,0,2,1,9,4],
 "Register_8hpp.html#gga0a5451e09f44b4952fd8332b583c652dad8498108dd603522047564a8da7be94c":[4,0,2,1,9,7],
 "Register_8hpp.html#gga26a7b5f5b054dcfecb8251310332b90aa0c4ecd7b59ebc5b9f47974cb9845fd02":[4,0,2,1,8,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "group__groupEnumsMSP430FRAMPmm.html#ga4451f4aa3fae38aaafe1aa807ab209aa":[3,0,0,0,4,9],
 "group__groupEnumsMSP430FRAMPmm.html#ga4451f4aa3fae38aaafe1aa807ab209aa":[1,0,2,1,0,6],
 "group__groupEnumsMSP430FRAMPmm.html#gadaab80caab9f3fdac0d6423779c6f506":[3,0,0,0,4,3],
-"group__groupEnumsMSP430FRAMPmm.html#gadaab80caab9f3fdac0d6423779c6f506":[1,0,2,1,0,1]
+"group__groupEnumsMSP430FRAMPmm.html#gadaab80caab9f3fdac0d6423779c6f506":[1,0,2,1,0,1],
+"group__groupEnumsMSP430FRAMPmm.html#gadd0cd07a11c2db8455f1e362e78310a7":[3,0,0,0,4,5]
 };
