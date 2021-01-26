@@ -69,9 +69,7 @@ $(document).ready(function(){initNavTree('namespaceMT_1_1MSP430_1_1WDTA_1_1Inter
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enums</a> &#124;
-<a href="#func-members">Functions</a> &#124;
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">MT::MSP430::WDTA::Interrupt Namespace Reference</div>  </div>
@@ -79,89 +77,17 @@ $(document).ready(function(){initNavTree('namespaceMT_1_1MSP430_1_1WDTA_1_1Inter
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a5ba738fbe477089e09134b3c51a7d79b"><td class="memTemplParams" colspan="2">template&lt;typename ENUM , typename FUNC &gt; </td></tr>
-<tr class="memitem:a5ba738fbe477089e09134b3c51a7d79b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMT_1_1MSP430_1_1WDTA_1_1Interrupt.html#a5ba738fbe477089e09134b3c51a7d79b">IntHandlers</a> = <a class="el" href="namespaceMT_1_1Universal_1_1Interrupt.html#a4e9b8b59b249347da2dfe28cb71c5ca5">MT::Universal::Interrupt::IntHandlers</a>&lt; ENUM, FUNC &gt;</td></tr>
-<tr class="separator:a5ba738fbe477089e09134b3c51a7d79b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb1607c17d8d789323e6f8f05fbc45a2"><td class="memTemplParams" colspan="2">template&lt;typename ENUM , typename... Vector&gt; </td></tr>
-<tr class="memitem:abb1607c17d8d789323e6f8f05fbc45a2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMT_1_1MSP430_1_1WDTA_1_1Interrupt.html#abb1607c17d8d789323e6f8f05fbc45a2">Interrupt</a> = <a class="el" href="structMT_1_1Universal_1_1Interrupt_1_1Interrupt.html">MT::Universal::Interrupt::Interrupt</a>&lt; ENUM, Vector... &gt;</td></tr>
-<tr class="separator:abb1607c17d8d789323e6f8f05fbc45a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enums</h2></td></tr>
-<tr class="memitem:gafcff8d9b77efcb6769dfe827a0d3dac1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupEnumsMSP430WdtAInt.html#gafcff8d9b77efcb6769dfe827a0d3dac1">WDTA</a> { <a class="el" href="group__groupEnumsMSP430WdtAInt.html#ggafcff8d9b77efcb6769dfe827a0d3dac1a85b68df07b47c6de9b0557bc26efb441">VEC1</a> = 0
- }</td></tr>
-<tr class="memdesc:gafcff8d9b77efcb6769dfe827a0d3dac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Available Watchdog Timers for interrupt callbacks.  <a href="group__groupEnumsMSP430WdtAInt.html#gafcff8d9b77efcb6769dfe827a0d3dac1">More...</a><br /></td></tr>
-<tr class="separator:gafcff8d9b77efcb6769dfe827a0d3dac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a2fe0fb882efe45ccd6d11a6657f059ec"><td class="memItemLeft" align="right" valign="top">__interrupt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMT_1_1MSP430_1_1WDTA_1_1Interrupt.html#a2fe0fb882efe45ccd6d11a6657f059ec">__attribute__</a> ((interrupt (WDT_VECTOR))) void WDT_A_ISR (void)</td></tr>
-<tr class="separator:a2fe0fb882efe45ccd6d11a6657f059ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabc8bf97e55fe1bcc3b321346ef4d13f0"><td class="memTemplParams" colspan="2">template&lt;typename ENUM , typename... FUNC&gt; </td></tr>
-<tr class="memitem:gabc8bf97e55fe1bcc3b321346ef4d13f0"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430WdtAInt.html#gabc8bf97e55fe1bcc3b321346ef4d13f0">makeInterrupt</a> (<a class="el" href="namespaceMT_1_1MSP430_1_1WDTA_1_1Interrupt.html#a5ba738fbe477089e09134b3c51a7d79b">IntHandlers</a>&lt; ENUM, FUNC &gt;...t) noexcept</td></tr>
-<tr class="memdesc:gabc8bf97e55fe1bcc3b321346ef4d13f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">maker function for a complete callback registration  <a href="group__groupFuncsMSP430WdtAInt.html#gabc8bf97e55fe1bcc3b321346ef4d13f0">More...</a><br /></td></tr>
-<tr class="separator:gabc8bf97e55fe1bcc3b321346ef4d13f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga92240408fe4859d158f2e4def4a5fdd8"><td class="memTemplParams" colspan="2">template&lt;typename ENUM , typename FUNC &gt; </td></tr>
-<tr class="memitem:ga92240408fe4859d158f2e4def4a5fdd8"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430WdtAInt.html#ga92240408fe4859d158f2e4def4a5fdd8">makeHandler</a> (ENUM p, FUNC t) noexcept</td></tr>
-<tr class="memdesc:ga92240408fe4859d158f2e4def4a5fdd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">maker function for one callback entry  <a href="group__groupFuncsMSP430WdtAInt.html#ga92240408fe4859d158f2e4def4a5fdd8">More...</a><br /></td></tr>
-<tr class="separator:ga92240408fe4859d158f2e4def4a5fdd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf224492b979eefa82804f63033eeda8f"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430WdtAInt.html#gaf224492b979eefa82804f63033eeda8f">registerCallback</a> (void (*callback)()) noexcept</td></tr>
-<tr class="memdesc:gaf224492b979eefa82804f63033eeda8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">runtime interrupt callback registration -&gt; fixed to <a class="el" href="structMT_1_1MSP430_1_1WdtA.html">WdtA</a>  <a href="group__groupFuncsMSP430WdtAInt.html#gaf224492b979eefa82804f63033eeda8f">More...</a><br /></td></tr>
-<tr class="separator:gaf224492b979eefa82804f63033eeda8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:structMT_1_1MSP430_1_1WDTA_1_1Interrupt_1_1WDT"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupEnumsMSP430WdtAInt.html#structMT_1_1MSP430_1_1WDTA_1_1Interrupt_1_1WDT">WDT</a></td></tr>
+<tr class="memdesc:structMT_1_1MSP430_1_1WDTA_1_1Interrupt_1_1WDT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Available Watchdog Timers for interrupt callbacks  <a href="group__groupEnumsMSP430WdtAInt.html#structMT_1_1MSP430_1_1WDTA_1_1Interrupt_1_1WDT">More...</a><br /></td></tr>
+<tr class="separator:structMT_1_1MSP430_1_1WDTA_1_1Interrupt_1_1WDT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a97ec759adce20ea2dc16b2edd5597697"><td class="memItemLeft" align="right" valign="top">std::array&lt; void (*)(), 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMT_1_1MSP430_1_1WDTA_1_1Interrupt.html#a97ec759adce20ea2dc16b2edd5597697">WdtVectors</a> {}</td></tr>
 <tr class="separator:a97ec759adce20ea2dc16b2edd5597697"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="abb1607c17d8d789323e6f8f05fbc45a2"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ENUM , typename... Vector&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespaceMT_1_1MSP430_1_1WDTA_1_1Interrupt.html#abb1607c17d8d789323e6f8f05fbc45a2">MT::MSP430::WDTA::Interrupt::Interrupt</a> = typedef <a class="el" href="structMT_1_1Universal_1_1Interrupt_1_1Interrupt.html">MT::Universal::Interrupt::Interrupt</a>&lt;ENUM, Vector...&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a5ba738fbe477089e09134b3c51a7d79b"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ENUM , typename FUNC &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespaceMT_1_1MSP430_1_1WDTA_1_1Interrupt.html#a5ba738fbe477089e09134b3c51a7d79b">MT::MSP430::WDTA::Interrupt::IntHandlers</a> = typedef <a class="el" href="namespaceMT_1_1Universal_1_1Interrupt.html#a4e9b8b59b249347da2dfe28cb71c5ca5">MT::Universal::Interrupt::IntHandlers</a>&lt;ENUM, FUNC&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a2fe0fb882efe45ccd6d11a6657f059ec"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">__interrupt MT::MSP430::WDTA::Interrupt::__attribute__ </td>
-          <td>(</td>
-          <td class="paramtype">(interrupt (WDT_VECTOR))&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a class="anchor" id="a97ec759adce20ea2dc16b2edd5597697"></a>
 <div class="memitem">
@@ -181,7 +107,7 @@ template&lt;typename ENUM , typename FUNC &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceMT.html">MT</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430.html">MSP430</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430_1_1WDTA.html">WDTA</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430_1_1WDTA_1_1Interrupt.html">Interrupt</a></li>
-    <li class="footer">Generated on Di Jan 26 2021 14:03:15 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Di Jan 26 2021 16:36:14 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

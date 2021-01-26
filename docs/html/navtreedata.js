@@ -418,14 +418,14 @@ var NAVTREE =
           ] ],
           [ "Interrupt", "group__groupMSP430WdtAInt.html", [
             [ "Enums", "group__groupEnumsMSP430WdtAInt.html", [
-              [ "WDTA", "group__groupEnumsMSP430WdtAInt.html#gafcff8d9b77efcb6769dfe827a0d3dac1", [
-                [ "VEC1", "group__groupEnumsMSP430WdtAInt.html#ggafcff8d9b77efcb6769dfe827a0d3dac1a85b68df07b47c6de9b0557bc26efb441", null ]
+              [ "WDT", "group__groupEnumsMSP430WdtAInt.html#structMT_1_1MSP430_1_1WDTA_1_1Interrupt_1_1WDT", [
+                [ "WDT", "group__groupFuncsMSP430WdtAInt.html#gaa6a9601e3c9fe5bdba2e364eb8df3128", null ],
+                [ "registerCallback", "group__groupFuncsMSP430WdtAInt.html#ga3ba2b79c99e7de4f37bb575c0ab4ac44", null ]
               ] ]
             ] ],
             [ "Functions", "group__groupFuncsMSP430WdtAInt.html", [
-              [ "makeHandler", "group__groupFuncsMSP430WdtAInt.html#ga92240408fe4859d158f2e4def4a5fdd8", null ],
-              [ "makeInterrupt", "group__groupFuncsMSP430WdtAInt.html#gabc8bf97e55fe1bcc3b321346ef4d13f0", null ],
-              [ "registerCallback", "group__groupFuncsMSP430WdtAInt.html#gaf224492b979eefa82804f63033eeda8f", null ]
+              [ "registerCallback", "group__groupFuncsMSP430WdtAInt.html#ga3ba2b79c99e7de4f37bb575c0ab4ac44", null ],
+              [ "WDT", "group__groupFuncsMSP430WdtAInt.html#gaa6a9601e3c9fe5bdba2e364eb8df3128", null ]
             ] ]
           ] ]
         ] ]
@@ -750,7 +750,14 @@ var NAVTREE =
                 [ "TxA7", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1TxA7.html", null ]
               ] ]
             ] ],
-            [ "WDTA", "namespaceMT_1_1MSP430_1_1WDTA.html", null ],
+            [ "WDTA", "namespaceMT_1_1MSP430_1_1WDTA.html", [
+              [ "Interrupt", "namespaceMT_1_1MSP430_1_1WDTA_1_1Interrupt.html", [
+                [ "WDT", "group__groupEnumsMSP430WdtAInt.html#structMT_1_1MSP430_1_1WDTA_1_1Interrupt_1_1WDT", [
+                  [ "WDT", "group__groupFuncsMSP430WdtAInt.html#gaa6a9601e3c9fe5bdba2e364eb8df3128", null ],
+                  [ "registerCallback", "group__groupFuncsMSP430WdtAInt.html#ga3ba2b79c99e7de4f37bb575c0ab4ac44", null ]
+                ] ]
+              ] ]
+            ] ],
             [ "Pmm", "structMT_1_1MSP430_1_1Pmm.html", [
               [ "INT", "group__groupEnumsMSP430FRAMPmm.html#ga3b67197ff4ca6179cc8232b65433452a", null ],
               [ "INT", "group__groupEnumsMSP430FPmm.html#ga3b67197ff4ca6179cc8232b65433452a", null ],
@@ -1001,6 +1008,7 @@ var NAVTREE =
         [ "MT::MSP430::TIMERA::Internal::Base< TAXCTL, TAXR, TAXCCTL0, TAXCCR0, TAXEX0 >", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1Base.html", null ],
         [ "MT::MSP430::TIMERA::Internal::CCTLx< TAXCTL, TAXEX0, REGTYPE, REGS >", "structMT_1_1MSP430_1_1TIMERA_1_1Internal_1_1CCTLx.html", null ],
         [ "MT::MSP430::WdtA", "structMT_1_1MSP430_1_1WdtA.html", null ],
+        [ "MT::MSP430::WDTA::Interrupt::WDT< FUNC >", "group__groupEnumsMSP430WdtAInt.html#structMT_1_1MSP430_1_1WDTA_1_1Interrupt_1_1WDT", null ],
         [ "MT::Universal::Interrupt::Interrupt< ENUM, VECTOR >", "structMT_1_1Universal_1_1Interrupt_1_1Interrupt.html", null ],
         [ "MT::Universal::Register< REG >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::MSP430::GPIO::Internal::PortSelx< INREG, OUTREG, DIRREG, PRENREG, decltype (INREG)>", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelx.html", [
@@ -1082,7 +1090,8 @@ var NAVTREE =
           [ "s", "functions_all_s.html", null ],
           [ "t", "functions_all_t.html", null ],
           [ "u", "functions_all_u.html", null ],
-          [ "v", "functions_all_v.html", null ]
+          [ "v", "functions_all_v.html", null ],
+          [ "w", "functions_all_w.html", null ]
         ] ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
@@ -1772,19 +1781,9 @@ var NAVTREE =
               ] ]
             ] ],
             [ "WdtAInterrupt.cpp", "WdtAInterrupt_8cpp.html", [
-              [ "__attribute__", "WdtAInterrupt_8cpp.html#a2fe0fb882efe45ccd6d11a6657f059ec", null ],
               [ "WdtVectors", "WdtAInterrupt_8cpp.html#a97ec759adce20ea2dc16b2edd5597697", null ]
             ] ],
-            [ "WdtAInterrupt.hpp", "WdtAInterrupt_8hpp.html", [
-              [ "Interrupt", "WdtAInterrupt_8hpp.html#abb1607c17d8d789323e6f8f05fbc45a2", null ],
-              [ "IntHandlers", "WdtAInterrupt_8hpp.html#a5ba738fbe477089e09134b3c51a7d79b", null ],
-              [ "WDTA", "WdtAInterrupt_8hpp.html#gafcff8d9b77efcb6769dfe827a0d3dac1", [
-                [ "VEC1", "WdtAInterrupt_8hpp.html#ggafcff8d9b77efcb6769dfe827a0d3dac1a85b68df07b47c6de9b0557bc26efb441", null ]
-              ] ],
-              [ "makeHandler", "WdtAInterrupt_8hpp.html#ga92240408fe4859d158f2e4def4a5fdd8", null ],
-              [ "makeInterrupt", "WdtAInterrupt_8hpp.html#gabc8bf97e55fe1bcc3b321346ef4d13f0", null ],
-              [ "registerCallback", "WdtAInterrupt_8hpp.html#gaf224492b979eefa82804f63033eeda8f", null ]
-            ] ]
+            [ "WdtAInterrupt.hpp", "WdtAInterrupt_8hpp.html", null ]
           ] ],
           [ "Settings.hpp", "MSP430_2Settings_8hpp.html", null ],
           [ "Types.hpp", "Types_8hpp.html", [
@@ -1967,10 +1966,10 @@ var NAVTREEINDEX =
 [
 "Cast_8hpp.html",
 "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf3f6d24c6ad504abfcc686fcc77b621e",
-"dir_eb46cb3a04801aaa57212b6bb39afb1a.html",
-"group__groupEnumsReg.html#gga26a7b5f5b054dcfecb8251310332b90aa5224d572f0d791f58c66e4dcd5e2c2d0",
-"group__groupFuncsMSP430TimerA.html#ga0de6587675b0220332a1b4d1949862d1",
-"structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port9.html#a7bce9cb5206d984233993e5374ef5ea3"
+"functions_all_g.html",
+"group__groupEnumsReg.html#gga26a7b5f5b054dcfecb8251310332b90aa779643149d8f9853026954c5ad006e72",
+"group__groupFuncsMSP430TimerA.html#ga2215ac2cf109c1f6f7e491f26ee8ce43",
+"structMT_1_1MSP430_1_1Pmm.html#gacfea4fc0a9b2721d2138193272ad56e0"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

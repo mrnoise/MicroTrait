@@ -1,13 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"group__groupEnumsReg.html#gga26a7b5f5b054dcfecb8251310332b90aa5224d572f0d791f58c66e4dcd5e2c2d0":[1,2,1,0,1,10],
-"group__groupEnumsReg.html#gga26a7b5f5b054dcfecb8251310332b90aa530dfc676c50e010122f21449913816d":[1,2,1,0,1,14],
-"group__groupEnumsReg.html#gga26a7b5f5b054dcfecb8251310332b90aa5511176b4eeaaa6c2eaa9f4d1ef04fec":[1,2,1,0,1,22],
-"group__groupEnumsReg.html#gga26a7b5f5b054dcfecb8251310332b90aa6620096eed92d21062084b7f4131a65a":[1,2,1,0,1,25],
-"group__groupEnumsReg.html#gga26a7b5f5b054dcfecb8251310332b90aa68b1f1cc15d8987eafe633c9488bdc05":[1,2,1,0,1,6],
-"group__groupEnumsReg.html#gga26a7b5f5b054dcfecb8251310332b90aa68cfc2e79b960ea5a3863dd0cb4e5515":[1,2,1,0,1,21],
-"group__groupEnumsReg.html#gga26a7b5f5b054dcfecb8251310332b90aa6af505c837855eb725b78354d2835f4a":[1,2,1,0,1,17],
-"group__groupEnumsReg.html#gga26a7b5f5b054dcfecb8251310332b90aa6cecdf4805e17bca88c3ed85dbe96849":[1,2,1,0,1,19],
 "group__groupEnumsReg.html#gga26a7b5f5b054dcfecb8251310332b90aa779643149d8f9853026954c5ad006e72":[1,2,1,0,1,18],
 "group__groupEnumsReg.html#gga26a7b5f5b054dcfecb8251310332b90aa81c0878ed0a8af00a7fe32e9550706df":[1,2,1,0,1,27],
 "group__groupEnumsReg.html#gga26a7b5f5b054dcfecb8251310332b90aa82b2e129309f8833c550676a75e933fd":[1,2,1,0,1,26],
@@ -249,5 +241,13 @@ var NAVTREEINDEX3 =
 "group__groupFuncsMSP430TimerA.html#ga088fe536a14a92cfc333a9db52d2b9cc":[1,0,5,1,12],
 "group__groupFuncsMSP430TimerA.html#ga0dc24cb638bce2f2976e96df99633dd2":[3,0,0,0,2,0,0,9],
 "group__groupFuncsMSP430TimerA.html#ga0dc24cb638bce2f2976e96df99633dd2":[1,0,5,1,23],
-"group__groupFuncsMSP430TimerA.html#ga0de6587675b0220332a1b4d1949862d1":[3,0,0,0,2,0,0,7]
+"group__groupFuncsMSP430TimerA.html#ga0de6587675b0220332a1b4d1949862d1":[3,0,0,0,2,0,0,7],
+"group__groupFuncsMSP430TimerA.html#ga0de6587675b0220332a1b4d1949862d1":[1,0,5,1,17],
+"group__groupFuncsMSP430TimerA.html#ga15cc0d4c607d1e9231a0707daf8cf8b7":[3,0,0,0,2,0,1,4],
+"group__groupFuncsMSP430TimerA.html#ga15cc0d4c607d1e9231a0707daf8cf8b7":[1,0,5,1,8],
+"group__groupFuncsMSP430TimerA.html#ga1667d65bbf15e4278d7ff6f2e32b9bd1":[3,0,0,0,2,0,0,10],
+"group__groupFuncsMSP430TimerA.html#ga1667d65bbf15e4278d7ff6f2e32b9bd1":[1,0,5,1,24],
+"group__groupFuncsMSP430TimerA.html#ga1bfcdaca58c64b61ed48c5fe56b53562":[3,0,0,0,2,0,1,13],
+"group__groupFuncsMSP430TimerA.html#ga1bfcdaca58c64b61ed48c5fe56b53562":[1,0,5,1,22],
+"group__groupFuncsMSP430TimerA.html#ga2215ac2cf109c1f6f7e491f26ee8ce43":[3,0,0,0,2,0,1,5]
 };

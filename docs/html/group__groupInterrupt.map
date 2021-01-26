@@ -1,6 +1,6 @@
 <map id="Interrupt" name="Interrupt">
 <area shape="rect" id="node1" href="$group__groupEnumsInt.html" title=" " alt="" coords="253,5,316,32"/>
-<area shape="rect" id="node2" title="Functions to register callbacks for interrupt service routines at compile time. " alt="" coords="128,31,197,57"/>
-<area shape="rect" id="node3" href="$group__groupFuncsInt.html" title=" " alt="" coords="245,56,324,83"/>
+<area shape="rect" id="node2" href="$group__groupFuncsInt.html" title=" " alt="" coords="245,56,324,83"/>
+<area shape="rect" id="node3" title="Functions to register callbacks for interrupt service routines at compile time. " alt="" coords="128,31,197,57"/>
 <area shape="rect" id="node4" href="$group__groupUniversal.html" title=" " alt="" coords="5,31,80,57"/>
 </map>
