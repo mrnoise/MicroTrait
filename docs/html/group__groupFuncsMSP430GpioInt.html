@@ -82,134 +82,72 @@ Collaboration diagram for Functions:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaeac9ecb78c96c309169d1036215429b5"><td class="memTemplParams" colspan="2">template&lt;typename ENUM , typename... FUNC&gt; </td></tr>
-<tr class="memitem:gaeac9ecb78c96c309169d1036215429b5"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430GpioInt.html#gaeac9ecb78c96c309169d1036215429b5">MT::MSP430::GPIO::Interrupt::makeInterrupt</a> (<a class="el" href="namespaceMT_1_1MSP430_1_1GPIO_1_1Interrupt.html#ae5088d8ef7f707a17f3a99d025e4ab26">IntHandlers</a>&lt; ENUM, FUNC &gt;...t) noexcept</td></tr>
-<tr class="memdesc:gaeac9ecb78c96c309169d1036215429b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">maker function for a complete callback registration  <a href="group__groupFuncsMSP430GpioInt.html#gaeac9ecb78c96c309169d1036215429b5">More...</a><br /></td></tr>
-<tr class="separator:gaeac9ecb78c96c309169d1036215429b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad369e4f2c1e3130e234b9b486e01f35a"><td class="memTemplParams" colspan="2">template&lt;typename ENUM , typename FUNC &gt; </td></tr>
-<tr class="memitem:gad369e4f2c1e3130e234b9b486e01f35a"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430GpioInt.html#gad369e4f2c1e3130e234b9b486e01f35a">MT::MSP430::GPIO::Interrupt::makeHandler</a> (ENUM p, FUNC t) noexcept</td></tr>
-<tr class="memdesc:gad369e4f2c1e3130e234b9b486e01f35a"><td class="mdescLeft">&#160;</td><td class="mdescRight">maker function for one callback entry  <a href="group__groupFuncsMSP430GpioInt.html#gad369e4f2c1e3130e234b9b486e01f35a">More...</a><br /></td></tr>
-<tr class="separator:gad369e4f2c1e3130e234b9b486e01f35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac63d8fd700cc3cb85ec2ad0275088fe7"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430GpioInt.html#gac63d8fd700cc3cb85ec2ad0275088fe7">MT::MSP430::GPIO::Interrupt::registerCallback</a> (const <a class="el" href="group__groupEnumsMSP430GpioInt.html#ga44c9807eb53dfd1d2e71e723c4585b36">PORTS</a> ports, void (*callback)(<a class="el" href="namespaceMT_1_1Misc.html#af7bdac7a7ad7774542b30333738c4da2">MT::MSP430::GPIO::PIN</a>)) noexcept</td></tr>
-<tr class="memdesc:gac63d8fd700cc3cb85ec2ad0275088fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">runtime interrupt callback registration  <a href="group__groupFuncsMSP430GpioInt.html#gac63d8fd700cc3cb85ec2ad0275088fe7">More...</a><br /></td></tr>
-<tr class="separator:gac63d8fd700cc3cb85ec2ad0275088fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4bcc38d64983f606fb1e8ad3985a14c0"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430GpioInt.html#ga4bcc38d64983f606fb1e8ad3985a14c0">MT::MSP430::GPIO::Interrupt::Port1&lt; FUNC &gt;::Port1</a> (FUNC fun)</td></tr>
+<tr class="memdesc:ga4bcc38d64983f606fb1e8ad3985a14c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor to register callback at compile time  <a href="#ga4bcc38d64983f606fb1e8ad3985a14c0">More...</a><br /></td></tr>
+<tr class="separator:ga4bcc38d64983f606fb1e8ad3985a14c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafc8ab5deb7bc4591320775d7c433fa81"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430GpioInt.html#gafc8ab5deb7bc4591320775d7c433fa81">MT::MSP430::GPIO::Interrupt::Port1&lt; FUNC &gt;::registerCallback</a> (void (*callback)(<a class="el" href="namespaceMT_1_1Misc.html#af7bdac7a7ad7774542b30333738c4da2">MT::MSP430::GPIO::PIN</a>)) noexcept</td></tr>
+<tr class="memdesc:gafc8ab5deb7bc4591320775d7c433fa81"><td class="mdescLeft">&#160;</td><td class="mdescRight">runtime interrupt callback registration  <a href="#gafc8ab5deb7bc4591320775d7c433fa81">More...</a><br /></td></tr>
+<tr class="separator:gafc8ab5deb7bc4591320775d7c433fa81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Functions in this module </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="gad369e4f2c1e3130e234b9b486e01f35a"></a>
+<a class="anchor" id="ga4bcc38d64983f606fb1e8ad3985a14c0"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ENUM , typename FUNC &gt; </div>
+template&lt;typename FUNC &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto MT::MSP430::GPIO::Interrupt::makeHandler </td>
+          <td class="memname">constexpr MT::MSP430::GPIO::Interrupt::Port1&lt; FUNC &gt;::Port1 </td>
           <td>(</td>
-          <td class="paramtype">ENUM&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">FUNC&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>fun</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p><code>#include &lt;<a class="el" href="GpioInterrupt_8hpp.html">MSP430/GPIO/GpioInterrupt.hpp</a>&gt;</code></p>
 
-<p>maker function for one callback entry </p>
-<p>Usage: cascade with <a class="el" href="group__groupFuncsMSP430GpioInt.html#gaeac9ecb78c96c309169d1036215429b5" title="maker function for a complete callback registration ">makeInterrupt</a> like:</p><div class="fragment"><div class="line"><a class="code" href="group__groupFuncsMSP430GpioInt.html#gaeac9ecb78c96c309169d1036215429b5">GPIO::Interrupt::makeInterrupt</a>(</div><div class="line">   <a class="code" href="group__groupFuncsMSP430GpioInt.html#gad369e4f2c1e3130e234b9b486e01f35a">GPIO::Interrupt::makeHandler</a>(</div><div class="line">       GPIO::Interrupt::PORTS::PORT2,</div><div class="line">       []() {</div><div class="line">           <a class="code" href="namespaceMT_1_1MSP430_1_1GPIO.html#a9866e38abfe2c07a046badfbc40630ee">GPIO::Port1</a> p1{};</div><div class="line">           p1.toggleOutputOnPin(GPIO::PIN::P0);</div><div class="line">       })); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+<p>constructor to register callback at compile time </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"><a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port1.html">GPIO::Interrupt::Port1</a> int1{</div><div class="line">   [](<a class="code" href="namespaceMT_1_1Misc.html#af7bdac7a7ad7774542b30333738c4da2">GPIO::PIN</a> pin) {</div><div class="line">       <span class="keywordflow">if</span> (pin == GPIO::PIN::P1) {</div><div class="line">           <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html">GPIO::Port1</a> p1{};</div><div class="line">           p1.<a class="code" href="group__groupFuncsMSP430Gpio.html#gafd91b2fede455b305d65946b8c1f56de">toggleOutputOnPin</a>(GPIO::PIN::P0);</div><div class="line">       }</div><div class="line">   }</div><div class="line">}; </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p</td><td>the Enum </td></tr>
-    <tr><td class="paramname">t</td><td>the callback </td></tr>
+    <tr><td class="paramname">fun</td><td>-&gt; register callback function -&gt; gets called in case of interrupt and provides the pin number </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>one IntHandler (std::pair&lt;GPIO::Interrupt::PORTS, FUNC&gt;) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaeac9ecb78c96c309169d1036215429b5"></a>
+<a class="anchor" id="gafc8ab5deb7bc4591320775d7c433fa81"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ENUM , typename... FUNC&gt; </div>
+template&lt;typename FUNC &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto MT::MSP430::GPIO::Interrupt::makeInterrupt </td>
+          <td class="memname">constexpr void MT::MSP430::GPIO::Interrupt::Port1&lt; FUNC &gt;::registerCallback </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceMT_1_1MSP430_1_1GPIO_1_1Interrupt.html#ae5088d8ef7f707a17f3a99d025e4ab26">IntHandlers</a>&lt; ENUM, FUNC &gt;...&#160;</td>
-          <td class="paramname"><em>t</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="GpioInterrupt_8hpp.html">MSP430/GPIO/GpioInterrupt.hpp</a>&gt;</code></p>
-
-<p>maker function for a complete callback registration </p>
-<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"><a class="code" href="group__groupFuncsMSP430GpioInt.html#gaeac9ecb78c96c309169d1036215429b5">GPIO::Interrupt::makeInterrupt</a>(</div><div class="line">   <a class="code" href="group__groupFuncsMSP430GpioInt.html#gad369e4f2c1e3130e234b9b486e01f35a">GPIO::Interrupt::makeHandler</a>(</div><div class="line">       GPIO::Interrupt::PORTS::PORT2,</div><div class="line">       []() {</div><div class="line">           <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html">GPIO::Port1</a> p1{};</div><div class="line">           p1.<a class="code" href="group__groupFuncsMSP430Gpio.html#gafd91b2fede455b305d65946b8c1f56de">toggleOutputOnPin</a>(GPIO::PIN::P0);</div><div class="line">       })); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">t</td><td>-&gt; all entries to register first the port than the callback </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the copile time objects containing all registered callbacks </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gac63d8fd700cc3cb85ec2ad0275088fe7"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr void MT::MSP430::GPIO::Interrupt::registerCallback </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__groupEnumsMSP430GpioInt.html#ga44c9807eb53dfd1d2e71e723c4585b36">PORTS</a>&#160;</td>
-          <td class="paramname"><em>ports</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">void (*)(<a class="el" href="namespaceMT_1_1Misc.html#af7bdac7a7ad7774542b30333738c4da2">MT::MSP430::GPIO::PIN</a>)&#160;</td>
-          <td class="paramname"><em>callback</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>callback</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -217,9 +155,8 @@ template&lt;typename ENUM , typename... FUNC&gt; </div>
 <p><code>#include &lt;<a class="el" href="GpioInterrupt_8hpp.html">MSP430/GPIO/GpioInterrupt.hpp</a>&gt;</code></p>
 
 <p>runtime interrupt callback registration </p>
-<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line">  <a class="code" href="group__groupFuncsMSP430GpioInt.html#gac63d8fd700cc3cb85ec2ad0275088fe7">GPIO::Interrupt::registerCallback</a>(GPIO::Interrupt::PORTS::P1, [](<a class="code" href="namespaceMT_1_1Misc.html#af7bdac7a7ad7774542b30333738c4da2">GPIO::PIN</a> pin) {</div><div class="line">       <span class="keywordflow">if</span> (pin == GPIO::PIN::P1) {</div><div class="line">           <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html">GPIO::Port1</a> p1{};</div><div class="line">           p1.<a class="code" href="group__groupFuncsMSP430Gpio.html#gafd91b2fede455b305d65946b8c1f56de">toggleOutputOnPin</a>(GPIO::PIN::P0);</div><div class="line">       }</div><div class="line">   });</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line">  <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port1.html">GPIO::Interrupt::Port1</a> int1;</div><div class="line">  int1.<a class="code" href="group__groupFuncsMSP430GpioInt.html#gafc8ab5deb7bc4591320775d7c433fa81">registerCallback</a>([](<a class="code" href="namespaceMT_1_1Misc.html#af7bdac7a7ad7774542b30333738c4da2">GPIO::PIN</a> pin) {</div><div class="line">       <span class="keywordflow">if</span> (pin == GPIO::PIN::P1) {</div><div class="line">           <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html">GPIO::Port1</a> p1{};</div><div class="line">           p1.<a class="code" href="group__groupFuncsMSP430Gpio.html#gafd91b2fede455b305d65946b8c1f56de">toggleOutputOnPin</a>(GPIO::PIN::P0);</div><div class="line">       }</div><div class="line">   });</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ports</td><td>the port for which the callback should be registered (<a class="el" href="group__groupEnumsMSP430GpioInt.html#ga44c9807eb53dfd1d2e71e723c4585b36" title="Available Ports for interrupt callbacks. ">GPIO::Interrupt::PORTS</a>) </td></tr>
     <tr><td class="paramname">callback</td><td>pointer to the callback function </td></tr>
   </table>
   </dd>
@@ -232,7 +169,7 @@ template&lt;typename ENUM , typename... FUNC&gt; </div>
 <!-- Generated by DoxyPress 1.4.0 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Di Jan 19 2021 10:00:55 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Di Jan 26 2021 14:03:15 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>
