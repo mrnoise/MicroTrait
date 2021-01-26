@@ -87,7 +87,6 @@ using namespace MT::MSP430;
 
 #ifdef MT_USE_MSP430_LIB
 
-#include "MicroTrait/Universal/Interrupt.hpp"
 #include "MicroTrait/MSP430/GPIO/Gpio.hpp"
 #include "MicroTrait/Misc/Meta.hpp"
 #include <type_traits>
@@ -95,6 +94,7 @@ using namespace MT::MSP430;
 #include <utility>
 #include <limits>
 #include <array>
+#include <tuple>
 
 namespace MT::MSP430::GPIO::Interrupt {
 

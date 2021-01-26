@@ -62,6 +62,7 @@ using namespace MT::MSP430;
 #include "MicroTrait/Universal/Register.hpp"
 #include <stdint.h>
 #include <type_traits>
+#include <array>
 #include <msp430.h>
 
 
