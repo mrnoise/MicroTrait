@@ -14,26 +14,12 @@
 using namespace MT::MSP430;
 
 #ifdef MT_MSP430_USE_WDT_COMPILE_TIME_CALLBACKS
-
-constexpr auto isr = WDTA::Interrupt::makeInterrupt(
-    WDTA::Interrupt::makeHandler(
-        WDTA::Interrupt::WDTA::VEC1,
+    WDTA::Interrupt::WDT inter{
         []() {
             GPIO::Port1 p1{};
             p1.toggleOutputOnPin(GPIO::PIN::P0);
-        }));
-
-
-#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
-#pragma vector = WDT_VECTOR
-__interrupt
-#elif defined(__GNUC__)
-__attribute__((interrupt(WDT_VECTOR)))
-#endif
-    void
-    WDT_A_ISR(void) {
-    std::get<isr.get_index(WDTA::Interrupt::VEC1)>(isr.m_vectors)();
-}
+        }
+    };
 #endif
 
 \endcode
@@ -45,11 +31,13 @@ __attribute__((interrupt(WDT_VECTOR)))
 using namespace MT::MSP430;
 
 #ifndef MT_MSP430_USE_WDT_COMPILE_TIME_CALLBACKS
-    WDTA::Interrupt::registerCallback([]() {
+    WDTA::Interrupt::WDT inter;
+    inter.registerCallback([]() {
         GPIO::Port1 p1{};
         p1.toggleOutputOnPin(GPIO::PIN::P0);
     });
 #endif
+
 
 \endcode
 *
@@ -78,12 +66,12 @@ using namespace MT::MSP430;
 
 #ifdef MT_USE_MSP430_LIB
 
-#include "MicroTrait/Universal/Interrupt.hpp"
 #include "MicroTrait/Misc/Meta.hpp"
 #include <msp430.h>
 #include <utility>
 #include <limits>
 #include <array>
+#include <tuple>
 
 namespace MT::MSP430::WDTA::Interrupt {
 
@@ -93,91 +81,92 @@ namespace MT::MSP430::WDTA::Interrupt {
 * @brief Available Watchdog Timers for interrupt callbacks
 ****************************************************************
 */
-enum WDTA {
-    VEC1 = 0,
-};
 
 #ifdef MT_MSP430_USE_WDT_COMPILE_TIME_CALLBACKS
 
-template<typename ENUM, typename FUNC>
-using IntHandlers = MT::Universal::Interrupt::IntHandlers<ENUM, FUNC>;
+template<typename FUNC>
+struct WDT {
 
-template<typename ENUM, typename... Vector>
-using Interrupt = MT::Universal::Interrupt::Interrupt<ENUM, Vector...>;
+    /**
+	* @ingroup groupFuncsMSP430WdtAInt
+	****************************************************************
+	* @brief constructor to register callback at compile time
+	* @details
+	* Usage: \code {.cpp}
+	*
+	* using namespace MT::MSP430;
+	*
+	*  WDTA::Interrupt::WDT inter{
+    *    []() {
+    *        GPIO::Port1 p1{};
+    *        p1.toggleOutputOnPin(GPIO::PIN::P0);
+    *    }
+    * }; \endcode
+	*@param fun -> register callback function -> gets called in case of interrupt
+	****************************************************************
+	*/
+    constexpr explicit WDT(FUNC fun) : m_vectors{ std::move(fun) } {}
 
-/**
-* @ingroup groupFuncsMSP430WdtAInt
-****************************************************************
-* @brief maker function for a complete callback registration
-* @details
-* Usage: \code {.cpp}
-*
-* using namespace MT::MSP430;
-*
-*	WDTA::Interrupt::makeInterrupt(
-*		WDTA::Interrupt::makeHandler(
-*			WDTA::Interrupt::WDTA::VEC1,
-*			[]() {
-*				GPIO::Port1 p1{};
-*				p1.toggleOutputOnPin(GPIO::PIN::P0);
-*			})); \endcode
-*@param t -> all entries to register first the port than the callback
-*@return the copile time objects containing all registered callbacks
-****************************************************************
-*/
-template<typename ENUM, typename... FUNC>
-[[nodiscard]] constexpr auto makeInterrupt(IntHandlers<ENUM, FUNC>... t) noexcept {
-    static_assert(MT::Misc::Meta::compareBareType<ENUM, WDTA>(), "input must be WDT  enum");
-    return Interrupt<ENUM, FUNC...>{ std::move(t)... };
-}
+  private:
+    std::tuple<FUNC> m_vectors;
 
-/**
-* @ingroup groupFuncsMSP430WdtAInt
-****************************************************************
-* @brief maker function for one callback entry
-* @details
-* Usage: cascade with makeInterrupt like: \code {.cpp}
-*	WDTA::Interrupt::makeInterrupt(
-*		WDTA::Interrupt::makeHandler(
-*			WDTA::Interrupt::WDTA::VEC1,
-*			[]() {
-*				GPIO::Port1 p1{};
-*				p1.toggleOutputOnPin(GPIO::PIN::P0);
-*			})); \endcode
-*@param p the Enum
-*@param t the callback
-*@return one IntHandler (std::pair<WDTA::Interrupt::WDT, FUNC>)
-****************************************************************
-*/
-template<typename ENUM, typename FUNC>
-[[nodiscard]] constexpr auto makeHandler(ENUM p, FUNC t) noexcept {
-    static_assert(MT::Misc::Meta::compareBareType<ENUM, WDTA>(), "input must be WDT  enum");
-    return IntHandlers<ENUM, FUNC>{ p, std::move(t) };
-}
+#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
+#pragma vector = WDT_VECTOR
+    __interrupt
+#elif defined(__GNUC__)
+    __attribute__((interrupt(WDT_VECTOR)))
+#endif
+        void
+        WDT_A_ISR(void) {
+
+        std::get<0>(m_vectors)();
+    }
+};
 
 #else
+
 extern std::array<void (*)(), 1> WdtVectors;
 
-/**
-* @ingroup groupFuncsMSP430WdtAInt
-****************************************************************
-* @brief runtime interrupt callback registration -> fixed to WdtA
-* @details
-* Usage:  \code {.cpp}
-*
-*	using namespace MT::MSP430;
-*
-*	WDTA::Interrupt::registerCallback([]() {
-*		GPIO::Port1 p1{};
-*		p1.toggleOutputOnPin(GPIO::PIN::P0);
-*	});
-* \endcode
-*@param callback pointer to the callback function
-****************************************************************
-*/
-constexpr void registerCallback(void (*callback)()) noexcept {
-    WdtVectors[VEC1] = callback;
+
+struct WDT {
+
+    /**
+	* @ingroup groupFuncsMSP430WdtAInt
+	****************************************************************
+	* @brief runtime interrupt callback registration
+	* @details
+	* Usage:  \code {.cpp}
+	*
+	*	using namespace MT::MSP430;
+	*
+	*	WDTA::Interrupt::WDT inter;
+    *		inter.registerCallback([]() {
+    *    	GPIO::Port1 p1{};
+    *    	p1.toggleOutputOnPin(GPIO::PIN::P0);
+    *	});
+	* \endcode
+	*@param callback pointer to the callback function
+	****************************************************************
+	*/
+    constexpr void registerCallback(void (*callback)()) noexcept {
+        WdtVectors[0] = callback;
+    };
+
+  private:
+
+#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
+#pragma vector = WDT_VECTOR
+    __interrupt
+#elif defined(__GNUC__)
+    __attribute__((interrupt(WDT_VECTOR)))
+#endif
+        void
+        WDT_A_ISR(void) {
+
+        if (WdtVectors[0] != nullptr) WdtVectors[0]();
+    }
 };
+
 #endif
 
 }// namespace MT::MSP430::WDTA::Interrupt

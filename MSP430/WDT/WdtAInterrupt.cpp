@@ -6,19 +6,7 @@
 
 namespace MT::MSP430::WDTA::Interrupt {
 
-std::array<void (*)(), 1>
-    WdtVectors{};
-
-#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
-#pragma vector = WDT_VECTOR
-__interrupt
-#elif defined(__GNUC__)
-__attribute__((interrupt(WDT_VECTOR)))
-#endif
-    void
-    WDT_A_ISR(void) {
-    if (WdtVectors[WDTA::VEC1] != nullptr) WdtVectors[WDTA::VEC1]();
-}
+std::array<void (*)(), 1> WdtVectors{};
 
 }// namespace MT::MSP430::WDTA::Interrupt
 
