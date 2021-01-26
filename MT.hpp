@@ -8,13 +8,14 @@
 #include "MicroTrait/Universal/Register.hpp"
 #include "MicroTrait/Universal/Interrupt.hpp"
 
+#include "MicroTrait/MSP430/Settings.hpp"
 #include "MicroTrait/MSP430/Types.hpp"
 #include "MicroTrait/MSP430/GPIO/Gpio.hpp"
 #include "MicroTrait/MSP430/GPIO/GpioInterrupt.hpp"
-#include "MicroTrait/MSP430/Settings.hpp"
 #include "MicroTrait/MSP430/SFR/Sfr.hpp"
 #include "MicroTrait/MSP430/PMM/Pmm.hpp"
 #include <MicroTrait/MSP430/TIMER/TimerA.hpp>
+#include <MicroTrait/MSP430/TIMER/TimerAInterrupt.hpp>
 #include <MicroTrait/MSP430/WDT/WdtA.hpp>
 #include <MicroTrait/MSP430/WDT/WdtAInterrupt.hpp>
 #include <MicroTrait/MSP430/EUSCI/EusciA.hpp>
