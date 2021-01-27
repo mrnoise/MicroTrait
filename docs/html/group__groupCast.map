@@ -1,6 +1,6 @@
 <map id="Type casting" name="Type casting">
-<area shape="rect" id="node1" href="$group__groupTypesCast.html" title=" " alt="" coords="259,5,316,32"/>
-<area shape="rect" id="node2" href="$group__groupFuncsCast.html" title=" " alt="" coords="248,56,327,83"/>
-<area shape="rect" id="node3" title="free functions to help to cast types " alt="" coords="104,31,200,57"/>
+<area shape="rect" id="node1" title="free functions to help to cast types " alt="" coords="104,31,200,57"/>
+<area shape="rect" id="node2" href="$group__groupTypesCast.html" title=" " alt="" coords="259,5,316,32"/>
+<area shape="rect" id="node3" href="$group__groupFuncsCast.html" title=" " alt="" coords="248,56,327,83"/>
 <area shape="rect" id="node4" href="$group__groupMisc.html" title=" " alt="" coords="5,31,56,57"/>
 </map>

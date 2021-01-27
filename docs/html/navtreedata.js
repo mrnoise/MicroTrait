@@ -5,6 +5,14 @@ var NAVTREE =
     [ "Modules", "modules.html", [
       [ "MSP430", "group__groupMSP430.html", [
         [ "EUSCI A", "group__groupMSP430EUSCI__A.html", [
+          [ "Interrupt", "group__groupMSP430EUSCIAInt.html", [
+            [ "Enums", "group__groupEnumsMSP430EUSCIAInt.html", null ],
+            [ "Functions", "group__groupFuncsMSP430EUSCIAInt.html", [
+              [ "A0", "group__groupFuncsMSP430EUSCIAInt.html#ga1245eefd7cc7f9a360d776f78ea6e212", null ],
+              [ "registerCallback", "group__groupFuncsMSP430EUSCIAInt.html#ga82f3b7dd45bd2fa47027f40d3cea2523", null ],
+              [ "setIntrinsic", "group__groupFuncsMSP430EUSCIAInt.html#ga273f23f35e241cd601701b5e730aa486", null ]
+            ] ]
+          ] ],
           [ "SPI Enums", "group__groupEnumsMSP430SPI__EUSCI__A.html", [
             [ "INT", "group__groupEnumsMSP430SPI__EUSCI__A.html#gaeb5734045a77c66c8b6d1f08b90534df", null ]
           ] ],
@@ -576,7 +584,8 @@ var NAVTREE =
             [ "EUSCIA", "namespaceMT_1_1MSP430_1_1EUSCIA.html", [
               [ "SPI", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1SPI.html", null ],
               [ "UART", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART.html", [
-                [ "Internal", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal.html", null ]
+                [ "Internal", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal.html", null ],
+                [ "Interrupt", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt.html", null ]
               ] ]
             ] ],
             [ "GPIO", "namespaceMT_1_1MSP430_1_1GPIO.html", [
@@ -634,6 +643,28 @@ var NAVTREE =
                     [ "transmitAddress", "group__groupFuncsMSP430UART__EUSCI__A.html#gaae2bc7add063c1bd67c7378b18f67957", null ],
                     [ "transmitBreak", "group__groupFuncsMSP430UART__EUSCI__A.html#ga0d09833366a91545cc6e6f2b4751fe7b", null ],
                     [ "transmitData", "group__groupFuncsMSP430UART__EUSCI__A.html#ga7f4ff8f4e4fb337410a0e5453611f968", null ]
+                  ] ]
+                ] ],
+                [ "Interrupt", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt.html", [
+                  [ "A0", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A0.html", [
+                    [ "A0", "group__groupFuncsMSP430EUSCIAInt.html#ga1245eefd7cc7f9a360d776f78ea6e212", null ],
+                    [ "registerCallback", "group__groupFuncsMSP430EUSCIAInt.html#ga82f3b7dd45bd2fa47027f40d3cea2523", null ],
+                    [ "setIntrinsic", "group__groupFuncsMSP430EUSCIAInt.html#ga273f23f35e241cd601701b5e730aa486", null ]
+                  ] ],
+                  [ "A1", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A1.html", [
+                    [ "A1", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A1.html#aba259925db328093689dd21d10dc7981", null ],
+                    [ "registerCallback", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A1.html#a3a48fd9ab94f0834804eb8c77104ea56", null ],
+                    [ "setIntrinsic", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A1.html#aa10ab152350d09f44e634aac0dd2b8bd", null ]
+                  ] ],
+                  [ "A2", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A2.html", [
+                    [ "A2", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A2.html#a56b26332d7a9b7c0fa1f59a06183c5a1", null ],
+                    [ "registerCallback", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A2.html#aa4de15a279789271e6bcfbcf087e0071", null ],
+                    [ "setIntrinsic", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A2.html#a5453a9755a651f3121c973df28b02abd", null ]
+                  ] ],
+                  [ "A3", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A3.html", [
+                    [ "A3", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A3.html#abf19052e57bb0d996a552fb4b1c00be0", null ],
+                    [ "registerCallback", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A3.html#ac2ccf2ed179fea9dcaf494a4faf44ae3", null ],
+                    [ "setIntrinsic", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A3.html#a69f9de26fab4f4bb59937aea5abaa4ab", null ]
                   ] ]
                 ] ]
               ] ]
@@ -996,6 +1027,10 @@ var NAVTREE =
         [ "MT::Misc::enable_Enum_bits< volatile SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01SFR__INT_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< volatile TIMERA_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01TIMERA__INT_01_4.html", null ],
         [ "MT::MSP430::EUSCIA::UART::Internal::UART< CTLW0, CTLW1, BRW, MCTLW, STATW, RXBUF, TXBUF, ABCTL, IRCTL, IE, IFG >", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html", null ],
+        [ "MT::MSP430::EUSCIA::UART::Interrupt::A0< FUNC >", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A0.html", null ],
+        [ "MT::MSP430::EUSCIA::UART::Interrupt::A1< FUNC >", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A1.html", null ],
+        [ "MT::MSP430::EUSCIA::UART::Interrupt::A2< FUNC >", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A2.html", null ],
+        [ "MT::MSP430::EUSCIA::UART::Interrupt::A3< FUNC >", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A3.html", null ],
         [ "MT::MSP430::GPIO::Internal::PortCommon< INREG, OUTREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortCommon.html", [
           [ "MT::MSP430::GPIO::Internal::Port< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html", null ],
           [ "MT::MSP430::GPIO::Internal::PortDrv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortDrv.html", null ],
@@ -1117,7 +1152,8 @@ var NAVTREE =
         [ "MT::Universal::Register<&WDTCTL >", "structMT_1_1Universal_1_1Register.html", null ]
       ] ],
       [ "Class Members", "functions_all.html", [
-        [ "All", "functions_all_b.html", [
+        [ "All", "functions_all_a.html", [
+          [ "a", "functions_all_a.html", null ],
           [ "b", "functions_all_b.html", null ],
           [ "c", "functions_all_c.html", null ],
           [ "d", "functions_all_d.html", null ],
@@ -1254,6 +1290,36 @@ var NAVTREE =
               [ "parity", "EusciA_8hpp.html#a79c1efb3e7d76af67c2221a378f3ff84", null ],
               [ "secondModReg", "EusciA_8hpp.html#a756d59d1a7ef4a8b983fdc35b302a4f2", null ],
               [ "stopBits", "EusciA_8hpp.html#a1acc40b45265f892df48fa3d85ccdc33", null ]
+            ] ],
+            [ "EusciAInterrupt.cpp", "EusciAInterrupt_8cpp.html", [
+              [ "Intrinsics", "EusciAInterrupt_8cpp.html#a63058d9cea158453e77d43ffe6f4df13", null ],
+              [ "Vectors", "EusciAInterrupt_8cpp.html#a2b1784bb9c1d581c657f9d86a86bf9b0", null ]
+            ] ],
+            [ "EusciAInterrupt.hpp", "EusciAInterrupt_8hpp.html", [
+              [ "A0", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A0.html", [
+                [ "A0", "group__groupFuncsMSP430EUSCIAInt.html#ga1245eefd7cc7f9a360d776f78ea6e212", null ],
+                [ "registerCallback", "group__groupFuncsMSP430EUSCIAInt.html#ga82f3b7dd45bd2fa47027f40d3cea2523", null ],
+                [ "setIntrinsic", "group__groupFuncsMSP430EUSCIAInt.html#ga273f23f35e241cd601701b5e730aa486", null ]
+              ] ],
+              [ "A1", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A1.html", [
+                [ "A1", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A1.html#aba259925db328093689dd21d10dc7981", null ],
+                [ "registerCallback", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A1.html#a3a48fd9ab94f0834804eb8c77104ea56", null ],
+                [ "setIntrinsic", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A1.html#aa10ab152350d09f44e634aac0dd2b8bd", null ]
+              ] ],
+              [ "A2", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A2.html", [
+                [ "A2", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A2.html#a56b26332d7a9b7c0fa1f59a06183c5a1", null ],
+                [ "registerCallback", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A2.html#aa4de15a279789271e6bcfbcf087e0071", null ],
+                [ "setIntrinsic", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A2.html#a5453a9755a651f3121c973df28b02abd", null ]
+              ] ],
+              [ "A3", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A3.html", [
+                [ "A3", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A3.html#abf19052e57bb0d996a552fb4b1c00be0", null ],
+                [ "registerCallback", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A3.html#ac2ccf2ed179fea9dcaf494a4faf44ae3", null ],
+                [ "setIntrinsic", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A3.html#a69f9de26fab4f4bb59937aea5abaa4ab", null ]
+              ] ],
+              [ "INTRINSICS", "EusciAInterrupt_8hpp.html#afbd5915c8e5ac8a3a0d4490ae5c3c551", [
+                [ "NONE", "EusciAInterrupt_8hpp.html#afbd5915c8e5ac8a3a0d4490ae5c3c551ab50339a10e1de285ac99d4c3990b8693", null ],
+                [ "LEAVE_LOW_POWER", "EusciAInterrupt_8hpp.html#afbd5915c8e5ac8a3a0d4490ae5c3c551a25e26264c6254e51a9834839593e761a", null ]
+              ] ]
             ] ]
           ] ],
           [ "GPIO", "dir_406c66aff740586c12c555eb45f89962.html", [
@@ -2000,7 +2066,8 @@ var NAVTREE =
     [ "File Source", "filesource.html", [
       [ "MSP430", "dir_56021fdb0e8b9a80f75a9a8cba132c6e.html", [
         [ "EUSCI", "dir_b96257ce7418cb41a351567345760a24.html", [
-          [ "EusciA.hpp", "EusciA_8hpp_source.html", null ]
+          [ "EusciA.hpp", "EusciA_8hpp_source.html", null ],
+          [ "EusciAInterrupt.hpp", "EusciAInterrupt_8hpp_source.html", null ]
         ] ],
         [ "GPIO", "dir_406c66aff740586c12c555eb45f89962.html", [
           [ "Gpio.hpp", "Gpio_8hpp_source.html", null ],
@@ -2042,11 +2109,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Cast_8hpp.html",
-"Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf3f6d24c6ad504abfcc686fcc77b621e",
-"dir_b11b26c345ed0f7c972184e81ad6f440.html",
-"group__groupEnumsReg.html",
-"group__groupFuncsMSP430Sfr.html#ga1682bfed3d9f8b7bdffe5b57065fa702",
-"structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port10.html"
+"Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07baf035c7ecf931ab150fb41e1e29d4f17c",
+"dir_0649b081d871d69f3189ff95ac2da67e.html",
+"group__groupEnumsMSP430UART__EUSCI__A.html#ggabe64307040f3a333760db9b1ddc03bb8a6634c67f28ba9a80efe941b9519aa106",
+"group__groupFuncsMSP430IPmm.html#ga271a1a430f51fc332ce64bc0d27bcdd4",
+"structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A1.html#a3a48fd9ab94f0834804eb8c77104ea56"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
