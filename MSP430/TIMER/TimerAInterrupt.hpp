@@ -15,8 +15,8 @@ using namespace MT::MSP430;
 
 #ifdef MT_MSP430_USE_TIMERA_COMPILE_TIME_CALLBACKS
 
- TIMERA::Interrupt::TA0 int0{
-        [](TIMERA::Interrupt::SOURCE src) {
+  constexpr static TIMERA::Interrupt::TA0 int0{
+        [](const TIMERA::Interrupt::SOURCE src) {  // use lambdas only!
             if (src == TIMERA::Interrupt::SOURCE::REGISTER0) {
                 GPIO::Port1 p1{};
                 p1.toggleOutputOnPin(GPIO::PIN::P0);
@@ -111,8 +111,8 @@ struct TA0 {
 	*
 	* using namespace MT::MSP430;
 	*
-	* TIMERA::Interrupt::TA0 int0{
-    *    [](TIMERA::Interrupt::SOURCE src) {
+	*  constexpr static TIMERA::Interrupt::TA0 int0{
+    *    [](const TIMERA::Interrupt::SOURCE src) {  // use lambdas only!
     *        if (src == TIMERA::Interrupt::SOURCE::REGISTER0) {
     *            GPIO::Port1 p1{};
     *            p1.toggleOutputOnPin(GPIO::PIN::P0);
@@ -125,7 +125,9 @@ struct TA0 {
 	*@param fun -> register callback function -> gets called in case of interrupt and provides the pin number
 	****************************************************************
 	*/
-    constexpr explicit TA0(FUNC fun) : m_vectors{ std::move(fun) } {}
+    constexpr explicit TA0(FUNC fun) : m_vectors{ std::move(fun) } {
+        static_assert(std::is_invocable_v<FUNC, const TIMERA::Interrupt::SOURCE>, "Missing [](const TIMERA::Interrupt::SOURCE src) parameter for lambda interrupt TA0 !");
+    }
 
   private:
     std::tuple<FUNC> m_vectors;

@@ -14,7 +14,7 @@
 using namespace MT::MSP430;
 
 #ifdef MT_MSP430_USE_WDT_COMPILE_TIME_CALLBACKS
-    WDTA::Interrupt::WDT inter{
+    constexpr static WDTA::Interrupt::WDT inter{  // use lambdas only!
         []() {
             GPIO::Port1 p1{};
             p1.toggleOutputOnPin(GPIO::PIN::P0);
@@ -72,6 +72,7 @@ using namespace MT::MSP430;
 #include <limits>
 #include <array>
 #include <tuple>
+#include <functional>
 
 namespace MT::MSP430::WDTA::Interrupt {
 
@@ -87,6 +88,8 @@ namespace MT::MSP430::WDTA::Interrupt {
 template<typename FUNC>
 struct WDT {
 
+    using Signature = void(void);
+
     /**
 	* @ingroup groupFuncsMSP430WdtAInt
 	****************************************************************
@@ -96,7 +99,7 @@ struct WDT {
 	*
 	* using namespace MT::MSP430;
 	*
-	*  WDTA::Interrupt::WDT inter{
+	*  WDTA::Interrupt::WDT inter{  // use lambdas only!
     *    []() {
     *        GPIO::Port1 p1{};
     *        p1.toggleOutputOnPin(GPIO::PIN::P0);
@@ -105,7 +108,9 @@ struct WDT {
 	*@param fun -> register callback function -> gets called in case of interrupt
 	****************************************************************
 	*/
-    constexpr explicit WDT(FUNC fun) : m_vectors{ std::move(fun) } {}
+    constexpr explicit WDT(FUNC fun) : m_vectors{ std::move(fun) } {
+        static_assert(std::is_convertible_v<FUNC &&, std::function<Signature>>, "remove parameters for lambda interrupt wdta !");
+    }
 
   private:
     std::tuple<FUNC> m_vectors;

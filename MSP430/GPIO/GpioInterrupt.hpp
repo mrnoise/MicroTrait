@@ -15,8 +15,8 @@ using namespace MT::MSP430;
 
 #ifdef MT_MSP430_USE_GPIO_COMPILE_TIME_CALLBACKS
 
- GPIO::Interrupt::Port1 int1{
-    [](GPIO::PIN pin) {
+  constexpr static GPIO::Interrupt::Port1 int1{
+    [](const GPIO::PIN pin) {  // use lambdas only!
         if (pin == GPIO::PIN::P1) {
             GPIO::Port1 p1{};
             p1.toggleOutputOnPin(GPIO::PIN::P0);
@@ -24,8 +24,8 @@ using namespace MT::MSP430;
     }
  };
 
- GPIO::Interrupt::Port2 int2{
-        [](GPIO::PIN pin) {
+  constexpr static GPIO::Interrupt::Port2 int2{
+        [](const GPIO::PIN pin) {  // use lambdas only!
             if (pin == GPIO::PIN::P4) {
                 GPIO::Port1 p1{};
                 p1.toggleOutputOnPin(GPIO::PIN::P0);
@@ -113,8 +113,8 @@ struct Port1 {
 	*
 	* using namespace MT::MSP430;
 	*
-	* GPIO::Interrupt::Port1 int1{
-    *    [](GPIO::PIN pin) {
+	*  constexpr static GPIO::Interrupt::Port1 int1{
+    *    [](const GPIO::PIN pin) {  // use lambdas only!
     *        if (pin == GPIO::PIN::P1) {
     *            GPIO::Port1 p1{};
     *            p1.toggleOutputOnPin(GPIO::PIN::P0);
@@ -124,7 +124,9 @@ struct Port1 {
 	*@param fun -> register callback function -> gets called in case of interrupt and provides the pin number
 	****************************************************************
 	*/
-    constexpr explicit Port1(FUNC fun) : m_vectors{ std::move(fun) } {}
+    constexpr explicit Port1(FUNC fun) : m_vectors{ std::move(fun) } {
+        static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port1 !");
+    }
 
   private:
     std::tuple<FUNC> m_vectors;
@@ -178,7 +180,9 @@ struct Port1 {
 template<typename FUNC>
 struct Port2 {
 
-    constexpr explicit Port2(FUNC fun) : m_vectors{ std::move(fun) } {}
+    constexpr explicit Port2(FUNC fun) : m_vectors{ std::move(fun) } {
+        static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port2 !");
+    }
 
   private:
     std::tuple<FUNC> m_vectors;
@@ -233,7 +237,9 @@ struct Port2 {
 template<typename FUNC>
 struct Port3 {
 
-    constexpr explicit Port3(FUNC fun) : m_vectors{ std::move(fun) } {}
+    constexpr explicit Port3(FUNC fun) : m_vectors{ std::move(fun) } {
+        static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port3 !");
+    }
 
   private:
     std::tuple<FUNC> m_vectors;
@@ -287,7 +293,9 @@ struct Port3 {
 template<typename FUNC>
 struct Port4 {
 
-    constexpr explicit Port4(FUNC fun) : m_vectors{ std::move(fun) } {}
+    constexpr explicit Port4(FUNC fun) : m_vectors{ std::move(fun) } {
+        static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port4 !");
+    }
 
   private:
     std::tuple<FUNC> m_vectors;
@@ -342,7 +350,9 @@ struct Port4 {
 template<typename FUNC>
 struct Port5 {
 
-    constexpr explicit Port5(FUNC fun) : m_vectors{ std::move(fun) } {}
+    constexpr explicit Port5(FUNC fun) : m_vectors{ std::move(fun) } {
+        static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port5 !");
+    }
 
   private:
     std::tuple<FUNC> m_vectors;
@@ -396,7 +406,9 @@ struct Port5 {
 template<typename FUNC>
 struct Port6 {
 
-    constexpr explicit Port6(FUNC fun) : m_vectors{ std::move(fun) } {}
+    constexpr explicit Port6(FUNC fun) : m_vectors{ std::move(fun) } {
+        static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port6 !");
+    }
 
   private:
     std::tuple<FUNC> m_vectors;
@@ -451,7 +463,9 @@ struct Port6 {
 template<typename FUNC>
 struct Port7 {
 
-    constexpr explicit Port7(FUNC fun) : m_vectors{ std::move(fun) } {}
+    constexpr explicit Port7(FUNC fun) : m_vectors{ std::move(fun) } {
+        static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port7 !");
+    }
 
   private:
     std::tuple<FUNC> m_vectors;
@@ -505,7 +519,9 @@ struct Port7 {
 template<typename FUNC>
 struct Port8 {
 
-    constexpr explicit Port8(FUNC fun) : m_vectors{ std::move(fun) } {}
+    constexpr explicit Port8(FUNC fun) : m_vectors{ std::move(fun) } {
+        static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port8 !");
+    }
 
   private:
     std::tuple<FUNC> m_vectors;
@@ -559,7 +575,9 @@ struct Port8 {
 template<typename FUNC>
 struct Port9 {
 
-    constexpr explicit Port9(FUNC fun) : m_vectors{ std::move(fun) } {}
+    constexpr explicit Port9(FUNC fun) : m_vectors{ std::move(fun) } {
+        static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port9 !");
+    }
 
   private:
     std::tuple<FUNC> m_vectors;
@@ -613,7 +631,9 @@ struct Port9 {
 template<typename FUNC>
 struct Port10 {
 
-    constexpr explicit Port10(FUNC fun) : m_vectors{ std::move(fun) } {}
+    constexpr explicit Port10(FUNC fun) : m_vectors{ std::move(fun) } {
+        static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port10 !");
+    }
 
   private:
     std::tuple<FUNC> m_vectors;
@@ -666,7 +686,9 @@ struct Port10 {
 template<typename FUNC>
 struct Port11 {
 
-    constexpr explicit Port11(FUNC fun) : m_vectors{ std::move(fun) } {}
+    constexpr explicit Port11(FUNC fun) : m_vectors{ std::move(fun) } {
+        static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port11 !");
+    }
 
   private:
     std::tuple<FUNC> m_vectors;
@@ -721,7 +743,9 @@ struct Port11 {
 template<typename FUNC>
 struct PortJ {
 
-    constexpr explicit PortJ(FUNC fun) : m_vectors{ std::move(fun) } {}
+    constexpr explicit PortJ(FUNC fun) : m_vectors{ std::move(fun) } {
+        static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt portJ !");
+    }
 
   private:
     std::tuple<FUNC> m_vectors;
