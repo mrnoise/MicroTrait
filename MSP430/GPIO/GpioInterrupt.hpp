@@ -124,7 +124,7 @@ struct Port1 {
 	*@param fun -> register callback function -> gets called in case of interrupt and provides the pin number
 	****************************************************************
 	*/
-    constexpr explicit Port1(FUNC fun) : m_vectors{ std::move(fun) } {
+    constexpr explicit Port1(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port1 !");
     }
 
@@ -180,7 +180,7 @@ struct Port1 {
 template<typename FUNC>
 struct Port2 {
 
-    constexpr explicit Port2(FUNC fun) : m_vectors{ std::move(fun) } {
+    constexpr explicit Port2(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port2 !");
     }
 
@@ -237,7 +237,7 @@ struct Port2 {
 template<typename FUNC>
 struct Port3 {
 
-    constexpr explicit Port3(FUNC fun) : m_vectors{ std::move(fun) } {
+    constexpr explicit Port3(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port3 !");
     }
 
@@ -293,7 +293,7 @@ struct Port3 {
 template<typename FUNC>
 struct Port4 {
 
-    constexpr explicit Port4(FUNC fun) : m_vectors{ std::move(fun) } {
+    constexpr explicit Port4(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port4 !");
     }
 
@@ -350,7 +350,7 @@ struct Port4 {
 template<typename FUNC>
 struct Port5 {
 
-    constexpr explicit Port5(FUNC fun) : m_vectors{ std::move(fun) } {
+    constexpr explicit Port5(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port5 !");
     }
 
@@ -406,7 +406,7 @@ struct Port5 {
 template<typename FUNC>
 struct Port6 {
 
-    constexpr explicit Port6(FUNC fun) : m_vectors{ std::move(fun) } {
+    constexpr explicit Port6(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port6 !");
     }
 
@@ -463,7 +463,7 @@ struct Port6 {
 template<typename FUNC>
 struct Port7 {
 
-    constexpr explicit Port7(FUNC fun) : m_vectors{ std::move(fun) } {
+    constexpr explicit Port7(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port7 !");
     }
 
@@ -519,7 +519,7 @@ struct Port7 {
 template<typename FUNC>
 struct Port8 {
 
-    constexpr explicit Port8(FUNC fun) : m_vectors{ std::move(fun) } {
+    constexpr explicit Port8(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port8 !");
     }
 
@@ -575,7 +575,7 @@ struct Port8 {
 template<typename FUNC>
 struct Port9 {
 
-    constexpr explicit Port9(FUNC fun) : m_vectors{ std::move(fun) } {
+    constexpr explicit Port9(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port9 !");
     }
 
@@ -631,7 +631,7 @@ struct Port9 {
 template<typename FUNC>
 struct Port10 {
 
-    constexpr explicit Port10(FUNC fun) : m_vectors{ std::move(fun) } {
+    constexpr explicit Port10(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port10 !");
     }
 
@@ -686,7 +686,7 @@ struct Port10 {
 template<typename FUNC>
 struct Port11 {
 
-    constexpr explicit Port11(FUNC fun) : m_vectors{ std::move(fun) } {
+    constexpr explicit Port11(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port11 !");
     }
 
@@ -743,7 +743,7 @@ struct Port11 {
 template<typename FUNC>
 struct PortJ {
 
-    constexpr explicit PortJ(FUNC fun) : m_vectors{ std::move(fun) } {
+    constexpr explicit PortJ(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt portJ !");
     }
 
@@ -857,7 +857,7 @@ enum PORTS : uint_fast8_t {
 };
 
 
-extern std::array<void (*)(MT::MSP430::GPIO::PIN), PORTS::NONE> PortVectors;
+extern std::array<void (*)(const MT::MSP430::GPIO::PIN), PORTS::NONE> PortVectors;
 
 
 #if defined(P1IFG)

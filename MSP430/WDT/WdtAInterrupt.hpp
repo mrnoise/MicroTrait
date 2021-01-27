@@ -99,7 +99,7 @@ struct WDT {
 	*
 	* using namespace MT::MSP430;
 	*
-	*  WDTA::Interrupt::WDT inter{  // use lambdas only!
+	*  constexpr static WDTA::Interrupt::WDT inter{  // use lambdas only!
     *    []() {
     *        GPIO::Port1 p1{};
     *        p1.toggleOutputOnPin(GPIO::PIN::P0);
@@ -108,7 +108,7 @@ struct WDT {
 	*@param fun -> register callback function -> gets called in case of interrupt
 	****************************************************************
 	*/
-    constexpr explicit WDT(FUNC fun) : m_vectors{ std::move(fun) } {
+    constexpr explicit WDT(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
         static_assert(std::is_convertible_v<FUNC &&, std::function<Signature>>, "remove parameters for lambda interrupt wdta !");
     }
 
