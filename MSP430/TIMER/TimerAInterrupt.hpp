@@ -144,7 +144,7 @@ struct TA0 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER0_A0_VECTOR
-    __interrupt void Timer_A(void)
+    __interrupt void A0_ISR(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(TIMER0_A0_VECTOR))) A0_ISR(void)
 #else
@@ -156,7 +156,7 @@ struct TA0 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER0_A1_VECTOR
-    __interrupt
+    __interrupt void A1_ISR(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(TIMER0_A1_VECTOR))) A1_ISR(void)
 #else
@@ -210,7 +210,7 @@ struct TA1 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER1_A0_VECTOR
-    __interrupt void Timer_A(void)
+    __interrupt void A0_ISR(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(TIMER1_A0_VECTOR))) A0_ISR(void)
 #else
@@ -222,7 +222,7 @@ struct TA1 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER1_A1_VECTOR
-    __interrupt
+    __interrupt void A1_ISR(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(TIMER1_A1_VECTOR))) A1_ISR(void)
 #else
@@ -275,7 +275,7 @@ struct TA2 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER2_A0_VECTOR
-    __interrupt void Timer_A(void)
+    __interrupt void A0_ISR(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(TIMER2_A0_VECTOR))) A0_ISR(void)
 #else
@@ -287,7 +287,7 @@ struct TA2 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER2_A1_VECTOR
-    __interrupt
+    __interrupt void A1_ISR(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(TIMER2_A1_VECTOR))) A1_ISR(void)
 #else
@@ -341,7 +341,7 @@ struct TA3 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER3_A0_VECTOR
-    __interrupt void Timer_A(void)
+    __interrupt void A0_ISR(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(TIMER3_A0_VECTOR))) A0_ISR(void)
 #else
@@ -353,7 +353,7 @@ struct TA3 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER3_A1_VECTOR
-    __interrupt
+    __interrupt void A1_ISR(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(TIMER3_A1_VECTOR))) A1_ISR(void)
 #else
@@ -434,7 +434,7 @@ struct TA0 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER0_A0_VECTOR
-    __interrupt void Timer_A(void)
+    __interrupt void A0_ISR(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(TIMER0_A0_VECTOR))) A0_ISR(void)
 #else
@@ -446,7 +446,7 @@ struct TA0 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER0_A1_VECTOR
-    __interrupt
+    __interrupt void A1_ISR(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(TIMER0_A1_VECTOR))) A1_ISR(void)
 #else
@@ -498,7 +498,7 @@ struct TA1 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER1_A0_VECTOR
-    __interrupt void Timer_A(void)
+    __interrupt void A0_ISR(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(TIMER1_A0_VECTOR))) A0_ISR(void)
 #else
@@ -510,7 +510,7 @@ struct TA1 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER1_A1_VECTOR
-    __interrupt
+    __interrupt void A1_ISR(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(TIMER1_A1_VECTOR))) A1_ISR(void)
 #else
@@ -562,7 +562,7 @@ struct TA2 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER2_A0_VECTOR
-    __interrupt void Timer_A(void)
+    __interrupt void A0_ISR(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(TIMER2_A0_VECTOR))) A0_ISR(void)
 #else
@@ -574,7 +574,7 @@ struct TA2 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER2_A1_VECTOR
-    __interrupt
+    __interrupt void A1_ISR(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(TIMER2_A1_VECTOR))) A1_ISR(void)
 #else
@@ -625,7 +625,7 @@ struct TA3 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER3_A0_VECTOR
-    __interrupt void Timer_A(void)
+    __interrupt void A0_ISR(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(TIMER3_A0_VECTOR))) A0_ISR(void)
 #else
@@ -637,7 +637,7 @@ struct TA3 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER3_A1_VECTOR
-    __interrupt
+    __interrupt void A1_ISR(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(TIMER3_A1_VECTOR))) A1_ISR(void)
 #else

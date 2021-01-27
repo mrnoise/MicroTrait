@@ -189,8 +189,7 @@ struct Port2 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT2_VECTOR
-    __interrupt void
-        Port_2(void)
+    __interrupt void Port_2(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT2_VECTOR))) Port_2(void)
 #else
@@ -246,8 +245,7 @@ struct Port3 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT3_VECTOR
-    __interrupt void
-        Port_3(void)
+    __interrupt void Port_3(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT3_VECTOR))) Port_3(void)
 #else
@@ -302,8 +300,7 @@ struct Port4 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT4_VECTOR
-    __interrupt void
-        Port_4(void)
+    __interrupt void Port_4(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT4_VECTOR))) Port_4(void)
 #else
@@ -359,8 +356,7 @@ struct Port5 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT5_VECTOR
-    __interrupt void
-        Port_5(void)
+    __interrupt void Port_5(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT5_VECTOR))) Port_5(void)
 #else
@@ -415,8 +411,7 @@ struct Port6 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT6_VECTOR
-    __interrupt void
-        Port_6(void)
+    __interrupt void Port_6(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT6_VECTOR))) Port_6(void)
 #else
@@ -472,8 +467,7 @@ struct Port7 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT7_VECTOR
-    __interrupt void
-        Port_7(void)
+    __interrupt void Port_7(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT7_VECTOR))) Port_7(void)
 #else
@@ -528,8 +522,7 @@ struct Port8 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT8_VECTOR
-    __interrupt void
-        Port_8(void)
+    __interrupt void Port_8(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT8_VECTOR))) Port_8(void)
 #else
@@ -584,8 +577,7 @@ struct Port9 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT9_VECTOR
-    __interrupt void
-        Port_9(void)
+    __interrupt void Port_9(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT9_VECTOR))) Port_9(void)
 #else
@@ -640,8 +632,7 @@ struct Port10 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT10_VECTOR
-    __interrupt void
-        Port_10(void)
+    __interrupt void Port_10(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT10_VECTOR))) Port_10(void)
 #else
@@ -695,8 +686,7 @@ struct Port11 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT11_VECTOR
-    __interrupt void
-        Port_11(void)
+    __interrupt void Port_11(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT11_VECTOR))) Port_11(void)
 #else
@@ -752,8 +742,7 @@ struct PortJ {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORTJ_VECTOR
-    __interrupt void
-        Port_J(void)
+    __interrupt void Port_J(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORTJ_VECTOR))) Port_J(void)
 #else
@@ -946,8 +935,7 @@ struct Port2 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT2_VECTOR
-    __interrupt void
-        Port_2(void)
+    __interrupt void Port_2(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT2_VECTOR))) Port_2(void)
 #else
@@ -1001,8 +989,7 @@ struct Port3 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT3_VECTOR
-    __interrupt void
-        Port_3(void)
+    __interrupt void Port_3(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT3_VECTOR))) Port_3(void)
 #else
@@ -1056,8 +1043,7 @@ struct Port4 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT4_VECTOR
-    __interrupt void
-        Port_4(void)
+    __interrupt void Port_4(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT4_VECTOR))) Port_4(void)
 #else
@@ -1111,8 +1097,7 @@ struct Port5 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT5_VECTOR
-    __interrupt void
-        Port_5(void)
+    __interrupt void Port_5(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT5_VECTOR))) Port_5(void)
 #else
@@ -1165,8 +1150,7 @@ struct Port6 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT6_VECTOR
-    __interrupt void
-        Port_6(void)
+    __interrupt void Port_6(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT6_VECTOR))) Port_6(void)
 #else
@@ -1220,8 +1204,7 @@ struct Port7 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT7_VECTOR
-    __interrupt void
-        Port_7(void)
+    __interrupt void Port_7(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT7_VECTOR))) Port_7(void)
 #else
@@ -1274,8 +1257,7 @@ struct Port8 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT8_VECTOR
-    __interrupt void
-        Port_8(void)
+    __interrupt void Port_8(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT8_VECTOR))) Port_8(void)
 #else
@@ -1329,8 +1311,7 @@ struct Port9 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT9_VECTOR
-    __interrupt void
-        Port_9(void)
+    __interrupt void Port_9(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT9_VECTOR))) Port_9(void)
 #else
@@ -1384,8 +1365,7 @@ struct Port10 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT10_VECTOR
-    __interrupt void
-        Port_10(void)
+    __interrupt void Port_10(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT10_VECTOR))) Port_10(void)
 #else
@@ -1439,8 +1419,7 @@ struct Port11 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT11_VECTOR
-    __interrupt void
-        Port_11(void)
+    __interrupt void Port_11(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORT11_VECTOR))) Port_11(void)
 #else
@@ -1494,8 +1473,7 @@ struct PortJ {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORTJ_VECTOR
-    __interrupt void
-        Port_J(void)
+    __interrupt void Port_J(void)
 #elif defined(__GNUC__)
     void __attribute__((interrupt(PORTJ_VECTOR))) Port_J(void)
 #else
