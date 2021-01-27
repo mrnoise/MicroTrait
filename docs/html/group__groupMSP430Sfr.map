@@ -1,6 +1,6 @@
 <map id="SFR" name="SFR">
 <area shape="rect" id="node1" href="$group__groupEnumsMSP430Sfr.html" title=" " alt="" coords="229,5,292,32"/>
-<area shape="rect" id="node2" title="functions for SFR(special function register) register access for TIs MSP430 &#45;&gt; Ti Driverlib equivale..." alt="" coords="125,31,173,57"/>
-<area shape="rect" id="node3" href="$group__groupFuncsMSP430Sfr.html" title=" " alt="" coords="221,56,300,83"/>
+<area shape="rect" id="node2" href="$group__groupFuncsMSP430Sfr.html" title=" " alt="" coords="221,56,300,83"/>
+<area shape="rect" id="node3" title="functions for SFR(special function register) register access for TIs MSP430 &#45;&gt; Ti Driverlib equivale..." alt="" coords="125,31,173,57"/>
 <area shape="rect" id="node4" href="$group__groupMSP430.html" title=" " alt="" coords="5,31,77,57"/>
 </map>
