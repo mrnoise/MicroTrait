@@ -6,7 +6,7 @@
 
 namespace MT::MSP430::GPIO::Interrupt {
 
-std::array<void (*)(MT::MSP430::GPIO::PIN), PORTS::NONE> PortVectors{};
+std::array<void (*)(const MT::MSP430::GPIO::PIN), PORTS::NONE> PortVectors{};
 
 }// namespace MT::MSP430::GPIO::Interrupt
 #endif
