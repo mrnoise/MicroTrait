@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"group__groupFuncsMSP430Sfr.html#ga1682bfed3d9f8b7bdffe5b57065fa702":[3,0,0,0,5,4],
 "group__groupFuncsMSP430Sfr.html#ga1682bfed3d9f8b7bdffe5b57065fa702":[1,0,3,1,0],
 "group__groupFuncsMSP430Sfr.html#ga66c8809c34c77b9d3b3785dc980c5463":[3,0,0,0,5,5],
 "group__groupFuncsMSP430Sfr.html#ga66c8809c34c77b9d3b3785dc980c5463":[1,0,3,1,1],
@@ -63,8 +64,10 @@ var NAVTREEINDEX4 =
 "group__groupFuncsMSP430TimerA.html#gaf80bf92c9a372750d03e856e4d7d810e":[3,0,0,0,2,0,1,0],
 "group__groupFuncsMSP430TimerA.html#gaf80bf92c9a372750d03e856e4d7d810e":[1,0,5,1,1],
 "group__groupFuncsMSP430TimerAInt.html":[1,0,5,2,1],
-"group__groupFuncsMSP430TimerAInt.html#ga21d339bbaed2229ab92c49d1b82f0244":[3,0,0,0,2,1,0,0],
-"group__groupFuncsMSP430TimerAInt.html#ga21d339bbaed2229ab92c49d1b82f0244":[1,0,5,2,1,0],
+"group__groupFuncsMSP430TimerAInt.html#ga746c87fc9e70da39a99dff2b53b4464a":[3,0,0,0,2,1,0,0],
+"group__groupFuncsMSP430TimerAInt.html#ga746c87fc9e70da39a99dff2b53b4464a":[1,0,5,2,1,1],
+"group__groupFuncsMSP430TimerAInt.html#ga78ea8a72c9db70a12784594cd0819553":[3,0,0,0,2,1,0,1],
+"group__groupFuncsMSP430TimerAInt.html#ga78ea8a72c9db70a12784594cd0819553":[1,0,5,2,1,0],
 "group__groupFuncsMSP430UART__EUSCI__A.html":[1,0,0,4],
 "group__groupFuncsMSP430UART__EUSCI__A.html#ga0d09833366a91545cc6e6f2b4751fe7b":[3,0,0,0,0,0,0,0,15],
 "group__groupFuncsMSP430UART__EUSCI__A.html#ga0d09833366a91545cc6e6f2b4751fe7b":[1,0,0,4,15],
@@ -116,10 +119,10 @@ var NAVTREEINDEX4 =
 "group__groupFuncsMSP430WdtA.html#gaee8f285bfab0030b72fcb64b01cae028":[3,0,0,0,6,3],
 "group__groupFuncsMSP430WdtA.html#gaee8f285bfab0030b72fcb64b01cae028":[1,0,7,1,1],
 "group__groupFuncsMSP430WdtAInt.html":[1,0,7,2,1],
+"group__groupFuncsMSP430WdtAInt.html#ga08138c63b8ccc0899bf28db941c3d525":[1,0,7,2,1,1],
+"group__groupFuncsMSP430WdtAInt.html#ga08138c63b8ccc0899bf28db941c3d525":[1,0,7,2,0,0,1],
 "group__groupFuncsMSP430WdtAInt.html#ga3ba2b79c99e7de4f37bb575c0ab4ac44":[1,0,7,2,1,0],
 "group__groupFuncsMSP430WdtAInt.html#ga3ba2b79c99e7de4f37bb575c0ab4ac44":[1,0,7,2,0,0,2],
-"group__groupFuncsMSP430WdtAInt.html#gaa6a9601e3c9fe5bdba2e364eb8df3128":[1,0,7,2,1,1],
-"group__groupFuncsMSP430WdtAInt.html#gaa6a9601e3c9fe5bdba2e364eb8df3128":[1,0,7,2,0,0,1],
 "group__groupFuncsMeta.html":[1,1,1,0],
 "group__groupFuncsMeta.html#ga363d597ba0abc4977021bca8550adf02":[1,1,1,0,0],
 "group__groupFuncsReg.html":[1,2,1,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX4 =
 "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntNoPullDrv.html":[3,0,0,0,1,0,14],
 "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntSel0.html":[3,0,0,0,1,0,15],
 "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntSel0Drv.html":[3,0,0,0,1,0,16],
-"structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port1.html":[3,0,0,0,1,1,0],
-"structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port10.html":[3,0,0,0,1,1,1],
-"structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port10.html#aded14e00f5ba66508ed6336319e7a9d5":[3,0,0,0,1,1,1,1],
-"structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port10.html#aebfc309838aff48c0b5ba7a19d80e15d":[3,0,0,0,1,1,1,0]
+"structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port1.html":[3,0,0,0,1,1,0]
 };

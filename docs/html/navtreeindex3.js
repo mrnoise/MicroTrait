@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"group__groupEnumsReg.html":[1,2,1,0],
 "group__groupEnumsReg.html#ga0a5451e09f44b4952fd8332b583c652d":[1,2,1,0,2],
 "group__groupEnumsReg.html#ga26a7b5f5b054dcfecb8251310332b90a":[1,2,1,0,1],
 "group__groupEnumsReg.html#ga8779a21c592ffcc487f2b68d4d5aeff1":[1,2,1,0,0],
@@ -226,8 +227,8 @@ var NAVTREEINDEX3 =
 "group__groupFuncsMSP430Gpio.html#gafd91b2fede455b305d65946b8c1f56de":[3,0,0,0,1,0,1,3],
 "group__groupFuncsMSP430Gpio.html#gafd91b2fede455b305d65946b8c1f56de":[1,0,1,1,15],
 "group__groupFuncsMSP430GpioInt.html":[1,0,1,2,1],
-"group__groupFuncsMSP430GpioInt.html#ga4bcc38d64983f606fb1e8ad3985a14c0":[3,0,0,0,1,1,0,0],
-"group__groupFuncsMSP430GpioInt.html#ga4bcc38d64983f606fb1e8ad3985a14c0":[1,0,1,2,1,0],
+"group__groupFuncsMSP430GpioInt.html#gad5010c7e3847a9625abd0e6a887aa88c":[3,0,0,0,1,1,0,0],
+"group__groupFuncsMSP430GpioInt.html#gad5010c7e3847a9625abd0e6a887aa88c":[1,0,1,2,1,0],
 "group__groupFuncsMSP430GpioInt.html#gafc8ab5deb7bc4591320775d7c433fa81":[3,0,0,0,1,1,0,1],
 "group__groupFuncsMSP430GpioInt.html#gafc8ab5deb7bc4591320775d7c433fa81":[1,0,1,2,1,1],
 "group__groupFuncsMSP430IPmm.html":[1,0,2,2,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "group__groupFuncsMSP430SPI__EUSCI__A.html":[1,0,0,1],
 "group__groupFuncsMSP430Sfr.html":[1,0,3,1],
 "group__groupFuncsMSP430Sfr.html#ga095995edb9190d9c557506dafe3ad399":[3,0,0,0,5,10],
-"group__groupFuncsMSP430Sfr.html#ga095995edb9190d9c557506dafe3ad399":[1,0,3,1,6],
-"group__groupFuncsMSP430Sfr.html#ga1682bfed3d9f8b7bdffe5b57065fa702":[3,0,0,0,5,4]
+"group__groupFuncsMSP430Sfr.html#ga095995edb9190d9c557506dafe3ad399":[1,0,3,1,6]
 };

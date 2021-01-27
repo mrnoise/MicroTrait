@@ -1,7 +1,7 @@
 <map id="WDT A" name="WDT A">
-<area shape="rect" id="node1" href="$group__groupFuncsMSP430WdtA.html" title=" " alt="" coords="237,5,316,32"/>
-<area shape="rect" id="node2" title="functions for Watchdog A register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="125,56,189,83"/>
-<area shape="rect" id="node3" href="$group__groupMSP430WdtAInt.html" title="functions to register Interrupt callbacks for Watchdog A interrupts at compile time or at runtime &#45;&gt;..." alt="" coords="242,56,311,83"/>
-<area shape="rect" id="node4" href="$group__groupEnumsMSP430WdtA.html" title=" " alt="" coords="245,107,308,133"/>
+<area shape="rect" id="node1" href="$group__groupMSP430WdtAInt.html" title="functions to register Interrupt callbacks for Watchdog A interrupts at compile time or at runtime &#45;&gt;..." alt="" coords="242,5,311,32"/>
+<area shape="rect" id="node2" href="$group__groupEnumsMSP430WdtA.html" title=" " alt="" coords="245,56,308,83"/>
+<area shape="rect" id="node3" href="$group__groupFuncsMSP430WdtA.html" title=" " alt="" coords="237,107,316,133"/>
+<area shape="rect" id="node4" title="functions for Watchdog A register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="125,56,189,83"/>
 <area shape="rect" id="node5" href="$group__groupMSP430.html" title=" " alt="" coords="5,56,77,83"/>
 </map>

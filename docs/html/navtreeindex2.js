@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"dir_b11b26c345ed0f7c972184e81ad6f440.html":[4,0,1],
 "dir_b96257ce7418cb41a351567345760a24.html":[5,0,0],
 "dir_b96257ce7418cb41a351567345760a24.html":[4,0,0,0],
 "dir_ccb66b0757fb9c81f3459334107c554a.html":[5,0,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "group__groupEnumsMSP430WdtA.html#gaec0ff3f9fa7b27b7cbedecc4e62dd052":[1,0,7,0,1],
 "group__groupEnumsMSP430WdtAInt.html":[1,0,7,2,0],
 "group__groupEnumsMSP430WdtAInt.html#a4d4746a0406a0416382247fc84e7d289":[1,0,7,2,0,0,0],
-"group__groupEnumsMSP430WdtAInt.html#structMT_1_1MSP430_1_1WDTA_1_1Interrupt_1_1WDT":[1,0,7,2,0,0],
-"group__groupEnumsReg.html":[1,2,1,0]
+"group__groupEnumsMSP430WdtAInt.html#structMT_1_1MSP430_1_1WDTA_1_1Interrupt_1_1WDT":[1,0,7,2,0,0]
 };

@@ -1,6 +1,6 @@
 <map id="i2xx specific" name="i2xx specific">
-<area shape="rect" id="node1" href="$group__groupFuncsMSP430IPmm.html" title=" " alt="" coords="249,5,328,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="107,31,201,57"/>
-<area shape="rect" id="node3" href="$group__groupEnumsMSP430IPmm.html" title=" " alt="" coords="257,56,320,83"/>
+<area shape="rect" id="node1" href="$group__groupEnumsMSP430IPmm.html" title=" " alt="" coords="257,5,320,32"/>
+<area shape="rect" id="node2" href="$group__groupFuncsMSP430IPmm.html" title=" " alt="" coords="249,56,328,83"/>
+<area shape="rect" id="node3" title=" " alt="" coords="107,31,201,57"/>
 <area shape="rect" id="node4" href="$group__groupMSP430Pmm.html" title="functions for PMM(power management module) register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent..." alt="" coords="5,31,59,57"/>
 </map>
