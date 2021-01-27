@@ -6,7 +6,7 @@
 
 namespace MT::MSP430::TIMERA::Interrupt {
 
-//std::array<void (*)(MT::MSP430::GPIO::PIN), PORTS::NONE> PortVectors{};
+std::array<void (*)(const TIMERA::Interrupt::SOURCE), 4> Vectors{};
 
 }// namespace MT::MSP430::TIMERA::Interrupt
 #endif
