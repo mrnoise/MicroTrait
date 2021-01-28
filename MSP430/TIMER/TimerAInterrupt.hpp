@@ -16,7 +16,7 @@ using namespace MT::MSP430;
 #ifdef MT_MSP430_USE_TIMERA_COMPILE_TIME_CALLBACKS
 
   constexpr static TIMERA::Interrupt::TA0 int0{
-        [](const TIMERA::Interrupt::SOURCE src) {  // use lambdas only!
+        [](const TIMERA::Interrupt::SOURCE src) {  //-> use only lambdas for compile time registration!!
             if (src == TIMERA::Interrupt::SOURCE::REGISTER0) {
                 GPIO::Port1 p1{};
                 p1.toggleOutputOnPin(GPIO::PIN::P0);
@@ -77,6 +77,7 @@ using namespace MT::MSP430;
 #ifdef MT_USE_MSP430_LIB
 
 #include "MicroTrait/Misc/Meta.hpp"
+#include "MicroTrait/MSP430/Types.hpp"
 #include <type_traits>
 #include <msp430.h>
 #include <utility>
@@ -122,7 +123,7 @@ struct TA0 {
 	* using namespace MT::MSP430;
 	*
 	*  constexpr static TIMERA::Interrupt::TA0 int0{
-    *    [](const TIMERA::Interrupt::SOURCE src) {  // use lambdas only!
+    *    [](const TIMERA::Interrupt::SOURCE src) {  //-> use only lambdas for compile time registration!!
     *        if (src == TIMERA::Interrupt::SOURCE::REGISTER0) {
     *            GPIO::Port1 p1{};
     *            p1.toggleOutputOnPin(GPIO::PIN::P0);
@@ -396,7 +397,7 @@ struct TA3 {
 
 #else
 
-extern std::array<void (*)(const TIMERA::Interrupt::SOURCE), 4> Vectors;
+using Callback = void (*)(const TIMERA::Interrupt::SOURCE);
 
 #if defined(TIMER0_A0_VECTOR) && defined(TIMER0_A1_VECTOR)
 struct TA0 {
@@ -426,29 +427,51 @@ struct TA0 {
 	*@param callback pointer to the callback function
 	****************************************************************
 	*/
-    constexpr void registerCallback(void (*callback)(const TIMERA::Interrupt::SOURCE)) noexcept {
-        Vectors[0] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+    /**
+	* @ingroup groupFuncsMSP430TimerAInt
+	****************************************************************
+	* @brief runs intrinsic on ISR leave
+	* @details
+	* Usage:  \code {.cpp}
+	*
+	* using namespace MT::MSP430;
+	*
+	*  TIMERA::Interrupt::TA1 int1;
+	*  int1.setIntrinsic(ISR_INTRINSICS::LEAVE_LOW_POWER);
+	*
+	* \endcode
+	*@param in Intrinsics which should be invoked prior to leaving the ISR
+	****************************************************************
+	*/
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER0_A0_VECTOR
-    __interrupt void A0_ISR(void)
+    __interrupt static inline void        A0_ISR(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(TIMER0_A0_VECTOR))) A0_ISR(void)
+    static inline void __attribute__((interrupt(TIMER0_A0_VECTOR))) A0_ISR(void)
 #else
 #error Compiler not supported!
 #endif
     {
-        if (Vectors[0] != nullptr) Vectors[0](SOURCE::REGISTER0);
+        if (m_cb != nullptr) m_cb(SOURCE::REGISTER0);
     }
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER0_A1_VECTOR
-    __interrupt void A1_ISR(void)
+    __interrupt static inline void A1_ISR(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(TIMER0_A1_VECTOR))) A1_ISR(void)
+    static inline void __attribute__((interrupt(TIMER0_A1_VECTOR))) A1_ISR(void)
 #else
 #error Compiler not supported!
 #endif
@@ -481,7 +504,7 @@ struct TA0 {
                 break;//Overflow
             default: break;
         }
-        if (Vectors[0] != nullptr) Vectors[0](src);
+        if (m_cb != nullptr) m_cb(src);
     }
 };
 #endif
@@ -490,29 +513,35 @@ struct TA0 {
 #if defined(TIMER1_A0_VECTOR) && defined(TIMER1_A1_VECTOR)
 struct TA1 {
 
-    constexpr void registerCallback(void (*callback)(const TIMERA::Interrupt::SOURCE)) noexcept {
-        Vectors[1] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER1_A0_VECTOR
-    __interrupt void A0_ISR(void)
+    __interrupt static inline void        A0_ISR(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(TIMER1_A0_VECTOR))) A0_ISR(void)
+    static inline void __attribute__((interrupt(TIMER1_A0_VECTOR))) A0_ISR(void)
 #else
 #error Compiler not supported!
 #endif
     {
-        if (Vectors[1] != nullptr) Vectors[1](SOURCE::REGISTER0);
+        if (m_cb != nullptr) m_cb(SOURCE::REGISTER0);
     }
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER1_A1_VECTOR
-    __interrupt void A1_ISR(void)
+    __interrupt static inline void A1_ISR(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(TIMER1_A1_VECTOR))) A1_ISR(void)
+    static inline void __attribute__((interrupt(TIMER1_A1_VECTOR))) A1_ISR(void)
 #else
 #error Compiler not supported!
 #endif
@@ -545,7 +574,7 @@ struct TA1 {
                 break;//Overflow
             default: break;
         }
-        if (Vectors[1] != nullptr) Vectors[1](src);
+        if (m_cb != nullptr) m_cb(src);
     }
 };
 #endif
@@ -554,29 +583,35 @@ struct TA1 {
 #if defined(TIMER2_A0_VECTOR) && defined(TIMER2_A1_VECTOR)
 struct TA2 {
 
-    constexpr void registerCallback(void (*callback)(const TIMERA::Interrupt::SOURCE)) noexcept {
-        Vectors[2] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER2_A0_VECTOR
-    __interrupt void A0_ISR(void)
+    __interrupt static inline void        A0_ISR(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(TIMER2_A0_VECTOR))) A0_ISR(void)
+    static inline void __attribute__((interrupt(TIMER2_A0_VECTOR))) A0_ISR(void)
 #else
 #error Compiler not supported!
 #endif
     {
-        if (Vectors[2] != nullptr) Vectors[2](SOURCE::REGISTER0);
+        if (m_cb != nullptr) m_cb(SOURCE::REGISTER0);
     }
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER2_A1_VECTOR
-    __interrupt void A1_ISR(void)
+    __interrupt static inline void A1_ISR(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(TIMER2_A1_VECTOR))) A1_ISR(void)
+    static inline void __attribute__((interrupt(TIMER2_A1_VECTOR))) A1_ISR(void)
 #else
 #error Compiler not supported!
 #endif
@@ -609,37 +644,44 @@ struct TA2 {
                 break;//Overflow
             default: break;
         }
-        if (Vectors[2] != nullptr) Vectors[2](src);
+        if (m_cb != nullptr) m_cb(src);
     }
 };
 #endif
 
+
 #if defined(TIMER3_A0_VECTOR) && defined(TIMER3_A1_VECTOR)
 struct TA3 {
 
-    constexpr void registerCallback(void (*callback)(const TIMERA::Interrupt::SOURCE)) noexcept {
-        Vectors[3] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER3_A0_VECTOR
-    __interrupt void A0_ISR(void)
+    __interrupt static inline void        A0_ISR(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(TIMER3_A0_VECTOR))) A0_ISR(void)
+    static inline void __attribute__((interrupt(TIMER3_A0_VECTOR))) A0_ISR(void)
 #else
 #error Compiler not supported!
 #endif
     {
-        if (Vectors[3] != nullptr) Vectors[3](SOURCE::REGISTER0);
+        if (m_cb != nullptr) m_cb(SOURCE::REGISTER0);
     }
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER3_A1_VECTOR
-    __interrupt void A1_ISR(void)
+    __interrupt static inline void A1_ISR(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(TIMER3_A1_VECTOR))) A1_ISR(void)
+    static inline void __attribute__((interrupt(TIMER3_A1_VECTOR))) A1_ISR(void)
 #else
 #error Compiler not supported!
 #endif
@@ -672,7 +714,7 @@ struct TA3 {
                 break;//Overflow
             default: break;
         }
-        if (Vectors[3] != nullptr) Vectors[3](src);
+        if (m_cb != nullptr) m_cb(src);
     }
 };
 #endif

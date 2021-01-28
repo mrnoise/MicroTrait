@@ -60,6 +60,17 @@ enum class INT_PENDING_STATUS : uint_fast8_t {
     PENDING
 };
 
+/**
+* @ingroup groupEnumsMSP430Types
+****************************************************************
+* @brief Intrinsics which can be invoked before leaving ISR
+****************************************************************
+*/
+enum class ISR_INTRINSICS {
+    NONE            = 0,
+    LEAVE_LOW_POWER = 1,
+};
+
 }// namespace MT::MSP430
 
 #endif /* MICROTRAIT_MSP430_TYPES_HPP_ */

@@ -16,7 +16,7 @@ using namespace MT::MSP430;
 #ifdef MT_MSP430_USE_GPIO_COMPILE_TIME_CALLBACKS
 
   constexpr static GPIO::Interrupt::Port1 int1{
-    [](const GPIO::PIN pin) {  // use lambdas only!
+    [](const GPIO::PIN pin) {  //-> use only lambdas for compile time registration!!
         if (pin == GPIO::PIN::P1) {
             GPIO::Port1 p1{};
             p1.toggleOutputOnPin(GPIO::PIN::P0);
@@ -25,7 +25,7 @@ using namespace MT::MSP430;
  };
 
   constexpr static GPIO::Interrupt::Port2 int2{
-        [](const GPIO::PIN pin) {  // use lambdas only!
+        [](const GPIO::PIN pin) {  //-> use only lambdas for compile time registration!!
             if (pin == GPIO::PIN::P4) {
                 GPIO::Port1 p1{};
                 p1.toggleOutputOnPin(GPIO::PIN::P0);
@@ -114,7 +114,7 @@ struct Port1 {
 	* using namespace MT::MSP430;
 	*
 	*  constexpr static GPIO::Interrupt::Port1 int1{
-    *    [](const GPIO::PIN pin) {  // use lambdas only!
+    *    [](const GPIO::PIN pin) { //-> use only lambdas for compile time registration!!
     *        if (pin == GPIO::PIN::P1) {
     *            GPIO::Port1 p1{};
     *            p1.toggleOutputOnPin(GPIO::PIN::P0);
@@ -786,68 +786,7 @@ struct PortJ {
 
 #else
 
-/**
-* @ingroup groupEnumsMSP430GpioInt
-****************************************************************
-* @brief Available Ports for interrupt callbacks
-****************************************************************
-*/
-enum PORTS : uint_fast8_t {
-#if defined(P1IFG)
-    P1  = 0,
-#endif
-
-#if defined(P2IFG)
-    P2  = 1,
-#endif
-
-#if defined(P3IFG)
-    P3  = 2,
-#endif
-
-#if defined(P4IFG)
-    P4  = 3,
-#endif
-
-#if defined(P5IFG)
-    P5  = 4,
-#endif
-
-#if defined(P6IFG)
-    P6  = 5,
-#endif
-
-#if defined(P7IFG)
-    P7  = 6,
-#endif
-
-#if defined(P8IFG)
-    P8  = 7,
-
-#endif
-
-#if defined(P9IFG)
-    P9  = 8,
-#endif
-
-#if defined(P10IFG)
-    P10 = 9,
-#endif
-
-#if defined(P11IFG)
-    P11 = 10,
-#endif
-
-#if defined(PJIFG)
-    PJ  = 11,
-#endif
-
-    NONE
-};
-
-
-extern std::array<void (*)(const MT::MSP430::GPIO::PIN), PORTS::NONE> PortVectors;
-
+using Callback = void (*)(const MT::MSP430::GPIO::PIN);
 
 #if defined(P1IFG)
 struct Port1 {
@@ -873,17 +812,39 @@ struct Port1 {
 	*@param callback pointer to the callback function
 	****************************************************************
 	*/
-    constexpr void registerCallback(void (*callback)(MT::MSP430::GPIO::PIN)) noexcept {
-        PortVectors[PORTS::P1] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+    /**
+   	* @ingroup groupFuncsMSP430GpioInt
+   	****************************************************************
+   	* @brief runs intrinsic on ISR leave
+   	* @details
+   	* Usage:  \code {.cpp}
+   	*
+   	* using namespace MT::MSP430;
+   	*
+   	*  GPIO::Interrupt::Port1 int1;
+   	*  int1.setIntrinsic(ISR_INTRINSICS::LEAVE_LOW_POWER);
+   	*
+   	* \endcode
+   	*@param in Intrinsics which should be invoked prior to leaving the ISR
+   	****************************************************************
+   	*/
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT1_VECTOR
-    __interrupt void Port_1(void)
+    __interrupt static inline void        Port_1(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(PORT1_VECTOR))) Port_1(void)
+    static inline void __attribute__((interrupt(PORT1_VECTOR))) Port_1(void)
 #else
 #error Compiler not supported!
 #endif
@@ -918,7 +879,7 @@ struct Port1 {
                 break;
         }
 
-        if (PortVectors[PORTS::P1] != nullptr) PortVectors[PORTS::P1](pin);
+        if (m_cb != nullptr) m_cb(pin);
     }
 };
 #endif
@@ -927,17 +888,23 @@ struct Port1 {
 #if defined(P2IFG)
 struct Port2 {
 
-    constexpr void registerCallback(void (*callback)(MT::MSP430::GPIO::PIN)) noexcept {
-        PortVectors[PORTS::P2] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT2_VECTOR
-    __interrupt void Port_2(void)
+    __interrupt static inline void        Port_2(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(PORT2_VECTOR))) Port_2(void)
+    static inline void __attribute__((interrupt(PORT2_VECTOR))) Port_2(void)
 #else
 #error Compiler not supported!
 #endif
@@ -972,7 +939,7 @@ struct Port2 {
                 break;
         }
 
-        if (PortVectors[PORTS::P2] != nullptr) PortVectors[PORTS::P2](pin);
+        if (m_cb != nullptr) m_cb(pin);
     }
 };
 #endif
@@ -981,17 +948,23 @@ struct Port2 {
 #if defined(P3IFG)
 struct Port3 {
 
-    constexpr void registerCallback(void (*callback)(MT::MSP430::GPIO::PIN)) noexcept {
-        PortVectors[PORTS::P3] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT3_VECTOR
-    __interrupt void Port_3(void)
+    __interrupt static inline void        Port_3(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(PORT3_VECTOR))) Port_3(void)
+    static inline void __attribute__((interrupt(PORT3_VECTOR))) Port_3(void)
 #else
 #error Compiler not supported!
 #endif
@@ -1026,7 +999,7 @@ struct Port3 {
                 break;
         }
 
-        if (PortVectors[PORTS::P3] != nullptr) PortVectors[PORTS::P3](pin);
+        if (m_cb != nullptr) m_cb(pin);
     }
 };
 #endif
@@ -1035,17 +1008,23 @@ struct Port3 {
 #if defined(P4IFG)
 struct Port4 {
 
-    constexpr void registerCallback(void (*callback)(MT::MSP430::GPIO::PIN)) noexcept {
-        PortVectors[PORTS::P4] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT4_VECTOR
-    __interrupt void Port_4(void)
+    __interrupt static inline void        Port_4(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(PORT4_VECTOR))) Port_4(void)
+    static inline void __attribute__((interrupt(PORT4_VECTOR))) Port_4(void)
 #else
 #error Compiler not supported!
 #endif
@@ -1080,7 +1059,7 @@ struct Port4 {
                 break;
         }
 
-        if (PortVectors[PORTS::P4] != nullptr) PortVectors[PORTS::P4](pin);
+        if (m_cb != nullptr) m_cb(pin);
     }
 };
 #endif
@@ -1089,17 +1068,23 @@ struct Port4 {
 #if defined(P5IFG)
 struct Port5 {
 
-    constexpr void registerCallback(void (*callback)(MT::MSP430::GPIO::PIN)) noexcept {
-        PortVectors[PORTS::P5] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT5_VECTOR
-    __interrupt void Port_5(void)
+    __interrupt static inline void        Port_5(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(PORT5_VECTOR))) Port_5(void)
+    static inline void __attribute__((interrupt(PORT5_VECTOR))) Port_5(void)
 #else
 #error Compiler not supported!
 #endif
@@ -1134,25 +1119,32 @@ struct Port5 {
                 break;
         }
 
-        if (PortVectors[PORTS::P5] != nullptr) PortVectors[PORTS::P5](pin);
+        if (m_cb != nullptr) m_cb(pin);
     }
 };
 #endif
 
-#if defined(P6IFG)
+
+#if defined(P7IFG)
 struct Port6 {
 
-    constexpr void registerCallback(void (*callback)(MT::MSP430::GPIO::PIN)) noexcept {
-        PortVectors[PORTS::P6] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT6_VECTOR
-    __interrupt void Port_6(void)
+    __interrupt static inline void        Port_6(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(PORT6_VECTOR))) Port_6(void)
+    static inline void __attribute__((interrupt(PORT6_VECTOR))) Port_6(void)
 #else
 #error Compiler not supported!
 #endif
@@ -1187,26 +1179,31 @@ struct Port6 {
                 break;
         }
 
-        if (PortVectors[PORTS::P6] != nullptr) PortVectors[PORTS::P6](pin);
+        if (m_cb != nullptr) m_cb(pin);
     }
 };
 #endif
 
-
 #if defined(P7IFG)
 struct Port7 {
 
-    constexpr void registerCallback(void (*callback)(MT::MSP430::GPIO::PIN)) noexcept {
-        PortVectors[PORTS::P7] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT7_VECTOR
-    __interrupt void Port_7(void)
+    __interrupt static inline void        Port_7(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(PORT7_VECTOR))) Port_7(void)
+    static inline void __attribute__((interrupt(PORT7_VECTOR))) Port_7(void)
 #else
 #error Compiler not supported!
 #endif
@@ -1241,25 +1238,32 @@ struct Port7 {
                 break;
         }
 
-        if (PortVectors[PORTS::P7] != nullptr) PortVectors[PORTS::P7](pin);
+        if (m_cb != nullptr) m_cb(pin);
     }
 };
 #endif
 
+
 #if defined(P8IFG)
 struct Port8 {
 
-    constexpr void registerCallback(void (*callback)(MT::MSP430::GPIO::PIN)) noexcept {
-        PortVectors[PORTS::P8] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT8_VECTOR
-    __interrupt void Port_8(void)
+    __interrupt static inline void        Port_8(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(PORT8_VECTOR))) Port_8(void)
+    static inline void __attribute__((interrupt(PORT8_VECTOR))) Port_8(void)
 #else
 #error Compiler not supported!
 #endif
@@ -1294,7 +1298,7 @@ struct Port8 {
                 break;
         }
 
-        if (PortVectors[PORTS::P8] != nullptr) PortVectors[PORTS::P8](pin);
+        if (m_cb != nullptr) m_cb(pin);
     }
 };
 #endif
@@ -1303,17 +1307,23 @@ struct Port8 {
 #if defined(P9IFG)
 struct Port9 {
 
-    constexpr void registerCallback(void (*callback)(MT::MSP430::GPIO::PIN)) noexcept {
-        PortVectors[PORTS::P9] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT9_VECTOR
-    __interrupt void Port_9(void)
+    __interrupt static inline void        Port_9(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(PORT9_VECTOR))) Port_9(void)
+    static inline void __attribute__((interrupt(PORT9_VECTOR))) Port_9(void)
 #else
 #error Compiler not supported!
 #endif
@@ -1348,7 +1358,7 @@ struct Port9 {
                 break;
         }
 
-        if (PortVectors[PORTS::P9] != nullptr) PortVectors[PORTS::P9](pin);
+        if (m_cb != nullptr) m_cb(pin);
     }
 };
 #endif
@@ -1357,17 +1367,23 @@ struct Port9 {
 #if defined(P10IFG)
 struct Port10 {
 
-    constexpr void registerCallback(void (*callback)(MT::MSP430::GPIO::PIN)) noexcept {
-        PortVectors[PORTS::P10] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT10_VECTOR
-    __interrupt void Port_10(void)
+    __interrupt static inline void        Port_10(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(PORT10_VECTOR))) Port_10(void)
+    static inline void __attribute__((interrupt(PORT10_VECTOR))) Port_10(void)
 #else
 #error Compiler not supported!
 #endif
@@ -1402,26 +1418,31 @@ struct Port10 {
                 break;
         }
 
-        if (PortVectors[PORTS::P10] != nullptr) PortVectors[PORTS::P10](pin);
+        if (m_cb != nullptr) m_cb(pin);
     }
 };
 #endif
 
-
 #if defined(P11IFG)
 struct Port11 {
 
-    constexpr void registerCallback(void (*callback)(MT::MSP430::GPIO::PIN)) noexcept {
-        PortVectors[PORTS::P11] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT11_VECTOR
-    __interrupt void Port_11(void)
+    __interrupt static inline void        Port_11(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(PORT11_VECTOR))) Port_11(void)
+    static inline void __attribute__((interrupt(PORT11_VECTOR))) Port_11(void)
 #else
 #error Compiler not supported!
 #endif
@@ -1456,26 +1477,31 @@ struct Port11 {
                 break;
         }
 
-        if (PortVectors[PORTS::P11] != nullptr) PortVectors[PORTS::P11](pin);
+        if (m_cb != nullptr) m_cb(pin);
     }
 };
 #endif
 
-
 #if defined(PJIFG)
 struct PortJ {
 
-    constexpr void registerCallback(void (*callback)(MT::MSP430::GPIO::PIN)) noexcept {
-        PortVectors[PORTS::PJ] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORTJ_VECTOR
-    __interrupt void Port_J(void)
+    __interrupt static inline void        Port_J(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(PORTJ_VECTOR))) Port_J(void)
+    static inline void __attribute__((interrupt(PORTJ_VECTOR))) Port_J(void)
 #else
 #error Compiler not supported!
 #endif
@@ -1510,11 +1536,10 @@ struct PortJ {
                 break;
         }
 
-        if (PortVectors[PORTS::PJ] != nullptr) PortVectors[PORTS::PJ](pin);
+        if (m_cb != nullptr) m_cb(pin);
     }
 };
 #endif
-
 
 #endif
 

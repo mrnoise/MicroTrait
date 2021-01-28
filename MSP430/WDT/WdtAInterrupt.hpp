@@ -130,8 +130,7 @@ struct WDT {
 
 #else
 
-extern std::array<void (*)(), 1> WdtVectors;
-
+using Callback = void (*)();
 
 struct WDT {
 
@@ -145,7 +144,7 @@ struct WDT {
 	*	using namespace MT::MSP430;
 	*
 	*	WDTA::Interrupt::WDT inter;
-    *		inter.registerCallback([]() {
+    *		inter.registerCallback([]() { //-> use only lambdas for compile time registration!!
     *    	GPIO::Port1 p1{};
     *    	p1.toggleOutputOnPin(GPIO::PIN::P0);
     *	});
@@ -153,11 +152,34 @@ struct WDT {
 	*@param callback pointer to the callback function
 	****************************************************************
 	*/
-    constexpr void registerCallback(void (*callback)()) noexcept {
-        WdtVectors[0] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     };
 
+
+    /**
+	* @ingroup groupFuncsMSP430WdtAInt
+	****************************************************************
+	* @brief runs intrinsic on ISR leave
+	* @details
+	* Usage:  \code {.cpp}
+	*
+	* using namespace MT::MSP430;
+	*
+	*  WDTA::Interrupt::WDT inter;
+	*  inter.setIntrinsic(ISR_INTRINSICS::LEAVE_LOW_POWER);
+	*
+	* \endcode
+	*@param in Intrinsics which should be invoked prior to leaving the ISR
+	****************************************************************
+	*/
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
+    }
+
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = WDT_VECTOR
@@ -165,10 +187,9 @@ struct WDT {
 #elif defined(__GNUC__)
     __attribute__((interrupt(WDT_VECTOR)))
 #endif
-        void
+        static inline void
         WDT_A_ISR(void) {
-
-        if (WdtVectors[0] != nullptr) WdtVectors[0]();
+        if (m_cb != nullptr) m_cb();
     }
 };
 

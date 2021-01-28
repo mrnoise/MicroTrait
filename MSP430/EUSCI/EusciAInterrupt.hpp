@@ -16,7 +16,7 @@ using namespace MT::MSP430;
 #ifdef MT_MSP430_USE_EUSCIA_UART_COMPILE_TIME_CALLBACKS
 
 constexpr static EUSCIA::UART::Interrupt::A0 int0{
-   [](const EUSCIA::UART::INT src) {
+   [](const EUSCIA::UART::INT src) { //-> use only lambdas for compile time registration!!
 	   if (src == EUSCIA::UART::INT::RECEIVE) {
 			GPIO::Port1 p1;
 			p1.setOutputHighOnPin(GPIO::PIN::P0);
@@ -35,13 +35,11 @@ using namespace MT::MSP430;
 #ifndef MT_MSP430_USE_EUSCIA_UART_COMPILE_TIME_CALLBACKS
 
   EUSCIA::UART::Interrupt::A1 int1;
-    int1.setIntrinsic(EUSCIA::UART::Interrupt::INTRINSICS::LEAVE_LOW_POWER);
+    int1.setIntrinsic(EUSCIA::UART::Interrupt::ISR_INTRINSICS::LEAVE_LOW_POWER);
     int1.registerCallback(
         []([[maybe_unused]] const EUSCIA::UART::INT src) {
                 GPIO::Port1 p1;
                 p1.setOutputHighOnPin(GPIO::PIN::P0);
-                while (1)
-                    ;
         });
 #endif
 \endcode
@@ -72,6 +70,7 @@ using namespace MT::MSP430;
 #ifdef MT_USE_MSP430_LIB
 
 #include <MicroTrait/MSP430/EUSCI/EusciA.hpp>
+#include "MicroTrait/MSP430/Types.hpp"
 #include "MicroTrait/Misc/Meta.hpp"
 #include <type_traits>
 #include <msp430.h>
@@ -98,7 +97,7 @@ struct A0 {
 	* using namespace MT::MSP430;
 	*
 	* constexpr static EUSCIA::UART::Interrupt::A0 int0{
-    *    [](const EUSCIA::UART::INT src) {
+    *    [](const EUSCIA::UART::INT src) { //-> use only lambdas for compile time registration!!
     *        if (src == EUSCIA::UART::INT::RECEIVE) {
     *            GPIO::Port1 p1;
     *            p1.setOutputHighOnPin(GPIO::PIN::P0);
@@ -279,13 +278,7 @@ struct A3 {
 #else
 
 
-enum class INTRINSICS {
-    NONE            = 0,
-    LEAVE_LOW_POWER = 1,
-};
-
-extern std::array<void (*)(const EUSCIA::UART::INT), 4> Vectors;
-extern std::array<volatile INTRINSICS, 4>               Intrinsics;
+using Callback = void (*)(const EUSCIA::UART::INT);
 
 #if defined(USCI_A0_VECTOR)
 struct A0 {
@@ -300,47 +293,49 @@ struct A0 {
 	* using namespace MT::MSP430;
 	*
 	*  EUSCIA::UART::Interrupt::A0 int1;
-    *	int1.registerCallback(
-    *    [](const EUSCIA::UART::INT src) {
-    *           GPIO::Port1 p1;
-    *           p1.setOutputHighOnPin(GPIO::PIN::P0);
-    *   });
+	*	int1.registerCallback(
+	*    [](const EUSCIA::UART::INT src) {
+	*           GPIO::Port1 p1;
+	*           p1.setOutputHighOnPin(GPIO::PIN::P0);
+	*   });
 	*
 	* \endcode
 	*@param callback pointer to the callback function
 	****************************************************************
 	*/
-    constexpr void registerCallback(void (*callback)(const EUSCIA::UART::INT)) noexcept {
-        Vectors[0] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     }
 
     /**
-	* @ingroup groupFuncsMSP430EUSCIAInt
-	****************************************************************
-	* @brief runs intrinsic on ISR leave
-	* @details
-	* Usage:  \code {.cpp}
-	*
-	* using namespace MT::MSP430;
-	*
-	*  EUSCIA::UART::Interrupt::A0 int1;
-	*  int1.setIntrinsic(EUSCIA::UART::Interrupt::INTRINSICS::LEAVE_LOW_POWER);
-	*
-	* \endcode
-	*@param callback pointer to the callback function
-	****************************************************************
-	*/
-    constexpr void setIntrinsic(const INTRINSICS in) noexcept {
-        Intrinsics[0] = in;
+ 	* @ingroup groupFuncsMSP430EUSCIAInt
+ 	****************************************************************
+ 	* @brief runs intrinsic on ISR leave
+ 	* @details
+ 	* Usage:  \code {.cpp}
+ 	*
+ 	* using namespace MT::MSP430;
+ 	*
+ 	*  EUSCIA::UART::Interrupt::A0 int1;
+ 	*  int1.setIntrinsic(ISR_INTRINSICS::LEAVE_LOW_POWER);
+ 	*
+ 	* \endcode
+ 	*@param in Intrinsics which should be invoked prior to leaving the ISR
+ 	****************************************************************
+ 	*/
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
     }
 
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = USCI_A0_VECTOR
-    __interrupt void USCI_ISR(void)
+    __interrupt static inline void        USCI_ISR(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(USCI_A0_VECTOR))) USCI_ISR(void)
+    static inline void __attribute__((interrupt(USCI_A0_VECTOR))) USCI_ISR(void)
 #else
 #error Compiler not supported!
 #endif
@@ -362,31 +357,32 @@ struct A0 {
                 src = EUSCIA::UART::INT::TRANSMIT_COMPLETE;
                 break;
         }
-        if (Vectors[0] != nullptr) Vectors[0](src);
-        if (Intrinsics[0] == INTRINSICS::LEAVE_LOW_POWER) __bic_SR_register_on_exit(CPUOFF);// Exit LPM0 on reti
+        if (m_cb != nullptr) m_cb(src);
+        if (m_intrinsic == ISR_INTRINSICS::LEAVE_LOW_POWER) __bic_SR_register_on_exit(CPUOFF);// Exit LPM0 on reti
     }
 };
 #endif
 
-
 #if defined(USCI_A1_VECTOR)
 struct A1 {
 
-    constexpr void registerCallback(void (*callback)(const EUSCIA::UART::INT)) noexcept {
-        Vectors[1] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     }
 
-    constexpr void setIntrinsic(const INTRINSICS in) noexcept {
-        Intrinsics[1] = in;
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
     }
 
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = USCI_A1_VECTOR
-    __interrupt void USCI_ISR(void)
+    __interrupt static inline void        USCI_ISR(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(USCI_A1_VECTOR))) USCI_ISR(void)
+    static inline void __attribute__((interrupt(USCI_A1_VECTOR))) USCI_ISR(void)
 #else
 #error Compiler not supported!
 #endif
@@ -408,8 +404,8 @@ struct A1 {
                 src = EUSCIA::UART::INT::TRANSMIT_COMPLETE;
                 break;
         }
-        if (Vectors[1] != nullptr) Vectors[1](src);
-        if (Intrinsics[1] == INTRINSICS::LEAVE_LOW_POWER) __bic_SR_register_on_exit(CPUOFF);// Exit LPM0 on reti
+        if (m_cb != nullptr) m_cb(src);
+        if (m_intrinsic == ISR_INTRINSICS::LEAVE_LOW_POWER) __bic_SR_register_on_exit(CPUOFF);// Exit LPM0 on reti
     }
 };
 #endif
@@ -418,21 +414,23 @@ struct A1 {
 #if defined(USCI_A2_VECTOR)
 struct A2 {
 
-    constexpr void registerCallback(void (*callback)(const EUSCIA::UART::INT)) noexcept {
-        Vectors[2] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     }
 
-    constexpr void setIntrinsic(const INTRINSICS in) noexcept {
-        Intrinsics[2] = in;
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
     }
 
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = USCI_A2_VECTOR
-    __interrupt void USCI_ISR(void)
+    __interrupt static inline void        USCI_ISR(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(USCI_A2_VECTOR))) USCI_ISR(void)
+    static inline void __attribute__((interrupt(USCI_A2_VECTOR))) USCI_ISR(void)
 #else
 #error Compiler not supported!
 #endif
@@ -454,8 +452,8 @@ struct A2 {
                 src = EUSCIA::UART::INT::TRANSMIT_COMPLETE;
                 break;
         }
-        if (Vectors[2] != nullptr) Vectors[2](src);
-        if (Intrinsics[2] == INTRINSICS::LEAVE_LOW_POWER) __bic_SR_register_on_exit(CPUOFF);// Exit LPM0 on reti
+        if (m_cb != nullptr) m_cb(src);
+        if (m_intrinsic == ISR_INTRINSICS::LEAVE_LOW_POWER) __bic_SR_register_on_exit(CPUOFF);// Exit LPM0 on reti
     }
 };
 #endif
@@ -464,21 +462,23 @@ struct A2 {
 #if defined(USCI_A3_VECTOR)
 struct A3 {
 
-    constexpr void registerCallback(void (*callback)(const EUSCIA::UART::INT)) noexcept {
-        Vectors[3] = callback;
+    constexpr static inline void registerCallback(Callback callback) noexcept {
+        m_cb = callback;
     }
 
-    constexpr void setIntrinsic(const INTRINSICS in) noexcept {
-        Intrinsics[3] = in;
+    constexpr static inline void setIntrinsic(const ISR_INTRINSICS in) noexcept {
+        m_intrinsic = in;
     }
 
   private:
+    static inline volatile ISR_INTRINSICS m_intrinsic = ISR_INTRINSICS::NONE;
+    static inline volatile Callback       m_cb        = nullptr;
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = USCI_A3_VECTOR
-    __interrupt void USCI_ISR(void)
+    __interrupt static inline void        USCI_ISR(void)
 #elif defined(__GNUC__)
-    void __attribute__((interrupt(USCI_A3_VECTOR))) USCI_ISR(void)
+    static inline void __attribute__((interrupt(USCI_A3_VECTOR))) USCI_ISR(void)
 #else
 #error Compiler not supported!
 #endif
@@ -500,12 +500,11 @@ struct A3 {
                 src = EUSCIA::UART::INT::TRANSMIT_COMPLETE;
                 break;
         }
-        if (Vectors[3] != nullptr) Vectors[3](src);
-        if (Intrinsics[3] == INTRINSICS::LEAVE_LOW_POWER) __bic_SR_register_on_exit(CPUOFF);// Exit LPM0 on reti
+        if (m_cb != nullptr) m_cb(src);
+        if (m_intrinsic == ISR_INTRINSICS::LEAVE_LOW_POWER) __bic_SR_register_on_exit(CPUOFF);// Exit LPM0 on reti
     }
 };
 #endif
-
 
 #endif
 
