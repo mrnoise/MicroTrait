@@ -72,6 +72,7 @@ $(document).ready(function(){initNavTree('structMT_1_1MSP430_1_1TIMERA_1_1Interr
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA2-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MT::MSP430::TIMERA::Interrupt::TA2&lt; FUNC &gt; Struct Template Reference</div>  </div>
@@ -85,8 +86,13 @@ $(document).ready(function(){initNavTree('structMT_1_1MSP430_1_1TIMERA_1_1Interr
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a18bdaf1f0d3d7331557ed05b3e509df4"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA2.html#a18bdaf1f0d3d7331557ed05b3e509df4">TA2</a> (FUNC fun) noexcept</td></tr>
 <tr class="separator:a18bdaf1f0d3d7331557ed05b3e509df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb6a639dbb6895a97436d3b69f7e390b"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA2.html#acb6a639dbb6895a97436d3b69f7e390b">registerCallback</a> (void (*callback)(const <a class="el" href="group__groupEnumsMSP430TimerAInt.html#ga04a6eea85edd4dfd272a87f2a2378a66">TIMERA::Interrupt::SOURCE</a>)) noexcept</td></tr>
-<tr class="separator:acb6a639dbb6895a97436d3b69f7e390b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aad9e282a5aea339009299afde59d0a60"><td class="memItemLeft" align="right" valign="top">constexpr static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA2.html#aad9e282a5aea339009299afde59d0a60">registerCallback</a> (<a class="el" href="namespaceMT_1_1MSP430_1_1TIMERA_1_1Interrupt.html#a36498d81ea81b457707f35aad1410543">Callback</a> callback) noexcept</td></tr>
+<tr class="separator:aad9e282a5aea339009299afde59d0a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec01f6d4299f105f0f61661b822735b8"><td class="memItemLeft" align="right" valign="top">constexpr static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA2.html#aec01f6d4299f105f0f61661b822735b8">setIntrinsic</a> (const <a class="el" href="group__groupEnumsMSP430Types.html#ga4039c591bc81cfb75eef0c5c838e7ab3">ISR_INTRINSICS</a> in) noexcept</td></tr>
+<tr class="separator:aec01f6d4299f105f0f61661b822735b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a18bdaf1f0d3d7331557ed05b3e509df4"></a>
@@ -116,7 +122,7 @@ template&lt;typename FUNC &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="acb6a639dbb6895a97436d3b69f7e390b"></a>
+<a class="anchor" id="aad9e282a5aea339009299afde59d0a60"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -126,16 +132,42 @@ template&lt;typename FUNC &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr void MT::MSP430::TIMERA::Interrupt::TA2&lt; FUNC &gt;::registerCallback </td>
+          <td class="memname">constexpr static void MT::MSP430::TIMERA::Interrupt::TA2&lt; FUNC &gt;::registerCallback </td>
           <td>(</td>
-          <td class="paramtype">void (*)(const <a class="el" href="group__groupEnumsMSP430TimerAInt.html#ga04a6eea85edd4dfd272a87f2a2378a66">TIMERA::Interrupt::SOURCE</a>)&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceMT_1_1MSP430_1_1TIMERA_1_1Interrupt.html#a36498d81ea81b457707f35aad1410543">Callback</a>&#160;</td>
           <td class="paramname"><em>callback</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aec01f6d4299f105f0f61661b822735b8"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FUNC &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr static void MT::MSP430::TIMERA::Interrupt::TA2&lt; FUNC &gt;::setIntrinsic </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__groupEnumsMSP430Types.html#ga4039c591bc81cfb75eef0c5c838e7ab3">ISR_INTRINSICS</a>&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -151,7 +183,7 @@ template&lt;typename FUNC &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceMT.html">MT</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430.html">MSP430</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430_1_1TIMERA.html">TIMERA</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430_1_1TIMERA_1_1Interrupt.html">Interrupt</a></li><li class="navelem"><a class="el" href="structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA2.html">TA2</a></li>
-    <li class="footer">Generated on Mi Jan 27 2021 18:01:54 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Do Jan 28 2021 17:13:46 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

@@ -1,11 +1,11 @@
 <map id="EUSCI A" name="EUSCI A">
 <area shape="rect" id="node1" href="$group__groupMSP430EUSCIAInt.html" title="functions to register Interrupt callbacks for Eusci A Interrupts at compile time or at runtime &#45;&gt; ch..." alt="" coords="273,5,343,32"/>
-<area shape="rect" id="node2" href="$group__groupParamsMSP430SPI__EUSCI__A.html" title=" " alt="" coords="255,56,361,83"/>
-<area shape="rect" id="node3" href="$group__groupEnumsMSP430SPI__EUSCI__A.html" title=" " alt="" coords="264,107,352,133"/>
+<area shape="rect" id="node2" href="$group__groupEnumsMSP430SPI__EUSCI__A.html" title=" " alt="" coords="264,56,352,83"/>
+<area shape="rect" id="node3" href="$group__groupParamsMSP430SPI__EUSCI__A.html" title=" " alt="" coords="255,107,361,133"/>
 <area shape="rect" id="node4" href="$group__groupMSP430.html" title=" " alt="" coords="5,157,77,184"/>
-<area shape="rect" id="node7" title="functions for EUSCI A register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="125,157,200,184"/>
-<area shape="rect" id="node5" href="$group__groupFuncsMSP430UART__EUSCI__A.html" title=" " alt="" coords="249,157,367,184"/>
-<area shape="rect" id="node6" href="$group__groupFuncsMSP430SPI__EUSCI__A.html" title=" " alt="" coords="256,208,360,235"/>
+<area shape="rect" id="node5" title="functions for EUSCI A register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="125,157,200,184"/>
+<area shape="rect" id="node6" href="$group__groupFuncsMSP430UART__EUSCI__A.html" title=" " alt="" coords="249,157,367,184"/>
+<area shape="rect" id="node7" href="$group__groupFuncsMSP430SPI__EUSCI__A.html" title=" " alt="" coords="256,208,360,235"/>
 <area shape="rect" id="node8" href="$group__groupEnumsMSP430UART__EUSCI__A.html" title=" " alt="" coords="257,259,359,285"/>
 <area shape="rect" id="node9" href="$group__groupParamsMSP430UART__EUSCI__A.html" title=" " alt="" coords="248,309,368,336"/>
 </map>

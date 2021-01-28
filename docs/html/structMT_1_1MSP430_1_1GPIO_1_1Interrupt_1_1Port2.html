@@ -72,6 +72,7 @@ $(document).ready(function(){initNavTree('structMT_1_1MSP430_1_1GPIO_1_1Interrup
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port2-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MT::MSP430::GPIO::Interrupt::Port2&lt; FUNC &gt; Struct Template Reference</div>  </div>
@@ -85,8 +86,13 @@ $(document).ready(function(){initNavTree('structMT_1_1MSP430_1_1GPIO_1_1Interrup
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a087a3c26a32a323c71ba5d6d8ae2da9c"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port2.html#a087a3c26a32a323c71ba5d6d8ae2da9c">Port2</a> (FUNC fun) noexcept</td></tr>
 <tr class="separator:a087a3c26a32a323c71ba5d6d8ae2da9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbd9c2a5131ffe6ec02a585e4845ffe6"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port2.html#adbd9c2a5131ffe6ec02a585e4845ffe6">registerCallback</a> (void (*callback)(<a class="el" href="namespaceMT_1_1Misc.html#af7bdac7a7ad7774542b30333738c4da2">MT::MSP430::GPIO::PIN</a>)) noexcept</td></tr>
-<tr class="separator:adbd9c2a5131ffe6ec02a585e4845ffe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a7e7f602be52f06b98a065dd4f81fbb37"><td class="memItemLeft" align="right" valign="top">constexpr static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port2.html#a7e7f602be52f06b98a065dd4f81fbb37">registerCallback</a> (<a class="el" href="namespaceMT_1_1MSP430_1_1GPIO_1_1Interrupt.html#aa0c48040127ea48b355f4582d4e2d9ba">Callback</a> callback) noexcept</td></tr>
+<tr class="separator:a7e7f602be52f06b98a065dd4f81fbb37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9795f480deae248784fc86b5181774f0"><td class="memItemLeft" align="right" valign="top">constexpr static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port2.html#a9795f480deae248784fc86b5181774f0">setIntrinsic</a> (const <a class="el" href="group__groupEnumsMSP430Types.html#ga4039c591bc81cfb75eef0c5c838e7ab3">ISR_INTRINSICS</a> in) noexcept</td></tr>
+<tr class="separator:a9795f480deae248784fc86b5181774f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a087a3c26a32a323c71ba5d6d8ae2da9c"></a>
@@ -116,7 +122,7 @@ template&lt;typename FUNC &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="adbd9c2a5131ffe6ec02a585e4845ffe6"></a>
+<a class="anchor" id="a7e7f602be52f06b98a065dd4f81fbb37"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -126,16 +132,42 @@ template&lt;typename FUNC &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr void MT::MSP430::GPIO::Interrupt::Port2&lt; FUNC &gt;::registerCallback </td>
+          <td class="memname">constexpr static void MT::MSP430::GPIO::Interrupt::Port2&lt; FUNC &gt;::registerCallback </td>
           <td>(</td>
-          <td class="paramtype">void (*)(<a class="el" href="namespaceMT_1_1Misc.html#af7bdac7a7ad7774542b30333738c4da2">MT::MSP430::GPIO::PIN</a>)&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceMT_1_1MSP430_1_1GPIO_1_1Interrupt.html#aa0c48040127ea48b355f4582d4e2d9ba">Callback</a>&#160;</td>
           <td class="paramname"><em>callback</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9795f480deae248784fc86b5181774f0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FUNC &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr static void MT::MSP430::GPIO::Interrupt::Port2&lt; FUNC &gt;::setIntrinsic </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__groupEnumsMSP430Types.html#ga4039c591bc81cfb75eef0c5c838e7ab3">ISR_INTRINSICS</a>&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -151,7 +183,7 @@ template&lt;typename FUNC &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceMT.html">MT</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430.html">MSP430</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430_1_1GPIO.html">GPIO</a></li><li class="navelem"><a class="el" href="namespaceMT_1_1MSP430_1_1GPIO_1_1Interrupt.html">Interrupt</a></li><li class="navelem"><a class="el" href="structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port2.html">Port2</a></li>
-    <li class="footer">Generated on Mi Jan 27 2021 18:01:54 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Do Jan 28 2021 17:13:46 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

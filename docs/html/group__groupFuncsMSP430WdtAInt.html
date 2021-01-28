@@ -85,14 +85,17 @@ Functions</h2></td></tr>
 <tr class="memitem:ga08138c63b8ccc0899bf28db941c3d525"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430WdtAInt.html#ga08138c63b8ccc0899bf28db941c3d525">MT::MSP430::WDTA::Interrupt::WDT&lt; FUNC &gt;::WDT</a> (FUNC fun) noexcept</td></tr>
 <tr class="memdesc:ga08138c63b8ccc0899bf28db941c3d525"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor to register callback at compile time  <a href="#ga08138c63b8ccc0899bf28db941c3d525">More...</a><br /></td></tr>
 <tr class="separator:ga08138c63b8ccc0899bf28db941c3d525"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3ba2b79c99e7de4f37bb575c0ab4ac44"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430WdtAInt.html#ga3ba2b79c99e7de4f37bb575c0ab4ac44">MT::MSP430::WDTA::Interrupt::WDT&lt; FUNC &gt;::registerCallback</a> (void (*callback)()) noexcept</td></tr>
-<tr class="memdesc:ga3ba2b79c99e7de4f37bb575c0ab4ac44"><td class="mdescLeft">&#160;</td><td class="mdescRight">runtime interrupt callback registration  <a href="#ga3ba2b79c99e7de4f37bb575c0ab4ac44">More...</a><br /></td></tr>
-<tr class="separator:ga3ba2b79c99e7de4f37bb575c0ab4ac44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga00247e1cbf8391b3df87dde9de18f4db"><td class="memItemLeft" align="right" valign="top">constexpr static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430WdtAInt.html#ga00247e1cbf8391b3df87dde9de18f4db">MT::MSP430::WDTA::Interrupt::WDT&lt; FUNC &gt;::registerCallback</a> (<a class="el" href="namespaceMT_1_1MSP430_1_1WDTA_1_1Interrupt.html#adac64931969ddd77f6b343dcb3a11f58">Callback</a> callback) noexcept</td></tr>
+<tr class="memdesc:ga00247e1cbf8391b3df87dde9de18f4db"><td class="mdescLeft">&#160;</td><td class="mdescRight">runtime interrupt callback registration  <a href="#ga00247e1cbf8391b3df87dde9de18f4db">More...</a><br /></td></tr>
+<tr class="separator:ga00247e1cbf8391b3df87dde9de18f4db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga214e16eee93c05da0a67d22810a54110"><td class="memItemLeft" align="right" valign="top">constexpr static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430WdtAInt.html#ga214e16eee93c05da0a67d22810a54110">MT::MSP430::WDTA::Interrupt::WDT&lt; FUNC &gt;::setIntrinsic</a> (const <a class="el" href="group__groupEnumsMSP430Types.html#ga4039c591bc81cfb75eef0c5c838e7ab3">ISR_INTRINSICS</a> in) noexcept</td></tr>
+<tr class="memdesc:ga214e16eee93c05da0a67d22810a54110"><td class="mdescLeft">&#160;</td><td class="mdescRight">runs intrinsic on ISR leave  <a href="#ga214e16eee93c05da0a67d22810a54110">More...</a><br /></td></tr>
+<tr class="separator:ga214e16eee93c05da0a67d22810a54110"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Functions in this module </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ga3ba2b79c99e7de4f37bb575c0ab4ac44"></a>
+<a class="anchor" id="ga00247e1cbf8391b3df87dde9de18f4db"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -102,16 +105,16 @@ template&lt;typename FUNC &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr void MT::MSP430::WDTA::Interrupt::WDT&lt; FUNC &gt;::registerCallback </td>
+          <td class="memname">constexpr static void MT::MSP430::WDTA::Interrupt::WDT&lt; FUNC &gt;::registerCallback </td>
           <td>(</td>
-          <td class="paramtype">void (*)()&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceMT_1_1MSP430_1_1WDTA_1_1Interrupt.html#adac64931969ddd77f6b343dcb3a11f58">Callback</a>&#160;</td>
           <td class="paramname"><em>callback</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -119,9 +122,45 @@ template&lt;typename FUNC &gt; </div>
 <p><code>#include &lt;<a class="el" href="WdtAInterrupt_8hpp.html">MSP430/WDT/WdtAInterrupt.hpp</a>&gt;</code></p>
 
 <p>runtime interrupt callback registration </p>
-<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"><a class="code" href="group__groupEnumsMSP430WdtAInt.html#structMT_1_1MSP430_1_1WDTA_1_1Interrupt_1_1WDT">WDTA::Interrupt::WDT</a> inter;</div><div class="line">    inter.<a class="code" href="group__groupFuncsMSP430WdtAInt.html#ga3ba2b79c99e7de4f37bb575c0ab4ac44">registerCallback</a>([]() {</div><div class="line">    <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html">GPIO::Port1</a> p1{};</div><div class="line">    p1.<a class="code" href="group__groupFuncsMSP430Gpio.html#gafd91b2fede455b305d65946b8c1f56de">toggleOutputOnPin</a>(GPIO::PIN::P0);</div><div class="line">});</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"><a class="code" href="group__groupEnumsMSP430WdtAInt.html#structMT_1_1MSP430_1_1WDTA_1_1Interrupt_1_1WDT">WDTA::Interrupt::WDT</a> inter;</div><div class="line">    inter.<a class="code" href="group__groupFuncsMSP430WdtAInt.html#ga00247e1cbf8391b3df87dde9de18f4db">registerCallback</a>([]() { <span class="comment">//-&gt; use only lambdas for compile time registration!!</span></div><div class="line">    <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html">GPIO::Port1</a> p1{};</div><div class="line">    p1.<a class="code" href="group__groupFuncsMSP430Gpio.html#gafd91b2fede455b305d65946b8c1f56de">toggleOutputOnPin</a>(GPIO::PIN::P0);</div><div class="line">});</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">callback</td><td>pointer to the callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga214e16eee93c05da0a67d22810a54110"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FUNC &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr static void MT::MSP430::WDTA::Interrupt::WDT&lt; FUNC &gt;::setIntrinsic </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__groupEnumsMSP430Types.html#ga4039c591bc81cfb75eef0c5c838e7ab3">ISR_INTRINSICS</a>&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="WdtAInterrupt_8hpp.html">MSP430/WDT/WdtAInterrupt.hpp</a>&gt;</code></p>
+
+<p>runs intrinsic on ISR leave </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="group__groupEnumsMSP430WdtAInt.html#structMT_1_1MSP430_1_1WDTA_1_1Interrupt_1_1WDT">WDTA::Interrupt::WDT</a> inter;</div><div class="line"> inter.<a class="code" href="group__groupFuncsMSP430WdtAInt.html#ga214e16eee93c05da0a67d22810a54110">setIntrinsic</a>(<a class="code" href="group__groupEnumsMSP430Types.html#gga4039c591bc81cfb75eef0c5c838e7ab3a25e26264c6254e51a9834839593e761a">ISR_INTRINSICS::LEAVE_LOW_POWER</a>);</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>Intrinsics which should be invoked prior to leaving the ISR </td></tr>
   </table>
   </dd>
 </dl>
@@ -169,7 +208,7 @@ template&lt;typename FUNC &gt; </div>
 <!-- Generated by DoxyPress 1.4.0 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mi Jan 27 2021 18:01:54 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Do Jan 28 2021 17:13:46 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>
