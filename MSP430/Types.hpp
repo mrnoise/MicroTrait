@@ -71,6 +71,17 @@ enum class ISR_INTRINSICS {
     LEAVE_LOW_POWER = 1,
 };
 
+/**
+* @ingroup groupEnumsMSP430Types
+****************************************************************
+* @brief if the Register is in the reset state (after startup) or not
+****************************************************************
+*/
+enum class REGISTER_STATE : uint_fast8_t {
+    RESET = 0,
+    MODIFIED
+};
+
 }// namespace MT::MSP430
 
 #endif /* MICROTRAIT_MSP430_TYPES_HPP_ */

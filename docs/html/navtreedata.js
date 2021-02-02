@@ -104,22 +104,22 @@ var NAVTREE =
             ] ]
           ] ],
           [ "Functions", "group__groupFuncsMSP430Gpio.html", [
-            [ "clearInterrupt", "group__groupFuncsMSP430Gpio.html#gafd4bee0f4405c10ed9c7545970772a64", null ],
-            [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#ga0aa241367ee3779c3a555da0c1534788", null ],
-            [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga4c02cfe2eb19e890ca9633760e9acbd9", null ],
-            [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#ga3b66a51e73a3a3f0e146ce55de807c8c", null ],
-            [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga0dc8a2dc15a84fe61245ca5294e745ef", null ],
-            [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#gafa0af93d793867843a16fcea98dcc41c", null ],
-            [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#gaa51eaac4624b0a7a9dff38227cc18b92", null ],
-            [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#ga9510687b1f21f0be3e09c7dbaf34ef4b", null ],
-            [ "setAsInputPinWithPullUp", "group__groupFuncsMSP430Gpio.html#ga25fbea749d5f7d33481d67b3af0db816", null ],
-            [ "setAsOutputPin", "group__groupFuncsMSP430Gpio.html#ga8383798c7854c13ab0618d45752110d8", null ],
-            [ "setAsPeripheralModuleFunctionInputPin", "group__groupFuncsMSP430Gpio.html#gae1df67c5321755cc731d4cf27497fe70", null ],
-            [ "setAsPeripheralModuleFunctionOutputPin", "group__groupFuncsMSP430Gpio.html#gaeb6eb22eb8544233583435da7631493f", null ],
-            [ "setDriveStrength", "group__groupFuncsMSP430Gpio.html#ga6075f8e01ba3c5547ee98d9b1ca6473d", null ],
-            [ "setOutputHighOnPin", "group__groupFuncsMSP430Gpio.html#ga31e29ab73b2e9387b731ac67fd1fbc20", null ],
-            [ "setOutputLowOnPin", "group__groupFuncsMSP430Gpio.html#gaeaedde49f66612c8c0d55857c5a02eca", null ],
-            [ "toggleOutputOnPin", "group__groupFuncsMSP430Gpio.html#gafd91b2fede455b305d65946b8c1f56de", null ]
+            [ "clearInterrupt", "group__groupFuncsMSP430Gpio.html#gae1b3dc2a004377534226bb5c8ec52a02", null ],
+            [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#gaa947fd6821bd28397571f5e2f10642d6", null ],
+            [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga11d08818717497f56d130f70c5cbdc23", null ],
+            [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#gae6ba8569e7fe6bd3cd9e0f4b4d090a04", null ],
+            [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga4bedfd9a1a07f71c15bbcf6ea225b889", null ],
+            [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#ga936b822acfabfe74e911683f9edf497e", null ],
+            [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#ga93697b8afd7e7c8c4d32c83a003adcbc", null ],
+            [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#ga14791f018a70036ee66dcbcc53282d62", null ],
+            [ "setAsInputPinWithPullUp", "group__groupFuncsMSP430Gpio.html#ga30aa378e30dc67edb6460609ec3c552c", null ],
+            [ "setAsOutputPin", "group__groupFuncsMSP430Gpio.html#ga9c774049993e4cfbe06af26cf9ddcd5f", null ],
+            [ "setAsPeripheralModuleFunctionInputPin", "group__groupFuncsMSP430Gpio.html#gaa9459fb9ff643717c0b6d4d4b765da6a", null ],
+            [ "setAsPeripheralModuleFunctionOutputPin", "group__groupFuncsMSP430Gpio.html#gad265f676a48409df76c5e52e95944b98", null ],
+            [ "setDriveStrength", "group__groupFuncsMSP430Gpio.html#gabf57f3a9f1ff9c5c17f2700db267adde", null ],
+            [ "setOutputHighOnPin", "group__groupFuncsMSP430Gpio.html#ga64a9fcedb85182fbf4d0017a536a0d32", null ],
+            [ "setOutputLowOnPin", "group__groupFuncsMSP430Gpio.html#ga69d4c05972565bf11e0d1b2520ba3191", null ],
+            [ "toggleOutputOnPin", "group__groupFuncsMSP430Gpio.html#gae50e7317805f8b3ecb81b5c3a858dded", null ]
           ] ],
           [ "Interrupt", "group__groupMSP430GpioInt.html", [
             [ "Enums", "group__groupEnumsMSP430GpioInt.html", null ],
@@ -166,7 +166,7 @@ var NAVTREE =
               [ "enableSvsLInLPMSlowWake", "group__groupFuncsMSP430FPmm.html#ga79fd94fdb5789708b6eee04706b7d97e", null ],
               [ "enableSvsLReset", "group__groupFuncsMSP430FPmm.html#gaf3f2e09122b9fc113af85ea8161a98e7", null ],
               [ "enableSvsLSvmL", "group__groupFuncsMSP430FPmm.html#gaaae74ec45f609507ce9b67dd3980d1ba", null ],
-              [ "getInterruptStatus", "group__groupFuncsMSP430FPmm.html#gaac2fd20f02c38eaa69abdc081a09c388", null ],
+              [ "getInterruptStatus", "group__groupFuncsMSP430FPmm.html#ga7fe5c40c87f6d7d0b0a6f5a6f4be3a0f", null ],
               [ "optimizeSvsHInLPMFullPerf", "group__groupFuncsMSP430FPmm.html#gaba02042adaed17e837b4387fd1f8b335", null ],
               [ "optimizeSvsLInLPMFastWake", "group__groupFuncsMSP430FPmm.html#gade6dfbf9db4a2f3ff9d624b55ca6ac5d", null ],
               [ "setVCore", "group__groupFuncsMSP430FPmm.html#gac969e6e113469e27e62bf8b7732f72b8", null ],
@@ -185,7 +185,7 @@ var NAVTREE =
               [ "REFGEN_STATUS", "group__groupEnumsMSP430FRAMPmm.html#ga4451f4aa3fae38aaafe1aa807ab209aa", null ]
             ] ],
             [ "Functions", "group__groupFuncsMSP430FRAMPmm.html", [
-              [ "clearInterrupt", "group__groupFuncsMSP430FRAMPmm.html#gafc48ad5a27a693cbd2554801a28e1a1c", null ],
+              [ "clearInterrupt", "group__groupFuncsMSP430FRAMPmm.html#gacfbf4489e99b8652182ef75e988a9fbc", null ],
               [ "disableExternalReference", "group__groupFuncsMSP430FRAMPmm.html#ga3f8a10946cf986c45c9216dba8553f66", null ],
               [ "disableInternalReference", "group__groupFuncsMSP430FRAMPmm.html#ga4f8664891f6b5139e57e4d927792daa7", null ],
               [ "disableSVSH", "group__groupFuncsMSP430FRAMPmm.html#gacd63f574406bf26f23bf5ae1e6e0d8c3", null ],
@@ -197,7 +197,7 @@ var NAVTREE =
               [ "enableTempSensor", "group__groupFuncsMSP430FRAMPmm.html#ga42e9c7883109a02242de4b98216c292e", null ],
               [ "getBandgapMode", "group__groupFuncsMSP430FRAMPmm.html#gabc31069d9dcaeff7b2cfd59d5eb6c4e2", null ],
               [ "getBufferedBandgapVoltageStatus", "group__groupFuncsMSP430FRAMPmm.html#ga8a51e8068e52d3360849a0c085f2b500", null ],
-              [ "getInterruptStatus", "group__groupFuncsMSP430FRAMPmm.html#gaac2fd20f02c38eaa69abdc081a09c388", null ],
+              [ "getInterruptStatus", "group__groupFuncsMSP430FRAMPmm.html#ga7fe5c40c87f6d7d0b0a6f5a6f4be3a0f", null ],
               [ "getVariableReferenceVoltageStatus", "group__groupFuncsMSP430FRAMPmm.html#ga2e37c7075fb2bac2e053b13a06cd7b3e", null ],
               [ "isBandgapActive", "group__groupFuncsMSP430FRAMPmm.html#gab8843108a55ee0fcff2ff3c83a561f5a", null ],
               [ "isRefGenActive", "group__groupFuncsMSP430FRAMPmm.html#ga2a124d401e9bf48bff9700e55b599b8a", null ],
@@ -217,9 +217,9 @@ var NAVTREE =
             ] ],
             [ "Functions", "group__groupFuncsMSP430IPmm.html", [
               [ "calibrateReference", "group__groupFuncsMSP430IPmm.html#ga457e278f9b61593d532cb63a971063ad", null ],
-              [ "clearInterrupt", "group__groupFuncsMSP430IPmm.html#gafc48ad5a27a693cbd2554801a28e1a1c", null ],
-              [ "disableInterrupt", "group__groupFuncsMSP430IPmm.html#gacfea4fc0a9b2721d2138193272ad56e0", null ],
-              [ "enableInterrupt", "group__groupFuncsMSP430IPmm.html#ga271a1a430f51fc332ce64bc0d27bcdd4", null ],
+              [ "clearInterrupt", "group__groupFuncsMSP430IPmm.html#gacfbf4489e99b8652182ef75e988a9fbc", null ],
+              [ "disableInterrupt", "group__groupFuncsMSP430IPmm.html#gac67d4d55f696f01f211fefe2aeec93ae", null ],
+              [ "enableInterrupt", "group__groupFuncsMSP430IPmm.html#ga6bb2b9e49121055f819ccad83fe6c8c2", null ],
               [ "setRegulatorStatus", "group__groupFuncsMSP430IPmm.html#gae3e9b503deac7dc56ba4e69eefaf4db5", null ],
               [ "setupVoltageMonitor", "group__groupFuncsMSP430IPmm.html#ga95b56b6433fad6dca4fdd40f9386477e", null ],
               [ "unlockIOConfiguration", "group__groupFuncsMSP430IPmm.html#gadc440d7c6e1ec25dfebd09cb89816c10", null ]
@@ -413,6 +413,10 @@ var NAVTREE =
               [ "NONE", "group__groupEnumsMSP430Types.html#gga4039c591bc81cfb75eef0c5c838e7ab3ab50339a10e1de285ac99d4c3990b8693", null ],
               [ "LEAVE_LOW_POWER", "group__groupEnumsMSP430Types.html#gga4039c591bc81cfb75eef0c5c838e7ab3a25e26264c6254e51a9834839593e761a", null ]
             ] ],
+            [ "REGISTER_STATE", "group__groupEnumsMSP430Types.html#ga0c3b2cfefe7c15312b06d09573701e50", [
+              [ "RESET", "group__groupEnumsMSP430Types.html#gga0c3b2cfefe7c15312b06d09573701e50ab5859d8721cfdc0312b2838b9c985bc1", null ],
+              [ "MODIFIED", "group__groupEnumsMSP430Types.html#gga0c3b2cfefe7c15312b06d09573701e50a40e3819215b52841e19a7cac06b5f065", null ]
+            ] ],
             [ "STATUS", "group__groupEnumsMSP430Types.html#ga72e3944880ce3d32ef46ab09fb7c0305", [
               [ "FAIL", "group__groupEnumsMSP430Types.html#gga72e3944880ce3d32ef46ab09fb7c0305ac2759effffc94bb9acc71d69fe3e8a1f", null ],
               [ "SUCCESS", "group__groupEnumsMSP430Types.html#gga72e3944880ce3d32ef46ab09fb7c0305ad0749aaba8b833466dfcbb0428e4f89c", null ]
@@ -425,10 +429,10 @@ var NAVTREE =
             [ "CLOCKSOURCE", "group__groupEnumsMSP430WdtA.html#gaec0ff3f9fa7b27b7cbedecc4e62dd052", null ]
           ] ],
           [ "Functions", "group__groupFuncsMSP430WdtA.html", [
-            [ "hold", "group__groupFuncsMSP430WdtA.html#ga1faf214652a5d6615e7d8161ef167621", null ],
+            [ "hold", "group__groupFuncsMSP430WdtA.html#ga8986e5e3483e554dd5af1c62b640f6cf", null ],
             [ "initIntervalTimer", "group__groupFuncsMSP430WdtA.html#gaee8f285bfab0030b72fcb64b01cae028", null ],
             [ "initWatchdogTimer", "group__groupFuncsMSP430WdtA.html#ga9033ef5041bc9ffc7dc8420ce369126b", null ],
-            [ "resetTimer", "group__groupFuncsMSP430WdtA.html#gae20a829cd75c566a997927d7894727e6", null ],
+            [ "resetTimer", "group__groupFuncsMSP430WdtA.html#ga4ac821a89410b61985a1e9063ef82033", null ],
             [ "start", "group__groupFuncsMSP430WdtA.html#gae215b10b5cb38413ed48db62a60b02bf", null ],
             [ "startIntervalTimer", "group__groupFuncsMSP430WdtA.html#ga71194b8ebcbc3bb3575dab311bf1dd89", null ],
             [ "startWatchdogTimer", "group__groupFuncsMSP430WdtA.html#ga4f41f96a15a09adc296b2692e5005315", null ]
@@ -654,39 +658,39 @@ var NAVTREE =
               [ "Internal", "namespaceMT_1_1MSP430_1_1GPIO_1_1Internal.html", [
                 [ "Port", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html", null ],
                 [ "PortCommon", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortCommon.html", [
-                  [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#ga3b66a51e73a3a3f0e146ce55de807c8c", null ],
-                  [ "setOutputHighOnPin", "group__groupFuncsMSP430Gpio.html#ga31e29ab73b2e9387b731ac67fd1fbc20", null ],
-                  [ "setOutputLowOnPin", "group__groupFuncsMSP430Gpio.html#gaeaedde49f66612c8c0d55857c5a02eca", null ],
-                  [ "toggleOutputOnPin", "group__groupFuncsMSP430Gpio.html#gafd91b2fede455b305d65946b8c1f56de", null ]
+                  [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#gae6ba8569e7fe6bd3cd9e0f4b4d090a04", null ],
+                  [ "setOutputHighOnPin", "group__groupFuncsMSP430Gpio.html#ga64a9fcedb85182fbf4d0017a536a0d32", null ],
+                  [ "setOutputLowOnPin", "group__groupFuncsMSP430Gpio.html#ga69d4c05972565bf11e0d1b2520ba3191", null ],
+                  [ "toggleOutputOnPin", "group__groupFuncsMSP430Gpio.html#gae50e7317805f8b3ecb81b5c3a858dded", null ]
                 ] ],
                 [ "PortDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortDrv.html", null ],
                 [ "PortInt", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortInt.html", [
-                  [ "clearInterrupt", "group__groupFuncsMSP430Gpio.html#gafd4bee0f4405c10ed9c7545970772a64", null ],
-                  [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#ga0aa241367ee3779c3a555da0c1534788", null ],
-                  [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga4c02cfe2eb19e890ca9633760e9acbd9", null ],
-                  [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga0dc8a2dc15a84fe61245ca5294e745ef", null ],
-                  [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#gafa0af93d793867843a16fcea98dcc41c", null ]
+                  [ "clearInterrupt", "group__groupFuncsMSP430Gpio.html#gae1b3dc2a004377534226bb5c8ec52a02", null ],
+                  [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#gaa947fd6821bd28397571f5e2f10642d6", null ],
+                  [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga11d08818717497f56d130f70c5cbdc23", null ],
+                  [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga4bedfd9a1a07f71c15bbcf6ea225b889", null ],
+                  [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#ga936b822acfabfe74e911683f9edf497e", null ]
                 ] ],
                 [ "PortSel0", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0.html", null ],
                 [ "PortSel0Drv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0Drv.html", null ],
                 [ "PortSel0and1WithoutPull", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html", [
-                  [ "setAsInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#af5e73b11ef406c13e81872443c863bee", null ],
-                  [ "setAsOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a0fc198a83591b290182f907d0376b17d", null ],
-                  [ "setAsPeripheralModuleFunctionInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a888102c6b22aed7e87231a9289888600", null ],
-                  [ "setAsPeripheralModuleFunctionOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a4c75d0d22741de5e1accb09be9caac19", null ]
+                  [ "setAsInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#aec7b17744f6521859565e4c294f5ae33", null ],
+                  [ "setAsOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#ac847404908b21b6ad2b4eea8cd1361c0", null ],
+                  [ "setAsPeripheralModuleFunctionInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a4e52487c8879755907ca34cd3e9bc389", null ],
+                  [ "setAsPeripheralModuleFunctionOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a5885a0cf00ac6b3a5a71a099d3d5e4b7", null ]
                 ] ],
                 [ "PortSelOff", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOff.html", null ],
                 [ "PortSelOffDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOffDrv.html", null ],
                 [ "PortSelx", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelx.html", [
-                  [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#gaa51eaac4624b0a7a9dff38227cc18b92", null ],
-                  [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#ga9510687b1f21f0be3e09c7dbaf34ef4b", null ],
-                  [ "setAsInputPinWithPullUp", "group__groupFuncsMSP430Gpio.html#ga25fbea749d5f7d33481d67b3af0db816", null ],
-                  [ "setAsOutputPin", "group__groupFuncsMSP430Gpio.html#ga8383798c7854c13ab0618d45752110d8", null ],
-                  [ "setAsPeripheralModuleFunctionInputPin", "group__groupFuncsMSP430Gpio.html#gae1df67c5321755cc731d4cf27497fe70", null ],
-                  [ "setAsPeripheralModuleFunctionOutputPin", "group__groupFuncsMSP430Gpio.html#gaeb6eb22eb8544233583435da7631493f", null ]
+                  [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#ga93697b8afd7e7c8c4d32c83a003adcbc", null ],
+                  [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#ga14791f018a70036ee66dcbcc53282d62", null ],
+                  [ "setAsInputPinWithPullUp", "group__groupFuncsMSP430Gpio.html#ga30aa378e30dc67edb6460609ec3c552c", null ],
+                  [ "setAsOutputPin", "group__groupFuncsMSP430Gpio.html#ga9c774049993e4cfbe06af26cf9ddcd5f", null ],
+                  [ "setAsPeripheralModuleFunctionInputPin", "group__groupFuncsMSP430Gpio.html#gaa9459fb9ff643717c0b6d4d4b765da6a", null ],
+                  [ "setAsPeripheralModuleFunctionOutputPin", "group__groupFuncsMSP430Gpio.html#gad265f676a48409df76c5e52e95944b98", null ]
                 ] ],
                 [ "PortWithDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithDrv.html", [
-                  [ "setDriveStrength", "group__groupFuncsMSP430Gpio.html#ga6075f8e01ba3c5547ee98d9b1ca6473d", null ]
+                  [ "setDriveStrength", "group__groupFuncsMSP430Gpio.html#gabf57f3a9f1ff9c5c17f2700db267adde", null ]
                 ] ],
                 [ "PortWithInt", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html", null ],
                 [ "PortWithIntDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html", null ],
@@ -807,13 +811,13 @@ var NAVTREE =
               [ "REGULATOR", "group__groupEnumsMSP430IPmm.html#gae1303f190c6f8a7b26c77a3fa1193ee1", null ],
               [ "VOLT_MONITOR", "group__groupEnumsMSP430IPmm.html#gabf6a4b47c8166a1389472a7b3947fa5c", null ],
               [ "calibrateReference", "group__groupFuncsMSP430IPmm.html#ga457e278f9b61593d532cb63a971063ad", null ],
-              [ "clearInterrupt", "group__groupFuncsMSP430FRAMPmm.html#gafc48ad5a27a693cbd2554801a28e1a1c", null ],
-              [ "clearInterrupt", "group__groupFuncsMSP430IPmm.html#gafc48ad5a27a693cbd2554801a28e1a1c", null ],
+              [ "clearInterrupt", "group__groupFuncsMSP430FRAMPmm.html#gacfbf4489e99b8652182ef75e988a9fbc", null ],
+              [ "clearInterrupt", "group__groupFuncsMSP430IPmm.html#gacfbf4489e99b8652182ef75e988a9fbc", null ],
               [ "clearPMMIFGS", "group__groupFuncsMSP430FPmm.html#ga273666d63a4d5ed8e286ed467d56a6d8", null ],
               [ "disableExternalReference", "group__groupFuncsMSP430FRAMPmm.html#ga3f8a10946cf986c45c9216dba8553f66", null ],
               [ "disableInternalReference", "group__groupFuncsMSP430FRAMPmm.html#ga4f8664891f6b5139e57e4d927792daa7", null ],
-              [ "disableInterrupt", "group__groupFuncsMSP430IPmm.html#gacfea4fc0a9b2721d2138193272ad56e0", null ],
-              [ "disableInterrupt", "structMT_1_1MSP430_1_1Pmm.html#gacfea4fc0a9b2721d2138193272ad56e0", null ],
+              [ "disableInterrupt", "group__groupFuncsMSP430IPmm.html#gac67d4d55f696f01f211fefe2aeec93ae", null ],
+              [ "disableInterrupt", "structMT_1_1MSP430_1_1Pmm.html#gac67d4d55f696f01f211fefe2aeec93ae", null ],
               [ "disableSVMH", "group__groupFuncsMSP430FPmm.html#ga3c950e4d978a7728403b29390f9af16b", null ],
               [ "disableSvmHInterrupt", "group__groupFuncsMSP430FPmm.html#gaa87c98138d5543c5624c7484b149e1fa", null ],
               [ "disableSVML", "group__groupFuncsMSP430FPmm.html#gacf6983a7b63037007b31e5d5f0bac792", null ],
@@ -832,7 +836,7 @@ var NAVTREE =
               [ "disableSvsLSvmL", "group__groupFuncsMSP430FPmm.html#ga8de247ea407ba49eb87784d88b1ca40f", null ],
               [ "disableTempSensor", "group__groupFuncsMSP430FRAMPmm.html#gaafd95869a69385820dabb85eeedd52c3", null ],
               [ "enableExternalReference", "group__groupFuncsMSP430FRAMPmm.html#ga4ba7ec72f66e8c4b205136398aae6833", null ],
-              [ "enableInterrupt", "group__groupFuncsMSP430IPmm.html#ga271a1a430f51fc332ce64bc0d27bcdd4", null ],
+              [ "enableInterrupt", "group__groupFuncsMSP430IPmm.html#ga6bb2b9e49121055f819ccad83fe6c8c2", null ],
               [ "enableSVMH", "group__groupFuncsMSP430FPmm.html#ga74a3a1e67252ab6ea4d233e087df4c2c", null ],
               [ "enableSvmHInterrupt", "group__groupFuncsMSP430FPmm.html#ga72d6c4670ebe415406dabb651524381e", null ],
               [ "enableSVML", "group__groupFuncsMSP430FPmm.html#ga1afedecdf374a66f3e1bc2b09719a725", null ],
@@ -852,8 +856,8 @@ var NAVTREE =
               [ "enableTempSensor", "group__groupFuncsMSP430FRAMPmm.html#ga42e9c7883109a02242de4b98216c292e", null ],
               [ "getBandgapMode", "group__groupFuncsMSP430FRAMPmm.html#gabc31069d9dcaeff7b2cfd59d5eb6c4e2", null ],
               [ "getBufferedBandgapVoltageStatus", "group__groupFuncsMSP430FRAMPmm.html#ga8a51e8068e52d3360849a0c085f2b500", null ],
-              [ "getInterruptStatus", "group__groupFuncsMSP430FRAMPmm.html#gaac2fd20f02c38eaa69abdc081a09c388", null ],
-              [ "getInterruptStatus", "group__groupFuncsMSP430FPmm.html#gaac2fd20f02c38eaa69abdc081a09c388", null ],
+              [ "getInterruptStatus", "group__groupFuncsMSP430FRAMPmm.html#ga7fe5c40c87f6d7d0b0a6f5a6f4be3a0f", null ],
+              [ "getInterruptStatus", "group__groupFuncsMSP430FPmm.html#ga7fe5c40c87f6d7d0b0a6f5a6f4be3a0f", null ],
               [ "getVariableReferenceVoltageStatus", "group__groupFuncsMSP430FRAMPmm.html#ga2e37c7075fb2bac2e053b13a06cd7b3e", null ],
               [ "isBandgapActive", "group__groupFuncsMSP430FRAMPmm.html#gab8843108a55ee0fcff2ff3c83a561f5a", null ],
               [ "isRefGenActive", "group__groupFuncsMSP430FRAMPmm.html#ga2a124d401e9bf48bff9700e55b599b8a", null ],
@@ -888,10 +892,10 @@ var NAVTREE =
             [ "WdtA", "structMT_1_1MSP430_1_1WdtA.html", [
               [ "CLOCKDIVIDER", "group__groupEnumsMSP430WdtA.html#ga2337c85cf25b4ff1d438890ffb24e437", null ],
               [ "CLOCKSOURCE", "group__groupEnumsMSP430WdtA.html#gaec0ff3f9fa7b27b7cbedecc4e62dd052", null ],
-              [ "hold", "group__groupFuncsMSP430WdtA.html#ga1faf214652a5d6615e7d8161ef167621", null ],
+              [ "hold", "group__groupFuncsMSP430WdtA.html#ga8986e5e3483e554dd5af1c62b640f6cf", null ],
               [ "initIntervalTimer", "group__groupFuncsMSP430WdtA.html#gaee8f285bfab0030b72fcb64b01cae028", null ],
               [ "initWatchdogTimer", "group__groupFuncsMSP430WdtA.html#ga9033ef5041bc9ffc7dc8420ce369126b", null ],
-              [ "resetTimer", "group__groupFuncsMSP430WdtA.html#gae20a829cd75c566a997927d7894727e6", null ],
+              [ "resetTimer", "group__groupFuncsMSP430WdtA.html#ga4ac821a89410b61985a1e9063ef82033", null ],
               [ "start", "group__groupFuncsMSP430WdtA.html#gae215b10b5cb38413ed48db62a60b02bf", null ],
               [ "startIntervalTimer", "group__groupFuncsMSP430WdtA.html#ga71194b8ebcbc3bb3575dab311bf1dd89", null ],
               [ "startWatchdogTimer", "group__groupFuncsMSP430WdtA.html#ga4f41f96a15a09adc296b2692e5005315", null ]
@@ -1291,39 +1295,39 @@ var NAVTREE =
             [ "Gpio.hpp", "Gpio_8hpp.html", [
               [ "Port", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html", null ],
               [ "PortCommon", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortCommon.html", [
-                [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#ga3b66a51e73a3a3f0e146ce55de807c8c", null ],
-                [ "setOutputHighOnPin", "group__groupFuncsMSP430Gpio.html#ga31e29ab73b2e9387b731ac67fd1fbc20", null ],
-                [ "setOutputLowOnPin", "group__groupFuncsMSP430Gpio.html#gaeaedde49f66612c8c0d55857c5a02eca", null ],
-                [ "toggleOutputOnPin", "group__groupFuncsMSP430Gpio.html#gafd91b2fede455b305d65946b8c1f56de", null ]
+                [ "getInputPinValue", "group__groupFuncsMSP430Gpio.html#gae6ba8569e7fe6bd3cd9e0f4b4d090a04", null ],
+                [ "setOutputHighOnPin", "group__groupFuncsMSP430Gpio.html#ga64a9fcedb85182fbf4d0017a536a0d32", null ],
+                [ "setOutputLowOnPin", "group__groupFuncsMSP430Gpio.html#ga69d4c05972565bf11e0d1b2520ba3191", null ],
+                [ "toggleOutputOnPin", "group__groupFuncsMSP430Gpio.html#gae50e7317805f8b3ecb81b5c3a858dded", null ]
               ] ],
               [ "PortDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortDrv.html", null ],
               [ "PortInt", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortInt.html", [
-                [ "clearInterrupt", "group__groupFuncsMSP430Gpio.html#gafd4bee0f4405c10ed9c7545970772a64", null ],
-                [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#ga0aa241367ee3779c3a555da0c1534788", null ],
-                [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga4c02cfe2eb19e890ca9633760e9acbd9", null ],
-                [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga0dc8a2dc15a84fe61245ca5294e745ef", null ],
-                [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#gafa0af93d793867843a16fcea98dcc41c", null ]
+                [ "clearInterrupt", "group__groupFuncsMSP430Gpio.html#gae1b3dc2a004377534226bb5c8ec52a02", null ],
+                [ "disableInterrupt", "group__groupFuncsMSP430Gpio.html#gaa947fd6821bd28397571f5e2f10642d6", null ],
+                [ "enableInterrupt", "group__groupFuncsMSP430Gpio.html#ga11d08818717497f56d130f70c5cbdc23", null ],
+                [ "getInterruptStatus", "group__groupFuncsMSP430Gpio.html#ga4bedfd9a1a07f71c15bbcf6ea225b889", null ],
+                [ "selectInterruptEdge", "group__groupFuncsMSP430Gpio.html#ga936b822acfabfe74e911683f9edf497e", null ]
               ] ],
               [ "PortSel0", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0.html", null ],
               [ "PortSel0Drv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0Drv.html", null ],
               [ "PortSel0and1WithoutPull", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html", [
-                [ "setAsInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#af5e73b11ef406c13e81872443c863bee", null ],
-                [ "setAsOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a0fc198a83591b290182f907d0376b17d", null ],
-                [ "setAsPeripheralModuleFunctionInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a888102c6b22aed7e87231a9289888600", null ],
-                [ "setAsPeripheralModuleFunctionOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a4c75d0d22741de5e1accb09be9caac19", null ]
+                [ "setAsInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#aec7b17744f6521859565e4c294f5ae33", null ],
+                [ "setAsOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#ac847404908b21b6ad2b4eea8cd1361c0", null ],
+                [ "setAsPeripheralModuleFunctionInputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a4e52487c8879755907ca34cd3e9bc389", null ],
+                [ "setAsPeripheralModuleFunctionOutputPin", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a5885a0cf00ac6b3a5a71a099d3d5e4b7", null ]
               ] ],
               [ "PortSelOff", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOff.html", null ],
               [ "PortSelOffDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelOffDrv.html", null ],
               [ "PortSelx", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelx.html", [
-                [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#gaa51eaac4624b0a7a9dff38227cc18b92", null ],
-                [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#ga9510687b1f21f0be3e09c7dbaf34ef4b", null ],
-                [ "setAsInputPinWithPullUp", "group__groupFuncsMSP430Gpio.html#ga25fbea749d5f7d33481d67b3af0db816", null ],
-                [ "setAsOutputPin", "group__groupFuncsMSP430Gpio.html#ga8383798c7854c13ab0618d45752110d8", null ],
-                [ "setAsPeripheralModuleFunctionInputPin", "group__groupFuncsMSP430Gpio.html#gae1df67c5321755cc731d4cf27497fe70", null ],
-                [ "setAsPeripheralModuleFunctionOutputPin", "group__groupFuncsMSP430Gpio.html#gaeb6eb22eb8544233583435da7631493f", null ]
+                [ "setAsInputPin", "group__groupFuncsMSP430Gpio.html#ga93697b8afd7e7c8c4d32c83a003adcbc", null ],
+                [ "setAsInputPinWithPullDown", "group__groupFuncsMSP430Gpio.html#ga14791f018a70036ee66dcbcc53282d62", null ],
+                [ "setAsInputPinWithPullUp", "group__groupFuncsMSP430Gpio.html#ga30aa378e30dc67edb6460609ec3c552c", null ],
+                [ "setAsOutputPin", "group__groupFuncsMSP430Gpio.html#ga9c774049993e4cfbe06af26cf9ddcd5f", null ],
+                [ "setAsPeripheralModuleFunctionInputPin", "group__groupFuncsMSP430Gpio.html#gaa9459fb9ff643717c0b6d4d4b765da6a", null ],
+                [ "setAsPeripheralModuleFunctionOutputPin", "group__groupFuncsMSP430Gpio.html#gad265f676a48409df76c5e52e95944b98", null ]
               ] ],
               [ "PortWithDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithDrv.html", [
-                [ "setDriveStrength", "group__groupFuncsMSP430Gpio.html#ga6075f8e01ba3c5547ee98d9b1ca6473d", null ]
+                [ "setDriveStrength", "group__groupFuncsMSP430Gpio.html#gabf57f3a9f1ff9c5c17f2700db267adde", null ]
               ] ],
               [ "PortWithInt", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html", null ],
               [ "PortWithIntDrv", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html", null ],
@@ -1433,13 +1437,13 @@ var NAVTREE =
                 [ "REGULATOR", "group__groupEnumsMSP430IPmm.html#gae1303f190c6f8a7b26c77a3fa1193ee1", null ],
                 [ "VOLT_MONITOR", "group__groupEnumsMSP430IPmm.html#gabf6a4b47c8166a1389472a7b3947fa5c", null ],
                 [ "calibrateReference", "group__groupFuncsMSP430IPmm.html#ga457e278f9b61593d532cb63a971063ad", null ],
-                [ "clearInterrupt", "group__groupFuncsMSP430FRAMPmm.html#gafc48ad5a27a693cbd2554801a28e1a1c", null ],
-                [ "clearInterrupt", "group__groupFuncsMSP430IPmm.html#gafc48ad5a27a693cbd2554801a28e1a1c", null ],
+                [ "clearInterrupt", "group__groupFuncsMSP430FRAMPmm.html#gacfbf4489e99b8652182ef75e988a9fbc", null ],
+                [ "clearInterrupt", "group__groupFuncsMSP430IPmm.html#gacfbf4489e99b8652182ef75e988a9fbc", null ],
                 [ "clearPMMIFGS", "group__groupFuncsMSP430FPmm.html#ga273666d63a4d5ed8e286ed467d56a6d8", null ],
                 [ "disableExternalReference", "group__groupFuncsMSP430FRAMPmm.html#ga3f8a10946cf986c45c9216dba8553f66", null ],
                 [ "disableInternalReference", "group__groupFuncsMSP430FRAMPmm.html#ga4f8664891f6b5139e57e4d927792daa7", null ],
-                [ "disableInterrupt", "group__groupFuncsMSP430IPmm.html#gacfea4fc0a9b2721d2138193272ad56e0", null ],
-                [ "disableInterrupt", "structMT_1_1MSP430_1_1Pmm.html#gacfea4fc0a9b2721d2138193272ad56e0", null ],
+                [ "disableInterrupt", "group__groupFuncsMSP430IPmm.html#gac67d4d55f696f01f211fefe2aeec93ae", null ],
+                [ "disableInterrupt", "structMT_1_1MSP430_1_1Pmm.html#gac67d4d55f696f01f211fefe2aeec93ae", null ],
                 [ "disableSVMH", "group__groupFuncsMSP430FPmm.html#ga3c950e4d978a7728403b29390f9af16b", null ],
                 [ "disableSvmHInterrupt", "group__groupFuncsMSP430FPmm.html#gaa87c98138d5543c5624c7484b149e1fa", null ],
                 [ "disableSVML", "group__groupFuncsMSP430FPmm.html#gacf6983a7b63037007b31e5d5f0bac792", null ],
@@ -1458,7 +1462,7 @@ var NAVTREE =
                 [ "disableSvsLSvmL", "group__groupFuncsMSP430FPmm.html#ga8de247ea407ba49eb87784d88b1ca40f", null ],
                 [ "disableTempSensor", "group__groupFuncsMSP430FRAMPmm.html#gaafd95869a69385820dabb85eeedd52c3", null ],
                 [ "enableExternalReference", "group__groupFuncsMSP430FRAMPmm.html#ga4ba7ec72f66e8c4b205136398aae6833", null ],
-                [ "enableInterrupt", "group__groupFuncsMSP430IPmm.html#ga271a1a430f51fc332ce64bc0d27bcdd4", null ],
+                [ "enableInterrupt", "group__groupFuncsMSP430IPmm.html#ga6bb2b9e49121055f819ccad83fe6c8c2", null ],
                 [ "enableSVMH", "group__groupFuncsMSP430FPmm.html#ga74a3a1e67252ab6ea4d233e087df4c2c", null ],
                 [ "enableSvmHInterrupt", "group__groupFuncsMSP430FPmm.html#ga72d6c4670ebe415406dabb651524381e", null ],
                 [ "enableSVML", "group__groupFuncsMSP430FPmm.html#ga1afedecdf374a66f3e1bc2b09719a725", null ],
@@ -1478,8 +1482,8 @@ var NAVTREE =
                 [ "enableTempSensor", "group__groupFuncsMSP430FRAMPmm.html#ga42e9c7883109a02242de4b98216c292e", null ],
                 [ "getBandgapMode", "group__groupFuncsMSP430FRAMPmm.html#gabc31069d9dcaeff7b2cfd59d5eb6c4e2", null ],
                 [ "getBufferedBandgapVoltageStatus", "group__groupFuncsMSP430FRAMPmm.html#ga8a51e8068e52d3360849a0c085f2b500", null ],
-                [ "getInterruptStatus", "group__groupFuncsMSP430FRAMPmm.html#gaac2fd20f02c38eaa69abdc081a09c388", null ],
-                [ "getInterruptStatus", "group__groupFuncsMSP430FPmm.html#gaac2fd20f02c38eaa69abdc081a09c388", null ],
+                [ "getInterruptStatus", "group__groupFuncsMSP430FRAMPmm.html#ga7fe5c40c87f6d7d0b0a6f5a6f4be3a0f", null ],
+                [ "getInterruptStatus", "group__groupFuncsMSP430FPmm.html#ga7fe5c40c87f6d7d0b0a6f5a6f4be3a0f", null ],
                 [ "getVariableReferenceVoltageStatus", "group__groupFuncsMSP430FRAMPmm.html#ga2e37c7075fb2bac2e053b13a06cd7b3e", null ],
                 [ "isBandgapActive", "group__groupFuncsMSP430FRAMPmm.html#gab8843108a55ee0fcff2ff3c83a561f5a", null ],
                 [ "isRefGenActive", "group__groupFuncsMSP430FRAMPmm.html#ga2a124d401e9bf48bff9700e55b599b8a", null ],
@@ -1843,10 +1847,10 @@ var NAVTREE =
               [ "WdtA", "structMT_1_1MSP430_1_1WdtA.html", [
                 [ "CLOCKDIVIDER", "group__groupEnumsMSP430WdtA.html#ga2337c85cf25b4ff1d438890ffb24e437", null ],
                 [ "CLOCKSOURCE", "group__groupEnumsMSP430WdtA.html#gaec0ff3f9fa7b27b7cbedecc4e62dd052", null ],
-                [ "hold", "group__groupFuncsMSP430WdtA.html#ga1faf214652a5d6615e7d8161ef167621", null ],
+                [ "hold", "group__groupFuncsMSP430WdtA.html#ga8986e5e3483e554dd5af1c62b640f6cf", null ],
                 [ "initIntervalTimer", "group__groupFuncsMSP430WdtA.html#gaee8f285bfab0030b72fcb64b01cae028", null ],
                 [ "initWatchdogTimer", "group__groupFuncsMSP430WdtA.html#ga9033ef5041bc9ffc7dc8420ce369126b", null ],
-                [ "resetTimer", "group__groupFuncsMSP430WdtA.html#gae20a829cd75c566a997927d7894727e6", null ],
+                [ "resetTimer", "group__groupFuncsMSP430WdtA.html#ga4ac821a89410b61985a1e9063ef82033", null ],
                 [ "start", "group__groupFuncsMSP430WdtA.html#gae215b10b5cb38413ed48db62a60b02bf", null ],
                 [ "startIntervalTimer", "group__groupFuncsMSP430WdtA.html#ga71194b8ebcbc3bb3575dab311bf1dd89", null ],
                 [ "startWatchdogTimer", "group__groupFuncsMSP430WdtA.html#ga4f41f96a15a09adc296b2692e5005315", null ]
@@ -1869,6 +1873,10 @@ var NAVTREE =
             [ "ISR_INTRINSICS", "Types_8hpp.html#ga4039c591bc81cfb75eef0c5c838e7ab3", [
               [ "NONE", "Types_8hpp.html#gga4039c591bc81cfb75eef0c5c838e7ab3ab50339a10e1de285ac99d4c3990b8693", null ],
               [ "LEAVE_LOW_POWER", "Types_8hpp.html#gga4039c591bc81cfb75eef0c5c838e7ab3a25e26264c6254e51a9834839593e761a", null ]
+            ] ],
+            [ "REGISTER_STATE", "Types_8hpp.html#ga0c3b2cfefe7c15312b06d09573701e50", [
+              [ "RESET", "Types_8hpp.html#gga0c3b2cfefe7c15312b06d09573701e50ab5859d8721cfdc0312b2838b9c985bc1", null ],
+              [ "MODIFIED", "Types_8hpp.html#gga0c3b2cfefe7c15312b06d09573701e50a40e3819215b52841e19a7cac06b5f065", null ]
             ] ],
             [ "STATUS", "Types_8hpp.html#ga72e3944880ce3d32ef46ab09fb7c0305", [
               [ "FAIL", "Types_8hpp.html#gga72e3944880ce3d32ef46ab09fb7c0305ac2759effffc94bb9acc71d69fe3e8a1f", null ],
@@ -2043,10 +2051,10 @@ var NAVTREEINDEX =
 [
 "Cast_8hpp.html",
 "Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07bafbe78d395b48369284faffb0ce9d5c0f",
-"functions_all_b.html",
-"group__groupEnumsReg.html#gga0a5451e09f44b4952fd8332b583c652da2a1ab298edf0162a3305e599b47cbeee",
-"group__groupFuncsMSP430Sfr.html#ga1682bfed3d9f8b7bdffe5b57065fa702",
-"structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSelx.html"
+"filesource.html",
+"group__groupEnumsMSP430WdtAInt.html#structMT_1_1MSP430_1_1WDTA_1_1Interrupt_1_1WDT",
+"group__groupFuncsMSP430IPmm.html#gae3e9b503deac7dc56ba4e69eefaf4db5",
+"structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortSel0and1WithoutPull.html#a4e52487c8879755907ca34cd3e9bc389"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

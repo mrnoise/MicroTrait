@@ -1,6 +1,6 @@
 <map id="Interrupt" name="Interrupt">
-<area shape="rect" id="node1" href="$group__groupFuncsMSP430GpioInt.html" title=" " alt="" coords="225,5,304,32"/>
+<area shape="rect" id="node1" href="$group__groupEnumsMSP430GpioInt.html" title=" " alt="" coords="233,5,296,32"/>
 <area shape="rect" id="node2" title="functions to register Interrupt callbacks for GPIO Interrupts at compile time or at runtime &#45;&gt; check..." alt="" coords="108,31,177,57"/>
-<area shape="rect" id="node3" href="$group__groupEnumsMSP430GpioInt.html" title=" " alt="" coords="233,56,296,83"/>
+<area shape="rect" id="node3" href="$group__groupFuncsMSP430GpioInt.html" title=" " alt="" coords="225,56,304,83"/>
 <area shape="rect" id="node4" href="$group__groupMSP430Gpio.html" title="functions for GPIO hardware access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="5,31,60,57"/>
 </map>

@@ -100,14 +100,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga9f6e8839e81d11729ac1b52af2c8e54c"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430FRAMPmm.html#ga9f6e8839e81d11729ac1b52af2c8e54c">MT::MSP430::Pmm::trigBOR</a> () noexcept</td></tr>
 <tr class="memdesc:ga9f6e8839e81d11729ac1b52af2c8e54c"><td class="mdescLeft">&#160;</td><td class="mdescRight">triggers a software Brown Out Rest (BOR) -&gt; only available for <a class="el" href="namespaceMT_1_1MSP430.html">MSP430</a> FRAM Family  <a href="#ga9f6e8839e81d11729ac1b52af2c8e54c">More...</a><br /></td></tr>
 <tr class="separator:ga9f6e8839e81d11729ac1b52af2c8e54c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafc48ad5a27a693cbd2554801a28e1a1c"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </td></tr>
-<tr class="memitem:gafc48ad5a27a693cbd2554801a28e1a1c"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430FRAMPmm.html#gafc48ad5a27a693cbd2554801a28e1a1c">MT::MSP430::Pmm::clearInterrupt</a> (const BIT &amp;bit) noexcept</td></tr>
-<tr class="memdesc:gafc48ad5a27a693cbd2554801a28e1a1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">clears the interrupt flags for the given mask -&gt; only available for <a class="el" href="namespaceMT_1_1MSP430.html">MSP430</a> FRAM Family  <a href="#gafc48ad5a27a693cbd2554801a28e1a1c">More...</a><br /></td></tr>
-<tr class="separator:gafc48ad5a27a693cbd2554801a28e1a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaac2fd20f02c38eaa69abdc081a09c388"><td class="memTemplParams" colspan="2">template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </td></tr>
-<tr class="memitem:gaac2fd20f02c38eaa69abdc081a09c388"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="group__groupEnumsMSP430Types.html#ga479386b6bd2b0b2ba04a910f49697804">INT_MASK_MATCH</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430FRAMPmm.html#gaac2fd20f02c38eaa69abdc081a09c388">MT::MSP430::Pmm::getInterruptStatus</a> (const BIT &amp;bit) noexcept</td></tr>
-<tr class="memdesc:gaac2fd20f02c38eaa69abdc081a09c388"><td class="mdescLeft">&#160;</td><td class="mdescRight">compares the given pins with the interrupt flags set in the hw register -&gt; only available for <a class="el" href="namespaceMT_1_1MSP430.html">MSP430</a> FRAM Family  <a href="#gaac2fd20f02c38eaa69abdc081a09c388">More...</a><br /></td></tr>
-<tr class="separator:gaac2fd20f02c38eaa69abdc081a09c388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacfbf4489e99b8652182ef75e988a9fbc"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430FRAMPmm.html#gacfbf4489e99b8652182ef75e988a9fbc">MT::MSP430::Pmm::clearInterrupt</a> (const PMM::INT inter) noexcept</td></tr>
+<tr class="memdesc:gacfbf4489e99b8652182ef75e988a9fbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">clears the interrupt flags for the given mask -&gt; only available for <a class="el" href="namespaceMT_1_1MSP430.html">MSP430</a> FRAM Family  <a href="#gacfbf4489e99b8652182ef75e988a9fbc">More...</a><br /></td></tr>
+<tr class="separator:gacfbf4489e99b8652182ef75e988a9fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7fe5c40c87f6d7d0b0a6f5a6f4be3a0f"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__groupEnumsMSP430Types.html#ga479386b6bd2b0b2ba04a910f49697804">INT_MASK_MATCH</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430FRAMPmm.html#ga7fe5c40c87f6d7d0b0a6f5a6f4be3a0f">MT::MSP430::Pmm::getInterruptStatus</a> (const PMM::INT inter) noexcept</td></tr>
+<tr class="memdesc:ga7fe5c40c87f6d7d0b0a6f5a6f4be3a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">compares the given pins with the interrupt flags set in the hw register -&gt; only available for <a class="el" href="namespaceMT_1_1MSP430.html">MSP430</a> FRAM Family  <a href="#ga7fe5c40c87f6d7d0b0a6f5a6f4be3a0f">More...</a><br /></td></tr>
+<tr class="separator:ga7fe5c40c87f6d7d0b0a6f5a6f4be3a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga875d175ce4b8c5c6e6865c2e0bbcf48a"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430FRAMPmm.html#ga875d175ce4b8c5c6e6865c2e0bbcf48a">MT::MSP430::Pmm::unlockLPM5</a> () noexcept</td></tr>
 <tr class="memdesc:ga875d175ce4b8c5c6e6865c2e0bbcf48a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the <a class="el" href="namespaceMT_1_1MSP430_1_1GPIO.html">GPIO</a> power-on default high-impedance mode to activate previously configured port settings -&gt; only available for <a class="el" href="namespaceMT_1_1MSP430.html">MSP430</a> FRAM Family.  <a href="#ga875d175ce4b8c5c6e6865c2e0bbcf48a">More...</a><br /></td></tr>
 <tr class="separator:ga875d175ce4b8c5c6e6865c2e0bbcf48a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,11 +152,9 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Functions in this module </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="gafc48ad5a27a693cbd2554801a28e1a1c"></a>
+<a class="anchor" id="gacfbf4489e99b8652182ef75e988a9fbc"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -166,8 +162,8 @@ template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum
         <tr>
           <td class="memname">constexpr void MT::MSP430::Pmm::clearInterrupt </td>
           <td>(</td>
-          <td class="paramtype">const BIT &amp;&#160;</td>
-          <td class="paramname"><em>bit</em></td><td>)</td>
+          <td class="paramtype">const PMM::INT&#160;</td>
+          <td class="paramname"><em>inter</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -181,9 +177,9 @@ template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum
 <p><code>#include &lt;<a class="el" href="Pmm_8hpp.html">MSP430/PMM/Pmm.hpp</a>&gt;</code></p>
 
 <p>clears the interrupt flags for the given mask -&gt; only available for <a class="el" href="namespaceMT_1_1MSP430.html">MSP430</a> FRAM Family </p>
-<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1Pmm.html">Pmm</a> pmm{};</div><div class="line"> pmm.<a class="code" href="group__groupFuncsMSP430FRAMPmm.html#gafc48ad5a27a693cbd2554801a28e1a1c">clearInterrupt</a>(PMM::INT::BOR | PMM::INT::POR); </div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">BIT</td><td>use enumeration <a class="el" href="group__groupEnumsMSP430FRAMPmm.html#ga3b67197ff4ca6179cc8232b65433452a" title="PMM interrupt types. ">PMM::INT</a> </td></tr>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1Pmm.html">Pmm</a> pmm{};</div><div class="line"> pmm.<a class="code" href="group__groupFuncsMSP430FRAMPmm.html#gacfbf4489e99b8652182ef75e988a9fbc">clearInterrupt</a>(PMM::INT::BOR | PMM::INT::POR); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inter</td><td>-&gt; use enumeration <a class="el" href="group__groupEnumsMSP430FRAMPmm.html#ga3b67197ff4ca6179cc8232b65433452a" title="PMM interrupt types. ">PMM::INT</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -489,11 +485,9 @@ template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum
 
 </div>
 </div>
-<a class="anchor" id="gaac2fd20f02c38eaa69abdc081a09c388"></a>
+<a class="anchor" id="ga7fe5c40c87f6d7d0b0a6f5a6f4be3a0f"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum_bits&lt;BIT&gt;::enable, BIT&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -501,8 +495,8 @@ template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum
         <tr>
           <td class="memname">constexpr <a class="el" href="group__groupEnumsMSP430Types.html#ga479386b6bd2b0b2ba04a910f49697804">INT_MASK_MATCH</a> MT::MSP430::Pmm::getInterruptStatus </td>
           <td>(</td>
-          <td class="paramtype">const BIT &amp;&#160;</td>
-          <td class="paramname"><em>bit</em></td><td>)</td>
+          <td class="paramtype">const PMM::INT&#160;</td>
+          <td class="paramname"><em>inter</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -516,9 +510,9 @@ template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum
 <p><code>#include &lt;<a class="el" href="Pmm_8hpp.html">MSP430/PMM/Pmm.hpp</a>&gt;</code></p>
 
 <p>compares the given pins with the interrupt flags set in the hw register -&gt; only available for <a class="el" href="namespaceMT_1_1MSP430.html">MSP430</a> FRAM Family </p>
-<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1Pmm.html">Pmm</a> pmm{};</div><div class="line"> <span class="keywordflow">if</span>(pmm.getInterruptStatus(PMM::INT::BOR | PMM::INT::POR) == <a class="code" href="group__groupEnumsMSP430Types.html#gga479386b6bd2b0b2ba04a910f49697804ac0d83f0b82a6b30de8811e69e6d95c61">INT_MASK_MATCH::TRUE</a>) doSomething(); </div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">BIT</td><td>use enumeration <a class="el" href="group__groupEnumsMSP430FRAMPmm.html#ga3b67197ff4ca6179cc8232b65433452a" title="PMM interrupt types. ">PMM::INT</a> </td></tr>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div><div class="line"> </div><div class="line"> <a class="code" href="structMT_1_1MSP430_1_1Pmm.html">Pmm</a> pmm{};</div><div class="line"> <span class="keywordflow">if</span>(pmm.getInterruptStatus(PMM::INT::BOR | PMM::INT::POR) == <a class="code" href="group__groupEnumsMSP430Types.html#gga479386b6bd2b0b2ba04a910f49697804ac0d83f0b82a6b30de8811e69e6d95c61">INT_MASK_MATCH::TRUE</a>) doSomething(); </div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inter</td><td>-&gt; use enumeration <a class="el" href="group__groupEnumsMSP430FRAMPmm.html#ga3b67197ff4ca6179cc8232b65433452a" title="PMM interrupt types. ">PMM::INT</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -778,7 +772,7 @@ template&lt;typename BIT , typename  = std::enable_if_t&lt;MT::Misc::enable_Enum
 <!-- Generated by DoxyPress 1.4.0 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Do Jan 28 2021 17:13:46 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Di Feb 2 2021 14:52:26 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="http://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.0 </li>
   </ul>

@@ -152,6 +152,7 @@ enum class DRV_STRENGTH : uint_fast8_t {
 };
 #endif
 
+
 namespace Internal {
 
     using namespace MT::Misc::Meta;
@@ -174,13 +175,11 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.setOutputHighOnPin(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BIT use enumeration GPIO::PIN
+		*@param pin to use -> GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void setOutputHighOnPin(const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-            m_out.set(bit);
+        constexpr void setOutputHighOnPin(const MT::MSP430::GPIO::PIN pin) noexcept {
+            m_out.set(pin);
         }
 
         /**
@@ -193,13 +192,11 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.setOutputLowOnPin(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BIT use enumeration GPIO::PIN
+		*@param pin to use -> GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void setOutputLowOnPin(const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-            m_out.clear(bit);
+        constexpr void setOutputLowOnPin(const MT::MSP430::GPIO::PIN pin) noexcept {
+            m_out.clear(pin);
         }
 
         /**
@@ -212,13 +209,11 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.toggleOutputOnPin(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BIT use enumeration GPIO::PIN
+		*@param pin to use -> GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void toggleOutputOnPin(const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-            m_out.toggle(bit);
+        constexpr void toggleOutputOnPin(const MT::MSP430::GPIO::PIN pin) noexcept {
+            m_out.toggle(pin);
         }
 
 
@@ -232,14 +227,12 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  if(p1.getInputPinValue(GPIO::PIN::P0) == GPIO::PIN_STATE::HIGH) doSomething(); \endcode
-		*@tparam BIT use enumeration GPIO::PIN
+		*@param pin to use -> GPIO::PIN
 		*@return the Pin state (GPIO::PIN_STATE)
 		****************************************************************
 		*/
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        [[nodiscard]] constexpr PIN_STATE getInputPinValue(const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-            if (m_in.compare(bit)) return PIN_STATE::HIGH;
+        [[nodiscard]] constexpr PIN_STATE getInputPinValue(const MT::MSP430::GPIO::PIN pin) noexcept {
+            if (m_in.compare(pin)) return PIN_STATE::HIGH;
             else
                 return PIN_STATE::LOW;
         }
@@ -263,20 +256,19 @@ namespace Internal {
         constexpr static size_t  m_sel0Index   = 0;
         constexpr static size_t  m_sel1Index   = 1;
 
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr inline void setModuleFunction(const MODULE_FUNC func, const BIT &bit) noexcept {
+        constexpr inline void setModuleFunction(const MODULE_FUNC func, const MT::MSP430::GPIO::PIN pin) noexcept {
 
             switch (func) {
                 case MODULE_FUNC::GPIO:
 
                     if constexpr (m_hasSel0) {
                         MT::Universal::Register<m_selx[m_sel0Index]> p0sel;
-                        p0sel.clear(bit);
+                        p0sel.clear(pin);
                     }
 
                     if constexpr (m_hasSel0and1) {
                         MT::Universal::Register<m_selx[m_sel1Index]> p1sel;
-                        p1sel.clear(bit);
+                        p1sel.clear(pin);
                     }
 
                     break;
@@ -284,34 +276,34 @@ namespace Internal {
 
                     if constexpr (m_hasSel0) {
                         MT::Universal::Register<m_selx[m_sel0Index]> p0sel;
-                        p0sel.set(bit);
+                        p0sel.set(pin);
                     }
 
                     if constexpr (m_hasSel0and1) {
                         MT::Universal::Register<m_selx[m_sel1Index]> p1sel;
-                        p1sel.clear(bit);
+                        p1sel.clear(pin);
                     }
                     break;
                 case MODULE_FUNC::SECONDARY:
                     if constexpr (m_hasSel0) {
                         MT::Universal::Register<m_selx[m_sel0Index]> p0sel;
-                        p0sel.clear(bit);
+                        p0sel.clear(pin);
                     }
 
                     if constexpr (m_hasSel0and1) {
                         MT::Universal::Register<m_selx[m_sel1Index]> p1sel;
-                        p1sel.set(bit);
+                        p1sel.set(pin);
                     }
                     break;
                 case MODULE_FUNC::TERNARY:
                     if constexpr (m_hasSel0) {
                         MT::Universal::Register<m_selx[m_sel0Index]> p0sel;
-                        p0sel.set(bit);
+                        p0sel.set(pin);
                     }
 
                     if constexpr (m_hasSel0and1) {
                         MT::Universal::Register<m_selx[m_sel1Index]> p1sel;
-                        p1sel.set(bit);
+                        p1sel.set(pin);
                     }
                     break;
                 default:
@@ -331,16 +323,14 @@ namespace Internal {
   		*
   		*  GPIO::Port1 p1{};
   		*  p1.setAsOutputPin(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-  		*@tparam BIT use enumeration GPIO::PIN
+  		*@tparam STATE if the register is in the reset state or not -> MT::MSP430::REGISTER_STATE
+  		*@param pin to use -> GPIO::PIN
   		****************************************************************
   		*/
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void setAsOutputPin(const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-#ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-            setModuleFunction(MODULE_FUNC::GPIO, bit);
-#endif
-            m_dir.set(bit);
+        template<REGISTER_STATE STATE = REGISTER_STATE::RESET>
+        constexpr void setAsOutputPin(const MT::MSP430::GPIO::PIN pin) noexcept {
+            if constexpr (STATE != REGISTER_STATE::RESET) setModuleFunction(MODULE_FUNC::GPIO, pin);
+            m_dir.set(pin);
         }
 
         /**
@@ -353,17 +343,15 @@ namespace Internal {
   		*
   		*  GPIO::Port1 p1{};
   		*  p1.setAsInputPin(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-  		*@tparam BIT use enumeration GPIO::PIN
+  		*@tparam STATE if the register is in the reset state or not -> MT::MSP430::REGISTER_STATE
+  		*@param pin to use -> GPIO::PIN
   		****************************************************************
   		*/
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void setAsInputPin(const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-#ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-            setModuleFunction(MODULE_FUNC::GPIO, bit);
-#endif
-            m_dir.clear(bit);
-            m_pull.clear(bit);
+        template<REGISTER_STATE STATE = REGISTER_STATE::RESET>
+        constexpr void setAsInputPin(const MT::MSP430::GPIO::PIN pin) noexcept {
+            if constexpr (STATE != REGISTER_STATE::RESET) setModuleFunction(MODULE_FUNC::GPIO, pin);
+            m_dir.clear(pin);
+            m_pull.clear(pin);
         }
 
         /**
@@ -377,14 +365,12 @@ namespace Internal {
   		*  GPIO::Port1 p1{};
   		*  p1.setAsPeripheralModuleFunctionOutputPin(GPIO::MODULE_FUNC::PRIMARY, GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
   		*@param func the function for the pin  (GPIO::MODULE_FUNC)
-  		*@param bit use enumeration GPIO::PIN
+  		*@param pin to use -> GPIO::PIN
   		****************************************************************
   		*/
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void setAsPeripheralModuleFunctionOutputPin(const MODULE_FUNC func, const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-            m_dir.set(bit);
-            setModuleFunction(func, bit);
+        constexpr void setAsPeripheralModuleFunctionOutputPin(const MODULE_FUNC func, const MT::MSP430::GPIO::PIN pin) noexcept {
+            m_dir.set(pin);
+            setModuleFunction(func, pin);
         }
 
         /**
@@ -398,14 +384,12 @@ namespace Internal {
   		*  GPIO::Port1 p1{};
   		*  p1.setAsPeripheralModuleFunctionInputPin(GPIO::MODULE_FUNC::PRIMARY, GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
   		*@param func the function for the pin  (GPIO::MODULE_FUNC)
-  		*@param bit use enumeration GPIO::PIN
+  		*@param pin to use -> GPIO::PIN
   		****************************************************************
   		*/
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void setAsPeripheralModuleFunctionInputPin(const MODULE_FUNC func, const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-            m_dir.clear(bit);
-            setModuleFunction(func, bit);
+        constexpr void setAsPeripheralModuleFunctionInputPin(const MODULE_FUNC func, const MT::MSP430::GPIO::PIN pin) noexcept {
+            m_dir.clear(pin);
+            setModuleFunction(func, pin);
         }
 
 
@@ -419,18 +403,17 @@ namespace Internal {
   		*
   		*  GPIO::Port1 p1{};
   		*  p1.setAsInputPinWithPullDown(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-  		*@tparam BIT use enumeration GPIO::PIN
+  		*@tparam STATE if the register is in the reset state or not -> MT::MSP430::REGISTER_STATE
+  		*@param pin to use -> GPIO::PIN
   		****************************************************************
   		*/
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void setAsInputPinWithPullDown(const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-#ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-            setModuleFunction(MODULE_FUNC::GPIO, bit);
-#endif
-            m_dir.clear(bit);
-            m_pull.set(bit);
-            m_out.clear(bit);
+        template<REGISTER_STATE STATE = REGISTER_STATE::RESET>
+        constexpr void setAsInputPinWithPullDown(const MT::MSP430::GPIO::PIN pin) noexcept {
+            if constexpr (STATE != REGISTER_STATE::RESET) setModuleFunction(MODULE_FUNC::GPIO, pin);
+
+            m_dir.clear(pin);
+            m_pull.set(pin);
+            m_out.clear(pin);
         }
 
         /**
@@ -443,18 +426,17 @@ namespace Internal {
   		*
   		*  GPIO::Port1 p1{};
   		*  p1.setAsInputPinWithPullUp(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-  		*@tparam BIT use enumeration GPIO::PIN
+  		*@tparam STATE if the register is in the reset state or not -> MT::MSP430::REGISTER_STATE
+  		*@param pin to use -> GPIO::PIN
   		****************************************************************
   		*/
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void setAsInputPinWithPullUp(const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-#ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-            setModuleFunction(MODULE_FUNC::GPIO, bit);
-#endif
-            m_dir.clear(bit);
-            m_pull.set(bit);
-            m_out.set(bit);
+        template<REGISTER_STATE STATE = REGISTER_STATE::RESET>
+        constexpr void setAsInputPinWithPullUp(const MT::MSP430::GPIO::PIN pin) noexcept {
+            if constexpr (STATE != REGISTER_STATE::RESET) setModuleFunction(MODULE_FUNC::GPIO, pin);
+
+            m_dir.clear(pin);
+            m_pull.set(pin);
+            m_out.set(pin);
         }
     };
 
@@ -468,24 +450,23 @@ namespace Internal {
         MT::Universal::Register<P0SEL>  m_p0sel{};
         MT::Universal::Register<P1SEL>  m_p1sel{};
 
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr inline void setModuleFunction(const MODULE_FUNC func, const BIT &bit) noexcept {
+        constexpr inline void setModuleFunction(const MODULE_FUNC func, const MT::MSP430::GPIO::PIN pin) noexcept {
             switch (func) {
                 case MODULE_FUNC::GPIO:
-                    m_p0sel.clear(bit);
-                    m_p1sel.clear(bit);
+                    m_p0sel.clear(pin);
+                    m_p1sel.clear(pin);
                     break;
                 case MODULE_FUNC::PRIMARY:
-                    m_p0sel.set(bit);
-                    m_p1sel.clear(bit);
+                    m_p0sel.set(pin);
+                    m_p1sel.clear(pin);
                     break;
                 case MODULE_FUNC::SECONDARY:
-                    m_p0sel.clear(bit);
-                    m_p1sel.set(bit);
+                    m_p0sel.clear(pin);
+                    m_p1sel.set(pin);
                     break;
                 case MODULE_FUNC::TERNARY:
-                    m_p0sel.set(bit);
-                    m_p1sel.set(bit);
+                    m_p0sel.set(pin);
+                    m_p1sel.set(pin);
                     break;
                 default:
                     break;
@@ -493,38 +474,28 @@ namespace Internal {
         }
 
       public:
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void setAsOutputPin(const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-#ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-            setModuleFunction(MODULE_FUNC::GPIO, bit);
-#endif
-            m_dir.set(bit);
+        template<REGISTER_STATE STATE = REGISTER_STATE::RESET>
+        constexpr void setAsOutputPin(const MT::MSP430::GPIO::PIN pin) noexcept {
+            if constexpr (STATE != REGISTER_STATE::RESET) setModuleFunction(MODULE_FUNC::GPIO, pin);
+            m_dir.set(pin);
+        }
+
+        template<REGISTER_STATE STATE = REGISTER_STATE::RESET>
+        constexpr void setAsInputPin(const MT::MSP430::GPIO::PIN pin) noexcept {
+            if constexpr (STATE != REGISTER_STATE::RESET) setModuleFunction(MODULE_FUNC::GPIO, pin);
+            m_dir.clear(pin);
         }
 
 
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void setAsInputPin(const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-#ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-            setModuleFunction(MODULE_FUNC::GPIO, bit);
-#endif
-            m_dir.clear(bit);
+        constexpr void setAsPeripheralModuleFunctionOutputPin(const MODULE_FUNC func, const MT::MSP430::GPIO::PIN pin) noexcept {
+            m_dir.set(pin);
+            setModuleFunction(func, pin);
         }
 
 
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void setAsPeripheralModuleFunctionOutputPin(const MODULE_FUNC func, const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-            m_dir.set(bit);
-            setModuleFunction(func, bit);
-        }
-
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void setAsPeripheralModuleFunctionInputPin(const MODULE_FUNC func, const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-            m_dir.clear(bit);
-            setModuleFunction(func, bit);
+        constexpr void setAsPeripheralModuleFunctionInputPin(const MODULE_FUNC func, const MT::MSP430::GPIO::PIN pin) noexcept {
+            m_dir.clear(pin);
+            setModuleFunction(func, pin);
         }
     };// namespace Internal
 
@@ -548,13 +519,11 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.enableInterrupt(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BIT use enumeration GPIO::PIN
+		*@param pin to use -> GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void enableInterrupt(const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-            m_intEn.set(bit);
+        constexpr void enableInterrupt(const MT::MSP430::GPIO::PIN pin) noexcept {
+            m_intEn.set(pin);
         }
 
         /**
@@ -567,13 +536,11 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.disableInterrupt(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BIT use enumeration GPIO::PIN
+		*@param pin to use -> GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void disableInterrupt(const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-            m_intEn.clear(bit);
+        constexpr void disableInterrupt(const MT::MSP430::GPIO::PIN pin) noexcept {
+            m_intEn.clear(pin);
         }
 
         /**
@@ -586,14 +553,12 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  if(p1.getInterruptStatus(GPIO::PIN::P0) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
-		*@tparam BIT use enumeration GPIO::PIN
+		*@param pin to use -> GPIO::PIN
 		*@return if all the given bits are set or not (INT_MASK_MATCH)
 		****************************************************************
 		*/
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-            if (m_intFlg.compare(bit)) return INT_MASK_MATCH::TRUE;
+        [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const MT::MSP430::GPIO::PIN pin) noexcept {
+            if (m_intFlg.compare(pin)) return INT_MASK_MATCH::TRUE;
             else
                 return INT_MASK_MATCH::FALSE;
         }
@@ -608,13 +573,11 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.clearInterrupt(GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BIT use enumeration GPIO::PIN
+		*@param pin to use -> GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void clearInterrupt(const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-            m_intFlg.clear(bit);
+        constexpr void clearInterrupt(const MT::MSP430::GPIO::PIN pin) noexcept {
+            m_intFlg.clear(pin);
         }
 
         /**
@@ -627,17 +590,17 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.selectInterruptEdge(GPIO::INT_EDGE::HIGH_TO_LOW, GPIO::PIN::P0 | GPIO::PIN::P1);  \endcode
-		*@tparam BIT use enumeration GPIO::PIN
+		*
+		*@param edge setting for the interrupt -> GPIO::PIN
+		*@param pin to use -> GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void selectInterruptEdge(const INT_EDGE edge, const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-            if (edge == INT_EDGE::LOW_TO_HIGH) m_intEdge.clear(bit);
+        constexpr void selectInterruptEdge(const INT_EDGE edge, const MT::MSP430::GPIO::PIN pin) noexcept {
+            if (edge == INT_EDGE::LOW_TO_HIGH) m_intEdge.clear(pin);
             else
-                m_intEdge.set(bit);
+                m_intEdge.set(pin);
         }
-    };
+    };// namespace Internal
 
     template<volatile auto *DRVREG>
     struct PortWithDrv {
@@ -657,16 +620,15 @@ namespace Internal {
 		*
 		*  GPIO::Port1 p1{};
 		*  p1.setDriveStrength(GPIO::DRV_STRENGTH::REDUCED, GPIO::PIN::P0 | GPIO::PIN::P1); \endcode
-		*@tparam BIT use enumeration GPIO::PIN
+		*
+		*@param drv strength for the pin to set -> GPIO::DRV_STRENGTH
+		*@param pin to use -> GPIO::PIN
 		****************************************************************
 		*/
-        template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-        constexpr void setDriveStrength(const DRV_STRENGTH drv, const BIT &bit) noexcept {
-            static_assert(compareBareType<MT::MSP430::GPIO::PIN, BIT>(), "input must be GPIO::PIN enum");
-
-            if (drv == DRV_STRENGTH::REDUCED) m_drv.clear(bit);
+        constexpr void setDriveStrength(const DRV_STRENGTH drv, const MT::MSP430::GPIO::PIN pin) noexcept {
+            if (drv == DRV_STRENGTH::REDUCED) m_drv.clear(pin);
             else
-                m_drv.set(bit);
+                m_drv.set(pin);
         }
 #endif
     };

@@ -121,15 +121,16 @@ struct WdtA {
 	*  WdtA wdt{};
 	*  wdt.hold(); \endcode
 	*
+	*@tparam STATE if the register is in the reset state or not -> MT::MSP430::REGISTER_STATE
 	****************************************************************
 	*/
+    template<REGISTER_STATE STATE = REGISTER_STATE::RESET>
     constexpr void hold() noexcept {
-#ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-        const auto state = ((m_ctl.get() & 0x00FF) | WDTHOLD);
-        m_ctl.override(WDTPW + state);
-#else
-        m_ctl.override(WDTPW | WDTHOLD);
-#endif
+        if constexpr (STATE != REGISTER_STATE::RESET) {
+            const auto state = ((m_ctl.get() & 0x00FF) | WDTHOLD);
+            m_ctl.override(WDTPW + state);
+        } else
+            m_ctl.override(WDTPW | WDTHOLD);
     }
 
     /**
@@ -161,15 +162,16 @@ struct WdtA {
 	*  WdtA wdt{};
 	*  wdt.resetTimer(); \endcode
 	*
+	*@tparam STATE if the register is in the reset state or not -> MT::MSP430::REGISTER_STATE
 	****************************************************************
 	*/
+    template<REGISTER_STATE STATE = REGISTER_STATE::RESET>
     constexpr void resetTimer() noexcept {
-#ifdef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
-        const auto state = ((m_ctl.get() & 0x00FF) | WDTCNTCL);
-        m_ctl.override(WDTPW | state);
-#else
-        m_ctl.override(WDTPW | WDTCNTCL);
-#endif
+        if constexpr (STATE != REGISTER_STATE::RESET) {
+            const auto state = ((m_ctl.get() & 0x00FF) | WDTCNTCL);
+            m_ctl.override(WDTPW | state);
+        } else
+            m_ctl.override(WDTPW | WDTCNTCL);
     }
 
     /**
@@ -210,7 +212,6 @@ struct WdtA {
         m_ctl.override(WDTPW | WDTCNTCL | WDTHOLD | WDTTMSEL | (static_cast<uint16_t>(src)) | (static_cast<uint16_t>(div)));
     }
 
-#ifndef MT_MSP430_USE_DRIVERLIB_COMPATIBILITY
     /**
 	* @ingroup groupFuncsMSP430WdtA
 	****************************************************************
@@ -246,7 +247,6 @@ struct WdtA {
     constexpr void startIntervalTimer(const WDTA::CLOCKSOURCE src, const WDTA::CLOCKDIVIDER div) noexcept {
         m_ctl.override(WDTPW | WDTCNTCL | WDTTMSEL | (static_cast<uint16_t>(src)) | (static_cast<uint16_t>(div)));
     }
-#endif
 };
 
 #endif
