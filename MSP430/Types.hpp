@@ -40,10 +40,10 @@ enum class STATUS : uint_fast8_t {
 /**
 * @ingroup groupEnumsMSP430Types
 ****************************************************************
-* @brief Interrupt Flag match
+* @brief Indicates that a mask match occurred or not
 ****************************************************************
 */
-enum class INT_MASK_MATCH : uint_fast8_t {
+enum class MASK_MATCH : uint_fast8_t {
     FALSE = 0,
     TRUE
 };
@@ -80,6 +80,18 @@ enum class ISR_INTRINSICS {
 enum class REGISTER_STATE : uint_fast8_t {
     RESET = 0,
     MODIFIED
+};
+
+
+/**
+* @ingroup groupEnumsMSP430Types
+****************************************************************
+* @brief context usage of a function or class -> in ISR context or polling
+****************************************************************
+*/
+enum class USAGE_CONTEXT : uint_fast8_t {
+    IN_INTERRUPT = 0,
+    POLLING
 };
 
 }// namespace MT::MSP430
