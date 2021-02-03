@@ -552,15 +552,15 @@ namespace Internal {
 		* using namespace MT::MSP430;
 		*
 		*  GPIO::Port1 p1{};
-		*  if(p1.getInterruptStatus(GPIO::PIN::P0) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
+		*  if(p1.getInterruptStatus(GPIO::PIN::P0) == MT::MSP430::MASK_MATCH::TRUE) doSomething(); \endcode
 		*@param pin to use -> GPIO::PIN
-		*@return if all the given bits are set or not (INT_MASK_MATCH)
+		*@return if all the given bits are set or not (MT::MSP430::MASK_MATCH)
 		****************************************************************
 		*/
-        [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const MT::MSP430::GPIO::PIN pin) noexcept {
-            if (m_intFlg.compare(pin)) return INT_MASK_MATCH::TRUE;
+        [[nodiscard]] constexpr MASK_MATCH getInterruptStatus(const MT::MSP430::GPIO::PIN pin) noexcept {
+            if (m_intFlg.compare(pin)) return MASK_MATCH::TRUE;
             else
-                return INT_MASK_MATCH::FALSE;
+                return MASK_MATCH::FALSE;
         }
 
         /**

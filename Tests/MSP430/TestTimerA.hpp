@@ -375,10 +375,10 @@ void runInterrupts() noexcept {
     assert((TA3CTL & TAIE) == 0);
 
     TA3CTL |= TAIFG;
-    assert(ta3.getInterruptStatus() == INT_MASK_MATCH::TRUE);
+    assert(ta3.getInterruptStatus() == MASK_MATCH::TRUE);
 
     ta3.clearTimerInterrupt();
-    assert(ta3.getInterruptStatus() == INT_MASK_MATCH::FALSE);
+    assert(ta3.getInterruptStatus() == MASK_MATCH::FALSE);
 }
 
 void runCCInterrupts() noexcept {
@@ -419,65 +419,65 @@ void runCCInterrupts() noexcept {
 
 
     TA3CCTL0 |= CCIFG;
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER0, INT::CAPTURE_INTERRUPT) == INT_MASK_MATCH::TRUE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER0, INT::CAPTURE_INTERRUPT) == MASK_MATCH::TRUE);
 
     TA3CCTL0 |= COV;
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER0, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == INT_MASK_MATCH::TRUE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER0, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == MASK_MATCH::TRUE);
 
     TA3CCTL1 |= CCIFG;
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER1, INT::CAPTURE_INTERRUPT) == INT_MASK_MATCH::TRUE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER1, INT::CAPTURE_INTERRUPT) == MASK_MATCH::TRUE);
 
     TA3CCTL1 |= COV;
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER1, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == INT_MASK_MATCH::TRUE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER1, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == MASK_MATCH::TRUE);
 
     TA3CCTL2 |= CCIFG;
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER2, INT::CAPTURE_INTERRUPT) == INT_MASK_MATCH::TRUE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER2, INT::CAPTURE_INTERRUPT) == MASK_MATCH::TRUE);
 
     TA3CCTL2 |= COV;
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER2, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == INT_MASK_MATCH::TRUE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER2, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == MASK_MATCH::TRUE);
 
     TA3CCTL3 |= CCIFG;
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER3, INT::CAPTURE_INTERRUPT) == INT_MASK_MATCH::TRUE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER3, INT::CAPTURE_INTERRUPT) == MASK_MATCH::TRUE);
 
     TA3CCTL3 |= COV;
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER3, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == INT_MASK_MATCH::TRUE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER3, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == MASK_MATCH::TRUE);
 
     TA3CCTL4 |= CCIFG;
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER4, INT::CAPTURE_INTERRUPT) == INT_MASK_MATCH::TRUE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER4, INT::CAPTURE_INTERRUPT) == MASK_MATCH::TRUE);
 
     TA3CCTL4 |= COV;
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER4, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == INT_MASK_MATCH::TRUE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER4, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == MASK_MATCH::TRUE);
 
 
     ta3.clearCaptureCompareInterrupt(CAPTURE_COMPARE::REGISTER0);
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER0, INT::CAPTURE_INTERRUPT) == INT_MASK_MATCH::FALSE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER0, INT::CAPTURE_INTERRUPT) == MASK_MATCH::FALSE);
 
     ta3.clearCaptureCompareInterrupt(CAPTURE_COMPARE::REGISTER0, INT::CAPTURE_OVERFLOW);
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER0, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == INT_MASK_MATCH::FALSE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER0, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == MASK_MATCH::FALSE);
 
     ta3.clearCaptureCompareInterrupt(CAPTURE_COMPARE::REGISTER1);
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER1, INT::CAPTURE_INTERRUPT) == INT_MASK_MATCH::FALSE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER1, INT::CAPTURE_INTERRUPT) == MASK_MATCH::FALSE);
 
     ta3.clearCaptureCompareInterrupt(CAPTURE_COMPARE::REGISTER1, INT::CAPTURE_OVERFLOW);
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER1, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == INT_MASK_MATCH::FALSE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER1, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == MASK_MATCH::FALSE);
 
     ta3.clearCaptureCompareInterrupt(CAPTURE_COMPARE::REGISTER2);
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER2, INT::CAPTURE_INTERRUPT) == INT_MASK_MATCH::FALSE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER2, INT::CAPTURE_INTERRUPT) == MASK_MATCH::FALSE);
 
     ta3.clearCaptureCompareInterrupt(CAPTURE_COMPARE::REGISTER2, INT::CAPTURE_OVERFLOW);
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER2, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == INT_MASK_MATCH::FALSE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER2, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == MASK_MATCH::FALSE);
 
     ta3.clearCaptureCompareInterrupt(CAPTURE_COMPARE::REGISTER3);
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER3, INT::CAPTURE_INTERRUPT) == INT_MASK_MATCH::FALSE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER3, INT::CAPTURE_INTERRUPT) == MASK_MATCH::FALSE);
 
     ta3.clearCaptureCompareInterrupt(CAPTURE_COMPARE::REGISTER3, INT::CAPTURE_OVERFLOW);
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER3, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == INT_MASK_MATCH::FALSE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER3, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == MASK_MATCH::FALSE);
 
     ta3.clearCaptureCompareInterrupt(CAPTURE_COMPARE::REGISTER4);
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER4, INT::CAPTURE_INTERRUPT) == INT_MASK_MATCH::FALSE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER4, INT::CAPTURE_INTERRUPT) == MASK_MATCH::FALSE);
 
     ta3.clearCaptureCompareInterrupt(CAPTURE_COMPARE::REGISTER4, INT::CAPTURE_OVERFLOW);
-    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER4, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == INT_MASK_MATCH::FALSE);
+    assert(ta3.getCaptureCompareInterruptStatus(CAPTURE_COMPARE::REGISTER4, INT::CAPTURE_INTERRUPT | INT::CAPTURE_OVERFLOW) == MASK_MATCH::FALSE);
 }
 
 

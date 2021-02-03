@@ -592,15 +592,15 @@ struct Base {
 	*
 	*  TIMERA::TA0 ta0;
 	*
-	*  if(ta0.getInterruptStatus() == INT_MASK_MATCH::TRUE) doSomething(); \endcode
+	*  if(ta0.getInterruptStatus() == MT::MSP430::MASK_MATCH::TRUE) doSomething(); \endcode
 	*
-	*@return if TAIFG is set or not (INT_MASK_MATCH)
+	*@return if TAIFG is set or not (MT::MSP430::MASK_MATCH)
 	****************************************************************
 	*/
-    [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus() noexcept {
-        if (m_ctl.compare(TAIFG)) return INT_MASK_MATCH::TRUE;
+    [[nodiscard]] constexpr MASK_MATCH getInterruptStatus() noexcept {
+        if (m_ctl.compare(TAIFG)) return MASK_MATCH::TRUE;
         else
-            return INT_MASK_MATCH::FALSE;
+            return MASK_MATCH::FALSE;
     }
 
     /**
@@ -950,27 +950,27 @@ struct CCTLx {
 	*
 	*  TIMERA::TA0 ta0;
 	*
-	*  if(ta0.getCaptureCompareInterruptStatus(TIMERA::CAPTURE_COMPARE::REGISTER0, TIMERA::INT::CAPTURE_INTERRUPT | TIMERA::INT::CAPTURE_OVERFLOW) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
+	*  if(ta0.getCaptureCompareInterruptStatus(TIMERA::CAPTURE_COMPARE::REGISTER0, TIMERA::INT::CAPTURE_INTERRUPT | TIMERA::INT::CAPTURE_OVERFLOW) == MT::MSP430::MASK_MATCH::TRUE) doSomething(); \endcode
 	*@param reg -> which capture/compare register should be used -> use type TIMERA::CAPTURE_COMPARE
 	*@param mask -> which flag(s) should be checked -> use type TIMERA::INT
-	*@return if mask is set or not (INT_MASK_MATCH)
+	*@return if mask is set or not (MT::MSP430::MASK_MATCH)
 	****************************************************************
 	*/
-    [[nodiscard]] constexpr INT_MASK_MATCH getCaptureCompareInterruptStatus(const TIMERA::CAPTURE_COMPARE reg, const TIMERA::INT mask) noexcept {
+    [[nodiscard]] constexpr MASK_MATCH getCaptureCompareInterruptStatus(const TIMERA::CAPTURE_COMPARE reg, const TIMERA::INT mask) noexcept {
 
         switch (reg) {
             case CAPTURE_COMPARE::REGISTER0: {
                 MT::Universal::Register<m_regs[m_startCCTL]> cctl;
-                if (cctl.compare(mask)) return INT_MASK_MATCH::TRUE;
+                if (cctl.compare(mask)) return MASK_MATCH::TRUE;
                 else
-                    return INT_MASK_MATCH::FALSE;
+                    return MASK_MATCH::FALSE;
             }
 
             case CAPTURE_COMPARE::REGISTER1: {
                 MT::Universal::Register<m_regs[m_startCCTL + 1]> cctl;
-                if (cctl.compare(mask)) return INT_MASK_MATCH::TRUE;
+                if (cctl.compare(mask)) return MASK_MATCH::TRUE;
                 else
-                    return INT_MASK_MATCH::FALSE;
+                    return MASK_MATCH::FALSE;
             }
             default: break;
         }
@@ -979,9 +979,9 @@ struct CCTLx {
             switch (reg) {
                 case CAPTURE_COMPARE::REGISTER2: {
                     MT::Universal::Register<m_regs[m_startCCTL + 2]> cctl;
-                    if (cctl.compare(mask)) return INT_MASK_MATCH::TRUE;
+                    if (cctl.compare(mask)) return MASK_MATCH::TRUE;
                     else
-                        return INT_MASK_MATCH::FALSE;
+                        return MASK_MATCH::FALSE;
                 }
                 default: break;
             }
@@ -992,16 +992,16 @@ struct CCTLx {
 
                 case CAPTURE_COMPARE::REGISTER3: {
                     MT::Universal::Register<m_regs[m_startCCTL + 3]> cctl;
-                    if (cctl.compare(mask)) return INT_MASK_MATCH::TRUE;
+                    if (cctl.compare(mask)) return MASK_MATCH::TRUE;
                     else
-                        return INT_MASK_MATCH::FALSE;
+                        return MASK_MATCH::FALSE;
                 }
 
                 case CAPTURE_COMPARE::REGISTER4: {
                     MT::Universal::Register<m_regs[m_startCCTL + 4]> cctl;
-                    if (cctl.compare(mask)) return INT_MASK_MATCH::TRUE;
+                    if (cctl.compare(mask)) return MASK_MATCH::TRUE;
                     else
-                        return INT_MASK_MATCH::FALSE;
+                        return MASK_MATCH::FALSE;
                 }
                 default: break;
             }
@@ -1012,22 +1012,22 @@ struct CCTLx {
 
                 case CAPTURE_COMPARE::REGISTER5: {
                     MT::Universal::Register<m_regs[m_startCCTL + 5]> cctl;
-                    if (cctl.compare(mask)) return INT_MASK_MATCH::TRUE;
+                    if (cctl.compare(mask)) return MASK_MATCH::TRUE;
                     else
-                        return INT_MASK_MATCH::FALSE;
+                        return MASK_MATCH::FALSE;
                 }
 
                 case CAPTURE_COMPARE::REGISTER6: {
                     MT::Universal::Register<m_regs[m_startCCTL + 6]> cctl;
-                    if (cctl.compare(mask)) return INT_MASK_MATCH::TRUE;
+                    if (cctl.compare(mask)) return MASK_MATCH::TRUE;
                     else
-                        return INT_MASK_MATCH::FALSE;
+                        return MASK_MATCH::FALSE;
                 }
                 default: break;
             }
         }
 
-        return INT_MASK_MATCH::FALSE;
+        return MASK_MATCH::FALSE;
     }
 
 

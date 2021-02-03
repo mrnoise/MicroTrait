@@ -25,17 +25,17 @@ void runInt() noexcept {
     assert(SFRIE1_L == 0x00);
 
     SFRIFG1_L |= WDTIFG;
-    assert(sfr.getInterruptStatus(INT::WATCHDOG_INTERVAL_TIMER) == MT::MSP430::INT_MASK_MATCH::TRUE);
+    assert(sfr.getInterruptStatus(INT::WATCHDOG_INTERVAL_TIMER) == MT::MSP430::MASK_MATCH::TRUE);
 
     sfr.clearInterruptStatus(INT::WATCHDOG_INTERVAL_TIMER);
-    assert(sfr.getInterruptStatus(INT::WATCHDOG_INTERVAL_TIMER) == MT::MSP430::INT_MASK_MATCH::FALSE);
+    assert(sfr.getInterruptStatus(INT::WATCHDOG_INTERVAL_TIMER) == MT::MSP430::MASK_MATCH::FALSE);
     assert(!(SFRIFG1_L & WDTIFG));
 
     SFRIFG1_L |= NMIIE;
-    assert(sfr.getInterruptStatus(INT::NMI_PIN) == MT::MSP430::INT_MASK_MATCH::TRUE);
+    assert(sfr.getInterruptStatus(INT::NMI_PIN) == MT::MSP430::MASK_MATCH::TRUE);
 
     sfr.clearInterruptStatus(INT::NMI_PIN);
-    assert(sfr.getInterruptStatus(INT::NMI_PIN) == MT::MSP430::INT_MASK_MATCH::FALSE);
+    assert(sfr.getInterruptStatus(INT::NMI_PIN) == MT::MSP430::MASK_MATCH::FALSE);
     assert(!(SFRIFG1_L & NMIIE));
 }
 

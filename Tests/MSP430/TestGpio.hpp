@@ -938,14 +938,14 @@ void runPortInterrupt() noexcept {
     assert(P1IE == 0x00);
 
     P1IFG |= 0xFF;
-    assert(p1.getInterruptStatus(PIN::ALL) == MT::MSP430::INT_MASK_MATCH::TRUE);
+    assert(p1.getInterruptStatus(PIN::ALL) == MT::MSP430::MASK_MATCH::TRUE);
 
     p1.clearInterrupt(PIN::P0 | PIN::P2 | PIN::P4 | PIN::P6);
-    assert(p1.getInterruptStatus(PIN::P1 | PIN::P3 | PIN::P5 | PIN::P7) == MT::MSP430::INT_MASK_MATCH::TRUE);
+    assert(p1.getInterruptStatus(PIN::P1 | PIN::P3 | PIN::P5 | PIN::P7) == MT::MSP430::MASK_MATCH::TRUE);
 
     p1.clearInterrupt(PIN::P1 | PIN::P3 | PIN::P5 | PIN::P7);
     assert(P1IFG == 0x00);
-    assert(p1.getInterruptStatus(PIN::P0 | PIN::P2 | PIN::P4 | PIN::P6) == MT::MSP430::INT_MASK_MATCH::FALSE);
+    assert(p1.getInterruptStatus(PIN::P0 | PIN::P2 | PIN::P4 | PIN::P6) == MT::MSP430::MASK_MATCH::FALSE);
 #endif
 
 #if defined(__MSP430_HAS_PORT2_R__) || defined(__MSP430_HAS_PORT2__)
@@ -979,14 +979,14 @@ void runPortInterrupt() noexcept {
     assert(P2IE == 0x00);
 
     P2IFG |= 0xFF;
-    assert(p2.getInterruptStatus(PIN::ALL) == MT::MSP430::INT_MASK_MATCH::TRUE);
+    assert(p2.getInterruptStatus(PIN::ALL) == MT::MSP430::MASK_MATCH::TRUE);
 
     p2.clearInterrupt(PIN::P0 | PIN::P2 | PIN::P4 | PIN::P6);
-    assert(p2.getInterruptStatus(PIN::P1 | PIN::P3 | PIN::P5 | PIN::P7) == MT::MSP430::INT_MASK_MATCH::TRUE);
+    assert(p2.getInterruptStatus(PIN::P1 | PIN::P3 | PIN::P5 | PIN::P7) == MT::MSP430::MASK_MATCH::TRUE);
 
     p2.clearInterrupt(PIN::P1 | PIN::P3 | PIN::P5 | PIN::P7);
     assert(P2IFG == 0x00);
-    assert(p2.getInterruptStatus(PIN::P0 | PIN::P2 | PIN::P4 | PIN::P6) == MT::MSP430::INT_MASK_MATCH::FALSE);
+    assert(p2.getInterruptStatus(PIN::P0 | PIN::P2 | PIN::P4 | PIN::P6) == MT::MSP430::MASK_MATCH::FALSE);
 #endif
 
 #if defined(__MSP430_HAS_PORT3_R__) || defined(__MSP430_HAS_PORT3__)
@@ -1020,14 +1020,14 @@ void runPortInterrupt() noexcept {
     assert(P3IE == 0x00);
 
     P3IFG |= 0xFF;
-    assert(p3.getInterruptStatus(PIN::ALL) == MT::MSP430::INT_MASK_MATCH::TRUE);
+    assert(p3.getInterruptStatus(PIN::ALL) == MT::MSP430::MASK_MATCH::TRUE);
 
     p3.clearInterrupt(PIN::P0 | PIN::P2 | PIN::P4 | PIN::P6);
-    assert(p3.getInterruptStatus(PIN::P1 | PIN::P3 | PIN::P5 | PIN::P7) == MT::MSP430::INT_MASK_MATCH::TRUE);
+    assert(p3.getInterruptStatus(PIN::P1 | PIN::P3 | PIN::P5 | PIN::P7) == MT::MSP430::MASK_MATCH::TRUE);
 
     p3.clearInterrupt(PIN::P1 | PIN::P3 | PIN::P5 | PIN::P7);
     assert(P3IFG == 0x00);
-    assert(p3.getInterruptStatus(PIN::P0 | PIN::P2 | PIN::P4 | PIN::P6) == MT::MSP430::INT_MASK_MATCH::FALSE);
+    assert(p3.getInterruptStatus(PIN::P0 | PIN::P2 | PIN::P4 | PIN::P6) == MT::MSP430::MASK_MATCH::FALSE);
 #endif
 
 #if defined(__MSP430_HAS_PORT4_R__) || defined(__MSP430_HAS_PORT4__)
@@ -1061,14 +1061,14 @@ void runPortInterrupt() noexcept {
     assert(P4IE == 0x00);
 
     P4IFG |= 0xFF;
-    assert(p4.getInterruptStatus(PIN::ALL) == MT::MSP430::INT_MASK_MATCH::TRUE);
+    assert(p4.getInterruptStatus(PIN::ALL) == MT::MSP430::MASK_MATCH::TRUE);
 
     p4.clearInterrupt(PIN::P0 | PIN::P2 | PIN::P4 | PIN::P6);
-    assert(p4.getInterruptStatus(PIN::P1 | PIN::P3 | PIN::P5 | PIN::P7) == MT::MSP430::INT_MASK_MATCH::TRUE);
+    assert(p4.getInterruptStatus(PIN::P1 | PIN::P3 | PIN::P5 | PIN::P7) == MT::MSP430::MASK_MATCH::TRUE);
 
     p4.clearInterrupt(PIN::P1 | PIN::P3 | PIN::P5 | PIN::P7);
     assert(P4IFG == 0x00);
-    assert(p4.getInterruptStatus(PIN::P0 | PIN::P2 | PIN::P4 | PIN::P6) == MT::MSP430::INT_MASK_MATCH::FALSE);
+    assert(p4.getInterruptStatus(PIN::P0 | PIN::P2 | PIN::P4 | PIN::P6) == MT::MSP430::MASK_MATCH::FALSE);
 #endif
 }
 

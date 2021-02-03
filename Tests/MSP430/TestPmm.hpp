@@ -44,13 +44,13 @@ void runInterrupt() noexcept {
 #if defined(__MSP430_HAS_PMM_FRAM__) || defined(__MSP430_HAS_PMM_FR5xx__)
 
     //Not all Flags can be tested because dependency on system start up
-    assert(pmm.getInterruptStatus(MT::MSP430::PMM::INT::RST) == INT_MASK_MATCH::TRUE);
+    assert(pmm.getInterruptStatus(MT::MSP430::PMM::INT::RST) == MASK_MATCH::TRUE);
     pmm.clearInterrupt(MT::MSP430::PMM::INT::RST);
     assert((PMMIFG & PMMRSTIFG) == 0);
 
-    assert(pmm.getInterruptStatus(MT::MSP430::PMM::INT::SVSH) == INT_MASK_MATCH::FALSE);
-    assert(pmm.getInterruptStatus(MT::MSP430::PMM::INT::BOR) == INT_MASK_MATCH::FALSE);
-    assert(pmm.getInterruptStatus(MT::MSP430::PMM::INT::POR) == INT_MASK_MATCH::FALSE);
+    assert(pmm.getInterruptStatus(MT::MSP430::PMM::INT::SVSH) == MASK_MATCH::FALSE);
+    assert(pmm.getInterruptStatus(MT::MSP430::PMM::INT::BOR) == MASK_MATCH::FALSE);
+    assert(pmm.getInterruptStatus(MT::MSP430::PMM::INT::POR) == MASK_MATCH::FALSE);
 
 #endif
 }

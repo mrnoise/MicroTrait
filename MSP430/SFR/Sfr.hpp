@@ -196,15 +196,15 @@ struct Sfr {
 	*  Sfr sfr{};
 	*  if(sfr.getInterruptStatus(SFR::INT::WATCHDOG_INTERVAL_TIMER | SFR::INT::OSCILLATOR_FAULT) == INT_MASK_MATCH::TRUE) doSomething();  \endcode
 	*@tparam BIT use enumeration SFR::INT
-	*@return if all the given bits are set or not (MT::MSP430::INT_MASK_MATCH)
+	*@return if all the given bits are set or not (MT::MSP430::MASK_MATCH)
 	****************************************************************
 	*/
     template<typename BIT, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<BIT>::enable, BIT>>
-    [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const BIT &bit) noexcept {
+    [[nodiscard]] constexpr MASK_MATCH getInterruptStatus(const BIT &bit) noexcept {
         static_assert(MT::Misc::Meta::compareBareType<MT::MSP430::SFR::INT, BIT>(), "input must be SFR::INT enum");
-        if (m_if.compare(bit)) return INT_MASK_MATCH::TRUE;
+        if (m_if.compare(bit)) return MASK_MATCH::TRUE;
         else
-            return INT_MASK_MATCH::FALSE;
+            return MASK_MATCH::FALSE;
     }
 
     /**

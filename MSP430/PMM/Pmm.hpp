@@ -370,15 +370,15 @@ struct Pmm {
 	* using namespace MT::MSP430;
 	*
 	*  Pmm pmm{};
-	*  if(pmm.getInterruptStatus(PMM::INT::BOR | PMM::INT::POR) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
+	*  if(pmm.getInterruptStatus(PMM::INT::BOR | PMM::INT::POR) == MT::MSP430::MASK_MATCH::TRUE) doSomething(); \endcode
 	*@param inter -> use enumeration PMM::INT
-	*@return if all the given bits are set or not (INT_MASK_MATCH)
+	*@return if all the given bits are set or not (MT::MSP430::MASK_MATCH)
 	****************************************************************
 	*/
-    [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const PMM::INT inter) noexcept {
-        if (m_if.compare(inter)) return INT_MASK_MATCH::TRUE;
+    [[nodiscard]] constexpr MASK_MATCH getInterruptStatus(const PMM::INT inter) noexcept {
+        if (m_if.compare(inter)) return MASK_MATCH::TRUE;
         else
-            return INT_MASK_MATCH::FALSE;
+            return MASK_MATCH::FALSE;
     }
 
 
@@ -1559,15 +1559,15 @@ struct Pmm {
 	* using namespace MT::MSP430;
 	*
 	*  Pmm pmm{};
-	*  if(pmm.getInterruptStatus(PMM::INT::BOR | PMM::INT::POR) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
+	*  if(pmm.getInterruptStatus(PMM::INT::BOR | PMM::INT::POR) == MT::MSP430::MASK_MATCH::TRUE) doSomething(); \endcode
 	*@param inter -> use enumeration PMM::INT
-	*@return if all the given bits are set or not (INT_MASK_MATCH)
+	*@return if all the given bits are set or not (MT::MSP430::MASK_MATCH)
 	****************************************************************
 	*/
-    [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const PMM::INT inter) noexcept {
-        if (m_if.compare(inter)) return INT_MASK_MATCH::TRUE;
+    [[nodiscard]] constexpr MASK_MATCH getInterruptStatus(const PMM::INT inter) noexcept {
+        if (m_if.compare(inter)) return MASK_MATCH::TRUE;
         else
-            return INT_MASK_MATCH::FALSE;
+            return MASK_MATCH::FALSE;
     }
 };
 }// namespace MT::MSP430
@@ -1755,19 +1755,19 @@ struct Pmm {
 	*  Pmm pmm{};
 	*  pmm.disableInterrupt(PMM::INT::LPM45); \endcode
 	*@param inter -> use enumeration PMM::INT
-	*@return if all the given bits are set or not (INT_MASK_MATCH)
+	*@return if all the given bits are set or not (MT::MSP430::MASK_MATCH)
 	****************************************************************
 	*/
-    constexpr INT_MASK_MATCH disableInterrupt(const PMM::INT inter) noexcept {
+    constexpr MASK_MATCH disableInterrupt(const PMM::INT inter) noexcept {
 
         const BIT     sum  = MT::Details::orSum(inter);
         const uint8_t mask = static_cast<uint8_t>(sum);
 
-        if ((mask & VMONIE) && (VMONCTL & VMONIFG)) return INT_MASK_MATCH::TRUE;
+        if ((mask & VMONIE) && (VMONCTL & VMONIFG)) return MASK_MATCH::TRUE;
         else if (mask & LPM45IFG)
-            return INT_MASK_MATCH::TRUE;
+            return MASK_MATCH::TRUE;
 
-        return INT_MASK_MATCH::FALSE;
+        return MASK_MATCH::FALSE;
     }
 
     /**
