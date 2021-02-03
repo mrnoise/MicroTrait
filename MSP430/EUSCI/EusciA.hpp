@@ -661,7 +661,7 @@ struct SPI {
     /**
 	* @ingroup groupFuncsMSP430SPI_EUSCI_A
 	****************************************************************
-	* @briefReceives a byte that has been sent to the SPI Module
+	* @brief Receives a byte that has been sent to the SPI Module
 	*
 	* @details
 	* Usage: \code {.cpp}
