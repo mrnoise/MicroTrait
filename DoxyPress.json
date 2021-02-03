@@ -5,6 +5,7 @@
         "clang-flags": [
             ""
         ],
+        "clang-include-input-source": true,
         "clang-parsing": false,
         "clang-use-headers": true
     },
@@ -28,6 +29,7 @@
         "extract-local-methods": false,
         "extract-package": false,
         "extract-private": false,
+        "extract-private-virtual": false,
         "extract-static": false,
         "file-version-filter": "",
         "force-local-includes": false,
@@ -64,6 +66,7 @@
         "ns-alias": [
             ""
         ],
+        "python-docstring": false,
         "qt-auto-brief": false,
         "repeat-brief": true,
         "separate-member-pages": false,
@@ -140,7 +143,6 @@
         "external-groups": true,
         "external-pages": true,
         "generate-tagfile": "",
-        "perl-path": "/usr/bin/perl",
         "tag-files": [
             ""
         ]
@@ -279,6 +281,7 @@
         "warn-doc-error": true,
         "warn-format": "$file:$line: $text",
         "warn-logfile": "",
+        "warn-param-mismatch": false,
         "warn-undoc": true,
         "warn-undoc-param": false,
         "warnings": true
@@ -313,6 +316,8 @@
         "enum-values-per-line": 4,
         "external-links-in-window": false,
         "formula-fontsize": 10,
+        "formula-format": "",
+        "formula-macrofile": "",
         "formula-transparent": true,
         "generate-html": true,
         "generate-treeview": true,
@@ -420,6 +425,7 @@
     },
     "output-xml": {
         "generate-xml": false,
+        "xml-include-ns-members": false,
         "xml-output": "xml",
         "xml-program-listing": true
     },
