@@ -267,7 +267,7 @@ struct Register {
     /**
 	* @ingroup groupFuncsReg
 	****************************************************************
-	* @brief returns the content of the underlyoing register
+	* @brief returns the content of the underlying register
 	* <br> equivalent to C register access -> return *REG;
 	* @details
 	* Usage: \code {.cpp}
@@ -279,6 +279,22 @@ struct Register {
 	*/
     [[nodiscard]] constexpr auto get() noexcept {
         return *REG;
+    }
+
+    /**
+	* @ingroup groupFuncsReg
+	****************************************************************
+	* @brief returns the address in memory of the underlying register
+	* @details
+	* Usage: \code {.cpp}
+	*  MT::Universal::Register<&HWRegister> reg1;
+	*  if (reg1.getAddress() == 0xFF00) doSomething();
+	*  if (reg1.getAddress() == 0x00FF) doSomeOtherThing(); \endcode
+	*@return the content
+	****************************************************************
+	*/
+    [[nodiscard]] constexpr auto getAddress() noexcept {
+        return std::addressof(*REG);
     }
 
     /**
