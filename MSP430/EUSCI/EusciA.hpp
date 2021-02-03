@@ -125,8 +125,7 @@ enum class EUSCIA_UART_STATUS : uint16_t {
     RECEIVE_ERROR    = (UCRXERR),
     ADDRESS_RECEIVED = (UCADDR),
     IDLELINE         = (UCIDLE),
-    BUSY             = (UCBUSY),
-
+    BUSY             = (UCBUSY)
 };
 template<>
 struct enable_Enum_bits<EUSCIA_UART_STATUS> {
@@ -152,6 +151,24 @@ template<>
 struct enable_Enum_bits<volatile EUSCIA_SPI_INT> {
     static constexpr bool enable = true;
 };
+
+
+enum class EUSCIA_SPI_STATUS : uint16_t {
+    LISTEN_ENABLE = (UCLISTEN),
+    FRAMING_ERROR = (UCFE),
+    OVERRUN_ERROR = (UCOE),
+    BUSY          = (UCBUSY)
+};
+template<>
+struct enable_Enum_bits<EUSCIA_SPI_STATUS> {
+    static constexpr bool enable = true;
+};
+
+template<>
+struct enable_Enum_bits<volatile EUSCIA_SPI_STATUS> {
+    static constexpr bool enable = true;
+};
+
 }// namespace MT::Misc
 
 namespace MT::MSP430::EUSCIA::UART {
@@ -310,14 +327,550 @@ namespace MT::MSP430::EUSCIA::SPI {
 /**
 * @ingroup groupEnumsMSP430SPI_EUSCI_A
 ****************************************************************
-* @brief EUSCI A SPI interrupt types
+* @brief EUSCI A SPI interrupt type
 ****************************************************************
 */
 using INT = MT::Misc::EUSCIA_SPI_INT;
 
 
+/**
+* @ingroup groupEnumsMSP430SPI_EUSCI_A
+****************************************************************
+* @brief EUSCI A SPI status type
+****************************************************************
+*/
+using STATUS = MT::Misc::EUSCIA_SPI_STATUS;
+
+
+/**
+* @ingroup groupEnumsMSP430SPI_EUSCI_A
+****************************************************************
+* @brief SPI Clockphase
+****************************************************************
+*/
+enum class CLOCKPHASE : uint16_t {
+    DATA_CHANGED_ONFIRST_CAPTURED_ON_NEXT = (0x0000),
+    DATA_CAPTURED_ONFIRST_CHANGED_ON_NEXT = (UCCKPH)
+};
+
+/**
+* @ingroup groupEnumsMSP430SPI_EUSCI_A
+****************************************************************
+* @brief SPI Endianness -> MSB or LSB First
+****************************************************************
+*/
+enum class ENDIAN : uint16_t {
+    LSB_FIRST = (0x0000),
+    MSB_FIRST = (UCMSB)
+};
+
+
+/**
+* @ingroup groupEnumsMSP430SPI_EUSCI_A
+****************************************************************
+* @brief SPI Clockphase
+****************************************************************
+*/
+enum class CLOCKPOLARITY : uint16_t {
+    INACTIVITY_LOW  = (0x0000),
+    INACTIVITY_HIGH = (UCCKPL)
+};
+
+/**
+* @ingroup groupEnumsMSP430SPI_EUSCI_A
+****************************************************************
+* @brief SPI Clocksources
+****************************************************************
+*/
+enum class CLOCKSOURCE : uint16_t {
+#if defined(UCSSEL__UCLK)
+    UCLK = (UCSSEL__UCLK),
+#endif
+
+#if defined(UCSSEL__SMCLK)
+    SMCLK = (UCSSEL__SMCLK),
+#endif
+
+#if defined(UCSSEL__ACLK)
+    ACLK = (UCSSEL__ACLK),
+#endif
+
+#if defined(UCSSEL__MODCLK)
+    MODCLK = (UCSSEL__MODCLK)
+#endif
+};
+
+/**
+* @ingroup groupEnumsMSP430SPI_EUSCI_A
+****************************************************************
+* @brief SPI Operating modes
+****************************************************************
+*/
+enum class MODE : uint16_t {
+    WITHOUT_CHIPSELECT     = (UCMODE_0),
+    CHIPSELECT_ACTIVE_HIGH = (UCMODE_1),
+    CHIPSELECT_ACTIVE_LOW  = (UCMODE_2)
+};
+
+
+/**
+* @ingroup groupEnumsMSP430SPI_EUSCI_A
+****************************************************************
+* @brief SPI 4 Pin functionality
+****************************************************************
+*/
+enum class FUNCIONALITY_4PINS : uint16_t {
+    PREVENT_CONFLICTS_WITH_OTHER_MASTERS = (0x0000),
+    ENABLE_SIGNAL_FOR_4WIRE_SLAVE        = (UCSTEM)
+};
+
+
+/**
+* @ingroup groupEnumsMSP430SPI_EUSCI_A
+****************************************************************
+* @brief SPI Busy state
+****************************************************************
+*/
+enum class BUSY : uint16_t {
+    NO  = (0x0000),
+    YES = (UCBUSY)
+};
+
+
+/**
+* @ingroup groupEnumsMSP430SPI_EUSCI_A
+****************************************************************
+* @brief Parameter structure to init SPI master
+****************************************************************
+*/
+using initMasterParam = struct {
+    CLOCKSOURCE   clkSource;
+    uint32_t      clkSourceFrequencyInHz;
+    uint32_t      desiredSpiClockInHz;
+    ENDIAN        msbOrLsbFirst;
+    CLOCKPHASE    clkPhase;
+    CLOCKPOLARITY clkPolarity;
+    MODE          mode;
+};
+
+/**
+* @ingroup groupEnumsMSP430SPI_EUSCI_A
+****************************************************************
+* @brief Parameter structure to init SPI slave
+****************************************************************
+*/
+using initSlaveParam = struct {
+    ENDIAN        msbOrLsbFirst;
+    CLOCKPHASE    clkPhase;
+    CLOCKPOLARITY clkPolarity;
+    MODE          mode;
+};
+
+/**
+* @ingroup groupEnumsMSP430SPI_EUSCI_A
+****************************************************************
+* @brief Parameter structure to change SPI master clock
+****************************************************************
+*/
+using changeMasterClockParam = struct {
+    uint32_t clkSourceFrequencyInHz;
+    uint32_t desiredSpiClockInHz;
+};
+
 }// namespace MT::MSP430::EUSCIA::SPI
 
+
+namespace MT::MSP430::EUSCIA::SPI::Internal {
+
+using namespace MT::Misc::Cast;
+
+template<volatile auto *CTLW0, volatile auto *BRW, volatile auto *MCTLW, volatile auto *STATW, volatile auto *RXBUF, volatile auto *TXBUF, volatile auto *IE, volatile auto *IFG>
+struct SPI {
+
+  private:
+    MT::Universal::Register<CTLW0> m_ctlw0{};
+    MT::Universal::Register<BRW>   m_brw{};
+    MT::Universal::Register<MCTLW> m_mctlw{};
+    MT::Universal::Register<STATW> m_statw{};
+    MT::Universal::Register<RXBUF> m_rxbuf{};
+    MT::Universal::Register<TXBUF> m_txbuf{};
+    MT::Universal::Register<IE>    m_ie{};
+    MT::Universal::Register<IFG>   m_ifg{};
+
+  public:
+    /**
+	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+	****************************************************************
+	* @brief Initializes the SPI Master block
+	*
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	*  SPI::initMasterParam param{
+    *    SPI::CLOCKSOURCE::SMCLK,
+    *    1'000'000,
+    *    400'000,
+    *    SPI::ENDIAN::MSB_FIRST,
+    *    SPI::CLOCKPHASE::DATA_CAPTURED_ONFIRST_CHANGED_ON_NEXT,
+    *    SPI::CLOCKPOLARITY::INACTIVITY_HIGH,
+    *    SPI::MODE::WITHOUT_CHIPSELECT
+    * };
+	*
+	* SPI::A1 a1;
+	* a1.initMaster(param); \endcode
+	*
+	*@param param -> parameter to initialize SPI master -> use parameter struct SPI::initMasterParam
+	****************************************************************
+	*/
+    constexpr void initMaster(const initMasterParam &param) noexcept {
+
+        const uint16_t stem = m_ctlw0.get() & UCSTEM;
+
+        m_ctlw0.override(UCSWRST | toUnderlyingType(param.clkSource) | toUnderlyingType(param.msbOrLsbFirst) | toUnderlyingType(param.clkPhase)
+                         | toUnderlyingType(param.clkPolarity) | (UCMST) | (UCSYNC) | toUnderlyingType(param.mode) | (stem));
+        m_brw.override(param.clkSourceFrequencyInHz / param.desiredSpiClockInHz);
+        m_mctlw.override(0);
+    }
+
+    /**
+   	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+   	****************************************************************
+   	* @brief Selects 4-Pin Functionality
+   	*
+   	* @details
+   	* Usage: \code {.cpp}
+   	* using namespace MT::MSP430::EUSCIA;
+   	*
+   	* SPI::A1 a1;
+   	* a1.select4PinFunctionality(SPI::FUNCIONALITY_4PINS::ENABLE_SIGNAL_FOR_4WIRE_SLAVE); \endcode
+   	*
+   	*@param pins -> functionality for 4 pin SPI mode -> use enumeration SPI::FUNCIONALITY_4PINS
+   	****************************************************************
+   	*/
+    constexpr void select4PinFunctionality(const FUNCIONALITY_4PINS pins) noexcept {
+        m_ctlw0.clear(UCSTEM);
+        m_ctlw0.set(toUnderlyingType(pins));
+    }
+
+    /**
+	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+	****************************************************************
+	* @brief  Changes the SPI Master clock. At the end of this function call, SPI module is left enabled.
+	*
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	*  SPI::changeMasterClockParam clkParam{
+	*    1'000'000,
+	*    400'000
+	* };
+	*
+	* SPI::A1 a1;
+	* a1.changeMasterClock(clkParam); \endcode
+	*
+	*@param param -> parameter to change SPI master clock -> use parameter struct SPI::changeMasterClockParam
+	****************************************************************
+	*/
+    constexpr void changeMasterClock(const changeMasterClockParam &param) noexcept {
+        m_ctlw0.set(UCSWRST);
+        m_brw.override(param.clkSourceFrequencyInHz / param.desiredSpiClockInHz);
+        m_ctlw0.clear(UCSWRST);
+    }
+
+    /**
+	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+	****************************************************************
+	* @brief Initializes the SPI Slave block
+	*
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	*  SPI::initSlaveParam param{
+	*    SPI::ENDIAN::MSB_FIRST,
+	*    SPI::CLOCKPHASE::DATA_CAPTURED_ONFIRST_CHANGED_ON_NEXT,
+	*    SPI::CLOCKPOLARITY::INACTIVITY_HIGH,
+	*    SPI::MODE::WITHOUT_CHIPSELECT
+	* };
+	*
+	* SPI::A1 a1;
+	* a1.initSlave(param); \endcode
+	*
+	*@param param -> parameter to initialize SPI slave -> use parameter struct SPI::initSlaveParam
+	****************************************************************
+	*/
+    constexpr void initSlave(const initSlaveParam &param) noexcept {
+        m_ctlw0.override(UCSWRST | toUnderlyingType(param.msbOrLsbFirst) | toUnderlyingType(param.clkPhase)
+                         | toUnderlyingType(param.clkPolarity) | (UCSYNC) | toUnderlyingType(param.mode));
+    }
+
+
+    /**
+	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+	****************************************************************
+	* @brief Changes the SPI clock phase and polarity. At the end of this function call, SPI module is left enabled.
+	*
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* SPI::A1 a1;
+	* a1.changeClockPhasePolarity(SPI::CLOCKPHASE::DATA_CAPTURED_ONFIRST_CHANGED_ON_NEXT,SPI::CLOCKPOLARITY::INACTIVITY_HIGH); \endcode
+	*
+	*@param phase -> clockphase to set -> use enumeration SPI::CLOCKPHASE
+	*@param pol -> clockpolarity to set -> use enumeration SPI::CLOCKPOLARITY
+	****************************************************************
+	*/
+    constexpr void changeClockPhasePolarity(const CLOCKPHASE phase, const CLOCKPOLARITY pol) noexcept {
+        m_ctlw0.set(UCSWRST);
+        m_ctlw0.clear(UCCKPH | UCCKPL);
+        m_ctlw0.set(toUnderlyingType(phase) | toUnderlyingType(pol));
+        m_ctlw0.clear(UCSWRST);
+    }
+
+
+    /**
+   	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+   	****************************************************************
+   	* @brief Transmits a byte from the SPI Module
+   	*
+   	* @details
+   	* Usage: \code {.cpp}
+   	* using namespace MT::MSP430::EUSCIA;
+   	*
+   	* SPI::A1 a1;
+   	* a1.transmitData(127); \endcode
+   	*
+   	*@tparam CONTEXT -> usage context of the function -> default is in interrupt context set to USAGE_CONTEXT::POLLING if used outside ISR
+   	*@param data -> data to send over SPI
+   	****************************************************************
+   	*/
+    template<USAGE_CONTEXT CONTEXT = USAGE_CONTEXT::IN_INTERRUPT>
+    constexpr void transmitData(const uint8_t data) noexcept {
+
+        if constexpr (CONTEXT == USAGE_CONTEXT::POLLING) {
+            while (!(m_ifg.get() & UCTXIFG))
+                ;
+        }
+        m_txbuf.override(data);
+    }
+
+
+    /**
+	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+	****************************************************************
+	* @briefReceives a byte that has been sent to the SPI Module
+	*
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* SPI::A1 a1;
+	* const unit8_t byte = a1.receiveData(); \endcode
+	*
+	*@tparam CONTEXT -> usage context of the function -> default is in interrupt context set to USAGE_CONTEXT::POLLING if used outside ISR
+	*@return data -> data recieved over SPI
+	****************************************************************
+	*/
+    template<USAGE_CONTEXT CONTEXT = USAGE_CONTEXT::IN_INTERRUPT>
+    [[nodiscard]] constexpr uint8_t receiveData() noexcept {
+
+        if constexpr (CONTEXT == USAGE_CONTEXT::POLLING) {
+            while (!(m_ifg.get() & UCRXIFG))
+                ;
+        }
+        return m_rxbuf.get();
+    }
+
+    /**
+ 	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+ 	****************************************************************
+ 	* @brief Enables individual SPI interrupt sources
+ 	* @details
+ 	* Usage: \code {.cpp}
+ 	* using namespace MT::MSP430::EUSCIA;
+ 	*
+ 	* SPI::A1 a1;
+	* a1.enableInterrupt(SPI::INT::RECEIVE | SPI::INT::TRANSMIT); \endcode
+	*
+ 	*@param base -> base interrupt sources to enable -> use Enumeration SPI::INT
+ 	****************************************************************
+ 	*/
+    constexpr void enableInterrupt(const INT base) noexcept {
+        m_ie.set(base);
+    }
+
+    /**
+	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+	****************************************************************
+	* @brief Disables individual SPI interrupt sources
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* SPI::A1 a1;
+	* a1.disableInterrupt(SPI::INT::RECEIVE | SPI::INT::TRANSMIT); \endcode
+	*
+	*@param base -> base interrupt sources to disable -> use Enumeration SPI::INT
+	****************************************************************
+	*/
+    constexpr void disableInterrupt(const INT base) noexcept {
+        m_ie.clear(base);
+    }
+
+    /**
+	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+	****************************************************************
+	* @brief Gets the current SPI interrupt status
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* SPI::A1 a1;
+	* if(a1.getInterruptStatus(SPI::INT::RECEIVE | SPI::INT::TRANSMIT) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
+	*
+	*@param base -> base interrupt sources to check for status -> use Enumeration SPI::INT
+	*@return if all the given base flags are set or not (MT::MSP430::MASK_MATCH)
+	****************************************************************
+	*/
+    [[nodiscard]] constexpr MASK_MATCH getInterruptStatus(const INT base) noexcept {
+        if (m_ifg.compare(base)) return MASK_MATCH::TRUE;
+        else
+            return MASK_MATCH::FALSE;
+    }
+
+
+    /**
+	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+	****************************************************************
+	* @brief Clears SPI interrupt sources
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* SPI::A1 a1;
+	* a1.clearInterrupt(SPI::INT::RECEIVE | SPI::INT::TRANSMIT); \endcode
+	*
+	*@param base -> base interrupt sources to clear -> use Enumeration SPI::INT
+	****************************************************************
+	*/
+    constexpr void clearInterrupt(const INT base) noexcept {
+        m_ifg.clear(base);
+    }
+
+    /**
+	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+	****************************************************************
+	* @brief Enables the SPI block
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* SPI::A1 a1;
+	* a1.enable(); \endcode
+	*
+	****************************************************************
+	*/
+    constexpr void enable() noexcept {
+        m_ctlw0.clear(UCSWRST);
+    }
+
+    /**
+  	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+  	****************************************************************
+  	* @brief Disables the SPI block
+  	* @details
+  	* Usage: \code {.cpp}
+  	* using namespace MT::MSP430::EUSCIA;
+  	*
+  	* SPI::A1 a1;
+  	* a1.disable(); \endcode
+  	*
+  	****************************************************************
+  	*/
+    constexpr void disable() noexcept {
+        m_ctlw0.set(UCSWRST);
+    }
+
+    /**
+   	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+   	****************************************************************
+   	* @brief Returns the address of the RX Buffer of the SPI for the DMA module
+   	* @details
+   	* Usage: \code {.cpp}
+   	* using namespace MT::MSP430::EUSCIA;
+   	*
+   	* SPI::A1 a1;
+   	* const auto rxBufAdr = a1.getReceiveBufferAddress(); \endcode
+   	*
+   	*@return Address of RX Buffer
+   	****************************************************************
+   	*/
+    [[nodiscard]] constexpr auto getReceiveBufferAddress() noexcept {
+        return m_rxbuf.getAddress();
+    }
+
+    /**
+   	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+   	****************************************************************
+   	* @brief Returns the address of the TX Buffer of the SPI for the DMA module
+   	* @details
+   	* Usage: \code {.cpp}
+   	* using namespace MT::MSP430::EUSCIA;
+   	*
+   	* SPI::A1 a1;
+   	* const auto txBufAdr = a1.getTransmitBufferAddress(); \endcode
+   	*
+   	*@return Address of TX Buffer
+   	****************************************************************
+   	*/
+    [[nodiscard]] constexpr auto getTransmitBufferAddress() noexcept {
+        return m_txbuf.getAddress();
+    }
+
+    /**
+	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+	****************************************************************
+	* @brief Indicates whether or not the SPI bus is busy.
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* SPI::A1 a1;
+	* if(a1.isBusy()) doSomething(); \endcode
+	*
+	*@return Address of TX Buffer
+	****************************************************************
+	*/
+    [[nodiscard]] constexpr bool isBusy() noexcept {
+        return (m_statw.get() & UCBUSY);
+    }
+
+
+    /**
+	* @ingroup groupFuncsMSP430SPI_EUSCI_A
+	****************************************************************
+	* @brief Gets the current SPI status flags
+	* @details
+	* Usage: \code {.cpp}
+	* using namespace MT::MSP430::EUSCIA;
+	*
+	* SPI::A1 a1;
+	* if(a1.queryStatusFlags(SPI::STATUS::FRAMING_ERROR | SPI::STATUS::OVERRUN_ERROR) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
+	*
+	*@param stat -> status flags to check for -> use Enumeration SPI::STATUS
+	*@return if all the given status flags are set or not (MT::MSP430::MASK_MATCH)
+	****************************************************************
+	*/
+    [[nodiscard]] constexpr MASK_MATCH queryStatusFlags(const STATUS stat) noexcept {
+        if (m_statw.compare(stat)) return MASK_MATCH::TRUE;
+        else
+            return MASK_MATCH::FALSE;
+    }
+};
+}// namespace MT::MSP430::EUSCIA::SPI::Internal
 
 namespace MT::MSP430::EUSCIA::UART::Internal {
 
@@ -365,7 +918,7 @@ struct UART {
 	* UART::A0 a0;
     * a0.init(param); \endcode
     *
-	*@param param -> parameter to initialize UART -> use enumeration UART::initParam
+	*@param param -> parameter to initialize UART -> use parameter struct UART::initParam
 	****************************************************************
 	*/
     constexpr void init(const initParam &param) noexcept {
@@ -386,12 +939,14 @@ struct UART {
 	* UART::A0 a0;
     * a0.transmitData(127); \endcode
     *
+    *@tparam CONTEXT -> usage context of the function -> default is in interrupt context set to USAGE_CONTEXT::POLLING if used outside ISR
 	*@param data -> data byte to transmit
 	****************************************************************
 	*/
+    template<USAGE_CONTEXT CONTEXT = USAGE_CONTEXT::IN_INTERRUPT>
     constexpr void transmitData(const uint8_t data) noexcept {
 
-        if (!(m_ie.get() & UCTXIE)) {
+        if constexpr (CONTEXT == USAGE_CONTEXT::POLLING) {
             while (!(m_ifg.get() & UCTXIFG))
                 ;
         }
@@ -410,12 +965,14 @@ struct UART {
    	* UART::A0 a0;
 	* const unit8_t byte = a0.receiveData(); \endcode
 	*
+	*@tparam CONTEXT -> usage context of the function -> default is in interrupt context set to USAGE_CONTEXT::POLLING if used outside ISR
    	*@return the byte received
    	****************************************************************
    	*/
+    template<USAGE_CONTEXT CONTEXT = USAGE_CONTEXT::IN_INTERRUPT>
     [[nodiscard]] constexpr uint8_t receiveData() noexcept {
 
-        if (!(m_ie.get() & UCRXIE)) {
+        if constexpr (CONTEXT == USAGE_CONTEXT::POLLING) {
             while (!(m_ifg.get() & UCRXIFG))
                 ;
         }
@@ -475,13 +1032,13 @@ struct UART {
 	* if(a0.getInterruptStatus(UART::INT::RECEIVE | UART::INT::TRANSMIT) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
 	*
 	*@param base -> base interrupt sources to check for status -> use Enumeration UART::INT
-	*@return if all the given base flags are set or not (MT::MSP430::INT_MASK_MATCH)
+	*@return if all the given base flags are set or not (MT::MSP430::MASK_MATCH)
 	****************************************************************
 	*/
-    [[nodiscard]] constexpr INT_MASK_MATCH getInterruptStatus(const INT base) noexcept {
-        if (m_ifg.compare(base)) return INT_MASK_MATCH::TRUE;
+    [[nodiscard]] constexpr MASK_MATCH getInterruptStatus(const INT base) noexcept {
+        if (m_ifg.compare(base)) return MASK_MATCH::TRUE;
         else
-            return INT_MASK_MATCH::FALSE;
+            return MASK_MATCH::FALSE;
     }
 
 
@@ -541,22 +1098,22 @@ struct UART {
     /**
    	* @ingroup groupFuncsMSP430UART_EUSCI_A
    	****************************************************************
-   	* @brief Gets the current UART status flags
+   	* @brief Gets the current SPI status flags
    	* @details
    	* Usage: \code {.cpp}
    	* using namespace MT::MSP430::EUSCIA;
    	*
-   	* UART::A0 a0;
-   	* if(a0.queryStatusFlags(UART::STATUS::RECEIVE_ERROR | UART::STATUS::FRAMING_ERROR) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
+   	* SPI::A1 a1;
+   	* if(a1.queryStatusFlags(UART::STATUS::RECEIVE_ERROR | UART::STATUS::FRAMING_ERROR) == INT_MASK_MATCH::TRUE) doSomething(); \endcode
    	*
-   	*@param stat -> status flags to check for -> use Enumeration UART::STATUS
-   	*@return if all the given status flags are set or not (MT::MSP430::INT_MASK_MATCH)
+   	*@param stat -> status flags to check for -> use Enumeration SPI::STATUS
+   	*@return if all the given status flags are set or not (MT::MSP430::MASK_MATCH)
    	****************************************************************
    	*/
-    [[nodiscard]] constexpr INT_MASK_MATCH queryStatusFlags(const STATUS stat) noexcept {
-        if (m_statw.compare(stat)) return INT_MASK_MATCH::TRUE;
+    [[nodiscard]] constexpr MASK_MATCH queryStatusFlags(const STATUS stat) noexcept {
+        if (m_statw.compare(stat)) return MASK_MATCH::TRUE;
         else
-            return INT_MASK_MATCH::FALSE;
+            return MASK_MATCH::FALSE;
     }
 
 
@@ -628,15 +1185,17 @@ struct UART {
 	* UART::A0 a0;
 	* a0.transmitBreak(); \endcode
 	*
+	*@tparam CONTEXT -> usage context of the function -> default is in interrupt context set to USAGE_CONTEXT::POLLING if used outside ISR
 	****************************************************************
 	*/
+    template<USAGE_CONTEXT CONTEXT = USAGE_CONTEXT::IN_INTERRUPT>
     constexpr void transmitBreak() noexcept {
         m_ctlw0.set(UCTXBRK);
         if (m_ctlw0.compare(toUnderlyingType(MODE::AUTOMATIC_BAUDRATE_DETECTION))) m_txbuf.override(0x55);
         else
             m_txbuf.override(0x00);
 
-        if (!(m_ie.get() & UCTXIE)) {
+        if constexpr (CONTEXT == USAGE_CONTEXT::POLLING) {
             while (!(m_ifg.get() & UCTXIFG))
                 ;
         }
@@ -657,7 +1216,7 @@ struct UART {
 	****************************************************************
 	*/
     [[nodiscard]] constexpr auto getReceiveBufferAddress() noexcept {
-        return m_rxbuf.get();
+        return m_rxbuf.getAddress();
     }
 
     /**
@@ -675,7 +1234,7 @@ struct UART {
 	****************************************************************
 	*/
     [[nodiscard]] constexpr auto getTransmitBufferAddress() noexcept {
-        return m_txbuf.get();
+        return m_txbuf.getAddress();
     }
 
 
@@ -721,8 +1280,28 @@ using A2 = Internal::UART<&UCA2CTLW0, &UCA2CTLW1, &UCA2BRW, &UCA2MCTLW, &UCA2STA
 using A3 = Internal::UART<&UCA3CTLW0, &UCA3CTLW1, &UCA3BRW, &UCA3MCTLW, &UCA3STATW, &UCA3RXBUF, &UCA3TXBUF, &UCA3ABCTL, &UCA3IRCTL, &UCA3IE, &UCA3IFG>;
 #endif
 
-
 }// namespace MT::MSP430::EUSCIA::UART
+
+
+namespace MT::MSP430::EUSCIA::SPI {
+
+#if defined(__MSP430_HAS_EUSCI_A0__)
+using A0 = Internal::SPI<&UCA0CTLW0, &UCA0BRW, &UCA0MCTLW, &UCA0STATW, &UCA0RXBUF, &UCA0TXBUF, &UCA0IE, &UCA0IFG>;
+#endif
+
+#if defined(__MSP430_HAS_EUSCI_A1__)
+using A1 = Internal::SPI<&UCA1CTLW0, &UCA1BRW, &UCA1MCTLW, &UCA1STATW, &UCA1RXBUF, &UCA1TXBUF, &UCA1IE, &UCA1IFG>;
+#endif
+
+#if defined(__MSP430_HAS_EUSCI_A2__)
+using A2 = Internal::UART<&UCA2CTLW0, &UCA2BRW, &UCA2MCTLW, &UCA2STATW, &UCA2RXBUF, &UCA2TXBUF, &UCA2IE, &UCA2IFG>;
+#endif
+
+#if defined(__MSP430_HAS_EUSCI_A3__)
+using A3 = Internal::UART<&UCA3CTLW0, &UCA3BRW, &UCA3MCTLW, &UCA3STATW, &UCA3RXBUF, &UCA3TXBUF, &UCA3IE, &UCA3IFG>;
+#endif
+
+}// namespace MT::MSP430::EUSCIA::SPI
 
 
 #endif
