@@ -135,6 +135,156 @@ var NAVTREE =
             [ "initParam", "group__groupParamsMSP430UART__EUSCI__A.html#ga430e96ba4dc4385b28f3adfde8debccd", null ]
           ] ]
         ] ],
+        [ "EUSCI B", "group__groupMSP430EUSCI__B.html", [
+          [ "I2C Enums", "group__groupEnumsMSP430I2C__EUSCI__B.html", [
+            [ "INT", "group__groupEnumsMSP430I2C__EUSCI__B.html#gaea24f1297dd94b16531c1325717d4a1b", null ],
+            [ "AUTOSTOP", "group__groupEnumsMSP430I2C__EUSCI__B.html#gabee6a8f29bcadbd1f2df73c0ed12c681", [
+              [ "OFF", "group__groupEnumsMSP430I2C__EUSCI__B.html#ggabee6a8f29bcadbd1f2df73c0ed12c681a88559a0cfd8250c9d65970cc145c92d4", null ],
+              [ "SET_BYTECOUNT_THRESHOLD_FLAG", "group__groupEnumsMSP430I2C__EUSCI__B.html#ggabee6a8f29bcadbd1f2df73c0ed12c681a016d89ad07c6c8f53962f463e3721446", null ],
+              [ "SEND_STOP_AUTOMATICALLY_ON_BYTECOUNT_THRESHOLD", "group__groupEnumsMSP430I2C__EUSCI__B.html#ggabee6a8f29bcadbd1f2df73c0ed12c681af28b70683f549d56c9a5ab25ceaac62f", null ]
+            ] ],
+            [ "BUSY", "group__groupEnumsMSP430I2C__EUSCI__B.html#ga409780364562b91ac8e13c4789b76e59", [
+              [ "NO", "group__groupEnumsMSP430I2C__EUSCI__B.html#gga409780364562b91ac8e13c4789b76e59ac2f3f489a00553e7a01d369c103c7251", null ],
+              [ "YES", "group__groupEnumsMSP430I2C__EUSCI__B.html#gga409780364562b91ac8e13c4789b76e59a7469a286259799e5b37e5db9296f00b3", null ]
+            ] ],
+            [ "CLOCKSOURCE", "group__groupEnumsMSP430I2C__EUSCI__B.html#gadf62a15fae15a8e4ec6203b05dad4d64", [
+              [ "UCLK", "group__groupEnumsMSP430I2C__EUSCI__B.html#ggadf62a15fae15a8e4ec6203b05dad4d64a53e3e0766dc25ff61da8b0a5d5d43fe1", null ],
+              [ "SMCLK", "group__groupEnumsMSP430I2C__EUSCI__B.html#ggadf62a15fae15a8e4ec6203b05dad4d64ab88c7c2fc640bdbd4125b363c2c018de", null ],
+              [ "ACLK", "group__groupEnumsMSP430I2C__EUSCI__B.html#ggadf62a15fae15a8e4ec6203b05dad4d64a1320ed38f3060289a221f2aa841d7216", null ],
+              [ "MODCLK", "group__groupEnumsMSP430I2C__EUSCI__B.html#ggadf62a15fae15a8e4ec6203b05dad4d64a2287b51f5f8d4d4df9f4d4e6cb24f883", null ]
+            ] ],
+            [ "DATARATE", "group__groupEnumsMSP430I2C__EUSCI__B.html#gab99c18e8326379dccd90ba94a14a171a", [
+              [ "_400KBPS", "group__groupEnumsMSP430I2C__EUSCI__B.html#ggab99c18e8326379dccd90ba94a14a171aae804f8459cd461f2fe76907baa7a537e", null ],
+              [ "_100KBPS", "group__groupEnumsMSP430I2C__EUSCI__B.html#ggab99c18e8326379dccd90ba94a14a171aa5097d546b124e7f8d997845dac92415b", null ]
+            ] ],
+            [ "MODE", "group__groupEnumsMSP430I2C__EUSCI__B.html#gacd367043db8cfff13180aca647b2d45b", [
+              [ "TX", "group__groupEnumsMSP430I2C__EUSCI__B.html#ggacd367043db8cfff13180aca647b2d45ba869036c9d97cf6593c6f1c2ccfd99a49", null ],
+              [ "RX", "group__groupEnumsMSP430I2C__EUSCI__B.html#ggacd367043db8cfff13180aca647b2d45baf9c24782c24c237d16e79f18e2fa9046", null ]
+            ] ],
+            [ "SLAVE_ADDRESS", "group__groupEnumsMSP430I2C__EUSCI__B.html#ga80106f39dfd770a9f367b79ed2d90a45", [
+              [ "ENABLED", "group__groupEnumsMSP430I2C__EUSCI__B.html#gga80106f39dfd770a9f367b79ed2d90a45ac8cf6eea8f096ed51160b484d97c5bbd", null ],
+              [ "DISABLED", "group__groupEnumsMSP430I2C__EUSCI__B.html#gga80106f39dfd770a9f367b79ed2d90a45a055c1a591abb0e8cd86dc969727bcc0b", null ]
+            ] ],
+            [ "SLAVE_ADDRESS_OFFSET", "group__groupEnumsMSP430I2C__EUSCI__B.html#gaac19b32dea33997988ef226fb09ada48", [
+              [ "_0", "group__groupEnumsMSP430I2C__EUSCI__B.html#ggaac19b32dea33997988ef226fb09ada48aa764b4bf13a360c7ac2a35ec4ca96c95", null ],
+              [ "_1", "group__groupEnumsMSP430I2C__EUSCI__B.html#ggaac19b32dea33997988ef226fb09ada48a5d98ec0427152056397e9e35f357be87", null ],
+              [ "_2", "group__groupEnumsMSP430I2C__EUSCI__B.html#ggaac19b32dea33997988ef226fb09ada48a26e3d8bac39f9313d584a6025bd7544d", null ],
+              [ "_3", "group__groupEnumsMSP430I2C__EUSCI__B.html#ggaac19b32dea33997988ef226fb09ada48af806252045a28179caaf0ec8f0b5f298", null ]
+            ] ],
+            [ "START_STATE", "group__groupEnumsMSP430I2C__EUSCI__B.html#ga3124b27875a64242dff1554b94e00e60", [
+              [ "SEND_COMPLETE", "group__groupEnumsMSP430I2C__EUSCI__B.html#gga3124b27875a64242dff1554b94e00e60a27df0a881d0ce83e60675e96fcaabea1", null ],
+              [ "SENDING", "group__groupEnumsMSP430I2C__EUSCI__B.html#gga3124b27875a64242dff1554b94e00e60ac9c9fa46a3628497a4e7f74444ae4568", null ]
+            ] ],
+            [ "STOP_STATE", "group__groupEnumsMSP430I2C__EUSCI__B.html#ga469410b45269d7217a4ff7c8ae7bc41a", [
+              [ "SEND_COMPLETE", "group__groupEnumsMSP430I2C__EUSCI__B.html#gga469410b45269d7217a4ff7c8ae7bc41aa27df0a881d0ce83e60675e96fcaabea1", null ],
+              [ "SENDING", "group__groupEnumsMSP430I2C__EUSCI__B.html#gga469410b45269d7217a4ff7c8ae7bc41aac9c9fa46a3628497a4e7f74444ae4568", null ]
+            ] ],
+            [ "TIMEOUT", "group__groupEnumsMSP430I2C__EUSCI__B.html#ga845a11dea49415c7052abe249513136f", [
+              [ "DISABLED", "group__groupEnumsMSP430I2C__EUSCI__B.html#gga845a11dea49415c7052abe249513136fa055c1a591abb0e8cd86dc969727bcc0b", null ],
+              [ "_28_MS", "group__groupEnumsMSP430I2C__EUSCI__B.html#gga845a11dea49415c7052abe249513136fa5ea8f3b5a4a4e194c5d018b8601d9644", null ],
+              [ "_31_MS", "group__groupEnumsMSP430I2C__EUSCI__B.html#gga845a11dea49415c7052abe249513136faa0a67986e7389a9566f6c49a0f040afd", null ],
+              [ "_34_MS", "group__groupEnumsMSP430I2C__EUSCI__B.html#gga845a11dea49415c7052abe249513136fa479fea8e7c1cec265ac4163e65cecd9e", null ]
+            ] ]
+          ] ],
+          [ "I2C Functions", "group__groupFuncsMSP430I2C__EUSCI__B.html", [
+            [ "clearInterrupt", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga79e6a2b44cc3e90075212cb939f15677", null ],
+            [ "disable", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga8a819980f5ae25dfc5348250dcd0bd5f", null ],
+            [ "disableInterrupt", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga1b6deeac47e08f1a9a2912049c516d68", null ],
+            [ "disableMultiMasterMode", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaafcf928fc27606d299db164a3bc18176", null ],
+            [ "enable", "group__groupFuncsMSP430I2C__EUSCI__B.html#gacf2ad5be04c299132e15b42a5eaf2e1a", null ],
+            [ "enableInterrupt", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaa7ae076b171ab90f79a21bf6543874e8", null ],
+            [ "enableMultiMasterMode", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga58badded24ebb98ebe9cb34d8aad8386", null ],
+            [ "getInterruptStatus", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaf7b526294bf618d826d8fb9afc69c71f", null ],
+            [ "getMode", "group__groupFuncsMSP430I2C__EUSCI__B.html#gac37da486d096fbb2d4d0455754ea363e", null ],
+            [ "getReceiveBufferAddress", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga182e613363c5d3f61265f4fea6626a9f", null ],
+            [ "getTransmitBufferAddress", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga418eda352d58dd1679fcc65f43b0904f", null ],
+            [ "initMaster", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga8b809526680ba9d566296f847a599167", null ],
+            [ "initSlave", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaa2fe4ebd368c285e744074171a505566", null ],
+            [ "isBusBusy", "group__groupFuncsMSP430I2C__EUSCI__B.html#gac4a5c7e09d977b031acc4d92eac6f0b7", null ],
+            [ "masterIsStartSent", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga80e22faafd716fdf20bca017418e8fc2", null ],
+            [ "masterIsStopSent", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga2cadbb815c05146c5eab6059d9975d4e", null ],
+            [ "masterReceiveMultiByteFinish", "group__groupFuncsMSP430I2C__EUSCI__B.html#gafabe1321e80ec0c7f34c5fedea0f6d73", null ],
+            [ "masterReceiveMultiByteNext", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga19e4ee90959764522882e7e6f96aa0b7", null ],
+            [ "masterReceiveMultiByteStop", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga54a47882a8f28effb3ae0a9a78c0fd3a", null ],
+            [ "masterReceiveSingle", "group__groupFuncsMSP430I2C__EUSCI__B.html#gad4ef7b26760487f6d20d6091331e797a", null ],
+            [ "masterReceiveSingleByte", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaf92a15c0dc56388ea4fa230f606f8d79", null ],
+            [ "masterReceiveStart", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga00810f10ada25c1bf22227b94645160f", null ],
+            [ "masterSendMultiByteFinish", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga11094873e45a861a01472f4201b8669f", null ],
+            [ "masterSendMultiByteNext", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga379bd28a47557d2ff4adc9ca1ba72c26", null ],
+            [ "masterSendMultiByteStart", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaa260a157d390d81e80c5f977afcad9d1", null ],
+            [ "masterSendMultiByteStop", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga1cc47acc146fe341fb4cd83ee57bcbff", null ],
+            [ "masterSendSingleByte", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga55688ac82e166384e497ec4b93271eeb", null ],
+            [ "masterSendStart", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga00e3a2be8807312cad4c0d1a8d74e85e", null ],
+            [ "setMode", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga4d69c8d09076d26e530bd96f4328d47d", null ],
+            [ "setSlaveAddress", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga7eee8cf84522a35ae7229bcd9cc0b29e", null ],
+            [ "setTimeout", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga8ccce00d8f3a5154844cf98efb330405", null ],
+            [ "slaveGetData", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga84a87d5d663ff95d74ffed0da53c94b7", null ],
+            [ "slavePutData", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga4ec40f2910210f3b54cc03254799c496", null ]
+          ] ],
+          [ "I2C Parameter", "group__groupParamsMSP430I2C__EUSCI__B.html", [
+            [ "initMasterParam", "group__groupParamsMSP430I2C__EUSCI__B.html#ga34586454afcd21279b881e0f90ec0a94", null ],
+            [ "initSlaveParam", "group__groupParamsMSP430I2C__EUSCI__B.html#gadb27dd833334b2a38d42ee0c0f199592", null ]
+          ] ],
+          [ "SPI Enums", "group__groupEnumsMSP430SPI__EUSCI__B.html", [
+            [ "INT", "group__groupEnumsMSP430SPI__EUSCI__B.html#gae1aceaab0c1690e2d92606b947f8bb2e", null ],
+            [ "STATUS", "group__groupEnumsMSP430SPI__EUSCI__B.html#ga200c86e2f924b4a7fe0e4a0409e72c7c", null ],
+            [ "BUSY", "group__groupEnumsMSP430SPI__EUSCI__B.html#ga1c3ae82cf9c1c54b6ff2ae942fe18919", [
+              [ "NO", "group__groupEnumsMSP430SPI__EUSCI__B.html#gga1c3ae82cf9c1c54b6ff2ae942fe18919ac2f3f489a00553e7a01d369c103c7251", null ],
+              [ "YES", "group__groupEnumsMSP430SPI__EUSCI__B.html#gga1c3ae82cf9c1c54b6ff2ae942fe18919a7469a286259799e5b37e5db9296f00b3", null ]
+            ] ],
+            [ "CLOCKPHASE", "group__groupEnumsMSP430SPI__EUSCI__B.html#gaf81b5991b9360941d1ab1c6d89c83348", [
+              [ "DATA_CHANGED_ONFIRST_CAPTURED_ON_NEXT", "group__groupEnumsMSP430SPI__EUSCI__B.html#ggaf81b5991b9360941d1ab1c6d89c83348a5601b63b9f565da95cd2352ba009aa4c", null ],
+              [ "DATA_CAPTURED_ONFIRST_CHANGED_ON_NEXT", "group__groupEnumsMSP430SPI__EUSCI__B.html#ggaf81b5991b9360941d1ab1c6d89c83348ae50e985b00b5d9cb5752061373f9d1eb", null ]
+            ] ],
+            [ "CLOCKPOLARITY", "group__groupEnumsMSP430SPI__EUSCI__B.html#gaea2c3970bb365bc4fcb584cf89e4330c", [
+              [ "INACTIVITY_LOW", "group__groupEnumsMSP430SPI__EUSCI__B.html#ggaea2c3970bb365bc4fcb584cf89e4330caa0f2111323703fbc391dd11a9a819782", null ],
+              [ "INACTIVITY_HIGH", "group__groupEnumsMSP430SPI__EUSCI__B.html#ggaea2c3970bb365bc4fcb584cf89e4330cac6c8dcb35135ec351f7711ab472efd2f", null ]
+            ] ],
+            [ "CLOCKSOURCE", "group__groupEnumsMSP430SPI__EUSCI__B.html#gaf9279c1b32356cc5a07f3f6775553ea0", [
+              [ "UCLK", "group__groupEnumsMSP430SPI__EUSCI__B.html#ggaf9279c1b32356cc5a07f3f6775553ea0a53e3e0766dc25ff61da8b0a5d5d43fe1", null ],
+              [ "SMCLK", "group__groupEnumsMSP430SPI__EUSCI__B.html#ggaf9279c1b32356cc5a07f3f6775553ea0ab88c7c2fc640bdbd4125b363c2c018de", null ],
+              [ "ACLK", "group__groupEnumsMSP430SPI__EUSCI__B.html#ggaf9279c1b32356cc5a07f3f6775553ea0a1320ed38f3060289a221f2aa841d7216", null ],
+              [ "MODCLK", "group__groupEnumsMSP430SPI__EUSCI__B.html#ggaf9279c1b32356cc5a07f3f6775553ea0a2287b51f5f8d4d4df9f4d4e6cb24f883", null ]
+            ] ],
+            [ "ENDIAN", "group__groupEnumsMSP430SPI__EUSCI__B.html#gaa9ed618896287cecb2a3e3aeffe7cd3d", [
+              [ "LSB_FIRST", "group__groupEnumsMSP430SPI__EUSCI__B.html#ggaa9ed618896287cecb2a3e3aeffe7cd3daa34fb35b522d4b8f2757b9adf8aefd96", null ],
+              [ "MSB_FIRST", "group__groupEnumsMSP430SPI__EUSCI__B.html#ggaa9ed618896287cecb2a3e3aeffe7cd3da89488e0251a0b2be79602890ef16ddb3", null ]
+            ] ],
+            [ "FUNCIONALITY_4PINS", "group__groupEnumsMSP430SPI__EUSCI__B.html#gaf3a5b639c475c2aa306f1810c255a245", [
+              [ "PREVENT_CONFLICTS_WITH_OTHER_MASTERS", "group__groupEnumsMSP430SPI__EUSCI__B.html#ggaf3a5b639c475c2aa306f1810c255a245a333d0cab43cc6332d074aff6cb9f6aa3", null ],
+              [ "ENABLE_SIGNAL_FOR_4WIRE_SLAVE", "group__groupEnumsMSP430SPI__EUSCI__B.html#ggaf3a5b639c475c2aa306f1810c255a245a2acb230600222980caf8d10e3140b0da", null ]
+            ] ],
+            [ "MODE", "group__groupEnumsMSP430SPI__EUSCI__B.html#ga8940e8a4ea0ee1518053716d58f21945", [
+              [ "WITHOUT_CHIPSELECT", "group__groupEnumsMSP430SPI__EUSCI__B.html#gga8940e8a4ea0ee1518053716d58f21945a18fc312ba79f5ffc4d36a239d93702b8", null ],
+              [ "CHIPSELECT_ACTIVE_HIGH", "group__groupEnumsMSP430SPI__EUSCI__B.html#gga8940e8a4ea0ee1518053716d58f21945ac0737cf9e7b073aff86b0c4c6c3e45c5", null ],
+              [ "CHIPSELECT_ACTIVE_LOW", "group__groupEnumsMSP430SPI__EUSCI__B.html#gga8940e8a4ea0ee1518053716d58f21945aae31aaaec800e5dbb7395881a9796f13", null ]
+            ] ]
+          ] ],
+          [ "SPI Functions", "group__groupFuncsMSP430SPI__EUSCI__B.html", [
+            [ "changeClockPhasePolarity", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga3f536c8f854b9aaf8dcf495b64482ef1", null ],
+            [ "changeMasterClock", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga10be09cdd4c88450aa7d087e9cb221c0", null ],
+            [ "clearInterrupt", "group__groupFuncsMSP430SPI__EUSCI__B.html#gac0a085e2d4c2465fe4735be8b222bae7", null ],
+            [ "disable", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga601adf8efd10c00bf52a595ebb3dadbf", null ],
+            [ "disableInterrupt", "group__groupFuncsMSP430SPI__EUSCI__B.html#gab5d4cffa1df2db78e3855ea5d8921fa1", null ],
+            [ "enable", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga77cc83791ad119dd45bc4a7ef12d5204", null ],
+            [ "enableInterrupt", "group__groupFuncsMSP430SPI__EUSCI__B.html#gade892f7fe9a2ed7a85f2e402d611aebb", null ],
+            [ "getInterruptStatus", "group__groupFuncsMSP430SPI__EUSCI__B.html#gaa3d89cbc5847b36ea7f4c14f3803ee24", null ],
+            [ "getReceiveBufferAddress", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga1253165566bfa19e1ae869cf8cc08e91", null ],
+            [ "getTransmitBufferAddress", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga2b79f119a30599b53c7c8114e764ff87", null ],
+            [ "initMaster", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga77c90b5701feb5d5687c9e0310a481b5", null ],
+            [ "initSlave", "group__groupFuncsMSP430SPI__EUSCI__B.html#gae7f3ce80fdf5cd0c2123031c65338d01", null ],
+            [ "isBusy", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga147be89030e3b2c5e78ec78c1c755a38", null ],
+            [ "queryStatusFlags", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga1f96a66f6015109b3fe466164a5815a1", null ],
+            [ "receiveData", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga834da1c429cc7a2975eee6660566a86a", null ],
+            [ "select4PinFunctionality", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga530a36792733be76dc19b55b643bbc4e", null ],
+            [ "transmitData", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga10a92e5068a30c317812c1f8e9b03b0e", null ]
+          ] ],
+          [ "SPI Parameter", "group__groupParamsMSP430SPI__EUSCI__B.html", [
+            [ "changeMasterClockParam", "group__groupParamsMSP430SPI__EUSCI__B.html#ga0c0e9b30cff09a74f916bf87c69ff474", null ],
+            [ "initMasterParam", "group__groupParamsMSP430SPI__EUSCI__B.html#gaff8226fd72220433be2b9a364a323fa1", null ],
+            [ "initSlaveParam", "group__groupParamsMSP430SPI__EUSCI__B.html#gaf416cccbe46b96d03d67ee92685e12fc", null ]
+          ] ]
+        ] ],
         [ "GPIO", "group__groupMSP430Gpio.html", [
           [ "Enums", "group__groupEnumsMSP430Gpio.html", [
             [ "PIN", "group__groupEnumsMSP430Gpio.html#ga9498a109dc820344a8c9ae35eaff2de1", null ],
@@ -643,6 +793,14 @@ var NAVTREE =
                 [ "Interrupt", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt.html", null ]
               ] ]
             ] ],
+            [ "EUSCIB", "namespaceMT_1_1MSP430_1_1EUSCIB.html", [
+              [ "I2C", "namespaceMT_1_1MSP430_1_1EUSCIB_1_1I2C.html", [
+                [ "Internal", "namespaceMT_1_1MSP430_1_1EUSCIB_1_1I2C_1_1Internal.html", null ]
+              ] ],
+              [ "SPI", "namespaceMT_1_1MSP430_1_1EUSCIB_1_1SPI.html", [
+                [ "Internal", "namespaceMT_1_1MSP430_1_1EUSCIB_1_1SPI_1_1Internal.html", null ]
+              ] ]
+            ] ],
             [ "GPIO", "namespaceMT_1_1MSP430_1_1GPIO.html", [
               [ "Internal", "namespaceMT_1_1MSP430_1_1GPIO_1_1Internal.html", null ],
               [ "Interrupt", "namespaceMT_1_1MSP430_1_1GPIO_1_1Interrupt.html", null ]
@@ -734,6 +892,70 @@ var NAVTREE =
                   ] ],
                   [ "A3", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A3.html", [
                     [ "A3", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A3.html#abf19052e57bb0d996a552fb4b1c00be0", null ]
+                  ] ]
+                ] ]
+              ] ]
+            ] ],
+            [ "EUSCIB", "namespaceMT_1_1MSP430_1_1EUSCIB.html", [
+              [ "I2C", "namespaceMT_1_1MSP430_1_1EUSCIB_1_1I2C.html", [
+                [ "Internal", "namespaceMT_1_1MSP430_1_1EUSCIB_1_1I2C_1_1Internal.html", [
+                  [ "I2C", "structMT_1_1MSP430_1_1EUSCIB_1_1I2C_1_1Internal_1_1I2C.html", [
+                    [ "clearInterrupt", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga79e6a2b44cc3e90075212cb939f15677", null ],
+                    [ "disable", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga8a819980f5ae25dfc5348250dcd0bd5f", null ],
+                    [ "disableInterrupt", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga1b6deeac47e08f1a9a2912049c516d68", null ],
+                    [ "disableMultiMasterMode", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaafcf928fc27606d299db164a3bc18176", null ],
+                    [ "enable", "group__groupFuncsMSP430I2C__EUSCI__B.html#gacf2ad5be04c299132e15b42a5eaf2e1a", null ],
+                    [ "enableInterrupt", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaa7ae076b171ab90f79a21bf6543874e8", null ],
+                    [ "enableMultiMasterMode", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga58badded24ebb98ebe9cb34d8aad8386", null ],
+                    [ "getInterruptStatus", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaf7b526294bf618d826d8fb9afc69c71f", null ],
+                    [ "getMode", "group__groupFuncsMSP430I2C__EUSCI__B.html#gac37da486d096fbb2d4d0455754ea363e", null ],
+                    [ "getReceiveBufferAddress", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga182e613363c5d3f61265f4fea6626a9f", null ],
+                    [ "getTransmitBufferAddress", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga418eda352d58dd1679fcc65f43b0904f", null ],
+                    [ "initMaster", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga8b809526680ba9d566296f847a599167", null ],
+                    [ "initSlave", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaa2fe4ebd368c285e744074171a505566", null ],
+                    [ "isBusBusy", "group__groupFuncsMSP430I2C__EUSCI__B.html#gac4a5c7e09d977b031acc4d92eac6f0b7", null ],
+                    [ "masterIsStartSent", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga80e22faafd716fdf20bca017418e8fc2", null ],
+                    [ "masterIsStopSent", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga2cadbb815c05146c5eab6059d9975d4e", null ],
+                    [ "masterReceiveMultiByteFinish", "group__groupFuncsMSP430I2C__EUSCI__B.html#gafabe1321e80ec0c7f34c5fedea0f6d73", null ],
+                    [ "masterReceiveMultiByteNext", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga19e4ee90959764522882e7e6f96aa0b7", null ],
+                    [ "masterReceiveMultiByteStop", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga54a47882a8f28effb3ae0a9a78c0fd3a", null ],
+                    [ "masterReceiveSingle", "group__groupFuncsMSP430I2C__EUSCI__B.html#gad4ef7b26760487f6d20d6091331e797a", null ],
+                    [ "masterReceiveSingleByte", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaf92a15c0dc56388ea4fa230f606f8d79", null ],
+                    [ "masterReceiveStart", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga00810f10ada25c1bf22227b94645160f", null ],
+                    [ "masterSendMultiByteFinish", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga11094873e45a861a01472f4201b8669f", null ],
+                    [ "masterSendMultiByteNext", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga379bd28a47557d2ff4adc9ca1ba72c26", null ],
+                    [ "masterSendMultiByteStart", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaa260a157d390d81e80c5f977afcad9d1", null ],
+                    [ "masterSendMultiByteStop", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga1cc47acc146fe341fb4cd83ee57bcbff", null ],
+                    [ "masterSendSingleByte", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga55688ac82e166384e497ec4b93271eeb", null ],
+                    [ "masterSendStart", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga00e3a2be8807312cad4c0d1a8d74e85e", null ],
+                    [ "setMode", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga4d69c8d09076d26e530bd96f4328d47d", null ],
+                    [ "setSlaveAddress", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga7eee8cf84522a35ae7229bcd9cc0b29e", null ],
+                    [ "setTimeout", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga8ccce00d8f3a5154844cf98efb330405", null ],
+                    [ "slaveGetData", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga84a87d5d663ff95d74ffed0da53c94b7", null ],
+                    [ "slavePutData", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga4ec40f2910210f3b54cc03254799c496", null ]
+                  ] ]
+                ] ]
+              ] ],
+              [ "SPI", "namespaceMT_1_1MSP430_1_1EUSCIB_1_1SPI.html", [
+                [ "Internal", "namespaceMT_1_1MSP430_1_1EUSCIB_1_1SPI_1_1Internal.html", [
+                  [ "SPI", "structMT_1_1MSP430_1_1EUSCIB_1_1SPI_1_1Internal_1_1SPI.html", [
+                    [ "changeClockPhasePolarity", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga3f536c8f854b9aaf8dcf495b64482ef1", null ],
+                    [ "changeMasterClock", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga10be09cdd4c88450aa7d087e9cb221c0", null ],
+                    [ "clearInterrupt", "group__groupFuncsMSP430SPI__EUSCI__B.html#gac0a085e2d4c2465fe4735be8b222bae7", null ],
+                    [ "disable", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga601adf8efd10c00bf52a595ebb3dadbf", null ],
+                    [ "disableInterrupt", "group__groupFuncsMSP430SPI__EUSCI__B.html#gab5d4cffa1df2db78e3855ea5d8921fa1", null ],
+                    [ "enable", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga77cc83791ad119dd45bc4a7ef12d5204", null ],
+                    [ "enableInterrupt", "group__groupFuncsMSP430SPI__EUSCI__B.html#gade892f7fe9a2ed7a85f2e402d611aebb", null ],
+                    [ "getInterruptStatus", "group__groupFuncsMSP430SPI__EUSCI__B.html#gaa3d89cbc5847b36ea7f4c14f3803ee24", null ],
+                    [ "getReceiveBufferAddress", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga1253165566bfa19e1ae869cf8cc08e91", null ],
+                    [ "getTransmitBufferAddress", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga2b79f119a30599b53c7c8114e764ff87", null ],
+                    [ "initMaster", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga77c90b5701feb5d5687c9e0310a481b5", null ],
+                    [ "initSlave", "group__groupFuncsMSP430SPI__EUSCI__B.html#gae7f3ce80fdf5cd0c2123031c65338d01", null ],
+                    [ "isBusy", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga147be89030e3b2c5e78ec78c1c755a38", null ],
+                    [ "queryStatusFlags", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga1f96a66f6015109b3fe466164a5815a1", null ],
+                    [ "receiveData", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga834da1c429cc7a2975eee6660566a86a", null ],
+                    [ "select4PinFunctionality", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga530a36792733be76dc19b55b643bbc4e", null ],
+                    [ "transmitData", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga10a92e5068a30c317812c1f8e9b03b0e", null ]
                   ] ]
                 ] ]
               ] ]
@@ -995,6 +1217,9 @@ var NAVTREE =
             [ "enable_Enum_bits< EUSCIA_UART_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__INT_01_4.html", null ],
             [ "enable_Enum_bits< EUSCIA_UART_INT_EXT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__INT__EXT_01_4.html", null ],
             [ "enable_Enum_bits< EUSCIA_UART_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__STATUS_01_4.html", null ],
+            [ "enable_Enum_bits< EUSCIB_I2C_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIB__I2C__INT_01_4.html", null ],
+            [ "enable_Enum_bits< EUSCIB_SPI_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIB__SPI__INT_01_4.html", null ],
+            [ "enable_Enum_bits< EUSCIB_SPI_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIB__SPI__STATUS_01_4.html", null ],
             [ "enable_Enum_bits< GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01GPIO__PIN_01_4.html", null ],
             [ "enable_Enum_bits< PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01PMM__INT_01_4.html", null ],
             [ "enable_Enum_bits< SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01SFR__INT_01_4.html", null ],
@@ -1007,6 +1232,9 @@ var NAVTREE =
             [ "enable_Enum_bits< volatile EUSCIA_UART_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__INT_01_4.html", null ],
             [ "enable_Enum_bits< volatile EUSCIA_UART_INT_EXT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__INT__EXT_01_4.html", null ],
             [ "enable_Enum_bits< volatile EUSCIA_UART_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__STATUS_01_4.html", null ],
+            [ "enable_Enum_bits< volatile EUSCIB_I2C_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIB__I2C__INT_01_4.html", null ],
+            [ "enable_Enum_bits< volatile EUSCIB_SPI_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIB__SPI__INT_01_4.html", null ],
+            [ "enable_Enum_bits< volatile EUSCIB_SPI_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIB__SPI__STATUS_01_4.html", null ],
             [ "enable_Enum_bits< volatile GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01GPIO__PIN_01_4.html", null ],
             [ "enable_Enum_bits< volatile PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01PMM__INT_01_4.html", null ],
             [ "enable_Enum_bits< volatile SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01SFR__INT_01_4.html", null ],
@@ -1067,6 +1295,9 @@ var NAVTREE =
         [ "MT::Misc::enable_Enum_bits< EUSCIA_UART_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__INT_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< EUSCIA_UART_INT_EXT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__INT__EXT_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< EUSCIA_UART_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIA__UART__STATUS_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< EUSCIB_I2C_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIB__I2C__INT_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< EUSCIB_SPI_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIB__SPI__INT_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< EUSCIB_SPI_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIB__SPI__STATUS_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01GPIO__PIN_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01PMM__INT_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01SFR__INT_01_4.html", null ],
@@ -1079,6 +1310,9 @@ var NAVTREE =
         [ "MT::Misc::enable_Enum_bits< volatile EUSCIA_UART_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__INT_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< volatile EUSCIA_UART_INT_EXT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__INT__EXT_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< volatile EUSCIA_UART_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIA__UART__STATUS_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< volatile EUSCIB_I2C_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIB__I2C__INT_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< volatile EUSCIB_SPI_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIB__SPI__INT_01_4.html", null ],
+        [ "MT::Misc::enable_Enum_bits< volatile EUSCIB_SPI_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIB__SPI__STATUS_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< volatile GPIO_PIN >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01GPIO__PIN_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< volatile PMM_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01PMM__INT_01_4.html", null ],
         [ "MT::Misc::enable_Enum_bits< volatile SFR_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01SFR__INT_01_4.html", null ],
@@ -1089,6 +1323,8 @@ var NAVTREE =
         [ "MT::MSP430::EUSCIA::UART::Interrupt::A1< FUNC >", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A1.html", null ],
         [ "MT::MSP430::EUSCIA::UART::Interrupt::A2< FUNC >", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A2.html", null ],
         [ "MT::MSP430::EUSCIA::UART::Interrupt::A3< FUNC >", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A3.html", null ],
+        [ "MT::MSP430::EUSCIB::I2C::Internal::I2C< CTLW0, CTLW1, BRW, STATW, TBCNT, RXBUF, TXBUF, A0, A1, A2, A3, ADDR, ADDMASK, SA, IE, IFG >", "structMT_1_1MSP430_1_1EUSCIB_1_1I2C_1_1Internal_1_1I2C.html", null ],
+        [ "MT::MSP430::EUSCIB::SPI::Internal::SPI< CTLW0, BRW, STATW, RXBUF, TXBUF, IE, IFG >", "structMT_1_1MSP430_1_1EUSCIB_1_1SPI_1_1Internal_1_1SPI.html", null ],
         [ "MT::MSP430::GPIO::Internal::PortCommon< INREG, OUTREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortCommon.html", [
           [ "MT::MSP430::GPIO::Internal::Port< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1Port.html", null ],
           [ "MT::MSP430::GPIO::Internal::PortDrv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortDrv.html", null ],
@@ -1164,7 +1400,13 @@ var NAVTREE =
           [ "MT::MSP430::GPIO::Internal::PortWithInt< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithInt.html", null ],
           [ "MT::MSP430::GPIO::Internal::PortWithIntDrv< INREG, OUTREG, DIRREG, PRENREG, P0SEL, P1SEL, IESREG, IEREG, IFGREG, DRVREG >", "structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html", null ]
         ] ],
+        [ "MT::Universal::Register< A0 >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< A1 >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< A2 >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< A3 >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< ABCTL >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< ADDMASK >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< ADDR >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< BRW >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< CTLW0 >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< CTLW1 >", "structMT_1_1Universal_1_1Register.html", null ],
@@ -1183,12 +1425,14 @@ var NAVTREE =
         [ "MT::Universal::Register< P1SEL >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< PRENREG >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< RXBUF >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< SA >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< STATW >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< TAXCCR0 >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< TAXCCTL0 >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< TAXCTL >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< TAXEX0 >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< TAXR >", "structMT_1_1Universal_1_1Register.html", null ],
+        [ "MT::Universal::Register< TBCNT >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register< TXBUF >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register<&LPM45CTL >", "structMT_1_1Universal_1_1Register.html", null ],
         [ "MT::Universal::Register<&PM5CTL0 >", "structMT_1_1Universal_1_1Register.html", null ],
@@ -1239,6 +1483,7 @@ var NAVTREE =
           [ "g", "functions_func_g.html", null ],
           [ "h", "functions_func_h.html", null ],
           [ "i", "functions_func_i.html", null ],
+          [ "m", "functions_func_m.html", null ],
           [ "o", "functions_func_o.html", null ],
           [ "p", "functions_func_p.html", null ],
           [ "q", "functions_func_q.html", null ],
@@ -1451,6 +1696,202 @@ var NAVTREE =
                 [ "A3", "structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Interrupt_1_1A3.html#abf19052e57bb0d996a552fb4b1c00be0", null ]
               ] ],
               [ "Callback", "file__EusciAInterrupt_8hpp.html#a78abe5460b5bba7561c0c4f27907c569", null ]
+            ] ],
+            [ "EusciB.hpp", "file__EusciB_8hpp.html", [
+              [ "I2C", "structMT_1_1MSP430_1_1EUSCIB_1_1I2C_1_1Internal_1_1I2C.html", [
+                [ "clearInterrupt", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga79e6a2b44cc3e90075212cb939f15677", null ],
+                [ "disable", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga8a819980f5ae25dfc5348250dcd0bd5f", null ],
+                [ "disableInterrupt", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga1b6deeac47e08f1a9a2912049c516d68", null ],
+                [ "disableMultiMasterMode", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaafcf928fc27606d299db164a3bc18176", null ],
+                [ "enable", "group__groupFuncsMSP430I2C__EUSCI__B.html#gacf2ad5be04c299132e15b42a5eaf2e1a", null ],
+                [ "enableInterrupt", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaa7ae076b171ab90f79a21bf6543874e8", null ],
+                [ "enableMultiMasterMode", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga58badded24ebb98ebe9cb34d8aad8386", null ],
+                [ "getInterruptStatus", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaf7b526294bf618d826d8fb9afc69c71f", null ],
+                [ "getMode", "group__groupFuncsMSP430I2C__EUSCI__B.html#gac37da486d096fbb2d4d0455754ea363e", null ],
+                [ "getReceiveBufferAddress", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga182e613363c5d3f61265f4fea6626a9f", null ],
+                [ "getTransmitBufferAddress", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga418eda352d58dd1679fcc65f43b0904f", null ],
+                [ "initMaster", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga8b809526680ba9d566296f847a599167", null ],
+                [ "initSlave", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaa2fe4ebd368c285e744074171a505566", null ],
+                [ "isBusBusy", "group__groupFuncsMSP430I2C__EUSCI__B.html#gac4a5c7e09d977b031acc4d92eac6f0b7", null ],
+                [ "masterIsStartSent", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga80e22faafd716fdf20bca017418e8fc2", null ],
+                [ "masterIsStopSent", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga2cadbb815c05146c5eab6059d9975d4e", null ],
+                [ "masterReceiveMultiByteFinish", "group__groupFuncsMSP430I2C__EUSCI__B.html#gafabe1321e80ec0c7f34c5fedea0f6d73", null ],
+                [ "masterReceiveMultiByteNext", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga19e4ee90959764522882e7e6f96aa0b7", null ],
+                [ "masterReceiveMultiByteStop", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga54a47882a8f28effb3ae0a9a78c0fd3a", null ],
+                [ "masterReceiveSingle", "group__groupFuncsMSP430I2C__EUSCI__B.html#gad4ef7b26760487f6d20d6091331e797a", null ],
+                [ "masterReceiveSingleByte", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaf92a15c0dc56388ea4fa230f606f8d79", null ],
+                [ "masterReceiveStart", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga00810f10ada25c1bf22227b94645160f", null ],
+                [ "masterSendMultiByteFinish", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga11094873e45a861a01472f4201b8669f", null ],
+                [ "masterSendMultiByteNext", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga379bd28a47557d2ff4adc9ca1ba72c26", null ],
+                [ "masterSendMultiByteStart", "group__groupFuncsMSP430I2C__EUSCI__B.html#gaa260a157d390d81e80c5f977afcad9d1", null ],
+                [ "masterSendMultiByteStop", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga1cc47acc146fe341fb4cd83ee57bcbff", null ],
+                [ "masterSendSingleByte", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga55688ac82e166384e497ec4b93271eeb", null ],
+                [ "masterSendStart", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga00e3a2be8807312cad4c0d1a8d74e85e", null ],
+                [ "setMode", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga4d69c8d09076d26e530bd96f4328d47d", null ],
+                [ "setSlaveAddress", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga7eee8cf84522a35ae7229bcd9cc0b29e", null ],
+                [ "setTimeout", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga8ccce00d8f3a5154844cf98efb330405", null ],
+                [ "slaveGetData", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga84a87d5d663ff95d74ffed0da53c94b7", null ],
+                [ "slavePutData", "group__groupFuncsMSP430I2C__EUSCI__B.html#ga4ec40f2910210f3b54cc03254799c496", null ]
+              ] ],
+              [ "SPI", "structMT_1_1MSP430_1_1EUSCIB_1_1SPI_1_1Internal_1_1SPI.html", [
+                [ "changeClockPhasePolarity", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga3f536c8f854b9aaf8dcf495b64482ef1", null ],
+                [ "changeMasterClock", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga10be09cdd4c88450aa7d087e9cb221c0", null ],
+                [ "clearInterrupt", "group__groupFuncsMSP430SPI__EUSCI__B.html#gac0a085e2d4c2465fe4735be8b222bae7", null ],
+                [ "disable", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga601adf8efd10c00bf52a595ebb3dadbf", null ],
+                [ "disableInterrupt", "group__groupFuncsMSP430SPI__EUSCI__B.html#gab5d4cffa1df2db78e3855ea5d8921fa1", null ],
+                [ "enable", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga77cc83791ad119dd45bc4a7ef12d5204", null ],
+                [ "enableInterrupt", "group__groupFuncsMSP430SPI__EUSCI__B.html#gade892f7fe9a2ed7a85f2e402d611aebb", null ],
+                [ "getInterruptStatus", "group__groupFuncsMSP430SPI__EUSCI__B.html#gaa3d89cbc5847b36ea7f4c14f3803ee24", null ],
+                [ "getReceiveBufferAddress", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga1253165566bfa19e1ae869cf8cc08e91", null ],
+                [ "getTransmitBufferAddress", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga2b79f119a30599b53c7c8114e764ff87", null ],
+                [ "initMaster", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga77c90b5701feb5d5687c9e0310a481b5", null ],
+                [ "initSlave", "group__groupFuncsMSP430SPI__EUSCI__B.html#gae7f3ce80fdf5cd0c2123031c65338d01", null ],
+                [ "isBusy", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga147be89030e3b2c5e78ec78c1c755a38", null ],
+                [ "queryStatusFlags", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga1f96a66f6015109b3fe466164a5815a1", null ],
+                [ "receiveData", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga834da1c429cc7a2975eee6660566a86a", null ],
+                [ "select4PinFunctionality", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga530a36792733be76dc19b55b643bbc4e", null ],
+                [ "transmitData", "group__groupFuncsMSP430SPI__EUSCI__B.html#ga10a92e5068a30c317812c1f8e9b03b0e", null ]
+              ] ],
+              [ "enable_Enum_bits< EUSCIB_I2C_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIB__I2C__INT_01_4.html", null ],
+              [ "enable_Enum_bits< EUSCIB_SPI_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIB__SPI__INT_01_4.html", null ],
+              [ "enable_Enum_bits< EUSCIB_SPI_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01EUSCIB__SPI__STATUS_01_4.html", null ],
+              [ "enable_Enum_bits< volatile EUSCIB_I2C_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIB__I2C__INT_01_4.html", null ],
+              [ "enable_Enum_bits< volatile EUSCIB_SPI_INT >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIB__SPI__INT_01_4.html", null ],
+              [ "enable_Enum_bits< volatile EUSCIB_SPI_STATUS >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01EUSCIB__SPI__STATUS_01_4.html", null ],
+              [ "B0", "file__EusciB_8hpp.html#a028f948d1e679d000dcac0696ddff5c5", null ],
+              [ "B0", "file__EusciB_8hpp.html#a78daf20fcfe56630b88da704fda3a29f", null ],
+              [ "B1", "file__EusciB_8hpp.html#a67ab53568ba2d08b8230bf5126443e76", null ],
+              [ "B1", "file__EusciB_8hpp.html#a22827f464079978409275e81f02e19c5", null ],
+              [ "B2", "file__EusciB_8hpp.html#a440ac966578ae33591af6f06188abf98", null ],
+              [ "B2", "file__EusciB_8hpp.html#a0a1fd7d6d5f4bcff164e18e640e779e4", null ],
+              [ "B3", "file__EusciB_8hpp.html#ac973839f085ced3f8e591bc69eefff18", null ],
+              [ "B3", "file__EusciB_8hpp.html#a47b9061bcaf3f39f117ac060173f04e9", null ],
+              [ "changeMasterClockParam", "file__EusciB_8hpp.html#ga0c0e9b30cff09a74f916bf87c69ff474", null ],
+              [ "initMasterParam", "file__EusciB_8hpp.html#ga34586454afcd21279b881e0f90ec0a94", null ],
+              [ "initMasterParam", "file__EusciB_8hpp.html#gaff8226fd72220433be2b9a364a323fa1", null ],
+              [ "initSlaveParam", "file__EusciB_8hpp.html#gadb27dd833334b2a38d42ee0c0f199592", null ],
+              [ "initSlaveParam", "file__EusciB_8hpp.html#gaf416cccbe46b96d03d67ee92685e12fc", null ],
+              [ "INT", "file__EusciB_8hpp.html#gaea24f1297dd94b16531c1325717d4a1b", null ],
+              [ "INT", "file__EusciB_8hpp.html#gae1aceaab0c1690e2d92606b947f8bb2e", null ],
+              [ "STATUS", "file__EusciB_8hpp.html#ga200c86e2f924b4a7fe0e4a0409e72c7c", null ],
+              [ "AUTOSTOP", "file__EusciB_8hpp.html#gabee6a8f29bcadbd1f2df73c0ed12c681", [
+                [ "OFF", "file__EusciB_8hpp.html#ggabee6a8f29bcadbd1f2df73c0ed12c681a88559a0cfd8250c9d65970cc145c92d4", null ],
+                [ "SET_BYTECOUNT_THRESHOLD_FLAG", "file__EusciB_8hpp.html#ggabee6a8f29bcadbd1f2df73c0ed12c681a016d89ad07c6c8f53962f463e3721446", null ],
+                [ "SEND_STOP_AUTOMATICALLY_ON_BYTECOUNT_THRESHOLD", "file__EusciB_8hpp.html#ggabee6a8f29bcadbd1f2df73c0ed12c681af28b70683f549d56c9a5ab25ceaac62f", null ]
+              ] ],
+              [ "BUSY", "file__EusciB_8hpp.html#ga409780364562b91ac8e13c4789b76e59", [
+                [ "NO", "file__EusciB_8hpp.html#gga409780364562b91ac8e13c4789b76e59ac2f3f489a00553e7a01d369c103c7251", null ],
+                [ "YES", "file__EusciB_8hpp.html#gga409780364562b91ac8e13c4789b76e59a7469a286259799e5b37e5db9296f00b3", null ]
+              ] ],
+              [ "BUSY", "file__EusciB_8hpp.html#ga1c3ae82cf9c1c54b6ff2ae942fe18919", [
+                [ "NO", "file__EusciB_8hpp.html#gga1c3ae82cf9c1c54b6ff2ae942fe18919ac2f3f489a00553e7a01d369c103c7251", null ],
+                [ "YES", "file__EusciB_8hpp.html#gga1c3ae82cf9c1c54b6ff2ae942fe18919a7469a286259799e5b37e5db9296f00b3", null ]
+              ] ],
+              [ "CLOCKPHASE", "file__EusciB_8hpp.html#gaf81b5991b9360941d1ab1c6d89c83348", [
+                [ "DATA_CHANGED_ONFIRST_CAPTURED_ON_NEXT", "file__EusciB_8hpp.html#ggaf81b5991b9360941d1ab1c6d89c83348a5601b63b9f565da95cd2352ba009aa4c", null ],
+                [ "DATA_CAPTURED_ONFIRST_CHANGED_ON_NEXT", "file__EusciB_8hpp.html#ggaf81b5991b9360941d1ab1c6d89c83348ae50e985b00b5d9cb5752061373f9d1eb", null ]
+              ] ],
+              [ "CLOCKPOLARITY", "file__EusciB_8hpp.html#gaea2c3970bb365bc4fcb584cf89e4330c", [
+                [ "INACTIVITY_LOW", "file__EusciB_8hpp.html#ggaea2c3970bb365bc4fcb584cf89e4330caa0f2111323703fbc391dd11a9a819782", null ],
+                [ "INACTIVITY_HIGH", "file__EusciB_8hpp.html#ggaea2c3970bb365bc4fcb584cf89e4330cac6c8dcb35135ec351f7711ab472efd2f", null ]
+              ] ],
+              [ "CLOCKSOURCE", "file__EusciB_8hpp.html#gadf62a15fae15a8e4ec6203b05dad4d64", [
+                [ "UCLK", "file__EusciB_8hpp.html#ggadf62a15fae15a8e4ec6203b05dad4d64a53e3e0766dc25ff61da8b0a5d5d43fe1", null ],
+                [ "SMCLK", "file__EusciB_8hpp.html#ggadf62a15fae15a8e4ec6203b05dad4d64ab88c7c2fc640bdbd4125b363c2c018de", null ],
+                [ "ACLK", "file__EusciB_8hpp.html#ggadf62a15fae15a8e4ec6203b05dad4d64a1320ed38f3060289a221f2aa841d7216", null ],
+                [ "MODCLK", "file__EusciB_8hpp.html#ggadf62a15fae15a8e4ec6203b05dad4d64a2287b51f5f8d4d4df9f4d4e6cb24f883", null ]
+              ] ],
+              [ "CLOCKSOURCE", "file__EusciB_8hpp.html#gaf9279c1b32356cc5a07f3f6775553ea0", [
+                [ "UCLK", "file__EusciB_8hpp.html#ggaf9279c1b32356cc5a07f3f6775553ea0a53e3e0766dc25ff61da8b0a5d5d43fe1", null ],
+                [ "SMCLK", "file__EusciB_8hpp.html#ggaf9279c1b32356cc5a07f3f6775553ea0ab88c7c2fc640bdbd4125b363c2c018de", null ],
+                [ "ACLK", "file__EusciB_8hpp.html#ggaf9279c1b32356cc5a07f3f6775553ea0a1320ed38f3060289a221f2aa841d7216", null ],
+                [ "MODCLK", "file__EusciB_8hpp.html#ggaf9279c1b32356cc5a07f3f6775553ea0a2287b51f5f8d4d4df9f4d4e6cb24f883", null ]
+              ] ],
+              [ "DATARATE", "file__EusciB_8hpp.html#gab99c18e8326379dccd90ba94a14a171a", [
+                [ "_400KBPS", "file__EusciB_8hpp.html#ggab99c18e8326379dccd90ba94a14a171aae804f8459cd461f2fe76907baa7a537e", null ],
+                [ "_100KBPS", "file__EusciB_8hpp.html#ggab99c18e8326379dccd90ba94a14a171aa5097d546b124e7f8d997845dac92415b", null ]
+              ] ],
+              [ "ENDIAN", "file__EusciB_8hpp.html#gaa9ed618896287cecb2a3e3aeffe7cd3d", [
+                [ "LSB_FIRST", "file__EusciB_8hpp.html#ggaa9ed618896287cecb2a3e3aeffe7cd3daa34fb35b522d4b8f2757b9adf8aefd96", null ],
+                [ "MSB_FIRST", "file__EusciB_8hpp.html#ggaa9ed618896287cecb2a3e3aeffe7cd3da89488e0251a0b2be79602890ef16ddb3", null ]
+              ] ],
+              [ "EUSCIB_I2C_INT", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acb", [
+                [ "NONE", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acbab50339a10e1de285ac99d4c3990b8693", null ],
+                [ "NAK", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acba3860aef5aa76641c6959d1a5de94b216", null ],
+                [ "ARBITRATIONLOST", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acba1eb37e7dc22796f1334c7df1c14acabe", null ],
+                [ "STOP", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acba615a46af313786fc4e349f34118be111", null ],
+                [ "START", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acbab078ffd28db767c502ac367053f6e0ac", null ],
+                [ "TRANSMIT_0", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acbae24bb225515e34c3e39585000bd8366e", null ],
+                [ "TRANSMIT_1", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acba551f7ea33f6f9318dfbf3770501101e7", null ],
+                [ "TRANSMIT_2", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acba81336bf22ef0ffa170a88f5269f17559", null ],
+                [ "TRANSMIT_3", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acbaa7e49ec7b197ef6b7e0cd0351453a4af", null ],
+                [ "RECEIVE_0", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acba4c78739f2006113067d7c35e1baa9378", null ],
+                [ "RECEIVE_1", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acbac0410e059c78f6a7ef493f3b261332cf", null ],
+                [ "RECEIVE_2", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acbae471076f03f3e824653344a9115c14cb", null ],
+                [ "RECEIVE_3", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acbaf086e41d4a38e55cfa115d32f396bfff", null ],
+                [ "BIT9_POSITION", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acba5813be38555d7225d0de4853ac771ff6", null ],
+                [ "CLOCK_LOW_TIMEOUT", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acbaa19d91ea0dd8087a2be3e12f1087604f", null ],
+                [ "BYTE_COUNTER", "file__EusciB_8hpp.html#a771b1ca138051b5a401bd2cee1c69acba382334fe11855b81ad32bcbc5bd34e8e", null ]
+              ] ],
+              [ "EUSCIB_SPI_INT", "file__EusciB_8hpp.html#a672efc61cd394db8ca251be68026d942", [
+                [ "RECEIVE", "file__EusciB_8hpp.html#a672efc61cd394db8ca251be68026d942a42ddaaef1ffd16ad35901150add8f8f2", null ],
+                [ "TRANSMIT", "file__EusciB_8hpp.html#a672efc61cd394db8ca251be68026d942a02d786cd0f7318c2533125f8b591abc5", null ]
+              ] ],
+              [ "EUSCIB_SPI_STATUS", "file__EusciB_8hpp.html#a808d09418d86506b9055bb5686c6bda6", [
+                [ "LISTEN_ENABLE", "file__EusciB_8hpp.html#a808d09418d86506b9055bb5686c6bda6a7e0916a072e80ec22d4f3f0b6cb9da0b", null ],
+                [ "FRAMING_ERROR", "file__EusciB_8hpp.html#a808d09418d86506b9055bb5686c6bda6aa61b2eab33f2b577d368d15633c255a9", null ],
+                [ "OVERRUN_ERROR", "file__EusciB_8hpp.html#a808d09418d86506b9055bb5686c6bda6aa607a4a202294658bd387cd8e3636566", null ],
+                [ "BUSY", "file__EusciB_8hpp.html#a808d09418d86506b9055bb5686c6bda6a802706a9238e2928077f97736854bad4", null ]
+              ] ],
+              [ "FUNCIONALITY_4PINS", "file__EusciB_8hpp.html#gaf3a5b639c475c2aa306f1810c255a245", [
+                [ "PREVENT_CONFLICTS_WITH_OTHER_MASTERS", "file__EusciB_8hpp.html#ggaf3a5b639c475c2aa306f1810c255a245a333d0cab43cc6332d074aff6cb9f6aa3", null ],
+                [ "ENABLE_SIGNAL_FOR_4WIRE_SLAVE", "file__EusciB_8hpp.html#ggaf3a5b639c475c2aa306f1810c255a245a2acb230600222980caf8d10e3140b0da", null ]
+              ] ],
+              [ "MODE", "file__EusciB_8hpp.html#gacd367043db8cfff13180aca647b2d45b", [
+                [ "TX", "file__EusciB_8hpp.html#ggacd367043db8cfff13180aca647b2d45ba869036c9d97cf6593c6f1c2ccfd99a49", null ],
+                [ "RX", "file__EusciB_8hpp.html#ggacd367043db8cfff13180aca647b2d45baf9c24782c24c237d16e79f18e2fa9046", null ]
+              ] ],
+              [ "MODE", "file__EusciB_8hpp.html#ga8940e8a4ea0ee1518053716d58f21945", [
+                [ "WITHOUT_CHIPSELECT", "file__EusciB_8hpp.html#gga8940e8a4ea0ee1518053716d58f21945a18fc312ba79f5ffc4d36a239d93702b8", null ],
+                [ "CHIPSELECT_ACTIVE_HIGH", "file__EusciB_8hpp.html#gga8940e8a4ea0ee1518053716d58f21945ac0737cf9e7b073aff86b0c4c6c3e45c5", null ],
+                [ "CHIPSELECT_ACTIVE_LOW", "file__EusciB_8hpp.html#gga8940e8a4ea0ee1518053716d58f21945aae31aaaec800e5dbb7395881a9796f13", null ]
+              ] ],
+              [ "SLAVE_ADDRESS", "file__EusciB_8hpp.html#ga80106f39dfd770a9f367b79ed2d90a45", [
+                [ "ENABLED", "file__EusciB_8hpp.html#gga80106f39dfd770a9f367b79ed2d90a45ac8cf6eea8f096ed51160b484d97c5bbd", null ],
+                [ "DISABLED", "file__EusciB_8hpp.html#gga80106f39dfd770a9f367b79ed2d90a45a055c1a591abb0e8cd86dc969727bcc0b", null ]
+              ] ],
+              [ "SLAVE_ADDRESS_OFFSET", "file__EusciB_8hpp.html#gaac19b32dea33997988ef226fb09ada48", [
+                [ "_0", "file__EusciB_8hpp.html#ggaac19b32dea33997988ef226fb09ada48aa764b4bf13a360c7ac2a35ec4ca96c95", null ],
+                [ "_1", "file__EusciB_8hpp.html#ggaac19b32dea33997988ef226fb09ada48a5d98ec0427152056397e9e35f357be87", null ],
+                [ "_2", "file__EusciB_8hpp.html#ggaac19b32dea33997988ef226fb09ada48a26e3d8bac39f9313d584a6025bd7544d", null ],
+                [ "_3", "file__EusciB_8hpp.html#ggaac19b32dea33997988ef226fb09ada48af806252045a28179caaf0ec8f0b5f298", null ]
+              ] ],
+              [ "START_STATE", "file__EusciB_8hpp.html#ga3124b27875a64242dff1554b94e00e60", [
+                [ "SEND_COMPLETE", "file__EusciB_8hpp.html#gga3124b27875a64242dff1554b94e00e60a27df0a881d0ce83e60675e96fcaabea1", null ],
+                [ "SENDING", "file__EusciB_8hpp.html#gga3124b27875a64242dff1554b94e00e60ac9c9fa46a3628497a4e7f74444ae4568", null ]
+              ] ],
+              [ "STOP_STATE", "file__EusciB_8hpp.html#ga469410b45269d7217a4ff7c8ae7bc41a", [
+                [ "SEND_COMPLETE", "file__EusciB_8hpp.html#gga469410b45269d7217a4ff7c8ae7bc41aa27df0a881d0ce83e60675e96fcaabea1", null ],
+                [ "SENDING", "file__EusciB_8hpp.html#gga469410b45269d7217a4ff7c8ae7bc41aac9c9fa46a3628497a4e7f74444ae4568", null ]
+              ] ],
+              [ "TIMEOUT", "file__EusciB_8hpp.html#ga845a11dea49415c7052abe249513136f", [
+                [ "DISABLED", "file__EusciB_8hpp.html#gga845a11dea49415c7052abe249513136fa055c1a591abb0e8cd86dc969727bcc0b", null ],
+                [ "_28_MS", "file__EusciB_8hpp.html#gga845a11dea49415c7052abe249513136fa5ea8f3b5a4a4e194c5d018b8601d9644", null ],
+                [ "_31_MS", "file__EusciB_8hpp.html#gga845a11dea49415c7052abe249513136faa0a67986e7389a9566f6c49a0f040afd", null ],
+                [ "_34_MS", "file__EusciB_8hpp.html#gga845a11dea49415c7052abe249513136fa479fea8e7c1cec265ac4163e65cecd9e", null ]
+              ] ],
+              [ "adrOffset", "file__EusciB_8hpp.html#ae0a13c796bddd0f0af05b8587e6aa850", null ],
+              [ "autostop", "file__EusciB_8hpp.html#a64dcb4c1cf0fa2b45979a518b70d9c89", null ],
+              [ "byteCounterThreshold", "file__EusciB_8hpp.html#a453e9d5f5bc1c6c26a754633c06513cc", null ],
+              [ "clkPhase", "file__EusciB_8hpp.html#a48b75ff06d9e4c706fffb128ac164df0", null ],
+              [ "clkPolarity", "file__EusciB_8hpp.html#a1776ca59eaa6eba70229be8e294acc7d", null ],
+              [ "clkSourceFrequencyInHz", "file__EusciB_8hpp.html#a11bd4451ea2184f578e1bb62c0b8f1dd", null ],
+              [ "clkSourceFrequencyInHz", "file__EusciB_8hpp.html#a4651f441e1ec5e648cf153f4dee5b431", null ],
+              [ "datarate", "file__EusciB_8hpp.html#adcd6901137ded26de9da8a95c931c741", null ],
+              [ "desiredSpiClockInHz", "file__EusciB_8hpp.html#a5730586c8099f2886eaab195db8f88fb", null ],
+              [ "mode", "file__EusciB_8hpp.html#aff065bfd69fe8928ee0a689baf882204", null ],
+              [ "msbOrLsbFirst", "file__EusciB_8hpp.html#aa9a60b1716a114e8d047f089198b9fd4", null ],
+              [ "onOff", "file__EusciB_8hpp.html#acbdff77905bc678ac7c75876d8fa8dfb", null ]
             ] ]
           ] ],
           [ "GPIO", "dir_406c66aff740586c12c555eb45f89962.html", [
@@ -2177,11 +2618,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "MSP430_2Settings_8hpp.html",
-"file__Pmm_8hpp.html#a7ae319575ffec2097512ce11b9bfe07babf9535e89e1b64f806fb4766deec342a",
-"file__Types_8hpp.html#gga02d155aaecb463afe8f6bdda2b6c0066a946003f97ccc52d5d3b54ac0ec31bbfc",
-"group__groupEnumsMSP430Types.html#gga4039c591bc81cfb75eef0c5c838e7ab3ab50339a10e1de285ac99d4c3990b8693",
-"group__groupFuncsMSP430Gpio.html#ga4f20d07d7be915ae8512a21531522ee9",
-"group__groupMSP430WdtAInt.html"
+"file__EusciB_8hpp.html#ggaf9279c1b32356cc5a07f3f6775553ea0a53e3e0766dc25ff61da8b0a5d5d43fe1",
+"file__TimerA_8hpp.html#a1c09cebbf2e850699b2ba948bf79f0f0",
+"group__groupEnumsMSP430I2C__EUSCI__B.html#ggadf62a15fae15a8e4ec6203b05dad4d64a2287b51f5f8d4d4df9f4d4e6cb24f883",
+"group__groupEnumsReg.html#gga26a7b5f5b054dcfecb8251310332b90aa68cfc2e79b960ea5a3863dd0cb4e5515",
+"group__groupFuncsMSP430I2C__EUSCI__B.html#ga84a87d5d663ff95d74ffed0da53c94b7",
+"group__groupFuncsReg.html#ga70f1282d8ec5d6bcd214bad59eb42990"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

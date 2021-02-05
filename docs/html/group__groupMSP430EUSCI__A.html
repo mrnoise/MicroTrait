@@ -77,15 +77,15 @@ Collaboration diagram for EUSCI A:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="group__groupMSP430EUSCI__A.png" border="0" alt="" usemap="#group____groupMSP430EUSCI____A"/>
 <map name="group____groupMSP430EUSCI____A" id="group____groupMSP430EUSCI____A">
-<area shape="rect"  href="group__groupParamsMSP430SPI__EUSCI__A.html" title=" " alt="" coords="255,5,361,32"/>
+<area shape="rect"  href="group__groupMSP430EUSCIAInt.html" title="functions to register Interrupt callbacks for Eusci A Interrupts at compile time or at runtime &#45;&gt; ch..." alt="" coords="273,5,343,32"/>
 <area shape="rect"  href="group__groupEnumsMSP430SPI__EUSCI__A.html" title=" " alt="" coords="264,56,352,83"/>
 <area shape="rect"  href="group__groupMSP430.html" title=" " alt="" coords="5,157,77,184"/>
 <area shape="rect"  title="functions for EUSCI A register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="125,157,200,184"/>
-<area shape="rect"  href="group__groupMSP430EUSCIAInt.html" title="functions to register Interrupt callbacks for Eusci A Interrupts at compile time or at runtime &#45;&gt; ch..." alt="" coords="273,107,343,133"/>
+<area shape="rect"  href="group__groupFuncsMSP430SPI__EUSCI__A.html" title=" " alt="" coords="256,107,360,133"/>
 <area shape="rect"  href="group__groupFuncsMSP430UART__EUSCI__A.html" title=" " alt="" coords="249,157,367,184"/>
 <area shape="rect"  href="group__groupEnumsMSP430UART__EUSCI__A.html" title=" " alt="" coords="257,208,359,235"/>
-<area shape="rect"  href="group__groupParamsMSP430UART__EUSCI__A.html" title=" " alt="" coords="248,259,368,285"/>
-<area shape="rect"  href="group__groupFuncsMSP430SPI__EUSCI__A.html" title=" " alt="" coords="256,309,360,336"/>
+<area shape="rect"  href="group__groupParamsMSP430SPI__EUSCI__A.html" title=" " alt="" coords="255,259,361,285"/>
+<area shape="rect"  href="group__groupParamsMSP430UART__EUSCI__A.html" title=" " alt="" coords="248,309,368,336"/>
 </map>
 </td></tr></table></center>
 </div>
@@ -114,20 +114,34 @@ Modules</h2></td></tr>
 <div class="line"> </div>
 <div class="line"> <span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div>
 <div class="line"> </div>
-<div class="line">  <a class="code" href="group__groupParamsMSP430UART__EUSCI__A.html#ga430e96ba4dc4385b28f3adfde8debccd">UART::initParam</a> param{</div>
-<div class="line">    UART::CLOCKSOURCE::SMCLK,</div>
+<div class="line">  <a class="code" href="group__groupParamsMSP430UART__EUSCI__A.html#ga430e96ba4dc4385b28f3adfde8debccd">EUSCIA::UART::initParam</a> param{</div>
+<div class="line">    <a class="code" href="group__groupEnumsMSP430UART__EUSCI__A.html#gga3ca65c5b262e34207f1fc69894ad8d99ab88c7c2fc640bdbd4125b363c2c018de">EUSCIA::UART::CLOCKSOURCE::SMCLK</a>,</div>
 <div class="line">    6,</div>
 <div class="line">    8,</div>
 <div class="line">    17,</div>
-<div class="line">    UART::PARITY::EVEN,</div>
-<div class="line">    UART::ENDIAN::MSB_FIRST,</div>
-<div class="line">    UART::STOPBIT::TWO,</div>
-<div class="line">    UART::MODE::UART,</div>
-<div class="line">    UART::BAUD_GENERATION::OVERSAMPLING</div>
+<div class="line">    <a class="code" href="group__groupEnumsMSP430UART__EUSCI__A.html#ggabe64307040f3a333760db9b1ddc03bb8a6634c67f28ba9a80efe941b9519aa106">EUSCIA::UART::PARITY::EVEN</a>,</div>
+<div class="line">    <a class="code" href="group__groupEnumsMSP430UART__EUSCI__A.html#gga7f489334c9bf63e0d42f7b50330ed49aa89488e0251a0b2be79602890ef16ddb3">EUSCIA::UART::ENDIAN::MSB_FIRST</a>,</div>
+<div class="line">    <a class="code" href="group__groupEnumsMSP430UART__EUSCI__A.html#gga9230ebd6e8540fdbed38457395e3e2d2a0f82d86afa0f5dc965c5c15aca58dcfb">EUSCIA::UART::STOPBIT::TWO</a>,</div>
+<div class="line">    <a class="code" href="group__groupEnumsMSP430UART__EUSCI__A.html#gga6e71743d1e33fb17990bdd372b6a6372acec5769b01fb096efaf0d6186823c78f">EUSCIA::UART::MODE::UART</a>,</div>
+<div class="line">    <a class="code" href="group__groupEnumsMSP430UART__EUSCI__A.html#gga368813cacafb2479ae64f87488cfe506a70494093196af3b7172e0f61b5264e1b">EUSCIA::UART::BAUD_GENERATION::OVERSAMPLING</a></div>
 <div class="line">    };</div>
 <div class="line"> </div>
-<div class="line"> <a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">UART::A0</a> a0;</div>
-<div class="line"> a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga1c3c76ae7f7e530d0cff16306cd44131">init</a>(param); </div>
+<div class="line"> <a class="code" href="structMT_1_1MSP430_1_1EUSCIA_1_1UART_1_1Internal_1_1UART.html">EUSCIA::UART::A0</a> a0;</div>
+<div class="line"> a0.<a class="code" href="group__groupFuncsMSP430UART__EUSCI__A.html#ga1c3c76ae7f7e530d0cff16306cd44131">init</a>(param);</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"> <a class="code" href="group__groupParamsMSP430SPI__EUSCI__A.html#ga71967d7b2879ca8d2de3553aacd55c03">EUSCIA::SPI::initMasterParam</a> param{</div>
+<div class="line">    <a class="code" href="group__groupEnumsMSP430SPI__EUSCI__A.html#gga71715376538dc10f7290cc761384610aab88c7c2fc640bdbd4125b363c2c018de">EUSCIA::SPI::CLOCKSOURCE::SMCLK</a>,</div>
+<div class="line">    1<span class="stringliteral">&#39;000&#39;</span>000,</div>
+<div class="line">    400<span class="stringliteral">&#39;000,</span></div>
+<div class="line"><span class="stringliteral">    EUSCIA::SPI::ENDIAN::MSB_FIRST,</span></div>
+<div class="line"><span class="stringliteral">    EUSCIA::SPI::CLOCKPHASE::DATA_CAPTURED_ONFIRST_CHANGED_ON_NEXT,</span></div>
+<div class="line"><span class="stringliteral">    EUSCIA::SPI::CLOCKPOLARITY::INACTIVITY_HIGH,</span></div>
+<div class="line"><span class="stringliteral">    EUSCIA::SPI::MODE::WITHOUT_CHIPSELECT</span></div>
+<div class="line"><span class="stringliteral"> };</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">  EUSCIA::SPI::A1 a1;</span></div>
+<div class="line"><span class="stringliteral">  a1.initMaster(param);</span></div>
 </div><!-- end fragment -->
 <dl class="section author"><dt>Author</dt><dd>Steffen Fuchs <br/>
  Email: <a href="mailto:admin@definefalsetrue.com">admin@definefalsetrue.com</a> <br/>
@@ -137,7 +151,7 @@ Modules</h2></td></tr>
 <!-- Generated by DoxyPress 1.4.1 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mi Feb 3 2021 16:46:38 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Fr Feb 5 2021 18:55:26 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="https://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.1 </li>
   </ul>
