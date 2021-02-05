@@ -20,6 +20,7 @@
 #include <MicroTrait/MSP430/WDT/WdtAInterrupt.hpp>
 #include <MicroTrait/MSP430/EUSCI/EusciA.hpp>
 #include <MicroTrait/MSP430/EUSCI/EusciAInterrupt.hpp>
+#include <MicroTrait/MSP430/EUSCI/EusciB.hpp>
 
 #if defined(__GNUC__)
 #else
