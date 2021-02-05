@@ -13,20 +13,36 @@
 *
 * using namespace MT::MSP430;
 *
-*  UART::initParam param{
-*    UART::CLOCKSOURCE::SMCLK,
+*  EUSCIA::UART::initParam param{
+*    EUSCIA::UART::CLOCKSOURCE::SMCLK,
 *    6,
 *    8,
 *    17,
-*    UART::PARITY::EVEN,
-*    UART::ENDIAN::MSB_FIRST,
-*    UART::STOPBIT::TWO,
-*    UART::MODE::UART,
-*    UART::BAUD_GENERATION::OVERSAMPLING
+*    EUSCIA::UART::PARITY::EVEN,
+*    EUSCIA::UART::ENDIAN::MSB_FIRST,
+*    EUSCIA::UART::STOPBIT::TWO,
+*    EUSCIA::UART::MODE::UART,
+*    EUSCIA::UART::BAUD_GENERATION::OVERSAMPLING
 *	};
 *
-* UART::A0 a0;
-* a0.init(param); \endcode
+* EUSCIA::UART::A0 a0;
+* a0.init(param);
+*
+*
+* EUSCIA::SPI::initMasterParam param{
+*    EUSCIA::SPI::CLOCKSOURCE::SMCLK,
+*    1'000'000,
+*    400'000,
+*    EUSCIA::SPI::ENDIAN::MSB_FIRST,
+*    EUSCIA::SPI::CLOCKPHASE::DATA_CAPTURED_ONFIRST_CHANGED_ON_NEXT,
+*    EUSCIA::SPI::CLOCKPOLARITY::INACTIVITY_HIGH,
+*    EUSCIA::SPI::MODE::WITHOUT_CHIPSELECT
+* };
+*
+*  EUSCIA::SPI::A1 a1;
+*  a1.initMaster(param);
+*
+* \endcode
 *
 * @author Steffen Fuchs
 *<br> Email: admin@definefalsetrue.com
@@ -571,7 +587,7 @@ struct UART {
    	* using namespace MT::MSP430::EUSCIA;
    	*
    	* UART::A0 a0;
-	* const unit8_t byte = a0.receiveData(); \endcode
+	* const uint8_t byte = a0.receiveData(); \endcode
 	*
 	*@tparam CONTEXT -> usage context of the function -> default is in interrupt context set to USAGE_CONTEXT::POLLING if used outside ISR
    	*@return the byte received
@@ -919,7 +935,7 @@ struct SPI {
 
         m_ctlw0.override(UCSWRST | toUnderlyingType(param.clkSource) | toUnderlyingType(param.msbOrLsbFirst) | toUnderlyingType(param.clkPhase)
                          | toUnderlyingType(param.clkPolarity) | (UCMST) | (UCSYNC) | toUnderlyingType(param.mode) | (stem));
-        m_brw.override(param.clkSourceFrequencyInHz / param.desiredSpiClockInHz);
+        m_brw.override(static_cast<uint16_t>(param.clkSourceFrequencyInHz / param.desiredSpiClockInHz));
         m_mctlw.override(0);
     }
 
@@ -965,7 +981,7 @@ struct SPI {
 	*/
     constexpr void changeMasterClock(const changeMasterClockParam &param) noexcept {
         m_ctlw0.set(UCSWRST);
-        m_brw.override(param.clkSourceFrequencyInHz / param.desiredSpiClockInHz);
+        m_brw.override(static_cast<uint16_t>(param.clkSourceFrequencyInHz / param.desiredSpiClockInHz));
         m_ctlw0.clear(UCSWRST);
     }
 
@@ -1058,7 +1074,7 @@ struct SPI {
 	* using namespace MT::MSP430::EUSCIA;
 	*
 	* SPI::A1 a1;
-	* const unit8_t byte = a1.receiveData(); \endcode
+	* const uint8_t byte = a1.receiveData(); \endcode
 	*
 	*@tparam CONTEXT -> usage context of the function -> default is in interrupt context set to USAGE_CONTEXT::POLLING if used outside ISR
 	*@return data -> data recieved over SPI
