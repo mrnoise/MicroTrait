@@ -244,10 +244,10 @@ var NAVTREEINDEX5 =
 "group__groupFuncsMeta.html":[1,1,1,0],
 "group__groupFuncsMeta.html#ga363d597ba0abc4977021bca8550adf02":[1,1,1,0,0],
 "group__groupFuncsReg.html":[1,2,1,1],
-"group__groupFuncsReg.html#ga1e40a47d06894d7e24a83505702e8307":[3,0,0,2,1,1],
-"group__groupFuncsReg.html#ga1e40a47d06894d7e24a83505702e8307":[1,2,1,1,1],
-"group__groupFuncsReg.html#ga26283a7164b656b39c9393f1307488b7":[3,0,0,2,1,0],
-"group__groupFuncsReg.html#ga26283a7164b656b39c9393f1307488b7":[1,2,1,1,0],
-"group__groupFuncsReg.html#ga3d80bc91652fb353b5ba8e75e0f958e9":[3,0,0,2,1,2],
-"group__groupFuncsReg.html#ga3d80bc91652fb353b5ba8e75e0f958e9":[1,2,1,1,2]
+"group__groupFuncsReg.html#ga5f33665ab53710c9d20c9d98f45b95cd":[3,0,0,2,1,5],
+"group__groupFuncsReg.html#ga5f33665ab53710c9d20c9d98f45b95cd":[1,2,1,1,5],
+"group__groupFuncsReg.html#ga90e4a4bedb871493f210e7065bdb3fb2":[3,0,0,2,1,3],
+"group__groupFuncsReg.html#ga90e4a4bedb871493f210e7065bdb3fb2":[1,2,1,1,3],
+"group__groupFuncsReg.html#gaa5457a0befb045c66415102a4531c13c":[3,0,0,2,1,4],
+"group__groupFuncsReg.html#gaa5457a0befb045c66415102a4531c13c":[1,2,1,1,4]
 };

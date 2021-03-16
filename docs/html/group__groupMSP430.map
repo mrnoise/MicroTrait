@@ -1,12 +1,12 @@
 <map id="MSP430" name="MSP430">
-<area shape="rect" id="node1" href="$group__groupMSP430EUSCI__B.html" title="functions for EUSCI B register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="125,5,200,32"/>
-<area shape="rect" id="node2" href="$group__groupMSP430EUSCI__A.html" title="functions for EUSCI A register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="125,56,200,83"/>
-<area shape="rect" id="node3" href="$group__groupMSP430WdtA.html" title="functions for Watchdog A register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="131,107,195,133"/>
-<area shape="rect" id="node4" href="$group__groupMSP430TimerA.html" title="functions for Timer A register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="129,157,196,184"/>
-<area shape="rect" id="node5" href="$group__groupMSP430Set.html" title="settings to refine usage of the MSP430 lib " alt="" coords="127,208,198,235"/>
-<area shape="rect" id="node6" title=" " alt="" coords="5,208,77,235"/>
+<area shape="rect" id="node1" href="$group__groupMSP430EUSCI__A.html" title="functions for EUSCI A register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="125,5,200,32"/>
+<area shape="rect" id="node2" href="$group__groupMSP430WdtA.html" title="functions for Watchdog A register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="131,56,195,83"/>
+<area shape="rect" id="node3" href="$group__groupMSP430TimerA.html" title="functions for Timer A register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="129,107,196,133"/>
+<area shape="rect" id="node4" href="$group__groupMSP430Set.html" title="settings to refine usage of the MSP430 lib " alt="" coords="127,157,198,184"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,208,77,235"/>
+<area shape="rect" id="node6" href="$group__groupMSP430Gpio.html" title="functions for GPIO hardware access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="135,208,190,235"/>
 <area shape="rect" id="node7" href="$group__groupMSP430Types.html" title="Generic Type definitions. " alt="" coords="134,259,191,285"/>
-<area shape="rect" id="node8" href="$group__groupMSP430Sfr.html" title="functions for SFR(special function register) register access for TIs MSP430 &#45;&gt; Ti Driverlib equivale..." alt="" coords="139,309,187,336"/>
-<area shape="rect" id="node9" href="$group__groupMSP430Gpio.html" title="functions for GPIO hardware access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="135,360,190,387"/>
+<area shape="rect" id="node8" href="$group__groupMSP430EUSCI__B.html" title="functions for EUSCI B register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="125,309,200,336"/>
+<area shape="rect" id="node9" href="$group__groupMSP430Sfr.html" title="functions for SFR(special function register) register access for TIs MSP430 &#45;&gt; Ti Driverlib equivale..." alt="" coords="139,360,187,387"/>
 <area shape="rect" id="node10" href="$group__groupMSP430Pmm.html" title="functions for PMM(power management module) register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent..." alt="" coords="136,411,189,437"/>
 </map>

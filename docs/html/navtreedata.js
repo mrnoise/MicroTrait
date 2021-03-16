@@ -764,18 +764,13 @@ var NAVTREE =
             ] ]
           ] ],
           [ "Functions", "group__groupFuncsReg.html", [
-            [ "clear", "group__groupFuncsReg.html#ga26283a7164b656b39c9393f1307488b7", null ],
-            [ "clear", "group__groupFuncsReg.html#ga1e40a47d06894d7e24a83505702e8307", null ],
-            [ "compare", "group__groupFuncsReg.html#ga3d80bc91652fb353b5ba8e75e0f958e9", null ],
-            [ "compare", "group__groupFuncsReg.html#ga835a74f5ad9d99284f4b41feb0d50f03", null ],
+            [ "clear", "group__groupFuncsReg.html#gae8aa6c81fbe85bd50a31d2980b5dbd42", null ],
+            [ "compare", "group__groupFuncsReg.html#gab0632346e0356bece3e74de277e47da2", null ],
             [ "get", "group__groupFuncsReg.html#gab21632a8d9cffeeb202794aec1c8be6d", null ],
             [ "getAddress", "group__groupFuncsReg.html#ga90e4a4bedb871493f210e7065bdb3fb2", null ],
-            [ "override", "group__groupFuncsReg.html#ga70f1282d8ec5d6bcd214bad59eb42990", null ],
-            [ "override", "group__groupFuncsReg.html#gaee78d2a6507f7ea68ebe514cf4b5424e", null ],
-            [ "set", "group__groupFuncsReg.html#gadd6b2f21bdc386de0c2990e6651fb9fa", null ],
-            [ "set", "group__groupFuncsReg.html#ga84ce0e5daa7bdf8ffc0df0cca4282b93", null ],
-            [ "toggle", "group__groupFuncsReg.html#gade7cafbb3b8756c3c680cd28a5d62e8b", null ],
-            [ "toggle", "group__groupFuncsReg.html#gae50f5988947e98b93fd4b41ae4a691be", null ]
+            [ "override", "group__groupFuncsReg.html#gaa5457a0befb045c66415102a4531c13c", null ],
+            [ "set", "group__groupFuncsReg.html#ga5f33665ab53710c9d20c9d98f45b95cd", null ],
+            [ "toggle", "group__groupFuncsReg.html#gadea0be857c25b7f703400c59a096808b", null ]
           ] ]
         ] ]
       ] ]
@@ -1250,18 +1245,13 @@ var NAVTREE =
               ] ]
             ] ],
             [ "Register", "structMT_1_1Universal_1_1Register.html", [
-              [ "clear", "group__groupFuncsReg.html#ga26283a7164b656b39c9393f1307488b7", null ],
-              [ "clear", "group__groupFuncsReg.html#ga1e40a47d06894d7e24a83505702e8307", null ],
-              [ "compare", "group__groupFuncsReg.html#ga3d80bc91652fb353b5ba8e75e0f958e9", null ],
-              [ "compare", "group__groupFuncsReg.html#ga835a74f5ad9d99284f4b41feb0d50f03", null ],
+              [ "clear", "group__groupFuncsReg.html#gae8aa6c81fbe85bd50a31d2980b5dbd42", null ],
+              [ "compare", "group__groupFuncsReg.html#gab0632346e0356bece3e74de277e47da2", null ],
               [ "get", "group__groupFuncsReg.html#gab21632a8d9cffeeb202794aec1c8be6d", null ],
               [ "getAddress", "group__groupFuncsReg.html#ga90e4a4bedb871493f210e7065bdb3fb2", null ],
-              [ "override", "group__groupFuncsReg.html#ga70f1282d8ec5d6bcd214bad59eb42990", null ],
-              [ "override", "group__groupFuncsReg.html#gaee78d2a6507f7ea68ebe514cf4b5424e", null ],
-              [ "set", "group__groupFuncsReg.html#gadd6b2f21bdc386de0c2990e6651fb9fa", null ],
-              [ "set", "group__groupFuncsReg.html#ga84ce0e5daa7bdf8ffc0df0cca4282b93", null ],
-              [ "toggle", "group__groupFuncsReg.html#gade7cafbb3b8756c3c680cd28a5d62e8b", null ],
-              [ "toggle", "group__groupFuncsReg.html#gae50f5988947e98b93fd4b41ae4a691be", null ]
+              [ "override", "group__groupFuncsReg.html#gaa5457a0befb045c66415102a4531c13c", null ],
+              [ "set", "group__groupFuncsReg.html#ga5f33665ab53710c9d20c9d98f45b95cd", null ],
+              [ "toggle", "group__groupFuncsReg.html#gadea0be857c25b7f703400c59a096808b", null ]
             ] ]
           ] ]
         ] ]
@@ -2530,18 +2520,13 @@ var NAVTREE =
             [ "enable_Enum_bits< volatile BITS32 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS32_01_4.html", null ],
             [ "enable_Enum_bits< volatile BITS8 >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01BITS8_01_4.html", null ],
             [ "Register", "structMT_1_1Universal_1_1Register.html", [
-              [ "clear", "group__groupFuncsReg.html#ga26283a7164b656b39c9393f1307488b7", null ],
-              [ "clear", "group__groupFuncsReg.html#ga1e40a47d06894d7e24a83505702e8307", null ],
-              [ "compare", "group__groupFuncsReg.html#ga3d80bc91652fb353b5ba8e75e0f958e9", null ],
-              [ "compare", "group__groupFuncsReg.html#ga835a74f5ad9d99284f4b41feb0d50f03", null ],
+              [ "clear", "group__groupFuncsReg.html#gae8aa6c81fbe85bd50a31d2980b5dbd42", null ],
+              [ "compare", "group__groupFuncsReg.html#gab0632346e0356bece3e74de277e47da2", null ],
               [ "get", "group__groupFuncsReg.html#gab21632a8d9cffeeb202794aec1c8be6d", null ],
               [ "getAddress", "group__groupFuncsReg.html#ga90e4a4bedb871493f210e7065bdb3fb2", null ],
-              [ "override", "group__groupFuncsReg.html#ga70f1282d8ec5d6bcd214bad59eb42990", null ],
-              [ "override", "group__groupFuncsReg.html#gaee78d2a6507f7ea68ebe514cf4b5424e", null ],
-              [ "set", "group__groupFuncsReg.html#gadd6b2f21bdc386de0c2990e6651fb9fa", null ],
-              [ "set", "group__groupFuncsReg.html#ga84ce0e5daa7bdf8ffc0df0cca4282b93", null ],
-              [ "toggle", "group__groupFuncsReg.html#gade7cafbb3b8756c3c680cd28a5d62e8b", null ],
-              [ "toggle", "group__groupFuncsReg.html#gae50f5988947e98b93fd4b41ae4a691be", null ]
+              [ "override", "group__groupFuncsReg.html#gaa5457a0befb045c66415102a4531c13c", null ],
+              [ "set", "group__groupFuncsReg.html#ga5f33665ab53710c9d20c9d98f45b95cd", null ],
+              [ "toggle", "group__groupFuncsReg.html#gadea0be857c25b7f703400c59a096808b", null ]
             ] ],
             [ "BITS16", "file__Register_8hpp.html#ga8779a21c592ffcc487f2b68d4d5aeff1", [
               [ "B0", "file__Register_8hpp.html#gga8779a21c592ffcc487f2b68d4d5aeff1a4c769c2c9989abb9fa024ab9930270e5", null ],
@@ -2623,7 +2608,7 @@ var NAVTREEINDEX =
 "group__groupEnumsMSP430I2C__EUSCI__B.html#ggadf62a15fae15a8e4ec6203b05dad4d64a2287b51f5f8d4d4df9f4d4e6cb24f883",
 "group__groupEnumsReg.html#gga26a7b5f5b054dcfecb8251310332b90aa68cfc2e79b960ea5a3863dd0cb4e5515",
 "group__groupFuncsMSP430I2C__EUSCI__B.html#ga84a87d5d663ff95d74ffed0da53c94b7",
-"group__groupFuncsReg.html#ga70f1282d8ec5d6bcd214bad59eb42990"
+"group__groupFuncsReg.html#gab0632346e0356bece3e74de277e47da2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
