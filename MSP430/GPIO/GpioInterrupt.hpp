@@ -16,20 +16,16 @@ using namespace MT::MSP430;
 #ifdef MT_MSP430_USE_GPIO_COMPILE_TIME_CALLBACKS
 
   constexpr static GPIO::Interrupt::Port1 int1{
-    [](const GPIO::PIN pin) {  //-> use only lambdas for compile time registration!!
-        if (pin == GPIO::PIN::P1) {
-            GPIO::Port1 p1{};
-            p1.toggleOutputOnPin(GPIO::PIN::P0);
+        []([[maybe_unused]] const GPIO::PIN pin) {
+            if (!GPIO::Interrupt::isSet(pin, GPIO::PIN::P1)) return;
+            GPIO::Port1().toggleOutputOnPin(GPIO::PIN::P0);
         }
-    }
- };
+    };
 
-  constexpr static GPIO::Interrupt::Port2 int2{
-        [](const GPIO::PIN pin) {  //-> use only lambdas for compile time registration!!
-            if (pin == GPIO::PIN::P4) {
-                GPIO::Port1 p1{};
-                p1.toggleOutputOnPin(GPIO::PIN::P0);
-            }
+    constexpr static GPIO::Interrupt::Port2 int2{
+        []([[maybe_unused]] const GPIO::PIN pin) {
+            if (!GPIO::Interrupt::isSet(pin, GPIO::PIN::P4)) return;
+            GPIO::Port1().toggleOutputOnPin(GPIO::PIN::P0);
         }
     };
 
@@ -45,18 +41,16 @@ using namespace MT::MSP430;
 
      GPIO::Interrupt::Port1 int1{};
     int1.registerCallback([](GPIO::PIN pin) {
-        if (pin == GPIO::PIN::P1) {
+         if (!GPIO::Interrupt::isSet(pin, GPIO::PIN::P1)) return;
             GPIO::Port1 p1{};
             p1.toggleOutputOnPin(GPIO::PIN::P0);
-        }
     });
 
     GPIO::Interrupt::Port2 int2{};
     int2.registerCallback([](GPIO::PIN pin) {
-        if (pin == GPIO::PIN::P4) {
-            GPIO::Port1 p1{};
-            p1.toggleOutputOnPin(GPIO::PIN::P0);
-        }
+	 if (!GPIO::Interrupt::isSet(pin, GPIO::PIN::P4)) return;
+		GPIO::Port1 p1{};
+		p1.toggleOutputOnPin(GPIO::PIN::P0);
     });
 
 #endif
@@ -98,6 +92,21 @@ using namespace MT::MSP430;
 
 namespace MT::MSP430::GPIO::Interrupt {
 
+using INT = MT::MSP430::GPIO::PIN;
+
+/**
+* @ingroup groupFuncsMSP430GpioInt
+****************************************************************
+* @brief checks if the given interrupt is set
+* @details
+* Usage: \code {.cpp}
+*       if (GPIO::Interrupt::isSet(pin, GPIO::PIN::P4)) doSomething(); \endcode
+*@param lhs left hand side of the comparison can be the source or the interrupt to check for if set
+*@param rhs right hand side of the comparison can be the source or the interrupt to check for if set
+****************************************************************
+*/
+constexpr bool isSet(const INT lhs, const INT rhs) noexcept { return MT::Misc::Cast::toUnderlyingType(lhs) & MT::Misc::Cast::toUnderlyingType(rhs); }
+
 #ifdef MT_MSP430_USE_GPIO_COMPILE_TIME_CALLBACKS
 
 #if defined(P1IFG)
@@ -115,9 +124,8 @@ struct Port1 {
 	*
 	*  constexpr static GPIO::Interrupt::Port1 int1{
     *    [](const GPIO::PIN pin) { //-> use only lambdas for compile time registration!!
-    *        if (pin == GPIO::PIN::P1) {
-    *            GPIO::Port1 p1{};
-    *            p1.toggleOutputOnPin(GPIO::PIN::P0);
+    *          if (GPIO::Interrupt::isSet(pin, GPIO::PIN::P4)) {
+    *            GPIO::Port1().toggleOutputOnPin(GPIO::PIN::P0);
     *        }
     *    }
     * }; \endcode
@@ -145,28 +153,28 @@ struct Port1 {
         switch (__even_in_range(P1IV, P1IV_P1IFG7)) {
             case P1IV_NONE: break;
             case P1IV_P1IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P1IV_P1IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P1IV_P1IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P1IV_P1IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P1IV_P1IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P1IV_P1IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P1IV_P1IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P1IV_P1IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -201,28 +209,28 @@ struct Port2 {
         switch (__even_in_range(P2IV, P2IV_P2IFG7)) {
             case P2IV_NONE: break;
             case P2IV_P2IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P2IV_P2IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P2IV_P2IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P2IV_P2IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P2IV_P2IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P2IV_P2IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P2IV_P2IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P2IV_P2IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -257,28 +265,28 @@ struct Port3 {
         switch (__even_in_range(P3IV, P3IV_P3IFG7)) {
             case P3IV_NONE: break;
             case P3IV_P3IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P3IV_P3IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P3IV_P3IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P3IV_P3IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P3IV_P3IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P3IV_P3IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P3IV_P3IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P3IV_P3IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -312,28 +320,28 @@ struct Port4 {
         switch (__even_in_range(P4IV, P4IV_P4IFG7)) {
             case P4IV_NONE: break;
             case P4IV_P4IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P4IV_P4IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P4IV_P4IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P4IV_P4IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P4IV_P4IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P4IV_P4IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P4IV_P4IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P4IV_P4IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -368,28 +376,28 @@ struct Port5 {
         switch (__even_in_range(P5IV, P5IV_P5IFG7)) {
             case P5IV_NONE: break;
             case P5IV_P5IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P5IV_P5IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P5IV_P5IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P5IV_P5IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P5IV_P5IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P5IV_P5IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P5IV_P5IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P5IV_P5IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -423,28 +431,28 @@ struct Port6 {
         switch (__even_in_range(P6IV, P6IV_P6IFG7)) {
             case P6IV_NONE: break;
             case P6IV_P6IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P6IV_P6IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P6IV_P6IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P6IV_P6IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P6IV_P6IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P6IV_P6IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P6IV_P6IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P6IV_P6IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -479,28 +487,28 @@ struct Port7 {
         switch (__even_in_range(P7IV, P7IV_P7IFG7)) {
             case P7IV_NONE: break;
             case P7IV_P7IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P7IV_P7IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P7IV_P7IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P7IV_P7IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P7IV_P7IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P7IV_P7IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P7IV_P7IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P7IV_P7IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -534,28 +542,28 @@ struct Port8 {
         switch (__even_in_range(P8IV, P8IV_P8IFG7)) {
             case P8IV_NONE: break;
             case P8IV_P8IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P8IV_P8IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P8IV_P8IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P8IV_P8IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P8IV_P8IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P8IV_P8IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P8IV_P8IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P8IV_P8IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
         std::get<0>(m_vectors)(pin);
@@ -589,28 +597,28 @@ struct Port9 {
         switch (__even_in_range(P9IV, P9IV_P9IFG7)) {
             case P9IV_NONE: break;
             case P9IV_P9IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P9IV_P9IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P9IV_P9IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P9IV_P9IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P9IV_P9IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P9IV_P9IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P9IV_P9IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P9IV_P9IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -644,28 +652,28 @@ struct Port10 {
         switch (__even_in_range(P10IV, P10IV_P10IFG7)) {
             case P10IV_NONE: break;
             case P10IV_P10IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P10IV_P10IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P10IV_P10IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P10IV_P10IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P10IV_P10IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P10IV_P10IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P10IV_P10IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P10IV_P10IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
         std::get<0>(m_vectors)(pin);
@@ -698,28 +706,28 @@ struct Port11 {
         switch (__even_in_range(P11IV, P11IV_P11IFG7)) {
             case P11IV_NONE: break;
             case P11IV_P11IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P11IV_P11IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P11IV_P11IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P11IV_P11IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P11IV_P11IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P11IV_P11IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P11IV_P11IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P11IV_P11IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -754,28 +762,28 @@ struct PortJ {
         switch (__even_in_range(PJIV, PJIV_PJIFG7)) {
             case PJIV_NONE: break;
             case PJIV_PJIFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case PJIV_PJIFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case PJIV_PJIFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case PJIV_PJIFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case PJIV_PJIFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case PJIV_PJIFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case PJIV_PJIFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case PJIV_PJIFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -802,9 +810,8 @@ struct Port1 {
 	*
 	*   GPIO::Interrupt::Port1 int1;
 	*   int1.registerCallback([](GPIO::PIN pin) {
-	*        if (pin == GPIO::PIN::P1) {
-	*            GPIO::Port1 p1{};
-	*            p1.toggleOutputOnPin(GPIO::PIN::P0);
+	*          if (GPIO::Interrupt::isSet(pin, GPIO::PIN::P4)) {	*
+	*            GPIO::Port1().toggleOutputOnPin(GPIO::PIN::P0);
 	*        }
 	*    });
 	*
@@ -842,7 +849,7 @@ struct Port1 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT1_VECTOR
-    __interrupt static inline void        Port_1(void)
+    __interrupt static inline void Port_1(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(PORT1_VECTOR))) Port_1(void)
 #else
@@ -854,28 +861,28 @@ struct Port1 {
         switch (__even_in_range(P1IV, P1IV_P1IFG7)) {
             case P1IV_NONE: break;
             case P1IV_P1IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P1IV_P1IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P1IV_P1IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P1IV_P1IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P1IV_P1IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P1IV_P1IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P1IV_P1IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P1IV_P1IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -902,7 +909,7 @@ struct Port2 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT2_VECTOR
-    __interrupt static inline void        Port_2(void)
+    __interrupt static inline void Port_2(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(PORT2_VECTOR))) Port_2(void)
 #else
@@ -914,28 +921,28 @@ struct Port2 {
         switch (__even_in_range(P2IV, P2IV_P2IFG7)) {
             case P2IV_NONE: break;
             case P2IV_P2IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P2IV_P2IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P2IV_P2IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P2IV_P2IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P2IV_P2IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P2IV_P2IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P2IV_P2IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P2IV_P2IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -962,7 +969,7 @@ struct Port3 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT3_VECTOR
-    __interrupt static inline void        Port_3(void)
+    __interrupt static inline void Port_3(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(PORT3_VECTOR))) Port_3(void)
 #else
@@ -974,28 +981,28 @@ struct Port3 {
         switch (__even_in_range(P3IV, P3IV_P3IFG7)) {
             case P3IV_NONE: break;
             case P3IV_P3IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P3IV_P3IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P3IV_P3IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P3IV_P3IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P3IV_P3IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P3IV_P3IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P3IV_P3IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P3IV_P3IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -1022,7 +1029,7 @@ struct Port4 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT4_VECTOR
-    __interrupt static inline void        Port_4(void)
+    __interrupt static inline void Port_4(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(PORT4_VECTOR))) Port_4(void)
 #else
@@ -1034,28 +1041,28 @@ struct Port4 {
         switch (__even_in_range(P4IV, P4IV_P4IFG7)) {
             case P4IV_NONE: break;
             case P4IV_P4IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P4IV_P4IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P4IV_P4IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P4IV_P4IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P4IV_P4IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P4IV_P4IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P4IV_P4IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P4IV_P4IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -1082,7 +1089,7 @@ struct Port5 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT5_VECTOR
-    __interrupt static inline void        Port_5(void)
+    __interrupt static inline void Port_5(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(PORT5_VECTOR))) Port_5(void)
 #else
@@ -1094,28 +1101,28 @@ struct Port5 {
         switch (__even_in_range(P5IV, P5IV_P5IFG7)) {
             case P5IV_NONE: break;
             case P5IV_P5IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P5IV_P5IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P5IV_P5IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P5IV_P5IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P5IV_P5IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P5IV_P5IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P5IV_P5IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P5IV_P5IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -1142,7 +1149,7 @@ struct Port6 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT6_VECTOR
-    __interrupt static inline void        Port_6(void)
+    __interrupt static inline void Port_6(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(PORT6_VECTOR))) Port_6(void)
 #else
@@ -1154,28 +1161,28 @@ struct Port6 {
         switch (__even_in_range(P6IV, P6IV_P6IFG7)) {
             case P6IV_NONE: break;
             case P6IV_P6IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P6IV_P6IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P6IV_P6IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P6IV_P6IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P6IV_P6IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P6IV_P6IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P6IV_P6IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P6IV_P6IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -1201,7 +1208,7 @@ struct Port7 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT7_VECTOR
-    __interrupt static inline void        Port_7(void)
+    __interrupt static inline void Port_7(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(PORT7_VECTOR))) Port_7(void)
 #else
@@ -1213,28 +1220,28 @@ struct Port7 {
         switch (__even_in_range(P7IV, P7IV_P7IFG7)) {
             case P7IV_NONE: break;
             case P7IV_P7IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P7IV_P7IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P7IV_P7IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P7IV_P7IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P7IV_P7IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P7IV_P7IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P7IV_P7IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P7IV_P7IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -1261,7 +1268,7 @@ struct Port8 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT8_VECTOR
-    __interrupt static inline void        Port_8(void)
+    __interrupt static inline void Port_8(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(PORT8_VECTOR))) Port_8(void)
 #else
@@ -1273,28 +1280,28 @@ struct Port8 {
         switch (__even_in_range(P8IV, P8IV_P8IFG7)) {
             case P8IV_NONE: break;
             case P8IV_P8IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P8IV_P8IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P8IV_P8IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P8IV_P8IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P8IV_P8IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P8IV_P8IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P8IV_P8IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P8IV_P8IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -1321,7 +1328,7 @@ struct Port9 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT9_VECTOR
-    __interrupt static inline void        Port_9(void)
+    __interrupt static inline void Port_9(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(PORT9_VECTOR))) Port_9(void)
 #else
@@ -1333,28 +1340,28 @@ struct Port9 {
         switch (__even_in_range(P9IV, P9IV_P9IFG7)) {
             case P9IV_NONE: break;
             case P9IV_P9IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P9IV_P9IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P9IV_P9IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P9IV_P9IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P9IV_P9IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P9IV_P9IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P9IV_P9IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P9IV_P9IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -1381,7 +1388,7 @@ struct Port10 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT10_VECTOR
-    __interrupt static inline void        Port_10(void)
+    __interrupt static inline void Port_10(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(PORT10_VECTOR))) Port_10(void)
 #else
@@ -1393,28 +1400,28 @@ struct Port10 {
         switch (__even_in_range(P10IV, P10IV_P10IFG7)) {
             case P10IV_NONE: break;
             case P10IV_P10IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P10IV_P10IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P10IV_P10IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P10IV_P10IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P10IV_P10IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P10IV_P10IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P10IV_P10IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P10IV_P10IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -1440,7 +1447,7 @@ struct Port11 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORT11_VECTOR
-    __interrupt static inline void        Port_11(void)
+    __interrupt static inline void Port_11(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(PORT11_VECTOR))) Port_11(void)
 #else
@@ -1452,28 +1459,28 @@ struct Port11 {
         switch (__even_in_range(P11IV, P11IV_P11IFG7)) {
             case P11IV_NONE: break;
             case P11IV_P11IFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case P11IV_P11IFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case P11IV_P11IFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case P11IV_P11IFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case P11IV_P11IFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case P11IV_P11IFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case P11IV_P11IFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case P11IV_P11IFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
@@ -1499,7 +1506,7 @@ struct PortJ {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = PORTJ_VECTOR
-    __interrupt static inline void        Port_J(void)
+    __interrupt static inline void Port_J(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(PORTJ_VECTOR))) Port_J(void)
 #else
@@ -1511,28 +1518,28 @@ struct PortJ {
         switch (__even_in_range(PJIV, PJIV_PJIFG7)) {
             case PJIV_NONE: break;
             case PJIV_PJIFG0:
-                pin = MT::MSP430::GPIO::PIN::P0;
+                pin |= MT::MSP430::GPIO::PIN::P0;
                 break;
             case PJIV_PJIFG1:
-                pin = MT::MSP430::GPIO::PIN::P1;
+                pin |= MT::MSP430::GPIO::PIN::P1;
                 break;
             case PJIV_PJIFG2:
-                pin = MT::MSP430::GPIO::PIN::P2;
+                pin |= MT::MSP430::GPIO::PIN::P2;
                 break;
             case PJIV_PJIFG3:
-                pin = MT::MSP430::GPIO::PIN::P3;
+                pin |= MT::MSP430::GPIO::PIN::P3;
                 break;
             case PJIV_PJIFG4:
-                pin = MT::MSP430::GPIO::PIN::P4;
+                pin |= MT::MSP430::GPIO::PIN::P4;
                 break;
             case PJIV_PJIFG5:
-                pin = MT::MSP430::GPIO::PIN::P5;
+                pin |= MT::MSP430::GPIO::PIN::P5;
                 break;
             case PJIV_PJIFG6:
-                pin = MT::MSP430::GPIO::PIN::P6;
+                pin |= MT::MSP430::GPIO::PIN::P6;
                 break;
             case PJIV_PJIFG7:
-                pin = MT::MSP430::GPIO::PIN::P7;
+                pin |= MT::MSP430::GPIO::PIN::P7;
                 break;
         }
 
