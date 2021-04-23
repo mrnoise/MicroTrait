@@ -17,12 +17,9 @@ using namespace MT::MSP430;
 
   constexpr static TIMERA::Interrupt::TA0 int0{
         [](const TIMERA::Interrupt::SOURCE src) {  //-> use only lambdas for compile time registration!!
-            if (src == TIMERA::Interrupt::SOURCE::REGISTER0) {
-                GPIO::Port1 p1{};
-                p1.toggleOutputOnPin(GPIO::PIN::P0);
-
-                TIMERA::TA0 ta0;
-                ta0.setCompareValue(TIMERA::CAPTURE_COMPARE::REGISTER0, COMPARE_VALUE);
+            if (TIMERA::Interrupt::isSet(src, TIMERA::Interrupt::SOURCE::REGISTER0)) {
+                 GPIO::Port1().toggleOutputOnPin(GPIO::PIN::P0);
+                TIMERA::TA0().setCompareValue(TIMERA::CAPTURE_COMPARE::REGISTER0, COMPARE_VALUE);
             }
         }
     };
@@ -40,12 +37,9 @@ using namespace MT::MSP430;
 	TIMERA::Interrupt::TA0 int0;
     int0.registerCallback(
         [](const TIMERA::Interrupt::SOURCE src) {
-            if (src == TIMERA::Interrupt::SOURCE::REGISTER0) {
-                GPIO::Port1 p1{};
-                p1.toggleOutputOnPin(GPIO::PIN::P0);
-
-                TIMERA::TA0 ta0;
-                ta0.setCompareValue(TIMERA::CAPTURE_COMPARE::REGISTER0, COMPARE_VALUE);
+            if (TIMERA::Interrupt::isSet(src, TIMERA::Interrupt::SOURCE::REGISTER0)) {
+                 GPIO::Port1().toggleOutputOnPin(GPIO::PIN::P0);
+                TIMERA::TA0().setCompareValue(TIMERA::CAPTURE_COMPARE::REGISTER0, COMPARE_VALUE);
             }
         });
 #endif
@@ -85,6 +79,31 @@ using namespace MT::MSP430;
 #include <array>
 #include <tuple>
 
+
+namespace MT::Misc {
+enum class TIMERA_INT_SOURCE : uint16_t {
+    NONE      = 0,
+    REGISTER0 = (1U << 0U),
+    REGISTER1 = (1U << 1U),
+    REGISTER2 = (1U << 2U),
+    REGISTER3 = (1U << 3U),
+    REGISTER4 = (1U << 4U),
+    REGISTER5 = (1U << 5U),
+    REGISTER6 = (1U << 6U),
+    REGISTER7 = (1U << 7U),
+    OVERFLOW  = (1U << 8U)
+};
+template<>
+struct enable_Enum_bits<TIMERA_INT_SOURCE> {
+    static constexpr bool enable = true;
+};
+
+template<>
+struct enable_Enum_bits<volatile TIMERA_INT_SOURCE> {
+    static constexpr bool enable = true;
+};
+}// namespace MT::Misc
+
 namespace MT::MSP430::TIMERA::Interrupt {
 
 /**
@@ -93,18 +112,20 @@ namespace MT::MSP430::TIMERA::Interrupt {
 * @brief Interrupt source
 ****************************************************************
 */
-enum class SOURCE {
-    REGISTER0 = 0,
-    REGISTER1 = 1,
-    REGISTER2 = 2,
-    REGISTER3 = 3,
-    REGISTER4 = 4,
-    REGISTER5 = 5,
-    REGISTER6 = 6,
-    OVERFLOW  = 7,
-    NONE      = 255
-};
+using SOURCE = MT::Misc::TIMERA_INT_SOURCE;
 
+/**
+* @ingroup groupFuncsMSP430TimerAInt
+****************************************************************
+* @brief checks if the given interrupt is set
+* @details
+* Usage: \code {.cpp}
+*        if (TIMERA::Interrupt::isSet(src, TIMERA::Interrupt::SOURCE::REGISTER0)) doSomething(); \endcode
+*@param lhs left hand side of the comparison can be the source or the interrupt to check for if set
+*@param rhs right hand side of the comparison can be the source or the interrupt to check for if set
+****************************************************************
+*/
+constexpr bool isSet(const SOURCE lhs, const SOURCE rhs) noexcept { return MT::Misc::Cast::toUnderlyingType(lhs) & MT::Misc::Cast::toUnderlyingType(rhs); }
 
 #ifdef MT_MSP430_USE_TIMERA_COMPILE_TIME_CALLBACKS
 
@@ -124,12 +145,9 @@ struct TA0 {
 	*
 	*  constexpr static TIMERA::Interrupt::TA0 int0{
     *    [](const TIMERA::Interrupt::SOURCE src) {  //-> use only lambdas for compile time registration!!
-    *        if (src == TIMERA::Interrupt::SOURCE::REGISTER0) {
-    *            GPIO::Port1 p1{};
-    *            p1.toggleOutputOnPin(GPIO::PIN::P0);
-	*
-    *            TIMERA::TA0 ta0;
-    *            ta0.setCompareValue(TIMERA::CAPTURE_COMPARE::REGISTER0, COMPARE_VALUE);
+    *       if (TIMERA::Interrupt::isSet(src, TIMERA::Interrupt::SOURCE::REGISTER0)) {
+    *             GPIO::Port1().toggleOutputOnPin(GPIO::PIN::P0);
+    *            TIMERA::TA0().setCompareValue(TIMERA::CAPTURE_COMPARE::REGISTER0, COMPARE_VALUE);
     *        }
     *    }
     * }; \endcode
@@ -170,22 +188,22 @@ struct TA0 {
         switch (__even_in_range(TA0IV, 14)) {
             case 0: break;//No interrupt
             case 2:
-                src = SOURCE::REGISTER1;
+                src |= SOURCE::REGISTER1;
                 break;//CCR1
             case 4:
-                src = SOURCE::REGISTER2;
+                src |= SOURCE::REGISTER2;
                 break;//CCR2
             case 6:
-                src = SOURCE::REGISTER3;
+                src |= SOURCE::REGISTER3;
                 break;//CCR3
             case 8:
-                src = SOURCE::REGISTER4;
+                src |= SOURCE::REGISTER4;
                 break;//CCR4
             case 10:
-                src = SOURCE::REGISTER5;
+                src |= SOURCE::REGISTER5;
                 break;//CCR5
             case 12:
-                src = SOURCE::REGISTER6;
+                src |= SOURCE::REGISTER6;
                 break;//CCR6
             case 14:
                 src = SOURCE::OVERFLOW;
@@ -236,22 +254,22 @@ struct TA1 {
         switch (__even_in_range(TA1IV, 14)) {
             case 0: break;//No interrupt
             case 2:
-                src = SOURCE::REGISTER1;
+                src |= SOURCE::REGISTER1;
                 break;//CCR1
             case 4:
-                src = SOURCE::REGISTER2;
+                src |= SOURCE::REGISTER2;
                 break;//CCR2
             case 6:
-                src = SOURCE::REGISTER3;
+                src |= SOURCE::REGISTER3;
                 break;//CCR3
             case 8:
-                src = SOURCE::REGISTER4;
+                src |= SOURCE::REGISTER4;
                 break;//CCR4
             case 10:
-                src = SOURCE::REGISTER5;
+                src |= SOURCE::REGISTER5;
                 break;//CCR5
             case 12:
-                src = SOURCE::REGISTER6;
+                src |= SOURCE::REGISTER6;
                 break;//CCR6
             case 14:
                 src = SOURCE::OVERFLOW;
@@ -301,22 +319,22 @@ struct TA2 {
         switch (__even_in_range(TA2IV, 14)) {
             case 0: break;//No interrupt
             case 2:
-                src = SOURCE::REGISTER1;
+                src |= SOURCE::REGISTER1;
                 break;//CCR1
             case 4:
-                src = SOURCE::REGISTER2;
+                src |= SOURCE::REGISTER2;
                 break;//CCR2
             case 6:
-                src = SOURCE::REGISTER3;
+                src |= SOURCE::REGISTER3;
                 break;//CCR3
             case 8:
-                src = SOURCE::REGISTER4;
+                src |= SOURCE::REGISTER4;
                 break;//CCR4
             case 10:
-                src = SOURCE::REGISTER5;
+                src |= SOURCE::REGISTER5;
                 break;//CCR5
             case 12:
-                src = SOURCE::REGISTER6;
+                src |= SOURCE::REGISTER6;
                 break;//CCR6
             case 14:
                 src = SOURCE::OVERFLOW;
@@ -367,22 +385,22 @@ struct TA3 {
         switch (__even_in_range(TA3IV, 14)) {
             case 0: break;//No interrupt
             case 2:
-                src = SOURCE::REGISTER1;
+                src |= SOURCE::REGISTER1;
                 break;//CCR1
             case 4:
-                src = SOURCE::REGISTER2;
+                src |= SOURCE::REGISTER2;
                 break;//CCR2
             case 6:
-                src = SOURCE::REGISTER3;
+                src |= SOURCE::REGISTER3;
                 break;//CCR3
             case 8:
-                src = SOURCE::REGISTER4;
+                src |= SOURCE::REGISTER4;
                 break;//CCR4
             case 10:
-                src = SOURCE::REGISTER5;
+                src |= SOURCE::REGISTER5;
                 break;//CCR5
             case 12:
-                src = SOURCE::REGISTER6;
+                src |= SOURCE::REGISTER6;
                 break;//CCR6
             case 14:
                 src = SOURCE::OVERFLOW;
@@ -414,12 +432,9 @@ struct TA0 {
 	*   TIMERA::Interrupt::TA0 int0;
     *	int0.registerCallback(
     *    [](const TIMERA::Interrupt::SOURCE src) {
-    *        if (src == TIMERA::Interrupt::SOURCE::REGISTER0) {
-    *            GPIO::Port1 p1{};
-    *            p1.toggleOutputOnPin(GPIO::PIN::P0);
-	*
-    *            TIMERA::TA0 ta0;
-    *            ta0.setCompareValue(TIMERA::CAPTURE_COMPARE::REGISTER0, COMPARE_VALUE);
+    *       if (TIMERA::Interrupt::isSet(src, TIMERA::Interrupt::SOURCE::REGISTER0)) {
+    *             GPIO::Port1().toggleOutputOnPin(GPIO::PIN::P0);
+    *            TIMERA::TA0().setCompareValue(TIMERA::CAPTURE_COMPARE::REGISTER0, COMPARE_VALUE);
     *        }
     *    });
 	*
@@ -457,7 +472,7 @@ struct TA0 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER0_A0_VECTOR
-    __interrupt static inline void        A0_ISR(void)
+    __interrupt static inline void A0_ISR(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(TIMER0_A0_VECTOR))) A0_ISR(void)
 #else
@@ -482,22 +497,22 @@ struct TA0 {
         switch (__even_in_range(TA0IV, 14)) {
             case 0: break;//No interrupt
             case 2:
-                src = SOURCE::REGISTER1;
+                src |= SOURCE::REGISTER1;
                 break;//CCR1
             case 4:
-                src = SOURCE::REGISTER2;
+                src |= SOURCE::REGISTER2;
                 break;//CCR2
             case 6:
-                src = SOURCE::REGISTER3;
+                src |= SOURCE::REGISTER3;
                 break;//CCR3
             case 8:
-                src = SOURCE::REGISTER4;
+                src |= SOURCE::REGISTER4;
                 break;//CCR4
             case 10:
-                src = SOURCE::REGISTER5;
+                src |= SOURCE::REGISTER5;
                 break;//CCR5
             case 12:
-                src = SOURCE::REGISTER6;
+                src |= SOURCE::REGISTER6;
                 break;//CCR6
             case 14:
                 src = SOURCE::OVERFLOW;
@@ -527,7 +542,7 @@ struct TA1 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER1_A0_VECTOR
-    __interrupt static inline void        A0_ISR(void)
+    __interrupt static inline void A0_ISR(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(TIMER1_A0_VECTOR))) A0_ISR(void)
 #else
@@ -552,22 +567,22 @@ struct TA1 {
         switch (__even_in_range(TA1IV, 14)) {
             case 0: break;//No interrupt
             case 2:
-                src = SOURCE::REGISTER1;
+                src |= SOURCE::REGISTER1;
                 break;//CCR1
             case 4:
-                src = SOURCE::REGISTER2;
+                src |= SOURCE::REGISTER2;
                 break;//CCR2
             case 6:
-                src = SOURCE::REGISTER3;
+                src |= SOURCE::REGISTER3;
                 break;//CCR3
             case 8:
-                src = SOURCE::REGISTER4;
+                src |= SOURCE::REGISTER4;
                 break;//CCR4
             case 10:
-                src = SOURCE::REGISTER5;
+                src |= SOURCE::REGISTER5;
                 break;//CCR5
             case 12:
-                src = SOURCE::REGISTER6;
+                src |= SOURCE::REGISTER6;
                 break;//CCR6
             case 14:
                 src = SOURCE::OVERFLOW;
@@ -597,7 +612,7 @@ struct TA2 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER2_A0_VECTOR
-    __interrupt static inline void        A0_ISR(void)
+    __interrupt static inline void A0_ISR(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(TIMER2_A0_VECTOR))) A0_ISR(void)
 #else
@@ -622,22 +637,22 @@ struct TA2 {
         switch (__even_in_range(TA2IV, 14)) {
             case 0: break;//No interrupt
             case 2:
-                src = SOURCE::REGISTER1;
+                src |= SOURCE::REGISTER1;
                 break;//CCR1
             case 4:
-                src = SOURCE::REGISTER2;
+                src |= SOURCE::REGISTER2;
                 break;//CCR2
             case 6:
-                src = SOURCE::REGISTER3;
+                src |= SOURCE::REGISTER3;
                 break;//CCR3
             case 8:
-                src = SOURCE::REGISTER4;
+                src |= SOURCE::REGISTER4;
                 break;//CCR4
             case 10:
-                src = SOURCE::REGISTER5;
+                src |= SOURCE::REGISTER5;
                 break;//CCR5
             case 12:
-                src = SOURCE::REGISTER6;
+                src |= SOURCE::REGISTER6;
                 break;//CCR6
             case 14:
                 src = SOURCE::OVERFLOW;
@@ -667,7 +682,7 @@ struct TA3 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER3_A0_VECTOR
-    __interrupt static inline void        A0_ISR(void)
+    __interrupt static inline void A0_ISR(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(TIMER3_A0_VECTOR))) A0_ISR(void)
 #else
@@ -692,22 +707,22 @@ struct TA3 {
         switch (__even_in_range(TA3IV, 14)) {
             case 0: break;//No interrupt
             case 2:
-                src = SOURCE::REGISTER1;
+                src |= SOURCE::REGISTER1;
                 break;//CCR1
             case 4:
-                src = SOURCE::REGISTER2;
+                src |= SOURCE::REGISTER2;
                 break;//CCR2
             case 6:
-                src = SOURCE::REGISTER3;
+                src |= SOURCE::REGISTER3;
                 break;//CCR3
             case 8:
-                src = SOURCE::REGISTER4;
+                src |= SOURCE::REGISTER4;
                 break;//CCR4
             case 10:
-                src = SOURCE::REGISTER5;
+                src |= SOURCE::REGISTER5;
                 break;//CCR5
             case 12:
-                src = SOURCE::REGISTER6;
+                src |= SOURCE::REGISTER6;
                 break;//CCR6
             case 14:
                 src = SOURCE::OVERFLOW;
