@@ -13,16 +13,21 @@
 
 using namespace MT::MSP430;
 
-#ifdef MT_MSP430_USE_EUSCIA_UART_COMPILE_TIME_CALLBACKS
+#ifdef MT_MSP430_USE_EUSCIA_COMPILE_TIME_CALLBACKS
 
-constexpr static EUSCIA::UART::Interrupt::A0 int0{
-   [](const EUSCIA::UART::INT src) { //-> use only lambdas for compile time registration!!
-	   if (src == EUSCIA::UART::INT::RECEIVE) {
-			GPIO::Port1 p1;
-			p1.setOutputHighOnPin(GPIO::PIN::P0);
-		}
-	}
-};
+constexpr static EUSCIA::Interrupt::A1 int1{
+        []([[maybe_unused]] const EUSCIA::Interrupt::INT src) {
+            if (EUSCIA::Interrupt::isSet(src, EUSCIA::Interrupt::INT::RECEIVE)) {
+                if (EUSCIA::UART::A1().receiveData() != c_checkByte)// Check value
+                {
+                    GPIO::Port1().setOutputHighOnPin(GPIO::PIN::P0);
+                    while (1)
+                        ;
+                }
+                __bic_SR_register_on_exit(CPUOFF);// Exit LPM0 on reti
+            }
+        }
+    };
 
 #endif
 \endcode
@@ -32,14 +37,18 @@ constexpr static EUSCIA::UART::Interrupt::A0 int0{
 #include "MicroTrait/MT.hpp"
 
 using namespace MT::MSP430;
-#ifndef MT_MSP430_USE_EUSCIA_UART_COMPILE_TIME_CALLBACKS
+#ifndef MT_MSP430_USE_EUSCIA_COMPILE_TIME_CALLBACKS
 
-  EUSCIA::UART::Interrupt::A1 int1;
-    int1.setIntrinsic(EUSCIA::UART::Interrupt::ISR_INTRINSICS::LEAVE_LOW_POWER);
+ EUSCIA::Interrupt::A1 int1;
+    int1.setIntrinsic(ISR_INTRINSICS::LEAVE_LOW_POWER);
     int1.registerCallback(
         []([[maybe_unused]] const EUSCIA::UART::INT src) {
-                GPIO::Port1 p1;
-                p1.setOutputHighOnPin(GPIO::PIN::P0);
+            if (EUSCIA::UART::A1().receiveData() != c_checkByte)// Check value
+            {
+                GPIO::Port1().setOutputHighOnPin(GPIO::PIN::P0);
+                while (1)
+                    ;
+            }
         });
 #endif
 \endcode
@@ -79,9 +88,25 @@ using namespace MT::MSP430;
 #include <array>
 #include <tuple>
 
-namespace MT::MSP430::EUSCIA::UART::Interrupt {
+namespace MT::MSP430::EUSCIA::Interrupt {
 
-#ifdef MT_MSP430_USE_EUSCIA_UART_COMPILE_TIME_CALLBACKS
+using INT = MT::Misc::EUSCIA_UART_INT;
+
+/**
+* @ingroup groupFuncsMSP430EUSCIAInt
+****************************************************************
+* @brief checks if the given interrupt is set in src
+* @details
+* Usage: \code {.cpp}
+*    if (EUSCIA::Interrupt::isSet(src, EUSCIA::Interrupt::INT::RECEIVE)) doSomething(); \endcode
+*@param lhs left hand side of the comparison can be the source or the interrupt to check for if set
+*@param rhs right hand side of the comparison can be the source or the interrupt to check for if set
+****************************************************************
+*/
+template<typename E, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<E>::enable, E>>
+constexpr bool isSet(const E lhs, const E rhs) noexcept { return MT::Misc::Cast::toUnderlyingType(lhs) & MT::Misc::Cast::toUnderlyingType(rhs); }
+
+#ifdef MT_MSP430_USE_EUSCIA_COMPILE_TIME_CALLBACKS
 
 #if defined(USCI_A0_VECTOR)
 template<typename FUNC>
@@ -96,9 +121,9 @@ struct A0 {
 	*
 	* using namespace MT::MSP430;
 	*
-	* constexpr static EUSCIA::UART::Interrupt::A0 int0{
-    *    [](const EUSCIA::UART::INT src) { //-> use only lambdas for compile time registration!!
-    *        if (src == EUSCIA::UART::INT::RECEIVE) {
+	* constexpr static EUSCIA::Interrupt::A0 int0{
+    *    [](const EUSCIA::Interrupt::INT src) { //-> use only lambdas for compile time registration!!
+    *        if (src & EUSCIA::Interrupt::INT::RECEIVE) {
     *            GPIO::Port1 p1;
     *            p1.setOutputHighOnPin(GPIO::PIN::P0);
     *        }
@@ -108,7 +133,7 @@ struct A0 {
 	****************************************************************
 	*/
     constexpr explicit A0(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
-        static_assert(std::is_invocable_v<FUNC, const EUSCIA::UART::INT>, "Missing [](const EUSCIA::UART::INT src) parameter for lambda interrupt A0 !");
+        static_assert(std::is_invocable_v<FUNC, const INT>, "Missing [](const INT src) parameter for lambda interrupt A0 !");
     }
 
   private:
@@ -123,21 +148,21 @@ struct A0 {
 #error Compiler not supported!
 #endif
     {
-        EUSCIA::UART::INT src = EUSCIA::UART::INT::NONE;
+        INT src = INT::NONE;
 
         switch (__even_in_range(UCA0IV, USCI_UART_UCTXCPTIFG)) {
             case USCI_NONE: break;
             case USCI_UART_UCRXIFG:
-                src = EUSCIA::UART::INT::RECEIVE;
+                src |= INT::RECEIVE;
                 break;
             case USCI_UART_UCTXIFG:
-                src = EUSCIA::UART::INT::TRANSMIT;
+                src |= INT::TRANSMIT;
                 break;
             case USCI_UART_UCSTTIFG:
-                src = EUSCIA::UART::INT::STARTBIT;
+                src |= INT::STARTBIT;
                 break;
             case USCI_UART_UCTXCPTIFG:
-                src = EUSCIA::UART::INT::TRANSMIT_COMPLETE;
+                src |= INT::TRANSMIT_COMPLETE;
                 break;
         }
         std::get<0>(m_vectors)(src);
@@ -151,7 +176,7 @@ template<typename FUNC>
 struct A1 {
 
     constexpr explicit A1(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
-        static_assert(std::is_invocable_v<FUNC, const EUSCIA::UART::INT>, "Missing [](const EUSCIA::UART::INT src) parameter for lambda interrupt A1 !");
+        static_assert(std::is_invocable_v<FUNC, const INT>, "Missing [](const INT src) parameter for lambda interrupt A1 !");
     }
 
   private:
@@ -166,21 +191,21 @@ struct A1 {
 #error Compiler not supported!
 #endif
     {
-        EUSCIA::UART::INT src = EUSCIA::UART::INT::NONE;
+        INT src = INT::NONE;
 
         switch (__even_in_range(UCA1IV, USCI_UART_UCTXCPTIFG)) {
             case USCI_NONE: break;
             case USCI_UART_UCRXIFG:
-                src = EUSCIA::UART::INT::RECEIVE;
+                src |= INT::RECEIVE;
                 break;
             case USCI_UART_UCTXIFG:
-                src = EUSCIA::UART::INT::TRANSMIT;
+                src |= INT::TRANSMIT;
                 break;
             case USCI_UART_UCSTTIFG:
-                src = EUSCIA::UART::INT::STARTBIT;
+                src |= INT::STARTBIT;
                 break;
             case USCI_UART_UCTXCPTIFG:
-                src = EUSCIA::UART::INT::TRANSMIT_COMPLETE;
+                src |= INT::TRANSMIT_COMPLETE;
                 break;
         }
         std::get<0>(m_vectors)(src);
@@ -194,7 +219,7 @@ template<typename FUNC>
 struct A2 {
 
     constexpr explicit A2(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
-        static_assert(std::is_invocable_v<FUNC, const EUSCIA::UART::INT>, "Missing [](const EUSCIA::UART::INT src) parameter for lambda interrupt A2 !");
+        static_assert(std::is_invocable_v<FUNC, const INT>, "Missing [](const INT src) parameter for lambda interrupt A2 !");
     }
 
   private:
@@ -209,21 +234,21 @@ struct A2 {
 #error Compiler not supported!
 #endif
     {
-        EUSCIA::UART::INT src = EUSCIA::UART::INT::NONE;
+        INT src = INT::NONE;
 
         switch (__even_in_range(UCA2IV, USCI_UART_UCTXCPTIFG)) {
             case USCI_NONE: break;
             case USCI_UART_UCRXIFG:
-                src = EUSCIA::UART::INT::RECEIVE;
+                src |= INT::RECEIVE;
                 break;
             case USCI_UART_UCTXIFG:
-                src = EUSCIA::UART::INT::TRANSMIT;
+                src |= INT::TRANSMIT;
                 break;
             case USCI_UART_UCSTTIFG:
-                src = EUSCIA::UART::INT::STARTBIT;
+                src |= INT::STARTBIT;
                 break;
             case USCI_UART_UCTXCPTIFG:
-                src = EUSCIA::UART::INT::TRANSMIT_COMPLETE;
+                src |= INT::TRANSMIT_COMPLETE;
                 break;
         }
         std::get<0>(m_vectors)(src);
@@ -237,7 +262,7 @@ template<typename FUNC>
 struct A3 {
 
     constexpr explicit A3(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
-        static_assert(std::is_invocable_v<FUNC, const EUSCIA::UART::INT>, "Missing [](const EUSCIA::UART::INT src) parameter for lambda interrupt A3 !");
+        static_assert(std::is_invocable_v<FUNC, const INT>, "Missing [](const INT src) parameter for lambda interrupt A3 !");
     }
 
   private:
@@ -252,21 +277,21 @@ struct A3 {
 #error Compiler not supported!
 #endif
     {
-        EUSCIA::UART::INT src = EUSCIA::UART::INT::NONE;
+        INT src = INT::NONE;
 
         switch (__even_in_range(UCA3IV, USCI_UART_UCTXCPTIFG)) {
             case USCI_NONE: break;
             case USCI_UART_UCRXIFG:
-                src = EUSCIA::UART::INT::RECEIVE;
+                src |= INT::RECEIVE;
                 break;
             case USCI_UART_UCTXIFG:
-                src = EUSCIA::UART::INT::TRANSMIT;
+                src |= INT::TRANSMIT;
                 break;
             case USCI_UART_UCSTTIFG:
-                src = EUSCIA::UART::INT::STARTBIT;
+                src |= INT::STARTBIT;
                 break;
             case USCI_UART_UCTXCPTIFG:
-                src = EUSCIA::UART::INT::TRANSMIT_COMPLETE;
+                src |= INT::TRANSMIT_COMPLETE;
                 break;
         }
         std::get<0>(m_vectors)(src);
@@ -278,7 +303,7 @@ struct A3 {
 #else
 
 
-using Callback = void (*)(const EUSCIA::UART::INT);
+using Callback = void (*)(const INT);
 
 #if defined(USCI_A0_VECTOR)
 struct A0 {
@@ -292,9 +317,9 @@ struct A0 {
 	*
 	* using namespace MT::MSP430;
 	*
-	*  EUSCIA::UART::Interrupt::A0 int1;
+	*  EUSCIA::Interrupt::A0 int1;
 	*	int1.registerCallback(
-	*    [](const EUSCIA::UART::INT src) {
+	*    [](const INT src) {
 	*           GPIO::Port1 p1;
 	*           p1.setOutputHighOnPin(GPIO::PIN::P0);
 	*   });
@@ -316,7 +341,7 @@ struct A0 {
  	*
  	* using namespace MT::MSP430;
  	*
- 	*  EUSCIA::UART::Interrupt::A0 int1;
+ 	*  EUSCIA::Interrupt::A0 int1;
  	*  int1.setIntrinsic(ISR_INTRINSICS::LEAVE_LOW_POWER);
  	*
  	* \endcode
@@ -333,28 +358,28 @@ struct A0 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = USCI_A0_VECTOR
-    __interrupt static inline void        USCI_ISR(void)
+    __interrupt static inline void USCI_ISR(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(USCI_A0_VECTOR))) USCI_ISR(void)
 #else
 #error Compiler not supported!
 #endif
     {
-        EUSCIA::UART::INT src = EUSCIA::UART::INT::NONE;
+        INT src = INT::NONE;
 
         switch (__even_in_range(UCA0IV, USCI_UART_UCTXCPTIFG)) {
             case USCI_NONE: break;
             case USCI_UART_UCRXIFG:
-                src = EUSCIA::UART::INT::RECEIVE;
+                src |= INT::RECEIVE;
                 break;
             case USCI_UART_UCTXIFG:
-                src = EUSCIA::UART::INT::TRANSMIT;
+                src |= INT::TRANSMIT;
                 break;
             case USCI_UART_UCSTTIFG:
-                src = EUSCIA::UART::INT::STARTBIT;
+                src |= INT::STARTBIT;
                 break;
             case USCI_UART_UCTXCPTIFG:
-                src = EUSCIA::UART::INT::TRANSMIT_COMPLETE;
+                src |= INT::TRANSMIT_COMPLETE;
                 break;
         }
         if (m_cb != nullptr) m_cb(src);
@@ -380,28 +405,28 @@ struct A1 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = USCI_A1_VECTOR
-    __interrupt static inline void        USCI_ISR(void)
+    __interrupt static inline void USCI_ISR(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(USCI_A1_VECTOR))) USCI_ISR(void)
 #else
 #error Compiler not supported!
 #endif
     {
-        EUSCIA::UART::INT src = EUSCIA::UART::INT::NONE;
+        INT src = INT::NONE;
 
         switch (__even_in_range(UCA1IV, USCI_UART_UCTXCPTIFG)) {
             case USCI_NONE: break;
             case USCI_UART_UCRXIFG:
-                src = EUSCIA::UART::INT::RECEIVE;
+                src |= INT::RECEIVE;
                 break;
             case USCI_UART_UCTXIFG:
-                src = EUSCIA::UART::INT::TRANSMIT;
+                src |= INT::TRANSMIT;
                 break;
             case USCI_UART_UCSTTIFG:
-                src = EUSCIA::UART::INT::STARTBIT;
+                src |= INT::STARTBIT;
                 break;
             case USCI_UART_UCTXCPTIFG:
-                src = EUSCIA::UART::INT::TRANSMIT_COMPLETE;
+                src |= INT::TRANSMIT_COMPLETE;
                 break;
         }
         if (m_cb != nullptr) m_cb(src);
@@ -428,28 +453,28 @@ struct A2 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = USCI_A2_VECTOR
-    __interrupt static inline void        USCI_ISR(void)
+    __interrupt static inline void USCI_ISR(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(USCI_A2_VECTOR))) USCI_ISR(void)
 #else
 #error Compiler not supported!
 #endif
     {
-        EUSCIA::UART::INT src = EUSCIA::UART::INT::NONE;
+        INT src = INT::NONE;
 
         switch (__even_in_range(UCA2IV, USCI_UART_UCTXCPTIFG)) {
             case USCI_NONE: break;
             case USCI_UART_UCRXIFG:
-                src = EUSCIA::UART::INT::RECEIVE;
+                src |= INT::RECEIVE;
                 break;
             case USCI_UART_UCTXIFG:
-                src = EUSCIA::UART::INT::TRANSMIT;
+                src |= INT::TRANSMIT;
                 break;
             case USCI_UART_UCSTTIFG:
-                src = EUSCIA::UART::INT::STARTBIT;
+                src |= INT::STARTBIT;
                 break;
             case USCI_UART_UCTXCPTIFG:
-                src = EUSCIA::UART::INT::TRANSMIT_COMPLETE;
+                src |= INT::TRANSMIT_COMPLETE;
                 break;
         }
         if (m_cb != nullptr) m_cb(src);
@@ -476,28 +501,28 @@ struct A3 {
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = USCI_A3_VECTOR
-    __interrupt static inline void        USCI_ISR(void)
+    __interrupt static inline void USCI_ISR(void)
 #elif defined(__GNUC__)
     static inline void __attribute__((interrupt(USCI_A3_VECTOR))) USCI_ISR(void)
 #else
 #error Compiler not supported!
 #endif
     {
-        EUSCIA::UART::INT src = EUSCIA::UART::INT::NONE;
+        INT src = INT::NONE;
 
         switch (__even_in_range(UCA3IV, USCI_UART_UCTXCPTIFG)) {
             case USCI_NONE: break;
             case USCI_UART_UCRXIFG:
-                src = EUSCIA::UART::INT::RECEIVE;
+                src |= INT::RECEIVE;
                 break;
             case USCI_UART_UCTXIFG:
-                src = EUSCIA::UART::INT::TRANSMIT;
+                src |= INT::TRANSMIT;
                 break;
             case USCI_UART_UCSTTIFG:
-                src = EUSCIA::UART::INT::STARTBIT;
+                src |= INT::STARTBIT;
                 break;
             case USCI_UART_UCTXCPTIFG:
-                src = EUSCIA::UART::INT::TRANSMIT_COMPLETE;
+                src |= INT::TRANSMIT_COMPLETE;
                 break;
         }
         if (m_cb != nullptr) m_cb(src);
@@ -509,7 +534,7 @@ struct A3 {
 #endif
 
 
-}// namespace MT::MSP430::EUSCIA::UART::Interrupt
+}// namespace MT::MSP430::EUSCIA::Interrupt
 
 #endif
 #endif /* MICROTRAIT_MSP430_EUSCI_EUSCIAINTERRUPT_HPP_ */

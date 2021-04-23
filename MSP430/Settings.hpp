@@ -44,6 +44,6 @@
 #define MT_MSP430_USE_TIMERA_COMPILE_TIME_CALLBACKS
 
 /*if commented in the lib will register EUSICA Uart Interrupts with callbacks known at compile time -> for max performance*/
-#define MT_MSP430_USE_EUSCIA_UART_COMPILE_TIME_CALLBACKS
+#define MT_MSP430_USE_EUSCIA_COMPILE_TIME_CALLBACKS
 
 #endif /* MICROTRAIT_MSP430_SETTINGS_HPP_ */
