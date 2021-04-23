@@ -103,8 +103,7 @@ using INT = MT::Misc::EUSCIA_UART_INT;
 *@param rhs right hand side of the comparison can be the source or the interrupt to check for if set
 ****************************************************************
 */
-template<typename E, typename = std::enable_if_t<MT::Misc::enable_Enum_bits<E>::enable, E>>
-constexpr bool isSet(const E lhs, const E rhs) noexcept { return MT::Misc::Cast::toUnderlyingType(lhs) & MT::Misc::Cast::toUnderlyingType(rhs); }
+constexpr bool isSet(const INT lhs, const INT rhs) noexcept { return MT::Misc::Cast::toUnderlyingType(lhs) & MT::Misc::Cast::toUnderlyingType(rhs); }
 
 #ifdef MT_MSP430_USE_EUSCIA_COMPILE_TIME_CALLBACKS
 
@@ -123,10 +122,7 @@ struct A0 {
 	*
 	* constexpr static EUSCIA::Interrupt::A0 int0{
     *    [](const EUSCIA::Interrupt::INT src) { //-> use only lambdas for compile time registration!!
-    *        if (src & EUSCIA::Interrupt::INT::RECEIVE) {
-    *            GPIO::Port1 p1;
-    *            p1.setOutputHighOnPin(GPIO::PIN::P0);
-    *        }
+    *         if (EUSCIA::Interrupt::isSet(src, EUSCIA::Interrupt::INT::RECEIVE)) GPIO::Port1().setOutputHighOnPin(GPIO::PIN::P0);
     *    }
     * }; \endcode
 	* @param fun -> register callback function -> gets called in case of interrupt and provides the source of the interrupt
