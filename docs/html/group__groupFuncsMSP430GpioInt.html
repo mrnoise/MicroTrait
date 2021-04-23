@@ -82,6 +82,9 @@ Collaboration diagram for Functions:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ga035cd4d98ad64c9136e91a9e3ef26c8e"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430GpioInt.html#ga035cd4d98ad64c9136e91a9e3ef26c8e">MT::MSP430::GPIO::Interrupt::isSet</a> (const <a class="el" href="namespaceMT_1_1Misc.html#af7bdac7a7ad7774542b30333738c4da2">INT</a> lhs, const <a class="el" href="namespaceMT_1_1Misc.html#af7bdac7a7ad7774542b30333738c4da2">INT</a> rhs) noexcept</td></tr>
+<tr class="memdesc:ga035cd4d98ad64c9136e91a9e3ef26c8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if the given interrupt is set  <a href="group__groupFuncsMSP430GpioInt.html#ga035cd4d98ad64c9136e91a9e3ef26c8e">More...</a><br /></td></tr>
+<tr class="separator:ga035cd4d98ad64c9136e91a9e3ef26c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad5010c7e3847a9625abd0e6a887aa88c"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__groupFuncsMSP430GpioInt.html#gad5010c7e3847a9625abd0e6a887aa88c">MT::MSP430::GPIO::Interrupt::Port1&lt; FUNC &gt;::Port1</a> (FUNC fun) noexcept</td></tr>
 <tr class="memdesc:gad5010c7e3847a9625abd0e6a887aa88c"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor to register callback at compile time  <a href="#gad5010c7e3847a9625abd0e6a887aa88c">More...</a><br /></td></tr>
 <tr class="separator:gad5010c7e3847a9625abd0e6a887aa88c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -95,6 +98,53 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Functions in this module </p>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ga035cd4d98ad64c9136e91a9e3ef26c8e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool MT::MSP430::GPIO::Interrupt::isSet </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceMT_1_1Misc.html#af7bdac7a7ad7774542b30333738c4da2">INT</a>&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceMT_1_1Misc.html#af7bdac7a7ad7774542b30333738c4da2">INT</a>&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="file__GpioInterrupt_8hpp.html">MSP430/GPIO/GpioInterrupt.hpp</a>&gt;</code></p>
+
+<p>checks if the given interrupt is set </p>
+<p>Usage:</p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (<a class="code" href="group__groupFuncsMSP430GpioInt.html#ga035cd4d98ad64c9136e91a9e3ef26c8e">GPIO::Interrupt::isSet</a>(pin, GPIO::PIN::P4)) doSomething(); </div>
+</div><!-- end fragment -->
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>left hand side of the comparison can be the source or the interrupt to check for if set </td></tr>
+    <tr><td class="paramname">rhs</td><td>right hand side of the comparison can be the source or the interrupt to check for if set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="gad5010c7e3847a9625abd0e6a887aa88c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -126,9 +176,8 @@ template&lt;typename FUNC &gt; </div>
 <div class="line"> </div>
 <div class="line"> constexpr <span class="keyword">static</span> <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port1.html">GPIO::Interrupt::Port1</a> int1{</div>
 <div class="line">   [](<span class="keyword">const</span> <a class="code" href="namespaceMT_1_1Misc.html#af7bdac7a7ad7774542b30333738c4da2">GPIO::PIN</a> pin) { <span class="comment">//-&gt; use only lambdas for compile time registration!!</span></div>
-<div class="line">       <span class="keywordflow">if</span> (pin == GPIO::PIN::P1) {</div>
-<div class="line">           <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html">GPIO::Port1</a> p1{};</div>
-<div class="line">           p1.<a class="code" href="group__groupFuncsMSP430Gpio.html#gae50e7317805f8b3ecb81b5c3a858dded">toggleOutputOnPin</a>(GPIO::PIN::P0);</div>
+<div class="line">         <span class="keywordflow">if</span> (<a class="code" href="group__groupFuncsMSP430GpioInt.html#ga035cd4d98ad64c9136e91a9e3ef26c8e">GPIO::Interrupt::isSet</a>(pin, GPIO::PIN::P4)) {</div>
+<div class="line">           <a class="code" href="namespaceMT_1_1MSP430_1_1GPIO.html#a9866e38abfe2c07a046badfbc40630ee">GPIO::Port1</a>().toggleOutputOnPin(GPIO::PIN::P0);</div>
 <div class="line">       }</div>
 <div class="line">   }</div>
 <div class="line">}; </div>
@@ -172,10 +221,9 @@ template&lt;typename FUNC &gt; </div>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div>
 <div class="line"> </div>
 <div class="line">  <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port1.html">GPIO::Interrupt::Port1</a> int1;</div>
-<div class="line">  int1.<a class="code" href="group__groupFuncsMSP430EUSCIAInt.html#ga501c185880fce3cacae03542e39feb93">registerCallback</a>([](<a class="code" href="namespaceMT_1_1Misc.html#af7bdac7a7ad7774542b30333738c4da2">GPIO::PIN</a> pin) {</div>
-<div class="line">       <span class="keywordflow">if</span> (pin == GPIO::PIN::P1) {</div>
-<div class="line">           <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Internal_1_1PortWithIntDrv.html">GPIO::Port1</a> p1{};</div>
-<div class="line">           p1.<a class="code" href="group__groupFuncsMSP430Gpio.html#gae50e7317805f8b3ecb81b5c3a858dded">toggleOutputOnPin</a>(GPIO::PIN::P0);</div>
+<div class="line">  int1.<a class="code" href="group__groupFuncsMSP430EUSCIAInt.html#ga683497723a43c3a0b26536fcae8b58a0">registerCallback</a>([](<a class="code" href="namespaceMT_1_1Misc.html#af7bdac7a7ad7774542b30333738c4da2">GPIO::PIN</a> pin) {</div>
+<div class="line">         <span class="keywordflow">if</span> (<a class="code" href="group__groupFuncsMSP430GpioInt.html#ga035cd4d98ad64c9136e91a9e3ef26c8e">GPIO::Interrupt::isSet</a>(pin, GPIO::PIN::P4)) { *</div>
+<div class="line">           <a class="code" href="namespaceMT_1_1MSP430_1_1GPIO.html#a9866e38abfe2c07a046badfbc40630ee">GPIO::Port1</a>().toggleOutputOnPin(GPIO::PIN::P0);</div>
 <div class="line">       }</div>
 <div class="line">   });</div>
 </div><!-- end fragment -->
@@ -218,7 +266,7 @@ template&lt;typename FUNC &gt; </div>
 <p>Usage:</p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceMT_1_1MSP430.html">MT::MSP430</a>;</div>
 <div class="line"> </div>
 <div class="line"> <a class="code" href="structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port1.html">GPIO::Interrupt::Port1</a> int1;</div>
-<div class="line"> int1.<a class="code" href="group__groupFuncsMSP430EUSCIAInt.html#ga9ffb1bc9cbeeb42561f93b6931eaaf40">setIntrinsic</a>(<a class="code" href="group__groupEnumsMSP430Types.html#gga4039c591bc81cfb75eef0c5c838e7ab3a25e26264c6254e51a9834839593e761a">ISR_INTRINSICS::LEAVE_LOW_POWER</a>);</div>
+<div class="line"> int1.<a class="code" href="group__groupFuncsMSP430EUSCIAInt.html#ga013a1f2e49cda941c8461fd7dfca9125">setIntrinsic</a>(<a class="code" href="group__groupEnumsMSP430Types.html#gga4039c591bc81cfb75eef0c5c838e7ab3a25e26264c6254e51a9834839593e761a">ISR_INTRINSICS::LEAVE_LOW_POWER</a>);</div>
 </div><!-- end fragment -->
  <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -234,7 +282,7 @@ template&lt;typename FUNC &gt; </div>
 <!-- Generated by DoxyPress 1.4.1 -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Di Mrz 16 2021 18:03:56 for MicroTrait C++ Microcontroller Library &nbsp; by
+    <li class="footer">Generated on Fr Apr 23 2021 15:23:12 for MicroTrait C++ Microcontroller Library &nbsp; by
     <a href="https://www.copperspice.com/documentation-doxypress.html">
     <img class="footer" src="doxypress.png" alt="DoxyPress"/></a> 1.4.1 </li>
   </ul>
