@@ -108,8 +108,9 @@ struct WDT {
 	*@param fun -> register callback function -> gets called in case of interrupt
 	****************************************************************
 	*/
-    constexpr explicit WDT(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
+    constexpr explicit WDT(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
         static_assert(std::is_convertible_v<FUNC &&, std::function<Signature>>, "remove parameters for lambda interrupt wdta !");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for wdta !");
     }
 
   private:

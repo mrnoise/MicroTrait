@@ -125,7 +125,7 @@ using SOURCE = MT::Misc::TIMERA_INT_SOURCE;
 *@param rhs right hand side of the comparison can be the source or the interrupt to check for if set
 ****************************************************************
 */
-constexpr bool isSet(const SOURCE lhs, const SOURCE rhs) noexcept { return MT::Misc::Cast::toUnderlyingType(lhs) & MT::Misc::Cast::toUnderlyingType(rhs); }
+inline constexpr bool isSet(const SOURCE lhs, const SOURCE rhs) noexcept { return MT::Misc::Cast::toUnderlyingType(lhs) & MT::Misc::Cast::toUnderlyingType(rhs); }
 
 #ifdef MT_MSP430_USE_TIMERA_COMPILE_TIME_CALLBACKS
 
@@ -154,8 +154,9 @@ struct TA0 {
 	*@param fun -> register callback function -> gets called in case of interrupt and provides the pin number
 	****************************************************************
 	*/
-    constexpr explicit TA0(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
+    constexpr explicit TA0(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
         static_assert(std::is_invocable_v<FUNC, const TIMERA::Interrupt::SOURCE>, "Missing [](const TIMERA::Interrupt::SOURCE src) parameter for lambda interrupt TA0 !");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for TA0 !");
     }
 
   private:
@@ -220,8 +221,9 @@ struct TA0 {
 template<typename FUNC>
 struct TA1 {
 
-    constexpr explicit TA1(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
+    constexpr explicit TA1(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
         static_assert(std::is_invocable_v<FUNC, const TIMERA::Interrupt::SOURCE>, "Missing [](const TIMERA::Interrupt::SOURCE src) parameter for lambda interrupt TA1 !");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for TA1 !");
     }
 
   private:
@@ -285,8 +287,9 @@ struct TA1 {
 template<typename FUNC>
 struct TA2 {
 
-    constexpr explicit TA2(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
+    constexpr explicit TA2(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
         static_assert(std::is_invocable_v<FUNC, const TIMERA::Interrupt::SOURCE>, "Missing [](const TIMERA::Interrupt::SOURCE src) parameter for lambda interrupt TA2 !");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for TA2 !");
     }
 
   private:
@@ -351,8 +354,9 @@ struct TA2 {
 template<typename FUNC>
 struct TA3 {
 
-    constexpr explicit TA3(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
+    constexpr explicit TA3(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
         static_assert(std::is_invocable_v<FUNC, const TIMERA::Interrupt::SOURCE>, "Missing [](const TIMERA::Interrupt::SOURCE src) parameter for lambda interrupt TA3 !");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for TA3 !");
     }
 
   private:

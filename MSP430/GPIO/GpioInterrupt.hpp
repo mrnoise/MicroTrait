@@ -105,7 +105,7 @@ using INT = MT::MSP430::GPIO::PIN;
 *@param rhs right hand side of the comparison can be the source or the interrupt to check for if set
 ****************************************************************
 */
-constexpr bool isSet(const INT lhs, const INT rhs) noexcept { return MT::Misc::Cast::toUnderlyingType(lhs) & MT::Misc::Cast::toUnderlyingType(rhs); }
+inline constexpr bool isSet(const INT lhs, const INT rhs) noexcept { return MT::Misc::Cast::toUnderlyingType(lhs) & MT::Misc::Cast::toUnderlyingType(rhs); }
 
 #ifdef MT_MSP430_USE_GPIO_COMPILE_TIME_CALLBACKS
 
@@ -132,8 +132,9 @@ struct Port1 {
 	*@param fun -> register callback function -> gets called in case of interrupt and provides the pin number
 	****************************************************************
 	*/
-    constexpr explicit Port1(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
+    constexpr explicit Port1(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port1 !");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for port1 !");
     }
 
   private:
@@ -188,8 +189,9 @@ struct Port1 {
 template<typename FUNC>
 struct Port2 {
 
-    constexpr explicit Port2(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
+    constexpr explicit Port2(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port2 !");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for port2 !");
     }
 
   private:
@@ -244,8 +246,9 @@ struct Port2 {
 template<typename FUNC>
 struct Port3 {
 
-    constexpr explicit Port3(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
+    constexpr explicit Port3(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port3 !");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for port3 !");
     }
 
   private:
@@ -299,8 +302,9 @@ struct Port3 {
 template<typename FUNC>
 struct Port4 {
 
-    constexpr explicit Port4(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
+    constexpr explicit Port4(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port4 !");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for port4 !");
     }
 
   private:
@@ -355,8 +359,9 @@ struct Port4 {
 template<typename FUNC>
 struct Port5 {
 
-    constexpr explicit Port5(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
-        static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port5 !");
+    constexpr explicit Port5(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
+        static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port5!");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for port5 !");
     }
 
   private:
@@ -410,8 +415,9 @@ struct Port5 {
 template<typename FUNC>
 struct Port6 {
 
-    constexpr explicit Port6(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
+    constexpr explicit Port6(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port6 !");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for port6 !");
     }
 
   private:
@@ -466,8 +472,9 @@ struct Port6 {
 template<typename FUNC>
 struct Port7 {
 
-    constexpr explicit Port7(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
+    constexpr explicit Port7(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port7 !");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for port7 !");
     }
 
   private:
@@ -521,8 +528,9 @@ struct Port7 {
 template<typename FUNC>
 struct Port8 {
 
-    constexpr explicit Port8(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
+    constexpr explicit Port8(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port8 !");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for port8 !");
     }
 
   private:
@@ -576,8 +584,9 @@ struct Port8 {
 template<typename FUNC>
 struct Port9 {
 
-    constexpr explicit Port9(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
+    constexpr explicit Port9(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port9 !");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for port9 !");
     }
 
   private:
@@ -631,8 +640,9 @@ struct Port9 {
 template<typename FUNC>
 struct Port10 {
 
-    constexpr explicit Port10(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
+    constexpr explicit Port10(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port10 !");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for port10 !");
     }
 
   private:
@@ -685,8 +695,9 @@ struct Port10 {
 template<typename FUNC>
 struct Port11 {
 
-    constexpr explicit Port11(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
+    constexpr explicit Port11(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt port11 !");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for port11 !");
     }
 
   private:
@@ -741,8 +752,9 @@ struct Port11 {
 template<typename FUNC>
 struct PortJ {
 
-    constexpr explicit PortJ(FUNC fun) noexcept : m_vectors{ std::move(fun) } {
+    constexpr explicit PortJ(FUNC &&fun) noexcept : m_vectors{ std::forward<std::tuple<FUNC>>(fun) } {
         static_assert(std::is_invocable_v<FUNC, const MT::MSP430::GPIO::PIN>, "Missing [](const GPIO::PIN pin) parameter for lambda interrupt portJ !");
+        static_assert(std::is_move_constructible_v<FUNC>, "Function isn`t a lambda for portJ !");
     }
 
   private:
