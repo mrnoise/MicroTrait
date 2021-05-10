@@ -1,7 +1,7 @@
 <map id="PMM" name="PMM">
 <area shape="rect" id="node1" href="$group__groupMSP430IPmm.html" title=" " alt="" coords="241,5,336,32"/>
-<area shape="rect" id="node2" href="$group__groupMSP430FRAMPmm.html" title=" " alt="" coords="235,56,342,83"/>
-<area shape="rect" id="node3" href="$group__groupMSP430FPmm.html" title=" " alt="" coords="227,107,351,133"/>
+<area shape="rect" id="node2" href="$group__groupMSP430FPmm.html" title=" " alt="" coords="227,56,351,83"/>
+<area shape="rect" id="node3" href="$group__groupMSP430FRAMPmm.html" title=" " alt="" coords="235,107,342,133"/>
 <area shape="rect" id="node4" title="functions for PMM(power management module) register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent..." alt="" coords="125,56,179,83"/>
 <area shape="rect" id="node5" href="$group__groupMSP430.html" title=" " alt="" coords="5,56,77,83"/>
 </map>

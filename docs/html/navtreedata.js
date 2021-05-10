@@ -8,7 +8,7 @@ var NAVTREE =
           [ "Interrupt", "group__groupMSP430EUSCIAInt.html", [
             [ "Enums", "group__groupEnumsMSP430EUSCIAInt.html", null ],
             [ "Functions", "group__groupFuncsMSP430EUSCIAInt.html", [
-              [ "A0", "group__groupFuncsMSP430EUSCIAInt.html#ga257358ac4e5932226f0a5e1bf62eb726", null ],
+              [ "A0", "group__groupFuncsMSP430EUSCIAInt.html#ga026d1eb04b2b06b1896de99e5799a32e", null ],
               [ "isSet", "group__groupFuncsMSP430EUSCIAInt.html#gada03a86d049b42285f8dc3dac3fe857a", null ],
               [ "registerCallback", "group__groupFuncsMSP430EUSCIAInt.html#ga683497723a43c3a0b26536fcae8b58a0", null ],
               [ "setIntrinsic", "group__groupFuncsMSP430EUSCIAInt.html#ga013a1f2e49cda941c8461fd7dfca9125", null ]
@@ -330,7 +330,7 @@ var NAVTREE =
             [ "Enums", "group__groupEnumsMSP430GpioInt.html", null ],
             [ "Functions", "group__groupFuncsMSP430GpioInt.html", [
               [ "isSet", "group__groupFuncsMSP430GpioInt.html#ga035cd4d98ad64c9136e91a9e3ef26c8e", null ],
-              [ "Port1", "group__groupFuncsMSP430GpioInt.html#gad5010c7e3847a9625abd0e6a887aa88c", null ],
+              [ "Port1", "group__groupFuncsMSP430GpioInt.html#ga91a1dd8a4d8d56b2b65774a95b78ae0c", null ],
               [ "registerCallback", "group__groupFuncsMSP430GpioInt.html#ga16fba02def367f6c82c21fcfc4e198b9", null ],
               [ "setIntrinsic", "group__groupFuncsMSP430GpioInt.html#gaa47823146887295566e77bc0217c5208", null ]
             ] ]
@@ -585,7 +585,7 @@ var NAVTREE =
               [ "isSet", "group__groupFuncsMSP430TimerAInt.html#gaa770d0793a5960126a198a099055c499", null ],
               [ "registerCallback", "group__groupFuncsMSP430TimerAInt.html#ga7310b4a0729bd738847ae32f2de0acd9", null ],
               [ "setIntrinsic", "group__groupFuncsMSP430TimerAInt.html#ga2fd1b8aef0bf4cad2db92f38690aae78", null ],
-              [ "TA0", "group__groupFuncsMSP430TimerAInt.html#ga746c87fc9e70da39a99dff2b53b4464a", null ]
+              [ "TA0", "group__groupFuncsMSP430TimerAInt.html#gade857d23ccaeed8508554dbba0a0b485", null ]
             ] ]
           ] ],
           [ "Parameter", "group__groupParamsMSP430TimerA.html", [
@@ -642,13 +642,13 @@ var NAVTREE =
             [ "Enums", "group__groupEnumsMSP430WdtAInt.html", [
               [ "WDT", "group__groupEnumsMSP430WdtAInt.html#structMT_1_1MSP430_1_1WDTA_1_1Interrupt_1_1WDT", [
                 [ "Signature", "group__groupEnumsMSP430WdtAInt.html#a4d4746a0406a0416382247fc84e7d289", null ],
-                [ "WDT", "group__groupFuncsMSP430WdtAInt.html#ga08138c63b8ccc0899bf28db941c3d525", null ]
+                [ "WDT", "group__groupFuncsMSP430WdtAInt.html#ga10db4a2033333faff63279cb75f686e4", null ]
               ] ]
             ] ],
             [ "Functions", "group__groupFuncsMSP430WdtAInt.html", [
               [ "registerCallback", "group__groupFuncsMSP430WdtAInt.html#ga00247e1cbf8391b3df87dde9de18f4db", null ],
               [ "setIntrinsic", "group__groupFuncsMSP430WdtAInt.html#ga214e16eee93c05da0a67d22810a54110", null ],
-              [ "WDT", "group__groupFuncsMSP430WdtAInt.html#ga08138c63b8ccc0899bf28db941c3d525", null ]
+              [ "WDT", "group__groupFuncsMSP430WdtAInt.html#ga10db4a2033333faff63279cb75f686e4", null ]
             ] ]
           ] ]
         ] ]
@@ -825,16 +825,16 @@ var NAVTREE =
             [ "EUSCIA", "namespaceMT_1_1MSP430_1_1EUSCIA.html", [
               [ "Interrupt", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1Interrupt.html", [
                 [ "A0", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A0.html", [
-                  [ "A0", "group__groupFuncsMSP430EUSCIAInt.html#ga257358ac4e5932226f0a5e1bf62eb726", null ]
+                  [ "A0", "group__groupFuncsMSP430EUSCIAInt.html#ga026d1eb04b2b06b1896de99e5799a32e", null ]
                 ] ],
                 [ "A1", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A1.html", [
-                  [ "A1", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A1.html#a39443e3945ab4b2e907461744af72f96", null ]
+                  [ "A1", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A1.html#af26df12c2613e6b7e9ecf99ea9caf605", null ]
                 ] ],
                 [ "A2", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A2.html", [
-                  [ "A2", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A2.html#a65c42f6cceeda08f1f65b9f3826fe2ce", null ]
+                  [ "A2", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A2.html#a1dca6d2f9b653ad56f0d6df0e32e50a4", null ]
                 ] ],
                 [ "A3", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A3.html", [
-                  [ "A3", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A3.html#af8ca09bf47964c0eb8b3876ec7a8ea78", null ]
+                  [ "A3", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A3.html#a7339746f54f4127de767e21ec90f47ac", null ]
                 ] ]
               ] ],
               [ "SPI", "namespaceMT_1_1MSP430_1_1EUSCIA_1_1SPI.html", [
@@ -995,40 +995,40 @@ var NAVTREE =
               ] ],
               [ "Interrupt", "namespaceMT_1_1MSP430_1_1GPIO_1_1Interrupt.html", [
                 [ "Port1", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port1.html", [
-                  [ "Port1", "group__groupFuncsMSP430GpioInt.html#gad5010c7e3847a9625abd0e6a887aa88c", null ]
+                  [ "Port1", "group__groupFuncsMSP430GpioInt.html#ga91a1dd8a4d8d56b2b65774a95b78ae0c", null ]
                 ] ],
                 [ "Port10", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port10.html", [
-                  [ "Port10", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port10.html#a751ed6df10b992ea742d7f6409ff1b21", null ]
+                  [ "Port10", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port10.html#a97147551741f5c5b8e34c8459403fe31", null ]
                 ] ],
                 [ "Port11", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port11.html", [
-                  [ "Port11", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port11.html#acae3cd1a3e76ace1ea6417401740d95a", null ]
+                  [ "Port11", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port11.html#a7082c546637606471bf13fa6b4f0b866", null ]
                 ] ],
                 [ "Port2", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port2.html", [
-                  [ "Port2", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port2.html#a087a3c26a32a323c71ba5d6d8ae2da9c", null ]
+                  [ "Port2", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port2.html#a67263a18eacb542a78580252c74fde1f", null ]
                 ] ],
                 [ "Port3", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port3.html", [
-                  [ "Port3", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port3.html#abb913d47a48a1b864f432af942532a05", null ]
+                  [ "Port3", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port3.html#af9b99d20bc55383b4a74714daa3b638e", null ]
                 ] ],
                 [ "Port4", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port4.html", [
-                  [ "Port4", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port4.html#ac5c273f27a3cdb19298270f3bc27dab6", null ]
+                  [ "Port4", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port4.html#a678e07d653bd6f7fc2635c26fda76c2f", null ]
                 ] ],
                 [ "Port5", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port5.html", [
-                  [ "Port5", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port5.html#a35797499065c83bd372fb081323cb770", null ]
+                  [ "Port5", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port5.html#a2d05ca1f00dcb8dde36e1dfb3e51611f", null ]
                 ] ],
                 [ "Port6", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port6.html", [
-                  [ "Port6", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port6.html#a8f1f1a8f8d0b2ffc61a76c4644e52f26", null ]
+                  [ "Port6", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port6.html#a4c3e32e525adbc455ac4183fa268dde1", null ]
                 ] ],
                 [ "Port7", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port7.html", [
-                  [ "Port7", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port7.html#ac49a440bd174af850929436a9b727280", null ]
+                  [ "Port7", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port7.html#aa65989ec5f151f962052bd99f1f6fd45", null ]
                 ] ],
                 [ "Port8", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port8.html", [
-                  [ "Port8", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port8.html#aed7976461850b700ab03220699a52590", null ]
+                  [ "Port8", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port8.html#af8d61698c8b8897cab4138ee5b2d69bb", null ]
                 ] ],
                 [ "Port9", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port9.html", [
-                  [ "Port9", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port9.html#aacfb752f9a5d4c9412604372d069b8a5", null ]
+                  [ "Port9", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port9.html#aa122709893304e7498d28f2a3bde6937", null ]
                 ] ],
                 [ "PortJ", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1PortJ.html", [
-                  [ "PortJ", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1PortJ.html#a4fb1c920fcfc91edeb28e4a9adfdfda3", null ]
+                  [ "PortJ", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1PortJ.html#a3ba2cbf482d56cb45fb6365c8e358ae5", null ]
                 ] ]
               ] ]
             ] ],
@@ -1070,16 +1070,16 @@ var NAVTREE =
               ] ],
               [ "Interrupt", "namespaceMT_1_1MSP430_1_1TIMERA_1_1Interrupt.html", [
                 [ "TA0", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA0.html", [
-                  [ "TA0", "group__groupFuncsMSP430TimerAInt.html#ga746c87fc9e70da39a99dff2b53b4464a", null ]
+                  [ "TA0", "group__groupFuncsMSP430TimerAInt.html#gade857d23ccaeed8508554dbba0a0b485", null ]
                 ] ],
                 [ "TA1", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA1.html", [
-                  [ "TA1", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA1.html#a661aa39fb44cfcbd2ab968cb4a2efd0f", null ]
+                  [ "TA1", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA1.html#afa8b52ecfaa4d5067f245c235e54f64c", null ]
                 ] ],
                 [ "TA2", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA2.html", [
-                  [ "TA2", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA2.html#a18bdaf1f0d3d7331557ed05b3e509df4", null ]
+                  [ "TA2", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA2.html#a53ff2953b419b05e903817e8e7dd2cb9", null ]
                 ] ],
                 [ "TA3", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA3.html", [
-                  [ "TA3", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA3.html#ad9a78fc69cffff6a6cf64a812ab9e7fb", null ]
+                  [ "TA3", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA3.html#a837622ed19810bae37980e6e8349020c", null ]
                 ] ]
               ] ]
             ] ],
@@ -1087,7 +1087,7 @@ var NAVTREE =
               [ "Interrupt", "namespaceMT_1_1MSP430_1_1WDTA_1_1Interrupt.html", [
                 [ "WDT", "group__groupEnumsMSP430WdtAInt.html#structMT_1_1MSP430_1_1WDTA_1_1Interrupt_1_1WDT", [
                   [ "Signature", "group__groupEnumsMSP430WdtAInt.html#a4d4746a0406a0416382247fc84e7d289", null ],
-                  [ "WDT", "group__groupFuncsMSP430WdtAInt.html#ga08138c63b8ccc0899bf28db941c3d525", null ]
+                  [ "WDT", "group__groupFuncsMSP430WdtAInt.html#ga10db4a2033333faff63279cb75f686e4", null ]
                 ] ]
               ] ]
             ] ],
@@ -1671,16 +1671,16 @@ var NAVTREE =
             ] ],
             [ "EusciAInterrupt.hpp", "file__EusciAInterrupt_8hpp.html", [
               [ "A0", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A0.html", [
-                [ "A0", "group__groupFuncsMSP430EUSCIAInt.html#ga257358ac4e5932226f0a5e1bf62eb726", null ]
+                [ "A0", "group__groupFuncsMSP430EUSCIAInt.html#ga026d1eb04b2b06b1896de99e5799a32e", null ]
               ] ],
               [ "A1", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A1.html", [
-                [ "A1", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A1.html#a39443e3945ab4b2e907461744af72f96", null ]
+                [ "A1", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A1.html#af26df12c2613e6b7e9ecf99ea9caf605", null ]
               ] ],
               [ "A2", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A2.html", [
-                [ "A2", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A2.html#a65c42f6cceeda08f1f65b9f3826fe2ce", null ]
+                [ "A2", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A2.html#a1dca6d2f9b653ad56f0d6df0e32e50a4", null ]
               ] ],
               [ "A3", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A3.html", [
-                [ "A3", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A3.html#af8ca09bf47964c0eb8b3876ec7a8ea78", null ]
+                [ "A3", "structMT_1_1MSP430_1_1EUSCIA_1_1Interrupt_1_1A3.html#a7339746f54f4127de767e21ec90f47ac", null ]
               ] ],
               [ "Callback", "file__EusciAInterrupt_8hpp.html#abb6436c2e7419b81cc269a00d7c6f4e9", null ],
               [ "INT", "file__EusciAInterrupt_8hpp.html#ae035e122ed8f8fd504ad4433e2ab324c", null ],
@@ -1975,40 +1975,40 @@ var NAVTREE =
             ] ],
             [ "GpioInterrupt.hpp", "file__GpioInterrupt_8hpp.html", [
               [ "Port1", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port1.html", [
-                [ "Port1", "group__groupFuncsMSP430GpioInt.html#gad5010c7e3847a9625abd0e6a887aa88c", null ]
+                [ "Port1", "group__groupFuncsMSP430GpioInt.html#ga91a1dd8a4d8d56b2b65774a95b78ae0c", null ]
               ] ],
               [ "Port10", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port10.html", [
-                [ "Port10", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port10.html#a751ed6df10b992ea742d7f6409ff1b21", null ]
+                [ "Port10", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port10.html#a97147551741f5c5b8e34c8459403fe31", null ]
               ] ],
               [ "Port11", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port11.html", [
-                [ "Port11", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port11.html#acae3cd1a3e76ace1ea6417401740d95a", null ]
+                [ "Port11", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port11.html#a7082c546637606471bf13fa6b4f0b866", null ]
               ] ],
               [ "Port2", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port2.html", [
-                [ "Port2", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port2.html#a087a3c26a32a323c71ba5d6d8ae2da9c", null ]
+                [ "Port2", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port2.html#a67263a18eacb542a78580252c74fde1f", null ]
               ] ],
               [ "Port3", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port3.html", [
-                [ "Port3", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port3.html#abb913d47a48a1b864f432af942532a05", null ]
+                [ "Port3", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port3.html#af9b99d20bc55383b4a74714daa3b638e", null ]
               ] ],
               [ "Port4", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port4.html", [
-                [ "Port4", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port4.html#ac5c273f27a3cdb19298270f3bc27dab6", null ]
+                [ "Port4", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port4.html#a678e07d653bd6f7fc2635c26fda76c2f", null ]
               ] ],
               [ "Port5", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port5.html", [
-                [ "Port5", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port5.html#a35797499065c83bd372fb081323cb770", null ]
+                [ "Port5", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port5.html#a2d05ca1f00dcb8dde36e1dfb3e51611f", null ]
               ] ],
               [ "Port6", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port6.html", [
-                [ "Port6", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port6.html#a8f1f1a8f8d0b2ffc61a76c4644e52f26", null ]
+                [ "Port6", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port6.html#a4c3e32e525adbc455ac4183fa268dde1", null ]
               ] ],
               [ "Port7", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port7.html", [
-                [ "Port7", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port7.html#ac49a440bd174af850929436a9b727280", null ]
+                [ "Port7", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port7.html#aa65989ec5f151f962052bd99f1f6fd45", null ]
               ] ],
               [ "Port8", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port8.html", [
-                [ "Port8", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port8.html#aed7976461850b700ab03220699a52590", null ]
+                [ "Port8", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port8.html#af8d61698c8b8897cab4138ee5b2d69bb", null ]
               ] ],
               [ "Port9", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port9.html", [
-                [ "Port9", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port9.html#aacfb752f9a5d4c9412604372d069b8a5", null ]
+                [ "Port9", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1Port9.html#aa122709893304e7498d28f2a3bde6937", null ]
               ] ],
               [ "PortJ", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1PortJ.html", [
-                [ "PortJ", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1PortJ.html#a4fb1c920fcfc91edeb28e4a9adfdfda3", null ]
+                [ "PortJ", "structMT_1_1MSP430_1_1GPIO_1_1Interrupt_1_1PortJ.html#a3ba2cbf482d56cb45fb6365c8e358ae5", null ]
               ] ],
               [ "Callback", "file__GpioInterrupt_8hpp.html#aa0c48040127ea48b355f4582d4e2d9ba", null ],
               [ "INT", "file__GpioInterrupt_8hpp.html#a3a84daf9552b8851f99172dd9ac2a1d7", null ],
@@ -2411,16 +2411,16 @@ var NAVTREE =
             ] ],
             [ "TimerAInterrupt.hpp", "file__TimerAInterrupt_8hpp.html", [
               [ "TA0", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA0.html", [
-                [ "TA0", "group__groupFuncsMSP430TimerAInt.html#ga746c87fc9e70da39a99dff2b53b4464a", null ]
+                [ "TA0", "group__groupFuncsMSP430TimerAInt.html#gade857d23ccaeed8508554dbba0a0b485", null ]
               ] ],
               [ "TA1", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA1.html", [
-                [ "TA1", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA1.html#a661aa39fb44cfcbd2ab968cb4a2efd0f", null ]
+                [ "TA1", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA1.html#afa8b52ecfaa4d5067f245c235e54f64c", null ]
               ] ],
               [ "TA2", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA2.html", [
-                [ "TA2", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA2.html#a18bdaf1f0d3d7331557ed05b3e509df4", null ]
+                [ "TA2", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA2.html#a53ff2953b419b05e903817e8e7dd2cb9", null ]
               ] ],
               [ "TA3", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA3.html", [
-                [ "TA3", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA3.html#ad9a78fc69cffff6a6cf64a812ab9e7fb", null ]
+                [ "TA3", "structMT_1_1MSP430_1_1TIMERA_1_1Interrupt_1_1TA3.html#a837622ed19810bae37980e6e8349020c", null ]
               ] ],
               [ "enable_Enum_bits< TIMERA_INT_SOURCE >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01TIMERA__INT__SOURCE_01_4.html", null ],
               [ "enable_Enum_bits< volatile TIMERA_INT_SOURCE >", "structMT_1_1Misc_1_1enable__Enum__bits_3_01volatile_01TIMERA__INT__SOURCE_01_4.html", null ],

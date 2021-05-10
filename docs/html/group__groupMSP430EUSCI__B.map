@@ -1,10 +1,10 @@
 <map id="EUSCI B" name="EUSCI B">
-<area shape="rect" id="node1" href="$group__groupParamsMSP430SPI__EUSCI__B.html" title=" " alt="" coords="248,5,355,32"/>
-<area shape="rect" id="node2" href="$group__groupEnumsMSP430SPI__EUSCI__B.html" title=" " alt="" coords="257,56,345,83"/>
-<area shape="rect" id="node3" href="$group__groupMSP430.html" title=" " alt="" coords="5,132,77,159"/>
-<area shape="rect" id="node4" title="functions for EUSCI B register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="125,132,200,159"/>
-<area shape="rect" id="node5" href="$group__groupFuncsMSP430I2C__EUSCI__B.html" title=" " alt="" coords="250,107,353,133"/>
-<area shape="rect" id="node6" href="$group__groupParamsMSP430I2C__EUSCI__B.html" title=" " alt="" coords="249,157,354,184"/>
+<area shape="rect" id="node1" href="$group__groupEnumsMSP430SPI__EUSCI__B.html" title=" " alt="" coords="257,5,345,32"/>
+<area shape="rect" id="node2" href="$group__groupMSP430.html" title=" " alt="" coords="5,132,77,159"/>
+<area shape="rect" id="node5" title="functions for EUSCI B register access for TIs MSP430 &#45;&gt; Ti Driverlib equivalent naming " alt="" coords="125,132,200,159"/>
+<area shape="rect" id="node3" href="$group__groupFuncsMSP430I2C__EUSCI__B.html" title=" " alt="" coords="250,56,353,83"/>
+<area shape="rect" id="node4" href="$group__groupParamsMSP430SPI__EUSCI__B.html" title=" " alt="" coords="248,107,355,133"/>
+<area shape="rect" id="node6" href="$group__groupFuncsMSP430SPI__EUSCI__B.html" title=" " alt="" coords="249,157,353,184"/>
 <area shape="rect" id="node7" href="$group__groupEnumsMSP430I2C__EUSCI__B.html" title=" " alt="" coords="258,208,345,235"/>
-<area shape="rect" id="node8" href="$group__groupFuncsMSP430SPI__EUSCI__B.html" title=" " alt="" coords="249,259,353,285"/>
+<area shape="rect" id="node8" href="$group__groupParamsMSP430I2C__EUSCI__B.html" title=" " alt="" coords="249,259,354,285"/>
 </map>
